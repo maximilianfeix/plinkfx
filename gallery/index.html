@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>plinkfx · game sound effects as code</title>
+    <meta name="description" content="161 game sound effects made from code. Play them all, tweak them, copy one line or download the WAV. CC0, no account, a 2 KB player." />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#F2EDE3" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#16130F" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="favicon-32.png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <meta property="og:title" content="plinkfx · game sound effects as code" />
+    <meta property="og:description" content="161 CC0 game sounds made from code. Play them all in the browser." />
+    <meta property="og:image" content="https://maximilianfeix.github.io/plinkfx/social-preview.png" />
+    <meta property="og:url" content="https://maximilianfeix.github.io/plinkfx/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://maximilianfeix.github.io/plinkfx/" />
+  </head>
+  <body>
+    <a class="skip" href="#grid">Skip to the sounds</a>
+    <header class="top">
+      <a class="brand" href="./" aria-label="plinkfx: click to hear the plink">
+        <picture>
+          <source srcset="lockup-dark.svg" media="(prefers-color-scheme: dark)" />
+          <img src="lockup-light.svg" alt="plinkfx" width="231" height="66" />
+        </picture>
+      </a>
+      <p class="lede">Game sound effects as code. <b id="total">161</b> sounds in <b id="cats-n">13</b> categories, <b>CC0</b>, a 2&nbsp;KB player, no audio files. Hover or tap to play.</p>
+      <div class="top-actions">
+        <div class="install"><code>npm i plinkfx</code><button id="install-copy" type="button">copy</button></div>
+        <nav aria-label="Project">
+          <a href="game.html">play the demo game</a>
+          <a href="https://github.com/maximilianfeix/plinkfx">GitHub</a>
+          <a href="https://www.npmjs.com/package/plinkfx">npm</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="controls" aria-label="Filter">
+      <input id="search" type="search" placeholder="search  /" aria-label="Search sounds" autocomplete="off" spellcheck="false" />
+      <div id="chips" class="chips" role="group" aria-label="Category"></div>
+      <label class="toggle"><input id="hoverplay" type="checkbox" /> play on hover</label>
+      <span id="count" class="count" aria-live="polite"></span>
+    </section>
+
+    <main class="layout">
+      <div id="grid" class="grid" aria-label="Sounds"></div>
+
+      <aside class="panel" aria-label="Selected sound">
+        <div class="p-head">
+          <button id="p-play" class="play" type="button" aria-label="Play (p)"><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M2 1v8l7-4z" /></svg></button>
+          <div>
+            <h2 id="p-name">coin</h2>
+            <p id="p-cat" class="p-cat"></p>
+          </div>
+          <button id="p-more" class="more" type="button" aria-label="Show details">edit</button>
+        </div>
+        <p id="p-desc" class="p-desc"></p>
+        <canvas id="wave" class="wave" aria-hidden="true"></canvas>
+        <p id="p-meter" class="meter"></p>
+
+        <div class="takes" role="group" aria-label="Take">
+          <button data-take="0" type="button">1</button><button data-take="1" type="button">2</button><button data-take="2" type="button">3</button><button data-take="3" type="button">4</button>
+          <button id="p-roll" type="button" title="New random take (r)">roll</button>
+          <span id="p-seed" class="seed"></span>
+        </div>
+
+        <div class="knobs">
+          <label><span>pitch</span><input type="range" name="pitch" min="-12" max="12" step="1" /><output id="v-pitch"></output></label>
+          <label><span>length</span><input type="range" name="length" min="0.5" max="2" step="0.05" /><output id="v-length"></output></label>
+          <label><span>tone</span><input type="range" name="tone" min="-1" max="1" step="0.05" /><output id="v-tone"></output></label>
+          <label><span>space</span><input type="range" name="space" min="0" max="0.6" step="0.05" /><output id="v-space"></output></label>
+          <label><span>crush</span><input type="range" name="crush" min="3" max="16" step="1" /><output id="v-crush"></output></label>
+          <button id="p-reset" type="button">reset</button>
+        </div>
+
+        <div class="code">
+          <div class="tabs" role="tablist">
+            <button data-tab="name" role="tab" type="button">by name</button>
+            <button data-tab="shake" role="tab" type="button">tree-shaken</button>
+            <button data-tab="json" role="tab" type="button">params</button>
+            <span id="p-edited" class="edited" hidden>edited</span>
+          </div>
+          <pre><code id="p-code"></code></pre>
+          <div class="code-actions">
+            <button id="p-copy" type="button">copy code</button>
+            <button id="p-wav" type="button">download .wav</button>
+          </div>
+        </div>
+        <p class="keys">keys: arrows move · 1–4 takes · r roll · p play · c copy · d download · / search</p>
+      </aside>
+    </main>
+
+    <footer class="foot">
+      <p>Sounds: <b>CC0 1.0</b>, use them anywhere, no credit needed. Code: MIT. Every sound is synthesized in your browser from a few numbers; nothing is downloaded but this page.</p>
+    </footer>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>
