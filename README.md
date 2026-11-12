@@ -146,6 +146,37 @@ npx plinkfx render explosion-big -o boom.wav  # one sound
 Each sound in the gallery also has a "download .wav" button. Ready-made players for the exported files:
 [Godot](examples/godot), [Unity](examples/unity), and a [Phaser](examples/phaser) example that needs no files at all.
 
+### One audio sprite (Phaser, Howler)
+
+For the web, one file with every sound means one request instead of 163:
+
+```bash
+npx plinkfx export public/sfx --sprite --format both           # all sounds, 0.1 s of silence between them
+npx plinkfx export public/sfx --sprite --only ui,pickup        # only some categories
+```
+
+That writes `plinkfx-sprite.ogg` and `plinkfx-sprite.wav` (take 0 of each sound, back to back),
+`plinkfx-sprite.phaser.json` (Phaser's audio sprite format) and `plinkfx-sprite.json` (Howler's `sprite` map,
+`{ "coin": [offsetMs, durationMs] }`). Sprite names are the sound names. `--gap 0.25` changes the silence between sounds.
+
+```js
+// Phaser 3 or 4
+preload() {
+  this.load.audioSprite("sfx", "sfx/plinkfx-sprite.phaser.json", ["sfx/plinkfx-sprite.ogg", "sfx/plinkfx-sprite.wav"]);
+}
+create() {
+  this.sound.playAudioSprite("sfx", "coin");
+}
+```
+
+```js
+// Howler
+import { Howl } from "howler";
+const sprite = await (await fetch("sfx/plinkfx-sprite.json")).json();
+const sfx = new Howl({ src: ["sfx/plinkfx-sprite.ogg", "sfx/plinkfx-sprite.wav"], sprite });
+sfx.play("coin");
+```
+
 ## The agent skill
 
 plinkfx ships a skill for Claude Code, Codex, Cursor and other agents. Ask for *"a heavy door for a dungeon

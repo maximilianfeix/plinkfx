@@ -7,7 +7,8 @@
  *   plinkfx render <name|file.json|'{json}'> [-o out.wav] [--variant n] [--rate 48000]
  *   plinkfx measure <name|file.json|file.wav> [--like <name>] [--json]
  *   plinkfx level <file.json> [--target -16 | --like <name>]
- *   plinkfx export [dir] [--format wav|ogg|both] [--rate 48000] [--variants]
+ *   plinkfx export [dir] [--format wav|ogg|both] [--rate 48000] [--variants] [--only cat1,cat2]
+ *   plinkfx export [dir] --sprite [--format wav|ogg|both] [--rate 48000] [--gap 0.1] [--only cat1,cat2]
  */
 import { execFileSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, unlinkSync, writeFileSync } from "node:fs";
@@ -22,8 +23,8 @@ import * as all from "./sounds.gen.ts";
 import pkg from "../package.json" with { type: "json" };
 
 const VERSION = pkg.version;
-const BOOL = ["json", "variants", "help", "version"],
-  VALUE = ["out", "variant", "rate", "like", "target", "format"];
+const BOOL = ["json", "variants", "sprite", "help", "version"],
+  VALUE = ["out", "variant", "rate", "like", "target", "format", "gap", "only"];
 const die = (msg: string): never => {
   console.error(`plinkfx: ${msg}`);
   process.exit(1);
@@ -180,6 +181,10 @@ else if (!cmd || flags.help || cmd == "help")
                                               set the sound's gain: loudness on target, true peak <= -1 dBTP
   plinkfx export [dir] [--format wav|ogg|both] [--rate 48000] [--variants]
                                               write the whole library to disk
+      --only a,b    only these categories (ui,pickup,...)
+      --sprite      one audio sprite instead: plinkfx-sprite.wav/.ogg (take 0 of each sound)
+                    plus plinkfx-sprite.json (Howler) and plinkfx-sprite.phaser.json (Phaser)
+      --gap s       silence between sprite entries in seconds (default 0.1)
 
   <sound> is a name (coin), a .json file, or inline JSON ('{"layers":[...]}').
   Gallery: https://maximilianfeix.github.io/plinkfx/`);
@@ -242,29 +247,70 @@ else if (cmd == "list") {
   const dir = pos[0] || "plinkfx-sounds",
     sr = num("rate", 48000, 8000, 192000),
     fmt = String(flags.format || "wav"),
-    takes = flags.variants ? 4 : 1,
-    ogg = fmt != "wav" ? vorbis() : null;
+    takes = flags.variants ? 4 : 1;
   if (!["wav", "ogg", "both"].includes(fmt)) die(`unknown format "${fmt}" (wav, ogg or both)`);
+  if (flags.sprite && flags.variants) die("--sprite uses take 0 of each sound; drop --variants");
+  if (!flags.sprite && flags.gap !== undefined) die("--gap only works with --sprite");
+  const ogg = fmt != "wav" ? vorbis() : null;
   if (fmt != "wav" && !ogg) die("OGG export needs ffmpeg with a Vorbis encoder on your PATH (WAV works without it)");
-  let n = 0;
-  for (const s of catalog()) {
-    const sound = (all as Record<string, Sound>)[s.name.replace(/-(\w)/g, (_, c) => c.toUpperCase())],
-      sub = join(dir, s.cat || ".");
-    mkdirSync(sub, { recursive: true });
-    for (let seed = 0; seed < takes; seed++) {
-      const base = join(sub, s.name + (takes > 1 ? `-${seed + 1}` : "")),
-        bytes = wav(render(sound, { sampleRate: sr, seed }), sr);
-      writeFileSync(base + ".wav", bytes);
-      if (ogg) {
-        try {
-          execFileSync("ffmpeg", ["-loglevel", "error", "-y", "-i", base + ".wav", ...ogg, base + ".ogg"], { stdio: ["ignore", "ignore", "pipe"] });
-        } catch (e: any) {
-          die(`ffmpeg failed on ${base}.ogg: ${String(e.stderr || e.message).trim().split("\n")[0]}`);
-        }
-        if (fmt == "ogg") unlinkSync(base + ".wav");
-      }
-      n++;
-    }
+  let list = catalog();
+  if (flags.only !== undefined) {
+    const want = String(flags.only).split(",").map((c) => c.trim()).filter(Boolean),
+      cats = [...new Set(list.map((s) => s.cat))],
+      bad = want.filter((c) => !cats.includes(c));
+    if (!want.length || bad.length) die(`unknown category "${bad[0] ?? flags.only}" for --only (one of: ${cats.join(", ")})`);
+    list = list.filter((s) => want.includes(s.cat));
   }
-  console.log(`wrote ${n} sounds to ${dir}/ (${fmt}, ${sr} Hz${fmt != "wav" && ogg?.includes("-ac") ? "; OGG is dual-mono stereo because this ffmpeg has no libvorbis" : ", mono"})`);
+  const soundOf = (name: string) => (all as Record<string, Sound>)[name.replace(/-(\w)/g, (_, c) => c.toUpperCase())];
+  const toOgg = (base: string) => {
+    try {
+      execFileSync("ffmpeg", ["-loglevel", "error", "-y", "-i", base + ".wav", ...ogg!, base + ".ogg"], { stdio: ["ignore", "ignore", "pipe"] });
+    } catch (e: any) {
+      die(`ffmpeg failed on ${base}.ogg: ${String(e.stderr || e.message).trim().split("\n")[0]}`);
+    }
+    if (fmt == "ogg") unlinkSync(base + ".wav");
+  };
+  const oggNote = fmt != "wav" && ogg?.includes("-ac") ? "; OGG is dual-mono stereo because this ffmpeg has no libvorbis" : ", mono";
+  if (flags.sprite) {
+    // Every sound starts on a whole sample; offsets in the JSON are exact to the microsecond.
+    const gap = Math.round(num("gap", 0.1, 0, 10) * sr),
+      parts = list.map((s) => ({ name: s.name, x: render(soundOf(s.name), { sampleRate: sr }) })),
+      total = parts.reduce((n, p, i) => n + p.x.length + (i ? gap : 0), 0),
+      out = new Float32Array(total),
+      howler: Record<string, [number, number]> = {},
+      spritemap: Record<string, { start: number; end: number; loop: boolean }> = {},
+      ms = (n: number) => Math.round((n / sr) * 1e6) / 1e3,
+      sec = (n: number) => Math.round((n / sr) * 1e6) / 1e6;
+    let at = 0;
+    for (const p of parts) {
+      out.set(p.x, at);
+      howler[p.name] = [ms(at), ms(p.x.length)];
+      spritemap[p.name] = { start: sec(at), end: sec(at + p.x.length), loop: false };
+      at += p.x.length + gap;
+    }
+    mkdirSync(dir, { recursive: true });
+    const base = join(dir, "plinkfx-sprite"),
+      resources = fmt == "wav" ? ["plinkfx-sprite.wav"] : fmt == "ogg" ? ["plinkfx-sprite.ogg"] : ["plinkfx-sprite.ogg", "plinkfx-sprite.wav"],
+      json = (o: unknown) => new TextEncoder().encode(JSON.stringify(o, null, 2) + "\n");
+    writeOut(base + ".wav", wav(out, sr));
+    if (ogg) toOgg(base);
+    // Howler: one "name": [offsetMs, durationMs] per line.
+    writeOut(base + ".json", new TextEncoder().encode("{\n" + Object.entries(howler).map(([k, v]) => `  ${JSON.stringify(k)}: [${v.join(", ")}]`).join(",\n") + "\n}\n"));
+    writeOut(base + ".phaser.json", json({ resources, spritemap }));
+    console.log(`wrote a sprite of ${parts.length} sounds (${(total / sr).toFixed(1)} s) to ${dir}/: ${resources.join(", ")}, plinkfx-sprite.json (Howler), plinkfx-sprite.phaser.json (Phaser) (${sr} Hz${oggNote})`);
+  } else {
+    let n = 0;
+    for (const s of list) {
+      const sound = soundOf(s.name),
+        sub = join(dir, s.cat || ".");
+      mkdirSync(sub, { recursive: true });
+      for (let seed = 0; seed < takes; seed++) {
+        const base = join(sub, s.name + (takes > 1 ? `-${seed + 1}` : ""));
+        writeFileSync(base + ".wav", wav(render(sound, { sampleRate: sr, seed }), sr));
+        if (ogg) toOgg(base);
+        n++;
+      }
+    }
+    console.log(`wrote ${n} sounds to ${dir}/ (${fmt}, ${sr} Hz${oggNote})`);
+  }
 } else die(`unknown command "${cmd}". Run 'plinkfx --help'.`);
