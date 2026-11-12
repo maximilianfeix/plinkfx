@@ -7,17 +7,19 @@ Times in seconds, frequencies in Hz. Everything is optional except `layers`.
 
 | Field | Default | What it does |
 |---|---|---|
-| `wave` | `"sine"` | `sine`, `triangle`, `square`, `saw` (band-limited), `noise` (white), `pink` (softer noise), `brown` (rumble), `crunch` (sample-and-hold noise at `freq`, the 8-bit noise), `metal` (six inharmonic squares, for bells, cymbals, clanks) |
+| `wave` | `"sine"` | `sine`, `triangle`, `square`, `saw` (band-limited), `noise` (white), `pink` (softer noise), `brown` (rumble), `crunch` (sample-and-hold noise at `freq`, the 8-bit noise), `metal` (six inharmonic squares, for bells, cymbals, clanks), `modal` (decaying sine modes at `freq` × `modes`: wood, metal bars, glass; sounds like a material, not a tone) |
 | `freq` | 440 | Start pitch. For `crunch` it is the noise rate (higher = finer). |
 | `to` | - | End pitch, exponential sweep over `sweep` seconds (default: the whole layer). |
 | `curve` | 1 | Sweep shape. 2-4 = most of the change happens at the start (lasers, drops). Below 1 = slow start (charge-ups). |
 | `arp`, `arpRate`, `loop` | -, 0.06, false | Semitone steps, e.g. `[0, 4, 7, 12]` (major arpeggio), stepped every `arpRate` s. `loop: true` repeats them. |
 | `vib` | - | `[rate Hz, depth semitones]`. `[6, 0.15]` = gentle; `[20, 2]` = boing/warble. |
 | `fm` | - | `[ratio, index, decay s]`. Bells: ratio 3.5 or 2.76, index 1.5-3, decay 0.1. Metallic: ratio 1.41. |
+| `modes` | `[1, 2.756, 5.404, 8.933]` | Mode ratios for `modal` (max 8). Wood: `[1, 2.32, 4.25, 6.63]` at 150-300 Hz. Metal: the default at 400-900 Hz with long `d`. Higher modes decay faster. |
+| `kt` | 0 | Key tracking: filter cutoffs follow the pitch sweep, vibrato and arpeggio. `kt: 1` on lasers darkens the tail as it falls; on noise it lets `to`/`vib` move the band. |
 | `duty` | 0.5 | Pulse width for `square`; 0.125 and 0.25 sound thinner, more "NES". |
 | `at` | 0 | Start delay of the layer. |
 | `a`, `h`, `d` | 0.002, 0, 0.2 | Attack, hold, decay. Attack never goes below 1 ms (no clicks). |
-| `shape` | 2 | Decay curve: 1 linear, 2 natural, 3-4 snappy (hits, clicks). |
+| `shape` | 2 | Decay curve. Positive: `(1-t)^shape`, 1 linear, 2 natural, 3-4 snappy. **Negative: exponential**, fast drop with a long natural tail, like real impacts: `-5`…`-7` for hits, steps and knocks, `-3`…`-4` for tonal UI and swishes. |
 | `lp`, `lpTo` | - | Low-pass cutoff, sweeping to `lpTo` over the layer. |
 | `hp`, `hpTo` | - | High-pass. |
 | `bp`, `bpTo` | - | Band-pass centre. Good for whooshes (sweep it) and filtered noise. |
@@ -34,21 +36,24 @@ Times in seconds, frequencies in Hz. Everything is optional except `layers`.
 | `bits` | `6` | Bit crush. 4-6 = gritty retro. |
 | `rate` | `11025` | Sample-rate crush, aliasing on purpose. |
 | `vary` | `0.4` | Pitch spread between the 4 takes, semitones. Footsteps 1-1.5; jingles 0.05. |
+| `varyF` | `0` | Extra brightness spread between takes (filters), semitones. Footsteps 4, hits 2, whooshes 3, UI 1. |
+| `varyG` | `0` | Level spread per layer between takes, dB. Footsteps 2, hits 1.5. |
+| `limit` | set by bake | Look-ahead peak limiter. The catalogue bake turns it on for short, spiky sounds when it gains loudness without clipping. |
 | `gain` | set by bake | Output level. In your own sounds, use it to keep the true peak under -1 dBTP. |
 
 ## Recipes
 
 Start from these, then shape by ear (the user's) and by numbers (yours).
 
-- **UI click** (20-40 ms): sine 1900→900 Hz, `d` 0.03, `shape` 3 + noise `bp` 4000, `d` 0.012.
+- **UI click**: contact `noise bp 3500 q 3, d .004, shape -6` + tonal blip sine 1900→900 (−4 dB) + release tick `noise bp 2500 q 5, at .012, d .005`.
 - **Coin**: square `duty` 0.25 at ~988 Hz, `arp: [0, 5]`, `arpRate` 0.07, `h` 0.05, `d` 0.3 + sine an octave up; small `verb`.
 - **Jump**: square 250→640 Hz, `d` 0.15, `lp` 3500 + sine an octave down.
 - **Land / thud**: sine 130→55 `curve` 2 + pink noise `lp` 900, both 0.07-0.11 s.
-- **Hit**: noise `hp` 2500 (20 ms) + noise `lp` 2600→600 (90 ms) + sine 160→55 with `drive` 1.
+- **Hit**: `noise bp 1800, d .01` click + `pink lp 1500→300, d .09, shape -6, drive 2` body + sine 160→70 `shape -5` + `brown lp 250, d .35, shape -5` tail; `varyF 2, varyG 1.5`.
 - **Explosion**: noise `hp` (60 ms crack) + brown `lp` 1100→140 (1 s, `drive`) + sine 110→36 `curve` 3 + crunch 3000→300; `verb` 0.45.
 - **Laser**: square 1500→220 `curve` 3, `d` 0.18 + saw an octave down.
 - **Power-up**: square arpeggio `[0, 4, 7, 12, 16, 19, 24]` at 0.045 s + triangle an octave down.
-- **Footstep**: filtered noise 50-110 ms + a short sine knock for hard floors; `vary` 1.5.
+- **Footstep**: heel `pink lp 500→250, d .09, shape -6` + surface (stone `noise bp 520 q 10`, wood `modal 180 [1,2.3,4.1]`) + scuff `noise bp 1800, d .03` + tail `brown lp 220, d .24, shape -4`; `vary 1.5, varyF 4, varyG 2`. 150-250 ms.
 - **Magic**: sine with `fm` [3.5, 1.5, 0.15] arpeggio + `metal` with `hp` 7000 + `echo`/`verb`.
 - **Door creak**: saw 38→62 Hz with `vib` [3.5, 2.5], `bp` 1100, `q` 5, 0.6-0.8 s.
 - **Alert**: square or saw pulses with `h` and `shape` 1; keep `vary` ~0.1 so it stays recognisable.

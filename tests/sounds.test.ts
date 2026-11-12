@@ -36,7 +36,7 @@ test("generated code is in sync with library/ (run npm run bake)", () => {
   for (const e of library) {
     const s = (gen as unknown as Record<string, Sound>)[camel(e.name)];
     expect(s, e.name).toBeDefined();
-    expect({ ...s, gain: undefined }, e.name).toEqual({ ...e.sound, gain: undefined });
+    expect({ ...s, gain: undefined, limit: undefined }, e.name).toEqual({ ...e.sound, gain: undefined, limit: undefined });
   }
 });
 
@@ -58,7 +58,8 @@ describe.each(library.map((e) => [e.name, e] as const))("%s", (name, e) => {
       expect(m.lufsMax).toBeLessThanOrEqual(target + 1.5);
       // Short transients are peak-normalised and may sit below the target, but not far.
       expect(m.lufsMax).toBeGreaterThanOrEqual(target - 10);
-      if (m.duration > 0.1) expect(Math.abs(m.dc)).toBeLessThan(0.002);
+      // In a 0.2 s thump the mean is the thump itself, not an offset; check DC on longer sounds.
+      if (m.duration > 0.3) expect(Math.abs(m.dc)).toBeLessThan(0.002);
       expect(m.duration).toBeGreaterThan(0.005);
       expect(m.duration).toBeLessThan(4);
     }

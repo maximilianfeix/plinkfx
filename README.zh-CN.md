@@ -5,7 +5,7 @@
 
 # plinkfx
 
-**<!-- count -->163<!-- /count --> 个游戏音效，全部用代码写成。** 金币、跳跃、打击、激光、爆炸、UI 点击……每个音效只是几个看得懂的参数，由 2.5 kB 的播放器在浏览器里实时合成。音效 CC0，可商用，无需署名；没有音频文件，无需注册。
+**<!-- count -->163<!-- /count --> 个游戏音效，全部用代码写成。** 金币、跳跃、打击、激光、爆炸、UI 点击……每个音效只是几个看得懂的参数，由 2.8 kB 的播放器在浏览器里实时合成。音效 CC0，可商用，无需署名；没有音频文件，无需注册。
 
 <a href="https://maximilianfeix.github.io/plinkfx/"><img src="docs/media/gallery.gif" alt="plinkfx 在线音效库：点击方块即可试听 coin、jump、laser、explosion 等音效，每个方块显示波形" width="100%"></a>
 
@@ -23,7 +23,7 @@ play("coin");
 
 每个音效有 4 个变体，每次播放都会换一个和上次不同的，第一百个金币也不会听起来像在循环。
 
-只打包用到的音效（播放器 + 一个音效约 2.4 kB gzip）：
+只打包用到的音效（播放器 + 一个音效约 2.7 kB gzip）：
 
 ```js
 import { play } from "plinkfx/core";

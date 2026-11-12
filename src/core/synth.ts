@@ -34,7 +34,7 @@ const svf = (sr: number, q: number, mode: number) => {
   };
 };
 
-const layer = (L: Layer, out: Float32Array, sr: number, pitch: number, stretch: number, noise: () => number) => {
+const layer = (L: Layer, out: Float32Array, sr: number, pitch: number, stretch: number, noise: () => number, fv = 1, gv = 1) => {
   const wave = L.wave || "sine",
     f0 = (L.freq || 440) * pitch,
     a = Math.max(L.a ?? 0.002, 0.001),
@@ -46,16 +46,16 @@ const layer = (L: Layer, out: Float32Array, sr: number, pitch: number, stretch: 
     shape = L.shape || 2,
     duty = L.duty || 0.5,
     arpRate = L.arpRate || 0.06,
-    gain = L.gain ?? 1,
+    gain = (L.gain ?? 1) * gv,
     drive = L.drive || 0,
     fm = L.fm,
     start = Math.round((L.at || 0) * sr),
     n = Math.min(Math.round(len * sr), out.length - start),
     q = L.q || 0.707,
     filters: [(x: number, f: number) => number, number, number][] = [];
-  if (L.lp) filters.push([svf(sr, q, 0), L.lp, L.lpTo || L.lp]);
-  if (L.bp) filters.push([svf(sr, q, 1), L.bp, L.bpTo || L.bp]);
-  if (L.hp) filters.push([svf(sr, q, 2), L.hp, L.hpTo || L.hp]);
+  if (L.lp) filters.push([svf(sr, q, 0), L.lp * fv, (L.lpTo || L.lp) * fv]);
+  if (L.bp) filters.push([svf(sr, q, 1), L.bp * fv, (L.bpTo || L.bp) * fv]);
+  if (L.hp) filters.push([svf(sr, q, 2), L.hp * fv, (L.hpTo || L.hp) * fv]);
   let phase = 0,
     mod = 0,
     held = 0,
@@ -63,7 +63,9 @@ const layer = (L: Layer, out: Float32Array, sr: number, pitch: number, stretch: 
     b1 = 0,
     b2 = 0,
     br = 0;
-  const ph = METAL.map(() => noise());
+  // Modal wave: free-bar ratios by default (wood, metal bars); up to 8 modes.
+  const ph = [...METAL, 0, 0].map(() => noise()),
+    MR = (L.modes || [1, 2.756, 5.404, 8.933]).slice(0, 8);
   for (let i = 0; i < n; i++) {
     const t = i / sr;
     let f = f0;
@@ -113,6 +115,13 @@ const layer = (L: Layer, out: Float32Array, sr: number, pitch: number, stretch: 
         if (phase + dt >= 1 || !i) held = w;
         s = held;
         break;
+      case "modal":
+        s = 0;
+        for (let j = 0; j < MR.length; j++) {
+          ph[j] = (ph[j] + dt * MR[j]) % 1;
+          s += Math.sin(TAU * ph[j]) * Math.exp((-t * MR[j] * 4) / d) / (j + 1);
+        }
+        break;
       case "metal":
         s = 0;
         for (let j = 0; j < 6; j++) {
@@ -126,8 +135,11 @@ const layer = (L: Layer, out: Float32Array, sr: number, pitch: number, stretch: 
     }
     phase = (phase + dt) % 1;
     const u = i / n;
-    for (const [fn, from, to] of filters) s = fn(s, from * (to / from) ** u);
-    const e = t < a ? t / a : t < a + h ? 1 : (1 - (t - a - h) / d) ** shape;
+    // Key tracking: filters follow the pitch (lasers darken as they fall; noise can sweep).
+    const kt = L.kt ? (f / f0) ** L.kt : 1;
+    for (const [fn, from, to] of filters) s = fn(s, from * (to / from) ** u * kt);
+    // shape > 0: (1-u)^shape. shape < 0: exponential decay (fast drop, long natural tail).
+    const e = t < a ? t / a : t < a + h ? 1 : shape < 0 ? (Math.exp((shape * (t - a - h)) / d) - Math.exp(shape)) / (1 - Math.exp(shape)) : (1 - (t - a - h) / d) ** shape;
     s *= e;
     if (drive) s = Math.tanh(s * (1 + drive)) / Math.tanh(1 + drive);
     out[start + i] += s * gain;
@@ -143,15 +155,16 @@ export function render(sound: Sound, opts: RenderOptions = {}): Float32Array {
     seed = opts.seed || 0,
     r = rng(seed * 7919 + 17),
     pitch = seed ? 2 ** (((r() * 2 - 1) * (sound.vary ?? 0.4)) / 12) : 1,
-    stretch = (L: Layer) => (seed && L.d ? 1 + (r() * 2 - 1) * 0.07 : 1);
-  const layers = sound.layers.map((L) => [L, stretch(L)] as const);
+    stretch = (L: Layer) => (seed && L.d ? 1 + (r() * 2 - 1) * 0.07 : 1),
+    vf = sound.varyF ?? 0;
+  const layers = sound.layers.map((L) => [L, stretch(L), seed ? pitch * 2 ** (((r() * 2 - 1) * vf) / 12) : 1, seed ? 10 ** (((r() * 2 - 1) * (sound.varyG ?? 0)) / 20) : 1] as const);
   let end = 0;
   for (const [L, s] of layers) end = Math.max(end, (L.at || 0) + Math.max(L.a ?? 0.002, 0.001) + (L.h || 0) + (L.d ?? 0.2) * s);
   const echo = sound.echo,
     verb = sound.verb;
   const tail = (echo ? Math.min(echo[0] * Math.ceil(Math.log(0.001) / Math.log(echo[1] || 0.01)), 1.5) : 0) + (verb ? 0.2 + verb[0] * 1.8 : 0);
   let x = new Float32Array(Math.ceil((end + tail) * sr) + 1);
-  layers.forEach(([L, s], i) => layer(L, x, sr, pitch, s, rng(seed * 1009 + i * 31 + 7)));
+  layers.forEach(([L, s, fv, gv], i) => layer(L, x, sr, pitch, s, rng(seed * 1009 + i * 31 + 7), fv, gv));
 
   if (sound.rate || sound.bits) {
     const hold = sound.rate ? sr / sound.rate : 1,
@@ -217,6 +230,15 @@ export function render(sound: Sound, opts: RenderOptions = {}): Float32Array {
     px = x[i];
     x[i] = py * g;
     if (Math.abs(x[i]) > 3e-4) last = i;
+  }
+  if (sound.limit) {
+    // Look-ahead peak limiter (1.5 ms attack, 50 ms release, ceiling -1.5 dBFS): lets short,
+    // spiky sounds reach their loudness without clipping.
+    const gl = new Float32Array(x.length),
+      A = sr * 0.0015,
+      Rl = sr * 0.05;
+    for (let i = x.length; i--; ) gl[i] = Math.min(0.84 / Math.max(Math.abs(x[i]), 1e-9), 1, i + 1 < x.length ? gl[i + 1] + 1 / A : 1);
+    for (let i = 0; i < x.length; i++) x[i] *= gl[i] = Math.min(gl[i], i ? gl[i - 1] + 1 / Rl : 1);
   }
   x = x.slice(0, last + 1);
   const fade = Math.min(Math.round(sr * 0.005), x.length);

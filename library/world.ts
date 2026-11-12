@@ -2,18 +2,22 @@ import { def } from "./def.ts";
 
 export default def("world", {
   whoosh: ["Medium whoosh for dashes and swings", {
+    varyF: 3,
+    varyG: 1.5,
     layers: [
       { wave: "pink", bp: 450, bpTo: 1800, q: 1.6, a: 0.13, d: 0.02, shape: 1 },
-      { wave: "pink", bp: 1800, bpTo: 500, q: 1.6, at: 0.13, a: 0.01, d: 0.2, shape: 2 },
+      { wave: "pink", bp: 1800, bpTo: 500, q: 1.6, at: 0.13, a: 0.01, d: 0.3, shape: -4 },
       { wave: "noise", bp: 3000, bpTo: 6000, a: 0.12, d: 0.12, gain: 0.2 },
       { wave: "brown", lp: 300, a: 0.12, d: 0.15, gain: 0.3 },
     ],
   }],
   swing: ["Sword or stick swing", {
     vary: 1,
+    varyF: 3,
+    varyG: 1.5,
     layers: [
       { wave: "noise", bp: 900, bpTo: 3500, q: 2.5, a: 0.06, d: 0.1, shape: 2 },
-      { wave: "noise", bp: 3000, bpTo: 1200, q: 2, at: 0.08, a: 0.02, d: 0.06, gain: 0.4 },
+      { wave: "noise", bp: 3000, bpTo: 900, q: 2, at: 0.08, a: 0.02, d: 0.22, shape: -4, gain: 0.45 },
     ],
   }],
   dash: ["Quick dash with a burst", {
@@ -66,9 +70,11 @@ export default def("world", {
   }],
   toss: ["Throw something", {
     vary: 1,
+    varyF: 3,
+    varyG: 1.5,
     layers: [
       { wave: "noise", bp: 500, bpTo: 1400, q: 1.5, a: 0.06, d: 0.03, shape: 1, drive: 1 },
-      { wave: "noise", bp: 1400, bpTo: 600, q: 1.5, at: 0.06, a: 0.01, d: 0.1, shape: 2, drive: 1 },
+      { wave: "noise", bp: 1400, bpTo: 500, q: 1.5, at: 0.06, a: 0.01, d: 0.25, shape: -4, drive: 1 },
     ],
   }],
   "fire-crackle": ["Campfire crackle", {

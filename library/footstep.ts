@@ -1,70 +1,81 @@
 import { def } from "./def.ts";
 
-// Footsteps get a wider pitch spread so a walk cycle never sounds like a loop.
+// Footsteps: heel (low body) + scuff (surface texture) + a short tail, all with exponential decay.
+// Takes vary in pitch, brightness and level so a walk cycle never sounds like a loop.
+const walk = { vary: 1.5, varyF: 4, varyG: 2 };
+const heel = (lp = 500, d = 0.09, gain = 1) => ({ wave: "pink" as const, lp, lpTo: lp / 2, a: 0.001, d, shape: -6, drive: 0.5, gain });
+const tail = (gain = 0.35) => ({ wave: "brown" as const, lp: 220, a: 0.002, d: 0.24, shape: -4, gain });
+
 export default def("footstep", {
   "step-grass": ["Soft step on grass", {
-    vary: 1.5,
+    ...walk,
     layers: [
-      { wave: "pink", lp: 900, a: 0.004, d: 0.05, shape: 2.5, gain: 0.5 },
-      { wave: "pink", hp: 1500, lp: 6000, a: 0.008, d: 0.09, shape: 2.5, gain: 0.7 },
-      { wave: "crunch", freq: 7000, hp: 3000, at: 0.01, a: 0.01, d: 0.06, gain: 0.25 },
+      heel(450, 0.08, 0.8),
+      { wave: "pink", bp: 1100, q: 0.8, a: 0.008, d: 0.14, shape: -4, gain: 0.55 },
+      { wave: "pink", hp: 2000, lp: 5000, at: 0.01, a: 0.01, d: 0.12, shape: -4, gain: 0.25 },
+      { wave: "crunch", freq: 7000, hp: 3000, at: 0.012, a: 0.01, d: 0.08, shape: -4, gain: 0.1 },
+      tail(0.3),
     ],
   }],
   "step-stone": ["Hard sole on stone", {
-    vary: 1.5,
+    ...walk,
     layers: [
-      { wave: "pink", lp: 700, a: 0.001, d: 0.04, shape: 3, drive: 1, gain: 0.7 },
-      { wave: "noise", bp: 1800, q: 1.3, a: 0.001, h: 0.008, d: 0.04, shape: 3, drive: 3, gain: 0.8 },
-      { wave: "noise", bp: 520, q: 10, a: 0.001, d: 0.045, shape: 2.5, gain: 0.7 },
-      { wave: "sine", freq: 190, to: 110, at: 0.003, a: 0.001, d: 0.05, shape: 3, gain: 0.5 },
+      heel(600, 0.07),
+      { wave: "noise", bp: 1800, q: 1.2, at: 0.004, a: 0.001, d: 0.03, shape: -5, drive: 1, gain: 0.35 },
+      { wave: "noise", bp: 520, q: 10, a: 0.001, d: 0.06, shape: -5, gain: 0.5 },
+      tail(0.25),
     ],
   }],
   "step-wood": ["Step on a wooden floor", {
-    vary: 1.5,
+    ...walk,
     layers: [
-      { wave: "sine", freq: 230, to: 160, a: 0.001, d: 0.07, shape: 2.5 },
-      { wave: "noise", bp: 900, q: 2.5, a: 0.001, d: 0.05, shape: 3, gain: 0.6 },
-      { wave: "triangle", freq: 460, a: 0.001, d: 0.04, shape: 3, gain: 0.15 },
+      heel(500, 0.08, 0.8),
+      { wave: "modal", freq: 180, modes: [1, 2.3, 4.1], a: 0.001, d: 0.12, shape: -5, gain: 0.5 },
+      { wave: "noise", bp: 1800, q: 1.2, at: 0.006, a: 0.001, d: 0.025, shape: -5, gain: 0.25 },
+      tail(0.2),
     ],
   }],
   "step-metal": ["Step on a metal grate", {
-    vary: 1.5,
+    ...walk,
     verb: [0.2, 0.15],
     layers: [
-      { wave: "metal", freq: 600, hp: 1800, a: 0.001, d: 0.12, shape: 3.5, drive: 1, gain: 0.7 },
-      { wave: "noise", bp: 1500, a: 0.001, d: 0.03, shape: 3, drive: 1 },
-      { wave: "pink", lp: 600, a: 0.001, d: 0.04, shape: 3, drive: 1, gain: 0.8 },
-      { wave: "sine", freq: 150, a: 0.001, d: 0.05, gain: 0.5 },
+      heel(550, 0.07, 0.8),
+      { wave: "modal", freq: 420, modes: [1, 2.76, 5.4, 8.93], a: 0.001, d: 0.3, shape: -4, gain: 0.35 },
+      { wave: "metal", freq: 600, hp: 1800, a: 0.001, d: 0.12, shape: -5, gain: 0.35 },
+      { wave: "noise", bp: 1500, a: 0.001, d: 0.03, shape: -5, gain: 0.4 },
     ],
   }],
   "step-snow": ["Crunchy step in snow", {
-    vary: 1.5,
+    ...walk,
     layers: [
-      { wave: "crunch", freq: 9000, hp: 1200, lp: 7000, a: 0.02, d: 0.13, shape: 2 },
-      { wave: "pink", lp: 1500, a: 0.02, d: 0.1, gain: 0.5 },
+      heel(400, 0.08, 0.6),
+      { wave: "crunch", freq: 9000, hp: 1200, lp: 7000, a: 0.02, d: 0.15, shape: -3, gain: 0.8 },
+      { wave: "pink", lp: 1500, a: 0.02, d: 0.12, shape: -4, gain: 0.5 },
     ],
   }],
   "step-gravel": ["Step on loose gravel", {
-    vary: 1.5,
+    ...walk,
     layers: [
-      { wave: "pink", lp: 800, a: 0.002, d: 0.045, shape: 3, drive: 1, gain: 0.8 },
-      { wave: "crunch", freq: 3500, hp: 1500, a: 0.005, d: 0.1, shape: 2, drive: 1 },
-      ...[0.02, 0.04, 0.06, 0.085].map((at, i) => ({ wave: "noise" as const, bp: [2500, 3800, 3000, 4200][i], q: 2, at, a: 0.001, d: 0.015, shape: 3, gain: 0.5 - i * 0.07 })),
+      heel(500, 0.08, 0.8),
+      { wave: "crunch", freq: 3000, hp: 900, lp: 4500, a: 0.005, d: 0.12, shape: -4, drive: 1, gain: 0.6 },
+      ...[0.02, 0.045, 0.07, 0.1].map((at, i) => ({ wave: "noise" as const, bp: [1400, 2200, 1700, 2600][i], q: 3, at, a: 0.001, d: 0.02, shape: -5, gain: 0.45 - i * 0.07 })),
+      tail(0.2),
     ],
   }],
   "step-water": ["Splashy step in a puddle", {
-    vary: 1.5,
+    ...walk,
     layers: [
-      { wave: "noise", bp: 1300, bpTo: 500, q: 1.5, a: 0.004, d: 0.12, shape: 2 },
-      { wave: "sine", freq: 350, to: 900, curve: 3, at: 0.03, a: 0.002, d: 0.05, shape: 3, gain: 0.35 },
+      heel(450, 0.07, 0.6),
+      { wave: "noise", bp: 1300, bpTo: 500, q: 1.5, a: 0.004, d: 0.15, shape: -3 },
+      { wave: "sine", freq: 350, to: 900, curve: 3, at: 0.03, a: 0.002, d: 0.06, shape: 3, gain: 0.35 },
     ],
   }],
   "step-sand": ["Muffled step in sand", {
-    vary: 1.5,
+    ...walk,
     layers: [
-      { wave: "pink", lp: 700, a: 0.006, d: 0.07, shape: 2.5, gain: 0.5 },
-      { wave: "pink", hp: 400, lp: 2600, a: 0.015, d: 0.11, shape: 2 },
-      { wave: "noise", hp: 3000, lp: 7000, at: 0.02, a: 0.02, d: 0.08, gain: 0.12 },
+      heel(400, 0.09, 0.7),
+      { wave: "pink", hp: 400, lp: 2600, a: 0.015, d: 0.14, shape: -3 },
+      { wave: "noise", hp: 3000, lp: 7000, at: 0.02, a: 0.02, d: 0.08, shape: -4, gain: 0.12 },
     ],
   }],
   "step-retro": ["8-bit footstep tick", {
@@ -74,11 +85,14 @@ export default def("footstep", {
   }],
   "step-heavy": ["Heavy creature stomp", {
     vary: 1,
+    varyF: 3,
+    varyG: 1.5,
     verb: [0.2, 0.12],
     layers: [
-      { wave: "sine", freq: 75, to: 38, a: 0.002, d: 0.18, shape: 2, drive: 1 },
-      { wave: "brown", lp: 500, a: 0.002, d: 0.15, gain: 0.8 },
-      { wave: "noise", bp: 900, a: 0.001, d: 0.03, gain: 0.3 },
+      { wave: "sine", freq: 90, to: 45, a: 0.002, d: 0.25, shape: -5, drive: 1 },
+      heel(400, 0.15),
+      { wave: "noise", bp: 900, a: 0.001, d: 0.04, shape: -5, gain: 0.3 },
+      tail(0.35),
     ],
   }],
 });
