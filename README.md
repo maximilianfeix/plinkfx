@@ -3,13 +3,13 @@
   <img alt="plinkfx: game sound effects as code" src="brand/banners/readme-light.svg" width="100%">
 </picture>
 
-**<!-- count -->163<!-- /count --> game sound effects, written as code.** Coins, jumps, hits, lasers, explosions,
-UI clicks and the rest of what a game needs, each one a few readable numbers that a 2.8 kB player turns into sound.
+**<!-- count -->180<!-- /count --> game sound effects, written as code.** Coins, jumps, hits, lasers, explosions,
+UI clicks and the rest of what a game needs, each one a few readable numbers that a 2.9 kB player turns into sound.
 CC0, no audio files, no account.
 
 <a href="https://maximilianfeix.github.io/plinkfx/"><img src="docs/media/gallery.gif" alt="The plinkfx gallery: clicking tiles plays coin, jump, laser, explosion and more; each tile shows its waveform" width="100%"></a>
 
-**[▶ Hear all <!-- count -->163<!-- /count --> in your browser](https://maximilianfeix.github.io/plinkfx/)** (one click per sound, tweak any of them and share the link) · [play the 30-second demo game](https://maximilianfeix.github.io/plinkfx/game.html) · [watch the 30 s video with sound](docs/media/hero-16x9.mp4)
+**[▶ Hear all <!-- count -->180<!-- /count --> in your browser](https://maximilianfeix.github.io/plinkfx/)** (one click per sound, tweak any of them and share the link) · [play the 30-second demo game](https://maximilianfeix.github.io/plinkfx/game.html) · [watch the 30 s video with sound](docs/media/hero-16x9.mp4)
 
 ```bash
 npm i plinkfx
@@ -27,7 +27,7 @@ sound like a loop.
 <details>
 <summary>More ways to play: options, game setup, tree-shaking, your own sound</summary>
 
-**By name** (every sound included, 13.5 kB gzipped):
+**By name** (every sound included, 14.9 kB gzipped):
 
 ```js
 import { play, volume } from "plinkfx";
@@ -57,7 +57,7 @@ stopAll();
 Everything is safe to import on the server (Next.js, Nuxt, SvelteKit): `play()` and `volume()` do
 nothing there.
 
-**Only what you use** (player plus one sound: 2.7 kB gzipped). Importing anything from `"plinkfx"`
+**Only what you use** (player plus one sound: 2.8 kB gzipped). Importing anything from `"plinkfx"`
 includes every sound, so use the subpaths when size matters:
 
 ```js
@@ -113,13 +113,15 @@ const useSfx = (name) => useCallback((opts) => play(name, opts), [name]);
 | Hits | 15 | `hit` `hit-heavy` `punch` `hurt` `enemy-die` `sword-hit` `block` `crit` |
 | Explosions | 10 | `explosion` `explosion-big` `explosion-retro` `firework` `implosion` |
 | Power-ups | 12 | `powerup` `level-up` `extra-life` `shield-on` `heal` `charge-up` |
-| Shots & lasers | 16 | `laser` `blaster` `zap` `pew` `gunshot` `ricochet` `railgun` `reload` |
+| Shots & lasers | 17 | `laser` `blaster` `zap` `pew` `gunshot` `ricochet` `bow-twang` `reload` |
 | Footsteps | 10 | `step-grass` `step-stone` `step-wood` `step-metal` `step-snow` `step-water` |
-| Magic | 12 | `sparkle` `spell-cast` `fireball` `ice` `teleport` `portal` `lightning` |
+| Magic | 13 | `sparkle` `spell-cast` `fireball` `ice` `teleport` `harp` `lightning` |
 | Alerts | 10 | `alarm` `warning` `low-health` `heartbeat` `countdown` `radar-ping` |
 | Jingles | 9 | `victory` `checkpoint` `level-complete` `game-over` `secret-found` `achievement` |
 | Doors & mechanics | 10 | `door-open` `door-heavy` `lock-open` `chest-open` `lever` `ratchet` |
 | World | 11 | `whoosh` `swing` `splash` `water-drop` `bubble` `wind` `glass-break` |
+| Creatures | 9 | `bat-flap` `slime-blob` `growl-small` `ghost-moan` `bee-buzz` `voice-babble` |
+| Nature | 6 | `thunder-far` `rain-drop` `bird-chirp` `frog-croak` `leaf-rustle` `stone-drop` |
 <!-- /catalog -->
 
 Every sound with a one-line description: `npx plinkfx list`, or the [gallery](https://maximilianfeix.github.io/plinkfx/).
@@ -148,7 +150,7 @@ Each sound in the gallery also has a "download .wav" button. Ready-made players 
 
 ### One audio sprite (Phaser, Howler)
 
-For the web, one file with every sound means one request instead of 163:
+For the web, one file with every sound means one request instead of 180:
 
 ```bash
 npx plinkfx export public/sfx --sprite --format both           # all sounds, 0.1 s of silence between them
@@ -229,9 +231,9 @@ sfxr (DrPetter, 2007) started this genre, and these are the tools most people re
 | | **plinkfx** | [ZzFX](https://github.com/KilledByAPixel/ZzFX) | [jsfxr](https://github.com/chr15m/jsfxr) | [Kenney audio packs](https://kenney.nl/assets/category:Audio) |
 |---|---|---|---|---|
 | What it is | named sound library as code | tiny synth + designer | sfxr port: generator + library | WAV/OGG asset packs |
-| Size (gzip) | 2.8 kB player, 13.5 kB with all sounds | ~1.3 kB | ~6.3 kB | no code, files |
+| Size (gzip) | 2.9 kB player, 14.9 kB with all sounds | ~1.3 kB | ~6.3 kB | no code, files |
 | Licence | CC0 sounds, MIT code | MIT | Unlicense | CC0 |
-| Named sounds | <!-- count -->163<!-- /count --> | 4 examples, random generators | random generators per category | many, generic file names |
+| Named sounds | <!-- count -->180<!-- /count --> | 4 examples, random generators | random generators per category | many, generic file names |
 | Matched loudness | yes, measured in tests | no | no | not stated |
 | Same input, same samples | yes, seeded and hash-tested | only with randomness set to 0 | per saved parameter set | fixed files |
 | Variations | 4 seeded takes per sound | edit or randomise | mutate | separate files |

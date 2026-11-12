@@ -204,6 +204,8 @@ export const ricochet: Sound = {"verb":[0.3,0.15],"layers":[{"wave":"noise","bp"
 export const dryFire: Sound = {"verb":[0.15,0.1],"layers":[{"wave":"metal","freq":1200,"bp":3500,"q":2,"a":0.001,"h":0.006,"d":0.03,"shape":3,"drive":4},{"wave":"sine","freq":320,"to":200,"at":0.002,"a":0.001,"d":0.04,"shape":3,"drive":1,"gain":0.4},{"wave":"metal","freq":1500,"bp":4000,"q":2,"at":0.06,"a":0.001,"d":0.02,"shape":3,"drive":2,"gain":0.5}],"limit":1,"gain":0.983};
 /** Reload: two metal clicks */
 export const reload: Sound = {"layers":[{"wave":"metal","freq":1100,"bp":3500,"q":2,"a":0.001,"d":0.06,"shape":3,"drive":2},{"wave":"noise","bp":1500,"q":2,"at":0.005,"a":0.001,"d":0.03,"gain":0.4},{"wave":"metal","freq":800,"bp":2400,"q":2,"at":0.22,"a":0.001,"d":0.09,"shape":3,"drive":2},{"wave":"noise","bp":1100,"q":2,"at":0.225,"a":0.001,"d":0.04,"gain":0.5},{"wave":"sine","freq":200,"to":140,"at":0.22,"a":0.001,"d":0.05,"gain":0.4}],"limit":1,"gain":0.816};
+/** Bowstring released */
+export const bowTwang: Sound = {"vary":1,"varyF":2,"layers":[{"wave":"pluck","freq":98,"a":0.001,"d":0.45,"shape":-3,"damp":0.994,"blend":0.46,"lp":2200},{"wave":"noise","bp":1500,"a":0.001,"d":0.012,"shape":-5,"gain":0.5},{"wave":"noise","bp":900,"bpTo":2600,"q":2,"at":0.02,"a":0.03,"d":0.12,"shape":-3,"gain":0.25}],"limit":1,"gain":2.14};
 /** Soft step on grass */
 export const stepGrass: Sound = {"vary":1.5,"varyF":4,"varyG":2,"layers":[{"wave":"pink","lp":450,"lpTo":225,"a":0.001,"d":0.08,"shape":-6,"drive":0.5,"gain":0.8},{"wave":"pink","bp":1100,"q":0.8,"a":0.008,"d":0.14,"shape":-4,"gain":0.55},{"wave":"pink","hp":2000,"lp":5000,"at":0.01,"a":0.01,"d":0.12,"shape":-4,"gain":0.25},{"wave":"crunch","freq":7000,"hp":3000,"at":0.012,"a":0.01,"d":0.08,"shape":-4,"gain":0.1},{"wave":"brown","lp":220,"a":0.002,"d":0.24,"shape":-4,"gain":0.3}],"limit":1,"gain":2.3};
 /** Hard sole on stone */
@@ -248,6 +250,8 @@ export const dispel: Sound = {"verb":[0.5,0.25],"layers":[{"wave":"noise","hp":3
 export const summon: Sound = {"verb":[0.7,0.3],"layers":[{"wave":"triangle","freq":110,"to":220,"a":0.3,"h":0.2,"d":0.5,"shape":2},{"wave":"triangle","freq":165,"to":330,"a":0.35,"h":0.2,"d":0.5,"shape":2,"gain":0.7},{"wave":"sine","freq":880,"fm":[2,1,0.3],"at":0.5,"a":0.002,"d":0.6,"shape":3,"gain":0.4},{"wave":"noise","bp":300,"bpTo":3000,"a":0.4,"d":0.2,"gain":0.25}],"gain":0.237};
 /** Homing magic bolt */
 export const magicMissile: Sound = {"echo":[0.05,0.3,0.25],"layers":[{"wave":"sine","freq":1700,"to":900,"vib":[35,1.5],"a":0.002,"d":0.22,"shape":2},{"wave":"noise","bp":4000,"q":3,"a":0.002,"d":0.15,"gain":0.25}],"gain":0.542};
+/** Harp glissando up, for wishes and revelations */
+export const harp: Sound = {"vary":0.05,"verb":[0.6,0.3],"layers":[{"wave":"pluck","freq":392,"at":0,"a":0.001,"d":1.1,"shape":-3,"damp":0.999,"blend":0.47,"lp":4000,"gain":0.8},{"wave":"pluck","freq":440.0051229372742,"at":0.055,"a":0.001,"d":1.1,"shape":-3,"damp":0.999,"blend":0.47,"lp":4000,"gain":0.8},{"wave":"pluck","freq":493.8890515587903,"at":0.11,"a":0.001,"d":1.1,"shape":-3,"damp":0.999,"blend":0.47,"lp":4000,"gain":0.8},{"wave":"pluck","freq":587.3363741356592,"at":0.165,"a":0.001,"d":1.1,"shape":-3,"damp":0.999,"blend":0.47,"lp":4000,"gain":0.8},{"wave":"pluck","freq":659.2627895589121,"at":0.22,"a":0.001,"d":1.1,"shape":-3,"damp":0.999,"blend":0.47,"lp":4000,"gain":0.8},{"wave":"pluck","freq":784,"at":0.275,"a":0.001,"d":1.1,"shape":-3,"damp":0.999,"blend":0.47,"lp":4000,"gain":0.8},{"wave":"pluck","freq":880.0102458745484,"at":0.33,"a":0.001,"d":1.1,"shape":-3,"damp":0.999,"blend":0.47,"lp":4000,"gain":0.8},{"wave":"pluck","freq":987.7781031175806,"at":0.385,"a":0.001,"d":1.1,"shape":-3,"damp":0.999,"blend":0.47,"lp":4000,"gain":0.8}],"gain":1.29};
 /** Two-tone alarm, loops cleanly if repeated */
 export const alarm: Sound = {"vary":0.1,"layers":[{"wave":"square","duty":0.5,"freq":880,"arp":[0,-5],"arpRate":0.16,"loop":true,"a":0.005,"h":0.6,"d":0.02,"shape":1,"lp":3500}],"gain":0.132};
 /** Plain beep */
@@ -328,6 +332,36 @@ export const thud: Sound = {"layers":[{"wave":"sine","freq":110,"to":45,"a":0.00
 export const toss: Sound = {"vary":1,"varyF":3,"varyG":1.5,"layers":[{"wave":"noise","bp":500,"bpTo":1400,"q":1.5,"a":0.06,"d":0.03,"shape":1,"drive":1},{"wave":"noise","bp":1400,"bpTo":500,"q":1.5,"at":0.06,"a":0.01,"d":0.25,"shape":-4,"drive":1}],"limit":1,"gain":1.23};
 /** Campfire crackle */
 export const fireCrackle: Sound = {"layers":[{"wave":"brown","lp":800,"a":0.1,"h":0.6,"d":0.3,"gain":0.5},{"wave":"noise","bp":2500,"q":2,"at":0.05,"a":0.001,"d":0.012,"shape":2,"gain":0.8},{"wave":"noise","bp":2800,"q":2,"at":0.13,"a":0.001,"d":0.012,"shape":2,"gain":0.8},{"wave":"noise","bp":3100,"q":2,"at":0.17,"a":0.001,"d":0.012,"shape":2,"gain":0.8},{"wave":"noise","bp":3400,"q":2,"at":0.3,"a":0.001,"d":0.012,"shape":2,"gain":0.8},{"wave":"noise","bp":3700,"q":2,"at":0.42,"a":0.001,"d":0.012,"shape":2,"gain":0.8},{"wave":"noise","bp":4000,"q":2,"at":0.48,"a":0.001,"d":0.012,"shape":2,"gain":0.8},{"wave":"noise","bp":4300,"q":2,"at":0.61,"a":0.001,"d":0.012,"shape":2,"gain":0.8},{"wave":"noise","bp":4600,"q":2,"at":0.74,"a":0.001,"d":0.012,"shape":2,"gain":0.8},{"wave":"noise","bp":4900,"q":2,"at":0.8,"a":0.001,"d":0.012,"shape":2,"gain":0.8}],"limit":1,"gain":1.76};
+/** Wings flapping past */
+export const batFlap: Sound = {"vary":1,"varyF":3,"varyG":1.5,"layers":[{"wave":"pink","bp":900,"q":1.5,"at":0,"a":0.006,"d":0.04,"shape":-4,"gain":1},{"wave":"pink","bp":960,"q":1.5,"at":0.05,"a":0.006,"d":0.04,"shape":-4,"gain":0.85},{"wave":"pink","bp":1020,"q":1.5,"at":0.1,"a":0.006,"d":0.04,"shape":-4,"gain":0.7},{"wave":"pink","bp":1080,"q":1.5,"at":0.15,"a":0.006,"d":0.04,"shape":-4,"gain":0.55},{"wave":"pink","bp":1140,"q":1.5,"at":0.2,"a":0.006,"d":0.04,"shape":-4,"gain":0.4}],"limit":1,"gain":3.87};
+/** Slime squelches and wobbles */
+export const slimeBlob: Sound = {"varyF":2,"layers":[{"wave":"sine","freq":180,"to":90,"vib":[11,3],"a":0.004,"d":0.28,"shape":-3},{"wave":"noise","lp":1100,"lpTo":250,"q":4,"a":0.003,"d":0.2,"shape":-4,"drive":1,"gain":0.5}],"gain":0.616};
+/** Small critter chirp */
+export const chirp: Sound = {"vary":1.5,"layers":[{"wave":"sine","freq":2600,"to":3800,"fm":[2,0.5,0.03],"a":0.002,"d":0.05,"shape":-3},{"wave":"sine","freq":2900,"to":4200,"fm":[2,0.5,0.03],"at":0.08,"a":0.002,"d":0.06,"shape":-3,"gain":0.8}],"gain":0.632};
+/** Low growl of a small monster */
+export const growlSmall: Sound = {"vary":1,"varyF":2,"layers":[{"wave":"saw","freq":95,"to":80,"vib":[7,0.8],"formant":[570,840,2410],"a":0.06,"h":0.25,"d":0.3,"shape":-3,"drive":1.5},{"wave":"brown","lp":400,"a":0.08,"h":0.2,"d":0.3,"gain":0.4}],"gain":0.64};
+/** Ghostly 'oooh' */
+export const ghostMoan: Sound = {"vary":0.25,"verb":[0.75,0.35],"layers":[{"wave":"sine","freq":290,"to":250,"vib":[5,0.7],"formant":[300,870,2240],"a":0.4,"h":0.4,"d":0.8,"shape":-3},{"wave":"triangle","freq":290,"to":250,"vib":[5,0.7],"formant":[300,870,2240],"a":0.4,"h":0.4,"d":0.8,"shape":-3,"gain":0.6}],"gain":0.15};
+/** Buzzing insect flying by */
+export const beeBuzz: Sound = {"vary":0.8,"layers":[{"wave":"saw","freq":210,"to":240,"vib":[6,0.5],"bp":900,"bpTo":1300,"q":2,"a":0.15,"h":0.4,"d":0.3,"shape":-3},{"wave":"saw","freq":212,"to":243,"vib":[6.6,0.5],"bp":2400,"q":3,"a":0.15,"h":0.4,"d":0.3,"shape":-3,"gain":0.4}],"gain":0.761};
+/** Creature yelps when hit */
+export const creatureHurt: Sound = {"vary":1.5,"layers":[{"wave":"saw","freq":420,"to":250,"curve":2,"formant":[730,1090,2440],"kt":1,"a":0.005,"h":0.04,"d":0.2,"shape":-3,"drive":1},{"wave":"noise","bp":2000,"a":0.001,"d":0.02,"shape":-5,"gain":0.4}],"gain":1.07};
+/** Creature's last cry, falling away */
+export const creatureDie: Sound = {"vary":1,"verb":[0.4,0.2],"layers":[{"wave":"saw","freq":330,"to":80,"curve":0.8,"vib":[9,0.6],"formant":[730,1090,2440],"kt":1,"a":0.01,"h":0.1,"d":0.6,"shape":-2.5,"drive":0.8}],"gain":0.57};
+/** Gibberish dialogue blips, like a character talking */
+export const voiceBabble: Sound = {"vary":2,"layers":[{"wave":"square","duty":0.3,"freq":280,"arp":[0,4,-2,7,2,5],"arpRate":0.07,"formant":[270,2290,3010],"a":0.005,"h":0.36,"d":0.06,"shape":-3}],"gain":0.384};
+/** Distant thunder rolling in */
+export const thunderFar: Sound = {"vary":0.5,"varyF":3,"varyG":1.5,"verb":[0.7,0.4],"layers":[{"wave":"brown","lp":320,"lpTo":90,"a":0.25,"h":0.25,"d":1.5,"shape":-3,"gain":1.6,"drive":0.8},{"wave":"brown","lp":900,"lpTo":300,"at":0.1,"a":0.01,"d":0.35,"shape":-4,"gain":0.7},{"wave":"brown","lp":900,"lpTo":300,"at":0.22,"a":0.01,"d":0.35,"shape":-4,"gain":0.5499999999999999},{"wave":"brown","lp":900,"lpTo":300,"at":0.4,"a":0.01,"d":0.35,"shape":-4,"gain":0.39999999999999997}],"gain":0.332};
+/** A raindrop on a leaf */
+export const rainDrop: Sound = {"vary":2,"varyF":2,"layers":[{"wave":"noise","hp":3000,"a":0.001,"d":0.008,"shape":-5,"gain":0.6},{"wave":"sine","freq":1400,"to":2600,"curve":4,"sweep":0.03,"at":0.002,"a":0.001,"d":0.05,"shape":-4}],"gain":0.778};
+/** Songbird, three quick chirps */
+export const birdChirp: Sound = {"vary":1.5,"verb":[0.3,0.15],"layers":[{"wave":"sine","freq":3200,"to":4400,"fm":[2,0.4,0.02],"vib":[40,0.6],"at":0,"a":0.003,"d":0.06,"shape":-3,"gain":1},{"wave":"sine","freq":3500,"to":4700,"fm":[2,0.4,0.02],"vib":[40,0.6],"at":0.09,"a":0.003,"d":0.06,"shape":-3,"gain":0.9},{"wave":"sine","freq":3000,"to":3900,"fm":[2,0.4,0.02],"vib":[40,0.6],"at":0.17,"a":0.003,"d":0.06,"shape":-3,"gain":0.8}],"gain":0.43};
+/** Frog croak */
+export const frogCroak: Sound = {"vary":1,"layers":[{"wave":"saw","freq":120,"formant":[400,1200],"at":0,"a":0.004,"d":0.04,"shape":-3,"drive":1,"gain":1},{"wave":"saw","freq":120,"formant":[400,1200],"at":0.045,"a":0.004,"d":0.04,"shape":-3,"drive":1,"gain":0.88},{"wave":"saw","freq":120,"formant":[400,1200],"at":0.09,"a":0.004,"d":0.04,"shape":-3,"drive":1,"gain":0.76},{"wave":"saw","freq":120,"formant":[400,1200],"at":0.135,"a":0.004,"d":0.04,"shape":-3,"drive":1,"gain":0.64}],"limit":1,"gain":2.81};
+/** Leaves rustling in a bush */
+export const leafRustle: Sound = {"varyF":3,"varyG":1.5,"layers":[{"wave":"pink","bp":3000,"q":0.8,"a":0.05,"h":0.1,"d":0.25,"shape":-3,"gain":0.6},{"wave":"noise","bp":3500,"q":2,"at":0.02,"a":0.001,"d":0.015,"shape":-5,"gain":0.5},{"wave":"noise","bp":4200,"q":2,"at":0.06,"a":0.001,"d":0.015,"shape":-5,"gain":0.5},{"wave":"noise","bp":4900,"q":2,"at":0.09,"a":0.001,"d":0.015,"shape":-5,"gain":0.5},{"wave":"noise","bp":3500,"q":2,"at":0.15,"a":0.001,"d":0.015,"shape":-5,"gain":0.5},{"wave":"noise","bp":4200,"q":2,"at":0.19,"a":0.001,"d":0.015,"shape":-5,"gain":0.5},{"wave":"noise","bp":4900,"q":2,"at":0.26,"a":0.001,"d":0.015,"shape":-5,"gain":0.5},{"wave":"noise","bp":3500,"q":2,"at":0.31,"a":0.001,"d":0.015,"shape":-5,"gain":0.5}],"gain":1.43};
+/** Pebble drops and bounces once */
+export const stoneDrop: Sound = {"vary":1.5,"varyF":2,"layers":[{"wave":"noise","bp":2500,"a":0.001,"d":0.006,"shape":-5,"gain":0.7},{"wave":"modal","freq":1100,"modes":[1,2.6,4.9,7.3],"a":0.001,"d":0.12,"shape":-5},{"wave":"noise","bp":2800,"at":0.16,"a":0.001,"d":0.005,"shape":-5,"gain":0.4},{"wave":"modal","freq":1150,"modes":[1,2.6,4.9,7.3],"at":0.16,"a":0.001,"d":0.08,"shape":-5,"gain":0.5}],"limit":1,"gain":0.727};
 
 /** Every sound name. */
 export type Name =
@@ -432,6 +466,7 @@ export type Name =
   | "ricochet"
   | "dry-fire"
   | "reload"
+  | "bow-twang"
   | "step-grass"
   | "step-stone"
   | "step-wood"
@@ -454,6 +489,7 @@ export type Name =
   | "dispel"
   | "summon"
   | "magic-missile"
+  | "harp"
   | "alarm"
   | "beep"
   | "warning"
@@ -493,4 +529,19 @@ export type Name =
   | "glass-break"
   | "thud"
   | "toss"
-  | "fire-crackle";
+  | "fire-crackle"
+  | "bat-flap"
+  | "slime-blob"
+  | "chirp"
+  | "growl-small"
+  | "ghost-moan"
+  | "bee-buzz"
+  | "creature-hurt"
+  | "creature-die"
+  | "voice-babble"
+  | "thunder-far"
+  | "rain-drop"
+  | "bird-chirp"
+  | "frog-croak"
+  | "leaf-rustle"
+  | "stone-drop";

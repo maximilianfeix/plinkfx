@@ -6,7 +6,7 @@
     {
       "name": "plinkfx",
       "source": "./",
-      "description": "Design, render and measure game sound effects as code. 163 CC0 sounds to start from, a CLI that renders WAV/OGG, no network.",
+      "description": "Design, render and measure game sound effects as code. 180 CC0 sounds to start from, a CLI that renders WAV/OGG, no network.",
       "version": "0.1.0",
       "license": "MIT",
       "keywords": ["sound-effects", "gamedev", "audio", "sfx"],

@@ -23,7 +23,7 @@ test("gallery lists every sound and plays one on click", async ({ page }) => {
 test("the lede reads cleanly (no leftover template text)", async ({ page }) => {
   await page.goto("./");
   const lede = await page.locator(".lede").innerText();
-  expect(lede).toMatch(/^\d+ sounds in \d+ categories, CC0, a 2\.8\skB player, no audio files\.$/);
+  expect(lede).toMatch(/^\d+ sounds in \d+ categories, CC0, a 2\.9\skB player, no audio files\.$/);
 });
 
 test("search and category filter", async ({ page }) => {

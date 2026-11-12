@@ -22,7 +22,7 @@ create() {
 }
 ```
 
-**3. Load one audio sprite**: every sound in one file, one request instead of 163:
+**3. Load one audio sprite**: every sound in one file, one request instead of 180:
 
 ```bash
 npx plinkfx export public/sfx --sprite --format both   # add --only ui,pickup to keep it small

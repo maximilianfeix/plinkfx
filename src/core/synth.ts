@@ -65,7 +65,10 @@ const layer = (L: Layer, out: Float32Array, sr: number, pitch: number, stretch: 
     br = 0;
   // Modal wave: free-bar ratios by default (wood, metal bars); up to 8 modes.
   const ph = [...METAL, 0, 0].map(() => noise()),
-    MR = (L.modes || [1, 2.756, 5.404, 8.933]).slice(0, 8);
+    MR = (L.modes || [1, 2.756, 5.404, 8.933]).slice(0, 8),
+    // Karplus-Strong delay line for "pluck"; formant band-passes for vowel-like "voice" layers.
+    ks = wave == "pluck" ? new Float32Array(n + 1) : ph,
+    fmt = (L.formant || []).map((F) => [svf(sr, 8, 1), F * fv] as const);
   for (let i = 0; i < n; i++) {
     const t = i / sr;
     let f = f0;
@@ -98,6 +101,15 @@ const layer = (L: Layer, out: Float32Array, sr: number, pitch: number, stretch: 
       case "square":
         s = (p < duty ? 1 : -1) + blep(p, dt) - blep((p + 1 - duty) % 1, dt);
         break;
+      case "pluck": {
+        // A noise burst fed through a damped delay one period long: a plucked string.
+        const k = i - sr / f,
+          j = k | 0,
+          fr = k - j;
+        s = j < 1 ? w : (L.blend ?? 0.5) * ((1 - fr) * (ks[j] + ks[j - 1]) + fr * (ks[j + 1] + ks[j])) * (L.damp ?? 0.998);
+        ks[i] = s;
+        break;
+      }
       case "noise":
         s = w;
         break;
@@ -138,6 +150,11 @@ const layer = (L: Layer, out: Float32Array, sr: number, pitch: number, stretch: 
     // Key tracking: filters follow the pitch (lasers darken as they fall; noise can sweep).
     const kt = L.kt ? (f / f0) ** L.kt : 1;
     for (const [fn, from, to] of filters) s = fn(s, from * (to / from) ** u * kt);
+    if (fmt.length) {
+      let v = 0;
+      for (const [fn, F] of fmt) v += fn(s, F * kt);
+      s = v;
+    }
     // shape > 0: (1-u)^shape. shape < 0: exponential decay (fast drop, long natural tail).
     const e = t < a ? t / a : t < a + h ? 1 : shape < 0 ? (Math.exp((shape * (t - a - h)) / d) - Math.exp(shape)) / (1 - Math.exp(shape)) : (1 - (t - a - h) / d) ** shape;
     s *= e;
