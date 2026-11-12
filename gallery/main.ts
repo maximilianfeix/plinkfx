@@ -40,7 +40,19 @@ function playItem(it: Item, take = it == current ? seed : undefined, sound = it 
   playing.set(it.name, { start: ctx.currentTime, dur: b.duration });
   document.querySelector(`[data-name="${it.name}"]`)?.classList.add("playing");
   if (it == current) $(".panel").classList.add("playing");
+  if (demo) caption(it.name);
   if (!raf) raf = requestAnimationFrame(tick);
+}
+
+// ?demo: big caption with the sound's name, for screen recordings that autoplay muted (X, README GIF).
+const demo = new URLSearchParams(location.search).has("demo");
+let capTimer = 0;
+function caption(name: string) {
+  const el = $("#demo-cap");
+  el.textContent = "♪ " + name;
+  el.classList.add("on");
+  clearTimeout(capTimer);
+  capTimer = window.setTimeout(() => el.classList.remove("on"), 900);
 }
 function tick() {
   const now = context().currentTime;
@@ -228,6 +240,14 @@ function plink() {
 
 // ---------- wire up ----------
 function init() {
+  if (demo) {
+    hoverPlay = false; // recordings click; hover would fire on tiles scrolling under the pointer
+    document.documentElement.classList.add("demo");
+    const cap = document.createElement("div");
+    cap.id = "demo-cap";
+    cap.setAttribute("aria-hidden", "true");
+    document.body.append(cap);
+  }
   $("#total").textContent = String(items.length);
   $("#cats-n").textContent = String(Object.keys(catalog.categories).length);
   const chips = $("#chips");
@@ -374,3 +394,5 @@ function roll() {
 }
 
 init();
+// Hooks for scripts/record.ts.
+(window as any).plinkfx = { play: (name: string) => (select(byName.get(name)!), playItem(byName.get(name)!, 0)) };

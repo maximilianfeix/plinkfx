@@ -8,7 +8,9 @@
 **161 game sound effects, written as code.** Coins, jumps, hits, lasers, explosions, UI clicks and
 151 more, each one a few numbers that a 2 KB player turns into sound. CC0, no audio files, no account.
 
-**[▶ Play them all in the gallery](https://maximilianfeix.github.io/plinkfx/)** · [play the 30-second demo game](https://maximilianfeix.github.io/plinkfx/game.html)
+<a href="https://maximilianfeix.github.io/plinkfx/"><img src="docs/media/gallery.gif" alt="The plinkfx gallery: clicking tiles plays coin, jump, laser, explosion and more; each tile shows its waveform" width="100%"></a>
+
+**[▶ Play them all in the gallery](https://maximilianfeix.github.io/plinkfx/)** · [play the 30-second demo game](https://maximilianfeix.github.io/plinkfx/game.html) · [watch the 30 s video with sound](docs/media/hero-16x9.mp4)
 
 ```bash
 npm i plinkfx
@@ -105,6 +107,8 @@ plinkfx ships a skill for Claude Code, Codex and Cursor. Ask for *"a heavy door 
 and the agent picks the nearest catalogue sound, writes a parameter file, renders it, measures it
 (loudness, true peak, duration, brightness) against the reference and adjusts. It runs on the CLI, offline.
 Agents can't hear, so the skill tells yours to say so and hand you the WAV.
+
+<img src="docs/media/skill.gif" alt="Terminal: plinkfx list, level, measure and render for a dungeon door sound" width="100%">
 
 ```bash
 npx skills add maximilianfeix/plinkfx                 # Claude Code, Codex, Cursor and others

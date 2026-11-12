@@ -542,3 +542,38 @@ pre {
     animation: none;
   }
 }
+
+/* ?demo: recording mode */
+#demo-cap {
+  position: fixed;
+  left: 50%;
+  bottom: 2.2rem;
+  transform: translate(-50%, 12px);
+  background: var(--plink);
+  color: #16130f;
+  font-size: 2.1rem;
+  font-weight: 700;
+  padding: 0.25em 0.7em;
+  opacity: 0;
+  transition: opacity 0.12s, transform 0.12s steps(3);
+  z-index: 20;
+  pointer-events: none;
+}
+#demo-cap.on {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+.demo .grid {
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+}
+.demo .tile {
+  grid-template-rows: 70px auto auto;
+}
+.demo .tile canvas {
+  height: 70px;
+}
+.demo .tile.playing {
+  transform: scale(1.06);
+  z-index: 2;
+  background: var(--paper);
+}
