@@ -1,17 +1,27 @@
 name: Release
-# Push a tag like v0.1.0 to publish to npm with provenance.
-# Needs the repository secret NPM_TOKEN (an npm automation token).
+# Push a tag like v0.1.0. This builds, tests, attaches every sound as WAV + OGG (zip) to a GitHub release,
+# and publishes to npm with provenance if the repository secret NPM_TOKEN is set (skipped otherwise).
+# To publish a tag to npm later: Actions -> Release -> Run workflow, with that tag.
 on:
   push:
     tags: ["v*"]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing tag to (re)release, e.g. v0.1.0
+        required: true
 permissions:
   contents: write
   id-token: write
 jobs:
-  publish:
+  release:
     runs-on: ubuntu-latest
+    env:
+      TAG: ${{ inputs.tag || github.ref_name }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.tag || github.ref }}
       - uses: actions/setup-node@v4
         with:
           node-version: 24
@@ -22,10 +32,25 @@ jobs:
       - run: npm run build
       - run: npm run size
       - name: Tag matches package.json
-        run: test "v$(node -p 'require("./package.json").version')" = "$GITHUB_REF_NAME"
-      - run: npm publish --provenance --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-      - run: gh release create "$GITHUB_REF_NAME" --generate-notes
+        run: test "v$(node -p 'require("./package.json").version')" = "$TAG"
+      - name: Sound pack (WAV + OGG, all four takes)
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg zip
+          node dist/cli.js export pack --format both --variants
+          cp LICENSE-SOUNDS pack/LICENSE-SOUNDS.txt
+          (cd pack && zip -qr ../plinkfx-wav-ogg.zip .)
+      - name: GitHub release
         env:
           GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release upload "$TAG" plinkfx-wav-ogg.zip --clobber
+          else
+            gh release create "$TAG" plinkfx-wav-ogg.zip --generate-notes --title "$TAG"
+          fi
+      - name: npm publish (only with NPM_TOKEN)
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          if [ -z "$NODE_AUTH_TOKEN" ]; then echo "NPM_TOKEN not set: skipping npm publish"; exit 0; fi
+          npm publish --provenance --access public

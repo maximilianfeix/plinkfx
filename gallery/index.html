@@ -30,7 +30,7 @@
         </a>
         <nav aria-label="Project">
           <a href="game.html">play the demo game</a>
-          <a href="https://github.com/maximilianfeix/plinkfx">GitHub</a>
+          <a href="https://github.com/maximilianfeix/plinkfx">★ Star on GitHub</a>
           <a href="https://www.npmjs.com/package/plinkfx">npm</a>
         </nav>
       </div>
@@ -39,6 +39,10 @@
           <h1>Game sound effects as code.</h1>
           <p class="lede"><b id="total"><!--total--></b> sounds in <b id="cats-n"><!--cats--></b> categories, <b>CC0</b>, a 2.8&nbsp;kB player, no audio files.</p>
           <div class="install"><code>npm i plinkfx</code><button id="install-copy" type="button">copy</button></div>
+          <div class="cta">
+            <button id="tour" type="button" class="tour">▶ Play the tour <small>10 s</small></button>
+            <a class="pack" href="https://github.com/maximilianfeix/plinkfx/releases/latest/download/plinkfx-wav-ogg.zip">all sounds as WAV + OGG (zip)</a>
+          </div>
         </div>
         <div class="pads-wrap">
           <div id="pads" class="pads" role="group" aria-label="Start here: eight favourites">
@@ -70,6 +74,7 @@
     </section>
 
     <main class="layout">
+      <div id="shared" class="shared" role="status" hidden>Someone shared a tweaked <b>coin</b> with you. <button type="button">▶ play it</button></div>
       <div class="grid-wrap">
         <div id="grid" class="grid" aria-label="Sounds"></div>
         <div id="empty" class="empty" hidden>
@@ -120,7 +125,7 @@
             <div class="code-actions">
               <button id="p-copy" type="button"><svg viewBox="0 0 8 8" aria-hidden="true"><path d="M2 0h6v6H7V1H2zM0 2h6v6H0zm1 1v4h4V3z" /></svg><span>copy code</span></button>
               <button id="p-wav" type="button"><svg viewBox="0 0 8 8" aria-hidden="true"><path d="M3 0h2v3h2v1H6v1H5v1H3V5H2V4H1V3h2zM0 7h8v1H0z" /></svg><span>download .wav</span></button>
-              <button id="p-link" type="button" aria-label="Copy a link to this sound"><svg viewBox="0 0 8 8" aria-hidden="true"><path d="M1 2h3v1H1v3h3v1H1V6H0V3h1zM4 2h3v1h1v3H7v1H4V6h3V3H4zM2 4h4v1H2z" /></svg><span>link</span></button>
+              <button id="p-link" type="button" aria-label="Copy a link to this sound, with your knob settings"><svg viewBox="0 0 8 8" aria-hidden="true"><path d="M1 2h3v1H1v3h3v1H1V6H0V3h1zM4 2h3v1h1v3H7v1H4V6h3V3H4zM2 4h4v1H2z" /></svg><span>share</span></button>
             </div>
           </div>
           <p class="keys"><kbd>&larr;</kbd><kbd>&rarr;</kbd> move <kbd>1</kbd>–<kbd>4</kbd> takes <kbd>r</kbd> roll <kbd>p</kbd> play <kbd>c</kbd> copy <kbd>d</kbd> download <kbd>/</kbd> search</p>
@@ -129,7 +134,7 @@
     </main>
 
     <footer class="foot">
-      <p>Sounds: <b>CC0 1.0</b>, use them anywhere, no credit needed. Code: MIT. Every sound is synthesized in your browser from a few numbers; nothing is downloaded but this page.</p>
+      <p>Sounds: <b>CC0 1.0</b>, use them anywhere, no credit needed. Code: MIT. Every sound is synthesized in your browser from a few numbers; nothing is downloaded but this page. If it saved you some time, a <a href="https://github.com/maximilianfeix/plinkfx">star on GitHub</a> helps other devs find it.</p>
     </footer>
     <p id="sr-status" class="sr-only" aria-live="polite"></p>
     <script type="module" src="./main.ts"></script>

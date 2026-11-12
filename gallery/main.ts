@@ -10,9 +10,34 @@ const items = catalog.sounds as Item[];
 const byName = new Map(items.map((s) => [s.name, s]));
 
 // ---------- state ----------
-let current: Item = byName.get(location.hash.slice(1)) || byName.get("coin")!;
-let knobs: Knobs = { ...NEUTRAL };
-let seed = 0;
+// The URL carries the whole state, so a tweak can be shared: #coin?p=3&l=1.2&t=-0.3&s=0.2&c=8&v=1234
+const KEYS: [keyof Knobs, string][] = [["pitch", "p"], ["length", "l"], ["tone", "t"], ["space", "s"], ["crush", "c"]];
+function readHash() {
+  const [name, query = ""] = decodeURIComponent(location.hash.slice(1)).split("?"),
+    q = new URLSearchParams(query),
+    k: Knobs = { ...NEUTRAL };
+  for (const [key, short] of KEYS) {
+    const v = Number(q.get(short));
+    if (q.has(short) && Number.isFinite(v)) k[key] = v;
+  }
+  k.pitch = Math.max(-12, Math.min(12, Math.round(k.pitch)));
+  k.length = Math.max(0.5, Math.min(2, k.length));
+  k.tone = Math.max(-1, Math.min(1, k.tone));
+  k.space = Math.max(0, Math.min(0.6, k.space));
+  k.crush = Math.max(3, Math.min(16, Math.round(k.crush)));
+  const v = Math.max(0, Math.floor(Number(q.get("v")) || 0));
+  return { it: byName.get(name), knobs: k, seed: v };
+}
+const stateHash = () => {
+  const q = KEYS.filter(([key]) => knobs[key] != NEUTRAL[key]).map(([key, short]) => `${short}=${+knobs[key].toFixed(2)}`);
+  if (seed) q.push(`v=${seed}`);
+  return "#" + current.name + (q.length ? "?" + q.join("&") : "");
+};
+const initial = readHash();
+let current: Item = initial.it || byName.get("coin")!;
+let knobs: Knobs = initial.it ? initial.knobs : { ...NEUTRAL };
+let seed = initial.it ? initial.seed : 0;
+const shared = !!initial.it && (seed > 0 || !isNeutral(knobs));
 let filter: { cat: Cat | "all"; q: string } = { cat: "all", q: "" };
 let hoverPlay = matchMedia("(hover: hover) and (pointer: fine)").matches;
 let tab: "name" | "shake" | "json" = "name";
@@ -184,12 +209,12 @@ function select(it: Item, opts: { scroll?: boolean } = {}) {
   const tile = grid.querySelector<HTMLElement>(`[data-name="${it.name}"]`);
   tile?.setAttribute("aria-current", "true");
   if (opts.scroll) tile?.scrollIntoView({ block: "center" });
-  history.replaceState(null, "", "#" + it.name);
   renderPanel();
 }
 function renderPanel() {
   const it = current,
     p = $(".panel");
+  if (location.hash != stateHash()) history.replaceState(null, "", stateHash());
   p.dataset.cat = it.cat;
   $("#p-name").textContent = it.name;
   $("#p-cat").innerHTML = `<i></i>${catalog.categories[it.cat as Cat].title}`;
@@ -462,7 +487,7 @@ function init() {
       playItem(current, seed);
     } else if (b.id == "p-copy") copy($("#p-code").textContent!, b);
     else if (b.id == "p-wav") download();
-    else if (b.id == "p-link") copy(location.href.split("#")[0] + "#" + current.name, b, "link copied");
+    else if (b.id == "p-link") copy(location.href.split("#")[0] + stateHash(), b, isNeutral(knobs) && !seed ? "link copied" : "link copied, it plays your tweak");
     else if (b.id == "p-more") setSheet(!panel.classList.contains("open"));
   });
   let knobTimer = 0;
@@ -488,7 +513,7 @@ function init() {
   addEventListener(
     "pointerdown",
     (e) => {
-      if (greeted || (e.target as HTMLElement).closest(".tile, .pad, .panel, input, a")) return;
+      if (greeted || (e.target as HTMLElement).closest(".tile, .pad, .panel, input, a, #tour, .shared")) return;
       greeted = true;
       plink();
     },
@@ -517,8 +542,13 @@ function init() {
     }
   });
   addEventListener("hashchange", () => {
-    const it = byName.get(location.hash.slice(1));
-    if (it && it != current) select(it, { scroll: true });
+    if (location.hash == stateHash()) return;
+    const h = readHash();
+    if (!h.it) return;
+    if (h.it != current) select(h.it, { scroll: true });
+    knobs = h.knobs;
+    seed = h.seed;
+    renderPanel();
   });
   let resizeRaf = 0;
   addEventListener("resize", () => {
@@ -526,7 +556,36 @@ function init() {
     resizeRaf = requestAnimationFrame(redrawAll);
   });
   matchMedia("(prefers-color-scheme: dark)").addEventListener("change", redrawAll);
+  $("#tour").addEventListener("click", (e) => tour(e.currentTarget as HTMLElement));
   select(current, { scroll: !!location.hash });
+  if (shared) {
+    // Opened from a shared tweak: say so, and let one click play it.
+    const bar = $("#shared");
+    bar.querySelector("b")!.textContent = current.name;
+    bar.hidden = false;
+    bar.querySelector("button")!.addEventListener("click", () => {
+      playItem(current, seed);
+      bar.hidden = true;
+    });
+  }
+}
+// The tour: a ten-second run through the library, one sound after another.
+const TOUR = ["coin", "jump", "land", "laser", "hit", "explosion", "powerup", "sparkle", "door-heavy", "level-up"];
+let touring = 0;
+function tour(btn: HTMLElement) {
+  clearTimeout(touring);
+  if (btn.getAttribute("aria-pressed") == "true") return btn.setAttribute("aria-pressed", "false");
+  btn.setAttribute("aria-pressed", "true");
+  const step = (i: number) => {
+    if (i >= TOUR.length || btn.getAttribute("aria-pressed") != "true") return btn.setAttribute("aria-pressed", "false");
+    const it = byName.get(TOUR[i]);
+    if (it) {
+      select(it, { scroll: false });
+      playItem(it, 0);
+    }
+    touring = window.setTimeout(() => step(i + 1), TOUR[i] == "explosion" || TOUR[i] == "door-heavy" ? 1300 : 750);
+  };
+  step(0);
 }
 function roll() {
   seed = 4 + Math.floor(Math.random() * 9996);

@@ -3,15 +3,13 @@
   <img alt="plinkfx: game sound effects as code" src="brand/banners/readme-light.svg" width="100%">
 </picture>
 
-# plinkfx
-
 **<!-- count -->163<!-- /count --> game sound effects, written as code.** Coins, jumps, hits, lasers, explosions,
 UI clicks and the rest of what a game needs, each one a few readable numbers that a 2.8 kB player turns into sound.
 CC0, no audio files, no account.
 
 <a href="https://maximilianfeix.github.io/plinkfx/"><img src="docs/media/gallery.gif" alt="The plinkfx gallery: clicking tiles plays coin, jump, laser, explosion and more; each tile shows its waveform" width="100%"></a>
 
-**[▶ Play them all in the gallery](https://maximilianfeix.github.io/plinkfx/)** · [play the 30-second demo game](https://maximilianfeix.github.io/plinkfx/game.html) · [watch the 30 s video with sound](docs/media/hero-16x9.mp4)
+**[▶ Hear all <!-- count -->163<!-- /count --> in your browser](https://maximilianfeix.github.io/plinkfx/)** (one click per sound, tweak any of them and share the link) · [play the 30-second demo game](https://maximilianfeix.github.io/plinkfx/game.html) · [watch the 30 s video with sound](docs/media/hero-16x9.mp4)
 
 ```bash
 npm i plinkfx
@@ -128,7 +126,10 @@ Every sound with a one-line description: `npx plinkfx list`, or the [gallery](ht
 
 ## Files for your engine
 
-Godot, Unity, Phaser, Defold, LÖVE or anything else that loads audio files:
+Godot, Unity, Phaser, Defold, LÖVE or anything else that loads audio files.
+
+**[Download every sound as WAV + OGG (zip)](https://github.com/maximilianfeix/plinkfx/releases/latest/download/plinkfx-wav-ogg.zip)**,
+all four takes, 48 kHz mono, in category folders. No install needed. Or render them yourself:
 
 ```bash
 npx plinkfx export sfx/                       # every sound as 48 kHz mono WAV, in category folders
@@ -236,9 +237,5 @@ your game, and open an issue or PR with the params. Look for issues labelled
 [`good first issue`](https://github.com/maximilianfeix/plinkfx/labels/good%20first%20issue) and
 [`new sound`](https://github.com/maximilianfeix/plinkfx/labels/new%20sound).
 See [CONTRIBUTING.md](CONTRIBUTING.md).
-
-## Star history
-
-<a href="https://star-history.com/#maximilianfeix/plinkfx&Date"><img src="https://api.star-history.com/svg?repos=maximilianfeix/plinkfx&type=Date" alt="Star history" width="600"></a>
 
 [中文说明](README.zh-CN.md)

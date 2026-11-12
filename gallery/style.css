@@ -1152,3 +1152,55 @@ pre .s {
 .demo .tile::after {
   display: none;
 }
+
+/* banner when the page was opened from a shared tweak */
+.shared {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid var(--plink);
+  background: color-mix(in srgb, var(--plink) 10%, var(--paper));
+}
+.shared[hidden] {
+  display: none;
+}
+.shared button {
+  background: var(--plink);
+  border-color: var(--plink);
+  color: #16130f;
+  font-weight: 600;
+}
+
+/* tour + pack */
+.cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1rem;
+  align-items: center;
+  margin-top: 0.9rem;
+}
+.tour {
+  background: var(--plink);
+  border-color: var(--plink);
+  color: #16130f;
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 0.55em 1em;
+  min-height: 44px;
+}
+.tour small {
+  font-weight: 400;
+  opacity: 0.75;
+  margin-left: 0.3em;
+}
+.tour[aria-pressed="true"] {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}
+.pack {
+  font-size: 0.88rem;
+}
