@@ -6,7 +6,7 @@ description: Design, render and measure game sound effects as code with plinkfx.
 # plinkfx: sound effects as code
 
 plinkfx sounds are small JSON objects (layers of oscillators or noise with envelopes, pitch sweeps,
-filters and a few effects) that a 2 KB player renders in the browser, and the `plinkfx` CLI renders
+filters and a few effects) that a 2.3 kB player renders in the browser, and the `plinkfx` CLI renders
 to WAV. You design a sound by writing that object, rendering it, measuring it, and adjusting.
 
 **You cannot hear.** Say so once. Your checks are numbers and spectrograms; the user's ears decide.
@@ -97,8 +97,8 @@ play(door);
 5. one sentence: "I can't hear it: please listen and tell me what to change (darker, shorter, more punch...)."
 
 For files for an engine: `npx plinkfx export assets/sfx --format both` writes every catalogue sound as
-48 kHz mono WAV and OGG. In Godot, keep the import's Normalize off; in Unity, leave Force To Mono on
-and use Decompress On Load for short sounds.
+48 kHz mono WAV and OGG. In Godot, keep the import's Normalize off; in Unity, use Decompress On Load
+for short sounds and leave Force To Mono off (the files are mono already; it can re-normalise them).
 
 ## Don'ts
 
