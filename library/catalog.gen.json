@@ -1,0 +1,6015 @@
+{
+ "categories": {
+  "ui": {
+   "title": "UI",
+   "target": -20
+  },
+  "pickup": {
+   "title": "Pickups",
+   "target": -16
+  },
+  "jump": {
+   "title": "Jump & land",
+   "target": -16
+  },
+  "hit": {
+   "title": "Hits",
+   "target": -15
+  },
+  "explosion": {
+   "title": "Explosions",
+   "target": -14
+  },
+  "powerup": {
+   "title": "Power-ups",
+   "target": -16
+  },
+  "shoot": {
+   "title": "Shots & lasers",
+   "target": -16
+  },
+  "footstep": {
+   "title": "Footsteps",
+   "target": -20
+  },
+  "magic": {
+   "title": "Magic",
+   "target": -16
+  },
+  "alert": {
+   "title": "Alerts",
+   "target": -18
+  },
+  "jingle": {
+   "title": "Jingles",
+   "target": -17
+  },
+  "mechanic": {
+   "title": "Doors & mechanics",
+   "target": -17
+  },
+  "world": {
+   "title": "World",
+   "target": -17
+  }
+ },
+ "sounds": [
+  {
+   "name": "click",
+   "id": "click",
+   "cat": "ui",
+   "desc": "Neutral button click",
+   "gain": 0.788,
+   "limited": true,
+   "m": {
+    "peak": -1.49,
+    "truePeak": -1.42,
+    "lufsMax": -22.63,
+    "duration": 0.03,
+    "centroid": 2326
+   },
+   "takes": [
+    {
+     "lufsMax": -22.63,
+     "truePeak": -1.42,
+     "duration": 0.03
+    },
+    {
+     "lufsMax": -22.26,
+     "truePeak": -1.51,
+     "duration": 0.03
+    },
+    {
+     "lufsMax": -22.45,
+     "truePeak": -1.35,
+     "duration": 0.03
+    },
+    {
+     "lufsMax": -22.26,
+     "truePeak": -1.21,
+     "duration": 0.03
+    }
+   ]
+  },
+  {
+   "name": "click-soft",
+   "id": "clickSoft",
+   "cat": "ui",
+   "desc": "Rounded, quiet click for lists and tabs",
+   "gain": 0.904,
+   "limited": true,
+   "m": {
+    "peak": -1.21,
+    "truePeak": -1.2,
+    "lufsMax": -23.35,
+    "duration": 0.04,
+    "centroid": 1166
+   },
+   "takes": [
+    {
+     "lufsMax": -23.35,
+     "truePeak": -1.2,
+     "duration": 0.04
+    },
+    {
+     "lufsMax": -23.32,
+     "truePeak": -2.06,
+     "duration": 0.05
+    },
+    {
+     "lufsMax": -23.44,
+     "truePeak": -1.76,
+     "duration": 0.05
+    },
+    {
+     "lufsMax": -23.23,
+     "truePeak": -1.53,
+     "duration": 0.05
+    }
+   ]
+  },
+  {
+   "name": "click-hard",
+   "id": "clickHard",
+   "cat": "ui",
+   "desc": "Firm mechanical click",
+   "gain": 0.45,
+   "limited": true,
+   "m": {
+    "peak": -3.08,
+    "truePeak": -3.08,
+    "lufsMax": -26.64,
+    "duration": 0.02,
+    "centroid": 5383
+   },
+   "takes": [
+    {
+     "lufsMax": -26.64,
+     "truePeak": -3.08,
+     "duration": 0.02
+    },
+    {
+     "lufsMax": -26.45,
+     "truePeak": -2.54,
+     "duration": 0.02
+    },
+    {
+     "lufsMax": -26.44,
+     "truePeak": -1.2,
+     "duration": 0.02
+    },
+    {
+     "lufsMax": -26.63,
+     "truePeak": -3.77,
+     "duration": 0.02
+    }
+   ]
+  },
+  {
+   "name": "tap",
+   "id": "tap",
+   "cat": "ui",
+   "desc": "Bubbly tap, good for mobile",
+   "gain": 0.897,
+   "limited": true,
+   "m": {
+    "peak": -1.23,
+    "truePeak": -1.22,
+    "lufsMax": -22.22,
+    "duration": 0.05,
+    "centroid": 408
+   },
+   "takes": [
+    {
+     "lufsMax": -22.22,
+     "truePeak": -1.22,
+     "duration": 0.05
+    },
+    {
+     "lufsMax": -21.98,
+     "truePeak": -1.22,
+     "duration": 0.06
+    },
+    {
+     "lufsMax": -22.14,
+     "truePeak": -1.23,
+     "duration": 0.05
+    },
+    {
+     "lufsMax": -22,
+     "truePeak": -1.2,
+     "duration": 0.05
+    }
+   ]
+  },
+  {
+   "name": "hover",
+   "id": "hover",
+   "cat": "ui",
+   "desc": "Faint tick when the cursor enters a button",
+   "gain": 0.888,
+   "limited": true,
+   "m": {
+    "peak": -1.24,
+    "truePeak": -1.2,
+    "lufsMax": -21.37,
+    "duration": 0.02,
+    "centroid": 2604
+   },
+   "takes": [
+    {
+     "lufsMax": -21.37,
+     "truePeak": -1.2,
+     "duration": 0.02
+    },
+    {
+     "lufsMax": -21.23,
+     "truePeak": -1.28,
+     "duration": 0.03
+    },
+    {
+     "lufsMax": -21.36,
+     "truePeak": -1.26,
+     "duration": 0.02
+    },
+    {
+     "lufsMax": -21.1,
+     "truePeak": -1.23,
+     "duration": 0.03
+    }
+   ]
+  },
+  {
+   "name": "toggle-on",
+   "id": "toggleOn",
+   "cat": "ui",
+   "desc": "Switch on: two rising notes",
+   "gain": 0.78,
+   "limited": false,
+   "m": {
+    "peak": -2.23,
+    "truePeak": -2.17,
+    "lufsMax": -20.12,
+    "duration": 0.11,
+    "centroid": 1502
+   },
+   "takes": [
+    {
+     "lufsMax": -20.12,
+     "truePeak": -2.17,
+     "duration": 0.11
+    },
+    {
+     "lufsMax": -19.93,
+     "truePeak": -2.26,
+     "duration": 0.11
+    },
+    {
+     "lufsMax": -20.02,
+     "truePeak": -2.18,
+     "duration": 0.11
+    },
+    {
+     "lufsMax": -19.93,
+     "truePeak": -2.25,
+     "duration": 0.11
+    }
+   ]
+  },
+  {
+   "name": "toggle-off",
+   "id": "toggleOff",
+   "cat": "ui",
+   "desc": "Switch off: two falling notes",
+   "gain": 0.73,
+   "limited": false,
+   "m": {
+    "peak": -2.81,
+    "truePeak": -2.73,
+    "lufsMax": -20.1,
+    "duration": 0.11,
+    "centroid": 1837
+   },
+   "takes": [
+    {
+     "lufsMax": -20.1,
+     "truePeak": -2.73,
+     "duration": 0.11
+    },
+    {
+     "lufsMax": -19.96,
+     "truePeak": -2.75,
+     "duration": 0.11
+    },
+    {
+     "lufsMax": -20.03,
+     "truePeak": -2.76,
+     "duration": 0.11
+    },
+    {
+     "lufsMax": -19.92,
+     "truePeak": -2.76,
+     "duration": 0.11
+    }
+   ]
+  },
+  {
+   "name": "confirm",
+   "id": "confirm",
+   "cat": "ui",
+   "desc": "Bright major arpeggio, 'OK'",
+   "gain": 0.395,
+   "limited": false,
+   "m": {
+    "peak": -7.98,
+    "truePeak": -7.92,
+    "lufsMax": -19.98,
+    "duration": 0.75,
+    "centroid": 1749
+   },
+   "takes": [
+    {
+     "lufsMax": -19.98,
+     "truePeak": -7.92,
+     "duration": 0.75
+    },
+    {
+     "lufsMax": -19.99,
+     "truePeak": -7.92,
+     "duration": 0.76
+    },
+    {
+     "lufsMax": -20.02,
+     "truePeak": -7.93,
+     "duration": 0.68
+    },
+    {
+     "lufsMax": -19.97,
+     "truePeak": -7.95,
+     "duration": 0.71
+    }
+   ]
+  },
+  {
+   "name": "cancel",
+   "id": "cancel",
+   "cat": "ui",
+   "desc": "Soft descending 'back'",
+   "gain": 0.415,
+   "limited": false,
+   "m": {
+    "peak": -4.03,
+    "truePeak": -4.03,
+    "lufsMax": -20.11,
+    "duration": 0.13,
+    "centroid": 1032
+   },
+   "takes": [
+    {
+     "lufsMax": -20.11,
+     "truePeak": -4.03,
+     "duration": 0.13
+    },
+    {
+     "lufsMax": -19.91,
+     "truePeak": -4.03,
+     "duration": 0.14
+    },
+    {
+     "lufsMax": -20,
+     "truePeak": -4.03,
+     "duration": 0.13
+    },
+    {
+     "lufsMax": -19.94,
+     "truePeak": -4.03,
+     "duration": 0.14
+    }
+   ]
+  },
+  {
+   "name": "error",
+   "id": "error",
+   "cat": "ui",
+   "desc": "Two low buzzes, 'not allowed'",
+   "gain": 0.224,
+   "limited": false,
+   "m": {
+    "peak": -8,
+    "truePeak": -8,
+    "lufsMax": -20,
+    "duration": 0.25,
+    "centroid": 613
+   },
+   "takes": [
+    {
+     "lufsMax": -20,
+     "truePeak": -8,
+     "duration": 0.25
+    },
+    {
+     "lufsMax": -20.03,
+     "truePeak": -8.77,
+     "duration": 0.25
+    },
+    {
+     "lufsMax": -19.97,
+     "truePeak": -8.78,
+     "duration": 0.26
+    },
+    {
+     "lufsMax": -20.03,
+     "truePeak": -8.55,
+     "duration": 0.25
+    }
+   ]
+  },
+  {
+   "name": "deny",
+   "id": "deny",
+   "cat": "ui",
+   "desc": "Short dull thunk for disabled buttons",
+   "gain": 0.367,
+   "limited": false,
+   "m": {
+    "peak": -6.28,
+    "truePeak": -6.28,
+    "lufsMax": -20.11,
+    "duration": 0.12,
+    "centroid": 425
+   },
+   "takes": [
+    {
+     "lufsMax": -20.11,
+     "truePeak": -6.28,
+     "duration": 0.12
+    },
+    {
+     "lufsMax": -19.93,
+     "truePeak": -6.37,
+     "duration": 0.13
+    },
+    {
+     "lufsMax": -20.07,
+     "truePeak": -6.2,
+     "duration": 0.12
+    },
+    {
+     "lufsMax": -19.93,
+     "truePeak": -6.57,
+     "duration": 0.13
+    }
+   ]
+  },
+  {
+   "name": "notify",
+   "id": "notify",
+   "cat": "ui",
+   "desc": "Two-tone bell notification",
+   "gain": 0.154,
+   "limited": false,
+   "m": {
+    "peak": -11.6,
+    "truePeak": -11.44,
+    "lufsMax": -19.89,
+    "duration": 0.96,
+    "centroid": 4243
+   },
+   "takes": [
+    {
+     "lufsMax": -19.89,
+     "truePeak": -11.44,
+     "duration": 0.96
+    },
+    {
+     "lufsMax": -19.55,
+     "truePeak": -10.9,
+     "duration": 0.85
+    },
+    {
+     "lufsMax": -20.4,
+     "truePeak": -11.87,
+     "duration": 0.78
+    },
+    {
+     "lufsMax": -20.11,
+     "truePeak": -10.96,
+     "duration": 0.8
+    }
+   ]
+  },
+  {
+   "name": "pop",
+   "id": "pop",
+   "cat": "ui",
+   "desc": "Upward pop, for things appearing",
+   "gain": 0.898,
+   "limited": true,
+   "m": {
+    "peak": -1.23,
+    "truePeak": -1.23,
+    "lufsMax": -20.22,
+    "duration": 0.07,
+    "centroid": 738
+   },
+   "takes": [
+    {
+     "lufsMax": -20.22,
+     "truePeak": -1.23,
+     "duration": 0.07
+    },
+    {
+     "lufsMax": -19.99,
+     "truePeak": -1.23,
+     "duration": 0.07
+    },
+    {
+     "lufsMax": -20.14,
+     "truePeak": -1.24,
+     "duration": 0.07
+    },
+    {
+     "lufsMax": -20,
+     "truePeak": -1.2,
+     "duration": 0.07
+    }
+   ]
+  },
+  {
+   "name": "pop-down",
+   "id": "popDown",
+   "cat": "ui",
+   "desc": "Downward pop, for things disappearing",
+   "gain": 0.834,
+   "limited": false,
+   "m": {
+    "peak": -1.62,
+    "truePeak": -1.62,
+    "lufsMax": -20.13,
+    "duration": 0.08,
+    "centroid": 639
+   },
+   "takes": [
+    {
+     "lufsMax": -20.13,
+     "truePeak": -1.62,
+     "duration": 0.08
+    },
+    {
+     "lufsMax": -19.91,
+     "truePeak": -1.63,
+     "duration": 0.08
+    },
+    {
+     "lufsMax": -20.06,
+     "truePeak": -1.63,
+     "duration": 0.08
+    },
+    {
+     "lufsMax": -19.9,
+     "truePeak": -1.61,
+     "duration": 0.08
+    }
+   ]
+  },
+  {
+   "name": "swipe",
+   "id": "swipe",
+   "cat": "ui",
+   "desc": "Quick airy swipe between pages",
+   "gain": 1.37,
+   "limited": true,
+   "m": {
+    "peak": -3.07,
+    "truePeak": -3.07,
+    "lufsMax": -20.47,
+    "duration": 0.14,
+    "centroid": 5554
+   },
+   "takes": [
+    {
+     "lufsMax": -20.47,
+     "truePeak": -3.07,
+     "duration": 0.14
+    },
+    {
+     "lufsMax": -19.91,
+     "truePeak": -3.65,
+     "duration": 0.14
+    },
+    {
+     "lufsMax": -20.19,
+     "truePeak": -3.47,
+     "duration": 0.14
+    },
+    {
+     "lufsMax": -20.33,
+     "truePeak": -1.23,
+     "duration": 0.14
+    }
+   ]
+  },
+  {
+   "name": "type",
+   "id": "type",
+   "cat": "ui",
+   "desc": "Keyboard tick for text that types itself",
+   "gain": 1.24,
+   "limited": true,
+   "m": {
+    "peak": -2.84,
+    "truePeak": -2.79,
+    "lufsMax": -29.36,
+    "duration": 0.02,
+    "centroid": 4674
+   },
+   "takes": [
+    {
+     "lufsMax": -29.36,
+     "truePeak": -2.79,
+     "duration": 0.02
+    },
+    {
+     "lufsMax": -29.56,
+     "truePeak": -3.9,
+     "duration": 0.02
+    },
+    {
+     "lufsMax": -28.86,
+     "truePeak": -2.22,
+     "duration": 0.02
+    },
+    {
+     "lufsMax": -28.86,
+     "truePeak": -1.23,
+     "duration": 0.02
+    }
+   ]
+  },
+  {
+   "name": "tick",
+   "id": "tick",
+   "cat": "ui",
+   "desc": "Tiny tick for sliders and scroll steps",
+   "gain": 0.872,
+   "limited": true,
+   "m": {
+    "peak": -1.26,
+    "truePeak": -1.2,
+    "lufsMax": -23.82,
+    "duration": 0.01,
+    "centroid": 3215
+   },
+   "takes": [
+    {
+     "lufsMax": -23.82,
+     "truePeak": -1.2,
+     "duration": 0.01
+    },
+    {
+     "lufsMax": -23.63,
+     "truePeak": -1.31,
+     "duration": 0.01
+    },
+    {
+     "lufsMax": -23.76,
+     "truePeak": -1.3,
+     "duration": 0.01
+    },
+    {
+     "lufsMax": -23.59,
+     "truePeak": -1.33,
+     "duration": 0.01
+    }
+   ]
+  },
+  {
+   "name": "menu-open",
+   "id": "menuOpen",
+   "cat": "ui",
+   "desc": "Menu or panel slides open",
+   "gain": 0.721,
+   "limited": false,
+   "m": {
+    "peak": -3.43,
+    "truePeak": -3.43,
+    "lufsMax": -20.13,
+    "duration": 0.12,
+    "centroid": 3543
+   },
+   "takes": [
+    {
+     "lufsMax": -20.13,
+     "truePeak": -3.43,
+     "duration": 0.12
+    },
+    {
+     "lufsMax": -19.92,
+     "truePeak": -3.39,
+     "duration": 0.13
+    },
+    {
+     "lufsMax": -20.05,
+     "truePeak": -3.31,
+     "duration": 0.12
+    },
+    {
+     "lufsMax": -19.92,
+     "truePeak": -3.51,
+     "duration": 0.13
+    }
+   ]
+  },
+  {
+   "name": "menu-close",
+   "id": "menuClose",
+   "cat": "ui",
+   "desc": "Menu or panel closes",
+   "gain": 0.699,
+   "limited": false,
+   "m": {
+    "peak": -4.01,
+    "truePeak": -3.99,
+    "lufsMax": -20.12,
+    "duration": 0.12,
+    "centroid": 3947
+   },
+   "takes": [
+    {
+     "lufsMax": -20.12,
+     "truePeak": -3.99,
+     "duration": 0.12
+    },
+    {
+     "lufsMax": -19.9,
+     "truePeak": -4.03,
+     "duration": 0.13
+    },
+    {
+     "lufsMax": -20.05,
+     "truePeak": -4,
+     "duration": 0.12
+    },
+    {
+     "lufsMax": -19.92,
+     "truePeak": -4.08,
+     "duration": 0.13
+    }
+   ]
+  },
+  {
+   "name": "select",
+   "id": "select",
+   "cat": "ui",
+   "desc": "Retro menu cursor move",
+   "gain": 0.584,
+   "limited": false,
+   "m": {
+    "peak": -2.09,
+    "truePeak": -2.09,
+    "lufsMax": -20.13,
+    "duration": 0.1,
+    "centroid": 3270
+   },
+   "takes": [
+    {
+     "lufsMax": -20.13,
+     "truePeak": -2.09,
+     "duration": 0.1
+    },
+    {
+     "lufsMax": -19.91,
+     "truePeak": -1.99,
+     "duration": 0.11
+    },
+    {
+     "lufsMax": -20.04,
+     "truePeak": -2.03,
+     "duration": 0.1
+    },
+    {
+     "lufsMax": -19.94,
+     "truePeak": -2.05,
+     "duration": 0.11
+    }
+   ]
+  },
+  {
+   "name": "select-soft",
+   "id": "selectSoft",
+   "cat": "ui",
+   "desc": "Gentle cursor move for modern menus",
+   "gain": 0.618,
+   "limited": false,
+   "m": {
+    "peak": -4.14,
+    "truePeak": -4.13,
+    "lufsMax": -20.11,
+    "duration": 0.08,
+    "centroid": 1610
+   },
+   "takes": [
+    {
+     "lufsMax": -20.11,
+     "truePeak": -4.13,
+     "duration": 0.08
+    },
+    {
+     "lufsMax": -19.95,
+     "truePeak": -4.13,
+     "duration": 0.08
+    },
+    {
+     "lufsMax": -20.08,
+     "truePeak": -4.13,
+     "duration": 0.08
+    },
+    {
+     "lufsMax": -19.87,
+     "truePeak": -4.12,
+     "duration": 0.08
+    }
+   ]
+  },
+  {
+   "name": "message",
+   "id": "message",
+   "cat": "ui",
+   "desc": "Chat message arrives",
+   "gain": 0.43,
+   "limited": false,
+   "m": {
+    "peak": -7.35,
+    "truePeak": -7.34,
+    "lufsMax": -20.17,
+    "duration": 0.67,
+    "centroid": 1111
+   },
+   "takes": [
+    {
+     "lufsMax": -20.17,
+     "truePeak": -7.34,
+     "duration": 0.67
+    },
+    {
+     "lufsMax": -19.82,
+     "truePeak": -7.34,
+     "duration": 0.64
+    },
+    {
+     "lufsMax": -20.11,
+     "truePeak": -7.34,
+     "duration": 0.63
+    },
+    {
+     "lufsMax": -19.93,
+     "truePeak": -7.34,
+     "duration": 0.64
+    }
+   ]
+  },
+  {
+   "name": "plink",
+   "id": "plink",
+   "cat": "ui",
+   "desc": "The plinkfx signature: one drop of sound",
+   "gain": 0.281,
+   "limited": false,
+   "m": {
+    "peak": -8.54,
+    "truePeak": -8.45,
+    "lufsMax": -20.37,
+    "duration": 0.78,
+    "centroid": 2021
+   },
+   "takes": [
+    {
+     "lufsMax": -20.37,
+     "truePeak": -8.45,
+     "duration": 0.78
+    },
+    {
+     "lufsMax": -19.43,
+     "truePeak": -8.45,
+     "duration": 0.76
+    },
+    {
+     "lufsMax": -21.15,
+     "truePeak": -8.44,
+     "duration": 0.73
+    },
+    {
+     "lufsMax": -19.1,
+     "truePeak": -8.46,
+     "duration": 0.74
+    }
+   ]
+  },
+  {
+   "name": "coin",
+   "id": "coin",
+   "cat": "pickup",
+   "desc": "The classic two-note coin, with a little shimmer",
+   "gain": 0.271,
+   "limited": false,
+   "m": {
+    "peak": -5.39,
+    "truePeak": -5.39,
+    "lufsMax": -16.16,
+    "duration": 0.66,
+    "centroid": 2907
+   },
+   "takes": [
+    {
+     "lufsMax": -16.16,
+     "truePeak": -5.39,
+     "duration": 0.66
+    },
+    {
+     "lufsMax": -15.73,
+     "truePeak": -4.78,
+     "duration": 0.69
+    },
+    {
+     "lufsMax": -16.05,
+     "truePeak": -5.54,
+     "duration": 0.75
+    },
+    {
+     "lufsMax": -16.09,
+     "truePeak": -5.36,
+     "duration": 0.72
+    }
+   ]
+  },
+  {
+   "name": "coin-soft",
+   "id": "coinSoft",
+   "cat": "pickup",
+   "desc": "Rounder coin for cosy games",
+   "gain": 0.477,
+   "limited": false,
+   "m": {
+    "peak": -4.82,
+    "truePeak": -4.78,
+    "lufsMax": -16.09,
+    "duration": 0.74,
+    "centroid": 2547
+   },
+   "takes": [
+    {
+     "lufsMax": -16.09,
+     "truePeak": -4.78,
+     "duration": 0.74
+    },
+    {
+     "lufsMax": -15.93,
+     "truePeak": -5.11,
+     "duration": 0.71
+    },
+    {
+     "lufsMax": -16.2,
+     "truePeak": -5.3,
+     "duration": 0.74
+    },
+    {
+     "lufsMax": -15.8,
+     "truePeak": -5.26,
+     "duration": 0.8
+    }
+   ]
+  },
+  {
+   "name": "coin-double",
+   "id": "coinDouble",
+   "cat": "pickup",
+   "desc": "Two coins in quick succession",
+   "gain": 0.277,
+   "limited": false,
+   "m": {
+    "peak": -5.25,
+    "truePeak": -5.25,
+    "lufsMax": -16.17,
+    "duration": 0.77,
+    "centroid": 2990
+   },
+   "takes": [
+    {
+     "lufsMax": -16.17,
+     "truePeak": -5.25,
+     "duration": 0.77
+    },
+    {
+     "lufsMax": -15.93,
+     "truePeak": -5.22,
+     "duration": 0.77
+    },
+    {
+     "lufsMax": -15.93,
+     "truePeak": -5.33,
+     "duration": 0.75
+    },
+    {
+     "lufsMax": -16.01,
+     "truePeak": -5.33,
+     "duration": 0.77
+    }
+   ]
+  },
+  {
+   "name": "coin-bag",
+   "id": "coinBag",
+   "cat": "pickup",
+   "desc": "A handful of coins, a small payout",
+   "gain": 0.418,
+   "limited": false,
+   "m": {
+    "peak": -8.55,
+    "truePeak": -6.14,
+    "lufsMax": -15.84,
+    "duration": 0.77,
+    "centroid": 9110
+   },
+   "takes": [
+    {
+     "lufsMax": -15.84,
+     "truePeak": -6.14,
+     "duration": 0.77
+    },
+    {
+     "lufsMax": -16.02,
+     "truePeak": -6.61,
+     "duration": 0.75
+    },
+    {
+     "lufsMax": -16.12,
+     "truePeak": -6.33,
+     "duration": 0.72
+    },
+    {
+     "lufsMax": -16.03,
+     "truePeak": -6.74,
+     "duration": 0.7
+    }
+   ]
+  },
+  {
+   "name": "gem",
+   "id": "gem",
+   "cat": "pickup",
+   "desc": "Glassy bell for gems and crystals",
+   "gain": 0.286,
+   "limited": false,
+   "m": {
+    "peak": -7.75,
+    "truePeak": -7.65,
+    "lufsMax": -16.5,
+    "duration": 0.86,
+    "centroid": 5643
+   },
+   "takes": [
+    {
+     "lufsMax": -16.5,
+     "truePeak": -7.65,
+     "duration": 0.86
+    },
+    {
+     "lufsMax": -15.3,
+     "truePeak": -6.99,
+     "duration": 0.91
+    },
+    {
+     "lufsMax": -16.37,
+     "truePeak": -7.73,
+     "duration": 0.75
+    },
+    {
+     "lufsMax": -15.82,
+     "truePeak": -7.02,
+     "duration": 0.74
+    }
+   ]
+  },
+  {
+   "name": "pickup",
+   "id": "pickup",
+   "cat": "pickup",
+   "desc": "Generic item pickup, quick rising notes",
+   "gain": 0.346,
+   "limited": false,
+   "m": {
+    "peak": -5.16,
+    "truePeak": -5.15,
+    "lufsMax": -16.04,
+    "duration": 0.16,
+    "centroid": 2061
+   },
+   "takes": [
+    {
+     "lufsMax": -16.04,
+     "truePeak": -5.15,
+     "duration": 0.16
+    },
+    {
+     "lufsMax": -15.99,
+     "truePeak": -5.18,
+     "duration": 0.16
+    },
+    {
+     "lufsMax": -16.01,
+     "truePeak": -5.2,
+     "duration": 0.16
+    },
+    {
+     "lufsMax": -15.98,
+     "truePeak": -5.1,
+     "duration": 0.16
+    }
+   ]
+  },
+  {
+   "name": "pickup-soft",
+   "id": "pickupSoft",
+   "cat": "pickup",
+   "desc": "Soft pop-and-chime pickup",
+   "gain": 0.823,
+   "limited": false,
+   "m": {
+    "peak": -1.92,
+    "truePeak": -1.91,
+    "lufsMax": -16.3,
+    "duration": 0.66,
+    "centroid": 1523
+   },
+   "takes": [
+    {
+     "lufsMax": -16.3,
+     "truePeak": -1.91,
+     "duration": 0.66
+    },
+    {
+     "lufsMax": -16.14,
+     "truePeak": -1.9,
+     "duration": 0.67
+    },
+    {
+     "lufsMax": -15.73,
+     "truePeak": -1.91,
+     "duration": 0.69
+    },
+    {
+     "lufsMax": -15.84,
+     "truePeak": -1.9,
+     "duration": 0.73
+    }
+   ]
+  },
+  {
+   "name": "pickup-item",
+   "id": "pickupItem",
+   "cat": "pickup",
+   "desc": "Grab an item: a short slide up",
+   "gain": 0.469,
+   "limited": true,
+   "m": {
+    "peak": -1.28,
+    "truePeak": -1.27,
+    "lufsMax": -17.45,
+    "duration": 0.14,
+    "centroid": 2299
+   },
+   "takes": [
+    {
+     "lufsMax": -17.45,
+     "truePeak": -1.27,
+     "duration": 0.14
+    },
+    {
+     "lufsMax": -17.34,
+     "truePeak": -1.23,
+     "duration": 0.15
+    },
+    {
+     "lufsMax": -17.4,
+     "truePeak": -1.2,
+     "duration": 0.14
+    },
+    {
+     "lufsMax": -17.33,
+     "truePeak": -1.25,
+     "duration": 0.15
+    }
+   ]
+  },
+  {
+   "name": "key",
+   "id": "key",
+   "cat": "pickup",
+   "desc": "Key pickup: metal jingle and a chime",
+   "gain": 0.882,
+   "limited": false,
+   "m": {
+    "peak": -2.98,
+    "truePeak": -2.89,
+    "lufsMax": -16.21,
+    "duration": 0.8,
+    "centroid": 5337
+   },
+   "takes": [
+    {
+     "lufsMax": -16.21,
+     "truePeak": -2.89,
+     "duration": 0.8
+    },
+    {
+     "lufsMax": -16.15,
+     "truePeak": -3.25,
+     "duration": 0.79
+    },
+    {
+     "lufsMax": -16.09,
+     "truePeak": -2.97,
+     "duration": 0.83
+    },
+    {
+     "lufsMax": -15.55,
+     "truePeak": -2.89,
+     "duration": 0.83
+    }
+   ]
+  },
+  {
+   "name": "heart",
+   "id": "heart",
+   "cat": "pickup",
+   "desc": "Health pickup, warm and friendly",
+   "gain": 0.402,
+   "limited": false,
+   "m": {
+    "peak": -4.35,
+    "truePeak": -4.33,
+    "lufsMax": -15.97,
+    "duration": 0.91,
+    "centroid": 1362
+   },
+   "takes": [
+    {
+     "lufsMax": -15.97,
+     "truePeak": -4.33,
+     "duration": 0.91
+    },
+    {
+     "lufsMax": -15.91,
+     "truePeak": -3.94,
+     "duration": 0.94
+    },
+    {
+     "lufsMax": -15.83,
+     "truePeak": -4.31,
+     "duration": 0.94
+    },
+    {
+     "lufsMax": -16.26,
+     "truePeak": -4.74,
+     "duration": 0.93
+    }
+   ]
+  },
+  {
+   "name": "ammo",
+   "id": "ammo",
+   "cat": "pickup",
+   "desc": "Ammo or clip pickup: metallic clack",
+   "gain": 0.865,
+   "limited": true,
+   "m": {
+    "peak": -1.2,
+    "truePeak": -1.2,
+    "lufsMax": -22.54,
+    "duration": 0.15,
+    "centroid": 2865
+   },
+   "takes": [
+    {
+     "lufsMax": -22.54,
+     "truePeak": -1.2,
+     "duration": 0.15
+    },
+    {
+     "lufsMax": -23.18,
+     "truePeak": -2.06,
+     "duration": 0.15
+    },
+    {
+     "lufsMax": -22.74,
+     "truePeak": -2.6,
+     "duration": 0.15
+    },
+    {
+     "lufsMax": -22.73,
+     "truePeak": -1.83,
+     "duration": 0.16
+    }
+   ]
+  },
+  {
+   "name": "ka-ching",
+   "id": "kaChing",
+   "cat": "pickup",
+   "desc": "Cash register for shops and purchases",
+   "gain": 0.267,
+   "limited": false,
+   "m": {
+    "peak": -7.97,
+    "truePeak": -4.55,
+    "lufsMax": -15.72,
+    "duration": 0.77,
+    "centroid": 8554
+   },
+   "takes": [
+    {
+     "lufsMax": -15.72,
+     "truePeak": -4.55,
+     "duration": 0.77
+    },
+    {
+     "lufsMax": -16.6,
+     "truePeak": -5.35,
+     "duration": 0.69
+    },
+    {
+     "lufsMax": -15.82,
+     "truePeak": -4.69,
+     "duration": 0.75
+    },
+    {
+     "lufsMax": -15.82,
+     "truePeak": -4.6,
+     "duration": 0.82
+    }
+   ]
+  },
+  {
+   "name": "xp-orb",
+   "id": "xpOrb",
+   "cat": "pickup",
+   "desc": "Experience orb, small and bright",
+   "gain": 0.873,
+   "limited": true,
+   "m": {
+    "peak": -1.26,
+    "truePeak": -1.26,
+    "lufsMax": -16.91,
+    "duration": 0.43,
+    "centroid": 1918
+   },
+   "takes": [
+    {
+     "lufsMax": -16.91,
+     "truePeak": -1.26,
+     "duration": 0.43
+    },
+    {
+     "lufsMax": -16.96,
+     "truePeak": -1.21,
+     "duration": 0.43
+    },
+    {
+     "lufsMax": -17.08,
+     "truePeak": -1.2,
+     "duration": 0.43
+    },
+    {
+     "lufsMax": -16.45,
+     "truePeak": -1.24,
+     "duration": 0.43
+    }
+   ]
+  },
+  {
+   "name": "star",
+   "id": "star",
+   "cat": "pickup",
+   "desc": "Collect a star: sparkling run upward",
+   "gain": 0.25,
+   "limited": false,
+   "m": {
+    "peak": -8.99,
+    "truePeak": -8.99,
+    "lufsMax": -15.89,
+    "duration": 0.71,
+    "centroid": 3902
+   },
+   "takes": [
+    {
+     "lufsMax": -15.89,
+     "truePeak": -8.99,
+     "duration": 0.71
+    },
+    {
+     "lufsMax": -16.13,
+     "truePeak": -8.01,
+     "duration": 0.7
+    },
+    {
+     "lufsMax": -16.11,
+     "truePeak": -9.46,
+     "duration": 0.71
+    },
+    {
+     "lufsMax": -15.93,
+     "truePeak": -8.09,
+     "duration": 0.72
+    }
+   ]
+  },
+  {
+   "name": "ring",
+   "id": "ring",
+   "cat": "pickup",
+   "desc": "Fast ring pickup, two-note bright chime",
+   "gain": 0.313,
+   "limited": false,
+   "m": {
+    "peak": -7.14,
+    "truePeak": -7.14,
+    "lufsMax": -16.48,
+    "duration": 0.76,
+    "centroid": 3358
+   },
+   "takes": [
+    {
+     "lufsMax": -16.48,
+     "truePeak": -7.14,
+     "duration": 0.76
+    },
+    {
+     "lufsMax": -14.76,
+     "truePeak": -6.96,
+     "duration": 0.78
+    },
+    {
+     "lufsMax": -16.34,
+     "truePeak": -6.95,
+     "duration": 0.7
+    },
+    {
+     "lufsMax": -16.38,
+     "truePeak": -7.88,
+     "duration": 0.86
+    }
+   ]
+  },
+  {
+   "name": "jump",
+   "id": "jump",
+   "cat": "jump",
+   "desc": "Platformer jump: square sweep up",
+   "gain": 0.425,
+   "limited": false,
+   "m": {
+    "peak": -3.04,
+    "truePeak": -3.04,
+    "lufsMax": -16.07,
+    "duration": 0.18,
+    "centroid": 1629
+   },
+   "takes": [
+    {
+     "lufsMax": -16.07,
+     "truePeak": -3.04,
+     "duration": 0.18
+    },
+    {
+     "lufsMax": -15.97,
+     "truePeak": -3.04,
+     "duration": 0.19
+    },
+    {
+     "lufsMax": -16.02,
+     "truePeak": -3.01,
+     "duration": 0.18
+    },
+    {
+     "lufsMax": -15.97,
+     "truePeak": -3.07,
+     "duration": 0.19
+    }
+   ]
+  },
+  {
+   "name": "jump-soft",
+   "id": "jumpSoft",
+   "cat": "jump",
+   "desc": "Gentle hop for cute characters",
+   "gain": 0.766,
+   "limited": true,
+   "m": {
+    "peak": -1.47,
+    "truePeak": -1.47,
+    "lufsMax": -17,
+    "duration": 0.15,
+    "centroid": 756
+   },
+   "takes": [
+    {
+     "lufsMax": -17,
+     "truePeak": -1.47,
+     "duration": 0.15
+    },
+    {
+     "lufsMax": -16.77,
+     "truePeak": -1.24,
+     "duration": 0.16
+    },
+    {
+     "lufsMax": -16.91,
+     "truePeak": -1.51,
+     "duration": 0.15
+    },
+    {
+     "lufsMax": -16.79,
+     "truePeak": -1.21,
+     "duration": 0.16
+    }
+   ]
+  },
+  {
+   "name": "jump-high",
+   "id": "jumpHigh",
+   "cat": "jump",
+   "desc": "Big jump with a longer rise",
+   "gain": 0.364,
+   "limited": false,
+   "m": {
+    "peak": -2.84,
+    "truePeak": -2.83,
+    "lufsMax": -16.06,
+    "duration": 0.3,
+    "centroid": 1704
+   },
+   "takes": [
+    {
+     "lufsMax": -16.06,
+     "truePeak": -2.83,
+     "duration": 0.3
+    },
+    {
+     "lufsMax": -15.97,
+     "truePeak": -2.18,
+     "duration": 0.32
+    },
+    {
+     "lufsMax": -16.01,
+     "truePeak": -3.1,
+     "duration": 0.31
+    },
+    {
+     "lufsMax": -15.97,
+     "truePeak": -1.9,
+     "duration": 0.32
+    }
+   ]
+  },
+  {
+   "name": "jump-double",
+   "id": "jumpDouble",
+   "cat": "jump",
+   "desc": "Second jump in mid-air, higher and airier",
+   "gain": 0.611,
+   "limited": true,
+   "m": {
+    "peak": -1.6,
+    "truePeak": -1.6,
+    "lufsMax": -17.04,
+    "duration": 0.14,
+    "centroid": 2866
+   },
+   "takes": [
+    {
+     "lufsMax": -17.04,
+     "truePeak": -1.6,
+     "duration": 0.14
+    },
+    {
+     "lufsMax": -16.78,
+     "truePeak": -1.27,
+     "duration": 0.15
+    },
+    {
+     "lufsMax": -16.98,
+     "truePeak": -1.59,
+     "duration": 0.15
+    },
+    {
+     "lufsMax": -16.81,
+     "truePeak": -1.21,
+     "duration": 0.15
+    }
+   ]
+  },
+  {
+   "name": "jump-cartoon",
+   "id": "jumpCartoon",
+   "cat": "jump",
+   "desc": "Boingy cartoon jump with wobble",
+   "gain": 0.478,
+   "limited": false,
+   "m": {
+    "peak": -6.33,
+    "truePeak": -6.33,
+    "lufsMax": -16.07,
+    "duration": 0.3,
+    "centroid": 317
+   },
+   "takes": [
+    {
+     "lufsMax": -16.07,
+     "truePeak": -6.33,
+     "duration": 0.3
+    },
+    {
+     "lufsMax": -15.95,
+     "truePeak": -6.34,
+     "duration": 0.31
+    },
+    {
+     "lufsMax": -16.03,
+     "truePeak": -6.34,
+     "duration": 0.3
+    },
+    {
+     "lufsMax": -15.95,
+     "truePeak": -6.33,
+     "duration": 0.31
+    }
+   ]
+  },
+  {
+   "name": "hop",
+   "id": "hop",
+   "cat": "jump",
+   "desc": "Tiny hop for small creatures",
+   "gain": 0.87,
+   "limited": true,
+   "m": {
+    "peak": -1.21,
+    "truePeak": -1.21,
+    "lufsMax": -16.88,
+    "duration": 0.1,
+    "centroid": 1755
+   },
+   "takes": [
+    {
+     "lufsMax": -16.88,
+     "truePeak": -1.21,
+     "duration": 0.1
+    },
+    {
+     "lufsMax": -16.8,
+     "truePeak": -1.21,
+     "duration": 0.11
+    },
+    {
+     "lufsMax": -16.86,
+     "truePeak": -1.23,
+     "duration": 0.1
+    },
+    {
+     "lufsMax": -16.77,
+     "truePeak": -1.2,
+     "duration": 0.1
+    }
+   ]
+  },
+  {
+   "name": "land",
+   "id": "land",
+   "cat": "jump",
+   "desc": "Landing on solid ground",
+   "gain": 0.725,
+   "limited": true,
+   "m": {
+    "peak": -1.2,
+    "truePeak": -1.2,
+    "lufsMax": -20.31,
+    "duration": 0.11,
+    "centroid": 283
+   },
+   "takes": [
+    {
+     "lufsMax": -20.31,
+     "truePeak": -1.2,
+     "duration": 0.11
+    },
+    {
+     "lufsMax": -20.8,
+     "truePeak": -2.4,
+     "duration": 0.11
+    },
+    {
+     "lufsMax": -20.88,
+     "truePeak": -2.67,
+     "duration": 0.11
+    },
+    {
+     "lufsMax": -20.99,
+     "truePeak": -1.75,
+     "duration": 0.11
+    }
+   ]
+  },
+  {
+   "name": "land-heavy",
+   "id": "landHeavy",
+   "cat": "jump",
+   "desc": "Heavy landing with a thud",
+   "gain": 0.539,
+   "limited": false,
+   "m": {
+    "peak": -1.44,
+    "truePeak": -1.42,
+    "lufsMax": -15.74,
+    "duration": 0.3,
+    "centroid": 281
+   },
+   "takes": [
+    {
+     "lufsMax": -15.74,
+     "truePeak": -1.42,
+     "duration": 0.3
+    },
+    {
+     "lufsMax": -16.05,
+     "truePeak": -3.36,
+     "duration": 0.32
+    },
+    {
+     "lufsMax": -16.26,
+     "truePeak": -3.2,
+     "duration": 0.31
+    },
+    {
+     "lufsMax": -15.98,
+     "truePeak": -2,
+     "duration": 0.32
+    }
+   ]
+  },
+  {
+   "name": "spring",
+   "id": "spring",
+   "cat": "jump",
+   "desc": "Spring or trampoline boing",
+   "gain": 0.502,
+   "limited": false,
+   "m": {
+    "peak": -3.77,
+    "truePeak": -3.77,
+    "lufsMax": -16.07,
+    "duration": 0.44,
+    "centroid": 610
+   },
+   "takes": [
+    {
+     "lufsMax": -16.07,
+     "truePeak": -3.77,
+     "duration": 0.44
+    },
+    {
+     "lufsMax": -15.95,
+     "truePeak": -3.77,
+     "duration": 0.47
+    },
+    {
+     "lufsMax": -16.01,
+     "truePeak": -3.78,
+     "duration": 0.45
+    },
+    {
+     "lufsMax": -15.94,
+     "truePeak": -3.75,
+     "duration": 0.47
+    }
+   ]
+  },
+  {
+   "name": "wall-jump",
+   "id": "wallJump",
+   "cat": "jump",
+   "desc": "Push off a wall: scuff then rise",
+   "gain": 0.684,
+   "limited": true,
+   "m": {
+    "peak": -1.28,
+    "truePeak": -1.28,
+    "lufsMax": -16.63,
+    "duration": 0.14,
+    "centroid": 1897
+   },
+   "takes": [
+    {
+     "lufsMax": -16.63,
+     "truePeak": -1.28,
+     "duration": 0.14
+    },
+    {
+     "lufsMax": -16.89,
+     "truePeak": -1.2,
+     "duration": 0.14
+    },
+    {
+     "lufsMax": -16.36,
+     "truePeak": -1.34,
+     "duration": 0.15
+    },
+    {
+     "lufsMax": -16.88,
+     "truePeak": -1.23,
+     "duration": 0.13
+    }
+   ]
+  },
+  {
+   "name": "hit",
+   "id": "hit",
+   "cat": "hit",
+   "desc": "Solid all-round hit: click, body, thump",
+   "gain": 0.425,
+   "limited": true,
+   "m": {
+    "peak": -1.21,
+    "truePeak": -1.21,
+    "lufsMax": -20.18,
+    "duration": 0.14,
+    "centroid": 2064
+   },
+   "takes": [
+    {
+     "lufsMax": -20.18,
+     "truePeak": -1.21,
+     "duration": 0.14
+    },
+    {
+     "lufsMax": -20.43,
+     "truePeak": -2.52,
+     "duration": 0.13
+    },
+    {
+     "lufsMax": -20.32,
+     "truePeak": -1.55,
+     "duration": 0.13
+    },
+    {
+     "lufsMax": -20.04,
+     "truePeak": -3.08,
+     "duration": 0.14
+    }
+   ]
+  },
+  {
+   "name": "hit-light",
+   "id": "hitLight",
+   "cat": "hit",
+   "desc": "Light jab or tap",
+   "gain": 0.56,
+   "limited": true,
+   "m": {
+    "peak": -1.21,
+    "truePeak": -1.2,
+    "lufsMax": -21.93,
+    "duration": 0.08,
+    "centroid": 4804
+   },
+   "takes": [
+    {
+     "lufsMax": -21.93,
+     "truePeak": -1.2,
+     "duration": 0.08
+    },
+    {
+     "lufsMax": -21.99,
+     "truePeak": -1.88,
+     "duration": 0.07
+    },
+    {
+     "lufsMax": -21.62,
+     "truePeak": -1.28,
+     "duration": 0.08
+    },
+    {
+     "lufsMax": -22.15,
+     "truePeak": -1.81,
+     "duration": 0.07
+    }
+   ]
+  },
+  {
+   "name": "hit-heavy",
+   "id": "hitHeavy",
+   "cat": "hit",
+   "desc": "Heavy blow with crunch and low end",
+   "gain": 0.398,
+   "limited": true,
+   "m": {
+    "peak": -1.71,
+    "truePeak": -1.69,
+    "lufsMax": -17.16,
+    "duration": 0.69,
+    "centroid": 1902
+   },
+   "takes": [
+    {
+     "lufsMax": -17.16,
+     "truePeak": -1.69,
+     "duration": 0.69
+    },
+    {
+     "lufsMax": -17.51,
+     "truePeak": -1.71,
+     "duration": 0.68
+    },
+    {
+     "lufsMax": -17.25,
+     "truePeak": -1.56,
+     "duration": 0.68
+    },
+    {
+     "lufsMax": -16.86,
+     "truePeak": -1.19,
+     "duration": 0.69
+    }
+   ]
+  },
+  {
+   "name": "punch",
+   "id": "punch",
+   "cat": "hit",
+   "desc": "Cartoon punch, meaty",
+   "gain": 0.528,
+   "limited": true,
+   "m": {
+    "peak": -1.21,
+    "truePeak": -1.21,
+    "lufsMax": -17.73,
+    "duration": 0.12,
+    "centroid": 1472
+   },
+   "takes": [
+    {
+     "lufsMax": -17.73,
+     "truePeak": -1.21,
+     "duration": 0.12
+    },
+    {
+     "lufsMax": -18.05,
+     "truePeak": -1.31,
+     "duration": 0.12
+    },
+    {
+     "lufsMax": -17.46,
+     "truePeak": -1.51,
+     "duration": 0.13
+    },
+    {
+     "lufsMax": -17.8,
+     "truePeak": -1.6,
+     "duration": 0.12
+    }
+   ]
+  },
+  {
+   "name": "slap",
+   "id": "slap",
+   "cat": "hit",
+   "desc": "Flat slap",
+   "gain": 0.533,
+   "limited": true,
+   "m": {
+    "peak": -1.56,
+    "truePeak": -1.56,
+    "lufsMax": -21.44,
+    "duration": 0.09,
+    "centroid": 5534
+   },
+   "takes": [
+    {
+     "lufsMax": -21.44,
+     "truePeak": -1.56,
+     "duration": 0.09
+    },
+    {
+     "lufsMax": -21.21,
+     "truePeak": -2.03,
+     "duration": 0.09
+    },
+    {
+     "lufsMax": -21.1,
+     "truePeak": -1.2,
+     "duration": 0.1
+    },
+    {
+     "lufsMax": -21.27,
+     "truePeak": -1.26,
+     "duration": 0.09
+    }
+   ]
+  },
+  {
+   "name": "hurt",
+   "id": "hurt",
+   "cat": "hit",
+   "desc": "Player takes damage: buzzy drop",
+   "gain": 0.398,
+   "limited": false,
+   "m": {
+    "peak": -5.39,
+    "truePeak": -5.39,
+    "lufsMax": -15.12,
+    "duration": 0.2,
+    "centroid": 2038
+   },
+   "takes": [
+    {
+     "lufsMax": -15.12,
+     "truePeak": -5.39,
+     "duration": 0.2
+    },
+    {
+     "lufsMax": -14.88,
+     "truePeak": -5.27,
+     "duration": 0.21
+    },
+    {
+     "lufsMax": -15.11,
+     "truePeak": -5.47,
+     "duration": 0.2
+    },
+    {
+     "lufsMax": -14.91,
+     "truePeak": -5.46,
+     "duration": 0.21
+    }
+   ]
+  },
+  {
+   "name": "hurt-retro",
+   "id": "hurtRetro",
+   "cat": "hit",
+   "desc": "8-bit damage crunch",
+   "gain": 0.74,
+   "limited": true,
+   "m": {
+    "peak": -3.59,
+    "truePeak": -2.11,
+    "lufsMax": -17.29,
+    "duration": 0.21,
+    "centroid": 4663
+   },
+   "takes": [
+    {
+     "lufsMax": -17.29,
+     "truePeak": -2.11,
+     "duration": 0.21
+    },
+    {
+     "lufsMax": -17.47,
+     "truePeak": -1.19,
+     "duration": 0.2
+    },
+    {
+     "lufsMax": -17.82,
+     "truePeak": -2.11,
+     "duration": 0.2
+    },
+    {
+     "lufsMax": -17.03,
+     "truePeak": -1.32,
+     "duration": 0.19
+    }
+   ]
+  },
+  {
+   "name": "enemy-hit",
+   "id": "enemyHit",
+   "cat": "hit",
+   "desc": "Enemy flinches: short high blip and smack",
+   "gain": 0.434,
+   "limited": true,
+   "m": {
+    "peak": -1.2,
+    "truePeak": -1.2,
+    "lufsMax": -19.04,
+    "duration": 0.11,
+    "centroid": 4346
+   },
+   "takes": [
+    {
+     "lufsMax": -19.04,
+     "truePeak": -1.2,
+     "duration": 0.11
+    },
+    {
+     "lufsMax": -18.9,
+     "truePeak": -1.36,
+     "duration": 0.12
+    },
+    {
+     "lufsMax": -19.04,
+     "truePeak": -1.74,
+     "duration": 0.11
+    },
+    {
+     "lufsMax": -19.07,
+     "truePeak": -1.72,
+     "duration": 0.12
+    }
+   ]
+  },
+  {
+   "name": "enemy-die",
+   "id": "enemyDie",
+   "cat": "hit",
+   "desc": "Enemy defeated: falling crushed tone",
+   "gain": 0.347,
+   "limited": false,
+   "m": {
+    "peak": -5.7,
+    "truePeak": -5.19,
+    "lufsMax": -14.98,
+    "duration": 0.37,
+    "centroid": 4133
+   },
+   "takes": [
+    {
+     "lufsMax": -14.98,
+     "truePeak": -5.19,
+     "duration": 0.37
+    },
+    {
+     "lufsMax": -14.97,
+     "truePeak": -5.1,
+     "duration": 0.39
+    },
+    {
+     "lufsMax": -15.09,
+     "truePeak": -5.12,
+     "duration": 0.38
+    },
+    {
+     "lufsMax": -15,
+     "truePeak": -4.86,
+     "duration": 0.39
+    }
+   ]
+  },
+  {
+   "name": "sword-hit",
+   "id": "swordHit",
+   "cat": "hit",
+   "desc": "Blade hits armour",
+   "gain": 0.521,
+   "limited": true,
+   "m": {
+    "peak": -3.23,
+    "truePeak": -3.23,
+    "lufsMax": -20.29,
+    "duration": 0.69,
+    "centroid": 8558
+   },
+   "takes": [
+    {
+     "lufsMax": -20.29,
+     "truePeak": -3.23,
+     "duration": 0.69
+    },
+    {
+     "lufsMax": -20.29,
+     "truePeak": -1.51,
+     "duration": 0.7
+    },
+    {
+     "lufsMax": -20.16,
+     "truePeak": -1.21,
+     "duration": 0.64
+    },
+    {
+     "lufsMax": -19.84,
+     "truePeak": -3.82,
+     "duration": 0.67
+    }
+   ]
+  },
+  {
+   "name": "block",
+   "id": "block",
+   "cat": "hit",
+   "desc": "Shield block: dull metal clank",
+   "gain": 0.775,
+   "limited": true,
+   "m": {
+    "peak": -1.47,
+    "truePeak": -1.46,
+    "lufsMax": -20.09,
+    "duration": 0.68,
+    "centroid": 1715
+   },
+   "takes": [
+    {
+     "lufsMax": -20.09,
+     "truePeak": -1.46,
+     "duration": 0.68
+    },
+    {
+     "lufsMax": -20.32,
+     "truePeak": -1.2,
+     "duration": 0.65
+    },
+    {
+     "lufsMax": -20.43,
+     "truePeak": -1.4,
+     "duration": 0.65
+    },
+    {
+     "lufsMax": -20.22,
+     "truePeak": -2.83,
+     "duration": 0.65
+    }
+   ]
+  },
+  {
+   "name": "crit",
+   "id": "crit",
+   "cat": "hit",
+   "desc": "Critical hit: impact plus a bright ring",
+   "gain": 0.461,
+   "limited": true,
+   "m": {
+    "peak": -1.5,
+    "truePeak": -1.21,
+    "lufsMax": -16.51,
+    "duration": 0.86,
+    "centroid": 3405
+   },
+   "takes": [
+    {
+     "lufsMax": -16.51,
+     "truePeak": -1.21,
+     "duration": 0.86
+    },
+    {
+     "lufsMax": -16.83,
+     "truePeak": -1.68,
+     "duration": 0.83
+    },
+    {
+     "lufsMax": -16.37,
+     "truePeak": -1.48,
+     "duration": 0.86
+    },
+    {
+     "lufsMax": -16.7,
+     "truePeak": -1.8,
+     "duration": 0.86
+    }
+   ]
+  },
+  {
+   "name": "squish",
+   "id": "squish",
+   "cat": "hit",
+   "desc": "Wet squish for slimes",
+   "gain": 0.604,
+   "limited": true,
+   "m": {
+    "peak": -1.73,
+    "truePeak": -1.73,
+    "lufsMax": -18.13,
+    "duration": 0.18,
+    "centroid": 1329
+   },
+   "takes": [
+    {
+     "lufsMax": -18.13,
+     "truePeak": -1.73,
+     "duration": 0.18
+    },
+    {
+     "lufsMax": -17.78,
+     "truePeak": -1.19,
+     "duration": 0.19
+    },
+    {
+     "lufsMax": -17.83,
+     "truePeak": -1.65,
+     "duration": 0.18
+    },
+    {
+     "lufsMax": -17.79,
+     "truePeak": -1.56,
+     "duration": 0.19
+    }
+   ]
+  },
+  {
+   "name": "bonk",
+   "id": "bonk",
+   "cat": "hit",
+   "desc": "Cartoon bonk on the head",
+   "gain": 0.638,
+   "limited": true,
+   "m": {
+    "peak": -1.58,
+    "truePeak": -1.58,
+    "lufsMax": -18.99,
+    "duration": 0.12,
+    "centroid": 889
+   },
+   "takes": [
+    {
+     "lufsMax": -18.99,
+     "truePeak": -1.58,
+     "duration": 0.12
+    },
+    {
+     "lufsMax": -18.83,
+     "truePeak": -1.67,
+     "duration": 0.13
+    },
+    {
+     "lufsMax": -18.9,
+     "truePeak": -1.2,
+     "duration": 0.12
+    },
+    {
+     "lufsMax": -18.86,
+     "truePeak": -1.49,
+     "duration": 0.12
+    }
+   ]
+  },
+  {
+   "name": "arrow-hit",
+   "id": "arrowHit",
+   "cat": "hit",
+   "desc": "Arrow thunks into wood",
+   "gain": 0.534,
+   "limited": true,
+   "m": {
+    "peak": -1.82,
+    "truePeak": -1.74,
+    "lufsMax": -22.94,
+    "duration": 0.11,
+    "centroid": 1915
+   },
+   "takes": [
+    {
+     "lufsMax": -22.94,
+     "truePeak": -1.74,
+     "duration": 0.11
+    },
+    {
+     "lufsMax": -23.01,
+     "truePeak": -1.34,
+     "duration": 0.1
+    },
+    {
+     "lufsMax": -22.63,
+     "truePeak": -2.09,
+     "duration": 0.1
+    },
+    {
+     "lufsMax": -23.06,
+     "truePeak": -1.2,
+     "duration": 0.11
+    }
+   ]
+  },
+  {
+   "name": "explosion",
+   "id": "explosion",
+   "cat": "explosion",
+   "desc": "Mid-size explosion: crack, rumble, tail",
+   "gain": 0.305,
+   "limited": true,
+   "m": {
+    "peak": -1.23,
+    "truePeak": -1.19,
+    "lufsMax": -15.97,
+    "duration": 1.42,
+    "centroid": 1657
+   },
+   "takes": [
+    {
+     "lufsMax": -15.97,
+     "truePeak": -1.19,
+     "duration": 1.42
+    },
+    {
+     "lufsMax": -16.46,
+     "truePeak": -3.12,
+     "duration": 1.33
+    },
+    {
+     "lufsMax": -17.2,
+     "truePeak": -2.85,
+     "duration": 1.43
+    },
+    {
+     "lufsMax": -17.29,
+     "truePeak": -2.49,
+     "duration": 1.39
+    }
+   ]
+  },
+  {
+   "name": "explosion-small",
+   "id": "explosionSmall",
+   "cat": "explosion",
+   "desc": "Small pop of an explosion, grenades, barrels",
+   "gain": 0.468,
+   "limited": true,
+   "m": {
+    "peak": -1.57,
+    "truePeak": -1.56,
+    "lufsMax": -15.86,
+    "duration": 0.9,
+    "centroid": 2305
+   },
+   "takes": [
+    {
+     "lufsMax": -15.86,
+     "truePeak": -1.56,
+     "duration": 0.9
+    },
+    {
+     "lufsMax": -15.89,
+     "truePeak": -1.37,
+     "duration": 0.9
+    },
+    {
+     "lufsMax": -15.46,
+     "truePeak": -1.2,
+     "duration": 0.91
+    },
+    {
+     "lufsMax": -15.91,
+     "truePeak": -1.45,
+     "duration": 0.9
+    }
+   ]
+  },
+  {
+   "name": "explosion-big",
+   "id": "explosionBig",
+   "cat": "explosion",
+   "desc": "Huge blast with a long rolling tail",
+   "gain": 0.21,
+   "limited": true,
+   "m": {
+    "peak": -3.16,
+    "truePeak": -3.16,
+    "lufsMax": -15.18,
+    "duration": 3.08,
+    "centroid": 1079
+   },
+   "takes": [
+    {
+     "lufsMax": -15.18,
+     "truePeak": -3.16,
+     "duration": 3.08
+    },
+    {
+     "lufsMax": -15.64,
+     "truePeak": -1.56,
+     "duration": 3.01
+    },
+    {
+     "lufsMax": -14.88,
+     "truePeak": -1.85,
+     "duration": 3.16
+    },
+    {
+     "lufsMax": -14.95,
+     "truePeak": -1.18,
+     "duration": 2.97
+    }
+   ]
+  },
+  {
+   "name": "explosion-retro",
+   "id": "explosionRetro",
+   "cat": "explosion",
+   "desc": "8-bit explosion, crunchy noise falling",
+   "gain": 0.564,
+   "limited": false,
+   "m": {
+    "peak": -4.46,
+    "truePeak": -2.91,
+    "lufsMax": -13.79,
+    "duration": 0.74,
+    "centroid": 4204
+   },
+   "takes": [
+    {
+     "lufsMax": -13.79,
+     "truePeak": -2.91,
+     "duration": 0.74
+    },
+    {
+     "lufsMax": -13.92,
+     "truePeak": -2.34,
+     "duration": 0.78
+    },
+    {
+     "lufsMax": -14.16,
+     "truePeak": -2.9,
+     "duration": 0.75
+    },
+    {
+     "lufsMax": -14.14,
+     "truePeak": -2.75,
+     "duration": 0.77
+    }
+   ]
+  },
+  {
+   "name": "explosion-distant",
+   "id": "explosionDistant",
+   "cat": "explosion",
+   "desc": "Far-off boom, muffled",
+   "gain": 0.654,
+   "limited": true,
+   "m": {
+    "peak": -1.2,
+    "truePeak": -1.2,
+    "lufsMax": -15.08,
+    "duration": 3.06,
+    "centroid": 205
+   },
+   "takes": [
+    {
+     "lufsMax": -15.08,
+     "truePeak": -1.2,
+     "duration": 3.06
+    },
+    {
+     "lufsMax": -15.19,
+     "truePeak": -1.69,
+     "duration": 3.13
+    },
+    {
+     "lufsMax": -15.33,
+     "truePeak": -1.65,
+     "duration": 3.09
+    },
+    {
+     "lufsMax": -14.69,
+     "truePeak": -1.42,
+     "duration": 3.05
+    }
+   ]
+  },
+  {
+   "name": "firework",
+   "id": "firework",
+   "cat": "explosion",
+   "desc": "Firework pop with crackle",
+   "gain": 0.558,
+   "limited": true,
+   "m": {
+    "peak": -1.55,
+    "truePeak": -1.51,
+    "lufsMax": -15.42,
+    "duration": 1.24,
+    "centroid": 6921
+   },
+   "takes": [
+    {
+     "lufsMax": -15.42,
+     "truePeak": -1.51,
+     "duration": 1.24
+    },
+    {
+     "lufsMax": -15.78,
+     "truePeak": -1.21,
+     "duration": 1.23
+    },
+    {
+     "lufsMax": -15.34,
+     "truePeak": -1.39,
+     "duration": 1.24
+    },
+    {
+     "lufsMax": -15.55,
+     "truePeak": -1.69,
+     "duration": 1.24
+    }
+   ]
+  },
+  {
+   "name": "implosion",
+   "id": "implosion",
+   "cat": "explosion",
+   "desc": "Reverse-feel suck-in then thump",
+   "gain": 0.54,
+   "limited": false,
+   "m": {
+    "peak": -3.43,
+    "truePeak": -3.43,
+    "lufsMax": -13.91,
+    "duration": 1.4,
+    "centroid": 1745
+   },
+   "takes": [
+    {
+     "lufsMax": -13.91,
+     "truePeak": -3.43,
+     "duration": 1.4
+    },
+    {
+     "lufsMax": -14.13,
+     "truePeak": -3.5,
+     "duration": 1.39
+    },
+    {
+     "lufsMax": -14.04,
+     "truePeak": -3.78,
+     "duration": 1.4
+    },
+    {
+     "lufsMax": -13.91,
+     "truePeak": -3.19,
+     "duration": 1.41
+    }
+   ]
+  },
+  {
+   "name": "debris",
+   "id": "debris",
+   "cat": "explosion",
+   "desc": "Rubble and debris settling",
+   "gain": 1.75,
+   "limited": true,
+   "m": {
+    "peak": -2.43,
+    "truePeak": -2.4,
+    "lufsMax": -19.59,
+    "duration": 0.51,
+    "centroid": 1818
+   },
+   "takes": [
+    {
+     "lufsMax": -19.59,
+     "truePeak": -2.4,
+     "duration": 0.51
+    },
+    {
+     "lufsMax": -18.72,
+     "truePeak": -1.22,
+     "duration": 0.52
+    },
+    {
+     "lufsMax": -19.16,
+     "truePeak": -2.9,
+     "duration": 0.51
+    },
+    {
+     "lufsMax": -19.36,
+     "truePeak": -4.27,
+     "duration": 0.51
+    }
+   ]
+  },
+  {
+   "name": "shockwave",
+   "id": "shockwave",
+   "cat": "explosion",
+   "desc": "Energy shockwave, sci-fi",
+   "gain": 0.416,
+   "limited": false,
+   "m": {
+    "peak": -2.6,
+    "truePeak": -2.5,
+    "lufsMax": -13.99,
+    "duration": 1.51,
+    "centroid": 1870
+   },
+   "takes": [
+    {
+     "lufsMax": -13.99,
+     "truePeak": -2.5,
+     "duration": 1.51
+    },
+    {
+     "lufsMax": -14.17,
+     "truePeak": -2.42,
+     "duration": 1.54
+    },
+    {
+     "lufsMax": -14.19,
+     "truePeak": -2.08,
+     "duration": 1.5
+    },
+    {
+     "lufsMax": -13.65,
+     "truePeak": -1.76,
+     "duration": 1.54
+    }
+   ]
+  },
+  {
+   "name": "bomb-fuse",
+   "id": "bombFuse",
+   "cat": "explosion",
+   "desc": "Lit fuse fizzing",
+   "gain": 0.778,
+   "limited": false,
+   "m": {
+    "peak": -5.46,
+    "truePeak": -5.4,
+    "lufsMax": -14.09,
+    "duration": 1.03,
+    "centroid": 7548
+   },
+   "takes": [
+    {
+     "lufsMax": -14.09,
+     "truePeak": -5.4,
+     "duration": 1.03
+    },
+    {
+     "lufsMax": -13.96,
+     "truePeak": -6.61,
+     "duration": 1.04
+    },
+    {
+     "lufsMax": -13.94,
+     "truePeak": -5.7,
+     "duration": 1.03
+    },
+    {
+     "lufsMax": -14.02,
+     "truePeak": -5.58,
+     "duration": 1.03
+    }
+   ]
+  },
+  {
+   "name": "powerup",
+   "id": "powerup",
+   "cat": "powerup",
+   "desc": "Classic power-up: fast arpeggio climbing two octaves",
+   "gain": 0.184,
+   "limited": false,
+   "m": {
+    "peak": -10.62,
+    "truePeak": -10.6,
+    "lufsMax": -16.02,
+    "duration": 0.4,
+    "centroid": 1932
+   },
+   "takes": [
+    {
+     "lufsMax": -16.02,
+     "truePeak": -10.6,
+     "duration": 0.4
+    },
+    {
+     "lufsMax": -16,
+     "truePeak": -10.58,
+     "duration": 0.4
+    },
+    {
+     "lufsMax": -16.02,
+     "truePeak": -10.58,
+     "duration": 0.4
+    },
+    {
+     "lufsMax": -15.98,
+     "truePeak": -10.6,
+     "duration": 0.4
+    }
+   ]
+  },
+  {
+   "name": "powerup-retro",
+   "id": "powerupRetro",
+   "cat": "powerup",
+   "desc": "Rising warble, 8-bit style",
+   "gain": 0.201,
+   "limited": false,
+   "m": {
+    "peak": -9.88,
+    "truePeak": -9.29,
+    "lufsMax": -15.98,
+    "duration": 0.45,
+    "centroid": 4722
+   },
+   "takes": [
+    {
+     "lufsMax": -15.98,
+     "truePeak": -9.29,
+     "duration": 0.45
+    },
+    {
+     "lufsMax": -15.99,
+     "truePeak": -9.34,
+     "duration": 0.46
+    },
+    {
+     "lufsMax": -15.99,
+     "truePeak": -9.33,
+     "duration": 0.46
+    },
+    {
+     "lufsMax": -15.96,
+     "truePeak": -9.26,
+     "duration": 0.46
+    }
+   ]
+  },
+  {
+   "name": "level-up",
+   "id": "levelUp",
+   "cat": "powerup",
+   "desc": "Level up: chord, sparkle and hold",
+   "gain": 0.223,
+   "limited": false,
+   "m": {
+    "peak": -5.71,
+    "truePeak": -5.62,
+    "lufsMax": -15.2,
+    "duration": 1.42,
+    "centroid": 1903
+   },
+   "takes": [
+    {
+     "lufsMax": -15.2,
+     "truePeak": -5.62,
+     "duration": 1.42
+    },
+    {
+     "lufsMax": -15.98,
+     "truePeak": -7.01,
+     "duration": 1.31
+    },
+    {
+     "lufsMax": -15.51,
+     "truePeak": -6.05,
+     "duration": 1.34
+    },
+    {
+     "lufsMax": -17.27,
+     "truePeak": -7.88,
+     "duration": 1.33
+    }
+   ]
+  },
+  {
+   "name": "extra-life",
+   "id": "extraLife",
+   "cat": "powerup",
+   "desc": "1-up style six-note phrase",
+   "gain": 0.154,
+   "limited": false,
+   "m": {
+    "peak": -12.6,
+    "truePeak": -12.6,
+    "lufsMax": -15.97,
+    "duration": 0.55,
+    "centroid": 2113
+   },
+   "takes": [
+    {
+     "lufsMax": -15.97,
+     "truePeak": -12.6,
+     "duration": 0.55
+    },
+    {
+     "lufsMax": -15.99,
+     "truePeak": -12.62,
+     "duration": 0.55
+    },
+    {
+     "lufsMax": -15.98,
+     "truePeak": -12.61,
+     "duration": 0.55
+    },
+    {
+     "lufsMax": -15.95,
+     "truePeak": -12.67,
+     "duration": 0.55
+    }
+   ]
+  },
+  {
+   "name": "shield-on",
+   "id": "shieldOn",
+   "cat": "powerup",
+   "desc": "Energy shield raises",
+   "gain": 0.286,
+   "limited": false,
+   "m": {
+    "peak": -2.56,
+    "truePeak": -2.56,
+    "lufsMax": -16.12,
+    "duration": 0.98,
+    "centroid": 632
+   },
+   "takes": [
+    {
+     "lufsMax": -16.12,
+     "truePeak": -2.56,
+     "duration": 0.98
+    },
+    {
+     "lufsMax": -15.74,
+     "truePeak": -2.45,
+     "duration": 1
+    },
+    {
+     "lufsMax": -16.39,
+     "truePeak": -2.29,
+     "duration": 1
+    },
+    {
+     "lufsMax": -15.75,
+     "truePeak": -2.21,
+     "duration": 1
+    }
+   ]
+  },
+  {
+   "name": "shield-off",
+   "id": "shieldOff",
+   "cat": "powerup",
+   "desc": "Shield drops or breaks down",
+   "gain": 0.408,
+   "limited": true,
+   "m": {
+    "peak": -1.53,
+    "truePeak": -1.53,
+    "lufsMax": -18.69,
+    "duration": 0.4,
+    "centroid": 2114
+   },
+   "takes": [
+    {
+     "lufsMax": -18.69,
+     "truePeak": -1.53,
+     "duration": 0.4
+    },
+    {
+     "lufsMax": -18.5,
+     "truePeak": -1.26,
+     "duration": 0.42
+    },
+    {
+     "lufsMax": -18.6,
+     "truePeak": -1.2,
+     "duration": 0.4
+    },
+    {
+     "lufsMax": -18.45,
+     "truePeak": -1.34,
+     "duration": 0.41
+    }
+   ]
+  },
+  {
+   "name": "speed-up",
+   "id": "speedUp",
+   "cat": "powerup",
+   "desc": "Speed boost: fast whirring rise",
+   "gain": 0.299,
+   "limited": false,
+   "m": {
+    "peak": -6.14,
+    "truePeak": -6.12,
+    "lufsMax": -16.03,
+    "duration": 0.3,
+    "centroid": 2566
+   },
+   "takes": [
+    {
+     "lufsMax": -16.03,
+     "truePeak": -6.12,
+     "duration": 0.3
+    },
+    {
+     "lufsMax": -15.98,
+     "truePeak": -5.89,
+     "duration": 0.32
+    },
+    {
+     "lufsMax": -16.02,
+     "truePeak": -5.96,
+     "duration": 0.31
+    },
+    {
+     "lufsMax": -15.98,
+     "truePeak": -5.91,
+     "duration": 0.31
+    }
+   ]
+  },
+  {
+   "name": "heal",
+   "id": "heal",
+   "cat": "powerup",
+   "desc": "Healing: soft rising chime with shimmer",
+   "gain": 0.179,
+   "limited": false,
+   "m": {
+    "peak": -7.15,
+    "truePeak": -7.15,
+    "lufsMax": -16.11,
+    "duration": 1.8,
+    "centroid": 1468
+   },
+   "takes": [
+    {
+     "lufsMax": -16.11,
+     "truePeak": -7.15,
+     "duration": 1.8
+    },
+    {
+     "lufsMax": -15.81,
+     "truePeak": -6.78,
+     "duration": 1.74
+    },
+    {
+     "lufsMax": -15.32,
+     "truePeak": -6.28,
+     "duration": 1.74
+    },
+    {
+     "lufsMax": -16.7,
+     "truePeak": -8.37,
+     "duration": 1.69
+    }
+   ]
+  },
+  {
+   "name": "charge-up",
+   "id": "chargeUp",
+   "cat": "powerup",
+   "desc": "Charging a shot, rising tension",
+   "gain": 0.212,
+   "limited": false,
+   "m": {
+    "peak": -6.5,
+    "truePeak": -6.42,
+    "lufsMax": -16.43,
+    "duration": 0.98,
+    "centroid": 1841
+   },
+   "takes": [
+    {
+     "lufsMax": -16.43,
+     "truePeak": -6.42,
+     "duration": 0.98
+    },
+    {
+     "lufsMax": -15.97,
+     "truePeak": -4.96,
+     "duration": 0.98
+    },
+    {
+     "lufsMax": -15.65,
+     "truePeak": -4.91,
+     "duration": 0.98
+    },
+    {
+     "lufsMax": -15.9,
+     "truePeak": -4.99,
+     "duration": 0.98
+    }
+   ]
+  },
+  {
+   "name": "power-down",
+   "id": "powerDown",
+   "cat": "powerup",
+   "desc": "Lose a power: arpeggio falling",
+   "gain": 0.188,
+   "limited": false,
+   "m": {
+    "peak": -10.67,
+    "truePeak": -10.66,
+    "lufsMax": -16,
+    "duration": 0.38,
+    "centroid": 1512
+   },
+   "takes": [
+    {
+     "lufsMax": -16,
+     "truePeak": -10.66,
+     "duration": 0.38
+    },
+    {
+     "lufsMax": -15.99,
+     "truePeak": -10.69,
+     "duration": 0.38
+    },
+    {
+     "lufsMax": -16,
+     "truePeak": -10.81,
+     "duration": 0.38
+    },
+    {
+     "lufsMax": -15.98,
+     "truePeak": -10.66,
+     "duration": 0.38
+    }
+   ]
+  },
+  {
+   "name": "unlock",
+   "id": "unlock",
+   "cat": "powerup",
+   "desc": "New ability unlocked",
+   "gain": 0.267,
+   "limited": false,
+   "m": {
+    "peak": -8.12,
+    "truePeak": -8.1,
+    "lufsMax": -16.5,
+    "duration": 1.11,
+    "centroid": 2472
+   },
+   "takes": [
+    {
+     "lufsMax": -16.5,
+     "truePeak": -8.1,
+     "duration": 1.11
+    },
+    {
+     "lufsMax": -15.12,
+     "truePeak": -5.88,
+     "duration": 1.15
+    },
+    {
+     "lufsMax": -16.34,
+     "truePeak": -6.79,
+     "duration": 1.11
+    },
+    {
+     "lufsMax": -16.06,
+     "truePeak": -7.77,
+     "duration": 1.2
+    }
+   ]
+  },
+  {
+   "name": "invincible",
+   "id": "invincible",
+   "cat": "powerup",
+   "desc": "Invincibility: looping bright arpeggio",
+   "gain": 0.159,
+   "limited": false,
+   "m": {
+    "peak": -9.44,
+    "truePeak": -9.44,
+    "lufsMax": -16,
+    "duration": 0.9,
+    "centroid": 2519
+   },
+   "takes": [
+    {
+     "lufsMax": -16,
+     "truePeak": -9.44,
+     "duration": 0.9
+    },
+    {
+     "lufsMax": -16.04,
+     "truePeak": -9.48,
+     "duration": 0.92
+    },
+    {
+     "lufsMax": -16.03,
+     "truePeak": -9.47,
+     "duration": 0.91
+    },
+    {
+     "lufsMax": -15.99,
+     "truePeak": -9.46,
+     "duration": 0.92
+    }
+   ]
+  },
+  {
+   "name": "laser",
+   "id": "laser",
+   "cat": "shoot",
+   "desc": "Classic laser: fast square sweep down",
+   "gain": 0.489,
+   "limited": false,
+   "m": {
+    "peak": -3.38,
+    "truePeak": -3.38,
+    "lufsMax": -16.14,
+    "duration": 0.18,
+    "centroid": 2510
+   },
+   "takes": [
+    {
+     "lufsMax": -16.14,
+     "truePeak": -3.38,
+     "duration": 0.18
+    },
+    {
+     "lufsMax": -15.92,
+     "truePeak": -3.3,
+     "duration": 0.19
+    },
+    {
+     "lufsMax": -16.07,
+     "truePeak": -3.49,
+     "duration": 0.18
+    },
+    {
+     "lufsMax": -15.9,
+     "truePeak": -3.34,
+     "duration": 0.19
+    }
+   ]
+  },
+  {
+   "name": "laser-soft",
+   "id": "laserSoft",
+   "cat": "shoot",
+   "desc": "Rounder laser for cute shooters",
+   "gain": 0.79,
+   "limited": false,
+   "m": {
+    "peak": -2.07,
+    "truePeak": -1.97,
+    "lufsMax": -16.14,
+    "duration": 0.16,
+    "centroid": 851
+   },
+   "takes": [
+    {
+     "lufsMax": -16.14,
+     "truePeak": -1.97,
+     "duration": 0.16
+    },
+    {
+     "lufsMax": -15.92,
+     "truePeak": -1.97,
+     "duration": 0.17
+    },
+    {
+     "lufsMax": -16.07,
+     "truePeak": -1.97,
+     "duration": 0.16
+    },
+    {
+     "lufsMax": -15.89,
+     "truePeak": -1.97,
+     "duration": 0.17
+    }
+   ]
+  },
+  {
+   "name": "laser-heavy",
+   "id": "laserHeavy",
+   "cat": "shoot",
+   "desc": "Thick laser cannon",
+   "gain": 0.325,
+   "limited": false,
+   "m": {
+    "peak": -4.24,
+    "truePeak": -4.24,
+    "lufsMax": -16.06,
+    "duration": 0.9,
+    "centroid": 1973
+   },
+   "takes": [
+    {
+     "lufsMax": -16.06,
+     "truePeak": -4.24,
+     "duration": 0.9
+    },
+    {
+     "lufsMax": -15.99,
+     "truePeak": -4.25,
+     "duration": 0.91
+    },
+    {
+     "lufsMax": -15.98,
+     "truePeak": -4.2,
+     "duration": 0.9
+    },
+    {
+     "lufsMax": -15.95,
+     "truePeak": -4.24,
+     "duration": 0.92
+    }
+   ]
+  },
+  {
+   "name": "blaster",
+   "id": "blaster",
+   "cat": "shoot",
+   "desc": "Sci-fi blaster bolt",
+   "gain": 0.446,
+   "limited": true,
+   "m": {
+    "peak": -1.71,
+    "truePeak": -1.7,
+    "lufsMax": -19.31,
+    "duration": 0.14,
+    "centroid": 2171
+   },
+   "takes": [
+    {
+     "lufsMax": -19.31,
+     "truePeak": -1.7,
+     "duration": 0.14
+    },
+    {
+     "lufsMax": -19.14,
+     "truePeak": -1.2,
+     "duration": 0.15
+    },
+    {
+     "lufsMax": -19.28,
+     "truePeak": -1.72,
+     "duration": 0.14
+    },
+    {
+     "lufsMax": -19.07,
+     "truePeak": -1.87,
+     "duration": 0.15
+    }
+   ]
+  },
+  {
+   "name": "zap",
+   "id": "zap",
+   "cat": "shoot",
+   "desc": "Electric zap",
+   "gain": 0.644,
+   "limited": true,
+   "m": {
+    "peak": -1.88,
+    "truePeak": -1.62,
+    "lufsMax": -19.05,
+    "duration": 0.1,
+    "centroid": 7208
+   },
+   "takes": [
+    {
+     "lufsMax": -19.05,
+     "truePeak": -1.62,
+     "duration": 0.1
+    },
+    {
+     "lufsMax": -18.97,
+     "truePeak": -1.85,
+     "duration": 0.1
+    },
+    {
+     "lufsMax": -18.97,
+     "truePeak": -1.2,
+     "duration": 0.1
+    },
+    {
+     "lufsMax": -18.88,
+     "truePeak": -1.44,
+     "duration": 0.1
+    }
+   ]
+  },
+  {
+   "name": "pew",
+   "id": "pew",
+   "cat": "shoot",
+   "desc": "Tiny pew for bullet-hell spam",
+   "gain": 0.709,
+   "limited": true,
+   "m": {
+    "peak": -1.3,
+    "truePeak": -1.28,
+    "lufsMax": -16.98,
+    "duration": 0.08,
+    "centroid": 3121
+   },
+   "takes": [
+    {
+     "lufsMax": -16.98,
+     "truePeak": -1.28,
+     "duration": 0.08
+    },
+    {
+     "lufsMax": -16.81,
+     "truePeak": -1.21,
+     "duration": 0.09
+    },
+    {
+     "lufsMax": -16.95,
+     "truePeak": -1.24,
+     "duration": 0.08
+    },
+    {
+     "lufsMax": -16.72,
+     "truePeak": -1.23,
+     "duration": 0.09
+    }
+   ]
+  },
+  {
+   "name": "gunshot",
+   "id": "gunshot",
+   "cat": "shoot",
+   "desc": "Pistol shot with room tail",
+   "gain": 0.294,
+   "limited": true,
+   "m": {
+    "peak": -3.85,
+    "truePeak": -1.2,
+    "lufsMax": -17.53,
+    "duration": 0.87,
+    "centroid": 9456
+   },
+   "takes": [
+    {
+     "lufsMax": -17.53,
+     "truePeak": -1.2,
+     "duration": 0.87
+    },
+    {
+     "lufsMax": -17.33,
+     "truePeak": -1.27,
+     "duration": 0.86
+    },
+    {
+     "lufsMax": -17.37,
+     "truePeak": -1.99,
+     "duration": 0.87
+    },
+    {
+     "lufsMax": -17.31,
+     "truePeak": -1.58,
+     "duration": 0.87
+    }
+   ]
+  },
+  {
+   "name": "shotgun",
+   "id": "shotgun",
+   "cat": "shoot",
+   "desc": "Shotgun blast, wide and heavy",
+   "gain": 0.272,
+   "limited": false,
+   "m": {
+    "peak": -3.43,
+    "truePeak": -2.93,
+    "lufsMax": -16.17,
+    "duration": 1.08,
+    "centroid": 4570
+   },
+   "takes": [
+    {
+     "lufsMax": -16.17,
+     "truePeak": -2.93,
+     "duration": 1.08
+    },
+    {
+     "lufsMax": -16.08,
+     "truePeak": -2.67,
+     "duration": 1.07
+    },
+    {
+     "lufsMax": -15.89,
+     "truePeak": -3.04,
+     "duration": 1.08
+    },
+    {
+     "lufsMax": -15.91,
+     "truePeak": -3.2,
+     "duration": 1.08
+    }
+   ]
+  },
+  {
+   "name": "shoot-retro",
+   "id": "shootRetro",
+   "cat": "shoot",
+   "desc": "8-bit shot",
+   "gain": 0.549,
+   "limited": true,
+   "m": {
+    "peak": -3.05,
+    "truePeak": -1.93,
+    "lufsMax": -20.82,
+    "duration": 0.12,
+    "centroid": 4785
+   },
+   "takes": [
+    {
+     "lufsMax": -20.82,
+     "truePeak": -1.93,
+     "duration": 0.12
+    },
+    {
+     "lufsMax": -21,
+     "truePeak": -2.53,
+     "duration": 0.13
+    },
+    {
+     "lufsMax": -20.8,
+     "truePeak": -1.2,
+     "duration": 0.12
+    },
+    {
+     "lufsMax": -20.73,
+     "truePeak": -2.09,
+     "duration": 0.13
+    }
+   ]
+  },
+  {
+   "name": "railgun",
+   "id": "railgun",
+   "cat": "shoot",
+   "desc": "Charge whine, then a piercing shot",
+   "gain": 0.364,
+   "limited": true,
+   "m": {
+    "peak": -1.48,
+    "truePeak": -1.33,
+    "lufsMax": -16.11,
+    "duration": 1.35,
+    "centroid": 5123
+   },
+   "takes": [
+    {
+     "lufsMax": -16.11,
+     "truePeak": -1.33,
+     "duration": 1.35
+    },
+    {
+     "lufsMax": -16.41,
+     "truePeak": -1.2,
+     "duration": 1.32
+    },
+    {
+     "lufsMax": -16.07,
+     "truePeak": -1.49,
+     "duration": 1.35
+    },
+    {
+     "lufsMax": -16.34,
+     "truePeak": -1.82,
+     "duration": 1.29
+    }
+   ]
+  },
+  {
+   "name": "ray",
+   "id": "ray",
+   "cat": "shoot",
+   "desc": "Warbling ray gun",
+   "gain": 0.291,
+   "limited": false,
+   "m": {
+    "peak": -10.42,
+    "truePeak": -10.42,
+    "lufsMax": -16.01,
+    "duration": 0.39,
+    "centroid": 1348
+   },
+   "takes": [
+    {
+     "lufsMax": -16.01,
+     "truePeak": -10.42,
+     "duration": 0.39
+    },
+    {
+     "lufsMax": -16,
+     "truePeak": -10.42,
+     "duration": 0.41
+    },
+    {
+     "lufsMax": -16.02,
+     "truePeak": -10.42,
+     "duration": 0.4
+    },
+    {
+     "lufsMax": -15.94,
+     "truePeak": -10.43,
+     "duration": 0.41
+    }
+   ]
+  },
+  {
+   "name": "plasma",
+   "id": "plasma",
+   "cat": "shoot",
+   "desc": "Plasma ball launch",
+   "gain": 0.379,
+   "limited": true,
+   "m": {
+    "peak": -1.23,
+    "truePeak": -1.23,
+    "lufsMax": -19.42,
+    "duration": 0.29,
+    "centroid": 1688
+   },
+   "takes": [
+    {
+     "lufsMax": -19.42,
+     "truePeak": -1.23,
+     "duration": 0.29
+    },
+    {
+     "lufsMax": -19.25,
+     "truePeak": -1.2,
+     "duration": 0.31
+    },
+    {
+     "lufsMax": -19.41,
+     "truePeak": -1.45,
+     "duration": 0.3
+    },
+    {
+     "lufsMax": -19.16,
+     "truePeak": -1.24,
+     "duration": 0.31
+    }
+   ]
+  },
+  {
+   "name": "missile",
+   "id": "missile",
+   "cat": "shoot",
+   "desc": "Rocket launch whoosh",
+   "gain": 0.606,
+   "limited": false,
+   "m": {
+    "peak": -6.2,
+    "truePeak": -6.18,
+    "lufsMax": -15.86,
+    "duration": 0.71,
+    "centroid": 4319
+   },
+   "takes": [
+    {
+     "lufsMax": -15.86,
+     "truePeak": -6.18,
+     "duration": 0.71
+    },
+    {
+     "lufsMax": -16.1,
+     "truePeak": -6.44,
+     "duration": 0.73
+    },
+    {
+     "lufsMax": -16.06,
+     "truePeak": -5.63,
+     "duration": 0.72
+    },
+    {
+     "lufsMax": -15.99,
+     "truePeak": -5.48,
+     "duration": 0.73
+    }
+   ]
+  },
+  {
+   "name": "reload",
+   "id": "reload",
+   "cat": "shoot",
+   "desc": "Reload: two metal clicks",
+   "gain": 0.666,
+   "limited": true,
+   "m": {
+    "peak": -1.22,
+    "truePeak": -1.21,
+    "lufsMax": -17.75,
+    "duration": 0.3,
+    "centroid": 3432
+   },
+   "takes": [
+    {
+     "lufsMax": -17.75,
+     "truePeak": -1.21,
+     "duration": 0.3
+    },
+    {
+     "lufsMax": -18.12,
+     "truePeak": -1.57,
+     "duration": 0.3
+    },
+    {
+     "lufsMax": -17.86,
+     "truePeak": -1.78,
+     "duration": 0.3
+    },
+    {
+     "lufsMax": -17.48,
+     "truePeak": -1.2,
+     "duration": 0.31
+    }
+   ]
+  },
+  {
+   "name": "step-grass",
+   "id": "stepGrass",
+   "cat": "footstep",
+   "desc": "Soft step on grass",
+   "gain": 1.05,
+   "limited": true,
+   "m": {
+    "peak": -3.55,
+    "truePeak": -3.1,
+    "lufsMax": -23.52,
+    "duration": 0.09,
+    "centroid": 6010
+   },
+   "takes": [
+    {
+     "lufsMax": -23.52,
+     "truePeak": -3.1,
+     "duration": 0.09
+    },
+    {
+     "lufsMax": -23.49,
+     "truePeak": -1.17,
+     "duration": 0.1
+    },
+    {
+     "lufsMax": -23.06,
+     "truePeak": -1.39,
+     "duration": 0.09
+    },
+    {
+     "lufsMax": -23.57,
+     "truePeak": -2.94,
+     "duration": 0.1
+    }
+   ]
+  },
+  {
+   "name": "step-stone",
+   "id": "stepStone",
+   "cat": "footstep",
+   "desc": "Hard sole on stone",
+   "gain": 0.929,
+   "limited": true,
+   "m": {
+    "peak": -2.07,
+    "truePeak": -2.07,
+    "lufsMax": -24.91,
+    "duration": 0.05,
+    "centroid": 3553
+   },
+   "takes": [
+    {
+     "lufsMax": -24.91,
+     "truePeak": -2.07,
+     "duration": 0.05
+    },
+    {
+     "lufsMax": -25.08,
+     "truePeak": -2.11,
+     "duration": 0.04
+    },
+    {
+     "lufsMax": -24.69,
+     "truePeak": -2.98,
+     "duration": 0.05
+    },
+    {
+     "lufsMax": -25.03,
+     "truePeak": -1.2,
+     "duration": 0.04
+    }
+   ]
+  },
+  {
+   "name": "step-wood",
+   "id": "stepWood",
+   "cat": "footstep",
+   "desc": "Step on a wooden floor",
+   "gain": 0.844,
+   "limited": true,
+   "m": {
+    "peak": -1.67,
+    "truePeak": -1.67,
+    "lufsMax": -20.6,
+    "duration": 0.07,
+    "centroid": 840
+   },
+   "takes": [
+    {
+     "lufsMax": -20.6,
+     "truePeak": -1.67,
+     "duration": 0.07
+    },
+    {
+     "lufsMax": -20.37,
+     "truePeak": -1.72,
+     "duration": 0.07
+    },
+    {
+     "lufsMax": -20.5,
+     "truePeak": -1.2,
+     "duration": 0.07
+    },
+    {
+     "lufsMax": -20.35,
+     "truePeak": -1.75,
+     "duration": 0.07
+    }
+   ]
+  },
+  {
+   "name": "step-metal",
+   "id": "stepMetal",
+   "cat": "footstep",
+   "desc": "Step on a metal grate",
+   "gain": 0.667,
+   "limited": true,
+   "m": {
+    "peak": -3.08,
+    "truePeak": -2.87,
+    "lufsMax": -25.69,
+    "duration": 0.61,
+    "centroid": 5791
+   },
+   "takes": [
+    {
+     "lufsMax": -25.69,
+     "truePeak": -2.87,
+     "duration": 0.61
+    },
+    {
+     "lufsMax": -26.29,
+     "truePeak": -1.2,
+     "duration": 0.56
+    },
+    {
+     "lufsMax": -26.13,
+     "truePeak": -2.71,
+     "duration": 0.56
+    },
+    {
+     "lufsMax": -25.79,
+     "truePeak": -4.72,
+     "duration": 0.55
+    }
+   ]
+  },
+  {
+   "name": "step-snow",
+   "id": "stepSnow",
+   "cat": "footstep",
+   "desc": "Crunchy step in snow",
+   "gain": 0.559,
+   "limited": false,
+   "m": {
+    "peak": -1.41,
+    "truePeak": -1.31,
+    "lufsMax": -20,
+    "duration": 0.15,
+    "centroid": 3837
+   },
+   "takes": [
+    {
+     "lufsMax": -20,
+     "truePeak": -1.31,
+     "duration": 0.15
+    },
+    {
+     "lufsMax": -20.29,
+     "truePeak": -2.77,
+     "duration": 0.15
+    },
+    {
+     "lufsMax": -20.04,
+     "truePeak": -2.46,
+     "duration": 0.15
+    },
+    {
+     "lufsMax": -19.66,
+     "truePeak": -1.61,
+     "duration": 0.15
+    }
+   ]
+  },
+  {
+   "name": "step-gravel",
+   "id": "stepGravel",
+   "cat": "footstep",
+   "desc": "Step on loose gravel",
+   "gain": 0.481,
+   "limited": true,
+   "m": {
+    "peak": -1.72,
+    "truePeak": -1.24,
+    "lufsMax": -26.34,
+    "duration": 0.1,
+    "centroid": 7286
+   },
+   "takes": [
+    {
+     "lufsMax": -26.34,
+     "truePeak": -1.24,
+     "duration": 0.1
+    },
+    {
+     "lufsMax": -26.24,
+     "truePeak": -2.64,
+     "duration": 0.11
+    },
+    {
+     "lufsMax": -27.49,
+     "truePeak": -2.06,
+     "duration": 0.1
+    },
+    {
+     "lufsMax": -25.32,
+     "truePeak": -1.21,
+     "duration": 0.11
+    }
+   ]
+  },
+  {
+   "name": "step-water",
+   "id": "stepWater",
+   "cat": "footstep",
+   "desc": "Splashy step in a puddle",
+   "gain": 1.78,
+   "limited": true,
+   "m": {
+    "peak": -2.57,
+    "truePeak": -2.57,
+    "lufsMax": -20.79,
+    "duration": 0.12,
+    "centroid": 3536
+   },
+   "takes": [
+    {
+     "lufsMax": -20.79,
+     "truePeak": -2.57,
+     "duration": 0.12
+    },
+    {
+     "lufsMax": -20.84,
+     "truePeak": -2.43,
+     "duration": 0.13
+    },
+    {
+     "lufsMax": -20.71,
+     "truePeak": -2.07,
+     "duration": 0.12
+    },
+    {
+     "lufsMax": -20.77,
+     "truePeak": -1.2,
+     "duration": 0.13
+    }
+   ]
+  },
+  {
+   "name": "step-sand",
+   "id": "stepSand",
+   "cat": "footstep",
+   "desc": "Muffled step in sand",
+   "gain": 1.61,
+   "limited": true,
+   "m": {
+    "peak": -1.61,
+    "truePeak": -1.6,
+    "lufsMax": -20.46,
+    "duration": 0.12,
+    "centroid": 2226
+   },
+   "takes": [
+    {
+     "lufsMax": -20.46,
+     "truePeak": -1.6,
+     "duration": 0.12
+    },
+    {
+     "lufsMax": -20.67,
+     "truePeak": -2.15,
+     "duration": 0.13
+    },
+    {
+     "lufsMax": -20.35,
+     "truePeak": -1.2,
+     "duration": 0.12
+    },
+    {
+     "lufsMax": -20.31,
+     "truePeak": -1.87,
+     "duration": 0.13
+    }
+   ]
+  },
+  {
+   "name": "step-retro",
+   "id": "stepRetro",
+   "cat": "footstep",
+   "desc": "8-bit footstep tick",
+   "gain": 0.782,
+   "limited": true,
+   "m": {
+    "peak": -2.96,
+    "truePeak": -1.51,
+    "lufsMax": -23.11,
+    "duration": 0.04,
+    "centroid": 5505
+   },
+   "takes": [
+    {
+     "lufsMax": -23.11,
+     "truePeak": -1.51,
+     "duration": 0.04
+    },
+    {
+     "lufsMax": -22.68,
+     "truePeak": -1.2,
+     "duration": 0.04
+    },
+    {
+     "lufsMax": -23.55,
+     "truePeak": -1.42,
+     "duration": 0.04
+    },
+    {
+     "lufsMax": -22.51,
+     "truePeak": -1.34,
+     "duration": 0.04
+    }
+   ]
+  },
+  {
+   "name": "step-heavy",
+   "id": "stepHeavy",
+   "cat": "footstep",
+   "desc": "Heavy creature stomp",
+   "gain": 0.443,
+   "limited": false,
+   "m": {
+    "peak": -4.15,
+    "truePeak": -4.15,
+    "lufsMax": -20.02,
+    "duration": 0.69,
+    "centroid": 343
+   },
+   "takes": [
+    {
+     "lufsMax": -20.02,
+     "truePeak": -4.15,
+     "duration": 0.69
+    },
+    {
+     "lufsMax": -20.32,
+     "truePeak": -5.32,
+     "duration": 0.64
+    },
+    {
+     "lufsMax": -20.12,
+     "truePeak": -5.22,
+     "duration": 0.64
+    },
+    {
+     "lufsMax": -19.54,
+     "truePeak": -5.34,
+     "duration": 0.7
+    }
+   ]
+  },
+  {
+   "name": "sparkle",
+   "id": "sparkle",
+   "cat": "magic",
+   "desc": "Twinkling sparkle",
+   "gain": 0.205,
+   "limited": false,
+   "m": {
+    "peak": -11.21,
+    "truePeak": -10.28,
+    "lufsMax": -15.91,
+    "duration": 0.71,
+    "centroid": 8233
+   },
+   "takes": [
+    {
+     "lufsMax": -15.91,
+     "truePeak": -10.28,
+     "duration": 0.71
+    },
+    {
+     "lufsMax": -16.11,
+     "truePeak": -10.06,
+     "duration": 0.72
+    },
+    {
+     "lufsMax": -16.05,
+     "truePeak": -9.84,
+     "duration": 0.72
+    },
+    {
+     "lufsMax": -15.92,
+     "truePeak": -10.61,
+     "duration": 0.73
+    }
+   ]
+  },
+  {
+   "name": "spell-cast",
+   "id": "spellCast",
+   "cat": "magic",
+   "desc": "Generic spell: swell and release",
+   "gain": 0.309,
+   "limited": false,
+   "m": {
+    "peak": -1.74,
+    "truePeak": -1.72,
+    "lufsMax": -15.98,
+    "duration": 1.49,
+    "centroid": 1536
+   },
+   "takes": [
+    {
+     "lufsMax": -15.98,
+     "truePeak": -1.72,
+     "duration": 1.49
+    },
+    {
+     "lufsMax": -15.82,
+     "truePeak": -2.37,
+     "duration": 1.51
+    },
+    {
+     "lufsMax": -16.26,
+     "truePeak": -2.74,
+     "duration": 1.49
+    },
+    {
+     "lufsMax": -15.94,
+     "truePeak": -1.6,
+     "duration": 1.49
+    }
+   ]
+  },
+  {
+   "name": "fireball",
+   "id": "fireball",
+   "cat": "magic",
+   "desc": "Fireball whoosh with roar",
+   "gain": 0.463,
+   "limited": false,
+   "m": {
+    "peak": -5.05,
+    "truePeak": -5.02,
+    "lufsMax": -16,
+    "duration": 0.97,
+    "centroid": 4374
+   },
+   "takes": [
+    {
+     "lufsMax": -16,
+     "truePeak": -5.02,
+     "duration": 0.97
+    },
+    {
+     "lufsMax": -16.04,
+     "truePeak": -4.3,
+     "duration": 1
+    },
+    {
+     "lufsMax": -16.08,
+     "truePeak": -4.56,
+     "duration": 0.98
+    },
+    {
+     "lufsMax": -15.86,
+     "truePeak": -5.49,
+     "duration": 0.99
+    }
+   ]
+  },
+  {
+   "name": "ice",
+   "id": "ice",
+   "cat": "magic",
+   "desc": "Ice spell: crack and glassy ring",
+   "gain": 0.277,
+   "limited": false,
+   "m": {
+    "peak": -6.32,
+    "truePeak": -5.91,
+    "lufsMax": -16.22,
+    "duration": 0.9,
+    "centroid": 8177
+   },
+   "takes": [
+    {
+     "lufsMax": -16.22,
+     "truePeak": -5.91,
+     "duration": 0.9
+    },
+    {
+     "lufsMax": -15.91,
+     "truePeak": -6.72,
+     "duration": 0.99
+    },
+    {
+     "lufsMax": -16.61,
+     "truePeak": -6.56,
+     "duration": 0.9
+    },
+    {
+     "lufsMax": -15.24,
+     "truePeak": -6.53,
+     "duration": 1.06
+    }
+   ]
+  },
+  {
+   "name": "teleport",
+   "id": "teleport",
+   "cat": "magic",
+   "desc": "Teleport: fast warble upward",
+   "gain": 0.33,
+   "limited": false,
+   "m": {
+    "peak": -5.48,
+    "truePeak": -5.47,
+    "lufsMax": -16,
+    "duration": 0.64,
+    "centroid": 1047
+   },
+   "takes": [
+    {
+     "lufsMax": -16,
+     "truePeak": -5.47,
+     "duration": 0.64
+    },
+    {
+     "lufsMax": -16.01,
+     "truePeak": -5.55,
+     "duration": 0.64
+    },
+    {
+     "lufsMax": -16.03,
+     "truePeak": -5.59,
+     "duration": 0.63
+    },
+    {
+     "lufsMax": -15.97,
+     "truePeak": -5.55,
+     "duration": 0.64
+    }
+   ]
+  },
+  {
+   "name": "portal",
+   "id": "portal",
+   "cat": "magic",
+   "desc": "Portal opens: deep swirling hum",
+   "gain": 0.192,
+   "limited": false,
+   "m": {
+    "peak": -3.49,
+    "truePeak": -3.49,
+    "lufsMax": -16.81,
+    "duration": 2.34,
+    "centroid": 502
+   },
+   "takes": [
+    {
+     "lufsMax": -16.81,
+     "truePeak": -3.49,
+     "duration": 2.34
+    },
+    {
+     "lufsMax": -15.72,
+     "truePeak": -2.89,
+     "duration": 2.3
+    },
+    {
+     "lufsMax": -16.22,
+     "truePeak": -3.83,
+     "duration": 2.3
+    },
+    {
+     "lufsMax": -15.25,
+     "truePeak": -2.39,
+     "duration": 2.32
+    }
+   ]
+  },
+  {
+   "name": "lightning",
+   "id": "lightning",
+   "cat": "magic",
+   "desc": "Lightning strike: crack and rumble",
+   "gain": 0.412,
+   "limited": true,
+   "m": {
+    "peak": -1.41,
+    "truePeak": -1.19,
+    "lufsMax": -16.07,
+    "duration": 2.46,
+    "centroid": 4722
+   },
+   "takes": [
+    {
+     "lufsMax": -16.07,
+     "truePeak": -1.19,
+     "duration": 2.46
+    },
+    {
+     "lufsMax": -16.23,
+     "truePeak": -1.85,
+     "duration": 2.48
+    },
+    {
+     "lufsMax": -15.93,
+     "truePeak": -4.07,
+     "duration": 2.38
+    },
+    {
+     "lufsMax": -16.11,
+     "truePeak": -3.84,
+     "duration": 2.5
+    }
+   ]
+  },
+  {
+   "name": "curse",
+   "id": "curse",
+   "cat": "magic",
+   "desc": "Dark curse: low detuned drone",
+   "gain": 0.21,
+   "limited": true,
+   "m": {
+    "peak": -1.2,
+    "truePeak": -1.19,
+    "lufsMax": -16.36,
+    "duration": 1.98,
+    "centroid": 578
+   },
+   "takes": [
+    {
+     "lufsMax": -16.36,
+     "truePeak": -1.19,
+     "duration": 1.98
+    },
+    {
+     "lufsMax": -15.87,
+     "truePeak": -2.26,
+     "duration": 1.96
+    },
+    {
+     "lufsMax": -15.91,
+     "truePeak": -2.15,
+     "duration": 1.94
+    },
+    {
+     "lufsMax": -16.22,
+     "truePeak": -2.3,
+     "duration": 1.97
+    }
+   ]
+  },
+  {
+   "name": "enchant",
+   "id": "enchant",
+   "cat": "magic",
+   "desc": "Enchant an item: bells in a row",
+   "gain": 0.157,
+   "limited": false,
+   "m": {
+    "peak": -9.07,
+    "truePeak": -8.86,
+    "lufsMax": -15.84,
+    "duration": 1.38,
+    "centroid": 3359
+   },
+   "takes": [
+    {
+     "lufsMax": -15.84,
+     "truePeak": -8.86,
+     "duration": 1.38
+    },
+    {
+     "lufsMax": -15.73,
+     "truePeak": -7.97,
+     "duration": 1.46
+    },
+    {
+     "lufsMax": -16.43,
+     "truePeak": -8.21,
+     "duration": 1.42
+    },
+    {
+     "lufsMax": -15.95,
+     "truePeak": -8.22,
+     "duration": 1.4
+    }
+   ]
+  },
+  {
+   "name": "dispel",
+   "id": "dispel",
+   "cat": "magic",
+   "desc": "Dispel: shimmer that falls away",
+   "gain": 0.313,
+   "limited": false,
+   "m": {
+    "peak": -5.99,
+    "truePeak": -5.47,
+    "lufsMax": -15.92,
+    "duration": 1.24,
+    "centroid": 7466
+   },
+   "takes": [
+    {
+     "lufsMax": -15.92,
+     "truePeak": -5.47,
+     "duration": 1.24
+    },
+    {
+     "lufsMax": -16.12,
+     "truePeak": -5.99,
+     "duration": 1.19
+    },
+    {
+     "lufsMax": -15.75,
+     "truePeak": -5.69,
+     "duration": 1.23
+    },
+    {
+     "lufsMax": -16.17,
+     "truePeak": -5.66,
+     "duration": 1.22
+    }
+   ]
+  },
+  {
+   "name": "summon",
+   "id": "summon",
+   "cat": "magic",
+   "desc": "Summon: rising chord from the deep",
+   "gain": 0.237,
+   "limited": false,
+   "m": {
+    "peak": -5.3,
+    "truePeak": -5.29,
+    "lufsMax": -16.1,
+    "duration": 2.43,
+    "centroid": 950
+   },
+   "takes": [
+    {
+     "lufsMax": -16.1,
+     "truePeak": -5.29,
+     "duration": 2.43
+    },
+    {
+     "lufsMax": -15.86,
+     "truePeak": -4.37,
+     "duration": 2.48
+    },
+    {
+     "lufsMax": -16.01,
+     "truePeak": -5.47,
+     "duration": 2.44
+    },
+    {
+     "lufsMax": -16.06,
+     "truePeak": -5.05,
+     "duration": 2.52
+    }
+   ]
+  },
+  {
+   "name": "magic-missile",
+   "id": "magicMissile",
+   "cat": "magic",
+   "desc": "Homing magic bolt",
+   "gain": 0.542,
+   "limited": false,
+   "m": {
+    "peak": -5.08,
+    "truePeak": -5.06,
+    "lufsMax": -16.17,
+    "duration": 0.38,
+    "centroid": 2128
+   },
+   "takes": [
+    {
+     "lufsMax": -16.17,
+     "truePeak": -5.06,
+     "duration": 0.38
+    },
+    {
+     "lufsMax": -15.96,
+     "truePeak": -4.91,
+     "duration": 0.4
+    },
+    {
+     "lufsMax": -16.16,
+     "truePeak": -4.93,
+     "duration": 0.39
+    },
+    {
+     "lufsMax": -15.71,
+     "truePeak": -4.82,
+     "duration": 0.4
+    }
+   ]
+  },
+  {
+   "name": "alarm",
+   "id": "alarm",
+   "cat": "alert",
+   "desc": "Two-tone alarm, loops cleanly if repeated",
+   "gain": 0.132,
+   "limited": false,
+   "m": {
+    "peak": -16.52,
+    "truePeak": -16.51,
+    "lufsMax": -17.98,
+    "duration": 0.62,
+    "centroid": 1717
+   },
+   "takes": [
+    {
+     "lufsMax": -17.98,
+     "truePeak": -16.51,
+     "duration": 0.62
+    },
+    {
+     "lufsMax": -17.99,
+     "truePeak": -16.51,
+     "duration": 0.63
+    },
+    {
+     "lufsMax": -17.99,
+     "truePeak": -16.48,
+     "duration": 0.63
+    },
+    {
+     "lufsMax": -17.98,
+     "truePeak": -16.52,
+     "duration": 0.63
+    }
+   ]
+  },
+  {
+   "name": "beep",
+   "id": "beep",
+   "cat": "alert",
+   "desc": "Plain beep",
+   "gain": 0.371,
+   "limited": false,
+   "m": {
+    "peak": -8.6,
+    "truePeak": -8.6,
+    "lufsMax": -18.02,
+    "duration": 0.11,
+    "centroid": 1000
+   },
+   "takes": [
+    {
+     "lufsMax": -18.02,
+     "truePeak": -8.6,
+     "duration": 0.11
+    },
+    {
+     "lufsMax": -18,
+     "truePeak": -8.6,
+     "duration": 0.12
+    },
+    {
+     "lufsMax": -18.02,
+     "truePeak": -8.6,
+     "duration": 0.11
+    },
+    {
+     "lufsMax": -17.99,
+     "truePeak": -8.6,
+     "duration": 0.12
+    }
+   ]
+  },
+  {
+   "name": "warning",
+   "id": "warning",
+   "cat": "alert",
+   "desc": "Warning: three urgent pulses",
+   "gain": 0.306,
+   "limited": false,
+   "m": {
+    "peak": -10.65,
+    "truePeak": -10.65,
+    "lufsMax": -18.01,
+    "duration": 0.38,
+    "centroid": 1393
+   },
+   "takes": [
+    {
+     "lufsMax": -18.01,
+     "truePeak": -10.65,
+     "duration": 0.38
+    },
+    {
+     "lufsMax": -18.02,
+     "truePeak": -10.64,
+     "duration": 0.38
+    },
+    {
+     "lufsMax": -17.99,
+     "truePeak": -10.65,
+     "duration": 0.38
+    },
+    {
+     "lufsMax": -18,
+     "truePeak": -10.66,
+     "duration": 0.38
+    }
+   ]
+  },
+  {
+   "name": "low-health",
+   "id": "lowHealth",
+   "cat": "alert",
+   "desc": "Low health: soft double beep",
+   "gain": 0.364,
+   "limited": false,
+   "m": {
+    "peak": -8.77,
+    "truePeak": -8.77,
+    "lufsMax": -18,
+    "duration": 0.26,
+    "centroid": 1723
+   },
+   "takes": [
+    {
+     "lufsMax": -18,
+     "truePeak": -8.77,
+     "duration": 0.26
+    },
+    {
+     "lufsMax": -18.01,
+     "truePeak": -8.77,
+     "duration": 0.26
+    },
+    {
+     "lufsMax": -17.97,
+     "truePeak": -8.77,
+     "duration": 0.27
+    },
+    {
+     "lufsMax": -18,
+     "truePeak": -8.77,
+     "duration": 0.26
+    }
+   ]
+  },
+  {
+   "name": "heartbeat",
+   "id": "heartbeat",
+   "cat": "alert",
+   "desc": "Heartbeat: lub-dub",
+   "gain": 0.719,
+   "limited": false,
+   "m": {
+    "peak": -2.58,
+    "truePeak": -2.58,
+    "lufsMax": -18.08,
+    "duration": 0.34,
+    "centroid": 82
+   },
+   "takes": [
+    {
+     "lufsMax": -18.08,
+     "truePeak": -2.58,
+     "duration": 0.34
+    },
+    {
+     "lufsMax": -18.02,
+     "truePeak": -2.57,
+     "duration": 0.33
+    },
+    {
+     "lufsMax": -18.02,
+     "truePeak": -2.58,
+     "duration": 0.35
+    },
+    {
+     "lufsMax": -17.91,
+     "truePeak": -2.56,
+     "duration": 0.34
+    }
+   ]
+  },
+  {
+   "name": "countdown",
+   "id": "countdown",
+   "cat": "alert",
+   "desc": "Countdown tick: 3, 2, 1",
+   "gain": 0.369,
+   "limited": false,
+   "m": {
+    "peak": -8.53,
+    "truePeak": -8.53,
+    "lufsMax": -18.04,
+    "duration": 0.17,
+    "centroid": 1072
+   },
+   "takes": [
+    {
+     "lufsMax": -18.04,
+     "truePeak": -8.53,
+     "duration": 0.17
+    },
+    {
+     "lufsMax": -17.98,
+     "truePeak": -8.53,
+     "duration": 0.18
+    },
+    {
+     "lufsMax": -18.02,
+     "truePeak": -8.53,
+     "duration": 0.17
+    },
+    {
+     "lufsMax": -17.98,
+     "truePeak": -8.53,
+     "duration": 0.17
+    }
+   ]
+  },
+  {
+   "name": "countdown-go",
+   "id": "countdownGo",
+   "cat": "alert",
+   "desc": "Countdown end: GO!",
+   "gain": 0.137,
+   "limited": false,
+   "m": {
+    "peak": -14.52,
+    "truePeak": -14.52,
+    "lufsMax": -17.99,
+    "duration": 0.49,
+    "centroid": 1929
+   },
+   "takes": [
+    {
+     "lufsMax": -17.99,
+     "truePeak": -14.52,
+     "duration": 0.49
+    },
+    {
+     "lufsMax": -17.97,
+     "truePeak": -14.52,
+     "duration": 0.5
+    },
+    {
+     "lufsMax": -17.98,
+     "truePeak": -14.52,
+     "duration": 0.5
+    },
+    {
+     "lufsMax": -17.96,
+     "truePeak": -14.52,
+     "duration": 0.5
+    }
+   ]
+  },
+  {
+   "name": "siren",
+   "id": "siren",
+   "cat": "alert",
+   "desc": "Siren sweep",
+   "gain": 0.23,
+   "limited": false,
+   "m": {
+    "peak": -13.09,
+    "truePeak": -13.09,
+    "lufsMax": -17.99,
+    "duration": 1.3,
+    "centroid": 1996
+   },
+   "takes": [
+    {
+     "lufsMax": -17.99,
+     "truePeak": -13.09,
+     "duration": 1.3
+    },
+    {
+     "lufsMax": -17.99,
+     "truePeak": -13.08,
+     "duration": 1.31
+    },
+    {
+     "lufsMax": -17.99,
+     "truePeak": -13.08,
+     "duration": 1.3
+    },
+    {
+     "lufsMax": -17.98,
+     "truePeak": -13.1,
+     "duration": 1.31
+    }
+   ]
+  },
+  {
+   "name": "radar-ping",
+   "id": "radarPing",
+   "cat": "alert",
+   "desc": "Sonar ping",
+   "gain": 0.391,
+   "limited": false,
+   "m": {
+    "peak": -8.19,
+    "truePeak": -8.16,
+    "lufsMax": -18.21,
+    "duration": 2.26,
+    "centroid": 1504
+   },
+   "takes": [
+    {
+     "lufsMax": -18.21,
+     "truePeak": -8.16,
+     "duration": 2.26
+    },
+    {
+     "lufsMax": -17.6,
+     "truePeak": -8.16,
+     "duration": 2.28
+    },
+    {
+     "lufsMax": -17.9,
+     "truePeak": -8.16,
+     "duration": 2.28
+    },
+    {
+     "lufsMax": -18.27,
+     "truePeak": -8.16,
+     "duration": 2.3
+    }
+   ]
+  },
+  {
+   "name": "quest-new",
+   "id": "questNew",
+   "cat": "alert",
+   "desc": "New quest or objective",
+   "gain": 0.195,
+   "limited": false,
+   "m": {
+    "peak": -8.32,
+    "truePeak": -8.32,
+    "lufsMax": -17.08,
+    "duration": 1.34,
+    "centroid": 1511
+   },
+   "takes": [
+    {
+     "lufsMax": -17.08,
+     "truePeak": -8.32,
+     "duration": 1.34
+    },
+    {
+     "lufsMax": -18.22,
+     "truePeak": -8.88,
+     "duration": 1.31
+    },
+    {
+     "lufsMax": -18.68,
+     "truePeak": -9.3,
+     "duration": 1.2
+    },
+    {
+     "lufsMax": -18,
+     "truePeak": -8.16,
+     "duration": 1.26
+    }
+   ]
+  },
+  {
+   "name": "victory",
+   "id": "victory",
+   "cat": "jingle",
+   "desc": "Victory fanfare",
+   "gain": 0.104,
+   "limited": false,
+   "m": {
+    "peak": -10.19,
+    "truePeak": -10.19,
+    "lufsMax": -17.51,
+    "duration": 1.48,
+    "centroid": 1465
+   },
+   "takes": [
+    {
+     "lufsMax": -17.51,
+     "truePeak": -10.19,
+     "duration": 1.48
+    },
+    {
+     "lufsMax": -15.97,
+     "truePeak": -9.04,
+     "duration": 1.59
+    },
+    {
+     "lufsMax": -16.3,
+     "truePeak": -9.22,
+     "duration": 1.57
+    },
+    {
+     "lufsMax": -18.26,
+     "truePeak": -10.77,
+     "duration": 1.47
+    }
+   ]
+  },
+  {
+   "name": "level-complete",
+   "id": "levelComplete",
+   "cat": "jingle",
+   "desc": "Level complete: rising run and a held chord",
+   "gain": 0.129,
+   "limited": false,
+   "m": {
+    "peak": -7.95,
+    "truePeak": -7.95,
+    "lufsMax": -17.16,
+    "duration": 1.69,
+    "centroid": 1920
+   },
+   "takes": [
+    {
+     "lufsMax": -17.16,
+     "truePeak": -7.95,
+     "duration": 1.69
+    },
+    {
+     "lufsMax": -16.48,
+     "truePeak": -7.55,
+     "duration": 1.76
+    },
+    {
+     "lufsMax": -16.76,
+     "truePeak": -7.87,
+     "duration": 1.74
+    },
+    {
+     "lufsMax": -17.73,
+     "truePeak": -8.65,
+     "duration": 1.5
+    }
+   ]
+  },
+  {
+   "name": "game-over",
+   "id": "gameOver",
+   "cat": "jingle",
+   "desc": "Game over: slow sad descent",
+   "gain": 0.2,
+   "limited": false,
+   "m": {
+    "peak": -7.14,
+    "truePeak": -7.14,
+    "lufsMax": -16.94,
+    "duration": 2.16,
+    "centroid": 749
+   },
+   "takes": [
+    {
+     "lufsMax": -16.94,
+     "truePeak": -7.14,
+     "duration": 2.16
+    },
+    {
+     "lufsMax": -17.13,
+     "truePeak": -6.99,
+     "duration": 2.15
+    },
+    {
+     "lufsMax": -17.12,
+     "truePeak": -7.25,
+     "duration": 2.15
+    },
+    {
+     "lufsMax": -16.78,
+     "truePeak": -7.47,
+     "duration": 2.19
+    }
+   ]
+  },
+  {
+   "name": "lose",
+   "id": "lose",
+   "cat": "jingle",
+   "desc": "Lost a round: wah-wah",
+   "gain": 0.188,
+   "limited": false,
+   "m": {
+    "peak": -8.36,
+    "truePeak": -8.36,
+    "lufsMax": -17.03,
+    "duration": 0.8,
+    "centroid": 900
+   },
+   "takes": [
+    {
+     "lufsMax": -17.03,
+     "truePeak": -8.36,
+     "duration": 0.8
+    },
+    {
+     "lufsMax": -17.01,
+     "truePeak": -8.38,
+     "duration": 0.82
+    },
+    {
+     "lufsMax": -17.02,
+     "truePeak": -8.36,
+     "duration": 0.81
+    },
+    {
+     "lufsMax": -17,
+     "truePeak": -8.39,
+     "duration": 0.82
+    }
+   ]
+  },
+  {
+   "name": "secret-found",
+   "id": "secretFound",
+   "cat": "jingle",
+   "desc": "Secret found: rising mystery arpeggio",
+   "gain": 0.137,
+   "limited": false,
+   "m": {
+    "peak": -8.12,
+    "truePeak": -8.12,
+    "lufsMax": -16.81,
+    "duration": 1.4,
+    "centroid": 1945
+   },
+   "takes": [
+    {
+     "lufsMax": -16.81,
+     "truePeak": -8.12,
+     "duration": 1.4
+    },
+    {
+     "lufsMax": -17.15,
+     "truePeak": -8.33,
+     "duration": 1.39
+    },
+    {
+     "lufsMax": -17.13,
+     "truePeak": -8.13,
+     "duration": 1.39
+    },
+    {
+     "lufsMax": -16.81,
+     "truePeak": -8.1,
+     "duration": 1.39
+    }
+   ]
+  },
+  {
+   "name": "achievement",
+   "id": "achievement",
+   "cat": "jingle",
+   "desc": "Achievement unlocked",
+   "gain": 0.14,
+   "limited": false,
+   "m": {
+    "peak": -8.96,
+    "truePeak": -8.92,
+    "lufsMax": -17.38,
+    "duration": 1.24,
+    "centroid": 2302
+   },
+   "takes": [
+    {
+     "lufsMax": -17.38,
+     "truePeak": -8.92,
+     "duration": 1.24
+    },
+    {
+     "lufsMax": -16.76,
+     "truePeak": -8.39,
+     "duration": 1.2
+    },
+    {
+     "lufsMax": -16.7,
+     "truePeak": -8.6,
+     "duration": 1.2
+    },
+    {
+     "lufsMax": -17.25,
+     "truePeak": -9.72,
+     "duration": 1.06
+    }
+   ]
+  },
+  {
+   "name": "puzzle-solved",
+   "id": "puzzleSolved",
+   "cat": "jingle",
+   "desc": "Puzzle solved: clear 'ta-da'",
+   "gain": 0.188,
+   "limited": false,
+   "m": {
+    "peak": -9.16,
+    "truePeak": -9.1,
+    "lufsMax": -17.06,
+    "duration": 1.04,
+    "centroid": 2193
+   },
+   "takes": [
+    {
+     "lufsMax": -17.06,
+     "truePeak": -9.1,
+     "duration": 1.04
+    },
+    {
+     "lufsMax": -16.57,
+     "truePeak": -8.28,
+     "duration": 1.12
+    },
+    {
+     "lufsMax": -16.51,
+     "truePeak": -8.41,
+     "duration": 1.17
+    },
+    {
+     "lufsMax": -17.91,
+     "truePeak": -9.33,
+     "duration": 1.04
+    }
+   ]
+  },
+  {
+   "name": "round-start",
+   "id": "roundStart",
+   "cat": "jingle",
+   "desc": "Round start stinger",
+   "gain": 0.151,
+   "limited": false,
+   "m": {
+    "peak": -11.71,
+    "truePeak": -11.71,
+    "lufsMax": -17.03,
+    "duration": 0.5,
+    "centroid": 1259
+   },
+   "takes": [
+    {
+     "lufsMax": -17.03,
+     "truePeak": -11.71,
+     "duration": 0.5
+    },
+    {
+     "lufsMax": -17.02,
+     "truePeak": -11.76,
+     "duration": 0.51
+    },
+    {
+     "lufsMax": -17.02,
+     "truePeak": -11.75,
+     "duration": 0.5
+    },
+    {
+     "lufsMax": -17.02,
+     "truePeak": -11.76,
+     "duration": 0.5
+    }
+   ]
+  },
+  {
+   "name": "door-open",
+   "id": "doorOpen",
+   "cat": "mechanic",
+   "desc": "Creaky wooden door opening",
+   "gain": 2.19,
+   "limited": true,
+   "m": {
+    "peak": -2.03,
+    "truePeak": -2.03,
+    "lufsMax": -17.65,
+    "duration": 1.43,
+    "centroid": 1560
+   },
+   "takes": [
+    {
+     "lufsMax": -17.65,
+     "truePeak": -2.03,
+     "duration": 1.43
+    },
+    {
+     "lufsMax": -17.75,
+     "truePeak": -1.61,
+     "duration": 1.4
+    },
+    {
+     "lufsMax": -17.56,
+     "truePeak": -1.69,
+     "duration": 1.42
+    },
+    {
+     "lufsMax": -17.47,
+     "truePeak": -1.19,
+     "duration": 1.39
+    }
+   ]
+  },
+  {
+   "name": "door-close",
+   "id": "doorClose",
+   "cat": "mechanic",
+   "desc": "Door shuts with a thud",
+   "gain": 0.512,
+   "limited": false,
+   "m": {
+    "peak": -3.38,
+    "truePeak": -3.38,
+    "lufsMax": -16.82,
+    "duration": 0.94,
+    "centroid": 584
+   },
+   "takes": [
+    {
+     "lufsMax": -16.82,
+     "truePeak": -3.38,
+     "duration": 0.94
+    },
+    {
+     "lufsMax": -16.95,
+     "truePeak": -2.33,
+     "duration": 0.92
+    },
+    {
+     "lufsMax": -17.01,
+     "truePeak": -2.45,
+     "duration": 0.94
+    },
+    {
+     "lufsMax": -17.19,
+     "truePeak": -2.9,
+     "duration": 0.93
+    }
+   ]
+  },
+  {
+   "name": "door-heavy",
+   "id": "doorHeavy",
+   "cat": "mechanic",
+   "desc": "Heavy dungeon door slams",
+   "gain": 0.267,
+   "limited": false,
+   "m": {
+    "peak": -4.1,
+    "truePeak": -4.1,
+    "lufsMax": -17.44,
+    "duration": 3.04,
+    "centroid": 498
+   },
+   "takes": [
+    {
+     "lufsMax": -17.44,
+     "truePeak": -4.1,
+     "duration": 3.04
+    },
+    {
+     "lufsMax": -17.72,
+     "truePeak": -3.07,
+     "duration": 3.01
+    },
+    {
+     "lufsMax": -16.58,
+     "truePeak": -2.32,
+     "duration": 3.08
+    },
+    {
+     "lufsMax": -16.22,
+     "truePeak": -3.57,
+     "duration": 3
+    }
+   ]
+  },
+  {
+   "name": "lock-open",
+   "id": "lockOpen",
+   "cat": "mechanic",
+   "desc": "Lock clicks open",
+   "gain": 1.28,
+   "limited": true,
+   "m": {
+    "peak": -2.02,
+    "truePeak": -1.99,
+    "lufsMax": -21.47,
+    "duration": 0.15,
+    "centroid": 3784
+   },
+   "takes": [
+    {
+     "lufsMax": -21.47,
+     "truePeak": -1.99,
+     "duration": 0.15
+    },
+    {
+     "lufsMax": -21.67,
+     "truePeak": -1.88,
+     "duration": 0.14
+    },
+    {
+     "lufsMax": -21.06,
+     "truePeak": -1.49,
+     "duration": 0.15
+    },
+    {
+     "lufsMax": -21.55,
+     "truePeak": -1.21,
+     "duration": 0.14
+    }
+   ]
+  },
+  {
+   "name": "locked",
+   "id": "locked",
+   "cat": "mechanic",
+   "desc": "Door is locked: rattle",
+   "gain": 1.69,
+   "limited": true,
+   "m": {
+    "peak": -1.21,
+    "truePeak": -1.2,
+    "lufsMax": -18.49,
+    "duration": 0.25,
+    "centroid": 3002
+   },
+   "takes": [
+    {
+     "lufsMax": -18.49,
+     "truePeak": -1.2,
+     "duration": 0.25
+    },
+    {
+     "lufsMax": -19.04,
+     "truePeak": -1.35,
+     "duration": 0.24
+    },
+    {
+     "lufsMax": -18.65,
+     "truePeak": -1.83,
+     "duration": 0.25
+    },
+    {
+     "lufsMax": -18.53,
+     "truePeak": -2.46,
+     "duration": 0.24
+    }
+   ]
+  },
+  {
+   "name": "chest-open",
+   "id": "chestOpen",
+   "cat": "mechanic",
+   "desc": "Treasure chest creaks open",
+   "gain": 0.868,
+   "limited": false,
+   "m": {
+    "peak": -9.7,
+    "truePeak": -9.48,
+    "lufsMax": -16.97,
+    "duration": 1.28,
+    "centroid": 3649
+   },
+   "takes": [
+    {
+     "lufsMax": -16.97,
+     "truePeak": -9.48,
+     "duration": 1.28
+    },
+    {
+     "lufsMax": -17.12,
+     "truePeak": -9.85,
+     "duration": 1.12
+    },
+    {
+     "lufsMax": -17.39,
+     "truePeak": -9.8,
+     "duration": 1.04
+    },
+    {
+     "lufsMax": -16.53,
+     "truePeak": -9.61,
+     "duration": 1.08
+    }
+   ]
+  },
+  {
+   "name": "lever",
+   "id": "lever",
+   "cat": "mechanic",
+   "desc": "Pull a lever: clunk",
+   "gain": 0.705,
+   "limited": true,
+   "m": {
+    "peak": -2.76,
+    "truePeak": -2.76,
+    "lufsMax": -20.7,
+    "duration": 0.87,
+    "centroid": 1413
+   },
+   "takes": [
+    {
+     "lufsMax": -20.7,
+     "truePeak": -2.76,
+     "duration": 0.87
+    },
+    {
+     "lufsMax": -21.01,
+     "truePeak": -1.73,
+     "duration": 0.87
+    },
+    {
+     "lufsMax": -20.78,
+     "truePeak": -1.21,
+     "duration": 0.87
+    },
+    {
+     "lufsMax": -20.69,
+     "truePeak": -2.07,
+     "duration": 0.87
+    }
+   ]
+  },
+  {
+   "name": "button",
+   "id": "button",
+   "cat": "mechanic",
+   "desc": "Press a mechanical floor button",
+   "gain": 0.805,
+   "limited": true,
+   "m": {
+    "peak": -1.26,
+    "truePeak": -1.22,
+    "lufsMax": -20.69,
+    "duration": 0.11,
+    "centroid": 1292
+   },
+   "takes": [
+    {
+     "lufsMax": -20.69,
+     "truePeak": -1.22,
+     "duration": 0.11
+    },
+    {
+     "lufsMax": -20.47,
+     "truePeak": -1.2,
+     "duration": 0.11
+    },
+    {
+     "lufsMax": -20.61,
+     "truePeak": -1.36,
+     "duration": 0.11
+    },
+    {
+     "lufsMax": -20.47,
+     "truePeak": -1.52,
+     "duration": 0.11
+    }
+   ]
+  },
+  {
+   "name": "ratchet",
+   "id": "ratchet",
+   "cat": "mechanic",
+   "desc": "Gear or crank turning",
+   "gain": 1.97,
+   "limited": true,
+   "m": {
+    "peak": -1.32,
+    "truePeak": -1.21,
+    "lufsMax": -20.92,
+    "duration": 0.29,
+    "centroid": 5351
+   },
+   "takes": [
+    {
+     "lufsMax": -20.92,
+     "truePeak": -1.21,
+     "duration": 0.29
+    },
+    {
+     "lufsMax": -20.65,
+     "truePeak": -1.87,
+     "duration": 0.29
+    },
+    {
+     "lufsMax": -20.84,
+     "truePeak": -2.61,
+     "duration": 0.29
+    },
+    {
+     "lufsMax": -21.37,
+     "truePeak": -2.34,
+     "duration": 0.29
+    }
+   ]
+  },
+  {
+   "name": "machine",
+   "id": "machine",
+   "cat": "mechanic",
+   "desc": "Machine starts up and hums",
+   "gain": 0.376,
+   "limited": false,
+   "m": {
+    "peak": -5.44,
+    "truePeak": -5.44,
+    "lufsMax": -16.95,
+    "duration": 1.09,
+    "centroid": 1215
+   },
+   "takes": [
+    {
+     "lufsMax": -16.95,
+     "truePeak": -5.44,
+     "duration": 1.09
+    },
+    {
+     "lufsMax": -16.97,
+     "truePeak": -5.39,
+     "duration": 1.11
+    },
+    {
+     "lufsMax": -16.96,
+     "truePeak": -5.07,
+     "duration": 1.09
+    },
+    {
+     "lufsMax": -17.08,
+     "truePeak": -5.4,
+     "duration": 1.11
+    }
+   ]
+  },
+  {
+   "name": "whoosh",
+   "id": "whoosh",
+   "cat": "world",
+   "desc": "Medium whoosh for dashes and swings",
+   "gain": 2.01,
+   "limited": false,
+   "m": {
+    "peak": -1.5,
+    "truePeak": -1.5,
+    "lufsMax": -17.09,
+    "duration": 0.3,
+    "centroid": 4517
+   },
+   "takes": [
+    {
+     "lufsMax": -17.09,
+     "truePeak": -1.5,
+     "duration": 0.3
+    },
+    {
+     "lufsMax": -16.99,
+     "truePeak": -1.37,
+     "duration": 0.31
+    },
+    {
+     "lufsMax": -17.1,
+     "truePeak": -3.1,
+     "duration": 0.3
+    },
+    {
+     "lufsMax": -16.8,
+     "truePeak": -1.21,
+     "duration": 0.31
+    }
+   ]
+  },
+  {
+   "name": "whoosh-fast",
+   "id": "whooshFast",
+   "cat": "world",
+   "desc": "Short fast whoosh",
+   "gain": 1.3,
+   "limited": true,
+   "m": {
+    "peak": -4.69,
+    "truePeak": -4.29,
+    "lufsMax": -21.28,
+    "duration": 0.13,
+    "centroid": 5486
+   },
+   "takes": [
+    {
+     "lufsMax": -21.28,
+     "truePeak": -4.29,
+     "duration": 0.13
+    },
+    {
+     "lufsMax": -20.65,
+     "truePeak": -4.32,
+     "duration": 0.13
+    },
+    {
+     "lufsMax": -20.84,
+     "truePeak": -4.82,
+     "duration": 0.13
+    },
+    {
+     "lufsMax": -21.11,
+     "truePeak": -1.17,
+     "duration": 0.13
+    }
+   ]
+  },
+  {
+   "name": "swing",
+   "id": "swing",
+   "cat": "world",
+   "desc": "Sword or stick swing",
+   "gain": 2.31,
+   "limited": true,
+   "m": {
+    "peak": -2.9,
+    "truePeak": -2.88,
+    "lufsMax": -18.78,
+    "duration": 0.16,
+    "centroid": 4515
+   },
+   "takes": [
+    {
+     "lufsMax": -18.78,
+     "truePeak": -2.88,
+     "duration": 0.16
+    },
+    {
+     "lufsMax": -18.77,
+     "truePeak": -1.9,
+     "duration": 0.16
+    },
+    {
+     "lufsMax": -18.74,
+     "truePeak": -1.2,
+     "duration": 0.16
+    },
+    {
+     "lufsMax": -18.8,
+     "truePeak": -2.76,
+     "duration": 0.16
+    }
+   ]
+  },
+  {
+   "name": "dash",
+   "id": "dash",
+   "cat": "world",
+   "desc": "Quick dash with a burst",
+   "gain": 1.17,
+   "limited": true,
+   "m": {
+    "peak": -1.27,
+    "truePeak": -1.18,
+    "lufsMax": -20.23,
+    "duration": 0.19,
+    "centroid": 4862
+   },
+   "takes": [
+    {
+     "lufsMax": -20.23,
+     "truePeak": -1.18,
+     "duration": 0.19
+    },
+    {
+     "lufsMax": -20.33,
+     "truePeak": -4.59,
+     "duration": 0.2
+    },
+    {
+     "lufsMax": -20.15,
+     "truePeak": -1.66,
+     "duration": 0.19
+    },
+    {
+     "lufsMax": -20.3,
+     "truePeak": -1.88,
+     "duration": 0.19
+    }
+   ]
+  },
+  {
+   "name": "splash",
+   "id": "splash",
+   "cat": "world",
+   "desc": "Something falls in water",
+   "gain": 0.675,
+   "limited": true,
+   "m": {
+    "peak": -1.35,
+    "truePeak": -1.2,
+    "lufsMax": -19.84,
+    "duration": 0.73,
+    "centroid": 2877
+   },
+   "takes": [
+    {
+     "lufsMax": -19.84,
+     "truePeak": -1.2,
+     "duration": 0.73
+    },
+    {
+     "lufsMax": -19.61,
+     "truePeak": -2.77,
+     "duration": 0.78
+    },
+    {
+     "lufsMax": -19.47,
+     "truePeak": -1.99,
+     "duration": 0.78
+    },
+    {
+     "lufsMax": -19.65,
+     "truePeak": -2.57,
+     "duration": 0.78
+    }
+   ]
+  },
+  {
+   "name": "water-drop",
+   "id": "waterDrop",
+   "cat": "world",
+   "desc": "Single water drop",
+   "gain": 0.836,
+   "limited": false,
+   "m": {
+    "peak": -1.62,
+    "truePeak": -1.62,
+    "lufsMax": -17.13,
+    "duration": 0.93,
+    "centroid": 1504
+   },
+   "takes": [
+    {
+     "lufsMax": -17.13,
+     "truePeak": -1.62,
+     "duration": 0.93
+    },
+    {
+     "lufsMax": -16.99,
+     "truePeak": -1.62,
+     "duration": 0.92
+    },
+    {
+     "lufsMax": -17.12,
+     "truePeak": -1.62,
+     "duration": 0.91
+    },
+    {
+     "lufsMax": -16.75,
+     "truePeak": -1.61,
+     "duration": 0.91
+    }
+   ]
+  },
+  {
+   "name": "bubble",
+   "id": "bubble",
+   "cat": "world",
+   "desc": "Bubbles rising",
+   "gain": 0.866,
+   "limited": false,
+   "m": {
+    "peak": -1.64,
+    "truePeak": -1.64,
+    "lufsMax": -16.99,
+    "duration": 0.29,
+    "centroid": 778
+   },
+   "takes": [
+    {
+     "lufsMax": -16.99,
+     "truePeak": -1.64,
+     "duration": 0.29
+    },
+    {
+     "lufsMax": -17.11,
+     "truePeak": -1.67,
+     "duration": 0.28
+    },
+    {
+     "lufsMax": -16.95,
+     "truePeak": -1.68,
+     "duration": 0.29
+    },
+    {
+     "lufsMax": -16.96,
+     "truePeak": -1.59,
+     "duration": 0.29
+    }
+   ]
+  },
+  {
+   "name": "wind",
+   "id": "wind",
+   "cat": "world",
+   "desc": "Gust of wind",
+   "gain": 1.24,
+   "limited": false,
+   "m": {
+    "peak": -6.05,
+    "truePeak": -6.04,
+    "lufsMax": -16.94,
+    "duration": 1.59,
+    "centroid": 2148
+   },
+   "takes": [
+    {
+     "lufsMax": -16.94,
+     "truePeak": -6.04,
+     "duration": 1.59
+    },
+    {
+     "lufsMax": -16.65,
+     "truePeak": -5.42,
+     "duration": 1.64
+    },
+    {
+     "lufsMax": -17.09,
+     "truePeak": -4.69,
+     "duration": 1.61
+    },
+    {
+     "lufsMax": -17.29,
+     "truePeak": -5.43,
+     "duration": 1.64
+    }
+   ]
+  },
+  {
+   "name": "glass-break",
+   "id": "glassBreak",
+   "cat": "world",
+   "desc": "Glass shatters",
+   "gain": 0.528,
+   "limited": true,
+   "m": {
+    "peak": -1.89,
+    "truePeak": -1.89,
+    "lufsMax": -17.79,
+    "duration": 0.73,
+    "centroid": 10513
+   },
+   "takes": [
+    {
+     "lufsMax": -17.79,
+     "truePeak": -1.89,
+     "duration": 0.73
+    },
+    {
+     "lufsMax": -17.61,
+     "truePeak": -1.33,
+     "duration": 0.7
+    },
+    {
+     "lufsMax": -17.73,
+     "truePeak": -3.1,
+     "duration": 0.7
+    },
+    {
+     "lufsMax": -17.58,
+     "truePeak": -1.2,
+     "duration": 0.7
+    }
+   ]
+  },
+  {
+   "name": "thud",
+   "id": "thud",
+   "cat": "world",
+   "desc": "Generic body or crate falling",
+   "gain": 0.567,
+   "limited": false,
+   "m": {
+    "peak": -1.57,
+    "truePeak": -1.56,
+    "lufsMax": -16.74,
+    "duration": 0.18,
+    "centroid": 306
+   },
+   "takes": [
+    {
+     "lufsMax": -16.74,
+     "truePeak": -1.56,
+     "duration": 0.18
+    },
+    {
+     "lufsMax": -16.93,
+     "truePeak": -3.14,
+     "duration": 0.19
+    },
+    {
+     "lufsMax": -17.16,
+     "truePeak": -2.99,
+     "duration": 0.18
+    },
+    {
+     "lufsMax": -17.17,
+     "truePeak": -2.63,
+     "duration": 0.19
+    }
+   ]
+  },
+  {
+   "name": "toss",
+   "id": "toss",
+   "cat": "world",
+   "desc": "Throw something",
+   "gain": 2.48,
+   "limited": true,
+   "m": {
+    "peak": -3.64,
+    "truePeak": -3.64,
+    "lufsMax": -21.44,
+    "duration": 0.15,
+    "centroid": 3972
+   },
+   "takes": [
+    {
+     "lufsMax": -21.44,
+     "truePeak": -3.64,
+     "duration": 0.15
+    },
+    {
+     "lufsMax": -21.11,
+     "truePeak": -3,
+     "duration": 0.15
+    },
+    {
+     "lufsMax": -20.97,
+     "truePeak": -2.53,
+     "duration": 0.15
+    },
+    {
+     "lufsMax": -20.58,
+     "truePeak": -1.2,
+     "duration": 0.15
+    }
+   ]
+  },
+  {
+   "name": "fire-crackle",
+   "id": "fireCrackle",
+   "cat": "world",
+   "desc": "Campfire crackle",
+   "gain": 1.65,
+   "limited": true,
+   "m": {
+    "peak": -1.53,
+    "truePeak": -1.45,
+    "lufsMax": -17.47,
+    "duration": 0.98,
+    "centroid": 2509
+   },
+   "takes": [
+    {
+     "lufsMax": -17.47,
+     "truePeak": -1.45,
+     "duration": 0.98
+    },
+    {
+     "lufsMax": -17.78,
+     "truePeak": -1.94,
+     "duration": 1
+    },
+    {
+     "lufsMax": -17.33,
+     "truePeak": -1.22,
+     "duration": 0.99
+    },
+    {
+     "lufsMax": -17.56,
+     "truePeak": -1.18,
+     "duration": 1
+    }
+   ]
+  }
+ ]
+}

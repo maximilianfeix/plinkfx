@@ -1,0 +1,968 @@
+{
+ "click": [
+  "6a51939ef3f1e24c",
+  "b2347c21bc27ed08",
+  "efd02afaebc41f3b",
+  "c69537c3bbb7c5c4"
+ ],
+ "click-soft": [
+  "c420069f92fba465",
+  "f1e5316422a8637d",
+  "dbe8280333cf1470",
+  "b7899a01b8f429a8"
+ ],
+ "click-hard": [
+  "7cf9644e14ea5582",
+  "abd52f927df3af7b",
+  "718ee454873feaba",
+  "6036a25832fdc10f"
+ ],
+ "tap": [
+  "08bc12a3b1bb6f12",
+  "c6465ed47ecfe186",
+  "25e593558fbe31aa",
+  "41b9a30cad9b37bb"
+ ],
+ "hover": [
+  "30d07a123a8a4ea3",
+  "715d68e25b4d53bc",
+  "ef1068b263b48bb9",
+  "600d8bdb8f656afb"
+ ],
+ "toggle-on": [
+  "9b34350d0e9bbf4b",
+  "2999a6f4070b184a",
+  "56087fc5deaaa09b",
+  "2ed8b0d9e8ae1a77"
+ ],
+ "toggle-off": [
+  "67a2961674fb2ef5",
+  "01ce640dcb3ebdb9",
+  "879ff528fcf35e01",
+  "e9d90a64f20452e0"
+ ],
+ "confirm": [
+  "7354063375b511a8",
+  "33cf97018eed807b",
+  "47f5bced07226eef",
+  "b681d26a01b152c5"
+ ],
+ "cancel": [
+  "f65f87d40c82c7d2",
+  "67af063c0962175f",
+  "98e660843ba6efdf",
+  "e14752b39f09963b"
+ ],
+ "error": [
+  "62ef5c855d9da4ab",
+  "369e5ca8dc94871b",
+  "8faee21c6fa29c56",
+  "5c2b80fd403bae5c"
+ ],
+ "deny": [
+  "3f5b5b99df631d09",
+  "ec7baa8118218b9b",
+  "05231a0356aaccdb",
+  "c25f6770314fe6bb"
+ ],
+ "notify": [
+  "f3375656f2827564",
+  "ab782ff225c9d763",
+  "428174d068d0a249",
+  "dea287eabf7e8349"
+ ],
+ "pop": [
+  "f92066c30d8e3816",
+  "191da2be0cd92f3a",
+  "158f29f652ae974e",
+  "49f5efdd901d218c"
+ ],
+ "pop-down": [
+  "462b12b37e25dca4",
+  "836ef6cd61722e59",
+  "8eb4485b8603138d",
+  "0e1909fe897fd8e1"
+ ],
+ "swipe": [
+  "eb97ba1b334ea76b",
+  "e81d3184d736a217",
+  "65d1605b9ec57f1d",
+  "e1bb8d0194aef66f"
+ ],
+ "type": [
+  "d4bb08f2b9c48b3b",
+  "923410c146bed7af",
+  "adf3dc427dc4f40a",
+  "81d443428c0acc08"
+ ],
+ "tick": [
+  "20199f53788dec9f",
+  "6b72a1a8e67aa49d",
+  "1f8cacb9758471e3",
+  "ecc2baca4a48e7da"
+ ],
+ "menu-open": [
+  "2e4d1ffb57fadf2b",
+  "d7176a6abbbd4ec0",
+  "0e52e263e376d825",
+  "d8f93d40d26f1ce0"
+ ],
+ "menu-close": [
+  "b5108f88c1b193de",
+  "f0f89eb82d8bb723",
+  "035f9c7ae94a3b2e",
+  "d74fa18bcd3df9c0"
+ ],
+ "select": [
+  "c101ffd39614eb07",
+  "235ae9211afad4d5",
+  "c76e05c48281d05a",
+  "ea75eb0efb0bb4f3"
+ ],
+ "select-soft": [
+  "1db27d8924720e9b",
+  "70bea079c0a0cb53",
+  "2a452d1a1c874877",
+  "fda7da830fdcd6f7"
+ ],
+ "message": [
+  "d4ff6ebb404188e3",
+  "890765b959782fd2",
+  "1422508eeb1efb0a",
+  "86e8cbe65115ba9c"
+ ],
+ "plink": [
+  "db71636a64087d9c",
+  "c00a9de3b57d3753",
+  "120de4b1a68e0827",
+  "20a625325bc25072"
+ ],
+ "coin": [
+  "fbadbe538aee88ba",
+  "cf0d7bcb9b72484e",
+  "dffbbf40fa600ad3",
+  "a6044dbe0b405b93"
+ ],
+ "coin-soft": [
+  "58a75fc23fbb9de5",
+  "77b14faf1fcd21d3",
+  "e4ff97bb6feeff50",
+  "0089beacb411cfed"
+ ],
+ "coin-double": [
+  "51c326d4e3152471",
+  "9372dad3f9816fc4",
+  "51b29042b7c50244",
+  "08b738e66a28faa5"
+ ],
+ "coin-bag": [
+  "3136473e03a6247d",
+  "4fb752b529037df5",
+  "92d6c25ea9b8efc3",
+  "696b6f8596b98fa6"
+ ],
+ "gem": [
+  "2652a5bd1f44621a",
+  "b313740ee62996d5",
+  "6cd11c6a9db99e12",
+  "12761bb00cbfc3f1"
+ ],
+ "pickup": [
+  "4a50b7543e6a80c7",
+  "cfda325f2972e41d",
+  "eca14eac5914f96e",
+  "aede764ae670065f"
+ ],
+ "pickup-soft": [
+  "8899016c4e1b9ba4",
+  "ce996f6696f9ea97",
+  "75799e94eab2eae7",
+  "66653f93d771a25c"
+ ],
+ "pickup-item": [
+  "74f699e6405880cc",
+  "0140161619523f32",
+  "c1a107f8b478a29c",
+  "c9b0957073fb40df"
+ ],
+ "key": [
+  "835500c7fce43f56",
+  "a16104cec8d9c8ca",
+  "f889d03583a3c380",
+  "88ef0f14df0c9a54"
+ ],
+ "heart": [
+  "bef5c3835924e18f",
+  "16f8fef672bd8a84",
+  "d9b8102abfe9e172",
+  "451db27656d3714d"
+ ],
+ "ammo": [
+  "378b9ff27044b2bd",
+  "5b423db6ebb7d197",
+  "075fad395da36ab4",
+  "afbed2b1cb652bef"
+ ],
+ "ka-ching": [
+  "210f733ac1fdf888",
+  "6163fbc9c934e34e",
+  "8cca261c0ff53a03",
+  "4c072d1778073257"
+ ],
+ "xp-orb": [
+  "7d02bbb342c5db12",
+  "0ce9a69754272529",
+  "213a9ef9b7a6a192",
+  "8428ab0b2a31d2ed"
+ ],
+ "star": [
+  "ecad22c73a2edd2e",
+  "c80aa3f8ed785134",
+  "a1cd2fcc7c59f7b8",
+  "8648401d9ec86910"
+ ],
+ "ring": [
+  "5633973fd0f70445",
+  "ab338589fe0c6571",
+  "49296016665bf84c",
+  "86446774f49a4bdb"
+ ],
+ "jump": [
+  "43621fe1c22ac141",
+  "79f0b632636f1a2f",
+  "d87895e8be99783e",
+  "18e0b6af256b87ba"
+ ],
+ "jump-soft": [
+  "2c1436cbfcc45a37",
+  "5ecff3c0717a0d19",
+  "f096af68720d02bb",
+  "7d33c286878e0dfa"
+ ],
+ "jump-high": [
+  "6dbddcde74331c51",
+  "9e92e2d97956aa99",
+  "d8034421d2324a61",
+  "e5e4ff1d7af37954"
+ ],
+ "jump-double": [
+  "d5c81c7d2a240fb0",
+  "82eab9f8abfa18ac",
+  "bc3c302aa5982b38",
+  "f956a1cd77194791"
+ ],
+ "jump-cartoon": [
+  "4f668dcfc6666c0d",
+  "e74b331bdc9517c7",
+  "19a8b6287b46b8f3",
+  "17b05f2adf768b5e"
+ ],
+ "hop": [
+  "eb527ec4db7714f2",
+  "20c23a26aac76f53",
+  "309f6f3b54b83918",
+  "782a24df34fcf0f8"
+ ],
+ "land": [
+  "d149540337cb3198",
+  "79d11a513efa753d",
+  "9b6e2e8dd36d0c5b",
+  "5547b1ef18297572"
+ ],
+ "land-heavy": [
+  "6d4c68a733208c9e",
+  "8a1ea9c973e0bea8",
+  "4e388e3fa84ceb23",
+  "bd0684f7b8d1bb97"
+ ],
+ "spring": [
+  "563fdbe857b45c1e",
+  "e99927bfc79e8ac7",
+  "73a6d6b5a465218c",
+  "db1edfd63f88af52"
+ ],
+ "wall-jump": [
+  "a596599ad5f9e842",
+  "15120cb98a174f4a",
+  "d1ca4863df0c14ad",
+  "5ffc6d3975699230"
+ ],
+ "hit": [
+  "d4a70fc6787678f3",
+  "dce40930d4d89120",
+  "703963e5a0f58094",
+  "6d01b7068ad85c3c"
+ ],
+ "hit-light": [
+  "d51dcaba064f33fa",
+  "ae9eeee672ec55f0",
+  "8f72143ed5fd1ef4",
+  "beb8d4d8e239ee2c"
+ ],
+ "hit-heavy": [
+  "adfb01de2e6373d3",
+  "3ed3ce9523dc9236",
+  "26cc93dd881ad9c5",
+  "1273a44237672496"
+ ],
+ "punch": [
+  "5f7e19573dcb82c7",
+  "aa7267dfcb9cb043",
+  "513d0f0797c6cc06",
+  "242e9fdd883be1dc"
+ ],
+ "slap": [
+  "8bcda05aa4b235ee",
+  "490751b5cc25e4ae",
+  "5aee151fd4e27402",
+  "ce9a096d60b21cf9"
+ ],
+ "hurt": [
+  "cee28a1138949914",
+  "22579a8c7fe864a7",
+  "dd3ff759227c8e86",
+  "1aecedc8cf3e03dc"
+ ],
+ "hurt-retro": [
+  "be6b6e2aafbe77a3",
+  "4b11cd67cbd64cd4",
+  "a9c4e3c97733ae8a",
+  "67de6fae46f9a46f"
+ ],
+ "enemy-hit": [
+  "9e867dc3425fd854",
+  "4a066fde75efaedb",
+  "fa3b2a48c493a21b",
+  "ec594804b8949aec"
+ ],
+ "enemy-die": [
+  "414a378461e195cd",
+  "cfba78c9d3ec4600",
+  "9a3edc451729cc22",
+  "a570c5465fad6adc"
+ ],
+ "sword-hit": [
+  "3fb3bc97695bd199",
+  "371cb021d423ff3e",
+  "6b3a05b434274c2f",
+  "99a2842d4ba189c5"
+ ],
+ "block": [
+  "11c7bf19b7660ca4",
+  "6f901ca2ed0a2731",
+  "84d0563a4537faf3",
+  "789b4b338ef14f6b"
+ ],
+ "crit": [
+  "50b5d8910a4618d3",
+  "3585fceddfbe88dd",
+  "0bfd888a0998c0cc",
+  "7979fdc63cbb5063"
+ ],
+ "squish": [
+  "1b407f76fd8f5246",
+  "06be57564ecd998d",
+  "3153b4ce1a03e697",
+  "6cff6a9f36e98efe"
+ ],
+ "bonk": [
+  "001dcb3e5f12cc37",
+  "1f536b894f8fdd1d",
+  "44c295d4169ca9a5",
+  "171f398a0c219732"
+ ],
+ "arrow-hit": [
+  "1141bd68b863a23d",
+  "555ab19184292079",
+  "2c27c50fbd1696ed",
+  "3e8e3a20309bb4d7"
+ ],
+ "explosion": [
+  "d135258ad44d6226",
+  "35917f731ad47730",
+  "c1fcdbc2be81dc62",
+  "39926ea159a6c6f7"
+ ],
+ "explosion-small": [
+  "d215f56a7803c5d7",
+  "bdfdd9177e4eaa18",
+  "7a04653a9623814d",
+  "2b2138d3f53ccbd1"
+ ],
+ "explosion-big": [
+  "c59e52c24fe845bb",
+  "b151c7c1be7b68c6",
+  "28095a873878cac4",
+  "65f848159e86020f"
+ ],
+ "explosion-retro": [
+  "4bf978f956627d0f",
+  "83f9aca0fb969189",
+  "19ae2fab4a002729",
+  "cedc5ee34b6a5ece"
+ ],
+ "explosion-distant": [
+  "e3298db197f0bd22",
+  "e422381124f8a247",
+  "601deb2145207c44",
+  "ba75400cdc93178e"
+ ],
+ "firework": [
+  "0b8af391e3479ecf",
+  "bedcb85287684b21",
+  "01143b60ea95a559",
+  "c6b3ba96b6a9ec75"
+ ],
+ "implosion": [
+  "4d3d12b2f8f77816",
+  "0d6347579d832174",
+  "4801be2aefcaae18",
+  "7bfc0f1f6ea50c7d"
+ ],
+ "debris": [
+  "68160b098ee76959",
+  "053f910db5766dba",
+  "95458987a7141c2e",
+  "c6848e46460694dd"
+ ],
+ "shockwave": [
+  "6c4646f2a518d620",
+  "dec6ceb9fc5a85c7",
+  "336781e6017c6c64",
+  "935ac8d7ec674cc6"
+ ],
+ "bomb-fuse": [
+  "3aea4005b581a31d",
+  "1797f2bfac6929f8",
+  "6aa83598baf761ab",
+  "3761d8c00cc2ad33"
+ ],
+ "powerup": [
+  "24aa44b9fa9a0847",
+  "c252bb2f87de1a44",
+  "0d0ad0e19d56f15e",
+  "068ad0b7b3dcbb7d"
+ ],
+ "powerup-retro": [
+  "814798e744d3ab42",
+  "cbf5f5d12b8f8180",
+  "557a4e2e071c1877",
+  "07a4c15ec5ab9d93"
+ ],
+ "level-up": [
+  "8a2bdc141b8ee036",
+  "a95f4fb4287fde4f",
+  "2b7f17070f61ff34",
+  "e84e2691be09aed3"
+ ],
+ "extra-life": [
+  "6da5854a7db3bf31",
+  "d8482b73cb53ab04",
+  "c36fec6082e9a32b",
+  "5ab3547f00b7d50a"
+ ],
+ "shield-on": [
+  "f950ab8a14df9160",
+  "35860b088a9b7150",
+  "b1bca2ec1f7e8f9a",
+  "79b9587b404a697f"
+ ],
+ "shield-off": [
+  "84668221b0fa8131",
+  "550f4df70347fe40",
+  "9ded631730ffb114",
+  "a926248315fa8b95"
+ ],
+ "speed-up": [
+  "7120f963b8cbea79",
+  "3b183d367a0b58fa",
+  "b6dc952fe26f0b36",
+  "9626da0bcb965c79"
+ ],
+ "heal": [
+  "15f7178d36f1633c",
+  "ebfef16fc65f826c",
+  "d913ac904a6666d7",
+  "33c880c761345916"
+ ],
+ "charge-up": [
+  "333f739400b0c793",
+  "4613c5f909cde5ef",
+  "a34ef1d267769d53",
+  "8e4b53b8b2217c56"
+ ],
+ "power-down": [
+  "6e4da75213ba8dfe",
+  "e35db03763d89f59",
+  "da405ad8cde9f576",
+  "d1d6a3e3b46b9602"
+ ],
+ "unlock": [
+  "62298453feb98489",
+  "a88e393d8386954f",
+  "c2fad5c298ea034c",
+  "caf7c0092dbf236c"
+ ],
+ "invincible": [
+  "da8285729c7cc656",
+  "3d7259cfcdc8d6fe",
+  "bc4da170372b9b29",
+  "7e6c5ddb3e00239f"
+ ],
+ "laser": [
+  "6ec5d69b05ecb029",
+  "f0571f964e92de3d",
+  "28018a3a7b6fe7c5",
+  "2a531e88485882a8"
+ ],
+ "laser-soft": [
+  "0d92a089ad109d5d",
+  "535b61c7f8cc6e3e",
+  "afcb8a3a41f111a0",
+  "797af63600894a12"
+ ],
+ "laser-heavy": [
+  "ccc0855e7b95dd46",
+  "9c96081c63847fbd",
+  "04f76b3fb1499f60",
+  "543f8a42abc95f8e"
+ ],
+ "blaster": [
+  "8fa9f0af332ce8be",
+  "84808a9db139dae2",
+  "93aa27367472d7eb",
+  "c2797af0960730e6"
+ ],
+ "zap": [
+  "d37c8ec9ea8f0c09",
+  "0d620703410d27de",
+  "2ff756fbd6669d66",
+  "24b64ffd8833ffca"
+ ],
+ "pew": [
+  "6298ea393a0af9f0",
+  "fa58cf0310110bcb",
+  "f93b384b793ef0ee",
+  "002a7cccca97bcb6"
+ ],
+ "gunshot": [
+  "2760f9a7bca892a8",
+  "0416d6fc0b8cc61f",
+  "72bc48384e1fa958",
+  "c3ac038617c3c741"
+ ],
+ "shotgun": [
+  "bd126c7756c94f5e",
+  "07dbd915949c2de9",
+  "e3f6086a3397f678",
+  "0a9a6d2b7e74c095"
+ ],
+ "shoot-retro": [
+  "8eb9de16aedbd288",
+  "3d89aa19f35e83f8",
+  "16a82dc8acd43547",
+  "f00c02c99fe588e9"
+ ],
+ "railgun": [
+  "add9519cb7097343",
+  "de6d93936ee5c57c",
+  "9d3b517b3a064118",
+  "b174bbda4274888c"
+ ],
+ "ray": [
+  "2bc7f907c93b45db",
+  "fcb20843ca96bd5d",
+  "7fdf0c9acb8dcc10",
+  "2d73c1b90042e0a6"
+ ],
+ "plasma": [
+  "931133b30219095c",
+  "f175ffe6035fc4e6",
+  "e01460441d97274f",
+  "cabf9e5dcb1c1ef8"
+ ],
+ "missile": [
+  "57b307746545dd13",
+  "8b27faab0e45e502",
+  "36d36813a9bcbe9e",
+  "4a6415ab67ce6ed9"
+ ],
+ "reload": [
+  "21cb39926b075363",
+  "24e24a1aa3d3a987",
+  "c706ff4d557768e8",
+  "61fedf063e705fce"
+ ],
+ "step-grass": [
+  "a305f5b8ec973135",
+  "90d4f33d6c1c8a2a",
+  "8369ce443b058571",
+  "9082020a67a02de3"
+ ],
+ "step-stone": [
+  "ac7788c07116a4d6",
+  "a0d58f75567360ac",
+  "8f2a5505bbe3da5c",
+  "74e44db14c7eb053"
+ ],
+ "step-wood": [
+  "5202419221656f86",
+  "7fabd2b8b2387c7e",
+  "56a17a77647e443e",
+  "00be8ad7884fe306"
+ ],
+ "step-metal": [
+  "9f911dac835cccd2",
+  "4429a6f84e042965",
+  "a1528caaf27f9f02",
+  "2b73cfb411796256"
+ ],
+ "step-snow": [
+  "e487ca7346cd7c9b",
+  "4d9608d014ebd9c0",
+  "0d17daa956784730",
+  "b25f26125430783c"
+ ],
+ "step-gravel": [
+  "97e7f3584931cd30",
+  "2905da1c9d681913",
+  "3f7a332fce9541d8",
+  "22b0be69b2faf3d9"
+ ],
+ "step-water": [
+  "70b956db58ffab90",
+  "7185ea0d775f4a36",
+  "a88ed48165dbd1ae",
+  "0fb6f00132f93671"
+ ],
+ "step-sand": [
+  "e1db9f4e01dd7c6d",
+  "da21e1abc9b5945f",
+  "1c77b74e2db8e932",
+  "806f0712e9608e32"
+ ],
+ "step-retro": [
+  "c42263f4ecbb2c38",
+  "1b2479551239ae17",
+  "ce05a29f9ea3dbde",
+  "40c0dcfb289d15b6"
+ ],
+ "step-heavy": [
+  "779722ec7bbf9945",
+  "0903fc57f890336c",
+  "e9616b0d0af5fe93",
+  "e102404298dea829"
+ ],
+ "sparkle": [
+  "71ecc4a5d9b958b1",
+  "0e91dbc3b1b57034",
+  "ad36e0cc12685030",
+  "95c6f6d019269003"
+ ],
+ "spell-cast": [
+  "e427f9103ca660ab",
+  "d1347e6d0c222b7e",
+  "51dd70ad4304c746",
+  "adf4579d2202e5f7"
+ ],
+ "fireball": [
+  "9bd479d657c111a8",
+  "ae230a3c4e2d0866",
+  "3bc22e7bc9eb64ae",
+  "c696d85beeb03a34"
+ ],
+ "ice": [
+  "deacfe9008c16acd",
+  "7a059354d01fd685",
+  "d9cea0e413c1804f",
+  "e66047561005e6a6"
+ ],
+ "teleport": [
+  "3d08c8c09e6182cd",
+  "54d08dd15862620d",
+  "314b25aa06094846",
+  "4cc676f592c3af29"
+ ],
+ "portal": [
+  "85d35fe6bcf099d2",
+  "d67c8bb29ce3db92",
+  "0aeac0bfb1589828",
+  "39ea61313729f70d"
+ ],
+ "lightning": [
+  "bbe835252db5e5f7",
+  "c690a73eacf9731a",
+  "a342ef3509645f16",
+  "dedb3dabb434a7e3"
+ ],
+ "curse": [
+  "22028bce11cb108a",
+  "a962c015b89e90cf",
+  "6ddc103723d3400d",
+  "099b0bbba163bf3e"
+ ],
+ "enchant": [
+  "feff4f614b2fea1c",
+  "d4eea2287d62ea31",
+  "2829725ca4d02c83",
+  "c0f4d7ee5eb253ed"
+ ],
+ "dispel": [
+  "6bb367882e316255",
+  "8828f773be138815",
+  "3ed4f5ac437cc876",
+  "61cac8c02491f72b"
+ ],
+ "summon": [
+  "17863c1baf2e2cef",
+  "c56dbca75b5b4140",
+  "95f3b32bbfd926bc",
+  "214f8f6763bba943"
+ ],
+ "magic-missile": [
+  "547ffc776cd8d456",
+  "1e067507bfadda3c",
+  "29bb32655f61a140",
+  "17201ef3fbc7ccc6"
+ ],
+ "alarm": [
+  "63786a2a4e3d1f93",
+  "b518ea62cfd35f64",
+  "021aff136728e7f1",
+  "3d89ed203f3b40db"
+ ],
+ "beep": [
+  "b502109405115df7",
+  "67d96c194057aff4",
+  "43bdc82efc74f438",
+  "d94299c2bb71a962"
+ ],
+ "warning": [
+  "db9ff0f3cf6e737e",
+  "a4358fe87e2dfdf8",
+  "bcedfb47a161795a",
+  "0c19f7acef019c43"
+ ],
+ "low-health": [
+  "bb2b765c12424133",
+  "b9a055b479cd13bf",
+  "8ef19a110f1f18b4",
+  "0b425579450e84c6"
+ ],
+ "heartbeat": [
+  "0b29ab63400d9ee3",
+  "c5bdcd69ab82f6af",
+  "4dad3fff814559f1",
+  "4a5f59bb09fb5f57"
+ ],
+ "countdown": [
+  "3d3e0cce6d46b4da",
+  "dc93ff8c6b13483d",
+  "0ffaa2267a6ffb11",
+  "53789bdf85d5a14e"
+ ],
+ "countdown-go": [
+  "c0c66f7e5f042e5e",
+  "3d3a7ab91cf264a5",
+  "f2c39ebb64ba7a97",
+  "795e0b44e4b2d592"
+ ],
+ "siren": [
+  "36e77778c2733af5",
+  "bb7257eac755d0ea",
+  "383f6f9e1f012bdf",
+  "41a313bfef867aae"
+ ],
+ "radar-ping": [
+  "84b20bae4e87d680",
+  "098d26a7f80df385",
+  "a138545cb3195e74",
+  "edd1c5124ed3f93d"
+ ],
+ "quest-new": [
+  "4238d8cf277b8df7",
+  "83d67b036f9464c0",
+  "1997f8866c2bb3d8",
+  "1b1b6db20611a8d7"
+ ],
+ "victory": [
+  "3158f40dc2a86112",
+  "eadcdf7a7d6a0947",
+  "a945432f971266b4",
+  "bcad3fef8e943017"
+ ],
+ "level-complete": [
+  "bd1aea15c43cb9cc",
+  "922c8e29f07d7903",
+  "53ce06bfdf6032e5",
+  "a34c605a8e616e02"
+ ],
+ "game-over": [
+  "dc03dd7929f515d6",
+  "d81997d014e7dc6b",
+  "5b8dfa979d622a67",
+  "0a20e63ea8df8abf"
+ ],
+ "lose": [
+  "cdfab5b49f1c6bc4",
+  "423f4a50683c105c",
+  "3df28d1adc47f87a",
+  "28c0b0322224dbaf"
+ ],
+ "secret-found": [
+  "701de4ef40bfe24e",
+  "33991b2e525d4320",
+  "1804fd211dc2e474",
+  "6c04fe4be7b64d9a"
+ ],
+ "achievement": [
+  "60214a650dc1b78f",
+  "19c429185ceab066",
+  "699a2be30de7a280",
+  "d803e753a59417d9"
+ ],
+ "puzzle-solved": [
+  "f9b28954e176cfde",
+  "088bc513fcf87713",
+  "95dcb56e2f6f84b9",
+  "66e19468b7b4abd3"
+ ],
+ "round-start": [
+  "f72538781b513996",
+  "bfc78767e7e54e1b",
+  "a119aefa50611d42",
+  "5a7053306f9cdaf7"
+ ],
+ "door-open": [
+  "aa57c24c2049f768",
+  "9e8168bd597f4545",
+  "5ecf5b2786c03b76",
+  "6d4f7dac82c7d72a"
+ ],
+ "door-close": [
+  "3e28aae7ef330f32",
+  "8a6e73d4c9b4ea5a",
+  "2922ca9ab6e368f0",
+  "311da9c189079a82"
+ ],
+ "door-heavy": [
+  "7ef4c9836259010e",
+  "ccc196a18a3cd75f",
+  "3fbf935aff733acc",
+  "e0b194b6bed68a32"
+ ],
+ "lock-open": [
+  "96132f9336531068",
+  "9d557638e6c64c61",
+  "8a30381900caf88e",
+  "f374a0b9a57b592b"
+ ],
+ "locked": [
+  "eab3792bac85736e",
+  "211b4d31bf07465a",
+  "7bab00306bf54160",
+  "be0013e64dbc7152"
+ ],
+ "chest-open": [
+  "1a4280cb5f996b18",
+  "0044a4ea43fb86a1",
+  "364c30e49d5b2dc4",
+  "7049fe40e20ece0b"
+ ],
+ "lever": [
+  "62d675e3a49a7872",
+  "1264857ef5a6f94a",
+  "fd65ec7ccb5d72c1",
+  "7732cadb00db9144"
+ ],
+ "button": [
+  "a402b9e9b6d0d708",
+  "cdfe96307f16081f",
+  "12df01d4baab4f18",
+  "910ca933fa11fc68"
+ ],
+ "ratchet": [
+  "2b942e1082982f0d",
+  "43387a3c5cf4934e",
+  "6a11a2a14ade9f21",
+  "4d1bed0a629dfc0a"
+ ],
+ "machine": [
+  "0e4f034cb00f2fc7",
+  "c943754655ee8f54",
+  "f5fdb559dec91ed5",
+  "506845d38b514057"
+ ],
+ "whoosh": [
+  "e7a9aae1323b53a9",
+  "74ff3319bec4a6cb",
+  "91b967e861d0a493",
+  "3e4a0b9e8cf0973a"
+ ],
+ "whoosh-fast": [
+  "d93cf00478307824",
+  "a4f909b8bcce64b8",
+  "34b20b4a71b42d00",
+  "a23b2b505b6ab33b"
+ ],
+ "swing": [
+  "a665c2a2a43f63e7",
+  "d4cb1780820f5d0e",
+  "7afaee4eb1de8ae5",
+  "34f03a7fac9204dc"
+ ],
+ "dash": [
+  "e2c1d6ed6622aaf4",
+  "f1bb430bf70741d4",
+  "3575f394995f6e90",
+  "ecf5b72ffae30e88"
+ ],
+ "splash": [
+  "0aae9ee348875829",
+  "86a230c1baa589ea",
+  "7c54c184b610ebff",
+  "c5e47e42c635e808"
+ ],
+ "water-drop": [
+  "57ded2fd00b9fc0e",
+  "ea4d9c7f98d8fa3d",
+  "fe3c6ace1e34015b",
+  "4e45ffe99d298b35"
+ ],
+ "bubble": [
+  "08f80f1b6432dc46",
+  "1e25c8a4c73160ff",
+  "af2df733164db440",
+  "95473298c9e32ca2"
+ ],
+ "wind": [
+  "79945833f619c5c9",
+  "181b49738f5ae3b4",
+  "114f09b2a30c801d",
+  "a3987d869f601369"
+ ],
+ "glass-break": [
+  "eb1683525a7e914f",
+  "99f00089d951bb56",
+  "786fa325d5a3af64",
+  "56c2fbcfb2427987"
+ ],
+ "thud": [
+  "48cec063962eedc4",
+  "4272a832ea5fad45",
+  "6395d48ad7e71372",
+  "551d524749fd31cd"
+ ],
+ "toss": [
+  "740e129dbb378e91",
+  "cab2a3cf9f5b5910",
+  "c3ed96bf46155284",
+  "6460040e7bcdd0fe"
+ ],
+ "fire-crackle": [
+  "9c8e3a3af060ebcd",
+  "75e4b03629a497fa",
+  "368ddf28cdaf3052",
+  "658c0cd112546757"
+ ]
+}
