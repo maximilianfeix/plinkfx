@@ -1,6 +1,6 @@
 // plinkfx sound player for Unity. Put the exported WAVs under Assets/Resources/Sfx:
 //   npx plinkfx export Assets/Resources/Sfx --variants
-// Import settings for short effects: Load Type = Decompress On Load, Force To Mono = on.
+// Import settings for short effects: Load Type = Decompress On Load. Leave Force To Mono off: the files are mono already and it can re-normalise them.
 // Usage: PlinkSfx.Play("coin");
 using System.Collections.Generic;
 using UnityEngine;

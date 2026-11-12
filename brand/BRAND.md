@@ -169,10 +169,3 @@ sound. Play it with `play("plink")`.
   other than paper, ink or a photo dark enough for the paper version.
 - Don't put the category swatches on text or use them as section colours.
 - Don't add a speaker, headphones or music note to the mark.
-
-## 8. Open
-
-- The banner text in `make_brand.py` names IBM Plex Mono first. It isn't bundled, so viewers see their own
-  monospace font. Switch the banner `font-family` to the gallery stack above so it is explicit, then rebuild.
-- The social preview subtitle says "160+ sounds · CC0 · 2 KB player". Update it with the size from
-  `npm run size` (2.3 kB) when the asset is rebuilt.
