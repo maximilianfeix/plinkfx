@@ -13,8 +13,10 @@ export default def("explosion", {
   "explosion-small": ["Small pop of an explosion, grenades, barrels", {
     verb: [0.3, 0.15],
     layers: [
-      { wave: "noise", lp: 4000, lpTo: 500, a: 0.001, d: 0.35, shape: 3, drive: 1 },
-      { wave: "sine", freq: 150, to: 50, curve: 3, a: 0.001, d: 0.25, shape: 2, drive: 1 },
+      { wave: "noise", hp: 1200, a: 0.001, d: 0.03, shape: 3, gain: 0.35 },
+      { wave: "brown", lp: 2500, lpTo: 200, a: 0.001, d: 0.5, shape: 2.5, drive: 1.5, gain: 1.4 },
+      { wave: "noise", lp: 4000, lpTo: 500, a: 0.001, d: 0.3, shape: 3, drive: 1, gain: 0.5 },
+      { wave: "sine", freq: 150, to: 45, curve: 3, at: 0.004, a: 0.001, d: 0.3, shape: 2, drive: 1.5, gain: 0.8 },
     ],
   }],
   "explosion-big": ["Huge blast with a long rolling tail", {
@@ -56,8 +58,9 @@ export default def("explosion", {
   }],
   debris: ["Rubble and debris settling", {
     layers: [
-      { wave: "brown", lp: 1200, a: 0.002, d: 0.5, shape: 2, gain: 0.8 },
-      ...[0, 0.07, 0.12, 0.2, 0.26, 0.35, 0.47].map((at, i) => ({ wave: "noise" as const, bp: [900, 1400, 700, 1800, 1100, 600, 1300][i], q: 2, at, a: 0.001, d: 0.04, shape: 3, gain: 0.7 - i * 0.07 })),
+      { wave: "brown", lp: 1200, lpTo: 300, a: 0.002, d: 0.6, shape: 2, drive: 1, gain: 0.9 },
+      ...[0, 0.07, 0.12, 0.2, 0.26, 0.35, 0.47].map((at, i) => ({ wave: "noise" as const, bp: [900, 1400, 700, 1800, 1100, 600, 1300][i], q: 2, at, a: 0.001, d: 0.04, shape: 3, drive: 1.5, gain: 0.7 - i * 0.07 })),
+      ...[0, 0.12, 0.26].map((at) => ({ wave: "sine" as const, freq: 160, to: 70, at, a: 0.001, d: 0.08, shape: 2.5, drive: 1, gain: 0.5 })),
     ],
   }],
   shockwave: ["Energy shockwave, sci-fi", {

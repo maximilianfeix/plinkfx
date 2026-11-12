@@ -5,7 +5,7 @@
 
 # plinkfx
 
-**<!-- count -->161<!-- /count --> 个游戏音效，全部用代码写成。** 金币、跳跃、打击、激光、爆炸、UI 点击……每个音效只是几个看得懂的参数，由 2.3 kB 的播放器在浏览器里实时合成。音效 CC0，可商用，无需署名；没有音频文件，无需注册。
+**<!-- count -->163<!-- /count --> 个游戏音效，全部用代码写成。** 金币、跳跃、打击、激光、爆炸、UI 点击……每个音效只是几个看得懂的参数，由 2.3 kB 的播放器在浏览器里实时合成。音效 CC0，可商用，无需署名；没有音频文件，无需注册。
 
 <a href="https://maximilianfeix.github.io/plinkfx/"><img src="docs/media/gallery.gif" alt="plinkfx 在线音效库：点击方块即可试听 coin、jump、laser、explosion 等音效，每个方块显示波形" width="100%"></a>
 
@@ -44,13 +44,13 @@ play(jump, { volume: 0.5 });
 | 打击 | 15 | `hit` `hit-heavy` `punch` `hurt` `enemy-die` `sword-hit` |
 | 爆炸 | 10 | `explosion` `explosion-big` `explosion-retro` `firework` |
 | 强化 | 12 | `powerup` `level-up` `extra-life` `shield-on` `heal` |
-| 射击与激光 | 14 | `laser` `blaster` `zap` `pew` `gunshot` `reload` |
+| 射击与激光 | 16 | `laser` `blaster` `zap` `pew` `gunshot` `reload` |
 | 脚步 | 10 | `step-grass` `step-stone` `step-wood` `step-snow` |
 | 魔法 | 12 | `sparkle` `fireball` `ice` `teleport` `lightning` |
 | 提示 | 10 | `alarm` `warning` `low-health` `countdown` |
-| 短旋律 | 8 | `victory` `level-complete` `game-over` `achievement` |
+| 短旋律 | 9 | `victory` `level-complete` `game-over` `achievement` |
 | 门与机关 | 10 | `door-open` `door-heavy` `chest-open` `lever` |
-| 环境 | 12 | `whoosh` `splash` `water-drop` `wind` `glass-break` |
+| 环境 | 11 | `whoosh` `splash` `water-drop` `wind` `glass-break` |
 <!-- /catalog -->
 
 ## 导出给游戏引擎

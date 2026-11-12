@@ -5,15 +5,18 @@ export default def("footstep", {
   "step-grass": ["Soft step on grass", {
     vary: 1.5,
     layers: [
-      { wave: "pink", hp: 600, lp: 5000, a: 0.008, d: 0.09, shape: 2.5 },
-      { wave: "noise", hp: 3500, a: 0.004, d: 0.05, shape: 3, gain: 0.25 },
+      { wave: "pink", lp: 900, a: 0.004, d: 0.05, shape: 2.5, gain: 0.5 },
+      { wave: "pink", hp: 1500, lp: 6000, a: 0.008, d: 0.09, shape: 2.5, gain: 0.7 },
+      { wave: "crunch", freq: 7000, hp: 3000, at: 0.01, a: 0.01, d: 0.06, gain: 0.25 },
     ],
   }],
   "step-stone": ["Hard sole on stone", {
     vary: 1.5,
     layers: [
-      { wave: "noise", bp: 1800, q: 1.3, a: 0.001, d: 0.045, shape: 3 },
-      { wave: "sine", freq: 190, to: 110, a: 0.001, d: 0.05, shape: 3, gain: 0.6 },
+      { wave: "pink", lp: 700, a: 0.001, d: 0.04, shape: 3, drive: 1, gain: 0.7 },
+      { wave: "noise", bp: 1800, q: 1.3, a: 0.001, h: 0.008, d: 0.04, shape: 3, drive: 3, gain: 0.8 },
+      { wave: "noise", bp: 520, q: 10, a: 0.001, d: 0.045, shape: 2.5, gain: 0.7 },
+      { wave: "sine", freq: 190, to: 110, at: 0.003, a: 0.001, d: 0.05, shape: 3, gain: 0.5 },
     ],
   }],
   "step-wood": ["Step on a wooden floor", {
@@ -28,8 +31,9 @@ export default def("footstep", {
     vary: 1.5,
     verb: [0.2, 0.15],
     layers: [
-      { wave: "metal", freq: 600, hp: 1800, a: 0.001, d: 0.12, shape: 3.5, gain: 0.7 },
-      { wave: "noise", bp: 1500, a: 0.001, d: 0.03, shape: 3 },
+      { wave: "metal", freq: 600, hp: 1800, a: 0.001, d: 0.12, shape: 3.5, drive: 1, gain: 0.7 },
+      { wave: "noise", bp: 1500, a: 0.001, d: 0.03, shape: 3, drive: 1 },
+      { wave: "pink", lp: 600, a: 0.001, d: 0.04, shape: 3, drive: 1, gain: 0.8 },
       { wave: "sine", freq: 150, a: 0.001, d: 0.05, gain: 0.5 },
     ],
   }],
@@ -43,9 +47,9 @@ export default def("footstep", {
   "step-gravel": ["Step on loose gravel", {
     vary: 1.5,
     layers: [
-      { wave: "crunch", freq: 3500, hp: 1500, a: 0.005, d: 0.1, shape: 2 },
-      { wave: "noise", bp: 2500, q: 2, at: 0.03, a: 0.001, d: 0.03, gain: 0.5 },
-      { wave: "noise", bp: 3500, q: 2, at: 0.06, a: 0.001, d: 0.025, gain: 0.35 },
+      { wave: "pink", lp: 800, a: 0.002, d: 0.045, shape: 3, drive: 1, gain: 0.8 },
+      { wave: "crunch", freq: 3500, hp: 1500, a: 0.005, d: 0.1, shape: 2, drive: 1 },
+      ...[0.02, 0.04, 0.06, 0.085].map((at, i) => ({ wave: "noise" as const, bp: [2500, 3800, 3000, 4200][i], q: 2, at, a: 0.001, d: 0.015, shape: 3, gain: 0.5 - i * 0.07 })),
     ],
   }],
   "step-water": ["Splashy step in a puddle", {
@@ -57,7 +61,11 @@ export default def("footstep", {
   }],
   "step-sand": ["Muffled step in sand", {
     vary: 1.5,
-    layers: [{ wave: "pink", hp: 400, lp: 2600, a: 0.015, d: 0.11, shape: 2 }],
+    layers: [
+      { wave: "pink", lp: 700, a: 0.006, d: 0.07, shape: 2.5, gain: 0.5 },
+      { wave: "pink", hp: 400, lp: 2600, a: 0.015, d: 0.11, shape: 2 },
+      { wave: "noise", hp: 3000, lp: 7000, at: 0.02, a: 0.02, d: 0.08, gain: 0.12 },
+    ],
   }],
   "step-retro": ["8-bit footstep tick", {
     vary: 2,

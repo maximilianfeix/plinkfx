@@ -79,10 +79,12 @@ export default def("pickup", {
   }],
   ammo: ["Ammo or clip pickup: metallic clack", {
     layers: [
-      { wave: "metal", freq: 900, bp: 3200, q: 1.5, a: 0.001, d: 0.06, shape: 3 },
-      { wave: "noise", bp: 2000, q: 2, a: 0.001, d: 0.025, gain: 0.5 },
-      { wave: "metal", freq: 760, bp: 2600, q: 1.5, at: 0.08, a: 0.001, d: 0.08, shape: 3, gain: 0.8 },
-      { wave: "sine", freq: 180, to: 120, at: 0.08, a: 0.001, d: 0.05, gain: 0.5 },
+      { wave: "noise", bp: 2500, q: 1.2, a: 0.001, d: 0.02, shape: 3, drive: 2, gain: 0.7 },
+      { wave: "metal", freq: 700, bp: 2800, q: 2, a: 0.001, d: 0.07, shape: 3, drive: 1 },
+      { wave: "sine", freq: 260, to: 150, a: 0.001, d: 0.06, shape: 2.5, drive: 1, gain: 0.7 },
+      { wave: "noise", bp: 1800, q: 1.2, at: 0.07, a: 0.001, d: 0.02, shape: 3, drive: 2, gain: 0.7 },
+      { wave: "metal", freq: 560, bp: 2200, q: 2, at: 0.07, a: 0.001, d: 0.1, shape: 3, drive: 1 },
+      { wave: "sine", freq: 200, to: 110, at: 0.07, a: 0.001, d: 0.09, shape: 2.5, drive: 1, gain: 0.9 },
     ],
   }],
   "ka-ching": ["Cash register for shops and purchases", {
