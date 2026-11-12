@@ -6,6 +6,7 @@
  *   plinkfx show <name>
  *   plinkfx render <name|file.json|'{json}'> [-o out.wav] [--variant n] [--rate 48000]
  *   plinkfx measure <name|file.json|file.wav> [--like <name>] [--json]
+ *   plinkfx level <file.json> [--target -16 | --like <name>]
  *   plinkfx export [dir] [--format wav|ogg|both] [--rate 48000] [--variants]
  */
 import { execFileSync } from "node:child_process";
@@ -142,6 +143,8 @@ else if (!cmd || flags.help || cmd == "help")
       --variant n   take 0-3 (default 0)       --rate hz   sample rate (default 48000)
   plinkfx measure <sound|file.wav> [--like <name>] [--json]
                                               loudness, peaks, duration, brightness
+  plinkfx level <file.json> [--target -16 | --like <name>]
+                                              set the sound's gain: loudness on target, true peak <= -1 dBTP
   plinkfx export [dir] [--format wav|ogg|both] [--rate 48000] [--variants]
                                               write the whole library to disk
 
@@ -184,6 +187,22 @@ else if (cmd == "list") {
     if (m.duration > 4) warn.push("longer than 4 s: is this a loop, not an effect?");
     if (warn.length) console.log("\n  ! " + warn.join("\n  ! "));
   }
+} else if (cmd == "level") {
+  const file = pos[0];
+  if (!file?.endsWith(".json") || !existsSync(file)) die("level needs a .json sound file");
+  const raw = JSON.parse(readFileSync(file, "utf8")),
+    sound = { ...unwrap(raw), gain: 1 },
+    sr = 48000,
+    target = typeof flags.like == "string" ? measure(render(load(flags.like).sound, { sampleRate: sr }), sr).lufsMax : num("target", -16),
+    takes = [0, 1, 2, 3].map((seed) => measure(render(sound, { sampleRate: sr, seed }), sr)),
+    avg = takes.reduce((a, m) => a + m.lufsMax, 0) / 4,
+    tp = Math.max(...takes.map((m) => m.truePeak)),
+    db = Math.min(target - avg, -1.2 - tp),
+    gain = Number((10 ** (db / 20)).toPrecision(3));
+  (raw.sound ?? raw).gain = gain;
+  writeFileSync(file, JSON.stringify(raw, null, 2) + "\n");
+  const m = measure(render({ ...sound, gain }, { sampleRate: sr }), sr);
+  console.log(`${file}: gain ${gain} -> ${f1(m.lufsMax)} LUFS (target ${f1(target)}), true peak ${f1(m.truePeak)} dBTP${target - avg > -1.2 - tp ? " (peak-limited)" : ""}`);
 } else if (cmd == "export") {
   const dir = pos[0] || "plinkfx-sounds",
     sr = num("rate", 48000),

@@ -10,3 +10,4 @@ playwright-report/
 test-results/
 gallery/public/
 site/
+*.tgz

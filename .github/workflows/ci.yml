@@ -1,0 +1,45 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - name: Generated sounds are up to date
+        if: matrix.os == 'ubuntu-latest'
+        run: npm run bake && git diff --exit-code src/sounds.gen.ts library/catalog.gen.json
+      - run: npm test
+      - run: npm run build
+      - run: npm run size
+      - name: CLI smoke test
+        run: |
+          node dist/cli.js list pickup
+          node dist/cli.js render coin -o coin.wav
+          node dist/cli.js measure coin.wav
+  e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm run gallery:build
+      - run: npm run e2e

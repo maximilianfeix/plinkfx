@@ -1,0 +1,31 @@
+name: New sound
+description: Propose a sound (or a whole category) for the library
+labels: ["new sound"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Name
+      description: kebab-case, e.g. "door-wood-slam"
+    validations:
+      required: true
+  - type: dropdown
+    id: cat
+    attributes:
+      label: Category
+      options: [ui, pickup, jump, hit, explosion, powerup, shoot, footstep, magic, alert, jingle, mechanic, world, new category]
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What should it sound like, and where would you use it?
+      description: A game moment helps more than adjectives ("the door at the end of a dungeon, heavy, echoing").
+    validations:
+      required: true
+  - type: textarea
+    id: params
+    attributes:
+      label: Parameters (optional)
+      description: If you already built it in the gallery, paste the "params" code.
+      render: js

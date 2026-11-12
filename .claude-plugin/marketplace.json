@@ -1,0 +1,17 @@
+{
+  "name": "plinkfx",
+  "owner": { "name": "Maximilian Feix", "url": "https://github.com/maximilianfeix" },
+  "metadata": { "description": "Game sound effects as code: design, render and measure CC0 sounds with plinkfx." },
+  "plugins": [
+    {
+      "name": "plinkfx",
+      "source": "./",
+      "description": "Design, render and measure game sound effects as code. 161 CC0 sounds to start from, a CLI that renders WAV/OGG, no network.",
+      "version": "0.1.0",
+      "license": "MIT",
+      "keywords": ["sound-effects", "gamedev", "audio", "sfx"],
+      "category": "development",
+      "skills": ["./skills/plinkfx"]
+    }
+  ]
+}
