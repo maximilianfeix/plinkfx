@@ -96,6 +96,7 @@ function generate() {
 
 function jump() {
   if (state == "title" || state == "over") return start();
+  if (state == "count") return;
   if (state != "run") return;
   if (P.ground) {
     P.vy = -470;
@@ -369,9 +370,20 @@ function draw() {
   g.textAlign = "left";
 }
 
+// ?bot: the game plays itself (attract mode, and for screen recordings).
+const bot = new URLSearchParams(location.search).has("bot");
+function autopilot() {
+  if (state != "run") return;
+  const ahead = (d: number) => groundAt(P.x + d),
+    slime = things.find((th) => th.kind == "slime" && !th.dead && th.x - P.x > 30 && th.x - P.x < 72);
+  if (P.ground && (!ahead(34) || slime)) jump();
+  else if (!P.ground && P.jumps == 1 && P.vy > 60 && !groundAt(P.x + 30) && P.y > GROUND - 60) jump();
+}
+
 function frame(now: number) {
   const dt = Math.min(0.05, (now - last) / 1000 || 0);
   last = now;
+  if (bot) autopilot();
   update(dt);
   draw();
   requestAnimationFrame(frame);
