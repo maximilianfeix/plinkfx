@@ -111,13 +111,14 @@ const report = (m: Measurement, ref?: Measurement) => {
   ].join("\n");
 };
 
-const ffmpeg = () => {
+/** ffmpeg arguments for Ogg Vorbis, or null without ffmpeg. libvorbis (mono) if built in, else the native encoder (stereo only). */
+const vorbis = (): string[] | null => {
   try {
-    execFileSync("ffmpeg", ["-version"], { stdio: "ignore" });
-    return true;
-  } catch {
-    return false;
-  }
+    const enc = execFileSync("ffmpeg", ["-hide_banner", "-encoders"], { encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] });
+    if (/\blibvorbis\b/.test(enc)) return ["-c:a", "libvorbis", "-q:a", "6"];
+    if (/\bvorbis\b/.test(enc)) return ["-c:a", "vorbis", "-strict", "-2", "-ac", "2", "-q:a", "6"];
+  } catch {}
+  return null;
 };
 
 const catalog = () => {
@@ -208,8 +209,9 @@ else if (cmd == "list") {
     sr = num("rate", 48000),
     fmt = String(flags.format || "wav"),
     takes = flags.variants ? 4 : 1,
-    hasFF = fmt != "wav" && ffmpeg();
-  if (fmt != "wav" && !hasFF) die("OGG export needs ffmpeg on your PATH (WAV works without it)");
+    ogg = fmt != "wav" ? vorbis() : null;
+  if (!["wav", "ogg", "both"].includes(fmt)) die(`unknown format "${fmt}" (wav, ogg or both)`);
+  if (fmt != "wav" && !ogg) die("OGG export needs ffmpeg with a Vorbis encoder on your PATH (WAV works without it)");
   let n = 0;
   for (const s of catalog()) {
     const sound = (all as Record<string, Sound>)[s.name.replace(/-(\w)/g, (_, c) => c.toUpperCase())],
@@ -219,12 +221,16 @@ else if (cmd == "list") {
       const base = join(sub, s.name + (takes > 1 ? `-${seed + 1}` : "")),
         bytes = wav(render(sound, { sampleRate: sr, seed }), sr);
       writeFileSync(base + ".wav", bytes);
-      if (hasFF) {
-        execFileSync("ffmpeg", ["-loglevel", "error", "-y", "-i", base + ".wav", "-c:a", "libvorbis", "-q:a", "6", base + ".ogg"]);
+      if (ogg) {
+        try {
+          execFileSync("ffmpeg", ["-loglevel", "error", "-y", "-i", base + ".wav", ...ogg, base + ".ogg"], { stdio: ["ignore", "ignore", "pipe"] });
+        } catch (e: any) {
+          die(`ffmpeg failed on ${base}.ogg: ${String(e.stderr || e.message).trim().split("\n")[0]}`);
+        }
         if (fmt == "ogg") unlinkSync(base + ".wav");
       }
       n++;
     }
   }
-  console.log(`wrote ${n} sounds to ${dir}/ (${fmt}, ${sr} Hz, mono)`);
+  console.log(`wrote ${n} sounds to ${dir}/ (${fmt}, ${sr} Hz${fmt != "wav" && ogg?.includes("-ac") ? "; OGG is dual-mono stereo because this ffmpeg has no libvorbis" : ", mono"})`);
 } else die(`unknown command "${cmd}". Run 'plinkfx --help'.`);

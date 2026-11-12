@@ -99,7 +99,8 @@ npx plinkfx render explosion-big -o boom.wav  # one sound
 - **Phaser:** `this.load.audio("coin", ["sfx/pickup/coin.ogg", "sfx/pickup/coin.wav"])`, or skip files
   entirely and call `play("coin")` from plinkfx.
 
-Every WAV in the gallery also has a download button.
+Every WAV in the gallery also has a download button. Ready-made players for the exported files:
+[Godot](examples/godot), [Unity](examples/unity), and a [Phaser](examples/phaser) example that needs no files at all.
 
 ## The agent skill
 
