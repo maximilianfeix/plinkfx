@@ -12,10 +12,10 @@
   "b7899a01b8f429a8"
  ],
  "click-hard": [
-  "7cf9644e14ea5582",
-  "abd52f927df3af7b",
-  "718ee454873feaba",
-  "6036a25832fdc10f"
+  "7917de95bf063779",
+  "ff8337532f71cc59",
+  "f541b5168b031441",
+  "1d03c37229c61255"
  ],
  "tap": [
   "08bc12a3b1bb6f12",
@@ -84,16 +84,16 @@
   "0e1909fe897fd8e1"
  ],
  "swipe": [
-  "eb97ba1b334ea76b",
-  "e81d3184d736a217",
-  "65d1605b9ec57f1d",
-  "e1bb8d0194aef66f"
+  "d3dcbd512acc90e2",
+  "94c8f561509b60f8",
+  "fc130b146ecaaf24",
+  "f5416d4c44245acd"
  ],
  "type": [
-  "d4bb08f2b9c48b3b",
-  "923410c146bed7af",
-  "adf3dc427dc4f40a",
-  "81d443428c0acc08"
+  "78e3062722a144c2",
+  "c9e00cd562013f14",
+  "70a6b0304f7325d2",
+  "7c84a3209cb1ea4b"
  ],
  "tick": [
   "20199f53788dec9f",
@@ -198,10 +198,10 @@
   "451db27656d3714d"
  ],
  "ammo": [
-  "378b9ff27044b2bd",
-  "5b423db6ebb7d197",
-  "075fad395da36ab4",
-  "afbed2b1cb652bef"
+  "316677f59071b76b",
+  "73f6c8d7d0e5852b",
+  "a00c531fed256a1d",
+  "8f27bcb1672979bb"
  ],
  "ka-ching": [
   "210f733ac1fdf888",
@@ -264,10 +264,10 @@
   "782a24df34fcf0f8"
  ],
  "land": [
-  "d149540337cb3198",
-  "79d11a513efa753d",
-  "9b6e2e8dd36d0c5b",
-  "5547b1ef18297572"
+  "30981befeb64c53b",
+  "051ad68c13ba19a3",
+  "681332ccc2159e8b",
+  "bdabb45c2711238f"
  ],
  "land-heavy": [
   "6d4c68a733208c9e",
@@ -288,16 +288,16 @@
   "5ffc6d3975699230"
  ],
  "hit": [
-  "d4a70fc6787678f3",
-  "dce40930d4d89120",
-  "703963e5a0f58094",
-  "6d01b7068ad85c3c"
+  "cd5c5ae0ad0facdb",
+  "ff48ff8cdbce2c8e",
+  "ce74f5601118e216",
+  "7407affef12d65c7"
  ],
  "hit-light": [
-  "d51dcaba064f33fa",
-  "ae9eeee672ec55f0",
-  "8f72143ed5fd1ef4",
-  "beb8d4d8e239ee2c"
+  "fbf7deb3b7fed1aa",
+  "b0cb4ddfdfa49b15",
+  "33fb80ec2ea097bf",
+  "f9137651e4222a51"
  ],
  "hit-heavy": [
   "adfb01de2e6373d3",
@@ -306,16 +306,16 @@
   "1273a44237672496"
  ],
  "punch": [
-  "5f7e19573dcb82c7",
-  "aa7267dfcb9cb043",
-  "513d0f0797c6cc06",
-  "242e9fdd883be1dc"
+  "51a138d958d7e718",
+  "0616af70717babb6",
+  "de7225bb1916a19e",
+  "7e28e436a658573d"
  ],
  "slap": [
-  "8bcda05aa4b235ee",
-  "490751b5cc25e4ae",
-  "5aee151fd4e27402",
-  "ce9a096d60b21cf9"
+  "626261c5417ff0ac",
+  "fcef33b8bfb2a9ae",
+  "5a24315cb3dc7151",
+  "1b611bba02268dcb"
  ],
  "hurt": [
   "cee28a1138949914",
@@ -323,17 +323,11 @@
   "dd3ff759227c8e86",
   "1aecedc8cf3e03dc"
  ],
- "hurt-retro": [
-  "be6b6e2aafbe77a3",
-  "4b11cd67cbd64cd4",
-  "a9c4e3c97733ae8a",
-  "67de6fae46f9a46f"
- ],
  "enemy-hit": [
-  "9e867dc3425fd854",
-  "4a066fde75efaedb",
-  "fa3b2a48c493a21b",
-  "ec594804b8949aec"
+  "2bcf588752cf9073",
+  "1bf71a62adb9d9c9",
+  "b5ca1b91e9e3651a",
+  "fea0159ac224ce5c"
  ],
  "enemy-die": [
   "414a378461e195cd",
@@ -348,10 +342,10 @@
   "99a2842d4ba189c5"
  ],
  "block": [
-  "11c7bf19b7660ca4",
-  "6f901ca2ed0a2731",
-  "84d0563a4537faf3",
-  "789b4b338ef14f6b"
+  "4301afd9d3bbd8f1",
+  "cef0106a3535c948",
+  "1059550a2f597275",
+  "2954c9b049c1c828"
  ],
  "crit": [
   "50b5d8910a4618d3",
@@ -371,11 +365,17 @@
   "44c295d4169ca9a5",
   "171f398a0c219732"
  ],
+ "stomp": [
+  "136cab6e52642c5a",
+  "8ee2dd25346616c4",
+  "3633a880882e787f",
+  "a0c7bfc59d2641e2"
+ ],
  "arrow-hit": [
-  "1141bd68b863a23d",
-  "555ab19184292079",
-  "2c27c50fbd1696ed",
-  "3e8e3a20309bb4d7"
+  "c15868d909ce5fb4",
+  "0815d99a3b8ba4ff",
+  "bdd81e455069bdd0",
+  "a4cf55ad9fbef345"
  ],
  "explosion": [
   "d135258ad44d6226",
@@ -384,10 +384,10 @@
   "39926ea159a6c6f7"
  ],
  "explosion-small": [
-  "d215f56a7803c5d7",
-  "bdfdd9177e4eaa18",
-  "7a04653a9623814d",
-  "2b2138d3f53ccbd1"
+  "b5449ebeb8ffddcc",
+  "643f6e26c899d93d",
+  "cd057b59920adfc7",
+  "b34703eef280b51d"
  ],
  "explosion-big": [
   "c59e52c24fe845bb",
@@ -420,10 +420,10 @@
   "7bfc0f1f6ea50c7d"
  ],
  "debris": [
-  "68160b098ee76959",
-  "053f910db5766dba",
-  "95458987a7141c2e",
-  "c6848e46460694dd"
+  "94145a0bc9c4a6d7",
+  "f47c09a8db45181d",
+  "e4bdbf36e005e725",
+  "41a6afd95c84b5f7"
  ],
  "shockwave": [
   "6c4646f2a518d620",
@@ -546,10 +546,10 @@
   "002a7cccca97bcb6"
  ],
  "gunshot": [
-  "2760f9a7bca892a8",
-  "0416d6fc0b8cc61f",
-  "72bc48384e1fa958",
-  "c3ac038617c3c741"
+  "9842e777d0217ea8",
+  "893f49ee4e1f2663",
+  "7e77398f3dcc06cd",
+  "22545fc0e23a2ae3"
  ],
  "shotgun": [
   "bd126c7756c94f5e",
@@ -558,10 +558,10 @@
   "0a9a6d2b7e74c095"
  ],
  "shoot-retro": [
-  "8eb9de16aedbd288",
-  "3d89aa19f35e83f8",
-  "16a82dc8acd43547",
-  "f00c02c99fe588e9"
+  "fe362ba23e320cf8",
+  "37446ad5e11940b2",
+  "fe36d9e29aae32b4",
+  "a54ab1807d4df805"
  ],
  "railgun": [
   "add9519cb7097343",
@@ -587,6 +587,18 @@
   "36d36813a9bcbe9e",
   "4a6415ab67ce6ed9"
  ],
+ "ricochet": [
+  "a1f364f44a10b6de",
+  "4a313da142ff3022",
+  "f1c54e3d88f0ad3f",
+  "f355dc7719b8e4a0"
+ ],
+ "dry-fire": [
+  "9afe3348a44f615b",
+  "5135b24fb159e4c5",
+  "58acff81e14bd347",
+  "9a3b56eaff9f3a8a"
+ ],
  "reload": [
   "21cb39926b075363",
   "24e24a1aa3d3a987",
@@ -594,16 +606,16 @@
   "61fedf063e705fce"
  ],
  "step-grass": [
-  "a305f5b8ec973135",
-  "90d4f33d6c1c8a2a",
-  "8369ce443b058571",
-  "9082020a67a02de3"
+  "48582eed5e33c1e1",
+  "d79c20f46a732a8a",
+  "be0ca34a0cc5bb88",
+  "7231b94d56d6b06a"
  ],
  "step-stone": [
-  "ac7788c07116a4d6",
-  "a0d58f75567360ac",
-  "8f2a5505bbe3da5c",
-  "74e44db14c7eb053"
+  "4dbce90cc46a4b5f",
+  "37dca56fb48bb35e",
+  "63f7fb5419fc194f",
+  "3a4bf949f54af151"
  ],
  "step-wood": [
   "5202419221656f86",
@@ -612,10 +624,10 @@
   "00be8ad7884fe306"
  ],
  "step-metal": [
-  "9f911dac835cccd2",
-  "4429a6f84e042965",
-  "a1528caaf27f9f02",
-  "2b73cfb411796256"
+  "9f9ed52884129fac",
+  "5b584232c21f9b6a",
+  "db62109c3644a4a8",
+  "27a51e3341c616f5"
  ],
  "step-snow": [
   "e487ca7346cd7c9b",
@@ -624,10 +636,10 @@
   "b25f26125430783c"
  ],
  "step-gravel": [
-  "97e7f3584931cd30",
-  "2905da1c9d681913",
-  "3f7a332fce9541d8",
-  "22b0be69b2faf3d9"
+  "61a2d7a4e2e1e079",
+  "30ea44e94b7dc278",
+  "e058493117316d68",
+  "f1f9d044fb56e6b8"
  ],
  "step-water": [
   "70b956db58ffab90",
@@ -636,10 +648,10 @@
   "0fb6f00132f93671"
  ],
  "step-sand": [
-  "e1db9f4e01dd7c6d",
-  "da21e1abc9b5945f",
-  "1c77b74e2db8e932",
-  "806f0712e9608e32"
+  "bfe5dbaf738f4821",
+  "c33f264b62d06c95",
+  "4abbd7136833a646",
+  "c05c2e55e42d94b1"
  ],
  "step-retro": [
   "c42263f4ecbb2c38",
@@ -750,10 +762,10 @@
   "0b425579450e84c6"
  ],
  "heartbeat": [
-  "0b29ab63400d9ee3",
-  "c5bdcd69ab82f6af",
-  "4dad3fff814559f1",
-  "4a5f59bb09fb5f57"
+  "e9ffb1dbc829b50c",
+  "f15b72afa15f1f02",
+  "dd9db4ce1b2fbe82",
+  "ca027208a22a52ef"
  ],
  "countdown": [
   "3d3e0cce6d46b4da",
@@ -827,6 +839,12 @@
   "95dcb56e2f6f84b9",
   "66e19468b7b4abd3"
  ],
+ "checkpoint": [
+  "dbb36b0da8c7165c",
+  "a0a99ba0470a3c48",
+  "4e1cd314aa507673",
+  "1f9aa6bba81861a1"
+ ],
  "round-start": [
   "f72538781b513996",
   "bfc78767e7e54e1b",
@@ -834,10 +852,10 @@
   "5a7053306f9cdaf7"
  ],
  "door-open": [
-  "aa57c24c2049f768",
-  "9e8168bd597f4545",
-  "5ecf5b2786c03b76",
-  "6d4f7dac82c7d72a"
+  "d5163645a36fa556",
+  "68ca5e35524485e1",
+  "793b5ce981ec4215",
+  "692dc7fb5995ed7c"
  ],
  "door-close": [
   "3e28aae7ef330f32",
@@ -852,16 +870,16 @@
   "e0b194b6bed68a32"
  ],
  "lock-open": [
-  "96132f9336531068",
-  "9d557638e6c64c61",
-  "8a30381900caf88e",
-  "f374a0b9a57b592b"
+  "33942165e1652046",
+  "b164052a73be473e",
+  "50000f99f5c3d5dd",
+  "2794575c7dfdd124"
  ],
  "locked": [
-  "eab3792bac85736e",
-  "211b4d31bf07465a",
-  "7bab00306bf54160",
-  "be0013e64dbc7152"
+  "5ca2c12528a318d6",
+  "7c1763aec9183a70",
+  "e290a938e143d68a",
+  "22cb937080650219"
  ],
  "chest-open": [
   "1a4280cb5f996b18",
@@ -882,10 +900,10 @@
   "910ca933fa11fc68"
  ],
  "ratchet": [
-  "2b942e1082982f0d",
-  "43387a3c5cf4934e",
-  "6a11a2a14ade9f21",
-  "4d1bed0a629dfc0a"
+  "20ffbba6a6505b70",
+  "c44f35ab9fe5d11f",
+  "b422ced5bfef3626",
+  "e1018c411170d687"
  ],
  "machine": [
   "0e4f034cb00f2fc7",
@@ -894,16 +912,10 @@
   "506845d38b514057"
  ],
  "whoosh": [
-  "e7a9aae1323b53a9",
-  "74ff3319bec4a6cb",
-  "91b967e861d0a493",
-  "3e4a0b9e8cf0973a"
- ],
- "whoosh-fast": [
-  "d93cf00478307824",
-  "a4f909b8bcce64b8",
-  "34b20b4a71b42d00",
-  "a23b2b505b6ab33b"
+  "d3f4fc48161f5f15",
+  "10c451caeb75f8ea",
+  "8e63271e23cec936",
+  "460eb04b8326c58f"
  ],
  "swing": [
   "a665c2a2a43f63e7",
@@ -936,16 +948,16 @@
   "95473298c9e32ca2"
  ],
  "wind": [
-  "79945833f619c5c9",
-  "181b49738f5ae3b4",
-  "114f09b2a30c801d",
-  "a3987d869f601369"
+  "8366588e5004b17a",
+  "a1d9cb7892b04a30",
+  "6e9a07c718a44c88",
+  "fc3c69c14e7388f5"
  ],
  "glass-break": [
-  "eb1683525a7e914f",
-  "99f00089d951bb56",
-  "786fa325d5a3af64",
-  "56c2fbcfb2427987"
+  "5a2835ab4740f7f1",
+  "ff16b2ce02f9292c",
+  "97632884b8cc7d40",
+  "32c6461996cb1189"
  ],
  "thud": [
   "48cec063962eedc4",
@@ -954,10 +966,10 @@
   "551d524749fd31cd"
  ],
  "toss": [
-  "740e129dbb378e91",
-  "cab2a3cf9f5b5910",
-  "c3ed96bf46155284",
-  "6460040e7bcdd0fe"
+  "ac264955eac2e5eb",
+  "4594c70f020acab8",
+  "842424df43c3ac8f",
+  "15d6cecd94330db6"
  ],
  "fire-crackle": [
   "9c8e3a3af060ebcd",

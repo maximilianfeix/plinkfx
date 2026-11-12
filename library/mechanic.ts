@@ -4,6 +4,8 @@ export default def("mechanic", {
   "door-open": ["Creaky wooden door opening", {
     verb: [0.4, 0.2],
     layers: [
+      { wave: "metal", freq: 1100, bp: 3000, q: 2, a: 0.001, d: 0.03, shape: 3, gain: 0.25 },
+      { wave: "noise", bp: 1500, q: 1.5, a: 0.001, d: 0.012, drive: 1, gain: 0.2 },
       { wave: "saw", freq: 38, to: 62, vib: [3.5, 2.5], bp: 1100, q: 5, a: 0.08, h: 0.4, d: 0.3, shape: 1.5 },
       { wave: "saw", freq: 52, to: 44, vib: [5, 2], bp: 1900, q: 6, a: 0.1, h: 0.35, d: 0.3, shape: 1.5, gain: 0.5 },
     ],
@@ -31,10 +33,14 @@ export default def("mechanic", {
       { wave: "metal", freq: 1300, bp: 3500, q: 2, a: 0.001, d: 0.03, shape: 3 },
       { wave: "metal", freq: 900, bp: 2500, q: 2, at: 0.09, a: 0.001, d: 0.06, shape: 3 },
       { wave: "noise", bp: 1500, q: 1.5, at: 0.09, a: 0.001, d: 0.03, gain: 0.5 },
+      { wave: "sine", freq: 220, to: 140, at: 0.09, a: 0.001, d: 0.05, shape: 2.5, drive: 1, gain: 0.5 },
     ],
   }],
   locked: ["Door is locked: rattle", {
-    layers: [0, 0.06, 0.12, 0.2].map((at, i) => ({ wave: "metal" as const, freq: 700 + i * 60, bp: 2200, q: 2, at, a: 0.001, d: 0.05, shape: 3, gain: 1 - i * 0.15 })),
+    layers: [0, 0.06, 0.12, 0.2].flatMap((at, i) => [
+      { wave: "metal" as const, freq: 700 + i * 60, bp: 2200, q: 2, at, a: 0.001, d: 0.05, shape: 3, gain: 1 - i * 0.15 },
+      { wave: "pink" as const, lp: 600, at, a: 0.001, d: 0.04, shape: 3, drive: 1, gain: 0.4 - i * 0.07 },
+    ]),
   }],
   "chest-open": ["Treasure chest creaks open", {
     verb: [0.35, 0.18],
@@ -60,7 +66,10 @@ export default def("mechanic", {
     ],
   }],
   ratchet: ["Gear or crank turning", {
-    layers: [0, 0.045, 0.09, 0.135, 0.18, 0.225, 0.27].map((at) => ({ wave: "noise" as const, bp: 2800, q: 3, at, a: 0.001, d: 0.02, shape: 3 })),
+    layers: [0, 0.045, 0.09, 0.135, 0.18, 0.225, 0.27].flatMap((at, i) => [
+      { wave: "noise" as const, bp: i % 2 ? 2400 : 3200, q: 3, at, a: 0.001, d: 0.02, shape: 3, drive: 1 },
+      { wave: "metal" as const, freq: 1500, hp: 4000, at, a: 0.001, d: 0.012, gain: 0.3 },
+    ]),
   }],
   machine: ["Machine starts up and hums", {
     vary: 0.2,

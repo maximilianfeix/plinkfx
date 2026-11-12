@@ -15,8 +15,9 @@ export default def("ui", {
   }],
   "click-hard": ["Firm mechanical click", {
     layers: [
-      { wave: "square", duty: 0.3, freq: 1400, to: 650, a: 0.001, d: 0.022, shape: 3, lp: 6000 },
-      { wave: "noise", hp: 3000, a: 0.001, d: 0.01, shape: 2, gain: 0.6 },
+      { wave: "sine", freq: 2400, to: 1100, a: 0.001, h: 0.004, d: 0.018, shape: 4, drive: 3 },
+      { wave: "noise", bp: 3500, q: 1.5, a: 0.001, d: 0.008, shape: 3, drive: 2, gain: 0.5 },
+      { wave: "sine", freq: 420, to: 260, at: 0.002, a: 0.001, d: 0.035, shape: 3, drive: 1, gain: 0.5 },
     ],
   }],
   tap: ["Bubbly tap, good for mobile", {
@@ -79,13 +80,17 @@ export default def("ui", {
     layers: [{ wave: "sine", freq: 1100, to: 330, curve: 3, a: 0.002, d: 0.08, shape: 3 }],
   }],
   swipe: ["Quick airy swipe between pages", {
-    layers: [{ wave: "noise", bp: 1400, bpTo: 5200, q: 1.4, a: 0.04, d: 0.1, shape: 2 }],
+    layers: [
+      { wave: "noise", bp: 1400, bpTo: 5200, q: 1.4, a: 0.04, d: 0.1, shape: 2 },
+      { wave: "pink", bp: 700, bpTo: 2000, a: 0.04, d: 0.08, gain: 0.5 },
+    ],
   }],
   type: ["Keyboard tick for text that types itself", {
     vary: 1.5,
     layers: [
-      { wave: "noise", bp: 2600, q: 2, a: 0.001, d: 0.016, shape: 3 },
-      { wave: "square", duty: 0.25, freq: 1050, a: 0.001, d: 0.012, shape: 3, lp: 4000, gain: 0.25 },
+      { wave: "noise", bp: 3000, q: 1.5, a: 0.001, h: 0.004, d: 0.012, shape: 3, drive: 4 },
+      { wave: "sine", freq: 520, to: 300, at: 0.002, a: 0.001, d: 0.03, shape: 3, drive: 1, gain: 0.5 },
+      { wave: "noise", bp: 4500, q: 2, at: 0.02, a: 0.001, d: 0.008, gain: 0.25 },
     ],
   }],
   tick: ["Tiny tick for sliders and scroll steps", {

@@ -38,9 +38,11 @@ export default def("shoot", {
   gunshot: ["Pistol shot with room tail", {
     verb: [0.35, 0.2],
     layers: [
-      { wave: "noise", hp: 800, a: 0.001, d: 0.2, shape: 4, drive: 2 },
-      { wave: "sine", freq: 150, to: 50, curve: 3, a: 0.001, d: 0.12, drive: 2 },
-      { wave: "noise", bp: 1000, q: 1, a: 0.001, d: 0.3, shape: 3, gain: 0.4 },
+      { wave: "noise", bp: 2500, q: 0.7, a: 0.001, d: 0.02, shape: 4, drive: 3, gain: 0.8 },
+      { wave: "noise", hp: 150, lp: 7000, lpTo: 1200, a: 0.001, d: 0.18, shape: 4, drive: 2 },
+      { wave: "sine", freq: 150, to: 50, curve: 3, a: 0.001, d: 0.14, drive: 2 },
+      { wave: "brown", lp: 900, a: 0.001, d: 0.25, shape: 2.5, gain: 0.7 },
+      { wave: "pink", bp: 1000, q: 1, a: 0.001, d: 0.35, shape: 3, gain: 0.35 },
     ],
   }],
   shotgun: ["Shotgun blast, wide and heavy", {
@@ -54,8 +56,8 @@ export default def("shoot", {
   "shoot-retro": ["8-bit shot", {
     rate: 16000,
     layers: [
-      { wave: "crunch", freq: 3000, to: 600, a: 0.001, d: 0.12, shape: 2 },
-      { wave: "square", freq: 600, to: 150, a: 0.001, d: 0.08, gain: 0.4 },
+      { wave: "crunch", freq: 3000, to: 600, a: 0.001, d: 0.14, shape: 2, drive: 1 },
+      { wave: "square", freq: 600, to: 150, a: 0.001, d: 0.1, drive: 1, gain: 0.6 },
     ],
   }],
   railgun: ["Charge whine, then a piercing shot", {
@@ -81,6 +83,23 @@ export default def("shoot", {
       { wave: "noise", bp: 600, bpTo: 3500, q: 1.2, a: 0.02, h: 0.3, d: 0.4, shape: 2, drive: 0.5 },
       { wave: "brown", lp: 400, a: 0.002, d: 0.5, gain: 0.7 },
       { wave: "sine", freq: 300, to: 900, a: 0.05, h: 0.25, d: 0.3, gain: 0.15 },
+    ],
+  }],
+  ricochet: ["Bullet ricochet: sharp tick and a falling whine", {
+    verb: [0.3, 0.15],
+    layers: [
+      { wave: "noise", bp: 3000, q: 1, a: 0.001, d: 0.012, shape: 3, drive: 2, gain: 0.6 },
+      { wave: "metal", freq: 1800, hp: 3000, a: 0.001, d: 0.05, shape: 3, gain: 0.35 },
+      { wave: "sine", freq: 3400, to: 1500, curve: 0.8, vib: [28, 0.25], at: 0.008, a: 0.004, d: 0.4, shape: 2 },
+      { wave: "triangle", freq: 1700, to: 750, curve: 0.8, vib: [28, 0.25], at: 0.008, a: 0.004, d: 0.3, shape: 2.5, gain: 0.25 },
+    ],
+  }],
+  "dry-fire": ["Empty gun: the hammer clicks, nothing fires", {
+    verb: [0.15, 0.1],
+    layers: [
+      { wave: "metal", freq: 1200, bp: 3500, q: 2, a: 0.001, h: 0.006, d: 0.03, shape: 3, drive: 4 },
+      { wave: "sine", freq: 320, to: 200, at: 0.002, a: 0.001, d: 0.04, shape: 3, drive: 1, gain: 0.4 },
+      { wave: "metal", freq: 1500, bp: 4000, q: 2, at: 0.06, a: 0.001, d: 0.02, shape: 3, drive: 2, gain: 0.5 },
     ],
   }],
   reload: ["Reload: two metal clicks", {

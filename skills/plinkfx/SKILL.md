@@ -22,7 +22,7 @@ Everything below uses `npx plinkfx`. Inside the plinkfx repo itself use `node di
 
 ## 1. Start from the catalogue
 
-161 sounds in 13 categories already exist and are tuned. Reuse before you invent.
+163 sounds in 13 categories already exist and are tuned. Reuse before you invent.
 
 ```bash
 npx plinkfx list               # all sounds: name, category, description

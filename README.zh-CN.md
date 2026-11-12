@@ -2,7 +2,7 @@
 
 # plinkfx
 
-**161 个游戏音效，全部用代码写成。** 金币、跳跃、打击、激光、爆炸、UI 点击等等，每个音效只是几个数字，由 2 KB 的播放器实时合成。CC0 授权，没有音频文件，无需注册。
+**163 个游戏音效，全部用代码写成。** 金币、跳跃、打击、激光、爆炸、UI 点击等等，每个音效只是几个数字，由 2 KB 的播放器实时合成。CC0 授权，没有音频文件，无需注册。
 
 **[▶ 在线试听全部音效](https://maximilianfeix.github.io/plinkfx/)** · [30 秒小游戏演示](https://maximilianfeix.github.io/plinkfx/game.html)
 

@@ -87,7 +87,7 @@
       "name": "everything: all sounds, play by name",
       "path": "dist/index.js",
       "import": "*",
-      "limit": "12 kB",
+      "limit": "12.5 kB",
       "gzip": true
     }
   ],

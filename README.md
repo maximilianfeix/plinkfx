@@ -5,8 +5,8 @@
 
 # plinkfx
 
-**161 game sound effects, written as code.** Coins, jumps, hits, lasers, explosions, UI clicks and
-151 more, each one a few numbers that a 2 KB player turns into sound. CC0, no audio files, no account.
+**163 game sound effects, written as code.** Coins, jumps, hits, lasers, explosions, UI clicks and
+153 more, each one a few numbers that a 2 KB player turns into sound. CC0, no audio files, no account.
 
 <a href="https://maximilianfeix.github.io/plinkfx/"><img src="docs/media/gallery.gif" alt="The plinkfx gallery: clicking tiles plays coin, jump, laser, explosion and more; each tile shows its waveform" width="100%"></a>
 
@@ -34,19 +34,19 @@ Every call picks one of four takes, so the hundredth coin doesn't sound like a l
 | Hits | 15 | `hit` `hit-heavy` `punch` `hurt` `enemy-die` `sword-hit` `block` `crit` |
 | Explosions | 10 | `explosion` `explosion-big` `explosion-retro` `firework` `implosion` |
 | Power-ups | 12 | `powerup` `level-up` `extra-life` `shield-on` `heal` `charge-up` |
-| Shots & lasers | 14 | `laser` `blaster` `zap` `pew` `gunshot` `shotgun` `railgun` `reload` |
+| Shots & lasers | 16 | `laser` `blaster` `zap` `pew` `gunshot` `shotgun` `ricochet` `reload` |
 | Footsteps | 10 | `step-grass` `step-stone` `step-wood` `step-metal` `step-snow` `step-water` |
 | Magic | 12 | `sparkle` `spell-cast` `fireball` `ice` `teleport` `portal` `lightning` |
 | Alerts | 10 | `alarm` `warning` `low-health` `heartbeat` `countdown` `radar-ping` |
-| Jingles | 8 | `victory` `level-complete` `game-over` `secret-found` `achievement` |
+| Jingles | 9 | `victory` `level-complete` `game-over` `checkpoint` `achievement` |
 | Doors & mechanics | 10 | `door-open` `door-heavy` `lock-open` `chest-open` `lever` `ratchet` |
-| World | 12 | `whoosh` `swing` `splash` `water-drop` `bubble` `wind` `glass-break` |
+| World | 11 | `whoosh` `swing` `splash` `water-drop` `bubble` `wind` `glass-break` |
 
 The full list with a one-line description each: `npx plinkfx list`, or the [gallery](https://maximilianfeix.github.io/plinkfx/).
 
 ## Use it
 
-**In the browser**, by name (includes every sound, 11 KB gzipped):
+**In the browser**, by name (includes every sound, 12 KB gzipped):
 
 ```js
 import { play, volume } from "plinkfx";
@@ -147,9 +147,9 @@ for any WAV.
 | | **plinkfx** | [ZzFX](https://github.com/KilledByAPixel/ZzFX) | [jsfxr](https://github.com/chr15m/jsfxr) | [Kenney audio packs](https://kenney.nl/assets/category:Audio) |
 |---|---|---|---|---|
 | What it is | named sound library as code | tiny synth + designer | sfxr port: generator + library | WAV/OGG asset packs |
-| Size | 2.3 KB player, 11 KB with all sounds (gzip) | ~1.3 KB | ~6.3 KB | no code, files |
+| Size | 2.3 KB player, 12 KB with all sounds (gzip) | ~1.3 KB | ~6.3 KB | no code, files |
 | Sound licence | CC0 | MIT | Unlicense | CC0 |
-| Named, curated sounds | 161 | 4 examples, random generators | 11 random presets | many, generic file names |
+| Named, curated sounds | 163 | 4 examples, random generators | 11 random presets | many, generic file names |
 | Matched loudness | yes, measured | no | no | per pack |
 | Variations | 4 takes per sound, seeded | edit / randomness | mutate | none |
 | No audio files | yes | yes | yes | no |
