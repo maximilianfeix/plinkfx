@@ -99,7 +99,9 @@ function drawWave(c: HTMLCanvasElement, env: Float32Array, progress = -1) {
     g.fillRect(Math.round(i * bw), Math.round((c.height - bh) / 2), Math.max(1, Math.round(bw - dpr)), bh);
   }
 }
-const drawTile = (tile: HTMLElement, k = -1) => drawWave(tile.querySelector("canvas")!, waveOf(get(tile.dataset.name!), 0, 40), k);
+// Tiles use the envelope baked into the catalogue: no audio is rendered to draw the grid.
+const tileEnv = new Map(items.map((s) => [s.name, Float32Array.from(s.env)]));
+const drawTile = (tile: HTMLElement, k = -1) => drawWave(tile.querySelector("canvas")!, tileEnv.get(tile.dataset.name!)!, k);
 
 // ---------- grid ----------
 const grid = $("#grid");
@@ -112,16 +114,11 @@ function buildGrid() {
     b.dataset.cat = it.cat;
     b.title = it.desc;
     b.innerHTML = `<canvas aria-hidden="true"></canvas><span class="name">${it.name}</span><span class="cat"><i></i>${it.cat}</span>`;
-    b.setAttribute("aria-label", `${it.name}: ${it.desc}`);
     frag.append(b);
   }
   grid.append(frag);
   const io = new IntersectionObserver((es) => {
-    for (const e of es)
-      if (e.isIntersecting) {
-        drawTile(e.target as HTMLElement);
-        io.unobserve(e.target);
-      }
+    for (const e of es) if (e.isIntersecting) drawTile(e.target as HTMLElement);
   }, { rootMargin: "200px" });
   grid.querySelectorAll(".tile").forEach((t) => io.observe(t));
 }
@@ -132,10 +129,7 @@ function applyFilter() {
     const it = byName.get(t.dataset.name!)!,
       show = (filter.cat == "all" || it.cat == filter.cat) && (!q || it.name.includes(q) || it.desc.toLowerCase().includes(q) || it.cat.includes(q));
     t.hidden = !show;
-    if (show) {
-      n++;
-      if (!t.dataset.drawn) requestAnimationFrame(() => drawTile(t));
-    }
+    if (show) n++;
   });
   $("#count").textContent = `${n} sound${n == 1 ? "" : "s"}`;
 }
