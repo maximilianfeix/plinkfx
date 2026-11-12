@@ -1,7 +1,7 @@
 {
   "name": "plinkfx",
   "description": "Design, render and measure game sound effects as code with plinkfx.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": { "name": "Maximilian Feix" },
   "homepage": "https://maximilianfeix.github.io/plinkfx/",
   "repository": "https://github.com/maximilianfeix/plinkfx",
