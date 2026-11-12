@@ -35,8 +35,9 @@ export default def("jump", {
   }],
   land: ["Landing on solid ground", {
     layers: [
-      { wave: "sine", freq: 130, to: 55, curve: 2, a: 0.001, d: 0.11, shape: 2.5 },
-      { wave: "pink", lp: 900, a: 0.001, d: 0.07, shape: 3, gain: 0.6 },
+      { wave: "sine", freq: 130, to: 50, curve: 2, a: 0.001, d: 0.14, shape: 2.5, drive: 1 },
+      { wave: "pink", lp: 1000, lpTo: 300, a: 0.001, d: 0.1, shape: 3, drive: 1, gain: 0.8 },
+      { wave: "noise", bp: 1200, q: 0.8, a: 0.001, d: 0.015, shape: 3, gain: 0.3 },
     ],
   }],
   "land-heavy": ["Heavy landing with a thud", {

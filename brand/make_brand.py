@@ -7,6 +7,7 @@ Builds every plinkfx brand asset from code. Change this script, never the output
 Writes SVGs directly; PNGs are rasterised with Playwright's Chromium
 (`npx playwright screenshot`), so no Python image libraries are needed.
 """
+import json
 import math
 import os
 import struct
@@ -131,9 +132,9 @@ def card(w, h, title, sub, dark=True, scale=1.0):
     x0, y0 = round(72 * scale), round(h * 0.18)
     body = f'<rect width="{w}" height="{h}" fill="{bg}"/><g transform="translate({x0},{y0})">{lock}</g>'
     ty = y0 + lh + round(54 * scale)
-    body += f'<text x="{x0}" y="{ty}" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace" font-size="{round(34 * scale)}" font-weight="600" fill="{fg}">{title}</text>'
+    body += f'<text x="{x0}" y="{ty}" font-family="ui-monospace, SF Mono, JetBrains Mono, Menlo, Consolas, monospace" font-size="{round(34 * scale)}" font-weight="600" fill="{fg}">{title}</text>'
     if sub:
-        body += f'<text x="{x0}" y="{ty + round(44 * scale)}" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace" font-size="{round(22 * scale)}" fill="{mut}">{sub}</text>'
+        body += f'<text x="{x0}" y="{ty + round(44 * scale)}" font-family="ui-monospace, SF Mono, JetBrains Mono, Menlo, Consolas, monospace" font-size="{round(22 * scale)}" fill="{mut}">{sub}</text>'
     # a row of tiles, each with a tiny pixel waveform of a real recipe shape
     names = ["coin", "jump", "hit", "laser", "explosion", "powerup", "sparkle", "step-wood"]
     tile, gap = round(118 * scale), round(14 * scale)
@@ -150,7 +151,7 @@ def card(w, h, title, sub, dark=True, scale=1.0):
         for c in range(cols):
             hh = max(1, round(env[c] * 10))
             body += f'<rect x="{tx + p * 2 + c * p}" y="{ty2 + tile * 0.42 - hh * p / 2}" width="{p * 0.8:.2f}" height="{hh * p:.2f}" fill="{PLINK if hot else fg}"/>'
-        body += f'<text x="{tx + p * 2}" y="{ty2 + tile - p * 3}" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace" font-size="{round(15 * scale)}" fill="{mut}">{n}</text>'
+        body += f'<text x="{tx + p * 2}" y="{ty2 + tile - p * 3}" font-family="ui-monospace, SF Mono, JetBrains Mono, Menlo, Consolas, monospace" font-size="{round(15 * scale)}" fill="{mut}">{n}</text>'
     return svg(w, h, body)
 
 
@@ -169,7 +170,8 @@ def main():
     png("favicon/favicon.svg", "favicon/favicon-32.png", 32, 32)
     png("favicon/favicon.svg", "favicon/apple-touch-icon.png", 180, 180)
     # social preview, X header, README banners
-    write("banners/social-preview.svg", card(1280, 640, "game sound effects as code", "160+ sounds · CC0 · 2 KB player · no audio files"))
+    count = len(json.load(open(os.path.join(HERE, "..", "library", "catalog.gen.json")))["sounds"])
+    write("banners/social-preview.svg", card(1280, 640, "game sound effects as code", f"{count} sounds · CC0 · 2.3 kB player · no audio files"))
     png("banners/social-preview.svg", "banners/social-preview.png", 1280, 640)
     write("banners/x-header.svg", card(1500, 500, "game sound effects as code", "", scale=0.85))
     png("banners/x-header.svg", "banners/x-header.png", 1500, 500)

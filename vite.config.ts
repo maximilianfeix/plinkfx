@@ -33,6 +33,7 @@ const prerender = (): Plugin => ({
         .join("");
     return html
       .replaceAll("<!--total-->", String(catalog.sounds.length))
+      .replaceAll("%TOTAL%", String(catalog.sounds.length))
       .replaceAll("<!--cats-->", String(Object.keys(catalog.categories).length))
       .replace("<!--chips-->", chips);
   },

@@ -58,6 +58,15 @@ export default def("jingle", {
       { wave: "sine", freq: 1319, arp: [0, 5, 9, 12], arpRate: 0.06, fm: [2, 0.8, 0.2], a: 0.002, h: 0.3, d: 0.4, gain: 0.4 },
     ],
   }],
+  checkpoint: ["Checkpoint reached: three quick mallet notes and a bell", {
+    vary: 0.05,
+    verb: [0.4, 0.2],
+    layers: [
+      ...[0, 0.07, 0.14].map((at, i) => ({ wave: "sine" as const, freq: [784, 1047, 1319][i], fm: [4, 1.5, 0.03] as [number, number, number], at, a: 0.001, d: 0.25, shape: 3, gain: 0.8 })),
+      { wave: "sine", freq: 1568, fm: [3.5, 1.2, 0.15], at: 0.21, a: 0.002, d: 0.9, shape: 2.5 },
+      { wave: "triangle", freq: 523, at: 0.21, a: 0.003, h: 0.1, d: 0.5, gain: 0.35 },
+    ],
+  }],
   "round-start": ["Round start stinger", {
     vary: 0.05,
     layers: [

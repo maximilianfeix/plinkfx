@@ -1,7 +1,7 @@
 # plinkfx + Unity
 
 1. `npx plinkfx export Assets/Resources/Sfx --variants`
-2. Select the clips: **Load Type** Decompress On Load, **Force To Mono** on (they are mono already).
+2. Select the clips: **Load Type** Decompress On Load. Leave **Force To Mono** off: the files are mono already, and it can re-normalise them, which undoes the matched levels.
 3. Copy `PlinkSfx.cs` into `Assets/`. It sets itself up when the first scene loads.
 4. `PlinkSfx.Play("coin");` or `PlinkSfx.Play("explosion", 0.8f);`
 

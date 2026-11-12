@@ -11,3 +11,4 @@ test-results/
 gallery/public/
 site/
 *.tgz
+.claude/
