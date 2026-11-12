@@ -61,8 +61,8 @@
     "typecheck": "tsc --noEmit -p .",
     "test": "vitest run",
     "size": "size-limit",
-    "gallery:dev": "vite gallery",
-    "gallery:build": "vite build gallery",
+    "gallery:dev": "vite --config vite.config.ts",
+    "gallery:build": "vite build --config vite.config.ts",
     "e2e": "playwright test",
     "check": "npm run typecheck && npm test && npm run build && npm run size"
   },
