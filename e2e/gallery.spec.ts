@@ -96,3 +96,27 @@ test("demo game starts and runs", async ({ page }) => {
   await page.waitForTimeout(3500);
   expect(await page.evaluate(() => (window as any).plinkrun.state())).toBe("run");
 });
+
+test("a tweak is written into the URL", async ({ page }) => {
+  await page.goto("./#jump");
+  await page.locator('input[name="pitch"]').fill("5");
+  await expect(page).toHaveURL(/#jump\?p=5$/);
+});
+
+test("a shared tweak opens with a play banner", async ({ page }) => {
+  await page.goto("./#coin?p=3&l=1.2&v=42");
+  await expect(page.locator("#shared")).toBeVisible();
+  await expect(page.locator("#v-pitch")).toHaveText("+3 st");
+  await expect(page.locator("#p-seed")).toHaveText("take #42");
+  await page.locator("#shared button").click();
+  await expect(page.locator("#shared")).toBeHidden();
+});
+
+test("the tour plays through several sounds", async ({ page }) => {
+  await page.goto("./");
+  await page.locator("#tour").click();
+  await expect(page.locator("#p-name")).toHaveText("coin");
+  await expect(page.locator("#p-name")).toHaveText("jump", { timeout: 2000 });
+  await page.locator("#tour").click();
+  await expect(page.locator("#tour")).toHaveAttribute("aria-pressed", "false");
+});
