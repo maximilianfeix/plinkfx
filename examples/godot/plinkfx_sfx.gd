@@ -30,11 +30,14 @@ func _scan(dir_path: String) -> void:
 		return
 	for sub in dir.get_directories():
 		_scan(dir_path.path_join(sub))
+	# In the editor both coin-1.wav and coin-1.wav.import are listed; in exported builds only the
+	# .import file is. Strip the suffix and load each file once.
+	var seen := {}
 	for file in dir.get_files():
-		# In exported builds the .wav sits behind a .import file; strip that suffix.
 		file = file.trim_suffix(".import")
-		if not file.ends_with(".wav"):
+		if not file.ends_with(".wav") or seen.has(file):
 			continue
+		seen[file] = true
 		var base := file.get_basename()               # coin-1
 		var key := base.substr(0, base.rfind("-")) if base.rfind("-") > 0 and base.right(1).is_valid_int() else base
 		var stream: AudioStream = load(dir_path.path_join(file))

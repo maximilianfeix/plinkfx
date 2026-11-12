@@ -20,6 +20,12 @@ test("gallery lists every sound and plays one on click", async ({ page }) => {
   await expect(page).toHaveURL(/#coin$/);
 });
 
+test("the lede reads cleanly (no leftover template text)", async ({ page }) => {
+  await page.goto("./");
+  const lede = await page.locator(".lede").innerText();
+  expect(lede).toMatch(/^\d+ sounds in \d+ categories, CC0, a 2\.5\skB player, no audio files\.$/);
+});
+
 test("search and category filter", async ({ page }) => {
   await page.goto("./");
   await page.locator("#search").fill("laser");

@@ -2,7 +2,7 @@ import { describe, expect, test } from "vitest";
 import { render, rng } from "../src/core/synth.ts";
 import { wav } from "../src/core/wav.ts";
 import { measure, centroid } from "../src/meter.ts";
-import { get, names, play } from "../src/index.ts";
+import { get, names, play, volume } from "../src/index.ts";
 
 const sine = (f: number, amp: number, secs: number, sr = 48000) => {
   const x = new Float32Array(Math.round(secs * sr));
@@ -81,7 +81,11 @@ describe("api", () => {
     expect(names).toContain("coin-double");
     for (const n of names) expect(get(n)).toBeDefined();
   });
-  test("play() needs a browser AudioContext", () => {
-    expect(() => play("coin")).toThrow();
+  test("server-safe: play() and volume() are no-ops without an AudioContext", () => {
+    expect(play("coin")).toBeUndefined();
+    expect(() => volume(0.5)).not.toThrow();
+  });
+  test("did you mean, for typos", () => {
+    expect(() => get("explsion")).toThrow(/Did you mean explosion/);
   });
 });
