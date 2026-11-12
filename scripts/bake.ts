@@ -24,6 +24,16 @@ const args = process.argv.slice(2),
 
 export const camel = (s: string) => s.replace(/-([a-z0-9])/g, (_, c) => c.toUpperCase());
 const r2 = (x: number) => Math.round(x * 100) / 100;
+const envelope = (x: Float32Array, bars: number) => {
+  const step = Math.max(1, Math.floor(x.length / bars)),
+    pk = Array.from({ length: bars }, (_, i) => {
+      let m = 0;
+      for (let j = i * step; j < Math.min((i + 1) * step, x.length); j++) m = Math.max(m, Math.abs(x[j]));
+      return m;
+    }),
+    top = Math.max(...pk, 1e-6);
+  return pk.map((v) => r2(Math.sqrt(v / top)));
+};
 
 const seen = new Set<string>(),
   catalog: any[] = [],
@@ -59,6 +69,8 @@ for (const e of library) {
     gain,
     limited,
     m: { peak: r2(m.peak), truePeak: r2(m.truePeak), lufsMax: r2(m.lufsMax), duration: r2(m.duration), centroid: Math.round(m.centroid) },
+    // 40-bar peak envelope of take 0 for the gallery tiles (so the page renders no audio at load).
+    env: envelope(render(sound, { sampleRate: SR }), 40),
     takes: takes.map((t) => ({ lufsMax: r2(t.lufsMax), truePeak: r2(t.truePeak), duration: r2(t.duration) })),
   });
   out.push(`/** ${e.desc} */\nexport const ${camel(e.name)}: Sound = ${JSON.stringify(sound)};`);
