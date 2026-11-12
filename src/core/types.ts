@@ -17,7 +17,9 @@ export type Wave =
   /** sample-and-hold noise at `freq` Hz, the classic crunchy 8-bit noise */
   | "crunch"
   /** six square waves at inharmonic ratios, for bells, cymbals, metal */
-  | "metal";
+  | "metal"
+  /** decaying sine modes (see `modes`), for wood, metal bars, glass: a material instead of a tone */
+  | "modal";
 
 export interface Layer {
   /** Oscillator shape. Default "sine". */
@@ -40,6 +42,10 @@ export interface Layer {
   vib?: [number, number];
   /** FM as [modulator ratio, index, index decay time in s]. */
   fm?: [number, number, number?];
+  /** Mode ratios for "modal". Default [1, 2.756, 5.404, 8.933] (a free bar). Higher modes decay faster. */
+  modes?: number[];
+  /** Key tracking: filter cutoffs follow pitch changes (1 = fully). Default 0. */
+  kt?: number;
   /** Pulse width for "square", 0..1. Default 0.5. */
   duty?: number;
 
@@ -51,7 +57,7 @@ export interface Layer {
   h?: number;
   /** Decay time to silence. Default 0.2. */
   d?: number;
-  /** Decay curve exponent. 1 = linear, 2 = natural, 4+ = snappy. Default 2. */
+  /** Decay curve. Positive: (1-t)^shape, 1 = linear, 2 = natural, 4+ = snappy. Negative: exponential, -3 soft to -7 percussive. Default 2. */
   shape?: number;
 
   /** Low-pass cutoff in Hz. */
@@ -81,12 +87,18 @@ export interface Sound {
   gain?: number;
   /** Pitch spread between variants in semitones. Default 0.4. */
   vary?: number;
+  /** Extra filter (brightness) spread between variants in semitones. Default 0. */
+  varyF?: number;
+  /** Level spread between variants per layer in dB. Default 0. */
+  varyG?: number;
   /** Feedback echo as [delay s, feedback 0..1, wet mix]. */
   echo?: [number, number, number];
   /** Small room reverb as [size 0..1, wet mix]. */
   verb?: [number, number];
   /** Bit depth reduction, e.g. 6 for a gritty 6-bit sound. */
   bits?: number;
+  /** Look-ahead limiter on the output (set by the bake step for short, spiky sounds). */
+  limit?: number;
   /** Sample-rate reduction in Hz (sample and hold), e.g. 8000. */
   rate?: number;
 }

@@ -6,7 +6,7 @@
 # plinkfx
 
 **<!-- count -->163<!-- /count --> game sound effects, written as code.** Coins, jumps, hits, lasers, explosions,
-UI clicks and the rest of what a game needs, each one a few readable numbers that a 2.5 kB player turns into sound.
+UI clicks and the rest of what a game needs, each one a few readable numbers that a 2.8 kB player turns into sound.
 CC0, no audio files, no account.
 
 <a href="https://maximilianfeix.github.io/plinkfx/"><img src="docs/media/gallery.gif" alt="The plinkfx gallery: clicking tiles plays coin, jump, laser, explosion and more; each tile shows its waveform" width="100%"></a>
@@ -29,7 +29,7 @@ sound like a loop.
 <details>
 <summary>More ways to play: options, game setup, tree-shaking, your own sound</summary>
 
-**By name** (every sound included, 12.8 kB gzipped):
+**By name** (every sound included, 13.5 kB gzipped):
 
 ```js
 import { play, volume } from "plinkfx";
@@ -59,7 +59,7 @@ stopAll();
 Everything is safe to import on the server (Next.js, Nuxt, SvelteKit): `play()` and `volume()` do
 nothing there.
 
-**Only what you use** (player plus one sound: 2.4 kB gzipped). Importing anything from `"plinkfx"`
+**Only what you use** (player plus one sound: 2.7 kB gzipped). Importing anything from `"plinkfx"`
 includes every sound, so use the subpaths when size matters:
 
 ```js
@@ -197,7 +197,7 @@ sfxr (DrPetter, 2007) started this genre, and these are the tools most people re
 | | **plinkfx** | [ZzFX](https://github.com/KilledByAPixel/ZzFX) | [jsfxr](https://github.com/chr15m/jsfxr) | [Kenney audio packs](https://kenney.nl/assets/category:Audio) |
 |---|---|---|---|---|
 | What it is | named sound library as code | tiny synth + designer | sfxr port: generator + library | WAV/OGG asset packs |
-| Size (gzip) | 2.5 kB player, 12.8 kB with all sounds | ~1.3 kB | ~6.3 kB | no code, files |
+| Size (gzip) | 2.8 kB player, 13.5 kB with all sounds | ~1.3 kB | ~6.3 kB | no code, files |
 | Licence | CC0 sounds, MIT code | MIT | Unlicense | CC0 |
 | Named sounds | <!-- count -->163<!-- /count --> | 4 examples, random generators | random generators per category | many, generic file names |
 | Matched loudness | yes, measured in tests | no | no | not stated |

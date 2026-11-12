@@ -59,76 +59,76 @@
    "id": "click",
    "cat": "ui",
    "desc": "Neutral button click",
-   "gain": 0.788,
+   "gain": 1.63,
    "limited": true,
    "m": {
-    "peak": -1.49,
-    "truePeak": -1.42,
-    "lufsMax": -22.63,
+    "peak": -1.51,
+    "truePeak": -1.51,
+    "lufsMax": -25.15,
     "duration": 0.03,
-    "centroid": 2326
+    "centroid": 2471
    },
    "env": [
-    0.75,
-    0.97,
+    0.8,
     1,
-    0.92,
     0.88,
-    0.88,
-    0.84,
-    0.78,
-    0.73,
+    0.77,
     0.73,
     0.69,
-    0.65,
-    0.61,
-    0.6,
-    0.57,
-    0.54,
-    0.52,
-    0.49,
-    0.46,
+    0.66,
+    0.62,
+    0.59,
+    0.56,
+    0.53,
+    0.51,
+    0.47,
+    0.45,
     0.43,
     0.41,
-    0.38,
-    0.35,
+    0.43,
+    0.42,
+    0.36,
     0.33,
-    0.3,
-    0.29,
+    0.31,
+    0.28,
+    0.27,
     0.26,
     0.24,
     0.22,
-    0.2,
+    0.21,
+    0.19,
     0.18,
-    0.16,
+    0.17,
+    0.15,
     0.14,
     0.13,
-    0.1,
+    0.12,
+    0.11,
     0.09,
-    0.06,
+    0.07,
     0.05,
-    0.03,
-    0.02
+    0.04,
+    0.03
    ],
    "takes": [
     {
-     "lufsMax": -22.63,
-     "truePeak": -1.42,
-     "duration": 0.03
-    },
-    {
-     "lufsMax": -22.26,
+     "lufsMax": -25.15,
      "truePeak": -1.51,
      "duration": 0.03
     },
     {
-     "lufsMax": -22.45,
-     "truePeak": -1.35,
+     "lufsMax": -25.6,
+     "truePeak": -1.43,
      "duration": 0.03
     },
     {
-     "lufsMax": -22.26,
-     "truePeak": -1.21,
+     "lufsMax": -23.25,
+     "truePeak": -1.47,
+     "duration": 0.03
+    },
+    {
+     "lufsMax": -23.52,
+     "truePeak": -1.47,
      "duration": 0.03
     }
    ]
@@ -138,76 +138,76 @@
    "id": "clickSoft",
    "cat": "ui",
    "desc": "Rounded, quiet click for lists and tabs",
-   "gain": 0.904,
+   "gain": 2.04,
    "limited": true,
    "m": {
-    "peak": -1.21,
-    "truePeak": -1.2,
-    "lufsMax": -23.35,
-    "duration": 0.04,
-    "centroid": 1166
+    "peak": -1.51,
+    "truePeak": -1.36,
+    "lufsMax": -21.43,
+    "duration": 0.05,
+    "centroid": 1318
    },
    "env": [
-    0.61,
+    1,
+    1,
     1,
     0.96,
-    0.95,
-    0.88,
-    0.89,
+    0.93,
+    0.9,
+    0.87,
     0.84,
+    0.81,
+    0.78,
+    0.75,
     0.79,
-    0.76,
-    0.73,
     0.69,
-    0.65,
+    0.67,
     0.64,
     0.6,
     0.57,
-    0.55,
-    0.51,
-    0.48,
-    0.46,
+    0.54,
+    0.5,
+    0.47,
+    0.44,
     0.43,
-    0.41,
-    0.38,
+    0.4,
+    0.37,
     0.35,
-    0.33,
-    0.3,
-    0.28,
-    0.26,
+    0.34,
+    0.31,
+    0.29,
+    0.27,
+    0.25,
     0.23,
     0.22,
     0.19,
     0.17,
-    0.15,
+    0.16,
+    0.14,
     0.13,
-    0.12,
-    0.09,
     0.08,
-    0.07,
-    0.04,
-    0.02,
-    0.01
+    0.06,
+    0.02
    ],
    "takes": [
     {
-     "lufsMax": -23.35,
-     "truePeak": -1.2,
-     "duration": 0.04
-    },
-    {
-     "lufsMax": -23.32,
-     "truePeak": -2.06,
+     "lufsMax": -21.43,
+     "truePeak": -1.36,
      "duration": 0.05
     },
     {
-     "lufsMax": -23.44,
-     "truePeak": -1.76,
+     "lufsMax": -22,
+     "truePeak": -1.5,
      "duration": 0.05
     },
     {
-     "lufsMax": -23.23,
-     "truePeak": -1.53,
+     "lufsMax": -21.72,
+     "truePeak": -1.46,
+     "duration": 0.05
+    },
+    {
+     "lufsMax": -22.22,
+     "truePeak": -1.47,
      "duration": 0.05
     }
    ]
@@ -217,23 +217,23 @@
    "id": "clickHard",
    "cat": "ui",
    "desc": "Firm mechanical click",
-   "gain": 0.507,
+   "gain": 0.508,
    "limited": false,
    "m": {
-    "peak": -1.51,
-    "truePeak": -1.49,
-    "lufsMax": -19.97,
+    "peak": -1.47,
+    "truePeak": -1.42,
+    "lufsMax": -19.95,
     "duration": 0.03,
-    "centroid": 3022
+    "centroid": 3040
    },
    "env": [
     0.92,
-    0.91,
+    0.9,
     0.9,
     1,
     0.98,
-    0.93,
-    0.95,
+    0.92,
+    0.94,
     0.94,
     0.9,
     0.92,
@@ -270,24 +270,24 @@
    ],
    "takes": [
     {
-     "lufsMax": -19.97,
-     "truePeak": -1.49,
+     "lufsMax": -19.95,
+     "truePeak": -1.42,
      "duration": 0.03
     },
     {
-     "lufsMax": -20.11,
-     "truePeak": -1.45,
+     "lufsMax": -20.13,
+     "truePeak": -1.55,
      "duration": 0.03
     },
     {
-     "lufsMax": -19.98,
-     "truePeak": -1.86,
+     "lufsMax": -20.04,
+     "truePeak": -1.48,
      "duration": 0.03
     },
     {
      "lufsMax": -19.91,
-     "truePeak": -2.05,
-     "duration": 0.04
+     "truePeak": -2.08,
+     "duration": 0.03
     }
    ]
   },
@@ -296,77 +296,77 @@
    "id": "tap",
    "cat": "ui",
    "desc": "Bubbly tap, good for mobile",
-   "gain": 0.897,
+   "gain": 1.42,
    "limited": true,
    "m": {
-    "peak": -1.23,
-    "truePeak": -1.22,
-    "lufsMax": -22.22,
+    "peak": -1.51,
+    "truePeak": -1.51,
+    "lufsMax": -20.83,
     "duration": 0.05,
-    "centroid": 408
+    "centroid": 402
    },
    "env": [
-    0.94,
+    0.99,
     1,
-    0.93,
+    0.96,
+    0.95,
+    0.92,
     0.9,
     0.87,
     0.83,
-    0.79,
-    0.73,
-    0.7,
-    0.66,
-    0.63,
+    0.8,
+    0.77,
+    0.75,
+    0.72,
+    0.69,
+    0.65,
+    0.62,
     0.59,
-    0.56,
-    0.53,
-    0.5,
-    0.46,
+    0.55,
+    0.51,
+    0.47,
+    0.47,
     0.43,
-    0.4,
-    0.37,
-    0.37,
-    0.34,
-    0.31,
-    0.28,
+    0.39,
+    0.36,
+    0.32,
+    0.29,
+    0.29,
     0.25,
     0.22,
-    0.22,
-    0.2,
-    0.17,
-    0.15,
+    0.19,
+    0.18,
+    0.16,
     0.14,
-    0.13,
     0.11,
-    0.09,
+    0.11,
     0.09,
     0.07,
     0.06,
     0.05,
-    0.04,
-    0.02,
-    0.01
+    0.03,
+    0.02
    ],
    "takes": [
     {
-     "lufsMax": -22.22,
-     "truePeak": -1.22,
+     "lufsMax": -20.83,
+     "truePeak": -1.51,
      "duration": 0.05
     },
     {
-     "lufsMax": -21.98,
-     "truePeak": -1.22,
+     "lufsMax": -20.52,
+     "truePeak": -1.51,
      "duration": 0.06
     },
     {
-     "lufsMax": -22.14,
-     "truePeak": -1.23,
+     "lufsMax": -20.72,
+     "truePeak": -1.51,
      "duration": 0.05
     },
     {
-     "lufsMax": -22,
-     "truePeak": -1.2,
-     "duration": 0.05
+     "lufsMax": -20.57,
+     "truePeak": -1.51,
+     "duration": 0.06
     }
    ]
   },
@@ -375,76 +375,76 @@
    "id": "hover",
    "cat": "ui",
    "desc": "Faint tick when the cursor enters a button",
-   "gain": 0.888,
-   "limited": true,
+   "gain": 1.41,
+   "limited": false,
    "m": {
-    "peak": -1.24,
-    "truePeak": -1.2,
-    "lufsMax": -21.37,
+    "peak": -1.51,
+    "truePeak": -1.42,
+    "lufsMax": -20.63,
     "duration": 0.02,
-    "centroid": 2604
+    "centroid": 2605
    },
    "env": [
-    0.68,
+    0.87,
     1,
     0.99,
-    0.95,
-    0.92,
-    0.88,
-    0.84,
-    0.81,
-    0.78,
-    0.75,
-    0.71,
-    0.68,
-    0.65,
-    0.62,
-    0.6,
-    0.56,
-    0.54,
-    0.51,
-    0.48,
+    0.96,
+    0.94,
+    0.91,
+    0.87,
+    0.85,
+    0.82,
+    0.8,
+    0.77,
+    0.74,
+    0.72,
+    0.69,
+    0.66,
+    0.63,
+    0.61,
+    0.58,
+    0.55,
+    0.53,
+    0.5,
     0.46,
-    0.43,
+    0.44,
+    0.41,
     0.39,
-    0.37,
-    0.34,
-    0.32,
-    0.3,
-    0.27,
-    0.25,
-    0.23,
+    0.36,
+    0.33,
+    0.31,
+    0.28,
+    0.26,
+    0.24,
     0.21,
     0.19,
     0.17,
-    0.15,
-    0.13,
+    0.14,
     0.11,
     0.08,
     0.06,
-    0.05,
-    0.03,
+    0.04,
     0.02
    ],
    "takes": [
     {
-     "lufsMax": -21.37,
-     "truePeak": -1.2,
+     "lufsMax": -20.63,
+     "truePeak": -1.42,
      "duration": 0.02
     },
     {
-     "lufsMax": -21.23,
-     "truePeak": -1.28,
+     "lufsMax": -20.37,
+     "truePeak": -1.39,
      "duration": 0.03
     },
     {
-     "lufsMax": -21.36,
-     "truePeak": -1.26,
+     "lufsMax": -20.56,
+     "truePeak": -1.42,
      "duration": 0.02
     },
     {
-     "lufsMax": -21.1,
-     "truePeak": -1.23,
+     "lufsMax": -20.29,
+     "truePeak": -1.4,
      "duration": 0.03
     }
    ]
@@ -517,7 +517,7 @@
      "duration": 0.11
     },
     {
-     "lufsMax": -20.02,
+     "lufsMax": -20.04,
      "truePeak": -2.18,
      "duration": 0.11
     },
@@ -533,12 +533,12 @@
    "id": "toggleOff",
    "cat": "ui",
    "desc": "Switch off: two falling notes",
-   "gain": 0.73,
+   "gain": 0.731,
    "limited": false,
    "m": {
-    "peak": -2.81,
-    "truePeak": -2.73,
-    "lufsMax": -20.1,
+    "peak": -2.79,
+    "truePeak": -2.71,
+    "lufsMax": -20.09,
     "duration": 0.11,
     "centroid": 1837
    },
@@ -586,23 +586,23 @@
    ],
    "takes": [
     {
-     "lufsMax": -20.1,
+     "lufsMax": -20.09,
+     "truePeak": -2.71,
+     "duration": 0.11
+    },
+    {
+     "lufsMax": -19.95,
      "truePeak": -2.73,
      "duration": 0.11
     },
     {
-     "lufsMax": -19.96,
+     "lufsMax": -20.04,
      "truePeak": -2.75,
      "duration": 0.11
     },
     {
-     "lufsMax": -20.03,
-     "truePeak": -2.76,
-     "duration": 0.11
-    },
-    {
-     "lufsMax": -19.92,
-     "truePeak": -2.76,
+     "lufsMax": -19.9,
+     "truePeak": -2.75,
      "duration": 0.11
     }
    ]
@@ -675,7 +675,7 @@
      "duration": 0.76
     },
     {
-     "lufsMax": -20.02,
+     "lufsMax": -20.05,
      "truePeak": -7.93,
      "duration": 0.68
     },
@@ -749,18 +749,18 @@
      "duration": 0.13
     },
     {
-     "lufsMax": -19.91,
-     "truePeak": -4.03,
+     "lufsMax": -19.93,
+     "truePeak": -4.04,
      "duration": 0.14
     },
     {
-     "lufsMax": -20,
-     "truePeak": -4.03,
+     "lufsMax": -20.03,
+     "truePeak": -4.04,
      "duration": 0.13
     },
     {
-     "lufsMax": -19.94,
-     "truePeak": -4.03,
+     "lufsMax": -19.93,
+     "truePeak": -4.02,
      "duration": 0.14
     }
    ]
@@ -828,14 +828,14 @@
      "duration": 0.25
     },
     {
-     "lufsMax": -20.03,
-     "truePeak": -8.77,
+     "lufsMax": -20.02,
+     "truePeak": -8.79,
      "duration": 0.25
     },
     {
-     "lufsMax": -19.97,
-     "truePeak": -8.78,
-     "duration": 0.26
+     "lufsMax": -19.99,
+     "truePeak": -8.79,
+     "duration": 0.25
     },
     {
      "lufsMax": -20.03,
@@ -852,30 +852,30 @@
    "gain": 0.367,
    "limited": false,
    "m": {
-    "peak": -6.28,
-    "truePeak": -6.28,
+    "peak": -6.37,
+    "truePeak": -6.37,
     "lufsMax": -20.11,
     "duration": 0.12,
     "centroid": 425
    },
    "env": [
-    0.82,
+    0.83,
     1,
     0.95,
     0.92,
-    0.95,
-    0.91,
-    0.91,
+    0.96,
     0.92,
+    0.92,
+    0.93,
     0.9,
     0.9,
     0.89,
     0.87,
-    0.86,
-    0.84,
-    0.79,
+    0.87,
+    0.85,
+    0.8,
     0.82,
-    0.78,
+    0.79,
     0.71,
     0.75,
     0.71,
@@ -885,7 +885,7 @@
     0.62,
     0.57,
     0.52,
-    0.51,
+    0.52,
     0.43,
     0.46,
     0.4,
@@ -903,22 +903,22 @@
    "takes": [
     {
      "lufsMax": -20.11,
-     "truePeak": -6.28,
+     "truePeak": -6.37,
      "duration": 0.12
     },
     {
-     "lufsMax": -19.93,
-     "truePeak": -6.37,
+     "lufsMax": -19.94,
+     "truePeak": -6.31,
      "duration": 0.13
     },
     {
      "lufsMax": -20.07,
-     "truePeak": -6.2,
+     "truePeak": -6.27,
      "duration": 0.12
     },
     {
-     "lufsMax": -19.93,
-     "truePeak": -6.57,
+     "lufsMax": -19.92,
+     "truePeak": -6.52,
      "duration": 0.13
     }
    ]
@@ -986,12 +986,12 @@
      "duration": 0.96
     },
     {
-     "lufsMax": -19.55,
+     "lufsMax": -19.54,
      "truePeak": -10.9,
      "duration": 0.85
     },
     {
-     "lufsMax": -20.4,
+     "lufsMax": -20.48,
      "truePeak": -11.87,
      "duration": 0.78
     },
@@ -1008,7 +1008,7 @@
    "cat": "ui",
    "desc": "Upward pop, for things appearing",
    "gain": 0.898,
-   "limited": true,
+   "limited": false,
    "m": {
     "peak": -1.23,
     "truePeak": -1.23,
@@ -1168,14 +1168,14 @@
    "gain": 1.31,
    "limited": false,
    "m": {
-    "peak": -2.89,
-    "truePeak": -2.7,
+    "peak": -2.9,
+    "truePeak": -2.71,
     "lufsMax": -20.28,
     "duration": 0.14,
     "centroid": 5160
    },
    "env": [
-    0.27,
+    0.26,
     0.36,
     0.43,
     0.54,
@@ -1209,32 +1209,32 @@
     0.32,
     0.3,
     0.26,
-    0.25,
+    0.26,
     0.18,
     0.16,
-    0.13,
+    0.12,
     0.1,
     0.06
    ],
    "takes": [
     {
      "lufsMax": -20.28,
-     "truePeak": -2.7,
+     "truePeak": -2.71,
      "duration": 0.14
     },
     {
-     "lufsMax": -19.71,
-     "truePeak": -1.78,
+     "lufsMax": -19.82,
+     "truePeak": -1.89,
      "duration": 0.14
     },
     {
-     "lufsMax": -19.92,
-     "truePeak": -3.26,
+     "lufsMax": -20.02,
+     "truePeak": -3.35,
      "duration": 0.14
     },
     {
-     "lufsMax": -20.03,
-     "truePeak": -1.66,
+     "lufsMax": -19.96,
+     "truePeak": -1.58,
      "duration": 0.14
     }
    ]
@@ -1244,43 +1244,43 @@
    "id": "type",
    "cat": "ui",
    "desc": "Keyboard tick for text that types itself",
-   "gain": 0.583,
+   "gain": 0.587,
    "limited": true,
    "m": {
-    "peak": -1.77,
-    "truePeak": -1.56,
-    "lufsMax": -22.39,
+    "peak": -1.67,
+    "truePeak": -1.47,
+    "lufsMax": -22.35,
     "duration": 0.03,
-    "centroid": 5517
+    "centroid": 5528
    },
    "env": [
-    0.84,
+    0.83,
     0.84,
     0.84,
     0.98,
     0.98,
     1,
-    0.95,
+    0.92,
     1,
-    0.91,
+    0.92,
     0.94,
-    0.79,
+    0.77,
     0.8,
-    0.66,
+    0.67,
     0.64,
-    0.62,
     0.55,
+    0.54,
     0.48,
-    0.47,
+    0.49,
     0.43,
     0.37,
-    0.38,
+    0.37,
     0.34,
-    0.31,
+    0.3,
     0.3,
     0.27,
     0.27,
-    0.32,
+    0.31,
     0.3,
     0.27,
     0.25,
@@ -1290,30 +1290,30 @@
     0.12,
     0.11,
     0.07,
-    0.05,
+    0.06,
     0.02,
     0.02,
     0.01
    ],
    "takes": [
     {
-     "lufsMax": -22.39,
-     "truePeak": -1.56,
+     "lufsMax": -22.35,
+     "truePeak": -1.47,
      "duration": 0.03
     },
     {
-     "lufsMax": -22.11,
-     "truePeak": -1.32,
-     "duration": 0.03
-    },
-    {
-     "lufsMax": -21.75,
+     "lufsMax": -22.1,
      "truePeak": -1.2,
      "duration": 0.03
     },
     {
-     "lufsMax": -22.56,
-     "truePeak": -2.22,
+     "lufsMax": -21.79,
+     "truePeak": -1.2,
+     "duration": 0.03
+    },
+    {
+     "lufsMax": -22.32,
+     "truePeak": -1.88,
      "duration": 0.03
     }
    ]
@@ -1323,76 +1323,76 @@
    "id": "tick",
    "cat": "ui",
    "desc": "Tiny tick for sliders and scroll steps",
-   "gain": 0.872,
+   "gain": 1.38,
    "limited": true,
    "m": {
-    "peak": -1.26,
-    "truePeak": -1.2,
-    "lufsMax": -23.82,
+    "peak": -1.51,
+    "truePeak": -1.41,
+    "lufsMax": -23.33,
     "duration": 0.01,
-    "centroid": 3215
+    "centroid": 3219
    },
    "env": [
-    0.41,
-    0.62,
-    0.74,
-    0.93,
+    0.53,
+    0.79,
+    0.91,
+    1,
     1,
     0.98,
+    0.95,
     0.94,
-    0.93,
+    0.91,
     0.9,
     0.88,
-    0.86,
-    0.82,
+    0.84,
+    0.83,
     0.8,
-    0.77,
-    0.76,
-    0.72,
-    0.71,
-    0.67,
-    0.65,
+    0.78,
+    0.75,
+    0.74,
+    0.7,
+    0.68,
+    0.66,
     0.63,
-    0.6,
-    0.58,
-    0.53,
-    0.51,
-    0.45,
-    0.43,
-    0.38,
-    0.36,
-    0.32,
-    0.3,
-    0.27,
-    0.23,
-    0.22,
+    0.62,
+    0.57,
+    0.55,
+    0.49,
+    0.47,
+    0.42,
+    0.4,
+    0.35,
+    0.33,
+    0.31,
+    0.26,
+    0.24,
+    0.2,
     0.18,
-    0.16,
+    0.15,
     0.13,
-    0.11,
-    0.09,
-    0.07,
-    0.05
+    0.1,
+    0.08,
+    0.06
    ],
    "takes": [
     {
-     "lufsMax": -23.82,
-     "truePeak": -1.2,
+     "lufsMax": -23.33,
+     "truePeak": -1.41,
      "duration": 0.01
     },
     {
-     "lufsMax": -23.63,
-     "truePeak": -1.31,
+     "lufsMax": -23.12,
+     "truePeak": -1.51,
      "duration": 0.01
     },
     {
-     "lufsMax": -23.76,
-     "truePeak": -1.3,
+     "lufsMax": -23.15,
+     "truePeak": -1.32,
      "duration": 0.01
     },
     {
-     "lufsMax": -23.59,
-     "truePeak": -1.33,
+     "lufsMax": -23.02,
+     "truePeak": -1.39,
      "duration": 0.01
     }
    ]
@@ -1405,42 +1405,42 @@
    "gain": 0.721,
    "limited": false,
    "m": {
-    "peak": -3.43,
-    "truePeak": -3.43,
-    "lufsMax": -20.13,
+    "peak": -3.45,
+    "truePeak": -3.44,
+    "lufsMax": -20.12,
     "duration": 0.12,
-    "centroid": 3543
+    "centroid": 3544
    },
    "env": [
     0.77,
     1,
-    0.98,
+    0.99,
     0.96,
     0.96,
-    0.93,
+    0.95,
     0.93,
     0.89,
-    0.87,
-    0.87,
-    0.88,
-    0.8,
-    0.77,
+    0.89,
+    0.85,
+    0.89,
+    0.81,
+    0.74,
     0.75,
     0.73,
-    0.72,
-    0.66,
+    0.7,
+    0.64,
     0.66,
     0.59,
-    0.58,
+    0.59,
     0.54,
     0.54,
-    0.49,
-    0.47,
+    0.48,
+    0.46,
     0.44,
     0.4,
-    0.38,
+    0.37,
     0.35,
-    0.33,
+    0.32,
     0.3,
     0.28,
     0.25,
@@ -1455,23 +1455,23 @@
    ],
    "takes": [
     {
-     "lufsMax": -20.13,
-     "truePeak": -3.43,
+     "lufsMax": -20.12,
+     "truePeak": -3.44,
      "duration": 0.12
     },
     {
      "lufsMax": -19.92,
-     "truePeak": -3.39,
+     "truePeak": -3.2,
      "duration": 0.13
     },
     {
-     "lufsMax": -20.05,
-     "truePeak": -3.31,
+     "lufsMax": -20.06,
+     "truePeak": -3.26,
      "duration": 0.12
     },
     {
      "lufsMax": -19.92,
-     "truePeak": -3.51,
+     "truePeak": -3.45,
      "duration": 0.13
     }
    ]
@@ -1484,48 +1484,48 @@
    "gain": 0.699,
    "limited": false,
    "m": {
-    "peak": -4.01,
-    "truePeak": -3.99,
-    "lufsMax": -20.12,
+    "peak": -4.06,
+    "truePeak": -4.06,
+    "lufsMax": -20.13,
     "duration": 0.12,
     "centroid": 3947
    },
    "env": [
-    0.81,
+    0.82,
     1,
-    1,
+    0.99,
     0.97,
-    0.97,
-    0.93,
-    0.91,
+    0.96,
     0.92,
-    0.9,
-    0.9,
+    0.93,
+    0.89,
+    0.89,
+    0.89,
+    0.87,
     0.85,
-    0.84,
-    0.8,
-    0.78,
-    0.72,
-    0.7,
-    0.67,
-    0.63,
-    0.61,
+    0.81,
+    0.77,
+    0.73,
+    0.69,
+    0.66,
+    0.62,
+    0.58,
     0.59,
-    0.56,
-    0.54,
-    0.5,
+    0.57,
+    0.55,
     0.49,
-    0.45,
+    0.48,
+    0.44,
     0.42,
     0.4,
-    0.36,
+    0.37,
     0.34,
     0.32,
     0.29,
     0.26,
     0.24,
     0.21,
-    0.18,
+    0.19,
     0.16,
     0.13,
     0.11,
@@ -1534,23 +1534,23 @@
    ],
    "takes": [
     {
-     "lufsMax": -20.12,
-     "truePeak": -3.99,
+     "lufsMax": -20.13,
+     "truePeak": -4.06,
      "duration": 0.12
     },
     {
-     "lufsMax": -19.9,
-     "truePeak": -4.03,
+     "lufsMax": -19.91,
+     "truePeak": -4.1,
      "duration": 0.13
     },
     {
      "lufsMax": -20.05,
-     "truePeak": -4,
+     "truePeak": -4.11,
      "duration": 0.12
     },
     {
-     "lufsMax": -19.92,
-     "truePeak": -4.08,
+     "lufsMax": -19.91,
+     "truePeak": -4.04,
      "duration": 0.13
     }
    ]
@@ -1560,12 +1560,12 @@
    "id": "select",
    "cat": "ui",
    "desc": "Retro menu cursor move",
-   "gain": 0.584,
+   "gain": 0.585,
    "limited": false,
    "m": {
-    "peak": -2.09,
-    "truePeak": -2.09,
-    "lufsMax": -20.13,
+    "peak": -2.08,
+    "truePeak": -2.08,
+    "lufsMax": -20.12,
     "duration": 0.1,
     "centroid": 3270
    },
@@ -1613,23 +1613,23 @@
    ],
    "takes": [
     {
-     "lufsMax": -20.13,
-     "truePeak": -2.09,
+     "lufsMax": -20.12,
+     "truePeak": -2.08,
      "duration": 0.1
     },
     {
-     "lufsMax": -19.91,
-     "truePeak": -1.99,
+     "lufsMax": -19.93,
+     "truePeak": -2.01,
      "duration": 0.11
     },
     {
-     "lufsMax": -20.04,
-     "truePeak": -2.03,
+     "lufsMax": -20.06,
+     "truePeak": -2.05,
      "duration": 0.1
     },
     {
-     "lufsMax": -19.94,
-     "truePeak": -2.05,
+     "lufsMax": -19.89,
+     "truePeak": -2.01,
      "duration": 0.11
     }
    ]
@@ -1855,7 +1855,7 @@
      "duration": 0.78
     },
     {
-     "lufsMax": -19.43,
+     "lufsMax": -19.42,
      "truePeak": -8.45,
      "duration": 0.76
     },
@@ -1876,12 +1876,12 @@
    "id": "coin",
    "cat": "pickup",
    "desc": "The classic two-note coin, with a little shimmer",
-   "gain": 0.271,
+   "gain": 0.272,
    "limited": false,
    "m": {
-    "peak": -5.39,
-    "truePeak": -5.39,
-    "lufsMax": -16.16,
+    "peak": -5.36,
+    "truePeak": -5.36,
+    "lufsMax": -16.13,
     "duration": 0.66,
     "centroid": 2907
    },
@@ -1929,23 +1929,23 @@
    ],
    "takes": [
     {
-     "lufsMax": -16.16,
-     "truePeak": -5.39,
+     "lufsMax": -16.13,
+     "truePeak": -5.36,
      "duration": 0.66
     },
     {
-     "lufsMax": -15.73,
-     "truePeak": -4.78,
+     "lufsMax": -15.7,
+     "truePeak": -4.73,
      "duration": 0.69
     },
     {
-     "lufsMax": -16.05,
-     "truePeak": -5.54,
+     "lufsMax": -16.07,
+     "truePeak": -5.52,
      "duration": 0.75
     },
     {
-     "lufsMax": -16.09,
-     "truePeak": -5.36,
+     "lufsMax": -16.05,
+     "truePeak": -5.33,
      "duration": 0.72
     }
    ]
@@ -1955,12 +1955,12 @@
    "id": "coinSoft",
    "cat": "pickup",
    "desc": "Rounder coin for cosy games",
-   "gain": 0.477,
+   "gain": 0.478,
    "limited": false,
    "m": {
-    "peak": -4.82,
-    "truePeak": -4.78,
-    "lufsMax": -16.09,
+    "peak": -4.8,
+    "truePeak": -4.76,
+    "lufsMax": -16.07,
     "duration": 0.74,
     "centroid": 2547
    },
@@ -2008,23 +2008,23 @@
    ],
    "takes": [
     {
-     "lufsMax": -16.09,
-     "truePeak": -4.78,
+     "lufsMax": -16.07,
+     "truePeak": -4.76,
      "duration": 0.74
     },
     {
-     "lufsMax": -15.93,
-     "truePeak": -5.11,
+     "lufsMax": -15.91,
+     "truePeak": -5.1,
      "duration": 0.71
     },
     {
-     "lufsMax": -16.2,
-     "truePeak": -5.3,
+     "lufsMax": -16.21,
+     "truePeak": -5.28,
      "duration": 0.74
     },
     {
-     "lufsMax": -15.8,
-     "truePeak": -5.26,
+     "lufsMax": -15.78,
+     "truePeak": -5.24,
      "duration": 0.8
     }
    ]
@@ -2034,12 +2034,12 @@
    "id": "coinDouble",
    "cat": "pickup",
    "desc": "Two coins in quick succession",
-   "gain": 0.277,
+   "gain": 0.278,
    "limited": false,
    "m": {
-    "peak": -5.25,
-    "truePeak": -5.25,
-    "lufsMax": -16.17,
+    "peak": -5.22,
+    "truePeak": -5.22,
+    "lufsMax": -16.14,
     "duration": 0.77,
     "centroid": 2990
    },
@@ -2087,22 +2087,22 @@
    ],
    "takes": [
     {
-     "lufsMax": -16.17,
-     "truePeak": -5.25,
-     "duration": 0.77
-    },
-    {
-     "lufsMax": -15.93,
+     "lufsMax": -16.14,
      "truePeak": -5.22,
      "duration": 0.77
     },
     {
-     "lufsMax": -15.93,
-     "truePeak": -5.33,
+     "lufsMax": -15.88,
+     "truePeak": -5.18,
+     "duration": 0.77
+    },
+    {
+     "lufsMax": -15.97,
+     "truePeak": -5.28,
      "duration": 0.75
     },
     {
-     "lufsMax": -16.01,
+     "lufsMax": -16,
      "truePeak": -5.33,
      "duration": 0.77
     }
@@ -2113,35 +2113,35 @@
    "id": "coinBag",
    "cat": "pickup",
    "desc": "A handful of coins, a small payout",
-   "gain": 0.418,
+   "gain": 0.416,
    "limited": false,
    "m": {
-    "peak": -8.55,
-    "truePeak": -6.14,
-    "lufsMax": -15.84,
+    "peak": -8.5,
+    "truePeak": -6.11,
+    "lufsMax": -15.89,
     "duration": 0.77,
-    "centroid": 9110
+    "centroid": 9104
    },
    "env": [
-    0.91,
-    0.75,
-    0.98,
-    0.93,
-    0.78,
-    1,
     0.9,
-    0.74,
-    0.93,
+    0.76,
+    0.99,
+    0.91,
+    0.76,
+    1,
+    0.88,
+    0.73,
+    0.92,
     0.84,
     0.99,
-    0.9,
-    0.8,
+    0.89,
+    0.79,
     0.71,
-    0.88,
+    0.87,
     0.75,
     0.66,
-    0.62,
-    0.51,
+    0.61,
+    0.5,
     0.43,
     0.33,
     0.26,
@@ -2153,7 +2153,7 @@
     0.13,
     0.12,
     0.1,
-    0.08,
+    0.07,
     0.06,
     0.05,
     0.05,
@@ -2161,28 +2161,28 @@
     0.04,
     0.04,
     0.04,
-    0.04,
+    0.03,
     0.03
    ],
    "takes": [
     {
-     "lufsMax": -15.84,
-     "truePeak": -6.14,
+     "lufsMax": -15.89,
+     "truePeak": -6.11,
      "duration": 0.77
     },
     {
-     "lufsMax": -16.02,
-     "truePeak": -6.61,
-     "duration": 0.75
+     "lufsMax": -15.91,
+     "truePeak": -7.07,
+     "duration": 0.78
     },
     {
-     "lufsMax": -16.12,
-     "truePeak": -6.33,
-     "duration": 0.72
-    },
-    {
-     "lufsMax": -16.03,
+     "lufsMax": -16.16,
      "truePeak": -6.74,
+     "duration": 0.71
+    },
+    {
+     "lufsMax": -16.07,
+     "truePeak": -6.73,
      "duration": 0.7
     }
    ]
@@ -2250,12 +2250,12 @@
      "duration": 0.86
     },
     {
-     "lufsMax": -15.3,
+     "lufsMax": -15.29,
      "truePeak": -6.99,
      "duration": 0.91
     },
     {
-     "lufsMax": -16.37,
+     "lufsMax": -16.42,
      "truePeak": -7.73,
      "duration": 0.75
     },
@@ -2329,18 +2329,18 @@
      "duration": 0.16
     },
     {
-     "lufsMax": -15.99,
-     "truePeak": -5.18,
+     "lufsMax": -16,
+     "truePeak": -5.15,
      "duration": 0.16
     },
     {
-     "lufsMax": -16.01,
-     "truePeak": -5.2,
+     "lufsMax": -16.03,
+     "truePeak": -5.17,
      "duration": 0.16
     },
     {
-     "lufsMax": -15.98,
-     "truePeak": -5.1,
+     "lufsMax": -15.97,
+     "truePeak": -5.12,
      "duration": 0.16
     }
    ]
@@ -2350,12 +2350,12 @@
    "id": "pickupSoft",
    "cat": "pickup",
    "desc": "Soft pop-and-chime pickup",
-   "gain": 0.823,
+   "gain": 0.826,
    "limited": false,
    "m": {
-    "peak": -1.92,
-    "truePeak": -1.91,
-    "lufsMax": -16.3,
+    "peak": -1.88,
+    "truePeak": -1.88,
+    "lufsMax": -16.26,
     "duration": 0.66,
     "centroid": 1523
    },
@@ -2403,23 +2403,23 @@
    ],
    "takes": [
     {
-     "lufsMax": -16.3,
-     "truePeak": -1.91,
+     "lufsMax": -16.26,
+     "truePeak": -1.88,
      "duration": 0.66
     },
     {
-     "lufsMax": -16.14,
-     "truePeak": -1.9,
+     "lufsMax": -16.1,
+     "truePeak": -1.87,
      "duration": 0.67
     },
     {
-     "lufsMax": -15.73,
-     "truePeak": -1.91,
+     "lufsMax": -15.84,
+     "truePeak": -1.88,
      "duration": 0.69
     },
     {
-     "lufsMax": -15.84,
-     "truePeak": -1.9,
+     "lufsMax": -15.81,
+     "truePeak": -1.86,
      "duration": 0.73
     }
    ]
@@ -2429,76 +2429,76 @@
    "id": "pickupItem",
    "cat": "pickup",
    "desc": "Grab an item: a short slide up",
-   "gain": 0.469,
-   "limited": true,
+   "gain": 0.572,
+   "limited": false,
    "m": {
-    "peak": -1.28,
-    "truePeak": -1.27,
-    "lufsMax": -17.45,
+    "peak": -1.51,
+    "truePeak": -1.48,
+    "lufsMax": -16.2,
     "duration": 0.14,
-    "centroid": 2299
+    "centroid": 2312
    },
    "env": [
-    0.79,
-    0.91,
-    0.84,
-    0.97,
-    1,
-    1,
-    0.95,
-    0.95,
-    0.91,
     0.89,
-    0.9,
-    0.83,
-    0.82,
-    0.77,
-    0.75,
-    0.71,
-    0.68,
-    0.68,
-    0.62,
-    0.62,
-    0.57,
+    1,
+    0.94,
+    1,
+    1,
+    1,
+    0.95,
+    1,
+    1,
+    0.98,
+    1,
+    0.93,
+    0.92,
+    0.86,
+    0.84,
+    0.79,
+    0.76,
+    0.76,
+    0.7,
+    0.69,
+    0.64,
+    0.6,
+    0.58,
     0.54,
     0.52,
     0.49,
-    0.46,
-    0.44,
-    0.4,
-    0.38,
-    0.35,
+    0.45,
+    0.42,
+    0.39,
+    0.37,
     0.33,
-    0.29,
+    0.3,
     0.27,
     0.24,
     0.21,
-    0.19,
-    0.16,
+    0.18,
+    0.15,
     0.13,
-    0.11,
-    0.08,
+    0.09,
     0.06
    ],
    "takes": [
     {
-     "lufsMax": -17.45,
-     "truePeak": -1.27,
+     "lufsMax": -16.2,
+     "truePeak": -1.48,
      "duration": 0.14
     },
     {
-     "lufsMax": -17.34,
-     "truePeak": -1.23,
+     "lufsMax": -16.1,
+     "truePeak": -1.49,
      "duration": 0.15
     },
     {
-     "lufsMax": -17.4,
-     "truePeak": -1.2,
+     "lufsMax": -16.17,
+     "truePeak": -1.48,
      "duration": 0.14
     },
     {
-     "lufsMax": -17.33,
-     "truePeak": -1.25,
+     "lufsMax": -16.09,
+     "truePeak": -1.47,
      "duration": 0.15
     }
    ]
@@ -2508,12 +2508,12 @@
    "id": "key",
    "cat": "pickup",
    "desc": "Key pickup: metal jingle and a chime",
-   "gain": 0.882,
+   "gain": 0.877,
    "limited": false,
    "m": {
-    "peak": -2.98,
-    "truePeak": -2.89,
-    "lufsMax": -16.21,
+    "peak": -3.03,
+    "truePeak": -2.94,
+    "lufsMax": -16.26,
     "duration": 0.8,
     "centroid": 5337
    },
@@ -2561,23 +2561,23 @@
    ],
    "takes": [
     {
-     "lufsMax": -16.21,
-     "truePeak": -2.89,
+     "lufsMax": -16.26,
+     "truePeak": -2.94,
      "duration": 0.8
     },
     {
-     "lufsMax": -16.15,
-     "truePeak": -3.25,
+     "lufsMax": -15.97,
+     "truePeak": -3.22,
      "duration": 0.79
     },
     {
-     "lufsMax": -16.09,
-     "truePeak": -2.97,
+     "lufsMax": -15.93,
+     "truePeak": -2.93,
      "duration": 0.83
     },
     {
-     "lufsMax": -15.55,
-     "truePeak": -2.89,
+     "lufsMax": -15.85,
+     "truePeak": -3.02,
      "duration": 0.83
     }
    ]
@@ -2650,7 +2650,7 @@
      "duration": 0.94
     },
     {
-     "lufsMax": -15.83,
+     "lufsMax": -15.84,
      "truePeak": -4.31,
      "duration": 0.94
     },
@@ -2666,76 +2666,76 @@
    "id": "ammo",
    "cat": "pickup",
    "desc": "Ammo or clip pickup: metallic clack",
-   "gain": 0.466,
+   "gain": 0.71,
    "limited": true,
    "m": {
-    "peak": -1.45,
-    "truePeak": -1.35,
-    "lufsMax": -18.85,
+    "peak": -1.51,
+    "truePeak": -1.43,
+    "lufsMax": -16.64,
     "duration": 0.16,
-    "centroid": 2473
+    "centroid": 2399
    },
    "env": [
-    0.98,
-    0.93,
-    0.76,
-    0.76,
-    0.76,
-    0.58,
-    0.52,
-    0.48,
-    0.42,
-    0.35,
-    0.31,
-    0.22,
-    0.18,
-    0.12,
-    0.07,
-    0.04,
-    0.02,
-    0.97,
     1,
-    0.92,
-    0.83,
+    0.88,
     0.82,
-    0.82,
-    0.79,
-    0.66,
-    0.69,
-    0.62,
-    0.57,
+    0.88,
+    0.89,
+    0.72,
+    0.64,
+    0.59,
     0.5,
-    0.45,
-    0.41,
-    0.38,
-    0.34,
+    0.43,
+    0.32,
+    0.27,
+    0.23,
+    0.15,
+    0.08,
+    0.05,
+    0.02,
+    1,
+    1,
+    0.98,
+    0.96,
+    1,
+    1,
+    0.98,
+    0.82,
+    0.85,
+    0.77,
+    0.7,
+    0.61,
+    0.56,
+    0.5,
+    0.47,
+    0.37,
     0.29,
-    0.22,
-    0.17,
-    0.13,
-    0.1,
-    0.07,
+    0.23,
+    0.19,
+    0.15,
+    0.12,
+    0.08,
     0.04
    ],
    "takes": [
     {
-     "lufsMax": -18.85,
-     "truePeak": -1.35,
+     "lufsMax": -16.64,
+     "truePeak": -1.43,
      "duration": 0.16
     },
     {
-     "lufsMax": -19.14,
-     "truePeak": -1.24,
+     "lufsMax": -16.74,
+     "truePeak": -1.3,
      "duration": 0.16
     },
     {
-     "lufsMax": -18.89,
-     "truePeak": -2.31,
-     "duration": 0.16
+     "lufsMax": -16.21,
+     "truePeak": -1.29,
+     "duration": 0.17
     },
     {
-     "lufsMax": -18.83,
-     "truePeak": -1.2,
+     "lufsMax": -16.7,
+     "truePeak": -1.39,
      "duration": 0.16
     }
    ]
@@ -2745,18 +2745,18 @@
    "id": "kaChing",
    "cat": "pickup",
    "desc": "Cash register for shops and purchases",
-   "gain": 0.267,
+   "gain": 0.265,
    "limited": false,
    "m": {
-    "peak": -7.97,
-    "truePeak": -4.55,
-    "lufsMax": -15.72,
+    "peak": -8.04,
+    "truePeak": -4.6,
+    "lufsMax": -15.78,
     "duration": 0.77,
-    "centroid": 8554
+    "centroid": 8552
    },
    "env": [
-    0.51,
-    0.37,
+    0.5,
+    0.38,
     0.2,
     1,
     0.99,
@@ -2776,17 +2776,17 @@
     0.53,
     0.49,
     0.45,
-    0.42,
+    0.43,
     0.4,
     0.36,
     0.34,
     0.31,
     0.28,
     0.26,
-    0.23,
+    0.24,
     0.21,
     0.19,
-    0.16,
+    0.17,
     0.14,
     0.12,
     0.1,
@@ -2798,24 +2798,24 @@
    ],
    "takes": [
     {
-     "lufsMax": -15.72,
-     "truePeak": -4.55,
+     "lufsMax": -15.78,
+     "truePeak": -4.6,
      "duration": 0.77
     },
     {
-     "lufsMax": -16.6,
-     "truePeak": -5.35,
-     "duration": 0.69
+     "lufsMax": -16.49,
+     "truePeak": -5.39,
+     "duration": 0.71
     },
     {
-     "lufsMax": -15.82,
-     "truePeak": -4.69,
-     "duration": 0.75
+     "lufsMax": -15.77,
+     "truePeak": -4.75,
+     "duration": 0.77
     },
     {
-     "lufsMax": -15.82,
-     "truePeak": -4.6,
-     "duration": 0.82
+     "lufsMax": -16.01,
+     "truePeak": -4.7,
+     "duration": 0.8
     }
    ]
   },
@@ -2824,36 +2824,36 @@
    "id": "xpOrb",
    "cat": "pickup",
    "desc": "Experience orb, small and bright",
-   "gain": 0.873,
-   "limited": true,
+   "gain": 0.963,
+   "limited": false,
    "m": {
-    "peak": -1.26,
-    "truePeak": -1.26,
-    "lufsMax": -16.91,
+    "peak": -1.51,
+    "truePeak": -1.48,
+    "lufsMax": -16.24,
     "duration": 0.43,
-    "centroid": 1918
+    "centroid": 1920
    },
    "env": [
     1,
-    0.84,
-    0.68,
+    0.9,
+    0.72,
+    0.56,
+    0.42,
+    0.28,
     0.53,
-    0.39,
-    0.27,
     0.49,
-    0.46,
-    0.37,
-    0.29,
-    0.22,
-    0.16,
-    0.1,
-    0.26,
-    0.22,
+    0.39,
+    0.31,
+    0.23,
     0.17,
-    0.13,
+    0.11,
+    0.28,
+    0.23,
+    0.18,
+    0.14,
     0.1,
     0.07,
-    0.14,
+    0.15,
     0.14,
     0.11,
     0.08,
@@ -2861,7 +2861,7 @@
     0.04,
     0.03,
     0.08,
-    0.06,
+    0.07,
     0.05,
     0.04,
     0.03,
@@ -2877,23 +2877,23 @@
    ],
    "takes": [
     {
-     "lufsMax": -16.91,
-     "truePeak": -1.26,
+     "lufsMax": -16.24,
+     "truePeak": -1.48,
      "duration": 0.43
     },
     {
-     "lufsMax": -16.96,
-     "truePeak": -1.21,
+     "lufsMax": -16.28,
+     "truePeak": -1.5,
      "duration": 0.43
     },
     {
-     "lufsMax": -17.08,
-     "truePeak": -1.2,
+     "lufsMax": -16.4,
+     "truePeak": -1.49,
      "duration": 0.43
     },
     {
-     "lufsMax": -16.45,
-     "truePeak": -1.24,
+     "lufsMax": -15.77,
+     "truePeak": -1.51,
      "duration": 0.43
     }
    ]
@@ -3041,16 +3041,16 @@
     },
     {
      "lufsMax": -14.76,
-     "truePeak": -6.96,
+     "truePeak": -6.98,
      "duration": 0.78
     },
     {
-     "lufsMax": -16.34,
-     "truePeak": -6.95,
+     "lufsMax": -16.44,
+     "truePeak": -7.02,
      "duration": 0.7
     },
     {
-     "lufsMax": -16.38,
+     "lufsMax": -16.37,
      "truePeak": -7.88,
      "duration": 0.86
     }
@@ -3061,12 +3061,12 @@
    "id": "jump",
    "cat": "jump",
    "desc": "Platformer jump: square sweep up",
-   "gain": 0.425,
+   "gain": 0.426,
    "limited": false,
    "m": {
-    "peak": -3.04,
-    "truePeak": -3.04,
-    "lufsMax": -16.07,
+    "peak": -3.02,
+    "truePeak": -3.02,
+    "lufsMax": -16.05,
     "duration": 0.18,
     "centroid": 1629
    },
@@ -3114,13 +3114,13 @@
    ],
    "takes": [
     {
-     "lufsMax": -16.07,
-     "truePeak": -3.04,
+     "lufsMax": -16.05,
+     "truePeak": -3.02,
      "duration": 0.18
     },
     {
-     "lufsMax": -15.97,
-     "truePeak": -3.04,
+     "lufsMax": -15.96,
+     "truePeak": -3.03,
      "duration": 0.19
     },
     {
@@ -3129,8 +3129,8 @@
      "duration": 0.18
     },
     {
-     "lufsMax": -15.97,
-     "truePeak": -3.07,
+     "lufsMax": -15.95,
+     "truePeak": -3.04,
      "duration": 0.19
     }
    ]
@@ -3140,76 +3140,76 @@
    "id": "jumpSoft",
    "cat": "jump",
    "desc": "Gentle hop for cute characters",
-   "gain": 0.766,
-   "limited": true,
+   "gain": 0.846,
+   "limited": false,
    "m": {
-    "peak": -1.47,
-    "truePeak": -1.47,
-    "lufsMax": -17,
+    "peak": -1.51,
+    "truePeak": -1.5,
+    "lufsMax": -16.3,
     "duration": 0.15,
-    "centroid": 756
+    "centroid": 760
    },
    "env": [
-    0.94,
-    0.98,
+    0.99,
     1,
     1,
-    0.93,
+    1,
+    0.96,
+    0.97,
     0.92,
-    0.88,
-    0.82,
-    0.82,
-    0.78,
-    0.76,
-    0.73,
-    0.7,
+    0.87,
+    0.87,
+    0.83,
+    0.8,
+    0.77,
+    0.74,
+    0.71,
+    0.69,
     0.67,
-    0.65,
-    0.63,
+    0.62,
     0.59,
-    0.56,
-    0.54,
+    0.57,
+    0.55,
     0.52,
     0.5,
     0.47,
     0.45,
     0.42,
-    0.4,
+    0.39,
     0.37,
     0.35,
-    0.33,
+    0.32,
     0.3,
-    0.28,
-    0.26,
-    0.23,
-    0.21,
-    0.19,
-    0.16,
+    0.27,
+    0.25,
+    0.22,
+    0.2,
+    0.17,
     0.14,
-    0.11,
-    0.09,
+    0.12,
+    0.1,
     0.07,
     0.04
    ],
    "takes": [
     {
-     "lufsMax": -17,
-     "truePeak": -1.47,
+     "lufsMax": -16.3,
+     "truePeak": -1.5,
      "duration": 0.15
     },
     {
-     "lufsMax": -16.77,
-     "truePeak": -1.24,
+     "lufsMax": -16.08,
+     "truePeak": -1.5,
      "duration": 0.16
     },
     {
-     "lufsMax": -16.91,
-     "truePeak": -1.51,
+     "lufsMax": -16.21,
+     "truePeak": -1.5,
      "duration": 0.15
     },
     {
-     "lufsMax": -16.79,
-     "truePeak": -1.21,
+     "lufsMax": -16.11,
+     "truePeak": -1.5,
      "duration": 0.16
     }
    ]
@@ -3222,22 +3222,22 @@
    "gain": 0.364,
    "limited": false,
    "m": {
-    "peak": -2.84,
-    "truePeak": -2.83,
+    "peak": -2.8,
+    "truePeak": -2.8,
     "lufsMax": -16.06,
     "duration": 0.3,
-    "centroid": 1704
+    "centroid": 1707
    },
    "env": [
     0.83,
     0.9,
     0.94,
-    0.96,
+    0.95,
     0.97,
+    0.98,
     0.99,
     1,
-    1,
-    1,
+    0.99,
     0.98,
     0.91,
     0.86,
@@ -3247,14 +3247,14 @@
     0.77,
     0.72,
     0.67,
-    0.63,
+    0.62,
     0.64,
     0.6,
     0.52,
     0.54,
     0.51,
     0.45,
-    0.46,
+    0.45,
     0.39,
     0.38,
     0.34,
@@ -3273,21 +3273,21 @@
    "takes": [
     {
      "lufsMax": -16.06,
-     "truePeak": -2.83,
+     "truePeak": -2.8,
      "duration": 0.3
     },
     {
-     "lufsMax": -15.97,
-     "truePeak": -2.18,
+     "lufsMax": -15.98,
+     "truePeak": -2.12,
      "duration": 0.32
     },
     {
-     "lufsMax": -16.01,
-     "truePeak": -3.1,
+     "lufsMax": -16.03,
+     "truePeak": -2.64,
      "duration": 0.31
     },
     {
-     "lufsMax": -15.97,
+     "lufsMax": -15.96,
      "truePeak": -1.9,
      "duration": 0.32
     }
@@ -3298,76 +3298,76 @@
    "id": "jumpDouble",
    "cat": "jump",
    "desc": "Second jump in mid-air, higher and airier",
-   "gain": 0.611,
-   "limited": true,
+   "gain": 0.677,
+   "limited": false,
    "m": {
-    "peak": -1.6,
-    "truePeak": -1.6,
-    "lufsMax": -17.04,
+    "peak": -1.51,
+    "truePeak": -1.48,
+    "lufsMax": -16.28,
     "duration": 0.14,
-    "centroid": 2866
+    "centroid": 2859
    },
    "env": [
-    0.94,
-    0.98,
+    0.99,
+    1,
+    1,
+    1,
+    1,
     1,
     1,
     0.98,
+    0.97,
     0.95,
-    0.95,
-    0.94,
-    0.91,
     0.89,
-    0.85,
+    0.9,
     0.84,
     0.8,
-    0.76,
-    0.76,
-    0.7,
+    0.8,
+    0.74,
+    0.73,
     0.69,
-    0.65,
+    0.67,
     0.63,
-    0.6,
-    0.58,
+    0.62,
+    0.57,
     0.55,
-    0.51,
-    0.5,
-    0.48,
-    0.44,
-    0.41,
-    0.38,
-    0.35,
-    0.32,
-    0.3,
-    0.28,
-    0.24,
-    0.22,
-    0.19,
-    0.16,
-    0.14,
-    0.11,
+    0.52,
+    0.49,
+    0.46,
+    0.43,
+    0.4,
+    0.37,
+    0.34,
+    0.31,
+    0.29,
+    0.25,
+    0.23,
+    0.2,
+    0.17,
+    0.15,
+    0.12,
     0.09,
     0.06
    ],
    "takes": [
     {
-     "lufsMax": -17.04,
-     "truePeak": -1.6,
+     "lufsMax": -16.28,
+     "truePeak": -1.48,
      "duration": 0.14
     },
     {
-     "lufsMax": -16.78,
-     "truePeak": -1.27,
+     "lufsMax": -16.09,
+     "truePeak": -1.46,
      "duration": 0.15
     },
     {
-     "lufsMax": -16.98,
-     "truePeak": -1.59,
+     "lufsMax": -16.26,
+     "truePeak": -1.46,
      "duration": 0.15
     },
     {
-     "lufsMax": -16.81,
-     "truePeak": -1.21,
+     "lufsMax": -16.12,
+     "truePeak": -1.45,
      "duration": 0.15
     }
    ]
@@ -3456,76 +3456,76 @@
    "id": "hop",
    "cat": "jump",
    "desc": "Tiny hop for small creatures",
-   "gain": 0.87,
-   "limited": true,
+   "gain": 1.06,
+   "limited": false,
    "m": {
-    "peak": -1.21,
-    "truePeak": -1.21,
-    "lufsMax": -16.88,
+    "peak": -1.51,
+    "truePeak": -1.44,
+    "lufsMax": -16.29,
     "duration": 0.1,
-    "centroid": 1755
+    "centroid": 1724
    },
    "env": [
-    0.99,
     1,
     1,
-    0.99,
-    0.99,
     1,
-    0.99,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
     1,
     0.99,
     0.98,
-    0.95,
-    0.91,
-    0.89,
-    0.85,
-    0.83,
-    0.8,
-    0.77,
+    0.96,
+    0.93,
+    0.9,
+    0.87,
+    0.82,
+    0.79,
+    0.76,
     0.73,
-    0.71,
     0.68,
-    0.65,
-    0.61,
-    0.58,
+    0.66,
+    0.62,
+    0.59,
     0.55,
-    0.52,
-    0.49,
-    0.46,
-    0.43,
-    0.4,
-    0.36,
-    0.33,
+    0.51,
+    0.48,
+    0.45,
+    0.41,
+    0.37,
+    0.34,
     0.3,
     0.27,
-    0.24,
-    0.21,
-    0.18,
-    0.15,
-    0.12,
-    0.08,
-    0.04
+    0.23,
+    0.2,
+    0.17,
+    0.13,
+    0.09,
+    0.05
    ],
    "takes": [
     {
-     "lufsMax": -16.88,
-     "truePeak": -1.21,
+     "lufsMax": -16.29,
+     "truePeak": -1.44,
      "duration": 0.1
     },
     {
-     "lufsMax": -16.8,
-     "truePeak": -1.21,
+     "lufsMax": -16.17,
+     "truePeak": -1.45,
      "duration": 0.11
     },
     {
-     "lufsMax": -16.86,
-     "truePeak": -1.23,
+     "lufsMax": -16.25,
+     "truePeak": -1.44,
      "duration": 0.1
     },
     {
-     "lufsMax": -16.77,
-     "truePeak": -1.2,
+     "lufsMax": -16.15,
+     "truePeak": -1.43,
      "duration": 0.1
     }
    ]
@@ -3535,76 +3535,76 @@
    "id": "land",
    "cat": "jump",
    "desc": "Landing on solid ground",
-   "gain": 0.505,
+   "gain": 0.796,
    "limited": true,
    "m": {
-    "peak": -1.2,
-    "truePeak": -1.19,
-    "lufsMax": -18.66,
+    "peak": -1.51,
+    "truePeak": -1.5,
+    "lufsMax": -16.24,
     "duration": 0.14,
-    "centroid": 344
+    "centroid": 324
    },
    "env": [
-    0.95,
     1,
-    0.92,
-    0.84,
-    0.79,
-    0.89,
-    0.82,
-    0.72,
-    0.76,
-    0.78,
+    1,
+    0.94,
+    0.88,
+    0.9,
+    1,
+    0.91,
+    0.88,
+    0.97,
+    1,
+    1,
+    0.88,
+    0.87,
+    0.81,
     0.8,
-    0.69,
-    0.69,
-    0.63,
-    0.63,
-    0.58,
-    0.58,
-    0.53,
-    0.53,
-    0.41,
-    0.47,
-    0.38,
-    0.41,
-    0.39,
-    0.34,
-    0.34,
-    0.26,
-    0.28,
+    0.74,
+    0.73,
+    0.68,
+    0.68,
+    0.57,
+    0.6,
+    0.45,
+    0.52,
+    0.48,
+    0.44,
+    0.44,
+    0.31,
+    0.35,
+    0.33,
     0.27,
-    0.2,
-    0.21,
+    0.27,
+    0.22,
     0.19,
-    0.15,
-    0.15,
+    0.19,
+    0.13,
     0.12,
-    0.09,
-    0.09,
+    0.12,
     0.06,
-    0.04,
+    0.06,
     0.04
    ],
    "takes": [
     {
-     "lufsMax": -18.66,
-     "truePeak": -1.19,
+     "lufsMax": -16.24,
+     "truePeak": -1.5,
      "duration": 0.14
     },
     {
-     "lufsMax": -19.98,
-     "truePeak": -2,
+     "lufsMax": -16.9,
+     "truePeak": -1.49,
+     "duration": 0.15
+    },
+    {
+     "lufsMax": -16.19,
+     "truePeak": -1.49,
      "duration": 0.14
     },
     {
-     "lufsMax": -19.55,
-     "truePeak": -3.4,
-     "duration": 0.14
-    },
-    {
-     "lufsMax": -19.75,
-     "truePeak": -2.27,
+     "lufsMax": -16.78,
+     "truePeak": -1.5,
      "duration": 0.14
     }
    ]
@@ -3617,8 +3617,8 @@
    "gain": 0.539,
    "limited": false,
    "m": {
-    "peak": -1.44,
-    "truePeak": -1.42,
+    "peak": -1.43,
+    "truePeak": -1.41,
     "lufsMax": -15.74,
     "duration": 0.3,
     "centroid": 281
@@ -3626,13 +3626,13 @@
    "env": [
     1,
     0.98,
-    0.77,
+    0.76,
     0.8,
     0.91,
-    0.82,
+    0.81,
     0.86,
     0.82,
-    0.81,
+    0.82,
     0.8,
     0.74,
     0.76,
@@ -3668,22 +3668,22 @@
    "takes": [
     {
      "lufsMax": -15.74,
-     "truePeak": -1.42,
+     "truePeak": -1.41,
      "duration": 0.3
     },
     {
-     "lufsMax": -16.05,
-     "truePeak": -3.36,
+     "lufsMax": -16.04,
+     "truePeak": -3.43,
      "duration": 0.32
     },
     {
-     "lufsMax": -16.26,
-     "truePeak": -3.2,
+     "lufsMax": -16.27,
+     "truePeak": -3.23,
      "duration": 0.31
     },
     {
      "lufsMax": -15.98,
-     "truePeak": -2,
+     "truePeak": -2.02,
      "duration": 0.32
     }
    ]
@@ -3756,7 +3756,7 @@
      "duration": 0.47
     },
     {
-     "lufsMax": -16.01,
+     "lufsMax": -16.02,
      "truePeak": -3.78,
      "duration": 0.45
     },
@@ -3772,14 +3772,14 @@
    "id": "wallJump",
    "cat": "jump",
    "desc": "Push off a wall: scuff then rise",
-   "gain": 0.684,
+   "gain": 0.688,
    "limited": true,
    "m": {
-    "peak": -1.28,
-    "truePeak": -1.28,
-    "lufsMax": -16.63,
+    "peak": -1.27,
+    "truePeak": -1.26,
+    "lufsMax": -16.58,
     "duration": 0.14,
-    "centroid": 1897
+    "centroid": 1899
    },
    "env": [
     0.44,
@@ -3787,12 +3787,12 @@
     0.32,
     0.38,
     0.29,
-    0.73,
+    0.74,
     0.99,
     1,
     1,
     0.98,
-    0.96,
+    0.97,
     0.94,
     0.91,
     0.88,
@@ -3803,8 +3803,8 @@
     0.74,
     0.7,
     0.67,
-    0.62,
-    0.59,
+    0.63,
+    0.6,
     0.57,
     0.54,
     0.51,
@@ -3817,7 +3817,7 @@
     0.28,
     0.25,
     0.22,
-    0.18,
+    0.19,
     0.15,
     0.13,
     0.1,
@@ -3825,24 +3825,24 @@
    ],
    "takes": [
     {
-     "lufsMax": -16.63,
-     "truePeak": -1.28,
+     "lufsMax": -16.58,
+     "truePeak": -1.26,
      "duration": 0.14
     },
     {
-     "lufsMax": -16.89,
+     "lufsMax": -16.84,
+     "truePeak": -1.24,
+     "duration": 0.14
+    },
+    {
+     "lufsMax": -16.52,
+     "truePeak": -1.31,
+     "duration": 0.14
+    },
+    {
+     "lufsMax": -16.81,
      "truePeak": -1.2,
      "duration": 0.14
-    },
-    {
-     "lufsMax": -16.36,
-     "truePeak": -1.34,
-     "duration": 0.15
-    },
-    {
-     "lufsMax": -16.88,
-     "truePeak": -1.23,
-     "duration": 0.13
     }
    ]
   },
@@ -3851,77 +3851,77 @@
    "id": "hit",
    "cat": "hit",
    "desc": "Solid all-round hit: click, body, thump",
-   "gain": 0.402,
+   "gain": 0.777,
    "limited": true,
    "m": {
-    "peak": -2.24,
-    "truePeak": -2.24,
-    "lufsMax": -18.14,
-    "duration": 0.16,
-    "centroid": 1303
+    "peak": -1.51,
+    "truePeak": -1.5,
+    "lufsMax": -17.35,
+    "duration": 0.67,
+    "centroid": 613
    },
    "env": [
-    0.88,
     1,
-    0.99,
-    0.92,
-    0.95,
+    0.88,
+    0.9,
     0.7,
-    0.78,
-    0.93,
-    0.71,
-    0.92,
-    0.85,
-    0.92,
-    0.87,
-    0.78,
-    0.74,
-    0.66,
-    0.59,
-    0.69,
-    0.64,
-    0.6,
-    0.56,
+    0.55,
     0.5,
-    0.51,
-    0.47,
     0.43,
-    0.36,
-    0.38,
+    0.39,
     0.33,
-    0.33,
-    0.3,
-    0.27,
-    0.26,
-    0.21,
-    0.21,
-    0.15,
-    0.15,
+    0.32,
+    0.22,
+    0.19,
+    0.18,
+    0.18,
+    0.17,
+    0.19,
+    0.13,
+    0.13,
+    0.13,
+    0.12,
     0.1,
-    0.09,
     0.07,
-    0.03
+    0.07,
+    0.06,
+    0.07,
+    0.08,
+    0.06,
+    0.06,
+    0.04,
+    0.04,
+    0.04,
+    0.04,
+    0.04,
+    0.03,
+    0.03,
+    0.02,
+    0.02,
+    0.02,
+    0.02,
+    0.02
    ],
    "takes": [
     {
-     "lufsMax": -18.14,
-     "truePeak": -2.24,
-     "duration": 0.16
+     "lufsMax": -17.35,
+     "truePeak": -1.5,
+     "duration": 0.67
     },
     {
-     "lufsMax": -18.75,
-     "truePeak": -1.64,
-     "duration": 0.15
+     "lufsMax": -17.66,
+     "truePeak": -1.48,
+     "duration": 0.66
     },
     {
-     "lufsMax": -18.5,
-     "truePeak": -1.89,
-     "duration": 0.16
+     "lufsMax": -16.61,
+     "truePeak": -1.5,
+     "duration": 0.67
     },
     {
-     "lufsMax": -18.98,
-     "truePeak": -1.2,
-     "duration": 0.17
+     "lufsMax": -18.1,
+     "truePeak": -1.51,
+     "duration": 0.67
     }
    ]
   },
@@ -3930,43 +3930,43 @@
    "id": "hitLight",
    "cat": "hit",
    "desc": "Light jab or tap",
-   "gain": 0.599,
+   "gain": 0.602,
    "limited": true,
    "m": {
-    "peak": -1.39,
-    "truePeak": -1.26,
-    "lufsMax": -16.38,
+    "peak": -1.28,
+    "truePeak": -1.23,
+    "lufsMax": -16.34,
     "duration": 0.09,
-    "centroid": 5587
+    "centroid": 5585
    },
    "env": [
     0.83,
     0.94,
     0.99,
-    0.99,
+    0.98,
     0.99,
     1,
-    0.99,
     0.98,
-    0.93,
+    0.98,
+    0.92,
     0.96,
-    0.9,
+    0.89,
     0.91,
-    0.85,
+    0.84,
     0.85,
     0.83,
-    0.81,
+    0.8,
     0.78,
-    0.74,
+    0.73,
     0.79,
     0.77,
-    0.67,
     0.66,
+    0.67,
     0.6,
     0.55,
     0.54,
     0.47,
-    0.43,
+    0.44,
     0.48,
     0.38,
     0.34,
@@ -3975,7 +3975,7 @@
     0.27,
     0.25,
     0.19,
-    0.17,
+    0.16,
     0.12,
     0.1,
     0.07,
@@ -3983,23 +3983,23 @@
    ],
    "takes": [
     {
-     "lufsMax": -16.38,
-     "truePeak": -1.26,
+     "lufsMax": -16.34,
+     "truePeak": -1.23,
      "duration": 0.09
     },
     {
-     "lufsMax": -16.23,
-     "truePeak": -1.37,
+     "lufsMax": -16.25,
+     "truePeak": -1.23,
      "duration": 0.09
     },
     {
-     "lufsMax": -16.09,
-     "truePeak": -1.44,
+     "lufsMax": -16.12,
+     "truePeak": -1.36,
      "duration": 0.09
     },
     {
-     "lufsMax": -16.33,
-     "truePeak": -1.19,
+     "lufsMax": -16.25,
+     "truePeak": -1.2,
      "duration": 0.09
     }
    ]
@@ -4009,50 +4009,50 @@
    "id": "hitHeavy",
    "cat": "hit",
    "desc": "Heavy blow with crunch and low end",
-   "gain": 0.398,
+   "gain": 0.409,
    "limited": true,
    "m": {
-    "peak": -1.71,
-    "truePeak": -1.69,
-    "lufsMax": -17.16,
-    "duration": 0.69,
-    "centroid": 1902
+    "peak": -1.51,
+    "truePeak": -1.29,
+    "lufsMax": -16.77,
+    "duration": 0.7,
+    "centroid": 1894
    },
    "env": [
     1,
-    0.83,
-    0.81,
-    0.72,
+    0.87,
+    0.8,
     0.75,
-    0.7,
-    0.7,
-    0.66,
+    0.74,
+    0.73,
+    0.71,
+    0.65,
     0.51,
-    0.5,
-    0.45,
-    0.43,
-    0.34,
-    0.31,
+    0.44,
+    0.46,
+    0.38,
+    0.35,
+    0.32,
     0.26,
-    0.2,
     0.23,
+    0.21,
     0.2,
-    0.2,
+    0.18,
     0.14,
     0.1,
-    0.09,
-    0.11,
     0.1,
-    0.09,
+    0.11,
+    0.08,
+    0.08,
     0.06,
     0.06,
-    0.05,
+    0.04,
     0.04,
     0.06,
-    0.06,
-    0.05,
+    0.04,
     0.05,
     0.03,
+    0.04,
     0.04,
     0.04,
     0.04,
@@ -4062,23 +4062,23 @@
    ],
    "takes": [
     {
-     "lufsMax": -17.16,
-     "truePeak": -1.69,
-     "duration": 0.69
+     "lufsMax": -16.77,
+     "truePeak": -1.29,
+     "duration": 0.7
     },
     {
-     "lufsMax": -17.51,
-     "truePeak": -1.71,
+     "lufsMax": -17.1,
+     "truePeak": -2.31,
      "duration": 0.68
     },
     {
-     "lufsMax": -17.25,
-     "truePeak": -1.56,
-     "duration": 0.68
+     "lufsMax": -16.93,
+     "truePeak": -1.68,
+     "duration": 0.71
     },
     {
-     "lufsMax": -16.86,
-     "truePeak": -1.19,
+     "lufsMax": -17.24,
+     "truePeak": -1.21,
      "duration": 0.69
     }
    ]
@@ -4088,77 +4088,77 @@
    "id": "punch",
    "cat": "hit",
    "desc": "Cartoon punch, meaty",
-   "gain": 0.411,
-   "limited": true,
+   "gain": 0.764,
+   "limited": false,
    "m": {
-    "peak": -1.21,
-    "truePeak": -1.19,
-    "lufsMax": -17.79,
-    "duration": 0.18,
-    "centroid": 1254
+    "peak": -1.51,
+    "truePeak": -1.47,
+    "lufsMax": -15.31,
+    "duration": 0.67,
+    "centroid": 1330
    },
    "env": [
-    0.91,
     1,
-    0.89,
-    0.89,
-    0.89,
-    0.82,
-    0.76,
-    0.8,
-    0.83,
-    0.88,
-    0.82,
-    0.77,
-    0.74,
-    0.74,
-    0.74,
-    0.68,
-    0.63,
-    0.66,
-    0.58,
-    0.62,
+    1,
+    1,
+    0.86,
+    0.73,
+    0.7,
     0.53,
-    0.58,
-    0.48,
     0.52,
     0.41,
-    0.46,
-    0.34,
-    0.39,
-    0.34,
-    0.32,
-    0.31,
-    0.26,
-    0.26,
-    0.17,
-    0.18,
-    0.15,
-    0.11,
-    0.11,
+    0.38,
+    0.28,
+    0.25,
+    0.28,
+    0.2,
+    0.2,
+    0.14,
+    0.16,
+    0.16,
+    0.13,
+    0.12,
+    0.12,
+    0.1,
+    0.1,
+    0.08,
+    0.08,
+    0.05,
+    0.06,
+    0.05,
+    0.06,
+    0.06,
     0.04,
-    0.04
+    0.04,
+    0.04,
+    0.03,
+    0.03,
+    0.02,
+    0.03,
+    0.03,
+    0.03,
+    0.02
    ],
    "takes": [
     {
-     "lufsMax": -17.79,
-     "truePeak": -1.19,
-     "duration": 0.18
+     "lufsMax": -15.31,
+     "truePeak": -1.47,
+     "duration": 0.67
     },
     {
-     "lufsMax": -18.08,
-     "truePeak": -2.58,
-     "duration": 0.17
+     "lufsMax": -15.54,
+     "truePeak": -1.48,
+     "duration": 0.65
     },
     {
-     "lufsMax": -18.08,
-     "truePeak": -2.26,
-     "duration": 0.18
+     "lufsMax": -14.44,
+     "truePeak": -1.45,
+     "duration": 0.67
     },
     {
-     "lufsMax": -17.78,
-     "truePeak": -1.56,
-     "duration": 0.19
+     "lufsMax": -15.64,
+     "truePeak": -1.44,
+     "duration": 0.68
     }
    ]
   },
@@ -4167,20 +4167,20 @@
    "id": "slap",
    "cat": "hit",
    "desc": "Flat slap",
-   "gain": 0.492,
+   "gain": 0.494,
    "limited": true,
    "m": {
     "peak": -2.26,
-    "truePeak": -1.78,
-    "lufsMax": -18.33,
+    "truePeak": -1.75,
+    "lufsMax": -18.3,
     "duration": 0.54,
     "centroid": 6255
    },
    "env": [
     1,
-    0.9,
+    0.91,
     0.68,
-    0.42,
+    0.43,
     0.42,
     0.44,
     0.35,
@@ -4193,7 +4193,7 @@
     0.16,
     0.16,
     0.16,
-    0.13,
+    0.14,
     0.12,
     0.12,
     0.11,
@@ -4220,24 +4220,24 @@
    ],
    "takes": [
     {
-     "lufsMax": -18.33,
-     "truePeak": -1.78,
+     "lufsMax": -18.3,
+     "truePeak": -1.75,
      "duration": 0.54
     },
     {
      "lufsMax": -18.18,
-     "truePeak": -2.52,
+     "truePeak": -2.55,
      "duration": 0.54
     },
     {
      "lufsMax": -17.94,
-     "truePeak": -1.2,
-     "duration": 0.56
+     "truePeak": -1.21,
+     "duration": 0.54
     },
     {
-     "lufsMax": -17.99,
-     "truePeak": -1.64,
-     "duration": 0.55
+     "lufsMax": -17.94,
+     "truePeak": -1.57,
+     "duration": 0.54
     }
    ]
   },
@@ -4249,36 +4249,36 @@
    "gain": 0.398,
    "limited": false,
    "m": {
-    "peak": -5.39,
-    "truePeak": -5.39,
-    "lufsMax": -15.12,
+    "peak": -5.5,
+    "truePeak": -5.5,
+    "lufsMax": -15.16,
     "duration": 0.2,
-    "centroid": 2038
+    "centroid": 2046
    },
    "env": [
+    0.97,
+    1,
+    0.97,
     0.98,
     1,
-    0.98,
-    0.99,
     0.96,
+    0.95,
     0.96,
-    0.96,
-    0.94,
-    0.94,
-    0.91,
-    0.9,
-    0.9,
+    0.93,
     0.88,
+    0.91,
+    0.91,
     0.85,
     0.85,
     0.83,
-    0.79,
-    0.77,
+    0.83,
+    0.81,
     0.78,
+    0.77,
     0.74,
     0.72,
-    0.69,
-    0.66,
+    0.7,
+    0.67,
     0.64,
     0.6,
     0.57,
@@ -4291,7 +4291,7 @@
     0.32,
     0.28,
     0.24,
-    0.2,
+    0.21,
     0.18,
     0.14,
     0.1,
@@ -4299,23 +4299,23 @@
    ],
    "takes": [
     {
-     "lufsMax": -15.12,
-     "truePeak": -5.39,
-     "duration": 0.2
-    },
-    {
-     "lufsMax": -14.88,
-     "truePeak": -5.27,
-     "duration": 0.21
-    },
-    {
-     "lufsMax": -15.11,
-     "truePeak": -5.47,
+     "lufsMax": -15.16,
+     "truePeak": -5.5,
      "duration": 0.2
     },
     {
      "lufsMax": -14.91,
-     "truePeak": -5.46,
+     "truePeak": -5.22,
+     "duration": 0.21
+    },
+    {
+     "lufsMax": -15.03,
+     "truePeak": -5.21,
+     "duration": 0.2
+    },
+    {
+     "lufsMax": -14.87,
+     "truePeak": -5.23,
      "duration": 0.21
     }
    ]
@@ -4325,76 +4325,76 @@
    "id": "enemyHit",
    "cat": "hit",
    "desc": "Enemy flinches: short high blip and smack",
-   "gain": 0.349,
+   "gain": 0.485,
    "limited": true,
    "m": {
-    "peak": -1.47,
-    "truePeak": -1.36,
-    "lufsMax": -20.38,
+    "peak": -1.51,
+    "truePeak": -1.21,
+    "lufsMax": -18.71,
     "duration": 0.11,
-    "centroid": 4020
+    "centroid": 3899
    },
    "env": [
-    0.95,
-    0.91,
     1,
-    0.95,
-    0.87,
-    0.95,
-    0.78,
+    0.99,
+    1,
+    1,
+    0.94,
+    1,
+    0.92,
+    0.98,
     0.86,
-    0.73,
-    0.79,
-    0.73,
-    0.72,
-    0.73,
-    0.58,
+    0.94,
+    0.87,
+    0.85,
+    0.86,
+    0.7,
+    0.77,
     0.66,
+    0.68,
+    0.65,
+    0.59,
+    0.59,
     0.56,
-    0.58,
-    0.55,
+    0.52,
     0.5,
-    0.5,
-    0.48,
-    0.44,
-    0.43,
-    0.4,
-    0.38,
-    0.36,
-    0.33,
-    0.31,
-    0.29,
+    0.47,
+    0.45,
+    0.42,
+    0.39,
+    0.37,
+    0.34,
+    0.32,
+    0.28,
     0.27,
     0.24,
-    0.23,
-    0.2,
-    0.18,
+    0.21,
+    0.19,
     0.16,
-    0.13,
+    0.14,
     0.12,
-    0.1,
-    0.07,
+    0.08,
     0.05
    ],
    "takes": [
     {
-     "lufsMax": -20.38,
-     "truePeak": -1.36,
+     "lufsMax": -18.71,
+     "truePeak": -1.21,
      "duration": 0.11
     },
     {
-     "lufsMax": -20.29,
-     "truePeak": -1.21,
+     "lufsMax": -18.76,
+     "truePeak": -1.22,
      "duration": 0.12
     },
     {
-     "lufsMax": -20.4,
-     "truePeak": -1.48,
+     "lufsMax": -18.67,
+     "truePeak": -1.13,
      "duration": 0.11
     },
     {
-     "lufsMax": -20.4,
-     "truePeak": -2.55,
+     "lufsMax": -18.5,
+     "truePeak": -1.05,
      "duration": 0.12
     }
    ]
@@ -4407,41 +4407,41 @@
    "gain": 0.347,
    "limited": false,
    "m": {
-    "peak": -5.7,
-    "truePeak": -5.19,
-    "lufsMax": -14.98,
+    "peak": -5.79,
+    "truePeak": -5.27,
+    "lufsMax": -14.99,
     "duration": 0.37,
-    "centroid": 4133
+    "centroid": 4171
    },
    "env": [
     1,
-    0.95,
+    0.99,
     0.97,
-    0.97,
-    0.95,
-    0.89,
+    0.98,
+    0.93,
+    0.94,
+    0.92,
     0.91,
-    0.89,
-    0.87,
-    0.83,
-    0.83,
-    0.79,
-    0.77,
+    0.84,
+    0.84,
+    0.84,
+    0.82,
     0.76,
-    0.73,
-    0.71,
-    0.68,
+    0.74,
+    0.74,
+    0.67,
+    0.7,
     0.67,
     0.63,
-    0.63,
+    0.61,
     0.6,
-    0.57,
     0.55,
+    0.54,
     0.52,
-    0.49,
-    0.49,
-    0.45,
-    0.43,
+    0.52,
+    0.48,
+    0.44,
+    0.44,
     0.41,
     0.38,
     0.35,
@@ -4457,23 +4457,23 @@
    ],
    "takes": [
     {
-     "lufsMax": -14.98,
-     "truePeak": -5.19,
+     "lufsMax": -14.99,
+     "truePeak": -5.27,
      "duration": 0.37
     },
     {
-     "lufsMax": -14.97,
-     "truePeak": -5.1,
+     "lufsMax": -14.96,
+     "truePeak": -5.06,
      "duration": 0.39
     },
     {
-     "lufsMax": -15.09,
-     "truePeak": -5.12,
+     "lufsMax": -15.14,
+     "truePeak": -5.2,
      "duration": 0.38
     },
     {
-     "lufsMax": -15,
-     "truePeak": -4.86,
+     "lufsMax": -14.87,
+     "truePeak": -5.15,
      "duration": 0.39
     }
    ]
@@ -4483,40 +4483,39 @@
    "id": "swordHit",
    "cat": "hit",
    "desc": "Blade hits armour",
-   "gain": 0.521,
+   "gain": 0.492,
    "limited": true,
    "m": {
-    "peak": -3.23,
-    "truePeak": -3.23,
-    "lufsMax": -20.29,
+    "peak": -2.11,
+    "truePeak": -2.11,
+    "lufsMax": -20.76,
     "duration": 0.69,
-    "centroid": 8558
+    "centroid": 8568
    },
    "env": [
     1,
-    0.78,
-    0.77,
-    0.73,
-    0.69,
-    0.62,
+    0.7,
+    0.71,
+    0.65,
+    0.64,
     0.55,
-    0.53,
+    0.49,
+    0.48,
+    0.39,
+    0.37,
     0.42,
-    0.41,
-    0.46,
-    0.34,
     0.32,
     0.29,
-    0.23,
-    0.22,
+    0.27,
     0.21,
-    0.17,
-    0.13,
+    0.2,
+    0.2,
+    0.15,
     0.12,
-    0.1,
+    0.11,
     0.09,
+    0.08,
     0.07,
-    0.06,
     0.06,
     0.05,
     0.04,
@@ -4532,27 +4531,28 @@
     0.02,
     0.02,
     0.02,
+    0.02,
     0.02
    ],
    "takes": [
     {
-     "lufsMax": -20.29,
-     "truePeak": -3.23,
+     "lufsMax": -20.76,
+     "truePeak": -2.11,
      "duration": 0.69
     },
     {
-     "lufsMax": -20.29,
-     "truePeak": -1.51,
+     "lufsMax": -20.6,
+     "truePeak": -3.87,
      "duration": 0.7
     },
     {
-     "lufsMax": -20.16,
-     "truePeak": -1.21,
+     "lufsMax": -20.64,
+     "truePeak": -2.94,
      "duration": 0.64
     },
     {
-     "lufsMax": -19.84,
-     "truePeak": -3.82,
+     "lufsMax": -20.52,
+     "truePeak": -1.19,
      "duration": 0.67
     }
    ]
@@ -4562,76 +4562,76 @@
    "id": "block",
    "cat": "hit",
    "desc": "Shield block: dull metal clank",
-   "gain": 0.52,
-   "limited": true,
+   "gain": 0.824,
+   "limited": false,
    "m": {
-    "peak": -1.23,
-    "truePeak": -1.2,
-    "lufsMax": -18.15,
+    "peak": -1.51,
+    "truePeak": -1.49,
+    "lufsMax": -15.44,
     "duration": 0.73,
-    "centroid": 1664
+    "centroid": 1655
    },
    "env": [
     1,
-    0.87,
-    0.78,
-    0.73,
-    0.59,
-    0.55,
-    0.45,
-    0.35,
-    0.34,
-    0.29,
-    0.29,
-    0.22,
-    0.21,
+    1,
+    0.99,
+    0.93,
+    0.76,
+    0.7,
+    0.58,
+    0.46,
+    0.42,
+    0.37,
+    0.37,
+    0.28,
+    0.26,
+    0.25,
+    0.25,
+    0.23,
     0.19,
-    0.2,
-    0.18,
-    0.15,
-    0.15,
+    0.19,
+    0.17,
+    0.17,
     0.13,
-    0.14,
     0.11,
+    0.08,
+    0.11,
+    0.08,
     0.09,
-    0.08,
-    0.08,
-    0.08,
     0.07,
     0.06,
+    0.07,
+    0.06,
+    0.06,
     0.05,
-    0.05,
-    0.04,
     0.04,
     0.04,
     0.03,
     0.03,
-    0.02,
     0.03,
-    0.02,
-    0.02,
-    0.02,
-    0.02
+    0.03,
+    0.03,
+    0.03
    ],
    "takes": [
     {
-     "lufsMax": -18.15,
-     "truePeak": -1.2,
+     "lufsMax": -15.44,
+     "truePeak": -1.49,
      "duration": 0.73
     },
     {
-     "lufsMax": -18.34,
-     "truePeak": -1.32,
-     "duration": 0.72
+     "lufsMax": -15.58,
+     "truePeak": -1.48,
+     "duration": 0.73
     },
     {
-     "lufsMax": -18.5,
+     "lufsMax": -15.54,
      "truePeak": -1.46,
-     "duration": 0.71
+     "duration": 0.73
     },
     {
-     "lufsMax": -18.21,
-     "truePeak": -1.78,
+     "lufsMax": -15.17,
+     "truePeak": -1.43,
      "duration": 0.73
     }
    ]
@@ -4641,23 +4641,23 @@
    "id": "crit",
    "cat": "hit",
    "desc": "Critical hit: impact plus a bright ring",
-   "gain": 0.461,
+   "gain": 0.46,
    "limited": true,
    "m": {
-    "peak": -1.5,
-    "truePeak": -1.21,
-    "lufsMax": -16.51,
+    "peak": -1.48,
+    "truePeak": -1.19,
+    "lufsMax": -16.53,
     "duration": 0.86,
-    "centroid": 3405
+    "centroid": 3402
    },
    "env": [
     1,
-    0.92,
-    0.86,
-    0.75,
-    0.75,
-    0.65,
-    0.64,
+    0.91,
+    0.85,
+    0.74,
+    0.73,
+    0.66,
+    0.63,
     0.31,
     0.36,
     0.28,
@@ -4669,7 +4669,7 @@
     0.21,
     0.18,
     0.14,
-    0.15,
+    0.14,
     0.12,
     0.12,
     0.09,
@@ -4694,23 +4694,23 @@
    ],
    "takes": [
     {
-     "lufsMax": -16.51,
-     "truePeak": -1.21,
+     "lufsMax": -16.53,
+     "truePeak": -1.19,
      "duration": 0.86
     },
     {
-     "lufsMax": -16.83,
-     "truePeak": -1.68,
+     "lufsMax": -16.82,
+     "truePeak": -1.64,
      "duration": 0.83
     },
     {
-     "lufsMax": -16.37,
-     "truePeak": -1.48,
-     "duration": 0.86
+     "lufsMax": -16.56,
+     "truePeak": -1.54,
+     "duration": 0.87
     },
     {
-     "lufsMax": -16.7,
-     "truePeak": -1.8,
+     "lufsMax": -16.73,
+     "truePeak": -1.77,
      "duration": 0.86
     }
    ]
@@ -4720,76 +4720,76 @@
    "id": "squish",
    "cat": "hit",
    "desc": "Wet squish for slimes",
-   "gain": 0.604,
+   "gain": 0.972,
    "limited": true,
    "m": {
-    "peak": -1.73,
-    "truePeak": -1.73,
-    "lufsMax": -18.13,
+    "peak": -1.51,
+    "truePeak": -1.49,
+    "lufsMax": -15.7,
     "duration": 0.18,
-    "centroid": 1329
+    "centroid": 1294
    },
    "env": [
-    0.98,
-    0.98,
-    0.97,
     1,
-    0.96,
+    1,
+    1,
+    1,
+    1,
+    1,
     0.9,
-    0.8,
-    0.82,
-    0.9,
-    0.8,
-    0.8,
-    0.71,
-    0.66,
+    1,
+    1,
+    0.89,
+    0.98,
+    0.86,
+    0.85,
+    0.83,
+    0.84,
+    0.94,
+    0.76,
+    0.73,
+    0.56,
+    0.56,
     0.67,
-    0.67,
-    0.75,
-    0.52,
-    0.61,
+    0.48,
+    0.5,
     0.46,
-    0.45,
-    0.52,
-    0.53,
+    0.49,
     0.4,
     0.36,
-    0.39,
-    0.34,
-    0.3,
-    0.25,
-    0.25,
-    0.22,
-    0.29,
-    0.19,
+    0.32,
+    0.31,
+    0.27,
+    0.37,
+    0.2,
+    0.15,
+    0.14,
+    0.15,
     0.12,
-    0.12,
-    0.12,
-    0.1,
     0.09,
-    0.07,
+    0.08,
     0.04,
-    0.02
+    0.04
    ],
    "takes": [
     {
-     "lufsMax": -18.13,
-     "truePeak": -1.73,
+     "lufsMax": -15.7,
+     "truePeak": -1.49,
      "duration": 0.18
     },
     {
-     "lufsMax": -17.78,
-     "truePeak": -1.19,
+     "lufsMax": -15.56,
+     "truePeak": -1.5,
      "duration": 0.19
     },
     {
-     "lufsMax": -17.83,
-     "truePeak": -1.65,
+     "lufsMax": -15.53,
+     "truePeak": -1.51,
      "duration": 0.18
     },
     {
-     "lufsMax": -17.79,
-     "truePeak": -1.56,
+     "lufsMax": -15.3,
+     "truePeak": -1.48,
      "duration": 0.19
     }
    ]
@@ -4799,77 +4799,77 @@
    "id": "bonk",
    "cat": "hit",
    "desc": "Cartoon bonk on the head",
-   "gain": 0.638,
+   "gain": 0.994,
    "limited": true,
    "m": {
-    "peak": -1.58,
-    "truePeak": -1.58,
-    "lufsMax": -18.99,
+    "peak": -1.51,
+    "truePeak": -1.47,
+    "lufsMax": -16.66,
     "duration": 0.12,
-    "centroid": 889
+    "centroid": 833
    },
    "env": [
     1,
+    0.99,
+    1,
+    1,
+    1,
+    0.98,
     0.96,
-    0.95,
-    0.95,
-    0.95,
-    0.89,
-    0.84,
-    0.8,
-    0.81,
-    0.8,
+    0.94,
+    0.98,
+    1,
+    0.92,
+    0.87,
+    0.87,
+    0.88,
+    0.82,
     0.74,
-    0.73,
-    0.68,
-    0.7,
+    0.74,
     0.66,
+    0.7,
+    0.62,
     0.6,
-    0.6,
-    0.53,
-    0.56,
-    0.5,
-    0.44,
+    0.55,
+    0.55,
     0.48,
-    0.45,
-    0.38,
-    0.39,
-    0.36,
+    0.48,
+    0.44,
+    0.42,
+    0.4,
     0.33,
-    0.32,
+    0.33,
     0.28,
     0.27,
     0.24,
-    0.22,
+    0.21,
     0.19,
-    0.17,
-    0.15,
+    0.16,
     0.13,
-    0.11,
-    0.09,
-    0.07,
+    0.1,
+    0.08,
     0.04
    ],
    "takes": [
     {
-     "lufsMax": -18.99,
-     "truePeak": -1.58,
+     "lufsMax": -16.66,
+     "truePeak": -1.47,
      "duration": 0.12
     },
     {
-     "lufsMax": -18.83,
-     "truePeak": -1.67,
+     "lufsMax": -16.4,
+     "truePeak": -1.47,
      "duration": 0.13
     },
     {
-     "lufsMax": -18.9,
-     "truePeak": -1.2,
+     "lufsMax": -16.63,
+     "truePeak": -1.49,
      "duration": 0.12
     },
     {
-     "lufsMax": -18.86,
-     "truePeak": -1.49,
-     "duration": 0.12
+     "lufsMax": -16.52,
+     "truePeak": -1.42,
+     "duration": 0.13
     }
    ]
   },
@@ -4878,76 +4878,76 @@
    "id": "stomp",
    "cat": "hit",
    "desc": "Stomp on an enemy: squashy thump that springs up",
-   "gain": 0.553,
+   "gain": 0.87,
    "limited": true,
    "m": {
-    "peak": -1.21,
-    "truePeak": -1.2,
-    "lufsMax": -19.52,
+    "peak": -1.51,
+    "truePeak": -1.51,
+    "lufsMax": -17.12,
     "duration": 0.14,
-    "centroid": 1274
+    "centroid": 1331
    },
    "env": [
-    0.92,
     1,
-    0.9,
+    1,
+    0.96,
+    0.91,
     0.87,
-    0.75,
-    0.77,
+    0.93,
+    0.94,
+    0.84,
+    0.82,
+    0.73,
+    0.74,
+    0.6,
+    0.56,
+    0.53,
+    0.7,
     0.76,
-    0.66,
-    0.64,
-    0.57,
+    0.65,
+    0.7,
+    0.63,
+    0.65,
+    0.6,
     0.58,
+    0.56,
+    0.52,
+    0.5,
     0.47,
-    0.44,
-    0.42,
-    0.55,
-    0.59,
-    0.51,
-    0.55,
-    0.49,
-    0.51,
-    0.47,
-    0.46,
     0.44,
     0.41,
-    0.39,
-    0.37,
-    0.35,
+    0.38,
+    0.36,
     0.32,
     0.3,
-    0.28,
-    0.25,
-    0.23,
+    0.26,
+    0.24,
     0.21,
-    0.19,
-    0.16,
-    0.14,
+    0.18,
+    0.15,
     0.12,
     0.1,
-    0.08,
-    0.05
+    0.06
    ],
    "takes": [
     {
-     "lufsMax": -19.52,
-     "truePeak": -1.2,
+     "lufsMax": -17.12,
+     "truePeak": -1.51,
      "duration": 0.14
     },
     {
-     "lufsMax": -19.34,
-     "truePeak": -2.1,
+     "lufsMax": -16.63,
+     "truePeak": -1.51,
      "duration": 0.14
     },
     {
-     "lufsMax": -18.89,
-     "truePeak": -1.77,
+     "lufsMax": -16.44,
+     "truePeak": -1.5,
      "duration": 0.14
     },
     {
-     "lufsMax": -19.09,
-     "truePeak": -1.7,
+     "lufsMax": -16.51,
+     "truePeak": -1.5,
      "duration": 0.14
     }
    ]
@@ -4957,77 +4957,77 @@
    "id": "arrowHit",
    "cat": "hit",
    "desc": "Arrow thunks into wood",
-   "gain": 0.416,
+   "gain": 0.881,
    "limited": true,
    "m": {
-    "peak": -1.71,
-    "truePeak": -1.71,
-    "lufsMax": -20.75,
-    "duration": 0.22,
-    "centroid": 1001
+    "peak": -1.51,
+    "truePeak": -1.51,
+    "lufsMax": -21.67,
+    "duration": 0.15,
+    "centroid": 688
    },
    "env": [
-    1,
-    0.97,
     0.85,
-    0.77,
-    0.68,
-    0.69,
+    1,
+    0.89,
+    0.84,
+    0.86,
+    0.76,
     0.66,
-    0.61,
     0.59,
-    0.51,
-    0.45,
+    0.59,
+    0.52,
+    0.47,
+    0.43,
     0.41,
-    0.34,
-    0.32,
-    0.28,
-    0.24,
+    0.38,
+    0.33,
+    0.3,
+    0.29,
+    0.29,
+    0.25,
     0.22,
-    0.2,
-    0.19,
+    0.21,
+    0.18,
     0.18,
     0.17,
-    0.16,
     0.15,
     0.14,
     0.13,
     0.12,
     0.11,
-    0.1,
-    0.1,
+    0.11,
+    0.09,
     0.09,
     0.08,
-    0.07,
     0.07,
     0.06,
     0.05,
     0.05,
     0.04,
-    0.03,
-    0.03,
+    0.04,
     0.02
    ],
    "takes": [
     {
-     "lufsMax": -20.75,
-     "truePeak": -1.71,
-     "duration": 0.22
+     "lufsMax": -21.67,
+     "truePeak": -1.51,
+     "duration": 0.15
     },
     {
-     "lufsMax": -20.83,
-     "truePeak": -1.53,
-     "duration": 0.2
+     "lufsMax": -22.64,
+     "truePeak": -1.45,
+     "duration": 0.15
     },
     {
-     "lufsMax": -20.81,
-     "truePeak": -1.19,
-     "duration": 0.22
+     "lufsMax": -21.07,
+     "truePeak": -1.46,
+     "duration": 0.15
     },
     {
-     "lufsMax": -20.8,
-     "truePeak": -3.04,
-     "duration": 0.2
+     "lufsMax": -21,
+     "truePeak": -1.5,
+     "duration": 0.15
     }
    ]
   },
@@ -5036,50 +5036,50 @@
    "id": "explosion",
    "cat": "explosion",
    "desc": "Mid-size explosion: crack, rumble, tail",
-   "gain": 0.305,
+   "gain": 0.326,
    "limited": true,
    "m": {
-    "peak": -1.23,
-    "truePeak": -1.19,
-    "lufsMax": -15.97,
+    "peak": -1.32,
+    "truePeak": -1.2,
+    "lufsMax": -15.5,
     "duration": 1.42,
-    "centroid": 1657
+    "centroid": 1668
    },
    "env": [
     1,
     0.87,
-    0.79,
-    0.78,
-    0.72,
-    0.63,
-    0.69,
+    0.82,
+    0.82,
+    0.77,
     0.67,
-    0.57,
-    0.62,
+    0.7,
+    0.7,
+    0.58,
+    0.64,
+    0.54,
     0.52,
-    0.5,
+    0.44,
     0.42,
-    0.41,
-    0.41,
-    0.3,
-    0.33,
-    0.24,
-    0.29,
-    0.26,
-    0.17,
-    0.19,
-    0.15,
+    0.43,
+    0.32,
+    0.34,
+    0.25,
+    0.31,
+    0.27,
+    0.18,
+    0.2,
+    0.16,
     0.13,
-    0.13,
-    0.1,
+    0.14,
+    0.11,
     0.09,
     0.09,
     0.07,
     0.07,
     0.06,
+    0.06,
     0.05,
     0.05,
-    0.04,
     0.04,
     0.03,
     0.03,
@@ -5089,24 +5089,24 @@
    ],
    "takes": [
     {
-     "lufsMax": -15.97,
-     "truePeak": -1.19,
+     "lufsMax": -15.5,
+     "truePeak": -1.2,
      "duration": 1.42
     },
     {
-     "lufsMax": -16.46,
-     "truePeak": -3.12,
-     "duration": 1.33
+     "lufsMax": -15.57,
+     "truePeak": -2.96,
+     "duration": 1.36
     },
     {
-     "lufsMax": -17.2,
-     "truePeak": -2.85,
+     "lufsMax": -16.42,
+     "truePeak": -1.38,
+     "duration": 1.42
+    },
+    {
+     "lufsMax": -16.64,
+     "truePeak": -2.02,
      "duration": 1.43
-    },
-    {
-     "lufsMax": -17.29,
-     "truePeak": -2.49,
-     "duration": 1.39
     }
    ]
   },
@@ -5115,77 +5115,77 @@
    "id": "explosionSmall",
    "cat": "explosion",
    "desc": "Small pop of an explosion, grenades, barrels",
-   "gain": 0.367,
+   "gain": 0.533,
    "limited": true,
    "m": {
-    "peak": -1.25,
-    "truePeak": -1.19,
-    "lufsMax": -17.07,
-    "duration": 0.89,
-    "centroid": 1543
+    "peak": -1.51,
+    "truePeak": -1.2,
+    "lufsMax": -14.67,
+    "duration": 0.96,
+    "centroid": 1507
    },
    "env": [
     1,
-    0.99,
-    0.9,
+    1,
+    1,
+    0.97,
+    0.88,
+    0.85,
     0.79,
-    0.79,
-    0.72,
-    0.67,
-    0.64,
-    0.53,
-    0.44,
-    0.46,
+    0.65,
+    0.54,
+    0.57,
+    0.43,
+    0.41,
+    0.39,
     0.35,
-    0.34,
-    0.32,
-    0.28,
-    0.22,
-    0.21,
-    0.19,
+    0.27,
+    0.24,
+    0.23,
+    0.17,
+    0.17,
     0.14,
-    0.14,
-    0.14,
-    0.11,
-    0.09,
-    0.11,
-    0.1,
+    0.12,
+    0.13,
+    0.13,
+    0.12,
     0.1,
     0.08,
+    0.08,
+    0.06,
     0.07,
     0.06,
     0.05,
+    0.04,
     0.05,
-    0.05,
     0.04,
     0.04,
-    0.04,
     0.03,
     0.03,
     0.03,
-    0.03,
+    0.02,
     0.02
    ],
    "takes": [
     {
-     "lufsMax": -17.07,
-     "truePeak": -1.19,
-     "duration": 0.89
+     "lufsMax": -14.67,
+     "truePeak": -1.2,
+     "duration": 0.96
     },
     {
-     "lufsMax": -17.6,
-     "truePeak": -2.66,
-     "duration": 0.91
+     "lufsMax": -14.31,
+     "truePeak": -1.2,
+     "duration": 0.93
     },
     {
-     "lufsMax": -16.95,
-     "truePeak": -1.57,
-     "duration": 0.92
+     "lufsMax": -14.45,
+     "truePeak": -1.47,
+     "duration": 0.96
     },
     {
-     "lufsMax": -17.13,
-     "truePeak": -2.81,
-     "duration": 0.91
+     "lufsMax": -14.78,
+     "truePeak": -1.14,
+     "duration": 0.95
     }
    ]
   },
@@ -5194,50 +5194,50 @@
    "id": "explosionBig",
    "cat": "explosion",
    "desc": "Huge blast with a long rolling tail",
-   "gain": 0.21,
-   "limited": true,
+   "gain": 0.229,
+   "limited": false,
    "m": {
-    "peak": -3.16,
-    "truePeak": -3.16,
-    "lufsMax": -15.18,
-    "duration": 3.08,
-    "centroid": 1079
+    "peak": -2.6,
+    "truePeak": -2.6,
+    "lufsMax": -14.34,
+    "duration": 3.12,
+    "centroid": 1086
    },
    "env": [
+    0.97,
+    0.94,
+    0.82,
+    0.93,
     0.99,
-    0.92,
-    0.84,
-    0.87,
     1,
-    0.99,
-    0.83,
-    0.81,
-    0.68,
-    0.68,
-    0.62,
-    0.6,
-    0.48,
+    0.85,
+    0.84,
+    0.69,
+    0.61,
+    0.57,
+    0.61,
     0.55,
-    0.44,
-    0.38,
+    0.51,
+    0.45,
+    0.39,
     0.35,
-    0.35,
-    0.35,
+    0.36,
+    0.36,
     0.3,
     0.25,
     0.2,
     0.19,
     0.17,
     0.15,
-    0.15,
+    0.14,
     0.12,
-    0.1,
+    0.11,
     0.08,
     0.08,
     0.07,
+    0.07,
     0.06,
-    0.06,
-    0.05,
+    0.04,
     0.04,
     0.04,
     0.03,
@@ -5247,24 +5247,24 @@
    ],
    "takes": [
     {
-     "lufsMax": -15.18,
-     "truePeak": -3.16,
+     "lufsMax": -14.34,
+     "truePeak": -2.6,
+     "duration": 3.12
+    },
+    {
+     "lufsMax": -15.07,
+     "truePeak": -2.23,
+     "duration": 2.99
+    },
+    {
+     "lufsMax": -14.22,
+     "truePeak": -1.33,
      "duration": 3.08
     },
     {
-     "lufsMax": -15.64,
-     "truePeak": -1.56,
-     "duration": 3.01
-    },
-    {
-     "lufsMax": -14.88,
-     "truePeak": -1.85,
-     "duration": 3.16
-    },
-    {
-     "lufsMax": -14.95,
-     "truePeak": -1.18,
-     "duration": 2.97
+     "lufsMax": -14.29,
+     "truePeak": -1.19,
+     "duration": 3.02
     }
    ]
   },
@@ -5273,77 +5273,77 @@
    "id": "explosionRetro",
    "cat": "explosion",
    "desc": "8-bit explosion, crunchy noise falling",
-   "gain": 0.564,
+   "gain": 0.567,
    "limited": false,
    "m": {
-    "peak": -4.46,
-    "truePeak": -2.91,
-    "lufsMax": -13.79,
+    "peak": -4.05,
+    "truePeak": -2.32,
+    "lufsMax": -14.26,
     "duration": 0.74,
-    "centroid": 4204
+    "centroid": 4210
    },
    "env": [
-    0.96,
-    0.95,
+    0.92,
     1,
-    0.95,
-    0.99,
-    0.99,
+    0.91,
+    0.93,
+    0.94,
     0.9,
-    0.87,
-    0.85,
-    0.87,
-    0.87,
-    0.76,
+    0.88,
+    0.91,
+    0.78,
+    0.86,
+    0.88,
+    0.72,
+    0.72,
     0.79,
-    0.77,
-    0.76,
-    0.68,
-    0.64,
+    0.73,
     0.59,
-    0.65,
-    0.69,
     0.63,
-    0.55,
+    0.68,
+    0.65,
     0.49,
+    0.54,
+    0.45,
     0.47,
-    0.37,
-    0.32,
-    0.49,
     0.3,
-    0.28,
-    0.26,
-    0.19,
-    0.12,
-    0.18,
-    0.25,
-    0.23,
-    0.19,
-    0.17,
+    0.36,
+    0.4,
+    0.3,
+    0.32,
+    0.36,
+    0.24,
+    0.27,
+    0.24,
+    0.27,
+    0.13,
+    0.08,
     0.1,
-    0.09,
+    0.12,
+    0.05,
+    0.08,
     0.05
    ],
    "takes": [
     {
-     "lufsMax": -13.79,
-     "truePeak": -2.91,
+     "lufsMax": -14.26,
+     "truePeak": -2.32,
      "duration": 0.74
     },
     {
-     "lufsMax": -13.92,
-     "truePeak": -2.34,
-     "duration": 0.78
+     "lufsMax": -13.77,
+     "truePeak": -2.33,
+     "duration": 0.79
     },
     {
-     "lufsMax": -14.16,
-     "truePeak": -2.9,
+     "lufsMax": -13.69,
+     "truePeak": -1.43,
      "duration": 0.75
     },
     {
-     "lufsMax": -14.14,
-     "truePeak": -2.75,
-     "duration": 0.77
+     "lufsMax": -14.26,
+     "truePeak": -2.69,
+     "duration": 0.78
     }
    ]
   },
@@ -5352,77 +5352,77 @@
    "id": "explosionDistant",
    "cat": "explosion",
    "desc": "Far-off boom, muffled",
-   "gain": 0.654,
-   "limited": true,
+   "gain": 0.742,
+   "limited": false,
    "m": {
-    "peak": -1.2,
-    "truePeak": -1.2,
-    "lufsMax": -15.08,
+    "peak": -1.51,
+    "truePeak": -1.51,
+    "lufsMax": -14.1,
     "duration": 3.06,
-    "centroid": 205
+    "centroid": 207
    },
    "env": [
     1,
+    0.89,
+    0.86,
+    0.89,
+    0.74,
     0.82,
-    0.8,
+    0.84,
+    0.87,
     0.82,
-    0.69,
-    0.76,
-    0.78,
-    0.8,
-    0.75,
-    0.51,
-    0.45,
-    0.48,
-    0.54,
-    0.43,
+    0.55,
+    0.49,
+    0.52,
+    0.59,
+    0.46,
+    0.28,
+    0.33,
+    0.28,
+    0.32,
     0.25,
-    0.3,
-    0.26,
-    0.29,
-    0.23,
-    0.2,
+    0.22,
+    0.15,
     0.14,
-    0.13,
-    0.15,
-    0.15,
+    0.16,
+    0.16,
+    0.11,
     0.1,
+    0.08,
+    0.09,
     0.09,
     0.08,
-    0.08,
-    0.08,
-    0.08,
     0.06,
     0.06,
+    0.05,
+    0.05,
     0.04,
     0.04,
     0.04,
-    0.04,
-    0.04,
-    0.02,
     0.03,
-    0.02
+    0.03,
+    0.03
    ],
    "takes": [
     {
-     "lufsMax": -15.08,
-     "truePeak": -1.2,
+     "lufsMax": -14.1,
+     "truePeak": -1.51,
      "duration": 3.06
     },
     {
-     "lufsMax": -15.19,
-     "truePeak": -1.69,
+     "lufsMax": -14.15,
+     "truePeak": -1.51,
      "duration": 3.13
     },
     {
-     "lufsMax": -15.33,
-     "truePeak": -1.65,
-     "duration": 3.09
+     "lufsMax": -14.37,
+     "truePeak": -1.51,
+     "duration": 3.08
     },
     {
-     "lufsMax": -14.69,
-     "truePeak": -1.42,
-     "duration": 3.05
+     "lufsMax": -13.64,
+     "truePeak": -1.51,
+     "duration": 3.06
     }
    ]
   },
@@ -5431,50 +5431,50 @@
    "id": "firework",
    "cat": "explosion",
    "desc": "Firework pop with crackle",
-   "gain": 0.558,
-   "limited": true,
+   "gain": 0.668,
+   "limited": false,
    "m": {
-    "peak": -1.55,
-    "truePeak": -1.51,
-    "lufsMax": -15.42,
+    "peak": -1.51,
+    "truePeak": -1.48,
+    "lufsMax": -14.04,
     "duration": 1.24,
-    "centroid": 6921
+    "centroid": 6948
    },
    "env": [
     1,
-    0.89,
-    0.85,
+    0.97,
+    0.93,
+    0.77,
+    0.67,
     0.7,
-    0.61,
-    0.64,
-    0.49,
+    0.53,
+    0.71,
+    0.67,
+    0.47,
+    0.79,
+    0.63,
+    0.71,
+    0.55,
     0.65,
-    0.62,
-    0.44,
-    0.72,
-    0.58,
+    0.43,
+    0.28,
     0.64,
-    0.59,
-    0.59,
-    0.46,
-    0.26,
-    0.59,
-    0.3,
-    0.23,
-    0.18,
+    0.29,
+    0.25,
+    0.2,
+    0.15,
+    0.16,
     0.14,
-    0.14,
-    0.13,
-    0.1,
-    0.08,
-    0.06,
+    0.11,
+    0.09,
+    0.07,
     0.08,
     0.07,
-    0.07,
+    0.08,
     0.05,
     0.04,
     0.04,
-    0.03,
+    0.04,
     0.04,
     0.04,
     0.03,
@@ -5484,24 +5484,24 @@
    ],
    "takes": [
     {
-     "lufsMax": -15.42,
-     "truePeak": -1.51,
+     "lufsMax": -14.04,
+     "truePeak": -1.48,
      "duration": 1.24
     },
     {
-     "lufsMax": -15.78,
-     "truePeak": -1.21,
-     "duration": 1.23
+     "lufsMax": -14.38,
+     "truePeak": -1.48,
+     "duration": 1.3
     },
     {
-     "lufsMax": -15.34,
-     "truePeak": -1.39,
-     "duration": 1.24
+     "lufsMax": -14.15,
+     "truePeak": -1.48,
+     "duration": 1.27
     },
     {
-     "lufsMax": -15.55,
-     "truePeak": -1.69,
-     "duration": 1.24
+     "lufsMax": -14.17,
+     "truePeak": -1.46,
+     "duration": 1.25
     }
    ]
   },
@@ -5510,12 +5510,12 @@
    "id": "implosion",
    "cat": "explosion",
    "desc": "Reverse-feel suck-in then thump",
-   "gain": 0.54,
+   "gain": 0.539,
    "limited": false,
    "m": {
-    "peak": -3.43,
-    "truePeak": -3.43,
-    "lufsMax": -13.91,
+    "peak": -3.45,
+    "truePeak": -3.45,
+    "lufsMax": -13.93,
     "duration": 1.4,
     "centroid": 1745
    },
@@ -5563,24 +5563,24 @@
    ],
    "takes": [
     {
-     "lufsMax": -13.91,
-     "truePeak": -3.43,
+     "lufsMax": -13.93,
+     "truePeak": -3.45,
      "duration": 1.4
     },
     {
-     "lufsMax": -14.13,
-     "truePeak": -3.5,
-     "duration": 1.39
-    },
-    {
-     "lufsMax": -14.04,
-     "truePeak": -3.78,
+     "lufsMax": -14.05,
+     "truePeak": -3.54,
      "duration": 1.4
     },
     {
-     "lufsMax": -13.91,
-     "truePeak": -3.19,
-     "duration": 1.41
+     "lufsMax": -13.95,
+     "truePeak": -3.71,
+     "duration": 1.4
+    },
+    {
+     "lufsMax": -14.07,
+     "truePeak": -3.2,
+     "duration": 1.4
     }
    ]
   },
@@ -5589,76 +5589,76 @@
    "id": "debris",
    "cat": "explosion",
    "desc": "Rubble and debris settling",
-   "gain": 0.666,
-   "limited": true,
+   "gain": 0.968,
+   "limited": false,
    "m": {
-    "peak": -1.76,
-    "truePeak": -1.69,
-    "lufsMax": -17.73,
+    "peak": -1.51,
+    "truePeak": -1.45,
+    "lufsMax": -14.69,
     "duration": 0.58,
     "centroid": 1566
    },
    "env": [
     1,
-    0.89,
-    0.65,
+    1,
+    0.78,
+    0.91,
     0.76,
-    0.64,
-    0.68,
-    0.64,
-    0.51,
-    0.82,
     0.81,
-    0.64,
-    0.55,
-    0.55,
-    0.74,
-    0.55,
-    0.49,
-    0.43,
+    0.76,
+    0.6,
+    0.97,
+    0.96,
+    0.76,
+    0.66,
+    0.65,
+    0.88,
+    0.66,
+    0.58,
+    0.52,
+    0.8,
+    0.85,
+    0.72,
     0.67,
-    0.71,
-    0.61,
-    0.56,
-    0.45,
-    0.35,
-    0.27,
-    0.4,
-    0.24,
-    0.25,
-    0.28,
-    0.25,
-    0.17,
-    0.16,
-    0.16,
-    0.39,
+    0.53,
+    0.42,
+    0.32,
+    0.47,
+    0.29,
+    0.3,
+    0.33,
+    0.29,
+    0.2,
+    0.19,
+    0.2,
+    0.46,
     0.26,
-    0.15,
-    0.11,
-    0.07,
-    0.07,
-    0.07,
+    0.17,
+    0.14,
+    0.09,
+    0.08,
+    0.08,
     0.03
    ],
    "takes": [
     {
-     "lufsMax": -17.73,
-     "truePeak": -1.69,
+     "lufsMax": -14.69,
+     "truePeak": -1.45,
      "duration": 0.58
     },
     {
-     "lufsMax": -16.8,
-     "truePeak": -1.68,
+     "lufsMax": -13.82,
+     "truePeak": -1.48,
      "duration": 0.62
     },
     {
-     "lufsMax": -16.63,
-     "truePeak": -1.2,
+     "lufsMax": -13.94,
+     "truePeak": -1.42,
      "duration": 0.59
     },
     {
-     "lufsMax": -17.76,
-     "truePeak": -3.91,
+     "lufsMax": -14.49,
+     "truePeak": -1.44,
      "duration": 0.61
     }
    ]
@@ -5668,20 +5668,20 @@
    "id": "shockwave",
    "cat": "explosion",
    "desc": "Energy shockwave, sci-fi",
-   "gain": 0.416,
+   "gain": 0.417,
    "limited": false,
    "m": {
-    "peak": -2.6,
-    "truePeak": -2.5,
-    "lufsMax": -13.99,
+    "peak": -2.5,
+    "truePeak": -2.4,
+    "lufsMax": -13.97,
     "duration": 1.51,
-    "centroid": 1870
+    "centroid": 1869
    },
    "env": [
     1,
     0.99,
-    0.99,
-    0.99,
+    0.98,
+    1,
     0.95,
     0.78,
     0.68,
@@ -5693,7 +5693,7 @@
     0.45,
     0.46,
     0.46,
-    0.45,
+    0.44,
     0.42,
     0.35,
     0.27,
@@ -5707,7 +5707,7 @@
     0.12,
     0.11,
     0.09,
-    0.08,
+    0.07,
     0.05,
     0.04,
     0.04,
@@ -5721,23 +5721,23 @@
    ],
    "takes": [
     {
-     "lufsMax": -13.99,
-     "truePeak": -2.5,
+     "lufsMax": -13.97,
+     "truePeak": -2.4,
      "duration": 1.51
     },
     {
-     "lufsMax": -14.17,
-     "truePeak": -2.42,
+     "lufsMax": -14.15,
+     "truePeak": -2.34,
      "duration": 1.54
     },
     {
      "lufsMax": -14.19,
-     "truePeak": -2.08,
+     "truePeak": -2.14,
      "duration": 1.5
     },
     {
-     "lufsMax": -13.65,
-     "truePeak": -1.76,
+     "lufsMax": -13.64,
+     "truePeak": -1.87,
      "duration": 1.54
     }
    ]
@@ -5747,76 +5747,76 @@
    "id": "bombFuse",
    "cat": "explosion",
    "desc": "Lit fuse fizzing",
-   "gain": 0.778,
+   "gain": 0.781,
    "limited": false,
    "m": {
-    "peak": -5.46,
-    "truePeak": -5.4,
-    "lufsMax": -14.09,
+    "peak": -6.29,
+    "truePeak": -6.11,
+    "lufsMax": -14.07,
     "duration": 1.03,
-    "centroid": 7548
+    "centroid": 7552
    },
    "env": [
-    0.69,
-    0.91,
-    0.85,
-    0.91,
-    0.91,
+    0.73,
+    0.96,
     0.89,
-    0.86,
-    1,
-    0.9,
-    0.92,
-    0.9,
-    0.86,
+    0.96,
     0.94,
-    0.86,
+    0.94,
+    0.9,
+    0.95,
     0.91,
+    0.96,
+    0.95,
+    0.9,
+    0.88,
     0.91,
-    0.88,
-    0.88,
-    0.87,
-    0.9,
-    0.88,
-    0.85,
-    0.88,
-    0.83,
-    0.9,
-    0.88,
-    0.9,
-    0.85,
-    0.87,
-    0.89,
+    0.96,
     0.95,
     0.92,
-    0.88,
+    0.93,
+    0.91,
+    0.95,
+    0.92,
+    0.89,
+    0.93,
     0.87,
-    0.88,
-    0.88,
-    0.86,
-    0.74,
-    0.63,
-    0.48
+    0.94,
+    0.92,
+    1,
+    0.9,
+    0.91,
+    0.94,
+    0.95,
+    0.97,
+    0.92,
+    0.91,
+    0.93,
+    0.92,
+    0.91,
+    0.77,
+    0.66,
+    0.5
    ],
    "takes": [
     {
-     "lufsMax": -14.09,
-     "truePeak": -5.4,
+     "lufsMax": -14.07,
+     "truePeak": -6.11,
      "duration": 1.03
     },
     {
-     "lufsMax": -13.96,
-     "truePeak": -6.61,
+     "lufsMax": -14,
+     "truePeak": -5.3,
      "duration": 1.04
     },
     {
-     "lufsMax": -13.94,
-     "truePeak": -5.7,
+     "lufsMax": -13.96,
+     "truePeak": -4.63,
      "duration": 1.03
     },
     {
-     "lufsMax": -14.02,
-     "truePeak": -5.58,
+     "lufsMax": -13.95,
+     "truePeak": -5.53,
      "duration": 1.03
     }
    ]
@@ -5884,18 +5884,18 @@
      "duration": 0.4
     },
     {
-     "lufsMax": -16,
-     "truePeak": -10.58,
-     "duration": 0.4
-    },
-    {
      "lufsMax": -16.02,
-     "truePeak": -10.58,
+     "truePeak": -10.59,
      "duration": 0.4
     },
     {
-     "lufsMax": -15.98,
-     "truePeak": -10.6,
+     "lufsMax": -16.03,
+     "truePeak": -10.59,
+     "duration": 0.4
+    },
+    {
+     "lufsMax": -15.97,
+     "truePeak": -10.59,
      "duration": 0.4
     }
    ]
@@ -6043,17 +6043,17 @@
     },
     {
      "lufsMax": -15.98,
-     "truePeak": -7.01,
+     "truePeak": -7.05,
      "duration": 1.31
     },
     {
      "lufsMax": -15.51,
-     "truePeak": -6.05,
+     "truePeak": -6.07,
      "duration": 1.34
     },
     {
-     "lufsMax": -17.27,
-     "truePeak": -7.88,
+     "lufsMax": -17.28,
+     "truePeak": -7.86,
      "duration": 1.33
     }
    ]
@@ -6121,18 +6121,18 @@
      "duration": 0.55
     },
     {
-     "lufsMax": -15.99,
+     "lufsMax": -16.01,
+     "truePeak": -12.63,
+     "duration": 0.55
+    },
+    {
+     "lufsMax": -16,
      "truePeak": -12.62,
      "duration": 0.55
     },
     {
-     "lufsMax": -15.98,
-     "truePeak": -12.61,
-     "duration": 0.55
-    },
-    {
-     "lufsMax": -15.95,
-     "truePeak": -12.67,
+     "lufsMax": -15.94,
+     "truePeak": -12.66,
      "duration": 0.55
     }
    ]
@@ -6142,12 +6142,12 @@
    "id": "shieldOn",
    "cat": "powerup",
    "desc": "Energy shield raises",
-   "gain": 0.286,
+   "gain": 0.283,
    "limited": false,
    "m": {
-    "peak": -2.56,
-    "truePeak": -2.56,
-    "lufsMax": -16.12,
+    "peak": -2.65,
+    "truePeak": -2.65,
+    "lufsMax": -16.21,
     "duration": 0.98,
     "centroid": 632
    },
@@ -6195,23 +6195,23 @@
    ],
    "takes": [
     {
-     "lufsMax": -16.12,
-     "truePeak": -2.56,
+     "lufsMax": -16.21,
+     "truePeak": -2.65,
      "duration": 0.98
     },
     {
-     "lufsMax": -15.74,
-     "truePeak": -2.45,
+     "lufsMax": -15.84,
+     "truePeak": -2.52,
      "duration": 1
     },
     {
-     "lufsMax": -16.39,
-     "truePeak": -2.29,
-     "duration": 1
+     "lufsMax": -16.06,
+     "truePeak": -2.03,
+     "duration": 0.99
     },
     {
-     "lufsMax": -15.75,
-     "truePeak": -2.21,
+     "lufsMax": -15.83,
+     "truePeak": -2.14,
      "duration": 1
     }
    ]
@@ -6221,77 +6221,77 @@
    "id": "shieldOff",
    "cat": "powerup",
    "desc": "Shield drops or breaks down",
-   "gain": 0.408,
-   "limited": true,
+   "gain": 0.618,
+   "limited": false,
    "m": {
-    "peak": -1.53,
-    "truePeak": -1.53,
-    "lufsMax": -18.69,
+    "peak": -1.51,
+    "truePeak": -1.42,
+    "lufsMax": -16.33,
     "duration": 0.4,
-    "centroid": 2114
+    "centroid": 2028
    },
    "env": [
     1,
     1,
-    0.98,
-    0.96,
-    0.95,
-    0.89,
-    0.88,
-    0.85,
-    0.83,
-    0.83,
-    0.79,
-    0.76,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0.99,
+    0.92,
+    0.91,
+    0.87,
+    0.84,
+    0.81,
+    0.77,
     0.75,
     0.7,
-    0.68,
-    0.66,
-    0.63,
+    0.67,
+    0.64,
     0.61,
-    0.57,
-    0.56,
+    0.58,
+    0.54,
     0.52,
     0.49,
-    0.48,
     0.44,
-    0.42,
-    0.4,
+    0.41,
+    0.39,
     0.36,
-    0.34,
-    0.31,
-    0.29,
-    0.27,
-    0.25,
-    0.2,
-    0.17,
-    0.15,
-    0.13,
-    0.1,
-    0.07,
-    0.05,
-    0.03
+    0.33,
+    0.3,
+    0.24,
+    0.22,
+    0.19,
+    0.16,
+    0.12,
+    0.09,
+    0.06,
+    0.04
    ],
    "takes": [
     {
-     "lufsMax": -18.69,
-     "truePeak": -1.53,
+     "lufsMax": -16.33,
+     "truePeak": -1.42,
      "duration": 0.4
     },
     {
-     "lufsMax": -18.5,
-     "truePeak": -1.26,
+     "lufsMax": -16.13,
+     "truePeak": -1.37,
      "duration": 0.42
     },
     {
-     "lufsMax": -18.6,
-     "truePeak": -1.2,
+     "lufsMax": -16.27,
+     "truePeak": -1.34,
      "duration": 0.4
     },
     {
-     "lufsMax": -18.45,
-     "truePeak": -1.34,
-     "duration": 0.41
+     "lufsMax": -16.07,
+     "truePeak": -1.39,
+     "duration": 0.42
     }
    ]
   },
@@ -6303,73 +6303,73 @@
    "gain": 0.299,
    "limited": false,
    "m": {
-    "peak": -6.14,
-    "truePeak": -6.12,
-    "lufsMax": -16.03,
+    "peak": -6.23,
+    "truePeak": -6.19,
+    "lufsMax": -16.04,
     "duration": 0.3,
-    "centroid": 2566
+    "centroid": 2563
    },
    "env": [
     0.91,
     0.94,
-    0.96,
     0.97,
+    0.98,
     0.99,
     0.99,
-    0.97,
-    0.97,
     0.99,
     0.98,
+    0.99,
+    1,
     1,
     0.98,
-    0.98,
+    0.99,
     0.97,
     0.98,
-    0.91,
-    0.87,
-    0.85,
+    0.92,
+    0.88,
+    0.86,
     0.81,
-    0.77,
-    0.75,
-    0.69,
-    0.66,
-    0.64,
-    0.59,
-    0.56,
+    0.79,
+    0.73,
+    0.7,
+    0.67,
+    0.63,
+    0.6,
+    0.57,
     0.52,
     0.48,
     0.45,
-    0.42,
+    0.41,
     0.37,
     0.34,
     0.3,
     0.26,
-    0.22,
+    0.23,
     0.19,
-    0.15,
+    0.16,
     0.12,
     0.09,
     0.05
    ],
    "takes": [
     {
-     "lufsMax": -16.03,
-     "truePeak": -6.12,
+     "lufsMax": -16.04,
+     "truePeak": -6.19,
      "duration": 0.3
     },
     {
-     "lufsMax": -15.98,
-     "truePeak": -5.89,
+     "lufsMax": -16,
+     "truePeak": -6.02,
      "duration": 0.32
     },
     {
-     "lufsMax": -16.02,
-     "truePeak": -5.96,
+     "lufsMax": -16.04,
+     "truePeak": -5.68,
      "duration": 0.31
     },
     {
-     "lufsMax": -15.98,
-     "truePeak": -5.91,
+     "lufsMax": -15.97,
+     "truePeak": -6.01,
      "duration": 0.31
     }
    ]
@@ -6458,12 +6458,12 @@
    "id": "chargeUp",
    "cat": "powerup",
    "desc": "Charging a shot, rising tension",
-   "gain": 0.212,
+   "gain": 0.215,
    "limited": false,
    "m": {
-    "peak": -6.5,
-    "truePeak": -6.42,
-    "lufsMax": -16.43,
+    "peak": -6.38,
+    "truePeak": -6.3,
+    "lufsMax": -16.3,
     "duration": 0.98,
     "centroid": 1841
    },
@@ -6511,23 +6511,23 @@
    ],
    "takes": [
     {
-     "lufsMax": -16.43,
-     "truePeak": -6.42,
+     "lufsMax": -16.3,
+     "truePeak": -6.3,
      "duration": 0.98
     },
     {
-     "lufsMax": -15.97,
-     "truePeak": -4.96,
+     "lufsMax": -15.85,
+     "truePeak": -4.83,
      "duration": 0.98
     },
     {
-     "lufsMax": -15.65,
-     "truePeak": -4.91,
+     "lufsMax": -15.96,
+     "truePeak": -5.6,
      "duration": 0.98
     },
     {
-     "lufsMax": -15.9,
-     "truePeak": -4.99,
+     "lufsMax": -15.81,
+     "truePeak": -4.84,
      "duration": 0.98
     }
    ]
@@ -6595,18 +6595,18 @@
      "duration": 0.38
     },
     {
-     "lufsMax": -15.99,
+     "lufsMax": -16,
      "truePeak": -10.69,
      "duration": 0.38
     },
     {
-     "lufsMax": -16,
+     "lufsMax": -16.01,
      "truePeak": -10.81,
      "duration": 0.38
     },
     {
-     "lufsMax": -15.98,
-     "truePeak": -10.66,
+     "lufsMax": -15.97,
+     "truePeak": -10.65,
      "duration": 0.38
     }
    ]
@@ -6674,17 +6674,17 @@
      "duration": 1.11
     },
     {
-     "lufsMax": -15.12,
+     "lufsMax": -15.11,
      "truePeak": -5.88,
      "duration": 1.15
     },
     {
-     "lufsMax": -16.34,
-     "truePeak": -6.79,
+     "lufsMax": -16.36,
+     "truePeak": -6.82,
      "duration": 1.11
     },
     {
-     "lufsMax": -16.06,
+     "lufsMax": -16.07,
      "truePeak": -7.77,
      "duration": 1.2
     }
@@ -6753,17 +6753,17 @@
      "duration": 0.9
     },
     {
-     "lufsMax": -16.04,
+     "lufsMax": -16.05,
      "truePeak": -9.48,
      "duration": 0.92
     },
     {
-     "lufsMax": -16.03,
+     "lufsMax": -16.04,
      "truePeak": -9.47,
      "duration": 0.91
     },
     {
-     "lufsMax": -15.99,
+     "lufsMax": -15.98,
      "truePeak": -9.46,
      "duration": 0.92
     }
@@ -6774,77 +6774,77 @@
    "id": "laser",
    "cat": "shoot",
    "desc": "Classic laser: fast square sweep down",
-   "gain": 0.489,
+   "gain": 0.478,
    "limited": false,
    "m": {
-    "peak": -3.38,
-    "truePeak": -3.38,
-    "lufsMax": -16.14,
-    "duration": 0.18,
-    "centroid": 2510
+    "peak": -3.66,
+    "truePeak": -3.65,
+    "lufsMax": -16.13,
+    "duration": 0.2,
+    "centroid": 1857
    },
    "env": [
-    0.96,
+    0.97,
     1,
-    0.98,
-    0.93,
+    0.99,
     0.93,
     0.91,
-    0.84,
-    0.86,
+    0.91,
     0.85,
-    0.79,
-    0.76,
+    0.85,
+    0.84,
     0.77,
+    0.76,
+    0.76,
     0.71,
-    0.67,
-    0.67,
-    0.67,
-    0.62,
-    0.58,
+    0.66,
+    0.68,
+    0.65,
+    0.6,
+    0.57,
     0.56,
-    0.53,
+    0.55,
     0.54,
     0.5,
-    0.5,
+    0.47,
     0.45,
-    0.42,
-    0.4,
+    0.41,
+    0.38,
     0.37,
-    0.36,
-    0.32,
-    0.31,
-    0.28,
-    0.26,
-    0.24,
-    0.21,
-    0.19,
-    0.16,
+    0.34,
+    0.33,
+    0.3,
+    0.27,
+    0.25,
+    0.23,
+    0.2,
+    0.17,
+    0.15,
     0.13,
-    0.11,
+    0.1,
     0.08,
     0.05
    ],
    "takes": [
     {
-     "lufsMax": -16.14,
-     "truePeak": -3.38,
-     "duration": 0.18
+     "lufsMax": -16.13,
+     "truePeak": -3.65,
+     "duration": 0.2
     },
     {
      "lufsMax": -15.92,
-     "truePeak": -3.3,
-     "duration": 0.19
+     "truePeak": -3.55,
+     "duration": 0.21
     },
     {
      "lufsMax": -16.07,
-     "truePeak": -3.49,
-     "duration": 0.18
+     "truePeak": -3.63,
+     "duration": 0.2
     },
     {
-     "lufsMax": -15.9,
-     "truePeak": -3.34,
-     "duration": 0.19
+     "lufsMax": -15.89,
+     "truePeak": -3.52,
+     "duration": 0.21
     }
    ]
   },
@@ -6932,48 +6932,48 @@
    "id": "laserHeavy",
    "cat": "shoot",
    "desc": "Thick laser cannon",
-   "gain": 0.325,
+   "gain": 0.319,
    "limited": false,
    "m": {
-    "peak": -4.24,
-    "truePeak": -4.24,
-    "lufsMax": -16.06,
+    "peak": -4.41,
+    "truePeak": -4.41,
+    "lufsMax": -16.02,
     "duration": 0.9,
-    "centroid": 1973
+    "centroid": 1958
    },
    "env": [
     1,
     0.96,
-    0.96,
+    0.97,
     0.9,
-    0.86,
-    0.88,
-    0.79,
-    0.76,
-    0.7,
-    0.65,
-    0.65,
-    0.6,
-    0.44,
-    0.37,
-    0.33,
-    0.27,
-    0.27,
+    0.93,
+    0.91,
+    0.87,
+    0.85,
+    0.75,
+    0.62,
+    0.59,
+    0.59,
+    0.45,
+    0.43,
+    0.38,
+    0.29,
+    0.31,
+    0.25,
+    0.19,
     0.2,
-    0.18,
-    0.16,
     0.17,
     0.14,
-    0.12,
     0.14,
-    0.12,
+    0.13,
+    0.11,
     0.09,
     0.09,
     0.08,
-    0.07,
+    0.08,
     0.06,
     0.05,
-    0.05,
+    0.06,
     0.05,
     0.04,
     0.04,
@@ -6985,24 +6985,24 @@
    ],
    "takes": [
     {
-     "lufsMax": -16.06,
-     "truePeak": -4.24,
+     "lufsMax": -16.02,
+     "truePeak": -4.41,
      "duration": 0.9
     },
     {
-     "lufsMax": -15.99,
-     "truePeak": -4.25,
+     "lufsMax": -16,
+     "truePeak": -4.29,
      "duration": 0.91
     },
     {
-     "lufsMax": -15.98,
-     "truePeak": -4.2,
+     "lufsMax": -15.99,
+     "truePeak": -4.3,
      "duration": 0.9
     },
     {
-     "lufsMax": -15.95,
-     "truePeak": -4.24,
-     "duration": 0.92
+     "lufsMax": -15.94,
+     "truePeak": -4.26,
+     "duration": 0.91
     }
    ]
   },
@@ -7011,77 +7011,77 @@
    "id": "blaster",
    "cat": "shoot",
    "desc": "Sci-fi blaster bolt",
-   "gain": 0.446,
+   "gain": 0.689,
    "limited": true,
    "m": {
-    "peak": -1.71,
-    "truePeak": -1.7,
-    "lufsMax": -19.31,
-    "duration": 0.14,
-    "centroid": 2171
+    "peak": -1.51,
+    "truePeak": -1.38,
+    "lufsMax": -17.27,
+    "duration": 0.46,
+    "centroid": 1601
    },
    "env": [
-    0.99,
-    0.94,
+    1,
+    1,
     1,
     0.94,
-    0.93,
-    0.89,
-    0.9,
     0.85,
-    0.8,
-    0.73,
-    0.78,
-    0.66,
-    0.65,
-    0.7,
-    0.63,
-    0.59,
-    0.61,
-    0.56,
-    0.52,
-    0.51,
-    0.44,
-    0.48,
-    0.44,
-    0.41,
-    0.38,
-    0.38,
-    0.34,
+    0.74,
+    0.64,
+    0.67,
+    0.53,
+    0.46,
+    0.36,
     0.32,
-    0.3,
-    0.13,
+    0.29,
+    0.33,
     0.26,
-    0.22,
+    0.24,
     0.21,
+    0.17,
+    0.16,
     0.18,
-    0.15,
-    0.14,
-    0.05,
+    0.17,
+    0.13,
+    0.11,
+    0.09,
+    0.09,
     0.1,
+    0.09,
+    0.07,
     0.06,
-    0.05
+    0.05,
+    0.04,
+    0.05,
+    0.05,
+    0.04,
+    0.03,
+    0.03,
+    0.03,
+    0.03,
+    0.03,
+    0.02
    ],
    "takes": [
     {
-     "lufsMax": -19.31,
-     "truePeak": -1.7,
-     "duration": 0.14
+     "lufsMax": -17.27,
+     "truePeak": -1.38,
+     "duration": 0.46
     },
     {
-     "lufsMax": -19.14,
-     "truePeak": -1.2,
-     "duration": 0.15
+     "lufsMax": -17.1,
+     "truePeak": -1.48,
+     "duration": 0.47
     },
     {
-     "lufsMax": -19.28,
-     "truePeak": -1.72,
-     "duration": 0.14
+     "lufsMax": -17.16,
+     "truePeak": -1.41,
+     "duration": 0.46
     },
     {
-     "lufsMax": -19.07,
-     "truePeak": -1.87,
-     "duration": 0.15
+     "lufsMax": -16.95,
+     "truePeak": -1.3,
+     "duration": 0.46
     }
    ]
   },
@@ -7090,76 +7090,76 @@
    "id": "zap",
    "cat": "shoot",
    "desc": "Electric zap",
-   "gain": 0.644,
+   "gain": 0.612,
    "limited": true,
    "m": {
-    "peak": -1.88,
-    "truePeak": -1.62,
-    "lufsMax": -19.05,
+    "peak": -2.82,
+    "truePeak": -2.51,
+    "lufsMax": -19.59,
     "duration": 0.1,
-    "centroid": 7208
+    "centroid": 7233
    },
    "env": [
-    0.95,
+    0.98,
     1,
-    0.88,
-    1,
-    0.94,
+    0.93,
+    0.96,
     0.89,
-    0.89,
-    0.82,
-    0.82,
-    0.74,
-    0.72,
-    0.73,
-    0.72,
-    0.67,
-    0.66,
-    0.65,
-    0.59,
-    0.59,
+    0.91,
+    0.86,
+    0.8,
+    0.85,
+    0.77,
+    0.76,
+    0.78,
+    0.71,
+    0.7,
+    0.68,
+    0.64,
+    0.63,
+    0.61,
     0.6,
-    0.57,
-    0.53,
+    0.59,
+    0.55,
+    0.52,
     0.5,
     0.47,
     0.46,
     0.44,
     0.43,
-    0.42,
-    0.37,
-    0.34,
-    0.31,
+    0.38,
+    0.35,
+    0.32,
+    0.3,
     0.29,
-    0.28,
-    0.25,
-    0.23,
+    0.26,
+    0.24,
     0.21,
-    0.16,
+    0.17,
     0.15,
     0.13,
-    0.06,
+    0.07,
     0.02
    ],
    "takes": [
     {
-     "lufsMax": -19.05,
-     "truePeak": -1.62,
+     "lufsMax": -19.59,
+     "truePeak": -2.51,
      "duration": 0.1
     },
     {
-     "lufsMax": -18.97,
-     "truePeak": -1.85,
+     "lufsMax": -19.32,
+     "truePeak": -1.88,
      "duration": 0.1
     },
     {
-     "lufsMax": -18.97,
-     "truePeak": -1.2,
+     "lufsMax": -19.56,
+     "truePeak": -1.19,
      "duration": 0.1
     },
     {
-     "lufsMax": -18.88,
-     "truePeak": -1.44,
+     "lufsMax": -19.38,
+     "truePeak": -2.16,
      "duration": 0.1
     }
    ]
@@ -7169,76 +7169,76 @@
    "id": "pew",
    "cat": "shoot",
    "desc": "Tiny pew for bullet-hell spam",
-   "gain": 0.709,
-   "limited": true,
+   "gain": 0.865,
+   "limited": false,
    "m": {
-    "peak": -1.3,
-    "truePeak": -1.28,
-    "lufsMax": -16.98,
+    "peak": -1.51,
+    "truePeak": -1.37,
+    "lufsMax": -16.34,
     "duration": 0.08,
-    "centroid": 3121
+    "centroid": 3113
    },
    "env": [
-    0.98,
     1,
     1,
     1,
     1,
-    0.98,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0.99,
     0.97,
-    0.96,
-    0.94,
-    0.92,
-    0.89,
-    0.86,
-    0.83,
-    0.82,
-    0.78,
-    0.76,
-    0.73,
-    0.71,
-    0.66,
-    0.64,
+    0.93,
+    0.91,
+    0.87,
+    0.85,
+    0.81,
+    0.79,
+    0.74,
+    0.72,
+    0.7,
+    0.65,
     0.62,
-    0.58,
-    0.56,
-    0.53,
-    0.51,
+    0.6,
+    0.57,
+    0.52,
+    0.49,
     0.47,
     0.44,
-    0.42,
     0.4,
     0.36,
-    0.33,
-    0.3,
-    0.28,
-    0.26,
-    0.22,
+    0.34,
+    0.31,
+    0.29,
+    0.25,
+    0.21,
     0.19,
-    0.17,
-    0.15,
-    0.12,
-    0.07
+    0.16,
+    0.13,
+    0.08
    ],
    "takes": [
     {
-     "lufsMax": -16.98,
-     "truePeak": -1.28,
+     "lufsMax": -16.34,
+     "truePeak": -1.37,
      "duration": 0.08
     },
     {
-     "lufsMax": -16.81,
-     "truePeak": -1.21,
+     "lufsMax": -16.21,
+     "truePeak": -1.41,
      "duration": 0.09
     },
     {
-     "lufsMax": -16.95,
-     "truePeak": -1.24,
+     "lufsMax": -16.32,
+     "truePeak": -1.38,
      "duration": 0.08
     },
     {
-     "lufsMax": -16.72,
-     "truePeak": -1.23,
+     "lufsMax": -16.09,
+     "truePeak": -1.36,
      "duration": 0.09
     }
    ]
@@ -7248,77 +7248,77 @@
    "id": "gunshot",
    "cat": "shoot",
    "desc": "Pistol shot with room tail",
-   "gain": 0.323,
-   "limited": true,
+   "gain": 0.471,
+   "limited": false,
    "m": {
-    "peak": -1.28,
-    "truePeak": -1.19,
-    "lufsMax": -18.89,
-    "duration": 0.89,
-    "centroid": 3555
+    "peak": -1.51,
+    "truePeak": -1.14,
+    "lufsMax": -16.48,
+    "duration": 0.93,
+    "centroid": 3500
    },
    "env": [
     1,
+    0.98,
+    0.88,
     0.81,
-    0.72,
-    0.66,
-    0.55,
-    0.42,
-    0.32,
-    0.34,
-    0.34,
-    0.25,
-    0.23,
-    0.25,
+    0.61,
+    0.51,
+    0.4,
+    0.41,
+    0.33,
+    0.29,
     0.31,
-    0.22,
-    0.17,
+    0.38,
+    0.35,
+    0.25,
+    0.2,
+    0.19,
+    0.18,
     0.16,
-    0.15,
-    0.14,
     0.13,
     0.11,
-    0.09,
+    0.11,
+    0.12,
+    0.11,
     0.09,
     0.1,
     0.09,
-    0.08,
-    0.08,
     0.07,
     0.06,
     0.05,
+    0.05,
+    0.06,
     0.04,
     0.04,
     0.05,
     0.04,
     0.03,
-    0.04,
     0.03,
     0.03,
     0.03,
-    0.02,
     0.02
    ],
    "takes": [
     {
-     "lufsMax": -18.89,
-     "truePeak": -1.19,
-     "duration": 0.89
+     "lufsMax": -16.48,
+     "truePeak": -1.14,
+     "duration": 0.93
     },
     {
-     "lufsMax": -19.05,
-     "truePeak": -1.66,
+     "lufsMax": -16.48,
+     "truePeak": -1.23,
      "duration": 0.92
     },
     {
-     "lufsMax": -18.76,
-     "truePeak": -1.71,
-     "duration": 0.87
+     "lufsMax": -16.33,
+     "truePeak": -1.05,
+     "duration": 0.92
     },
     {
-     "lufsMax": -18.76,
-     "truePeak": -1.32,
-     "duration": 0.89
+     "lufsMax": -16.4,
+     "truePeak": -1.26,
+     "duration": 0.93
     }
    ]
   },
@@ -7327,14 +7327,14 @@
    "id": "shotgun",
    "cat": "shoot",
    "desc": "Shotgun blast, wide and heavy",
-   "gain": 0.272,
+   "gain": 0.273,
    "limited": false,
    "m": {
-    "peak": -3.43,
-    "truePeak": -2.93,
-    "lufsMax": -16.17,
+    "peak": -3.42,
+    "truePeak": -2.89,
+    "lufsMax": -16.14,
     "duration": 1.08,
-    "centroid": 4570
+    "centroid": 4569
    },
    "env": [
     1,
@@ -7346,7 +7346,7 @@
     0.59,
     0.47,
     0.44,
-    0.4,
+    0.41,
     0.38,
     0.33,
     0.26,
@@ -7356,7 +7356,7 @@
     0.19,
     0.16,
     0.17,
-    0.15,
+    0.16,
     0.13,
     0.13,
     0.12,
@@ -7380,23 +7380,23 @@
    ],
    "takes": [
     {
-     "lufsMax": -16.17,
-     "truePeak": -2.93,
+     "lufsMax": -16.14,
+     "truePeak": -2.89,
      "duration": 1.08
     },
     {
-     "lufsMax": -16.08,
+     "lufsMax": -16.09,
      "truePeak": -2.67,
-     "duration": 1.07
-    },
-    {
-     "lufsMax": -15.89,
-     "truePeak": -3.04,
      "duration": 1.08
     },
     {
-     "lufsMax": -15.91,
-     "truePeak": -3.2,
+     "lufsMax": -15.95,
+     "truePeak": -3.22,
+     "duration": 1.08
+    },
+    {
+     "lufsMax": -15.84,
+     "truePeak": -3.13,
      "duration": 1.08
     }
    ]
@@ -7406,76 +7406,76 @@
    "id": "shootRetro",
    "cat": "shoot",
    "desc": "8-bit shot",
-   "gain": 0.421,
+   "gain": 0.428,
    "limited": true,
    "m": {
-    "peak": -3.26,
-    "truePeak": -2.41,
-    "lufsMax": -17.73,
+    "peak": -3.04,
+    "truePeak": -1.94,
+    "lufsMax": -17.8,
     "duration": 0.14,
-    "centroid": 4822
+    "centroid": 4745
    },
    "env": [
+    0.97,
     1,
     0.98,
+    0.97,
+    0.95,
+    0.98,
+    0.89,
     0.92,
-    0.94,
-    0.94,
-    0.93,
+    0.85,
     0.91,
-    0.96,
-    0.85,
-    0.9,
-    0.81,
-    0.93,
-    0.85,
-    0.87,
-    0.63,
+    0.92,
+    0.84,
+    0.78,
+    0.86,
     0.75,
+    0.54,
+    0.6,
     0.73,
+    0.7,
     0.57,
-    0.68,
-    0.58,
-    0.51,
-    0.56,
+    0.6,
+    0.53,
     0.48,
-    0.42,
-    0.44,
-    0.44,
-    0.33,
-    0.35,
-    0.34,
+    0.48,
+    0.41,
+    0.45,
+    0.28,
+    0.36,
+    0.28,
     0.26,
+    0.22,
     0.2,
-    0.26,
-    0.23,
+    0.21,
     0.19,
+    0.15,
     0.12,
     0.11,
-    0.12,
-    0.09,
     0.07,
-    0.04
+    0.04,
+    0.03
    ],
    "takes": [
     {
-     "lufsMax": -17.73,
-     "truePeak": -2.41,
+     "lufsMax": -17.8,
+     "truePeak": -1.94,
      "duration": 0.14
     },
     {
-     "lufsMax": -17.89,
-     "truePeak": -1.2,
+     "lufsMax": -17.94,
+     "truePeak": -1.74,
      "duration": 0.15
     },
     {
-     "lufsMax": -18.11,
-     "truePeak": -1.61,
+     "lufsMax": -17.58,
+     "truePeak": -1.72,
      "duration": 0.14
     },
     {
-     "lufsMax": -17.86,
-     "truePeak": -2.1,
+     "lufsMax": -17.31,
+     "truePeak": -1.2,
      "duration": 0.15
     }
    ]
@@ -7485,77 +7485,77 @@
    "id": "railgun",
    "cat": "shoot",
    "desc": "Charge whine, then a piercing shot",
-   "gain": 0.364,
-   "limited": true,
+   "gain": 0.36,
+   "limited": false,
    "m": {
-    "peak": -1.48,
-    "truePeak": -1.33,
-    "lufsMax": -16.11,
+    "peak": -1.62,
+    "truePeak": -1.38,
+    "lufsMax": -16.21,
     "duration": 1.35,
-    "centroid": 5123
+    "centroid": 5078
    },
    "env": [
     0.14,
     0.21,
     0.25,
-    0.31,
+    0.32,
     0.35,
-    0.42,
+    0.41,
     0.46,
     1,
-    0.99,
-    0.94,
+    0.96,
+    0.93,
     0.82,
-    0.71,
-    0.54,
-    0.46,
-    0.39,
-    0.3,
-    0.36,
-    0.3,
-    0.22,
-    0.25,
-    0.17,
-    0.16,
+    0.7,
+    0.56,
+    0.5,
+    0.4,
+    0.33,
+    0.34,
+    0.31,
+    0.21,
+    0.26,
+    0.19,
+    0.18,
     0.14,
     0.12,
     0.11,
     0.1,
-    0.1,
+    0.11,
     0.08,
-    0.07,
-    0.06,
+    0.08,
+    0.05,
     0.05,
     0.04,
     0.05,
     0.04,
     0.03,
-    0.02,
-    0.02,
+    0.03,
+    0.03,
     0.02,
     0.02,
     0.02
    ],
    "takes": [
     {
-     "lufsMax": -16.11,
-     "truePeak": -1.33,
+     "lufsMax": -16.21,
+     "truePeak": -1.38,
      "duration": 1.35
     },
     {
-     "lufsMax": -16.41,
-     "truePeak": -1.2,
-     "duration": 1.32
-    },
-    {
-     "lufsMax": -16.07,
-     "truePeak": -1.49,
-     "duration": 1.35
-    },
-    {
-     "lufsMax": -16.34,
-     "truePeak": -1.82,
+     "lufsMax": -16.29,
+     "truePeak": -1.74,
      "duration": 1.29
+    },
+    {
+     "lufsMax": -16.24,
+     "truePeak": -1.31,
+     "duration": 1.29
+    },
+    {
+     "lufsMax": -16.3,
+     "truePeak": -1.2,
+     "duration": 1.3
     }
    ]
   },
@@ -7643,76 +7643,76 @@
    "id": "plasma",
    "cat": "shoot",
    "desc": "Plasma ball launch",
-   "gain": 0.379,
+   "gain": 0.598,
    "limited": true,
    "m": {
-    "peak": -1.23,
-    "truePeak": -1.23,
-    "lufsMax": -19.42,
-    "duration": 0.29,
-    "centroid": 1688
+    "peak": -1.51,
+    "truePeak": -1.42,
+    "lufsMax": -16.87,
+    "duration": 0.3,
+    "centroid": 1628
    },
    "env": [
     1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0.98,
     0.96,
-    0.97,
-    0.93,
+    0.94,
     0.9,
     0.86,
-    0.84,
-    0.82,
-    0.81,
+    0.83,
     0.8,
-    0.75,
-    0.73,
-    0.71,
+    0.79,
+    0.74,
+    0.7,
     0.68,
-    0.66,
-    0.65,
-    0.62,
-    0.6,
-    0.56,
+    0.63,
+    0.61,
+    0.58,
     0.54,
-    0.51,
-    0.5,
-    0.46,
-    0.44,
-    0.42,
+    0.52,
+    0.49,
+    0.47,
+    0.41,
     0.39,
     0.36,
-    0.34,
-    0.32,
+    0.33,
     0.3,
-    0.26,
+    0.27,
     0.24,
-    0.21,
     0.19,
-    0.17,
     0.15,
     0.12,
     0.09,
-    0.07,
-    0.04
+    0.08,
+    0.05
    ],
    "takes": [
     {
-     "lufsMax": -19.42,
-     "truePeak": -1.23,
-     "duration": 0.29
-    },
-    {
-     "lufsMax": -19.25,
-     "truePeak": -1.2,
-     "duration": 0.31
-    },
-    {
-     "lufsMax": -19.41,
-     "truePeak": -1.45,
+     "lufsMax": -16.87,
+     "truePeak": -1.42,
      "duration": 0.3
     },
     {
-     "lufsMax": -19.16,
-     "truePeak": -1.24,
+     "lufsMax": -16.67,
+     "truePeak": -1.44,
+     "duration": 0.31
+    },
+    {
+     "lufsMax": -16.78,
+     "truePeak": -1.43,
+     "duration": 0.3
+    },
+    {
+     "lufsMax": -16.6,
+     "truePeak": -1.42,
      "duration": 0.31
     }
    ]
@@ -7722,48 +7722,48 @@
    "id": "missile",
    "cat": "shoot",
    "desc": "Rocket launch whoosh",
-   "gain": 0.606,
+   "gain": 0.608,
    "limited": false,
    "m": {
-    "peak": -6.2,
-    "truePeak": -6.18,
-    "lufsMax": -15.86,
+    "peak": -6.31,
+    "truePeak": -6.29,
+    "lufsMax": -15.83,
     "duration": 0.71,
     "centroid": 4319
    },
    "env": [
-    0.84,
+    0.85,
     0.92,
-    0.89,
     0.9,
+    0.91,
     0.94,
-    0.9,
+    0.91,
     0.88,
-    0.86,
+    0.87,
     0.89,
     0.92,
-    0.87,
-    0.93,
-    0.92,
-    0.99,
-    0.95,
-    0.95,
-    0.93,
     0.88,
     0.93,
+    0.94,
+    0.99,
+    0.96,
+    0.97,
+    0.93,
+    0.89,
+    0.94,
     1,
-    0.9,
-    0.83,
+    0.91,
+    0.84,
     0.83,
     0.77,
-    0.75,
-    0.71,
+    0.76,
+    0.72,
     0.69,
     0.59,
-    0.55,
+    0.56,
     0.57,
     0.51,
-    0.43,
+    0.44,
     0.41,
     0.35,
     0.3,
@@ -7775,23 +7775,23 @@
    ],
    "takes": [
     {
-     "lufsMax": -15.86,
-     "truePeak": -6.18,
+     "lufsMax": -15.83,
+     "truePeak": -6.29,
      "duration": 0.71
     },
     {
-     "lufsMax": -16.1,
-     "truePeak": -6.44,
+     "lufsMax": -16.12,
+     "truePeak": -6.23,
      "duration": 0.73
     },
     {
-     "lufsMax": -16.06,
-     "truePeak": -5.63,
+     "lufsMax": -16.15,
+     "truePeak": -5.95,
      "duration": 0.72
     },
     {
-     "lufsMax": -15.99,
-     "truePeak": -5.48,
+     "lufsMax": -15.88,
+     "truePeak": -6.24,
      "duration": 0.73
     }
    ]
@@ -7801,30 +7801,30 @@
    "id": "ricochet",
    "cat": "shoot",
    "desc": "Bullet ricochet: sharp tick and a falling whine",
-   "gain": 0.334,
+   "gain": 0.333,
    "limited": false,
    "m": {
-    "peak": -7.82,
-    "truePeak": -7.78,
-    "lufsMax": -15.97,
+    "peak": -7.85,
+    "truePeak": -7.8,
+    "lufsMax": -16,
     "duration": 0.77,
-    "centroid": 3212
+    "centroid": 3207
    },
    "env": [
     1,
     0.99,
-    0.94,
     0.93,
+    0.94,
     0.9,
     0.86,
-    0.83,
+    0.84,
     0.77,
     0.74,
-    0.67,
+    0.68,
     0.62,
     0.57,
     0.59,
-    0.47,
+    0.48,
     0.43,
     0.41,
     0.34,
@@ -7854,24 +7854,24 @@
    ],
    "takes": [
     {
-     "lufsMax": -15.97,
-     "truePeak": -7.78,
-     "duration": 0.77
-    },
-    {
-     "lufsMax": -16.18,
-     "truePeak": -7.96,
+     "lufsMax": -16,
+     "truePeak": -7.8,
      "duration": 0.77
     },
     {
      "lufsMax": -16.02,
-     "truePeak": -7.73,
+     "truePeak": -8.02,
      "duration": 0.77
     },
     {
-     "lufsMax": -15.82,
-     "truePeak": -7.76,
-     "duration": 0.76
+     "lufsMax": -15.88,
+     "truePeak": -7.82,
+     "duration": 0.82
+    },
+    {
+     "lufsMax": -16.09,
+     "truePeak": -8.16,
+     "duration": 0.77
     }
    ]
   },
@@ -7880,77 +7880,77 @@
    "id": "dryFire",
    "cat": "shoot",
    "desc": "Empty gun: the hammer clicks, nothing fires",
-   "gain": 0.622,
+   "gain": 0.983,
    "limited": true,
    "m": {
-    "peak": -1.5,
-    "truePeak": -1.41,
-    "lufsMax": -18.45,
-    "duration": 0.52,
-    "centroid": 4381
+    "peak": -1.51,
+    "truePeak": -1.28,
+    "lufsMax": -16.88,
+    "duration": 0.54,
+    "centroid": 4345
    },
    "env": [
     1,
-    0.87,
+    0.94,
+    0.41,
+    0.43,
+    0.76,
+    0.51,
+    0.38,
     0.31,
-    0.34,
-    0.6,
-    0.5,
-    0.29,
-    0.31,
-    0.21,
-    0.21,
-    0.21,
+    0.26,
+    0.26,
+    0.28,
+    0.24,
     0.22,
-    0.19,
+    0.2,
     0.17,
-    0.16,
+    0.2,
+    0.15,
     0.13,
-    0.16,
     0.12,
-    0.1,
-    0.1,
-    0.1,
+    0.13,
+    0.11,
+    0.08,
     0.09,
-    0.07,
-    0.07,
-    0.07,
-    0.07,
+    0.09,
+    0.08,
+    0.06,
     0.06,
     0.05,
-    0.04,
+    0.06,
     0.05,
     0.05,
     0.04,
-    0.03,
-    0.03,
-    0.03,
+    0.04,
+    0.04,
     0.03,
     0.03,
     0.02,
-    0.02,
+    0.03,
+    0.03,
     0.02
    ],
    "takes": [
     {
-     "lufsMax": -18.45,
-     "truePeak": -1.41,
-     "duration": 0.52
+     "lufsMax": -16.88,
+     "truePeak": -1.28,
+     "duration": 0.54
     },
     {
-     "lufsMax": -18.66,
-     "truePeak": -1.47,
-     "duration": 0.52
-    },
-    {
-     "lufsMax": -18.64,
-     "truePeak": -1.2,
-     "duration": 0.52
-    },
-    {
-     "lufsMax": -18.58,
+     "lufsMax": -17.02,
      "truePeak": -1.32,
-     "duration": 0.52
+     "duration": 0.55
+    },
+    {
+     "lufsMax": -17.2,
+     "truePeak": -1.31,
+     "duration": 0.54
+    },
+    {
+     "lufsMax": -17.16,
+     "truePeak": -1.27,
+     "duration": 0.55
     }
    ]
   },
@@ -7959,23 +7959,23 @@
    "id": "reload",
    "cat": "shoot",
    "desc": "Reload: two metal clicks",
-   "gain": 0.666,
-   "limited": true,
+   "gain": 0.816,
+   "limited": false,
    "m": {
-    "peak": -1.22,
-    "truePeak": -1.21,
-    "lufsMax": -17.75,
+    "peak": -1.51,
+    "truePeak": -1.51,
+    "lufsMax": -16.22,
     "duration": 0.3,
-    "centroid": 3432
+    "centroid": 3445
    },
    "env": [
-    0.84,
-    0.77,
-    0.65,
-    0.57,
-    0.36,
-    0.22,
-    0.13,
+    0.95,
+    0.87,
+    0.72,
+    0.64,
+    0.41,
+    0.24,
+    0.15,
     0.05,
     0,
     0,
@@ -7997,39 +7997,39 @@
     0,
     0,
     0,
-    0.4,
+    0.45,
     1,
-    0.85,
-    0.77,
-    0.69,
-    0.59,
-    0.48,
-    0.37,
-    0.3,
-    0.22,
-    0.13,
-    0.07
+    0.98,
+    0.86,
+    0.78,
+    0.66,
+    0.54,
+    0.42,
+    0.33,
+    0.24,
+    0.14,
+    0.08
    ],
    "takes": [
     {
-     "lufsMax": -17.75,
-     "truePeak": -1.21,
+     "lufsMax": -16.22,
+     "truePeak": -1.51,
      "duration": 0.3
     },
     {
-     "lufsMax": -18.12,
-     "truePeak": -1.57,
+     "lufsMax": -16.37,
+     "truePeak": -1.47,
      "duration": 0.3
     },
     {
-     "lufsMax": -17.86,
-     "truePeak": -1.78,
-     "duration": 0.3
-    },
-    {
-     "lufsMax": -17.48,
-     "truePeak": -1.2,
+     "lufsMax": -16.16,
+     "truePeak": -1.39,
      "duration": 0.31
+    },
+    {
+     "lufsMax": -16.31,
+     "truePeak": -1.45,
+     "duration": 0.3
     }
    ]
   },
@@ -8038,77 +8038,77 @@
    "id": "stepGrass",
    "cat": "footstep",
    "desc": "Soft step on grass",
-   "gain": 1.5,
+   "gain": 2.3,
    "limited": true,
    "m": {
-    "peak": -1.99,
-    "truePeak": -1.99,
-    "lufsMax": -23.23,
-    "duration": 0.09,
-    "centroid": 6348
+    "peak": -1.51,
+    "truePeak": -1.5,
+    "lufsMax": -22.4,
+    "duration": 0.24,
+    "centroid": 3951
    },
    "env": [
-    0.54,
-    0.81,
-    0.94,
-    0.88,
-    0.75,
-    0.79,
-    0.67,
-    0.78,
     1,
-    0.92,
-    0.92,
-    0.81,
-    0.77,
-    0.6,
-    0.65,
+    0.84,
+    0.79,
+    0.84,
+    0.97,
+    0.8,
     0.71,
-    0.69,
-    0.61,
+    0.62,
     0.56,
-    0.46,
-    0.4,
-    0.48,
-    0.34,
+    0.49,
+    0.38,
+    0.41,
     0.35,
-    0.35,
-    0.34,
-    0.28,
+    0.31,
+    0.27,
+    0.24,
+    0.22,
     0.23,
     0.26,
     0.23,
-    0.21,
+    0.19,
     0.17,
+    0.12,
     0.13,
     0.12,
-    0.1,
+    0.11,
     0.09,
+    0.1,
     0.08,
+    0.1,
+    0.07,
     0.08,
+    0.07,
     0.04,
-    0.03
+    0.04,
+    0.06,
+    0.04,
+    0.03,
+    0.02,
+    0.02
    ],
    "takes": [
     {
-     "lufsMax": -23.23,
-     "truePeak": -1.99,
-     "duration": 0.09
+     "lufsMax": -22.4,
+     "truePeak": -1.5,
+     "duration": 0.24
     },
     {
-     "lufsMax": -23.61,
-     "truePeak": -1.22,
-     "duration": 0.09
+     "lufsMax": -23.47,
+     "truePeak": -1.49,
+     "duration": 0.22
     },
     {
-     "lufsMax": -23.34,
-     "truePeak": -2.1,
-     "duration": 0.1
+     "lufsMax": -21.67,
+     "truePeak": -1.38,
+     "duration": 0.25
     },
     {
-     "lufsMax": -23.36,
-     "truePeak": -2.07,
-     "duration": 0.09
+     "lufsMax": -20.15,
+     "truePeak": -1.5,
+     "duration": 0.23
     }
    ]
   },
@@ -8117,77 +8117,77 @@
    "id": "stepStone",
    "cat": "footstep",
    "desc": "Hard sole on stone",
-   "gain": 0.604,
+   "gain": 1.76,
    "limited": true,
    "m": {
-    "peak": -1.3,
-    "truePeak": -1.2,
-    "lufsMax": -22.48,
-    "duration": 0.05,
-    "centroid": 4611
+    "peak": -1.51,
+    "truePeak": -1.46,
+    "lufsMax": -24.64,
+    "duration": 0.24,
+    "centroid": 2094
    },
    "env": [
-    0.83,
-    0.88,
-    0.91,
     1,
-    0.84,
-    0.9,
-    0.86,
-    0.87,
-    0.71,
-    0.66,
-    0.76,
-    0.67,
     0.72,
-    0.74,
+    0.67,
+    0.53,
     0.62,
-    0.55,
-    0.51,
-    0.49,
-    0.54,
-    0.49,
-    0.44,
-    0.35,
+    0.5,
     0.36,
-    0.34,
-    0.32,
+    0.3,
+    0.3,
     0.25,
-    0.18,
-    0.2,
-    0.18,
+    0.24,
+    0.19,
+    0.23,
     0.17,
+    0.2,
+    0.2,
     0.15,
+    0.15,
+    0.16,
+    0.14,
+    0.08,
     0.11,
-    0.07,
     0.08,
     0.08,
+    0.12,
+    0.11,
+    0.08,
     0.07,
     0.07,
-    0.05,
+    0.07,
     0.04,
-    0.03
+    0.06,
+    0.05,
+    0.05,
+    0.03,
+    0.04,
+    0.04,
+    0.03,
+    0.02,
+    0.01
    ],
    "takes": [
     {
-     "lufsMax": -22.48,
-     "truePeak": -1.2,
-     "duration": 0.05
+     "lufsMax": -24.64,
+     "truePeak": -1.46,
+     "duration": 0.24
     },
     {
-     "lufsMax": -22.64,
-     "truePeak": -1.81,
-     "duration": 0.05
+     "lufsMax": -25.18,
+     "truePeak": -1.46,
+     "duration": 0.24
     },
     {
-     "lufsMax": -22.83,
-     "truePeak": -1.24,
-     "duration": 0.05
+     "lufsMax": -24.32,
+     "truePeak": -1.47,
+     "duration": 0.23
     },
     {
-     "lufsMax": -22.63,
-     "truePeak": -2.14,
-     "duration": 0.05
+     "lufsMax": -22.91,
+     "truePeak": -1.51,
+     "duration": 0.24
     }
    ]
   },
@@ -8196,77 +8196,77 @@
    "id": "stepWood",
    "cat": "footstep",
    "desc": "Step on a wooden floor",
-   "gain": 0.844,
+   "gain": 1.2,
    "limited": true,
    "m": {
-    "peak": -1.67,
-    "truePeak": -1.67,
-    "lufsMax": -20.6,
-    "duration": 0.07,
-    "centroid": 840
+    "peak": -1.51,
+    "truePeak": -1.51,
+    "lufsMax": -25.65,
+    "duration": 0.22,
+    "centroid": 1051
    },
    "env": [
-    0.98,
     1,
-    0.99,
-    0.9,
-    0.92,
-    0.85,
-    0.76,
-    0.84,
-    0.76,
-    0.77,
-    0.73,
-    0.69,
-    0.66,
-    0.6,
+    0.72,
     0.62,
+    0.68,
     0.56,
-    0.53,
-    0.54,
-    0.5,
-    0.44,
-    0.46,
-    0.42,
+    0.57,
     0.36,
-    0.37,
-    0.34,
-    0.32,
-    0.29,
-    0.26,
-    0.26,
-    0.22,
-    0.19,
+    0.24,
+    0.28,
     0.18,
+    0.18,
+    0.19,
+    0.16,
+    0.15,
+    0.11,
     0.15,
     0.15,
     0.11,
-    0.1,
+    0.09,
+    0.12,
+    0.11,
+    0.09,
     0.08,
+    0.08,
+    0.06,
+    0.06,
+    0.09,
+    0.08,
+    0.06,
+    0.05,
+    0.05,
+    0.05,
+    0.03,
     0.05,
     0.04,
-    0.01
+    0.03,
+    0.03,
+    0.03,
+    0.03,
+    0.03
    ],
    "takes": [
     {
-     "lufsMax": -20.6,
-     "truePeak": -1.67,
-     "duration": 0.07
+     "lufsMax": -25.65,
+     "truePeak": -1.51,
+     "duration": 0.22
     },
     {
-     "lufsMax": -20.37,
-     "truePeak": -1.72,
-     "duration": 0.07
+     "lufsMax": -28.77,
+     "truePeak": -7.2,
+     "duration": 0.23
     },
     {
-     "lufsMax": -20.5,
-     "truePeak": -1.2,
-     "duration": 0.07
+     "lufsMax": -23.84,
+     "truePeak": -1.51,
+     "duration": 0.22
     },
     {
-     "lufsMax": -20.35,
-     "truePeak": -1.75,
-     "duration": 0.07
+     "lufsMax": -22.93,
+     "truePeak": -1.5,
+     "duration": 0.24
     }
    ]
   },
@@ -8275,77 +8275,77 @@
    "id": "stepMetal",
    "cat": "footstep",
    "desc": "Step on a metal grate",
-   "gain": 0.496,
+   "gain": 1.45,
    "limited": true,
    "m": {
-    "peak": -1.78,
-    "truePeak": -1.78,
-    "lufsMax": -23.73,
-    "duration": 0.62,
-    "centroid": 5739
+    "peak": -1.51,
+    "truePeak": -1.4,
+    "lufsMax": -21.69,
+    "duration": 0.69,
+    "centroid": 3534
    },
    "env": [
     1,
-    0.72,
-    0.48,
-    0.42,
-    0.35,
-    0.29,
+    0.86,
+    0.68,
+    0.52,
+    0.41,
+    0.36,
     0.26,
+    0.24,
     0.27,
+    0.26,
     0.25,
-    0.22,
-    0.19,
-    0.2,
-    0.17,
+    0.24,
     0.16,
-    0.12,
+    0.16,
+    0.16,
+    0.16,
     0.15,
-    0.12,
-    0.11,
+    0.13,
+    0.13,
     0.11,
     0.08,
+    0.1,
     0.09,
     0.09,
+    0.08,
     0.07,
     0.07,
     0.05,
-    0.06,
     0.05,
     0.05,
-    0.04,
     0.05,
-    0.04,
     0.04,
     0.04,
     0.03,
     0.03,
-    0.02,
-    0.02,
-    0.02,
+    0.03,
+    0.03,
+    0.03,
     0.02,
     0.02
    ],
    "takes": [
     {
-     "lufsMax": -23.73,
-     "truePeak": -1.78,
-     "duration": 0.62
+     "lufsMax": -21.69,
+     "truePeak": -1.4,
+     "duration": 0.69
     },
     {
-     "lufsMax": -24.16,
-     "truePeak": -1.19,
-     "duration": 0.61
+     "lufsMax": -21.91,
+     "truePeak": -1.37,
+     "duration": 0.69
     },
     {
-     "lufsMax": -24.86,
-     "truePeak": -2.58,
-     "duration": 0.59
+     "lufsMax": -21.26,
+     "truePeak": -1.36,
+     "duration": 0.7
     },
     {
-     "lufsMax": -24.62,
-     "truePeak": -4.84,
-     "duration": 0.58
+     "lufsMax": -21.25,
+     "truePeak": -1.34,
+     "duration": 0.67
     }
    ]
   },
@@ -8354,77 +8354,77 @@
    "id": "stepSnow",
    "cat": "footstep",
    "desc": "Crunchy step in snow",
-   "gain": 0.559,
-   "limited": false,
+   "gain": 0.747,
+   "limited": true,
    "m": {
-    "peak": -1.41,
-    "truePeak": -1.31,
-    "lufsMax": -20,
-    "duration": 0.15,
-    "centroid": 3837
+    "peak": -1.51,
+    "truePeak": -1.25,
+    "lufsMax": -19.6,
+    "duration": 0.17,
+    "centroid": 3808
    },
    "env": [
-    0.33,
-    0.52,
-    0.65,
-    0.73,
-    0.79,
-    1,
-    0.86,
-    0.77,
-    0.77,
-    0.84,
-    0.77,
-    0.66,
-    0.65,
-    0.77,
-    0.66,
     0.63,
-    0.57,
-    0.52,
-    0.53,
+    0.64,
+    0.7,
+    0.78,
+    1,
+    0.91,
+    1,
+    0.89,
+    0.75,
+    0.76,
+    0.7,
+    0.75,
+    0.64,
+    0.6,
     0.56,
     0.52,
-    0.49,
-    0.46,
-    0.44,
+    0.59,
+    0.47,
+    0.42,
+    0.52,
+    0.5,
+    0.4,
+    0.41,
     0.38,
-    0.38,
-    0.39,
-    0.3,
-    0.33,
-    0.28,
+    0.37,
+    0.34,
     0.27,
-    0.26,
-    0.2,
-    0.18,
-    0.17,
-    0.14,
-    0.1,
-    0.1,
-    0.07,
-    0.04
+    0.28,
+    0.28,
+    0.29,
+    0.27,
+    0.21,
+    0.19,
+    0.19,
+    0.15,
+    0.15,
+    0.13,
+    0.12,
+    0.09,
+    0.05
    ],
    "takes": [
     {
-     "lufsMax": -20,
-     "truePeak": -1.31,
-     "duration": 0.15
+     "lufsMax": -19.6,
+     "truePeak": -1.25,
+     "duration": 0.17
     },
     {
-     "lufsMax": -20.29,
-     "truePeak": -2.77,
-     "duration": 0.15
+     "lufsMax": -21.96,
+     "truePeak": -2.54,
+     "duration": 0.16
     },
     {
-     "lufsMax": -20.04,
-     "truePeak": -2.46,
-     "duration": 0.15
+     "lufsMax": -19.7,
+     "truePeak": -1.49,
+     "duration": 0.17
     },
     {
-     "lufsMax": -19.66,
-     "truePeak": -1.61,
-     "duration": 0.15
+     "lufsMax": -18.92,
+     "truePeak": -1.51,
+     "duration": 0.16
     }
    ]
   },
@@ -8433,77 +8433,77 @@
    "id": "stepGravel",
    "cat": "footstep",
    "desc": "Step on loose gravel",
-   "gain": 0.542,
-   "limited": true,
+   "gain": 1.16,
+   "limited": false,
    "m": {
-    "peak": -2.09,
-    "truePeak": -1.8,
-    "lufsMax": -21.41,
-    "duration": 0.1,
-    "centroid": 6469
+    "peak": -1.51,
+    "truePeak": -1.46,
+    "lufsMax": -19.84,
+    "duration": 0.23,
+    "centroid": 2538
    },
    "env": [
     1,
-    0.96,
     1,
-    0.95,
-    0.93,
-    0.77,
-    0.93,
+    0.98,
+    0.96,
     0.86,
-    0.81,
-    0.83,
-    0.84,
     0.82,
-    0.81,
     0.78,
-    0.81,
-    0.83,
-    0.68,
-    0.73,
-    0.67,
-    0.71,
-    0.73,
-    0.67,
-    0.7,
+    0.75,
+    0.69,
+    0.55,
     0.52,
-    0.61,
-    0.38,
-    0.51,
-    0.52,
-    0.45,
-    0.44,
-    0.41,
-    0.29,
-    0.23,
-    0.39,
-    0.25,
-    0.2,
+    0.5,
+    0.46,
+    0.36,
+    0.35,
+    0.36,
+    0.27,
+    0.32,
+    0.21,
     0.16,
     0.12,
+    0.09,
+    0.09,
+    0.07,
+    0.08,
+    0.08,
+    0.07,
+    0.05,
+    0.05,
     0.06,
-    0.04
+    0.06,
+    0.05,
+    0.04,
+    0.04,
+    0.04,
+    0.03,
+    0.03,
+    0.03,
+    0.02,
+    0.02
    ],
    "takes": [
     {
-     "lufsMax": -21.41,
-     "truePeak": -1.8,
-     "duration": 0.1
+     "lufsMax": -19.84,
+     "truePeak": -1.46,
+     "duration": 0.23
     },
     {
-     "lufsMax": -21.88,
-     "truePeak": -1.2,
-     "duration": 0.1
+     "lufsMax": -21.49,
+     "truePeak": -1.5,
+     "duration": 0.2
     },
     {
-     "lufsMax": -20.97,
-     "truePeak": -1.76,
-     "duration": 0.11
+     "lufsMax": -20.42,
+     "truePeak": -1.51,
+     "duration": 0.21
     },
     {
-     "lufsMax": -21.56,
-     "truePeak": -1.34,
-     "duration": 0.1
+     "lufsMax": -19.26,
+     "truePeak": -1.5,
+     "duration": 0.23
     }
    ]
   },
@@ -8515,74 +8515,74 @@
    "gain": 1.78,
    "limited": true,
    "m": {
-    "peak": -2.57,
-    "truePeak": -2.57,
-    "lufsMax": -20.79,
-    "duration": 0.12,
-    "centroid": 3536
+    "peak": -1.51,
+    "truePeak": -1.46,
+    "lufsMax": -20.07,
+    "duration": 0.15,
+    "centroid": 3428
    },
    "env": [
-    0.67,
-    0.88,
-    0.76,
     1,
-    0.75,
+    0.98,
+    0.84,
+    0.85,
     0.82,
     0.71,
-    0.73,
-    0.78,
-    0.63,
-    0.97,
-    0.9,
-    0.91,
-    0.86,
-    0.75,
+    0.66,
     0.69,
-    0.56,
-    0.58,
-    0.48,
-    0.51,
+    1,
+    1,
+    0.89,
+    0.67,
+    0.73,
+    0.67,
+    0.55,
+    0.52,
+    0.49,
     0.45,
-    0.37,
-    0.43,
-    0.42,
     0.32,
-    0.26,
-    0.26,
-    0.23,
-    0.21,
-    0.24,
-    0.21,
+    0.39,
+    0.31,
+    0.38,
+    0.34,
     0.22,
-    0.15,
+    0.27,
+    0.25,
+    0.22,
+    0.21,
+    0.2,
+    0.2,
+    0.17,
+    0.16,
     0.14,
-    0.12,
+    0.14,
+    0.11,
     0.1,
-    0.08,
-    0.08,
-    0.05,
+    0.1,
+    0.07,
+    0.07,
     0.04
    ],
    "takes": [
     {
-     "lufsMax": -20.79,
-     "truePeak": -2.57,
-     "duration": 0.12
+     "lufsMax": -20.07,
+     "truePeak": -1.46,
+     "duration": 0.15
     },
     {
-     "lufsMax": -20.84,
-     "truePeak": -2.43,
-     "duration": 0.13
+     "lufsMax": -21.55,
+     "truePeak": -1.91,
+     "duration": 0.14
     },
     {
-     "lufsMax": -20.71,
-     "truePeak": -2.07,
-     "duration": 0.12
+     "lufsMax": -19.88,
+     "truePeak": -1.33,
+     "duration": 0.15
     },
     {
-     "lufsMax": -20.77,
-     "truePeak": -1.2,
-     "duration": 0.13
+     "lufsMax": -19.35,
+     "truePeak": -1.41,
+     "duration": 0.14
     }
    ]
   },
@@ -8591,77 +8591,77 @@
    "id": "stepSand",
    "cat": "footstep",
    "desc": "Muffled step in sand",
-   "gain": 1.44,
+   "gain": 1.65,
    "limited": true,
    "m": {
-    "peak": -3.51,
-    "truePeak": -3.46,
-    "lufsMax": -21.34,
-    "duration": 0.12,
-    "centroid": 2733
+    "peak": -1.51,
+    "truePeak": -1.51,
+    "lufsMax": -19.83,
+    "duration": 0.15,
+    "centroid": 2560
    },
    "env": [
-    0.68,
-    0.88,
-    0.85,
-    0.94,
-    0.95,
     1,
     0.94,
-    0.78,
-    0.84,
-    0.84,
-    0.8,
-    0.92,
     0.86,
+    0.95,
+    0.98,
+    0.86,
+    0.81,
     0.84,
-    0.72,
-    0.75,
-    0.8,
-    0.63,
-    0.72,
+    0.86,
+    0.82,
+    0.78,
     0.66,
-    0.61,
-    0.56,
-    0.55,
-    0.48,
+    0.72,
+    0.58,
+    0.67,
+    0.54,
+    0.59,
+    0.54,
+    0.51,
     0.59,
     0.43,
-    0.42,
+    0.47,
     0.44,
-    0.4,
-    0.26,
-    0.31,
+    0.34,
+    0.37,
+    0.34,
+    0.29,
+    0.3,
     0.28,
-    0.16,
-    0.19,
+    0.28,
+    0.24,
+    0.25,
+    0.22,
     0.18,
-    0.17,
-    0.13,
+    0.15,
+    0.16,
+    0.12,
     0.11,
-    0.08,
+    0.09,
     0.05
    ],
    "takes": [
     {
-     "lufsMax": -21.34,
-     "truePeak": -3.46,
-     "duration": 0.12
-    },
-    {
-     "lufsMax": -21.28,
-     "truePeak": -1.18,
-     "duration": 0.12
-    },
-    {
-     "lufsMax": -21.27,
+     "lufsMax": -19.83,
      "truePeak": -1.51,
-     "duration": 0.13
+     "duration": 0.15
     },
     {
-     "lufsMax": -20.89,
-     "truePeak": -1.27,
-     "duration": 0.12
+     "lufsMax": -21.93,
+     "truePeak": -1.5,
+     "duration": 0.15
+    },
+    {
+     "lufsMax": -20.45,
+     "truePeak": -1.5,
+     "duration": 0.16
+    },
+    {
+     "lufsMax": -18.56,
+     "truePeak": -1.44,
+     "duration": 0.15
     }
    ]
   },
@@ -8670,76 +8670,76 @@
    "id": "stepRetro",
    "cat": "footstep",
    "desc": "8-bit footstep tick",
-   "gain": 0.782,
+   "gain": 0.793,
    "limited": true,
    "m": {
-    "peak": -2.96,
-    "truePeak": -1.51,
-    "lufsMax": -23.11,
+    "peak": -3.02,
+    "truePeak": -2.53,
+    "lufsMax": -22.89,
     "duration": 0.04,
-    "centroid": 5505
+    "centroid": 5457
    },
    "env": [
-    0.82,
+    0.99,
     1,
-    0.98,
-    0.95,
-    0.95,
-    0.85,
     0.83,
-    0.89,
-    0.89,
-    0.57,
+    0.96,
+    0.88,
+    0.87,
+    0.9,
+    0.78,
+    0.48,
+    0.8,
+    0.8,
+    0.8,
+    0.8,
+    0.71,
     0.71,
     0.69,
-    0.57,
-    0.51,
-    0.62,
-    0.72,
-    0.71,
-    0.71,
-    0.58,
-    0.29,
-    0.28,
-    0.58,
-    0.44,
-    0.43,
-    0.43,
-    0.42,
-    0.42,
-    0.33,
-    0.41,
-    0.4,
-    0.13,
-    0.12,
-    0.12,
-    0.11,
+    0.55,
+    0.65,
+    0.64,
+    0.54,
+    0.54,
+    0.55,
+    0.39,
+    0.37,
+    0.39,
+    0.38,
+    0.37,
+    0.39,
+    0.09,
+    0.38,
     0.1,
     0.1,
     0.09,
+    0.09,
+    0.08,
+    0.08,
     0.07,
     0.06,
-    0.04
+    0.05,
+    0.03
    ],
    "takes": [
     {
-     "lufsMax": -23.11,
-     "truePeak": -1.51,
+     "lufsMax": -22.89,
+     "truePeak": -2.53,
      "duration": 0.04
     },
     {
-     "lufsMax": -22.68,
+     "lufsMax": -22.59,
+     "truePeak": -2.24,
+     "duration": 0.04
+    },
+    {
+     "lufsMax": -22.93,
+     "truePeak": -1.46,
+     "duration": 0.04
+    },
+    {
+     "lufsMax": -23.06,
      "truePeak": -1.2,
-     "duration": 0.04
-    },
-    {
-     "lufsMax": -23.55,
-     "truePeak": -1.42,
-     "duration": 0.04
-    },
-    {
-     "lufsMax": -22.51,
-     "truePeak": -1.34,
      "duration": 0.04
     }
    ]
@@ -8749,45 +8749,42 @@
    "id": "stepHeavy",
    "cat": "footstep",
    "desc": "Heavy creature stomp",
-   "gain": 0.443,
+   "gain": 0.465,
    "limited": false,
    "m": {
-    "peak": -4.15,
-    "truePeak": -4.15,
-    "lufsMax": -20.02,
-    "duration": 0.69,
-    "centroid": 343
+    "peak": -1.2,
+    "truePeak": -1.19,
+    "lufsMax": -19.43,
+    "duration": 0.71,
+    "centroid": 311
    },
    "env": [
     1,
-    0.86,
-    0.84,
-    0.77,
-    0.76,
-    0.62,
-    0.4,
-    0.36,
+    0.73,
+    0.61,
+    0.56,
+    0.55,
+    0.42,
+    0.37,
+    0.37,
     0.31,
-    0.23,
-    0.23,
-    0.15,
-    0.2,
-    0.2,
-    0.23,
-    0.23,
-    0.19,
-    0.15,
+    0.25,
+    0.24,
+    0.17,
     0.13,
-    0.13,
-    0.11,
-    0.1,
-    0.08,
+    0.15,
+    0.15,
+    0.14,
+    0.14,
+    0.14,
+    0.16,
+    0.12,
+    0.09,
+    0.07,
+    0.07,
     0.07,
     0.05,
     0.06,
-    0.07,
-    0.07,
-    0.07,
     0.06,
     0.05,
     0.05,
@@ -8796,30 +8793,33 @@
     0.04,
     0.04,
     0.03,
+    0.03,
+    0.02,
+    0.02,
     0.02,
     0.02,
     0.02
    ],
    "takes": [
     {
-     "lufsMax": -20.02,
-     "truePeak": -4.15,
+     "lufsMax": -19.43,
+     "truePeak": -1.19,
+     "duration": 0.71
+    },
+    {
+     "lufsMax": -21.16,
+     "truePeak": -5.46,
      "duration": 0.69
     },
     {
-     "lufsMax": -20.32,
-     "truePeak": -5.32,
-     "duration": 0.64
+     "lufsMax": -21.2,
+     "truePeak": -5.13,
+     "duration": 0.69
     },
     {
-     "lufsMax": -20.12,
-     "truePeak": -5.22,
-     "duration": 0.64
-    },
-    {
-     "lufsMax": -19.54,
-     "truePeak": -5.34,
-     "duration": 0.7
+     "lufsMax": -19.27,
+     "truePeak": -1.74,
+     "duration": 0.72
     }
    ]
   },
@@ -8887,7 +8887,7 @@
     },
     {
      "lufsMax": -16.11,
-     "truePeak": -10.06,
+     "truePeak": -10.07,
      "duration": 0.72
     },
     {
@@ -8897,7 +8897,7 @@
     },
     {
      "lufsMax": -15.92,
-     "truePeak": -10.61,
+     "truePeak": -10.62,
      "duration": 0.73
     }
    ]
@@ -8910,24 +8910,24 @@
    "gain": 0.309,
    "limited": false,
    "m": {
-    "peak": -1.74,
-    "truePeak": -1.72,
+    "peak": -1.65,
+    "truePeak": -1.63,
     "lufsMax": -15.98,
     "duration": 1.49,
-    "centroid": 1536
+    "centroid": 1535
    },
    "env": [
     0.42,
-    0.58,
-    0.69,
+    0.57,
+    0.68,
     0.92,
     1,
-    1,
+    0.99,
     0.92,
-    0.79,
-    0.67,
+    0.78,
+    0.68,
     0.62,
-    0.49,
+    0.48,
     0.46,
     0.44,
     0.38,
@@ -8937,7 +8937,7 @@
     0.28,
     0.22,
     0.21,
-    0.2,
+    0.19,
     0.17,
     0.16,
     0.12,
@@ -8961,22 +8961,22 @@
    "takes": [
     {
      "lufsMax": -15.98,
-     "truePeak": -1.72,
+     "truePeak": -1.63,
      "duration": 1.49
     },
     {
-     "lufsMax": -15.82,
-     "truePeak": -2.37,
+     "lufsMax": -15.76,
+     "truePeak": -2.29,
      "duration": 1.51
     },
     {
-     "lufsMax": -16.26,
-     "truePeak": -2.74,
+     "lufsMax": -16.23,
+     "truePeak": -2.4,
      "duration": 1.49
     },
     {
-     "lufsMax": -15.94,
-     "truePeak": -1.6,
+     "lufsMax": -15.97,
+     "truePeak": -1.64,
      "duration": 1.49
     }
    ]
@@ -8986,14 +8986,14 @@
    "id": "fireball",
    "cat": "magic",
    "desc": "Fireball whoosh with roar",
-   "gain": 0.463,
+   "gain": 0.465,
    "limited": false,
    "m": {
-    "peak": -5.05,
-    "truePeak": -5.02,
-    "lufsMax": -16,
-    "duration": 0.97,
-    "centroid": 4374
+    "peak": -5.01,
+    "truePeak": -4.98,
+    "lufsMax": -15.96,
+    "duration": 0.98,
+    "centroid": 4373
    },
    "env": [
     0.75,
@@ -9007,18 +9007,18 @@
     0.82,
     0.82,
     0.81,
-    0.73,
+    0.7,
     0.69,
     0.66,
     0.57,
-    0.55,
+    0.54,
     0.47,
     0.42,
-    0.42,
+    0.37,
     0.31,
+    0.23,
     0.24,
-    0.24,
-    0.18,
+    0.17,
     0.16,
     0.14,
     0.14,
@@ -9039,23 +9039,23 @@
    ],
    "takes": [
     {
-     "lufsMax": -16,
-     "truePeak": -5.02,
-     "duration": 0.97
-    },
-    {
-     "lufsMax": -16.04,
-     "truePeak": -4.3,
-     "duration": 1
-    },
-    {
-     "lufsMax": -16.08,
-     "truePeak": -4.56,
+     "lufsMax": -15.96,
+     "truePeak": -4.98,
      "duration": 0.98
     },
     {
-     "lufsMax": -15.86,
-     "truePeak": -5.49,
+     "lufsMax": -16.1,
+     "truePeak": -4.34,
+     "duration": 1
+    },
+    {
+     "lufsMax": -16.15,
+     "truePeak": -4.56,
+     "duration": 0.96
+    },
+    {
+     "lufsMax": -15.76,
+     "truePeak": -5.46,
      "duration": 0.99
     }
    ]
@@ -9068,20 +9068,20 @@
    "gain": 0.277,
    "limited": false,
    "m": {
-    "peak": -6.32,
-    "truePeak": -5.91,
-    "lufsMax": -16.22,
+    "peak": -6.28,
+    "truePeak": -6.26,
+    "lufsMax": -16.23,
     "duration": 0.9,
-    "centroid": 8177
+    "centroid": 8166
    },
    "env": [
-    0.95,
+    0.96,
     0.97,
     1,
     0.89,
-    0.94,
+    0.96,
     0.86,
-    0.81,
+    0.82,
     0.76,
     0.67,
     0.6,
@@ -9091,7 +9091,7 @@
     0.43,
     0.39,
     0.36,
-    0.33,
+    0.32,
     0.28,
     0.24,
     0.22,
@@ -9118,23 +9118,23 @@
    ],
    "takes": [
     {
-     "lufsMax": -16.22,
-     "truePeak": -5.91,
+     "lufsMax": -16.23,
+     "truePeak": -6.26,
      "duration": 0.9
     },
     {
-     "lufsMax": -15.91,
-     "truePeak": -6.72,
+     "lufsMax": -15.85,
+     "truePeak": -6.55,
      "duration": 0.99
     },
     {
-     "lufsMax": -16.61,
-     "truePeak": -6.56,
+     "lufsMax": -16.65,
+     "truePeak": -6.43,
      "duration": 0.9
     },
     {
-     "lufsMax": -15.24,
-     "truePeak": -6.53,
+     "lufsMax": -15.28,
+     "truePeak": -5.35,
      "duration": 1.06
     }
    ]
@@ -9202,18 +9202,18 @@
      "duration": 0.64
     },
     {
-     "lufsMax": -16.01,
-     "truePeak": -5.55,
+     "lufsMax": -16,
+     "truePeak": -5.23,
      "duration": 0.64
     },
     {
-     "lufsMax": -16.03,
-     "truePeak": -5.59,
-     "duration": 0.63
+     "lufsMax": -16.05,
+     "truePeak": -5.8,
+     "duration": 0.64
     },
     {
      "lufsMax": -15.97,
-     "truePeak": -5.55,
+     "truePeak": -5.28,
      "duration": 0.64
     }
    ]
@@ -9281,18 +9281,18 @@
      "duration": 2.34
     },
     {
-     "lufsMax": -15.72,
-     "truePeak": -2.89,
+     "lufsMax": -15.71,
+     "truePeak": -3.31,
      "duration": 2.3
     },
     {
-     "lufsMax": -16.22,
-     "truePeak": -3.83,
+     "lufsMax": -16.18,
+     "truePeak": -3.89,
      "duration": 2.3
     },
     {
-     "lufsMax": -15.25,
-     "truePeak": -2.39,
+     "lufsMax": -15.28,
+     "truePeak": -2.34,
      "duration": 2.32
     }
    ]
@@ -9302,32 +9302,32 @@
    "id": "lightning",
    "cat": "magic",
    "desc": "Lightning strike: crack and rumble",
-   "gain": 0.412,
-   "limited": true,
+   "gain": 0.4,
+   "limited": false,
    "m": {
-    "peak": -1.41,
-    "truePeak": -1.19,
-    "lufsMax": -16.07,
+    "peak": -1.56,
+    "truePeak": -1.2,
+    "lufsMax": -16.45,
     "duration": 2.46,
-    "centroid": 4722
+    "centroid": 4675
    },
    "env": [
-    0.88,
+    0.91,
     1,
-    0.79,
-    0.78,
-    0.68,
+    0.76,
+    0.77,
+    0.69,
     0.73,
-    0.7,
+    0.69,
     0.62,
     0.63,
     0.59,
     0.47,
     0.51,
-    0.49,
+    0.48,
     0.43,
-    0.47,
-    0.38,
+    0.46,
+    0.37,
     0.31,
     0.26,
     0.27,
@@ -9355,24 +9355,24 @@
    ],
    "takes": [
     {
-     "lufsMax": -16.07,
-     "truePeak": -1.19,
+     "lufsMax": -16.45,
+     "truePeak": -1.2,
      "duration": 2.46
     },
     {
-     "lufsMax": -16.23,
-     "truePeak": -1.85,
+     "lufsMax": -16.38,
+     "truePeak": -3.18,
      "duration": 2.48
     },
     {
-     "lufsMax": -15.93,
-     "truePeak": -4.07,
+     "lufsMax": -16.32,
+     "truePeak": -3.83,
      "duration": 2.38
     },
     {
-     "lufsMax": -16.11,
-     "truePeak": -3.84,
-     "duration": 2.5
+     "lufsMax": -16.39,
+     "truePeak": -4.23,
+     "duration": 2.44
     }
    ]
   },
@@ -9382,13 +9382,13 @@
    "cat": "magic",
    "desc": "Dark curse: low detuned drone",
    "gain": 0.21,
-   "limited": true,
+   "limited": false,
    "m": {
-    "peak": -1.2,
+    "peak": -1.19,
     "truePeak": -1.19,
     "lufsMax": -16.36,
     "duration": 1.98,
-    "centroid": 578
+    "centroid": 579
    },
    "env": [
     0.52,
@@ -9397,7 +9397,7 @@
     0.78,
     1,
     0.89,
-    0.75,
+    0.74,
     0.82,
     0.9,
     0.72,
@@ -9439,18 +9439,18 @@
      "duration": 1.98
     },
     {
-     "lufsMax": -15.87,
-     "truePeak": -2.26,
+     "lufsMax": -15.86,
+     "truePeak": -2.18,
      "duration": 1.96
     },
     {
-     "lufsMax": -15.91,
-     "truePeak": -2.15,
+     "lufsMax": -15.88,
+     "truePeak": -1.83,
      "duration": 1.94
     },
     {
      "lufsMax": -16.22,
-     "truePeak": -2.3,
+     "truePeak": -2.43,
      "duration": 1.97
     }
    ]
@@ -9539,52 +9539,52 @@
    "id": "dispel",
    "cat": "magic",
    "desc": "Dispel: shimmer that falls away",
-   "gain": 0.313,
+   "gain": 0.314,
    "limited": false,
    "m": {
-    "peak": -5.99,
-    "truePeak": -5.47,
-    "lufsMax": -15.92,
+    "peak": -5.09,
+    "truePeak": -4.8,
+    "lufsMax": -15.87,
     "duration": 1.24,
-    "centroid": 7466
+    "centroid": 7458
    },
    "env": [
-    0.99,
-    1,
-    0.96,
-    0.91,
+    0.93,
     0.92,
-    0.81,
+    1,
+    0.89,
+    0.79,
+    0.83,
     0.74,
-    0.75,
-    0.62,
+    0.72,
+    0.6,
     0.54,
-    0.47,
-    0.48,
-    0.36,
-    0.33,
-    0.29,
-    0.26,
+    0.45,
+    0.43,
+    0.34,
+    0.31,
     0.28,
-    0.21,
+    0.25,
+    0.26,
     0.2,
-    0.18,
     0.19,
+    0.17,
+    0.18,
     0.16,
-    0.16,
-    0.12,
+    0.15,
+    0.11,
     0.1,
-    0.1,
-    0.1,
+    0.09,
+    0.09,
     0.08,
     0.08,
     0.06,
-    0.06,
-    0.06,
-    0.06,
+    0.05,
+    0.05,
+    0.05,
     0.04,
     0.04,
-    0.04,
+    0.03,
     0.04,
     0.03,
     0.03,
@@ -9592,24 +9592,24 @@
    ],
    "takes": [
     {
-     "lufsMax": -15.92,
-     "truePeak": -5.47,
+     "lufsMax": -15.87,
+     "truePeak": -4.8,
      "duration": 1.24
     },
     {
-     "lufsMax": -16.12,
-     "truePeak": -5.99,
-     "duration": 1.19
+     "lufsMax": -16.01,
+     "truePeak": -5.34,
+     "duration": 1.18
     },
     {
-     "lufsMax": -15.75,
-     "truePeak": -5.69,
-     "duration": 1.23
+     "lufsMax": -15.92,
+     "truePeak": -5.96,
+     "duration": 1.21
     },
     {
-     "lufsMax": -16.17,
-     "truePeak": -5.66,
-     "duration": 1.22
+     "lufsMax": -16.15,
+     "truePeak": -6.15,
+     "duration": 1.17
     }
    ]
   },
@@ -9621,8 +9621,8 @@
    "gain": 0.237,
    "limited": false,
    "m": {
-    "peak": -5.3,
-    "truePeak": -5.29,
+    "peak": -5.32,
+    "truePeak": -5.31,
     "lufsMax": -16.1,
     "duration": 2.43,
     "centroid": 950
@@ -9633,10 +9633,10 @@
     0.59,
     0.73,
     0.86,
-    0.84,
+    0.85,
     0.9,
     0.96,
-    0.94,
+    0.95,
     1,
     0.9,
     0.74,
@@ -9644,10 +9644,10 @@
     0.77,
     0.53,
     0.48,
-    0.42,
+    0.43,
     0.41,
     0.33,
-    0.31,
+    0.32,
     0.28,
     0.26,
     0.19,
@@ -9672,22 +9672,22 @@
    "takes": [
     {
      "lufsMax": -16.1,
-     "truePeak": -5.29,
+     "truePeak": -5.31,
      "duration": 2.43
     },
     {
-     "lufsMax": -15.86,
-     "truePeak": -4.37,
+     "lufsMax": -15.85,
+     "truePeak": -3.98,
      "duration": 2.48
     },
     {
-     "lufsMax": -16.01,
-     "truePeak": -5.47,
-     "duration": 2.44
+     "lufsMax": -15.98,
+     "truePeak": -4.33,
+     "duration": 2.46
     },
     {
-     "lufsMax": -16.06,
-     "truePeak": -5.05,
+     "lufsMax": -16.07,
+     "truePeak": -4.9,
      "duration": 2.52
     }
    ]
@@ -9700,9 +9700,9 @@
    "gain": 0.542,
    "limited": false,
    "m": {
-    "peak": -5.08,
-    "truePeak": -5.06,
-    "lufsMax": -16.17,
+    "peak": -4.93,
+    "truePeak": -4.92,
+    "lufsMax": -16.16,
     "duration": 0.38,
     "centroid": 2128
    },
@@ -9710,18 +9710,18 @@
     1,
     0.98,
     0.93,
-    0.88,
-    0.84,
-    0.9,
     0.89,
+    0.83,
+    0.89,
+    0.87,
     0.8,
-    0.78,
+    0.77,
     0.74,
-    0.7,
+    0.69,
     0.65,
     0.61,
-    0.6,
-    0.53,
+    0.59,
+    0.52,
     0.49,
     0.47,
     0.4,
@@ -9750,23 +9750,23 @@
    ],
    "takes": [
     {
-     "lufsMax": -16.17,
-     "truePeak": -5.06,
+     "lufsMax": -16.16,
+     "truePeak": -4.92,
      "duration": 0.38
     },
     {
      "lufsMax": -15.96,
-     "truePeak": -4.91,
+     "truePeak": -4.81,
      "duration": 0.4
     },
     {
-     "lufsMax": -16.16,
-     "truePeak": -4.93,
+     "lufsMax": -16.17,
+     "truePeak": -4.72,
      "duration": 0.39
     },
     {
      "lufsMax": -15.71,
-     "truePeak": -4.82,
+     "truePeak": -4.81,
      "duration": 0.4
     }
    ]
@@ -9840,7 +9840,7 @@
     },
     {
      "lufsMax": -17.99,
-     "truePeak": -16.48,
+     "truePeak": -16.49,
      "duration": 0.63
     },
     {
@@ -9992,18 +9992,18 @@
      "duration": 0.38
     },
     {
-     "lufsMax": -18.02,
-     "truePeak": -10.64,
-     "duration": 0.38
-    },
-    {
-     "lufsMax": -17.99,
+     "lufsMax": -18.01,
      "truePeak": -10.65,
      "duration": 0.38
     },
     {
      "lufsMax": -18,
-     "truePeak": -10.66,
+     "truePeak": -10.65,
+     "duration": 0.38
+    },
+    {
+     "lufsMax": -18.01,
+     "truePeak": -10.65,
      "duration": 0.38
     }
    ]
@@ -10071,14 +10071,14 @@
      "duration": 0.26
     },
     {
-     "lufsMax": -18.01,
+     "lufsMax": -18,
      "truePeak": -8.77,
      "duration": 0.26
     },
     {
-     "lufsMax": -17.97,
+     "lufsMax": -17.99,
      "truePeak": -8.77,
-     "duration": 0.27
+     "duration": 0.26
     },
     {
      "lufsMax": -18,
@@ -10092,14 +10092,14 @@
    "id": "heartbeat",
    "cat": "alert",
    "desc": "Heartbeat: lub-dub",
-   "gain": 0.687,
-   "limited": true,
+   "gain": 0.686,
+   "limited": false,
    "m": {
     "peak": -1.2,
-    "truePeak": -1.2,
-    "lufsMax": -18.2,
+    "truePeak": -1.19,
+    "lufsMax": -18.21,
     "duration": 0.34,
-    "centroid": 152
+    "centroid": 153
    },
    "env": [
     0.85,
@@ -10126,9 +10126,9 @@
     0,
     0,
     0.64,
-    0.65,
+    0.64,
     0.67,
-    0.66,
+    0.67,
     0.55,
     0.59,
     0.48,
@@ -10145,24 +10145,24 @@
    ],
    "takes": [
     {
-     "lufsMax": -18.2,
-     "truePeak": -1.2,
+     "lufsMax": -18.21,
+     "truePeak": -1.19,
      "duration": 0.34
     },
     {
-     "lufsMax": -18.34,
-     "truePeak": -2.54,
-     "duration": 0.33
-    },
-    {
-     "lufsMax": -18.48,
-     "truePeak": -1.69,
+     "lufsMax": -18.31,
+     "truePeak": -2.5,
      "duration": 0.34
     },
     {
-     "lufsMax": -18.37,
-     "truePeak": -1.49,
+     "lufsMax": -18.51,
+     "truePeak": -1.7,
      "duration": 0.34
+    },
+    {
+     "lufsMax": -18.31,
+     "truePeak": -1.58,
+     "duration": 0.35
     }
    ]
   },
@@ -10387,18 +10387,18 @@
      "duration": 1.3
     },
     {
-     "lufsMax": -17.99,
-     "truePeak": -13.08,
+     "lufsMax": -18,
+     "truePeak": -13.09,
      "duration": 1.31
     },
     {
      "lufsMax": -17.99,
-     "truePeak": -13.08,
+     "truePeak": -13.09,
      "duration": 1.3
     },
     {
      "lufsMax": -17.98,
-     "truePeak": -13.1,
+     "truePeak": -13.09,
      "duration": 1.31
     }
    ]
@@ -10782,7 +10782,7 @@
      "duration": 2.16
     },
     {
-     "lufsMax": -17.13,
+     "lufsMax": -17.12,
      "truePeak": -6.99,
      "duration": 2.15
     },
@@ -10867,7 +10867,7 @@
     },
     {
      "lufsMax": -17.02,
-     "truePeak": -8.36,
+     "truePeak": -8.37,
      "duration": 0.81
     },
     {
@@ -10945,7 +10945,7 @@
      "duration": 1.39
     },
     {
-     "lufsMax": -17.13,
+     "lufsMax": -17.14,
      "truePeak": -8.13,
      "duration": 1.39
     },
@@ -11177,19 +11177,19 @@
      "duration": 1.05
     },
     {
-     "lufsMax": -16.79,
-     "truePeak": -8.23,
-     "duration": 1.17
-    },
-    {
-     "lufsMax": -16.66,
-     "truePeak": -8.03,
+     "lufsMax": -16.72,
+     "truePeak": -8.12,
      "duration": 1.14
     },
     {
-     "lufsMax": -17.32,
-     "truePeak": -9.32,
-     "duration": 1.01
+     "lufsMax": -16.7,
+     "truePeak": -8.01,
+     "duration": 1.11
+    },
+    {
+     "lufsMax": -17.23,
+     "truePeak": -9.39,
+     "duration": 1.09
     }
    ]
   },
@@ -11261,7 +11261,7 @@
      "duration": 0.51
     },
     {
-     "lufsMax": -17.02,
+     "lufsMax": -17.03,
      "truePeak": -11.75,
      "duration": 0.5
     },
@@ -11277,30 +11277,30 @@
    "id": "doorOpen",
    "cat": "mechanic",
    "desc": "Creaky wooden door opening",
-   "gain": 2.24,
-   "limited": true,
+   "gain": 2.33,
+   "limited": false,
    "m": {
-    "peak": -1.81,
-    "truePeak": -1.8,
-    "lufsMax": -17.45,
+    "peak": -1.51,
+    "truePeak": -1.51,
+    "lufsMax": -17.11,
     "duration": 1.43,
-    "centroid": 1611
+    "centroid": 1612
    },
    "env": [
-    0.74,
-    0.89,
-    0.99,
+    0.8,
+    0.9,
+    1,
     1,
     0.99,
-    0.94,
+    0.95,
     0.99,
     0.94,
-    0.96,
     0.97,
-    0.99,
+    0.98,
+    1,
     0.94,
     0.94,
-    0.92,
+    0.93,
     0.91,
     0.82,
     0.74,
@@ -11311,7 +11311,7 @@
     0.25,
     0.21,
     0.18,
-    0.16,
+    0.17,
     0.15,
     0.13,
     0.1,
@@ -11330,24 +11330,24 @@
    ],
    "takes": [
     {
-     "lufsMax": -17.45,
-     "truePeak": -1.8,
+     "lufsMax": -17.11,
+     "truePeak": -1.51,
      "duration": 1.43
     },
     {
-     "lufsMax": -17.53,
-     "truePeak": -1.63,
-     "duration": 1.41
-    },
-    {
-     "lufsMax": -17.46,
-     "truePeak": -1.32,
+     "lufsMax": -17.1,
+     "truePeak": -1.5,
      "duration": 1.44
     },
     {
-     "lufsMax": -17.48,
-     "truePeak": -1.2,
-     "duration": 1.41
+     "lufsMax": -17.03,
+     "truePeak": -1.5,
+     "duration": 1.44
+    },
+    {
+     "lufsMax": -16.93,
+     "truePeak": -1.5,
+     "duration": 1.47
     }
    ]
   },
@@ -11356,77 +11356,77 @@
    "id": "doorClose",
    "cat": "mechanic",
    "desc": "Door shuts with a thud",
-   "gain": 0.512,
-   "limited": false,
+   "gain": 1.33,
+   "limited": true,
    "m": {
-    "peak": -3.38,
-    "truePeak": -3.38,
-    "lufsMax": -16.82,
-    "duration": 0.94,
-    "centroid": 584
+    "peak": -1.51,
+    "truePeak": -1.51,
+    "lufsMax": -21.61,
+    "duration": 0.89,
+    "centroid": 1140
    },
    "env": [
     1,
-    0.95,
-    0.94,
-    0.8,
-    0.77,
-    0.52,
+    0.69,
     0.59,
-    0.55,
-    0.32,
-    0.35,
-    0.22,
-    0.26,
-    0.27,
-    0.28,
+    0.41,
     0.31,
-    0.24,
+    0.39,
+    0.34,
+    0.25,
+    0.23,
+    0.2,
+    0.26,
+    0.25,
+    0.23,
+    0.2,
     0.18,
-    0.16,
-    0.17,
-    0.12,
-    0.12,
-    0.13,
+    0.18,
     0.11,
-    0.13,
+    0.11,
+    0.1,
+    0.09,
+    0.11,
+    0.09,
+    0.09,
     0.08,
-    0.07,
     0.08,
-    0.07,
-    0.07,
-    0.07,
-    0.06,
     0.05,
     0.04,
+    0.05,
+    0.04,
+    0.04,
+    0.04,
+    0.04,
+    0.04,
+    0.03,
     0.03,
     0.02,
-    0.03,
-    0.03,
-    0.03,
-    0.03,
-    0.03
+    0.02,
+    0.02,
+    0.02,
+    0.02
    ],
    "takes": [
     {
-     "lufsMax": -16.82,
-     "truePeak": -3.38,
-     "duration": 0.94
+     "lufsMax": -21.61,
+     "truePeak": -1.51,
+     "duration": 0.89
     },
     {
-     "lufsMax": -16.95,
-     "truePeak": -2.33,
-     "duration": 0.92
+     "lufsMax": -21.56,
+     "truePeak": -1.5,
+     "duration": 0.9
     },
     {
-     "lufsMax": -17.01,
-     "truePeak": -2.45,
-     "duration": 0.94
+     "lufsMax": -21.18,
+     "truePeak": -1.49,
+     "duration": 0.89
     },
     {
-     "lufsMax": -17.19,
-     "truePeak": -2.9,
-     "duration": 0.93
+     "lufsMax": -21.37,
+     "truePeak": -1.49,
+     "duration": 0.86
     }
    ]
   },
@@ -11435,12 +11435,12 @@
    "id": "doorHeavy",
    "cat": "mechanic",
    "desc": "Heavy dungeon door slams",
-   "gain": 0.267,
+   "gain": 0.266,
    "limited": false,
    "m": {
-    "peak": -4.1,
-    "truePeak": -4.1,
-    "lufsMax": -17.44,
+    "peak": -4.09,
+    "truePeak": -4.09,
+    "lufsMax": -17.45,
     "duration": 3.04,
     "centroid": 498
    },
@@ -11457,9 +11457,9 @@
     0.24,
     0.99,
     1,
-    0.93,
-    0.75,
-    0.7,
+    0.94,
+    0.74,
+    0.71,
     0.7,
     0.52,
     0.48,
@@ -11488,24 +11488,24 @@
    ],
    "takes": [
     {
-     "lufsMax": -17.44,
-     "truePeak": -4.1,
+     "lufsMax": -17.45,
+     "truePeak": -4.09,
      "duration": 3.04
     },
     {
-     "lufsMax": -17.72,
-     "truePeak": -3.07,
+     "lufsMax": -17.55,
+     "truePeak": -3.04,
      "duration": 3.01
     },
     {
-     "lufsMax": -16.58,
-     "truePeak": -2.32,
-     "duration": 3.08
+     "lufsMax": -16.53,
+     "truePeak": -2.42,
+     "duration": 3.05
     },
     {
-     "lufsMax": -16.22,
-     "truePeak": -3.57,
-     "duration": 3
+     "lufsMax": -16.43,
+     "truePeak": -3.56,
+     "duration": 3.01
     }
    ]
   },
@@ -11514,24 +11514,24 @@
    "id": "lockOpen",
    "cat": "mechanic",
    "desc": "Lock clicks open",
-   "gain": 0.795,
+   "gain": 1.26,
    "limited": true,
    "m": {
-    "peak": -2.73,
-    "truePeak": -2.61,
-    "lufsMax": -22.4,
+    "peak": -1.51,
+    "truePeak": -1.41,
+    "lufsMax": -19.32,
     "duration": 0.15,
-    "centroid": 2514
+    "centroid": 2553
    },
    "env": [
-    0.79,
-    0.54,
-    0.51,
-    0.44,
-    0.27,
-    0.19,
-    0.14,
-    0.04,
+    0.92,
+    0.64,
+    0.59,
+    0.52,
+    0.29,
+    0.22,
+    0.16,
+    0.05,
     0.01,
     0,
     0,
@@ -11548,42 +11548,42 @@
     0,
     0,
     0,
-    0.84,
     1,
-    0.84,
-    0.89,
-    0.84,
-    0.77,
-    0.61,
-    0.59,
-    0.51,
+    1,
+    0.96,
+    1,
+    0.94,
+    0.9,
+    0.72,
+    0.69,
+    0.6,
     0.39,
-    0.3,
-    0.26,
-    0.2,
-    0.11,
+    0.35,
+    0.31,
+    0.23,
+    0.12,
     0.07,
     0.04
    ],
    "takes": [
     {
-     "lufsMax": -22.4,
-     "truePeak": -2.61,
+     "lufsMax": -19.32,
+     "truePeak": -1.41,
      "duration": 0.15
     },
     {
-     "lufsMax": -22.6,
-     "truePeak": -1.2,
+     "lufsMax": -20.2,
+     "truePeak": -1.47,
      "duration": 0.14
     },
     {
-     "lufsMax": -22.17,
-     "truePeak": -1.38,
+     "lufsMax": -19.96,
+     "truePeak": -1.45,
      "duration": 0.15
     },
     {
-     "lufsMax": -22.55,
-     "truePeak": -1.26,
+     "lufsMax": -20.13,
+     "truePeak": -1.46,
      "duration": 0.14
     }
    ]
@@ -11593,76 +11593,76 @@
    "id": "locked",
    "cat": "mechanic",
    "desc": "Door is locked: rattle",
-   "gain": 1.25,
+   "gain": 1.95,
    "limited": true,
    "m": {
-    "peak": -1.23,
-    "truePeak": -1.22,
-    "lufsMax": -20.49,
+    "peak": -1.51,
+    "truePeak": -1.48,
+    "lufsMax": -18.37,
     "duration": 0.25,
-    "centroid": 2305
+    "centroid": 2326
    },
    "env": [
     1,
-    0.82,
-    0.55,
-    0.46,
-    0.33,
+    0.83,
+    0.6,
+    0.56,
+    0.42,
+    0.29,
+    0.18,
+    0.08,
+    0.05,
+    1,
+    0.8,
+    0.71,
+    0.68,
+    0.5,
+    0.36,
     0.23,
+    0.15,
+    0.09,
+    0.06,
+    0.93,
+    0.82,
+    0.76,
+    0.49,
+    0.4,
+    0.25,
     0.14,
     0.07,
-    0.04,
-    0.99,
-    0.76,
-    0.6,
-    0.55,
-    0.4,
-    0.29,
-    0.19,
-    0.12,
-    0.07,
-    0.05,
-    0.72,
-    0.64,
-    0.59,
-    0.38,
-    0.31,
-    0.2,
-    0.11,
-    0.05,
     0.02,
     0.01,
     0.01,
-    0,
-    0.07,
-    0.64,
-    0.67,
-    0.41,
-    0.41,
-    0.24,
-    0.17,
-    0.08,
-    0.05
+    0.01,
+    0.12,
+    0.82,
+    0.85,
+    0.52,
+    0.52,
+    0.31,
+    0.22,
+    0.1,
+    0.06
    ],
    "takes": [
     {
-     "lufsMax": -20.49,
-     "truePeak": -1.22,
+     "lufsMax": -18.37,
+     "truePeak": -1.48,
      "duration": 0.25
     },
     {
-     "lufsMax": -21.27,
-     "truePeak": -2.22,
+     "lufsMax": -18,
+     "truePeak": -1.45,
      "duration": 0.25
     },
     {
-     "lufsMax": -21.06,
-     "truePeak": -2.01,
-     "duration": 0.25
+     "lufsMax": -17.84,
+     "truePeak": -1.41,
+     "duration": 0.24
     },
     {
-     "lufsMax": -20.58,
-     "truePeak": -3.06,
+     "lufsMax": -17.52,
+     "truePeak": -1.42,
      "duration": 0.25
     }
    ]
@@ -11672,22 +11672,22 @@
    "id": "chestOpen",
    "cat": "mechanic",
    "desc": "Treasure chest creaks open",
-   "gain": 0.868,
+   "gain": 0.865,
    "limited": false,
    "m": {
-    "peak": -9.7,
-    "truePeak": -9.48,
-    "lufsMax": -16.97,
+    "peak": -9.75,
+    "truePeak": -9.55,
+    "lufsMax": -17,
     "duration": 1.28,
-    "centroid": 3649
+    "centroid": 3651
    },
    "env": [
     0.69,
-    0.94,
     0.95,
-    0.93,
+    0.95,
+    0.94,
     0.97,
-    0.92,
+    0.93,
     0.96,
     0.97,
     0.93,
@@ -11695,7 +11695,7 @@
     0.8,
     0.6,
     0.47,
-    0.63,
+    0.62,
     1,
     0.96,
     0.91,
@@ -11725,23 +11725,23 @@
    ],
    "takes": [
     {
-     "lufsMax": -16.97,
-     "truePeak": -9.48,
+     "lufsMax": -17,
+     "truePeak": -9.55,
      "duration": 1.28
     },
     {
-     "lufsMax": -17.12,
-     "truePeak": -9.85,
-     "duration": 1.12
+     "lufsMax": -16.99,
+     "truePeak": -9.83,
+     "duration": 1.08
     },
     {
-     "lufsMax": -17.39,
-     "truePeak": -9.8,
-     "duration": 1.04
+     "lufsMax": -17.24,
+     "truePeak": -9.84,
+     "duration": 1.05
     },
     {
-     "lufsMax": -16.53,
-     "truePeak": -9.61,
+     "lufsMax": -16.78,
+     "truePeak": -9.65,
      "duration": 1.08
     }
    ]
@@ -11751,77 +11751,77 @@
    "id": "lever",
    "cat": "mechanic",
    "desc": "Pull a lever: clunk",
-   "gain": 0.705,
+   "gain": 1.12,
    "limited": true,
    "m": {
-    "peak": -2.76,
-    "truePeak": -2.76,
-    "lufsMax": -20.7,
-    "duration": 0.87,
-    "centroid": 1413
+    "peak": -1.51,
+    "truePeak": -1.5,
+    "lufsMax": -17.42,
+    "duration": 0.89,
+    "centroid": 1437
    },
    "env": [
-    0.37,
-    0.36,
-    0.24,
-    0.18,
+    0.44,
+    0.42,
+    0.28,
+    0.21,
     1,
-    0.85,
-    0.69,
-    0.56,
+    1,
+    0.73,
+    0.59,
+    0.42,
+    0.38,
+    0.4,
     0.36,
-    0.33,
-    0.34,
-    0.3,
-    0.3,
-    0.29,
+    0.36,
+    0.31,
+    0.26,
+    0.24,
     0.25,
-    0.2,
     0.21,
-    0.21,
-    0.15,
+    0.16,
+    0.16,
     0.14,
     0.12,
-    0.12,
+    0.13,
+    0.13,
     0.11,
-    0.11,
-    0.1,
     0.07,
-    0.06,
+    0.07,
+    0.07,
+    0.07,
+    0.08,
     0.06,
     0.05,
-    0.06,
-    0.06,
     0.05,
+    0.03,
+    0.03,
     0.04,
     0.04,
     0.03,
     0.03,
-    0.03,
-    0.03,
-    0.02,
     0.02
    ],
    "takes": [
     {
-     "lufsMax": -20.7,
-     "truePeak": -2.76,
-     "duration": 0.87
+     "lufsMax": -17.42,
+     "truePeak": -1.5,
+     "duration": 0.89
     },
     {
-     "lufsMax": -21.01,
-     "truePeak": -1.73,
-     "duration": 0.87
+     "lufsMax": -17.96,
+     "truePeak": -1.51,
+     "duration": 0.95
     },
     {
-     "lufsMax": -20.78,
-     "truePeak": -1.21,
-     "duration": 0.87
+     "lufsMax": -18.09,
+     "truePeak": -1.51,
+     "duration": 0.95
     },
     {
-     "lufsMax": -20.69,
-     "truePeak": -2.07,
-     "duration": 0.87
+     "lufsMax": -18.03,
+     "truePeak": -1.5,
+     "duration": 0.88
     }
    ]
   },
@@ -11830,76 +11830,76 @@
    "id": "button",
    "cat": "mechanic",
    "desc": "Press a mechanical floor button",
-   "gain": 0.805,
+   "gain": 1.08,
    "limited": true,
    "m": {
-    "peak": -1.26,
-    "truePeak": -1.22,
-    "lufsMax": -20.69,
+    "peak": -1.51,
+    "truePeak": -1.49,
+    "lufsMax": -23.78,
     "duration": 0.11,
-    "centroid": 1292
+    "centroid": 1187
    },
    "env": [
     1,
-    0.95,
-    0.9,
-    0.84,
-    0.79,
-    0.74,
+    0.85,
+    0.88,
+    0.78,
     0.69,
-    0.65,
-    0.62,
-    0.55,
-    0.51,
-    0.48,
-    0.44,
+    0.58,
+    0.52,
+    0.47,
     0.4,
-    0.36,
-    0.32,
-    0.28,
-    0.24,
-    0.2,
+    0.41,
+    0.35,
+    0.29,
+    0.25,
+    0.22,
     0.18,
+    0.17,
     0.16,
+    0.13,
     0.12,
+    0.1,
+    0.09,
+    0.08,
+    0.51,
     0.48,
     0.46,
     0.43,
-    0.41,
+    0.4,
     0.38,
-    0.36,
+    0.35,
     0.33,
-    0.31,
-    0.28,
-    0.26,
-    0.22,
-    0.2,
-    0.17,
-    0.15,
-    0.12,
+    0.29,
+    0.27,
+    0.24,
+    0.21,
+    0.18,
+    0.16,
+    0.13,
     0.1,
     0.07,
     0.03
    ],
    "takes": [
     {
-     "lufsMax": -20.69,
-     "truePeak": -1.22,
+     "lufsMax": -23.78,
+     "truePeak": -1.49,
      "duration": 0.11
     },
     {
-     "lufsMax": -20.47,
-     "truePeak": -1.2,
+     "lufsMax": -23.85,
+     "truePeak": -1.5,
      "duration": 0.11
     },
     {
-     "lufsMax": -20.61,
-     "truePeak": -1.36,
+     "lufsMax": -22.05,
+     "truePeak": -1.49,
      "duration": 0.11
     },
     {
-     "lufsMax": -20.47,
-     "truePeak": -1.52,
+     "lufsMax": -22.57,
+     "truePeak": -1.49,
      "duration": 0.11
     }
    ]
@@ -11909,76 +11909,76 @@
    "id": "ratchet",
    "cat": "mechanic",
    "desc": "Gear or crank turning",
-   "gain": 0.947,
+   "gain": 1.04,
    "limited": true,
    "m": {
-    "peak": -3.38,
-    "truePeak": -3.38,
-    "lufsMax": -21.15,
+    "peak": -1.91,
+    "truePeak": -1.74,
+    "lufsMax": -20.42,
     "duration": 0.29,
-    "centroid": 6329
+    "centroid": 6291
    },
    "env": [
     1,
-    0.53,
+    0.5,
     0.21,
     0.01,
     0.01,
     0,
-    0.84,
-    0.51,
-    0.16,
+    0.81,
+    0.5,
+    0.15,
+    0.01,
     0,
     0,
-    0,
-    0.88,
-    0.68,
-    0.34,
+    0.79,
+    0.65,
+    0.33,
     0.03,
     0,
     0,
-    0.8,
     0.86,
+    0.83,
     0.36,
     0.08,
     0.01,
     0,
-    0.54,
-    0.94,
-    0.61,
+    0.63,
+    0.93,
+    0.59,
     0.13,
-    0,
-    0,
-    0,
-    0.82,
-    0.52,
-    0.17,
     0.01,
     0,
     0,
-    0.92,
-    0.68,
-    0.26
+    0.76,
+    0.53,
+    0.17,
+    0.01,
+    0.01,
+    0,
+    0.96,
+    0.67,
+    0.25
    ],
    "takes": [
     {
-     "lufsMax": -21.15,
-     "truePeak": -3.38,
+     "lufsMax": -20.42,
+     "truePeak": -1.74,
      "duration": 0.29
     },
     {
-     "lufsMax": -19.98,
-     "truePeak": -2.79,
+     "lufsMax": -19.25,
+     "truePeak": -1.19,
      "duration": 0.29
     },
     {
-     "lufsMax": -20.37,
-     "truePeak": -2.58,
+     "lufsMax": -19.69,
+     "truePeak": -1.97,
      "duration": 0.29
     },
     {
-     "lufsMax": -20.66,
-     "truePeak": -1.2,
+     "lufsMax": -19.84,
+     "truePeak": -1.25,
      "duration": 0.29
     }
    ]
@@ -11991,8 +11991,8 @@
    "gain": 0.376,
    "limited": false,
    "m": {
-    "peak": -5.44,
-    "truePeak": -5.44,
+    "peak": -5.52,
+    "truePeak": -5.5,
     "lufsMax": -16.95,
     "duration": 1.09,
     "centroid": 1215
@@ -12000,28 +12000,28 @@
    "env": [
     0.2,
     0.42,
-    0.57,
+    0.58,
     0.71,
     0.81,
     0.9,
-    0.96,
+    0.97,
     0.99,
-    0.94,
+    0.95,
     1,
     1,
     1,
+    0.99,
+    0.98,
+    0.98,
+    0.99,
+    0.98,
     0.99,
     0.97,
-    0.98,
-    0.98,
-    0.98,
-    0.99,
-    0.96,
     0.97,
-    0.98,
-    0.95,
+    0.97,
+    0.97,
+    0.97,
     0.96,
-    0.95,
     0.94,
     0.95,
     0.95,
@@ -12029,10 +12029,10 @@
     0.94,
     0.94,
     0.88,
-    0.77,
+    0.78,
     0.67,
     0.63,
-    0.53,
+    0.54,
     0.44,
     0.37,
     0.29,
@@ -12042,22 +12042,22 @@
    "takes": [
     {
      "lufsMax": -16.95,
-     "truePeak": -5.44,
+     "truePeak": -5.5,
      "duration": 1.09
     },
     {
      "lufsMax": -16.97,
-     "truePeak": -5.39,
+     "truePeak": -5.35,
      "duration": 1.11
     },
     {
-     "lufsMax": -16.96,
-     "truePeak": -5.07,
+     "lufsMax": -16.97,
+     "truePeak": -5.15,
      "duration": 1.09
     },
     {
-     "lufsMax": -17.08,
-     "truePeak": -5.4,
+     "lufsMax": -17.07,
+     "truePeak": -5.38,
      "duration": 1.11
     }
    ]
@@ -12067,77 +12067,77 @@
    "id": "whoosh",
    "cat": "world",
    "desc": "Medium whoosh for dashes and swings",
-   "gain": 1.7,
-   "limited": true,
+   "gain": 1.84,
+   "limited": false,
    "m": {
-    "peak": -2.27,
-    "truePeak": -2.27,
-    "lufsMax": -17.46,
-    "duration": 0.33,
-    "centroid": 4303
+    "peak": -1.58,
+    "truePeak": -1.58,
+    "lufsMax": -16.85,
+    "duration": 0.44,
+    "centroid": 4306
    },
    "env": [
-    0.21,
-    0.29,
-    0.38,
+    0.24,
+    0.36,
     0.46,
     0.55,
     0.61,
     0.66,
-    0.66,
     0.69,
-    0.68,
     0.76,
     0.93,
     0.82,
-    0.88,
-    0.99,
+    0.98,
     1,
     0.97,
-    0.86,
-    0.78,
-    0.89,
-    0.88,
-    0.8,
-    0.75,
-    0.65,
-    0.63,
-    0.62,
-    0.42,
+    0.85,
+    0.7,
+    0.85,
+    0.77,
+    0.72,
+    0.59,
+    0.59,
+    0.5,
     0.47,
-    0.44,
-    0.44,
-    0.36,
-    0.3,
-    0.3,
-    0.27,
-    0.25,
-    0.18,
+    0.43,
+    0.35,
+    0.33,
+    0.33,
+    0.29,
+    0.29,
+    0.23,
+    0.23,
+    0.24,
+    0.21,
     0.17,
-    0.12,
+    0.15,
+    0.14,
+    0.11,
+    0.09,
     0.08,
-    0.05
+    0.08,
+    0.04
    ],
    "takes": [
     {
-     "lufsMax": -17.46,
-     "truePeak": -2.27,
-     "duration": 0.33
+     "lufsMax": -16.85,
+     "truePeak": -1.58,
+     "duration": 0.44
     },
     {
-     "lufsMax": -17.52,
-     "truePeak": -1.22,
-     "duration": 0.32
+     "lufsMax": -18.24,
+     "truePeak": -1.7,
+     "duration": 0.42
     },
     {
-     "lufsMax": -17.52,
-     "truePeak": -1.43,
-     "duration": 0.35
+     "lufsMax": -16.77,
+     "truePeak": -1.37,
+     "duration": 0.44
     },
     {
-     "lufsMax": -17.26,
-     "truePeak": -3.2,
-     "duration": 0.32
+     "lufsMax": -16.19,
+     "truePeak": -1.66,
+     "duration": 0.42
     }
    ]
   },
@@ -12146,77 +12146,77 @@
    "id": "swing",
    "cat": "world",
    "desc": "Sword or stick swing",
-   "gain": 2.31,
+   "gain": 2.76,
    "limited": true,
    "m": {
-    "peak": -2.9,
-    "truePeak": -2.88,
-    "lufsMax": -18.78,
-    "duration": 0.16,
-    "centroid": 4515
+    "peak": -1.51,
+    "truePeak": -1.51,
+    "lufsMax": -16.37,
+    "duration": 0.32,
+    "centroid": 4663
    },
    "env": [
-    0.23,
     0.26,
-    0.45,
-    0.43,
-    0.49,
+    0.46,
     0.52,
-    0.64,
+    0.65,
+    0.75,
+    0.81,
+    0.91,
+    0.97,
+    0.96,
+    1,
+    0.89,
+    0.85,
+    0.87,
+    0.81,
+    0.8,
+    0.63,
+    0.62,
     0.6,
     0.59,
-    0.75,
-    0.78,
-    0.8,
-    0.89,
-    0.9,
-    0.96,
-    0.92,
-    0.95,
-    0.95,
-    1,
-    0.77,
-    0.75,
-    0.87,
-    0.85,
-    0.75,
-    0.79,
-    0.76,
-    0.75,
-    0.59,
-    0.69,
-    0.63,
-    0.48,
-    0.44,
-    0.39,
-    0.36,
-    0.32,
+    0.53,
+    0.46,
+    0.45,
+    0.37,
+    0.34,
     0.31,
+    0.3,
+    0.28,
     0.22,
+    0.23,
     0.18,
+    0.18,
+    0.15,
+    0.14,
+    0.12,
     0.11,
-    0.07
+    0.09,
+    0.1,
+    0.08,
+    0.05,
+    0.04
    ],
    "takes": [
     {
-     "lufsMax": -18.78,
-     "truePeak": -2.88,
-     "duration": 0.16
+     "lufsMax": -16.37,
+     "truePeak": -1.51,
+     "duration": 0.32
     },
     {
-     "lufsMax": -18.77,
-     "truePeak": -1.9,
-     "duration": 0.16
+     "lufsMax": -19.06,
+     "truePeak": -1.82,
+     "duration": 0.3
     },
     {
-     "lufsMax": -18.74,
-     "truePeak": -1.2,
-     "duration": 0.16
+     "lufsMax": -16.53,
+     "truePeak": -1.49,
+     "duration": 0.32
     },
     {
-     "lufsMax": -18.8,
-     "truePeak": -2.76,
-     "duration": 0.16
+     "lufsMax": -16.08,
+     "truePeak": -1.86,
+     "duration": 0.3
     }
    ]
   },
@@ -12225,77 +12225,77 @@
    "id": "dash",
    "cat": "world",
    "desc": "Quick dash with a burst",
-   "gain": 1.17,
-   "limited": true,
+   "gain": 1.79,
+   "limited": false,
    "m": {
-    "peak": -1.27,
-    "truePeak": -1.18,
-    "lufsMax": -20.23,
+    "peak": -1.51,
+    "truePeak": -1.44,
+    "lufsMax": -17.3,
     "duration": 0.19,
-    "centroid": 4862
+    "centroid": 4932
    },
    "env": [
-    0.6,
-    0.8,
+    0.75,
     1,
+    1,
+    0.94,
+    0.96,
+    1,
+    1,
+    0.91,
+    1,
+    0.83,
     0.89,
-    0.83,
-    0.83,
-    0.82,
-    0.72,
-    0.8,
-    0.66,
+    0.76,
+    0.79,
+    0.68,
     0.71,
+    0.67,
     0.6,
-    0.64,
+    0.61,
+    0.67,
+    0.6,
     0.53,
-    0.57,
-    0.54,
+    0.55,
+    0.53,
+    0.52,
     0.48,
-    0.49,
-    0.54,
-    0.48,
-    0.42,
-    0.44,
-    0.42,
-    0.41,
+    0.5,
     0.38,
-    0.4,
-    0.3,
-    0.3,
-    0.27,
-    0.27,
+    0.37,
+    0.34,
+    0.34,
+    0.32,
+    0.31,
     0.25,
-    0.24,
+    0.29,
     0.2,
-    0.23,
     0.16,
-    0.13,
+    0.14,
     0.11,
     0.08,
-    0.06,
-    0.05
+    0.04
    ],
    "takes": [
     {
-     "lufsMax": -20.23,
-     "truePeak": -1.18,
+     "lufsMax": -17.3,
+     "truePeak": -1.44,
      "duration": 0.19
     },
     {
-     "lufsMax": -20.33,
-     "truePeak": -4.59,
+     "lufsMax": -16.73,
+     "truePeak": -1.16,
      "duration": 0.2
     },
     {
-     "lufsMax": -20.15,
-     "truePeak": -1.66,
+     "lufsMax": -17.15,
+     "truePeak": -1.28,
      "duration": 0.19
     },
     {
-     "lufsMax": -20.3,
-     "truePeak": -1.88,
-     "duration": 0.19
+     "lufsMax": -17.28,
+     "truePeak": -1.45,
+     "duration": 0.2
     }
    ]
   },
@@ -12304,77 +12304,77 @@
    "id": "splash",
    "cat": "world",
    "desc": "Something falls in water",
-   "gain": 0.675,
-   "limited": true,
+   "gain": 0.917,
+   "limited": false,
    "m": {
-    "peak": -1.35,
-    "truePeak": -1.2,
-    "lufsMax": -19.84,
-    "duration": 0.73,
-    "centroid": 2877
+    "peak": -1.51,
+    "truePeak": -1.37,
+    "lufsMax": -17.59,
+    "duration": 0.81,
+    "centroid": 2869
    },
    "env": [
     1,
-    0.88,
-    0.75,
+    0.97,
+    0.85,
+    0.72,
     0.61,
-    0.53,
+    0.58,
+    0.72,
+    0.51,
+    0.41,
     0.48,
-    0.61,
-    0.57,
-    0.42,
-    0.35,
-    0.28,
-    0.45,
-    0.33,
-    0.26,
+    0.53,
+    0.38,
+    0.3,
     0.23,
-    0.18,
+    0.24,
     0.2,
-    0.16,
+    0.18,
     0.15,
+    0.14,
     0.13,
-    0.12,
-    0.11,
+    0.13,
     0.11,
     0.09,
+    0.1,
     0.08,
-    0.09,
-    0.06,
     0.07,
     0.06,
+    0.06,
+    0.04,
     0.05,
-    0.05,
     0.04,
     0.04,
     0.04,
     0.03,
     0.03,
     0.03,
-    0.03,
-    0.03,
+    0.02,
+    0.02,
+    0.02,
     0.02
    ],
    "takes": [
     {
-     "lufsMax": -19.84,
-     "truePeak": -1.2,
-     "duration": 0.73
+     "lufsMax": -17.59,
+     "truePeak": -1.37,
+     "duration": 0.81
     },
     {
-     "lufsMax": -19.61,
-     "truePeak": -2.77,
-     "duration": 0.78
+     "lufsMax": -17.15,
+     "truePeak": -1.35,
+     "duration": 0.79
     },
     {
-     "lufsMax": -19.47,
-     "truePeak": -1.99,
-     "duration": 0.78
+     "lufsMax": -17.38,
+     "truePeak": -1.4,
+     "duration": 0.81
     },
     {
-     "lufsMax": -19.65,
-     "truePeak": -2.57,
-     "duration": 0.78
+     "lufsMax": -17.07,
+     "truePeak": -1.45,
+     "duration": 0.79
     }
    ]
   },
@@ -12462,12 +12462,12 @@
    "id": "bubble",
    "cat": "world",
    "desc": "Bubbles rising",
-   "gain": 0.866,
+   "gain": 0.864,
    "limited": false,
    "m": {
-    "peak": -1.64,
-    "truePeak": -1.64,
-    "lufsMax": -16.99,
+    "peak": -1.66,
+    "truePeak": -1.66,
+    "lufsMax": -17.01,
     "duration": 0.29,
     "centroid": 778
    },
@@ -12515,23 +12515,23 @@
    ],
    "takes": [
     {
-     "lufsMax": -16.99,
-     "truePeak": -1.64,
+     "lufsMax": -17.01,
+     "truePeak": -1.66,
      "duration": 0.29
     },
     {
-     "lufsMax": -17.11,
-     "truePeak": -1.67,
-     "duration": 0.28
-    },
-    {
-     "lufsMax": -16.95,
-     "truePeak": -1.68,
+     "lufsMax": -17.05,
+     "truePeak": -1.7,
      "duration": 0.29
     },
     {
-     "lufsMax": -16.96,
-     "truePeak": -1.59,
+     "lufsMax": -16.97,
+     "truePeak": -1.7,
+     "duration": 0.29
+    },
+    {
+     "lufsMax": -16.97,
+     "truePeak": -1.61,
      "duration": 0.29
     }
    ]
@@ -12599,18 +12599,18 @@
      "duration": 1.47
     },
     {
-     "lufsMax": -16.88,
-     "truePeak": -4.58,
+     "lufsMax": -16.89,
+     "truePeak": -4.6,
      "duration": 1.42
     },
     {
-     "lufsMax": -16.96,
-     "truePeak": -4.28,
-     "duration": 1.53
+     "lufsMax": -16.98,
+     "truePeak": -4.47,
+     "duration": 1.48
     },
     {
-     "lufsMax": -17.12,
-     "truePeak": -5.43,
+     "lufsMax": -17.11,
+     "truePeak": -5.46,
      "duration": 1.42
     }
    ]
@@ -12620,51 +12620,51 @@
    "id": "glassBreak",
    "cat": "world",
    "desc": "Glass shatters",
-   "gain": 0.459,
+   "gain": 0.513,
    "limited": true,
    "m": {
     "peak": -1.2,
     "truePeak": -1.2,
-    "lufsMax": -18.88,
+    "lufsMax": -18.01,
     "duration": 0.73,
-    "centroid": 10172
+    "centroid": 10140
    },
    "env": [
     1,
-    0.75,
-    0.7,
+    0.81,
+    0.73,
     0.59,
-    0.52,
-    0.52,
-    0.38,
-    0.48,
+    0.54,
+    0.57,
     0.43,
-    0.29,
-    0.45,
+    0.51,
     0.47,
-    0.27,
-    0.21,
-    0.44,
-    0.4,
-    0.24,
-    0.26,
+    0.29,
+    0.48,
+    0.49,
+    0.29,
+    0.22,
     0.46,
+    0.42,
+    0.26,
     0.28,
-    0.17,
-    0.19,
+    0.49,
+    0.3,
+    0.18,
+    0.2,
     0.13,
+    0.15,
     0.14,
-    0.13,
     0.12,
     0.09,
-    0.07,
+    0.08,
     0.09,
     0.06,
     0.05,
     0.05,
     0.04,
     0.05,
-    0.03,
+    0.04,
     0.03,
     0.03,
     0.03,
@@ -12673,23 +12673,23 @@
    ],
    "takes": [
     {
-     "lufsMax": -18.88,
+     "lufsMax": -18.01,
      "truePeak": -1.2,
      "duration": 0.73
     },
     {
-     "lufsMax": -18.69,
-     "truePeak": -2.68,
+     "lufsMax": -17.61,
+     "truePeak": -1.48,
      "duration": 0.74
     },
     {
-     "lufsMax": -18.81,
-     "truePeak": -2.85,
+     "lufsMax": -17.86,
+     "truePeak": -1.92,
      "duration": 0.7
     },
     {
-     "lufsMax": -18.54,
-     "truePeak": -2.92,
+     "lufsMax": -17.63,
+     "truePeak": -1.49,
      "duration": 0.7
     }
    ]
@@ -12702,20 +12702,20 @@
    "gain": 0.567,
    "limited": false,
    "m": {
-    "peak": -1.57,
-    "truePeak": -1.56,
+    "peak": -1.54,
+    "truePeak": -1.53,
     "lufsMax": -16.74,
     "duration": 0.18,
-    "centroid": 306
+    "centroid": 307
    },
    "env": [
-    0.88,
+    0.89,
     1,
     0.88,
     0.87,
     0.87,
     0.84,
-    0.82,
+    0.81,
     0.76,
     0.76,
     0.82,
@@ -12725,10 +12725,10 @@
     0.75,
     0.68,
     0.65,
-    0.66,
+    0.67,
     0.63,
     0.57,
-    0.6,
+    0.59,
     0.56,
     0.55,
     0.51,
@@ -12753,22 +12753,22 @@
    "takes": [
     {
      "lufsMax": -16.74,
-     "truePeak": -1.56,
+     "truePeak": -1.53,
      "duration": 0.18
     },
     {
-     "lufsMax": -16.93,
-     "truePeak": -3.14,
+     "lufsMax": -16.91,
+     "truePeak": -3.08,
      "duration": 0.19
     },
     {
      "lufsMax": -17.16,
-     "truePeak": -2.99,
+     "truePeak": -2.96,
      "duration": 0.18
     },
     {
      "lufsMax": -17.17,
-     "truePeak": -2.63,
+     "truePeak": -2.59,
      "duration": 0.19
     }
    ]
@@ -12778,77 +12778,77 @@
    "id": "toss",
    "cat": "world",
    "desc": "Throw something",
-   "gain": 0.926,
+   "gain": 1.23,
    "limited": true,
    "m": {
-    "peak": -2.13,
-    "truePeak": -2.06,
-    "lufsMax": -19.97,
-    "duration": 0.17,
-    "centroid": 4077
+    "peak": -1.51,
+    "truePeak": -1.3,
+    "lufsMax": -16.79,
+    "duration": 0.32,
+    "centroid": 4143
    },
    "env": [
-    0.18,
-    0.23,
-    0.36,
-    0.33,
-    0.43,
-    0.48,
-    0.56,
-    0.54,
-    0.61,
-    0.67,
-    0.75,
-    0.77,
+    0.25,
+    0.4,
+    0.53,
     0.62,
-    0.81,
-    0.78,
-    0.86,
+    0.7,
+    0.83,
+    0.85,
+    0.91,
     1,
-    0.86,
-    0.89,
-    0.8,
-    0.74,
-    0.64,
-    0.74,
+    0.97,
+    0.91,
+    0.88,
+    0.78,
+    0.76,
+    0.77,
+    0.68,
+    0.67,
     0.62,
-    0.59,
-    0.56,
-    0.55,
-    0.41,
-    0.51,
+    0.58,
+    0.5,
     0.44,
-    0.42,
-    0.31,
+    0.44,
+    0.39,
     0.35,
-    0.23,
-    0.27,
+    0.33,
+    0.29,
+    0.29,
+    0.26,
+    0.22,
+    0.22,
+    0.18,
+    0.17,
     0.15,
+    0.16,
     0.13,
-    0.12,
+    0.09,
+    0.1,
+    0.08,
     0.06,
-    0.03
+    0.04
    ],
    "takes": [
     {
-     "lufsMax": -19.97,
-     "truePeak": -2.06,
-     "duration": 0.17
+     "lufsMax": -16.79,
+     "truePeak": -1.3,
+     "duration": 0.32
     },
     {
-     "lufsMax": -20.03,
-     "truePeak": -2.72,
-     "duration": 0.16
+     "lufsMax": -18.91,
+     "truePeak": -2.35,
+     "duration": 0.3
     },
     {
-     "lufsMax": -20.28,
-     "truePeak": -3.11,
-     "duration": 0.17
+     "lufsMax": -17.23,
+     "truePeak": -1.46,
+     "duration": 0.32
     },
     {
-     "lufsMax": -19.4,
-     "truePeak": -1.2,
-     "duration": 0.16
+     "lufsMax": -16.17,
+     "truePeak": -1.41,
+     "duration": 0.3
     }
    ]
   },
@@ -12857,76 +12857,76 @@
    "id": "fireCrackle",
    "cat": "world",
    "desc": "Campfire crackle",
-   "gain": 1.65,
-   "limited": true,
+   "gain": 1.76,
+   "limited": false,
    "m": {
-    "peak": -1.53,
+    "peak": -1.51,
     "truePeak": -1.45,
-    "lufsMax": -17.47,
-    "duration": 0.98,
+    "lufsMax": -16.91,
+    "duration": 0.99,
     "centroid": 2509
    },
    "env": [
-    0.23,
-    0.44,
-    0.82,
-    0.61,
-    0.52,
+    0.24,
+    0.46,
     0.85,
-    0.74,
-    0.74,
-    0.67,
     0.63,
-    0.61,
-    0.71,
-    0.78,
-    0.67,
-    0.7,
-    0.59,
+    0.53,
+    0.88,
+    0.76,
+    0.76,
     0.69,
-    0.85,
+    0.62,
     0.63,
-    0.96,
-    0.68,
+    0.73,
+    0.8,
+    0.69,
+    0.73,
     0.61,
     0.72,
-    0.68,
-    0.89,
-    0.86,
-    0.73,
-    0.59,
-    0.54,
-    0.63,
+    0.88,
+    0.65,
     1,
-    0.5,
-    0.89,
-    0.38,
-    0.32,
-    0.35,
-    0.26,
+    0.71,
+    0.63,
+    0.75,
+    0.76,
+    0.92,
+    0.76,
+    0.7,
+    0.61,
+    0.55,
+    1,
+    0.76,
+    0.51,
+    0.93,
+    0.4,
+    0.36,
+    0.27,
+    0.27,
     0.2,
     0.15,
-    0.08
+    0.07
    ],
    "takes": [
     {
-     "lufsMax": -17.47,
+     "lufsMax": -16.91,
      "truePeak": -1.45,
-     "duration": 0.98
-    },
-    {
-     "lufsMax": -17.78,
-     "truePeak": -1.94,
-     "duration": 1
-    },
-    {
-     "lufsMax": -17.33,
-     "truePeak": -1.22,
      "duration": 0.99
     },
     {
-     "lufsMax": -17.56,
-     "truePeak": -1.18,
+     "lufsMax": -17.23,
+     "truePeak": -1.45,
+     "duration": 1
+    },
+    {
+     "lufsMax": -16.86,
+     "truePeak": -1.51,
+     "duration": 0.99
+    },
+    {
+     "lufsMax": -17.01,
+     "truePeak": -1.21,
      "duration": 1
     }
    ]

@@ -52,10 +52,35 @@ for (const e of library) {
   const avg = raw.reduce((a, m) => a + m.lufsMax, 0) / VARIANTS,
     limited = CEILING - tpMax < target - avg,
     gainDb = Math.min(target - avg, CEILING - tpMax);
-  const gain = Number((10 ** (gainDb / 20)).toPrecision(3)),
-    sound: Sound = { ...e.sound, gain },
-    takes = Array.from({ length: VARIANTS }, (_, seed) => measure(render(sound, { sampleRate: SR, seed }), SR)),
-    m = takes[0];
+  let gain = Number((10 ** (gainDb / 20)).toPrecision(3)),
+    sound: Sound = { ...e.sound, gain };
+  // Peak-limited sounds: try the render-time limiter. Raise the gain (at most +4 dB) until the
+  // average take reaches the target or the true peak hits the ceiling; keep it only if it gains >= 0.5 LU.
+  if (limited && !e.sound.limit) {
+    const avgOf = (ms: { lufsMax: number }[]) => ms.reduce((a, m) => a + m.lufsMax, 0) / ms.length,
+      at = (g: number) => Array.from({ length: VARIANTS }, (_, seed) => measure(render({ ...e.sound, limit: 1, gain: g }, { sampleRate: SR, seed }), SR)),
+      before = avgOf(raw) + gainDb,
+      max = gain * 10 ** (4 / 20);
+    let g = Math.min(max, gain * 10 ** ((target - before) / 20)),
+      ms = at(g);
+    for (let k = 0; k < 6; k++) {
+      const tp = Math.max(...ms.map((m) => m.truePeak)),
+        avg = avgOf(ms);
+      if (tp > CEILING + 0.15) g *= 10 ** ((CEILING - tp) / 20);
+      else if (avg < target - 0.3 && g < max) g = Math.min(max, g * 10 ** ((target - avg) / 20));
+      else break;
+      ms = at(g);
+    }
+    if (Math.max(...ms.map((m) => m.truePeak)) <= -1 && avgOf(ms) > before + 0.5) {
+      gain = Number(g.toPrecision(3));
+      sound = { ...e.sound, limit: 1, gain };
+    }
+  }
+  const takes = Array.from({ length: VARIANTS }, (_, seed) => measure(render(sound, { sampleRate: SR, seed }), SR)),
+    m = takes[0],
+    tAvg = takes.reduce((a, t) => a + t.lufsMax, 0) / VARIANTS,
+    // "limited": the true-peak ceiling kept it from its target band.
+    capped = limited && !(Math.abs(tAvg - target) <= 0.5 && takes.every((t) => Math.abs(t.lufsMax - target) <= 1.5));
   // Short transients hit the -1 dBTP ceiling before the loudness target; that is fine
   // (they are peak-normalised), unless they end up far too quiet.
   if (m.lufsMax < target - 6) problems.push(`${e.name}: too quiet, ${r2(m.lufsMax)} LUFS vs target ${target}`);
@@ -67,7 +92,7 @@ for (const e of library) {
     cat: e.cat,
     desc: e.desc,
     gain,
-    limited,
+    limited: capped,
     m: { peak: r2(m.peak), truePeak: r2(m.truePeak), lufsMax: r2(m.lufsMax), duration: r2(m.duration), centroid: Math.round(m.centroid) },
     // 40-bar peak envelope of take 0 for the gallery tiles (so the page renders no audio at load).
     env: envelope(render(sound, { sampleRate: SR }), 40),

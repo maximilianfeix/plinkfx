@@ -2,15 +2,22 @@ import { def } from "./def.ts";
 
 export default def("ui", {
   click: ["Neutral button click", {
+    vary: 0.6,
+    varyF: 1,
+    varyG: 1,
     layers: [
-      { wave: "sine", freq: 1900, to: 900, a: 0.001, d: 0.03, shape: 3 },
-      { wave: "noise", bp: 4200, q: 1.2, a: 0.001, d: 0.012, shape: 3, gain: 0.5 },
+      { wave: "noise", bp: 3500, q: 3, a: 0.001, d: 0.004, shape: -6 },
+      { wave: "sine", freq: 1900, to: 900, a: 0.001, d: 0.03, shape: -5, gain: 0.6 },
+      { wave: "noise", bp: 2500, q: 5, at: 0.012, a: 0.001, d: 0.005, shape: -6, gain: 0.5 },
     ],
   }],
   "click-soft": ["Rounded, quiet click for lists and tabs", {
+    varyF: 1,
+    varyG: 1,
     layers: [
-      { wave: "triangle", freq: 880, to: 560, a: 0.002, d: 0.045, shape: 3, lp: 3200 },
-      { wave: "pink", lp: 2500, a: 0.001, d: 0.015, shape: 3, gain: 0.25 },
+      { wave: "noise", bp: 2800, q: 3, a: 0.001, d: 0.004, shape: -6, gain: 0.6 },
+      { wave: "triangle", freq: 880, to: 560, a: 0.002, d: 0.05, shape: -4, lp: 3200, gain: 0.7 },
+      { wave: "pink", bp: 2000, q: 4, at: 0.014, a: 0.001, d: 0.006, shape: -6, gain: 0.35 },
     ],
   }],
   "click-hard": ["Firm mechanical click", {

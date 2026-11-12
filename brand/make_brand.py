@@ -171,7 +171,7 @@ def main():
     png("favicon/favicon.svg", "favicon/apple-touch-icon.png", 180, 180)
     # social preview, X header, README banners
     count = len(json.load(open(os.path.join(HERE, "..", "library", "catalog.gen.json")))["sounds"])
-    write("banners/social-preview.svg", card(1280, 640, "game sound effects as code", f"{count} sounds · CC0 · 2.5 kB player · no audio files"))
+    write("banners/social-preview.svg", card(1280, 640, "game sound effects as code", f"{count} sounds · CC0 · 2.8 kB player · no audio files"))
     png("banners/social-preview.svg", "banners/social-preview.png", 1280, 640)
     write("banners/x-header.svg", card(1500, 500, "game sound effects as code", "", scale=0.85))
     png("banners/x-header.svg", "banners/x-header.png", 1500, 500)

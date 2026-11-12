@@ -31,7 +31,13 @@ export function context(): AudioContext {
     ctx = new AudioContext();
     master = ctx.createGain();
     master.gain.value = level;
-    master.connect(ctx.destination);
+    // Soft safety limiter, so ten coins at once don't clip.
+    const k = ctx.createDynamicsCompressor();
+    k.threshold.value = -3;
+    k.knee.value = 3;
+    k.ratio.value = 20;
+    k.release.value = 0.1;
+    master.connect(k).connect(ctx.destination);
   }
   return ctx;
 }

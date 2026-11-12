@@ -2,10 +2,14 @@ import { def } from "./def.ts";
 
 export default def("hit", {
   hit: ["Solid all-round hit: click, body, thump", {
+    varyF: 2,
+    varyG: 1.5,
+    verb: [0.15, 0.08],
     layers: [
-      { wave: "noise", hp: 2500, a: 0.001, d: 0.012, shape: 3, gain: 0.5 },
-      { wave: "pink", lp: 3000, lpTo: 500, a: 0.001, h: 0.015, d: 0.11, shape: 2.5, drive: 3 },
-      { wave: "sine", freq: 170, to: 52, curve: 2, at: 0.004, a: 0.001, d: 0.16, shape: 2, drive: 2, gain: 0.8 },
+      { wave: "noise", bp: 1800, a: 0.001, d: 0.01, shape: -5, gain: 0.8 },
+      { wave: "pink", lp: 1500, lpTo: 300, at: 0.002, a: 0.001, d: 0.09, shape: -6, drive: 2 },
+      { wave: "sine", freq: 160, to: 70, at: 0.003, a: 0.001, d: 0.22, shape: -5, drive: 1, gain: 0.8 },
+      { wave: "brown", lp: 250, at: 0.01, a: 0.002, d: 0.35, shape: -5, gain: 0.25 },
     ],
   }],
   "hit-light": ["Light jab or tap", {
@@ -24,11 +28,14 @@ export default def("hit", {
     ],
   }],
   punch: ["Cartoon punch, meaty", {
+    varyF: 2,
+    varyG: 1.5,
+    verb: [0.15, 0.08],
     layers: [
-      { wave: "noise", bp: 1800, q: 1, a: 0.001, d: 0.01, shape: 3, drive: 2, gain: 0.5 },
-      { wave: "pink", bp: 900, bpTo: 250, q: 0.9, a: 0.001, d: 0.14, shape: 2.2, drive: 2 },
-      { wave: "sine", freq: 120, to: 45, curve: 2, a: 0.001, d: 0.18, shape: 2, drive: 2.5 },
-      { wave: "brown", lp: 400, a: 0.001, d: 0.12, gain: 0.6 },
+      { wave: "noise", bp: 1400, a: 0.001, d: 0.012, shape: -5, gain: 0.6 },
+      { wave: "pink", bp: 1000, bpTo: 350, q: 0.9, at: 0.002, a: 0.001, d: 0.16, shape: -6, drive: 2 },
+      { wave: "sine", freq: 140, to: 60, at: 0.004, a: 0.001, d: 0.25, shape: -5, drive: 1.5, gain: 0.9 },
+      { wave: "brown", lp: 250, at: 0.01, a: 0.002, d: 0.3, shape: -5, gain: 0.25 },
     ],
   }],
   slap: ["Flat slap", {
@@ -104,11 +111,13 @@ export default def("hit", {
     ],
   }],
   "arrow-hit": ["Arrow thunks into wood", {
+    varyF: 2,
+    varyG: 1,
     layers: [
-      { wave: "noise", bp: 2000, q: 1.5, a: 0.001, d: 0.012, shape: 3, drive: 2, gain: 0.8 },
-      { wave: "pink", bp: 700, q: 1.5, a: 0.001, d: 0.06, shape: 2.5, drive: 2 },
-      { wave: "sine", freq: 200, to: 90, curve: 2, a: 0.001, d: 0.1, shape: 2.5, drive: 1.5 },
-      { wave: "triangle", freq: 420, vib: [45, 0.8], a: 0.001, d: 0.25, shape: 3, gain: 0.3 },
+      { wave: "noise", bp: 1800, q: 2, a: 0.001, d: 0.008, shape: -5, drive: 2 },
+      { wave: "modal", freq: 210, modes: [1, 2.32, 4.25, 6.63], at: 0.002, a: 0.001, d: 0.18, shape: -5 },
+      { wave: "triangle", freq: 420, vib: [45, 0.8], a: 0.001, d: 0.15, shape: -4, gain: 0.2 },
+      { wave: "brown", lp: 300, a: 0.002, d: 0.12, shape: -5, gain: 0.3 },
     ],
   }],
 });

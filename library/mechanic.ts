@@ -11,12 +11,16 @@ export default def("mechanic", {
     ],
   }],
   "door-close": ["Door shuts with a thud", {
+    varyF: 2,
+    varyG: 1,
     verb: [0.35, 0.18],
     layers: [
-      { wave: "brown", lp: 400, a: 0.001, d: 0.25, shape: 2.5, gain: 1.2 },
-      { wave: "sine", freq: 95, to: 50, a: 0.001, d: 0.22, drive: 1 },
-      { wave: "noise", bp: 1500, q: 1.5, a: 0.001, d: 0.04, gain: 0.5 },
-      { wave: "metal", freq: 900, bp: 3000, q: 2, at: 0.04, a: 0.001, d: 0.05, gain: 0.3 },
+      { wave: "noise", bp: 1500, q: 1.5, a: 0.001, d: 0.012, shape: -5, gain: 0.6 },
+      { wave: "noise", bp: 220, q: 8, a: 0.001, d: 0.15, shape: -5, gain: 1.4 },
+      { wave: "noise", bp: 480, q: 6, a: 0.001, d: 0.08, shape: -5, gain: 0.9 },
+      { wave: "modal", freq: 160, modes: [1, 2.32, 4.25], a: 0.001, d: 0.2, shape: -5, gain: 0.5 },
+      { wave: "sine", freq: 90, to: 50, a: 0.001, d: 0.2, shape: -5, gain: 0.3 },
+      { wave: "metal", freq: 900, bp: 3000, q: 2, at: 0.04, a: 0.001, d: 0.05, gain: 0.25 },
     ],
   }],
   "door-heavy": ["Heavy dungeon door slams", {
@@ -59,10 +63,13 @@ export default def("mechanic", {
     ],
   }],
   button: ["Press a mechanical floor button", {
+    varyF: 1.5,
+    varyG: 1,
     layers: [
-      { wave: "sine", freq: 300, to: 120, a: 0.001, d: 0.07, shape: 2.5 },
-      { wave: "noise", bp: 2000, q: 2, a: 0.001, d: 0.02, gain: 0.6 },
-      { wave: "triangle", freq: 1200, at: 0.06, a: 0.001, d: 0.05, gain: 0.25 },
+      { wave: "noise", bp: 2000, q: 2, a: 0.001, d: 0.008, shape: -5, gain: 0.6 },
+      { wave: "modal", freq: 240, modes: [1, 2.32, 4.25], a: 0.001, d: 0.1, shape: -5 },
+      { wave: "noise", bp: 220, q: 8, a: 0.001, d: 0.08, shape: -5, gain: 0.7 },
+      { wave: "triangle", freq: 1200, at: 0.06, a: 0.001, d: 0.05, gain: 0.2 },
     ],
   }],
   ratchet: ["Gear or crank turning", {

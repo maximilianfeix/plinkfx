@@ -3,8 +3,8 @@ import { def } from "./def.ts";
 export default def("shoot", {
   laser: ["Classic laser: fast square sweep down", {
     layers: [
-      { wave: "square", duty: 0.5, freq: 1500, to: 220, curve: 3, a: 0.001, d: 0.18, shape: 1.8, lp: 6000 },
-      { wave: "saw", freq: 750, to: 110, curve: 3, a: 0.001, d: 0.15, lp: 3000, gain: 0.4 },
+      { wave: "square", duty: 0.5, freq: 1500, to: 220, curve: 3, a: 0.001, d: 0.2, shape: 1.8, lp: 7500, kt: 1 },
+      { wave: "saw", freq: 750, to: 110, curve: 3, a: 0.001, d: 0.17, lp: 3500, kt: 1, gain: 0.4 },
     ],
   }],
   "laser-soft": ["Rounder laser for cute shooters", {
@@ -12,6 +12,7 @@ export default def("shoot", {
   }],
   "laser-heavy": ["Thick laser cannon", {
     verb: [0.25, 0.12],
+    echo: [0.07, 0.3, 0.18],
     layers: [
       { wave: "saw", freq: 900, to: 70, curve: 2.5, a: 0.001, d: 0.4, shape: 1.8, lp: 4000, lpTo: 500, drive: 1.5 },
       { wave: "square", duty: 0.3, freq: 450, to: 35, curve: 2.5, a: 0.001, d: 0.35, lp: 1500, gain: 0.6 },
@@ -19,8 +20,9 @@ export default def("shoot", {
     ],
   }],
   blaster: ["Sci-fi blaster bolt", {
+    echo: [0.07, 0.3, 0.18],
     layers: [
-      { wave: "square", duty: 0.25, freq: 950, to: 160, curve: 2.5, a: 0.001, d: 0.14, shape: 2, lp: 5000 },
+      { wave: "square", duty: 0.25, freq: 950, to: 160, curve: 2.5, a: 0.001, d: 0.14, shape: 2, lp: 5000, kt: 1 },
       { wave: "noise", bp: 3000, q: 0.8, a: 0.001, d: 0.05, shape: 3, gain: 0.6 },
       { wave: "sine", freq: 180, to: 60, a: 0.001, d: 0.08, gain: 0.6 },
     ],
@@ -61,6 +63,7 @@ export default def("shoot", {
     ],
   }],
   railgun: ["Charge whine, then a piercing shot", {
+    echo: [0.09, 0.3, 0.15],
     verb: [0.4, 0.2],
     layers: [
       { wave: "sine", freq: 600, to: 3200, a: 0.25, d: 0.02, shape: 1, gain: 0.35 },
