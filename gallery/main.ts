@@ -33,7 +33,12 @@ let raf = 0;
 const viewsOf = (name: string) => document.querySelectorAll<HTMLElement>(`.tile[data-name="${name}"], .pad[data-pad="${name}"]`);
 function playItem(it: Item, take = it == current ? seed : undefined, sound = it == current ? edited() : get(it.name)) {
   const ctx = context();
-  if (ctx.state != "running") ctx.resume();
+  if (ctx.state != "running") {
+    ctx.resume();
+    // Hover sounds before the first click would otherwise all fire at once when audio unlocks.
+    const ua = (navigator as any).userActivation;
+    if (ua && !ua.isActive) return;
+  }
   const v = take ?? Math.floor(Math.random() * 4),
     b = buffer(sound, v),
     src = ctx.createBufferSource();

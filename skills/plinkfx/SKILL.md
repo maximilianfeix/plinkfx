@@ -6,7 +6,7 @@ description: Design, render and measure game sound effects as code with plinkfx.
 # plinkfx: sound effects as code
 
 plinkfx sounds are small JSON objects (layers of oscillators or noise with envelopes, pitch sweeps,
-filters and a few effects) that a 2.3 kB player renders in the browser, and the `plinkfx` CLI renders
+filters and a few effects) that a 2.5 kB player renders in the browser, and the `plinkfx` CLI renders
 to WAV. You design a sound by writing that object, rendering it, measuring it, and adjusting.
 
 **You cannot hear.** Say so once. Your checks are numbers and spectrograms; the user's ears decide.
