@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>plinkfx + Phaser</title>
+    <style>body { margin: 0; background: #16130f; color: #f2ede3; font: 14px ui-monospace, Menlo, monospace; } p { padding: 0 16px; }</style>
+  </head>
+  <body>
+    <p>Press 1-5 or click. Sounds come from plinkfx, synthesized in the browser; no audio files are loaded.</p>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@4.2.1/dist/phaser.min.js"></script>
+    <script type="module">
+      // In your project: import { play, context } from "plinkfx";
+      import { play, context } from "../../dist/index.js";
+
+      const keys = { ONE: "coin", TWO: "jump", THREE: "laser", FOUR: "explosion", FIVE: "powerup" };
+
+      class Demo extends Phaser.Scene {
+        create() {
+          this.add.text(20, 20, Object.entries(keys).map(([k, s], i) => `${i + 1}  ${s}`).join("\n"), { fontFamily: "monospace", fontSize: "20px", color: "#f2ede3" });
+          for (const [key, sound] of Object.entries(keys))
+            this.input.keyboard.on(`keydown-${key}`, () => {
+              play(sound);
+              this.flash(sound);
+            });
+          this.input.on("pointerdown", () => {
+            play("coin");
+            this.flash("coin");
+          });
+        }
+        flash(name) {
+          const t = this.add.text(400, 300, name, { fontFamily: "monospace", fontSize: "48px", color: "#ff5a26" }).setOrigin(0.5);
+          this.tweens.add({ targets: t, alpha: 0, y: 260, duration: 600, onComplete: () => t.destroy() });
+        }
+      }
+
+      // Phaser's own audio is not needed for plinkfx. If you also play files through Phaser,
+      // you can share one AudioContext: new Phaser.Game({ audio: { context: context() }, ... })
+      window.game = new Phaser.Game({ type: Phaser.AUTO, width: 800, height: 600, backgroundColor: "#16130f", scene: Demo, audio: { context: context() } });
+    </script>
+  </body>
+</html>
