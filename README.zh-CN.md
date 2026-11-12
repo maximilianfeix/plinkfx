@@ -5,7 +5,7 @@
 
 # plinkfx
 
-**<!-- count -->163<!-- /count --> 个游戏音效，全部用代码写成。** 金币、跳跃、打击、激光、爆炸、UI 点击……每个音效只是几个看得懂的参数，由 2.8 kB 的播放器在浏览器里实时合成。音效 CC0，可商用，无需署名；没有音频文件，无需注册。
+**<!-- count -->180<!-- /count --> 个游戏音效，全部用代码写成。** 金币、跳跃、打击、激光、爆炸、UI 点击……每个音效只是几个看得懂的参数，由 2.9 kB 的播放器在浏览器里实时合成。音效 CC0，可商用，无需署名；没有音频文件，无需注册。
 
 <a href="https://maximilianfeix.github.io/plinkfx/"><img src="docs/media/gallery.gif" alt="plinkfx 在线音效库：点击方块即可试听 coin、jump、laser、explosion 等音效，每个方块显示波形" width="100%"></a>
 
@@ -23,7 +23,7 @@ play("coin");
 
 每个音效有 4 个变体，每次播放都会换一个和上次不同的，第一百个金币也不会听起来像在循环。
 
-只打包用到的音效（播放器 + 一个音效约 2.7 kB gzip）：
+只打包用到的音效（播放器 + 一个音效约 2.8 kB gzip）：
 
 ```js
 import { play } from "plinkfx/core";
@@ -44,13 +44,15 @@ play(jump, { volume: 0.5 });
 | 打击 | 15 | `hit` `hit-heavy` `punch` `hurt` `enemy-die` `sword-hit` |
 | 爆炸 | 10 | `explosion` `explosion-big` `explosion-retro` `firework` |
 | 强化 | 12 | `powerup` `level-up` `extra-life` `shield-on` `heal` |
-| 射击与激光 | 16 | `laser` `blaster` `zap` `pew` `gunshot` `reload` |
+| 射击与激光 | 17 | `laser` `blaster` `zap` `pew` `gunshot` `reload` |
 | 脚步 | 10 | `step-grass` `step-stone` `step-wood` `step-snow` |
-| 魔法 | 12 | `sparkle` `fireball` `ice` `teleport` `lightning` |
+| 魔法 | 13 | `sparkle` `fireball` `ice` `teleport` `lightning` |
 | 提示 | 10 | `alarm` `warning` `low-health` `countdown` |
 | 短旋律 | 9 | `victory` `level-complete` `game-over` `achievement` |
 | 门与机关 | 10 | `door-open` `door-heavy` `chest-open` `lever` |
 | 环境 | 11 | `whoosh` `splash` `water-drop` `wind` `glass-break` |
+| 生物 | 9 | `bat-flap` `slime-blob` `growl-small` `ghost-moan` `voice-babble` |
+| 自然 | 6 | `thunder-far` `rain-drop` `bird-chirp` `frog-croak` `stone-drop` |
 <!-- /catalog -->
 
 ## 导出给游戏引擎

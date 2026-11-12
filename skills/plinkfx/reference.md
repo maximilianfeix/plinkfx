@@ -7,7 +7,7 @@ Times in seconds, frequencies in Hz. Everything is optional except `layers`.
 
 | Field | Default | What it does |
 |---|---|---|
-| `wave` | `"sine"` | `sine`, `triangle`, `square`, `saw` (band-limited), `noise` (white), `pink` (softer noise), `brown` (rumble), `crunch` (sample-and-hold noise at `freq`, the 8-bit noise), `metal` (six inharmonic squares, for bells, cymbals, clanks), `modal` (decaying sine modes at `freq` × `modes`: wood, metal bars, glass; sounds like a material, not a tone) |
+| `wave` | `"sine"` | `sine`, `triangle`, `square`, `saw` (band-limited), `noise` (white), `pink` (softer noise), `brown` (rumble), `crunch` (sample-and-hold noise at `freq`, the 8-bit noise), `metal` (six inharmonic squares, for bells, cymbals, clanks), `modal` (decaying sine modes at `freq` × `modes`: wood, metal bars, glass; sounds like a material, not a tone), `pluck` (plucked string, Karplus-Strong: harp, pizzicato, bowstring) |
 | `freq` | 440 | Start pitch. For `crunch` it is the noise rate (higher = finer). |
 | `to` | - | End pitch, exponential sweep over `sweep` seconds (default: the whole layer). |
 | `curve` | 1 | Sweep shape. 2-4 = most of the change happens at the start (lasers, drops). Below 1 = slow start (charge-ups). |
@@ -16,6 +16,8 @@ Times in seconds, frequencies in Hz. Everything is optional except `layers`.
 | `fm` | - | `[ratio, index, decay s]`. Bells: ratio 3.5 or 2.76, index 1.5-3, decay 0.1. Metallic: ratio 1.41. |
 | `modes` | `[1, 2.756, 5.404, 8.933]` | Mode ratios for `modal` (max 8). Wood: `[1, 2.32, 4.25, 6.63]` at 150-300 Hz. Metal: the default at 400-900 Hz with long `d`. Higher modes decay faster. |
 | `kt` | 0 | Key tracking: filter cutoffs follow the pitch sweep, vibrato and arpeggio. `kt: 1` on lasers darkens the tail as it falls; on noise it lets `to`/`vib` move the band. |
+| `damp`, `blend` | 0.998, 0.5 | For `pluck`: damping per period (0.99 dead … 0.999 ringing) and brightness (0.5 string, lower muffled). |
+| `formant` | - | Vowel filter: formant centres in Hz. "ah" `[730, 1090, 2440]`, "oh" `[570, 840, 2410]`, "oo" `[300, 870, 2240]`, "ee" `[270, 2290, 3010]`. On a saw or pulse it sounds like a throat: growls, moans, creature yelps, gibberish voices. Add `kt: 1` to make it follow the pitch. |
 | `duty` | 0.5 | Pulse width for `square`; 0.125 and 0.25 sound thinner, more "NES". |
 | `at` | 0 | Start delay of the layer. |
 | `a`, `h`, `d` | 0.002, 0, 0.2 | Attack, hold, decay. Attack never goes below 1 ms (no clicks). |

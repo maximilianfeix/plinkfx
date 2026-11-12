@@ -122,7 +122,7 @@ Why monospace and why the system's own:
   everywhere: in the gallery, the README and the terminal. One typeface for both keeps them in one voice.
 - Measurements line up. Loudness, peaks and durations in the gallery and in `plinkfx measure` read as columns.
 - No font download. The gallery promises that nothing loads except the page; a web font would break that and
-  cost more than the whole 2.8 kB player.
+  cost more than the whole 2.9 kB player.
 
 Sizes in the gallery: 15 px base with 1.5 line height. Weights: regular for text, 600 or 700 for headings and
 labels. Emphasis is weight or plink-text, not italics.

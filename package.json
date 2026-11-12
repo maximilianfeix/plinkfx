@@ -1,7 +1,7 @@
 {
   "name": "plinkfx",
   "version": "0.1.0",
-  "description": "163 game sound effects as code. CC0 sounds, a 2.8 kB player, a CLI for WAV/OGG and an agent skill. No audio files.",
+  "description": "180 game sound effects as code. CC0 sounds, a 2.9 kB player, a CLI for WAV/OGG and an agent skill. No audio files.",
   "keywords": [
     "sound-effects",
     "sfx",
@@ -87,7 +87,7 @@
       "name": "everything: all sounds, play by name",
       "path": "dist/index.js",
       "import": "*",
-      "limit": "14 kB",
+      "limit": "15.5 kB",
       "gzip": true
     }
   ],
