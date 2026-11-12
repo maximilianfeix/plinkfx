@@ -33,6 +33,37 @@
       }
       a {
         color: #f2ede3;
+        text-underline-offset: 3px;
+      }
+      :focus-visible {
+        outline: 2px solid #ff5a26;
+        outline-offset: 2px;
+      }
+      header {
+        align-items: center;
+      }
+      .back {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.8rem;
+        min-height: 44px;
+        text-decoration: none;
+      }
+      .back img {
+        height: 26px;
+        width: auto;
+        image-rendering: pixelated;
+      }
+      .back span {
+        text-decoration: underline;
+      }
+      kbd {
+        font: inherit;
+        font-size: 0.8em;
+        padding: 0.1em 0.4em;
+        border: 1px solid #4d453b;
+        border-bottom-width: 2px;
+        color: #f2ede3;
       }
       main {
         display: grid;
@@ -44,6 +75,7 @@
         aspect-ratio: 16 / 9;
         image-rendering: pixelated;
         border: 1px solid #3a342c;
+        background: #1b1713;
         touch-action: manipulation;
         display: block;
       }
@@ -51,8 +83,8 @@
   </head>
   <body>
     <header>
-      <a href="./">← plinkfx gallery</a>
-      <span>space / tap: jump, twice for a double jump · m: mute</span>
+      <a class="back" href="./"><img src="lockup-dark.svg" alt="plinkfx" width="231" height="66" /><span>back to the gallery</span></a>
+      <span><kbd>space</kbd> or tap: jump, twice for a double jump. <kbd>m</kbd> mute</span>
     </header>
     <main><canvas id="c" width="640" height="360" aria-label="plink run game" tabindex="0"></canvas></main>
     <footer>

@@ -16,6 +16,7 @@ let seed = 0;
 let filter: { cat: Cat | "all"; q: string } = { cat: "all", q: "" };
 let hoverPlay = matchMedia("(hover: hover) and (pointer: fine)").matches;
 let tab: "name" | "shake" | "json" = "name";
+const sheetMQ = matchMedia("(max-width: 900px)");
 
 const edited = (): Sound => (isNeutral(knobs) ? get(current.name) : editCache());
 let lastEdit: { key: string; s: Sound } | undefined;
@@ -28,6 +29,8 @@ const editCache = () => {
 // ---------- audio + playheads ----------
 const playing = new Map<string, { start: number; dur: number }>();
 let raf = 0;
+// Everything on the page that shows this sound: its grid tile and, for the favourites, its pad.
+const viewsOf = (name: string) => document.querySelectorAll<HTMLElement>(`.tile[data-name="${name}"], .pad[data-pad="${name}"]`);
 function playItem(it: Item, take = it == current ? seed : undefined, sound = it == current ? edited() : get(it.name)) {
   const ctx = context();
   if (ctx.state != "running") ctx.resume();
@@ -38,7 +41,12 @@ function playItem(it: Item, take = it == current ? seed : undefined, sound = it 
   src.connect(ctx.destination);
   src.start();
   playing.set(it.name, { start: ctx.currentTime, dur: b.duration });
-  document.querySelector(`[data-name="${it.name}"]`)?.classList.add("playing");
+  for (const el of viewsOf(it.name)) {
+    // restart the press flash even when the same sound is retriggered
+    el.classList.remove("playing");
+    void el.offsetWidth;
+    el.classList.add("playing");
+  }
   if (it == current) $(".panel").classList.add("playing");
   if (demo) caption(it.name);
   if (!raf) raf = requestAnimationFrame(tick);
@@ -58,12 +66,12 @@ function tick() {
   const now = context().currentTime;
   for (const [name, p] of playing) {
     const k = Math.min((now - p.start) / p.dur, 1),
-      tile = document.querySelector<HTMLElement>(`[data-name="${name}"]`);
-    if (tile) drawTile(tile, k);
-    if (name == current.name) drawWave($<HTMLCanvasElement>("#wave"), waveOf(edited(), seed, 180), k);
+      views = viewsOf(name);
+    for (const el of views) drawView(el, k < 1 ? k : -1);
+    if (name == current.name) drawWave($<HTMLCanvasElement>("#wave"), waveOf(edited(), seed, 180), k < 1 ? k : -1);
     if (k >= 1) {
       playing.delete(name);
-      tile?.classList.remove("playing");
+      for (const el of views) el.classList.remove("playing");
       if (name == current.name) $(".panel").classList.remove("playing");
     }
   }
@@ -91,7 +99,10 @@ function waveOf(s: Sound, take: number, bars: number) {
   }
   return m.get(key)!;
 }
+let palette: { wave: string; hot: string; dim: string } | undefined;
 const css = (v: string) => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const colors = () => (palette ||= { wave: css("--wave"), hot: css("--plink"), dim: css("--wave-dim") });
+/** Bars of the envelope; while playing, the played part is orange and a 1 px playhead leads it. */
 function drawWave(c: HTMLCanvasElement, env: Float32Array, progress = -1) {
   const dpr = Math.min(devicePixelRatio || 1, 2),
     w = c.clientWidth,
@@ -99,21 +110,28 @@ function drawWave(c: HTMLCanvasElement, env: Float32Array, progress = -1) {
   if (!w) return;
   if (c.width != Math.round(w * dpr)) (c.width = Math.round(w * dpr)), (c.height = Math.round(h * dpr));
   const g = c.getContext("2d")!,
-    ink = css("--ink"),
-    hot = css("--plink"),
-    dim = css("--wave-dim"),
+    { wave, hot, dim } = colors(),
     bw = (w / env.length) * dpr;
   g.clearRect(0, 0, c.width, c.height);
   for (let i = 0; i < env.length; i++) {
     const v = Math.max(env[i], 0.03),
       bh = Math.max(dpr, Math.round(v * c.height * 0.9));
-    g.fillStyle = progress < 0 ? ink : i / env.length <= progress ? hot : dim;
+    g.fillStyle = progress < 0 ? wave : i / env.length <= progress ? hot : dim;
     g.fillRect(Math.round(i * bw), Math.round((c.height - bh) / 2), Math.max(1, Math.round(bw - dpr)), bh);
+  }
+  if (progress >= 0) {
+    g.fillStyle = hot;
+    g.fillRect(Math.min(c.width - dpr * 2, Math.round(progress * c.width)), 0, Math.round(dpr * 2), c.height);
   }
 }
 // Tiles use the envelope baked into the catalogue: no audio is rendered to draw the grid.
 const tileEnv = new Map(items.map((s) => [s.name, Float32Array.from(s.env)]));
-const drawTile = (tile: HTMLElement, k = -1) => drawWave(tile.querySelector("canvas")!, tileEnv.get(tile.dataset.name!)!, k);
+const drawView = (el: HTMLElement, k = -1) => drawWave(el.querySelector("canvas")!, tileEnv.get(el.dataset.name || el.dataset.pad!)!, k);
+const redrawAll = () => {
+  palette = undefined;
+  renderPanel();
+  document.querySelectorAll<HTMLElement>(".tile:not([hidden]), .pad").forEach((t) => drawView(t));
+};
 
 // ---------- grid ----------
 const grid = $("#grid");
@@ -121,6 +139,7 @@ function buildGrid() {
   const frag = document.createDocumentFragment();
   for (const it of items) {
     const b = document.createElement("button");
+    b.type = "button";
     b.className = "tile";
     b.dataset.name = it.name;
     b.dataset.cat = it.cat;
@@ -130,7 +149,7 @@ function buildGrid() {
   }
   grid.append(frag);
   const io = new IntersectionObserver((es) => {
-    for (const e of es) if (e.isIntersecting) drawTile(e.target as HTMLElement);
+    for (const e of es) if (e.isIntersecting) drawView(e.target as HTMLElement);
   }, { rootMargin: "200px" });
   grid.querySelectorAll(".tile").forEach((t) => io.observe(t));
 }
@@ -144,6 +163,8 @@ function applyFilter() {
     if (show) n++;
   });
   $("#count").textContent = `${n} sound${n == 1 ? "" : "s"}`;
+  $("#empty").hidden = n > 0;
+  $("#empty-q").textContent = filter.q || catalog.categories[filter.cat as Cat]?.title.toLowerCase() || "";
 }
 
 // ---------- panel ----------
@@ -168,17 +189,19 @@ function renderPanel() {
   $("#p-name").textContent = it.name;
   $("#p-cat").innerHTML = `<i></i>${catalog.categories[it.cat as Cat].title}`;
   $("#p-desc").textContent = it.desc;
-  $("#p-meter").textContent = `${fmt(it.m.lufsMax)} LUFS · peak ${fmt(it.m.truePeak)} dBTP · ${fmt(it.m.duration, 2)} s · ${(it.m.centroid / 1000).toFixed(1)} kHz`;
+  $("#p-meter").innerHTML = [`${fmt(it.m.lufsMax)} LUFS`, `peak ${fmt(it.m.truePeak)} dBTP`, `${fmt(it.m.duration, 2)} s`, `${(it.m.centroid / 1000).toFixed(1)} kHz`].map((x) => `<span>${x}</span>`).join("");
   for (const b of p.querySelectorAll<HTMLButtonElement>("[data-take]")) b.setAttribute("aria-pressed", String(+b.dataset.take! == seed));
   $("#p-seed").textContent = seed > 3 ? `take #${seed}` : `take ${seed + 1} of 4`;
   for (const inp of p.querySelectorAll<HTMLInputElement>("input[type=range]")) {
     const k = inp.name as keyof Knobs;
     inp.value = String(knobs[k]);
+    inp.style.setProperty("--fill", `${((knobs[k] - +inp.min) / (+inp.max - +inp.min)) * 100}%`);
+    inp.classList.toggle("moved", knobs[k] != NEUTRAL[k]);
     $(`#v-${k}`).textContent = label(k, knobs[k]);
   }
   $("#p-reset").toggleAttribute("disabled", isNeutral(knobs));
   for (const b of p.querySelectorAll<HTMLButtonElement>("[data-tab]")) b.setAttribute("aria-selected", String(b.dataset.tab == tab));
-  $("#p-code").textContent = code();
+  $("#p-code").innerHTML = highlight(code());
   $("#p-edited").hidden = isNeutral(knobs);
   drawWave($<HTMLCanvasElement>("#wave"), waveOf(edited(), seed, 180));
 }
@@ -198,20 +221,43 @@ const pretty = (s: Sound) => {
     head = Object.entries(rest).map(([k, v]) => `  ${k}: ${JSON.stringify(v)},`);
   return `{\n${head.join("\n")}${head.length ? "\n" : ""}  layers: [\n${layers.map((l) => "    " + JSON.stringify(l).replace(/"(\w+)":/g, "$1: ").replace(/,(?=\w+:)/g, ", ") + ",").join("\n")}\n  ],\n}`;
 };
+// Just enough colour to read the snippet: keywords, strings, numbers. The text content stays the exact code.
+const escHtml = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;");
+const highlight = (src: string) =>
+  src.replace(/("[^"\n]*")|\b(import|from|const)\b|(\b-?\d+(?:\.\d+)?(?:e-?\d+)?\b)|([&<])/g, (m, str, kw, num) =>
+    str ? `<span class="s">${escHtml(str)}</span>` : kw ? `<span class="k">${kw}</span>` : num ? `<span class="n">${num}</span>` : escHtml(m),
+  );
 
-async function copy(text: string, btn: HTMLElement) {
+// ---------- copy / share / download ----------
+const status = (msg: string) => {
+  const s = $("#sr-status");
+  s.textContent = "";
+  requestAnimationFrame(() => (s.textContent = msg));
+};
+async function copy(text: string, btn: HTMLElement, done = "copied") {
   try {
     await navigator.clipboard.writeText(text);
-    flash(btn, "copied");
+    flash(btn, done, true);
+    status(done[0].toUpperCase() + done.slice(1));
   } catch {
-    flash(btn, "press ctrl+c");
+    flash(btn, "press ctrl+c", false);
   }
 }
-function flash(btn: HTMLElement, msg: string) {
-  const old = btn.dataset.label || btn.textContent!;
+const flashTimers = new WeakMap<HTMLElement, number>();
+function flash(btn: HTMLElement, msg: string, ok: boolean) {
+  const span = btn.querySelector("span") || btn,
+    old = btn.dataset.label || span.textContent!;
   btn.dataset.label = old;
-  btn.textContent = msg;
-  setTimeout(() => (btn.textContent = old), 1200);
+  span.textContent = msg;
+  btn.classList.toggle("done", ok);
+  clearTimeout(flashTimers.get(btn));
+  flashTimers.set(
+    btn,
+    window.setTimeout(() => {
+      span.textContent = old;
+      btn.classList.remove("done");
+    }, 1400),
+  );
 }
 function download() {
   const sr = 48000,
@@ -221,6 +267,7 @@ function download() {
   a.download = `${current.name}${seed ? "-" + seed : ""}${isNeutral(knobs) ? "" : "-edit"}.wav`;
   a.click();
   setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  status(`Downloading ${a.download}`);
 }
 
 // ---------- signature: plink on the first tap that is not a sound ----------
@@ -238,6 +285,71 @@ function plink() {
   src.start();
 }
 
+// ---------- phone: the panel is a bottom sheet ----------
+const panel = $(".panel"),
+  body = $("#p-body"),
+  scrim = $(".scrim"),
+  more = $("#p-more");
+function setSheet(open: boolean) {
+  const sheet = sheetMQ.matches;
+  panel.classList.toggle("open", sheet && open);
+  more.setAttribute("aria-expanded", String(sheet && open));
+  body.inert = sheet && !open;
+  scrim.hidden = !(sheet && open);
+  document.documentElement.classList.toggle("sheet-open", sheet && open);
+  panel.style.transform = "";
+}
+function sheetGestures() {
+  // Drag the header up or down; a quick flick is enough, no distance threshold needed.
+  const head = $(".p-head");
+  let y0 = 0,
+    t0 = 0,
+    dy = 0,
+    drag = false;
+  head.addEventListener("pointerdown", (e) => {
+    if (!sheetMQ.matches || (e.target as HTMLElement).closest("button:not(.more)") || drag) return;
+    drag = true;
+    y0 = e.clientY;
+    t0 = performance.now();
+    dy = 0;
+    head.setPointerCapture(e.pointerId);
+    panel.classList.add("dragging");
+  });
+  head.addEventListener("pointermove", (e) => {
+    if (!drag) return;
+    dy = e.clientY - y0;
+    const open = panel.classList.contains("open"),
+      // past the natural end of travel the sheet follows with friction
+      d = open ? (dy < 0 ? dy * 0.2 : dy) : dy > 0 ? dy * 0.2 : dy;
+    panel.style.transform = open ? `translateY(${d}px)` : `translateY(calc(100% - var(--peek) + ${d}px))`;
+  });
+  const end = () => {
+    if (!drag) return;
+    drag = false;
+    panel.classList.remove("dragging");
+    const v = dy / Math.max(1, performance.now() - t0),
+      open = panel.classList.contains("open");
+    if (Math.abs(dy) < 6) return void (panel.style.transform = ""); // a tap: the click handler decides
+    head.dataset.dragged = "1";
+    if (open && (dy > 80 || v > 0.4)) setSheet(false);
+    else if (!open && (dy < -60 || v < -0.4)) setSheet(true);
+    else panel.style.transform = "";
+  };
+  head.addEventListener("pointerup", end);
+  head.addEventListener("pointercancel", end);
+  head.addEventListener("click", (e) => {
+    if (head.dataset.dragged) {
+      // the drag already opened or closed the sheet; this click is its tail end
+      delete head.dataset.dragged;
+      return e.stopPropagation();
+    }
+    if (!sheetMQ.matches || (e.target as HTMLElement).closest("button")) return;
+    setSheet(!panel.classList.contains("open"));
+  });
+  scrim.addEventListener("click", () => setSheet(false));
+  sheetMQ.addEventListener("change", () => setSheet(false));
+}
+
 // ---------- wire up ----------
 function init() {
   if (demo) {
@@ -250,24 +362,47 @@ function init() {
   }
   $("#total").textContent = String(items.length);
   $("#cats-n").textContent = String(Object.keys(catalog.categories).length);
+  // The chips are written into the HTML at build time (vite.config.ts) so the layout does not shift.
   const chips = $("#chips");
-  chips.innerHTML =
-    `<button data-cat="all" aria-pressed="true">all <b>${items.length}</b></button>` +
-    Object.entries(catalog.categories)
-      .map(([k, c]) => `<button data-cat="${k}" aria-pressed="false"><i></i>${c.title.toLowerCase()} <b>${items.filter((s) => s.cat == k).length}</b></button>`)
-      .join("");
+  const setCat = (cat: Cat | "all") => {
+    filter.cat = cat;
+    chips.querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", String(x.dataset.cat == cat)));
+    applyFilter();
+  };
   chips.addEventListener("click", (e) => {
     const b = (e.target as HTMLElement).closest<HTMLButtonElement>("button");
-    if (!b) return;
-    filter.cat = b.dataset.cat as Cat | "all";
-    chips.querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", String(x == b)));
-    applyFilter();
+    if (b) setCat(b.dataset.cat as Cat | "all");
   });
   const search = $<HTMLInputElement>("#search");
+  const setQuery = (q: string) => {
+    search.value = q;
+    filter.q = q.trim();
+    applyFilter();
+  };
   search.addEventListener("input", () => ((filter.q = search.value.trim()), applyFilter()));
+  $("#empty").addEventListener("click", (e) => {
+    const b = (e.target as HTMLElement).closest<HTMLButtonElement>("button");
+    if (!b) return;
+    if (b.dataset.try) setCat("all"), setQuery(b.dataset.try);
+    else setCat("all"), setQuery("");
+    const first = grid.querySelector<HTMLElement>(".tile:not([hidden])");
+    first?.focus();
+  });
 
   buildGrid();
   applyFilter();
+
+  // favourites row
+  const pads = $("#pads");
+  pads.querySelectorAll<HTMLElement>(".pad").forEach((p) => drawView(p));
+  pads.addEventListener("click", (e) => {
+    const p = (e.target as HTMLElement).closest<HTMLElement>(".pad");
+    if (!p) return;
+    greeted = true;
+    const it = byName.get(p.dataset.pad!)!;
+    select(it);
+    playItem(it);
+  });
 
   let hoverTimer = 0;
   grid.addEventListener("pointerover", (e) => {
@@ -304,7 +439,6 @@ function init() {
     playItem(it, 0);
   });
 
-  const panel = $(".panel");
   panel.addEventListener("click", (e) => {
     const b = (e.target as HTMLElement).closest<HTMLButtonElement>("button");
     if (!b) return;
@@ -323,7 +457,8 @@ function init() {
       playItem(current, seed);
     } else if (b.id == "p-copy") copy($("#p-code").textContent!, b);
     else if (b.id == "p-wav") download();
-    else if (b.id == "p-more") panel.classList.toggle("open");
+    else if (b.id == "p-link") copy(location.href.split("#")[0] + "#" + current.name, b, "link copied");
+    else if (b.id == "p-more") setSheet(!panel.classList.contains("open"));
   });
   let knobTimer = 0;
   panel.addEventListener("input", (e) => {
@@ -334,6 +469,8 @@ function init() {
     clearTimeout(knobTimer);
     knobTimer = window.setTimeout(() => playItem(current, seed), 140);
   });
+  sheetGestures();
+  setSheet(false);
   const hp = $<HTMLInputElement>("#hoverplay");
   hp.checked = hoverPlay;
   hp.addEventListener("change", () => (hoverPlay = hp.checked));
@@ -346,7 +483,7 @@ function init() {
   addEventListener(
     "pointerdown",
     (e) => {
-      if (greeted || (e.target as HTMLElement).closest(".tile, .panel, input, a")) return;
+      if (greeted || (e.target as HTMLElement).closest(".tile, .pad, .panel, input, a")) return;
       greeted = true;
       plink();
     },
@@ -358,10 +495,11 @@ function init() {
       e.preventDefault();
       search.focus();
     } else if (e.key == "Escape" && typing) {
-      search.value = "";
-      filter.q = "";
-      applyFilter();
+      setQuery("");
       search.blur();
+    } else if (e.key == "Escape" && panel.classList.contains("open")) {
+      setSheet(false);
+      more.focus();
     } else if (!typing && !e.metaKey && !e.ctrlKey && !e.altKey) {
       if (e.key == "r") roll();
       else if ("1234".includes(e.key) && e.key.length == 1) {
@@ -377,14 +515,12 @@ function init() {
     const it = byName.get(location.hash.slice(1));
     if (it && it != current) select(it, { scroll: true });
   });
+  let resizeRaf = 0;
   addEventListener("resize", () => {
-    renderPanel();
-    grid.querySelectorAll<HTMLElement>(".tile:not([hidden])").forEach((t) => drawTile(t));
+    cancelAnimationFrame(resizeRaf);
+    resizeRaf = requestAnimationFrame(redrawAll);
   });
-  matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
-    renderPanel();
-    grid.querySelectorAll<HTMLElement>(".tile:not([hidden])").forEach((t) => drawTile(t));
-  });
+  matchMedia("(prefers-color-scheme: dark)").addEventListener("change", redrawAll);
   select(current, { scroll: !!location.hash });
 }
 function roll() {

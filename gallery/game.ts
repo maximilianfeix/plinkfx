@@ -8,7 +8,8 @@ const W = 640,
   H = 360,
   GROUND = 300,
   ROUND = 30;
-const C = { bg: "#16130f", far: "#211d18", ground: "#3a342c", top: "#6b6358", ink: "#f2ede3", plink: "#ff5a26", coin: "#f2c14e", slime: "#4f9d69", star: "#ffe08a", heart: "#d63f3f", dim: "#a39a8c" };
+const C = { bg: "#16130f", sky: "#1b1713", far: "#1f1b17", mid: "#27221c", ground: "#3a342c", soil: "#2e2923", speck: "#4a4238", top: "#6b6358", ink: "#f2ede3", shade: "#c9bfae", plink: "#ff5a26", coin: "#f2c14e", coinHi: "#fff1c4", coinLo: "#b8862b", slime: "#4f9d69", slimeHi: "#86c99a", star: "#ffe08a", heart: "#d63f3f", heartHi: "#f08a7e", dim: "#a39a8c" };
+const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const cv = document.getElementById("c") as HTMLCanvasElement,
   g = cv.getContext("2d")!;
 
@@ -39,6 +40,14 @@ let segs: Seg[] = [],
   rand = rng(7);
 const captions: { name: string; t: number }[] = [];
 const sparks: { x: number; y: number; vx: number; vy: number; life: number; c: string }[] = [];
+const pops: { x: number; y: number; t: number; text: string }[] = [];
+let shakeT = 0,
+  shakeA = 0;
+function shake(a: number, dur = 0.2) {
+  if (still) return;
+  shakeA = Math.max(shakeA, a);
+  shakeT = Math.max(shakeT, dur);
+}
 
 function localStorageGet(k: string) {
   try {
@@ -125,6 +134,7 @@ function hurt(reason: Name) {
   hearts--;
   hurtT = 1.2;
   sfx(reason);
+  shake(4, 0.28);
   burst(P.x + 6, P.y + 8, C.heart, 10);
   if (hearts <= 0) end(false);
 }
@@ -146,6 +156,10 @@ function burst(x: number, y: number, c: string, n: number) {
 const groundAt = (x: number) => segs.some((s) => x + P.w > s.x && x < s.x + s.w);
 function update(dt: number) {
   t += dt;
+  shakeT = Math.max(0, shakeT - dt);
+  if (!shakeT) shakeA = 0;
+  for (const p of pops) p.t += dt;
+  while (pops.length && pops[0].t > 0.7) pops.shift();
   for (const s of sparks) (s.x += s.vx * dt), (s.y += s.vy * dt), (s.vy += 500 * dt), (s.life -= dt);
   while (sparks.length && sparks[0].life <= 0) sparks.shift();
   if (state == "count") {
@@ -232,11 +246,13 @@ function update(dt: number) {
         coins++;
         sfx(coins % 10 == 0 ? "coin-double" : "coin", 0.8);
         burst(th.x, th.y, C.coin, 5);
+        pops.push({ x: th.x, y: th.y - 8, t: 0, text: coins % 10 == 0 ? String(coins) : "+1" });
       } else if (th.kind == "star") {
         th.dead = true;
         invincible = 5;
         sfx("powerup");
         burst(th.x, th.y, C.star, 14);
+        shake(2, 0.15);
       } else if (th.kind == "heart") {
         th.dead = true;
         if (hearts < 3) hearts++;
@@ -247,12 +263,14 @@ function update(dt: number) {
           th.dead = true;
           sfx("hit-heavy", 0.8);
           burst(th.x, th.y, C.slime, 12);
+          shake(3, 0.15);
         } else if (P.vy > 0 && P.y + P.h - th.y < 10) {
           th.dead = true;
           P.vy = -360;
           P.jumps = 1;
           sfx("squish");
           burst(th.x, th.y, C.slime, 10);
+          shake(2, 0.1);
         } else hurt("hurt");
       }
     }
@@ -261,77 +279,153 @@ function update(dt: number) {
 }
 
 // ---------- drawing ----------
-const px = (x: number) => Math.round(x - camX);
-function draw() {
-  g.fillStyle = C.bg;
-  g.fillRect(0, 0, W, H);
-  // parallax hills made of blocks
-  g.fillStyle = C.far;
-  for (let i = -1; i < 12; i++) {
-    const x = i * 80 - ((camX * 0.3) % 80),
-      h = 40 + ((i * 37 + Math.floor((camX * 0.3) / 80) * 37) % 50);
-    g.fillRect(Math.round(x), GROUND - h, 80, h);
+// Sprites are tiny pixel maps drawn at 2x: one character per pixel, "." is transparent.
+type Pal = Record<string, string>;
+function sprite(rows: string[], x: number, y: number, pal: Pal, s = 2) {
+  for (let r = 0; r < rows.length; r++)
+    for (let c = 0; c < rows[r].length; c++) {
+      const ch = rows[r][c];
+      if (ch == ".") continue;
+      g.fillStyle = pal[ch];
+      g.fillRect(x + c * s, y + r * s, s, s);
+    }
+}
+const BODY = [".XXXX.", "XXXXXX", "XXXXOX", "XXXXOX", "XXXXXX", ".SSSS."];
+const LEGS = { a: [".X..X.", "X....X"], b: ["..XX..", "..XX.."], up: ["X....X", "......"], down: [".X..X.", ".X..X."] };
+const SLIME = [
+  ["..GGGG..", ".GHGGGG.", "GHeGGeGG", "GGGGGGGG", "GGGGGGGG"],
+  ["........", ".GGGGGG.", "GHeGGeGG", "GGGGGGGG", "GGGGGGGG"],
+];
+const COIN = [
+  [".YYYY.", "YHYYYL", "YHYYYL", "YHYYYL", ".LLLL."],
+  [".YY.", "HYYL", "HYYL", "HYYL", ".LL."],
+  ["Y", "Y", "Y", "Y", "Y"],
+];
+const HEART = [".RR.RR.", "RHRRRRR", "RRRRRRR", ".RRRRR.", "..RRR..", "...R..."];
+const STAR = ["...Y...", "...Y...", ".YYHYY.", "YYHHHYY", ".YYHYY.", "...Y...", "...Y..."];
+const pal = {
+  player: { X: C.ink, O: C.plink, S: C.shade },
+  power: { X: C.star, O: C.plink, S: C.coin },
+  slime: { G: C.slime, H: C.slimeHi, e: C.bg },
+  coin: { Y: C.coin, H: C.coinHi, L: C.coinLo },
+  heart: { R: C.heart, H: C.heartHi },
+  heartOff: { R: C.ground, H: C.ground },
+  star: { Y: C.star, H: "#ffffff" },
+};
+// cheap deterministic noise for scenery that scrolls
+const hash = (n: number) => {
+  const x = Math.sin(n * 127.1) * 43758.5453;
+  return x - Math.floor(x);
+};
+const STARS = Array.from({ length: 46 }, (_, i) => ({ x: hash(i + 1) * W, y: 8 + hash(i + 50) * 150, b: hash(i + 99) }));
+function hills(k: number, step: number, base: number, amp: number, col: string, seed: number) {
+  g.fillStyle = col;
+  const off = camX * k,
+    first = Math.floor(off / step);
+  for (let i = first - 1; i < first + W / step + 2; i++) {
+    const h = base + Math.round((hash(i * 3.7 + seed) * amp) / 8) * 8;
+    g.fillRect(Math.round(i * step - off), GROUND - h, step, h);
   }
+}
+function scenery() {
+  g.fillStyle = C.sky;
+  g.fillRect(0, 0, W, H);
+  // far away: slow pixel stars, a few of them twinkle
+  for (const s of STARS) {
+    const x = Math.round((((s.x - camX * 0.04) % W) + W) % W);
+    g.fillStyle = s.b > 0.85 && Math.floor(t * 2 + s.b * 10) % 3 == 0 ? C.top : C.ground;
+    g.fillRect(x, Math.round(s.y), s.b > 0.7 ? 2 : 1, s.b > 0.7 ? 2 : 1);
+  }
+  // two layers of stepped hills at different speeds
+  hills(0.12, 48, 70, 80, C.far, 11);
+  hills(0.32, 72, 30, 64, C.mid, 23);
+}
+function ground() {
   for (const s of segs) {
+    const x = px(s.x),
+      w = Math.round(s.w);
+    g.fillStyle = C.soil;
+    g.fillRect(x, GROUND, w, H - GROUND);
     g.fillStyle = C.ground;
-    g.fillRect(px(s.x), GROUND, Math.round(s.w), H - GROUND);
+    g.fillRect(x, GROUND, w, 14);
+    // speckles fixed to the world, so the ground reads as passing by
+    g.fillStyle = C.speck;
+    for (let wx = Math.ceil(s.x / 10) * 10; wx < s.x + s.w - 2; wx += 10) {
+      const r = hash(wx);
+      if (r < 0.55) g.fillRect(px(wx), GROUND + 18 + Math.floor(r * 40), 2, 2);
+    }
     g.fillStyle = C.top;
-    g.fillRect(px(s.x), GROUND, Math.round(s.w), 4);
+    g.fillRect(x, GROUND, w, 4);
+    g.fillRect(x, GROUND, 2, 14);
+    g.fillRect(x + w - 2, GROUND, 2, 14);
   }
   for (const p of plats) {
+    const x = px(p.x),
+      w = Math.round(p.w);
+    g.fillStyle = C.ground;
+    g.fillRect(x, GROUND - 70, w, 8);
     g.fillStyle = C.top;
-    g.fillRect(px(p.x), GROUND - 70, Math.round(p.w), 6);
+    g.fillRect(x, GROUND - 70, w, 3);
+    g.fillStyle = C.soil;
+    for (let bx = 12; bx < w - 4; bx += 16) g.fillRect(x + bx, GROUND - 67, 2, 5);
   }
+}
+const px = (x: number) => Math.round(x - camX);
+function draw() {
+  g.save();
+  if (shakeT > 0) g.translate(Math.round((Math.random() - 0.5) * 2 * shakeA), Math.round((Math.random() - 0.5) * 2 * shakeA));
+  scenery();
+  ground();
   for (const th of things) {
     if (th.dead) continue;
     const x = px(th.x),
       y = Math.round(th.y);
     if (th.kind == "coin") {
-      const w = Math.abs(Math.sin(t * 5 + th.x)) * 8 + 2;
-      g.fillStyle = C.coin;
-      g.fillRect(x - w / 2, y - 5, w, 10);
+      const f = Math.floor((t * 8 + th.x * 0.05) % 4),
+        frame = COIN[f == 3 ? 1 : f];
+      sprite(frame, x - frame[0].length, y - 5, pal.coin);
     } else if (th.kind == "slime") {
-      const sq = Math.sin((th.t || 0) * 8) * 2;
-      g.fillStyle = C.slime;
-      g.fillRect(x - 8 - sq / 2, y - 10 + sq, 16 + sq, 10 - sq);
-      g.fillStyle = C.bg;
-      g.fillRect(x - 4, y - 7 + sq, 2, 2);
-      g.fillRect(x + 2, y - 7 + sq, 2, 2);
+      sprite(SLIME[Math.floor((th.t || 0) * 5) % 2], x - 8, y - 10, pal.slime);
     } else if (th.kind == "star") {
-      g.fillStyle = C.star;
-      g.fillRect(x - 2, y - 7, 4, 14);
-      g.fillRect(x - 7, y - 2, 14, 4);
-    } else {
-      g.fillStyle = C.heart;
-      g.fillRect(x - 6, y - 4, 5, 5);
-      g.fillRect(x + 1, y - 4, 5, 5);
-      g.fillRect(x - 4, y + 1, 8, 4);
-    }
+      sprite(STAR, x - 7, y - 7 + Math.round(Math.sin(t * 4) * 2), pal.star);
+    } else sprite(HEART, x - 7, y - 6 + Math.round(Math.sin(t * 3) * 1.5), pal.heart);
   }
-  // player
+  // player: 6x8 pixels at 2x, the legs follow the run cycle
   if (!(hurtT > 0 && Math.floor(t * 16) % 2)) {
-    g.fillStyle = invincible > 0 && Math.floor(t * 12) % 2 ? C.star : C.ink;
-    const stretch = P.ground ? 0 : Math.max(-2, Math.min(2, -P.vy / 200));
-    g.fillRect(px(P.x), Math.round(P.y - stretch), P.w, P.h + stretch);
-    g.fillStyle = C.plink;
-    g.fillRect(px(P.x) + 8, Math.round(P.y - stretch) + 4, 2, 2);
+    const p = invincible > 0 && Math.floor(t * 12) % 2 ? pal.power : pal.player,
+      stretch = P.ground ? 0 : Math.round(Math.max(-2, Math.min(2, -P.vy / 200))),
+      legs = state != "run" ? LEGS.down : !P.ground ? (P.vy < 0 ? LEGS.up : LEGS.down) : Math.floor(t * 10) % 2 ? LEGS.a : LEGS.b,
+      x = px(P.x),
+      y = Math.round(P.y);
+    sprite(BODY, x, y - stretch, p);
+    sprite(legs, x, y + 12, p);
   }
   for (const s of sparks) {
     g.fillStyle = s.c;
     g.fillRect(px(s.x), Math.round(s.y), 2, 2);
   }
+  g.font = "bold 12px ui-monospace, Menlo, monospace";
+  g.textAlign = "center";
+  g.textBaseline = "alphabetic";
+  for (const p of pops) {
+    g.globalAlpha = Math.max(0, 1 - p.t / 0.7);
+    g.fillStyle = C.coin;
+    g.fillText(p.text, px(p.x), Math.round(p.y - p.t * 40));
+  }
+  g.globalAlpha = 1;
+  g.textAlign = "left";
+  g.restore();
+
   // HUD
+  sprite(COIN[0], 14, 13, pal.coin);
   g.fillStyle = C.ink;
   g.font = "16px ui-monospace, Menlo, monospace";
   g.textBaseline = "top";
-  g.fillText(`coins ${coins}`, 14, 12);
+  g.fillText(String(coins), 34, 12);
   g.textAlign = "right";
   g.fillText(`${Math.max(0, Math.ceil(time))} s`, W - 14, 12);
   g.textAlign = "left";
-  for (let i = 0; i < 3; i++) {
-    g.fillStyle = i < hearts ? C.heart : C.ground;
-    g.fillRect(W / 2 - 30 + i * 22, 14, 14, 12);
-  }
+  for (let i = 0; i < 3; i++) sprite(HEART, W / 2 - 34 + i * 24, 13, i < hearts ? pal.heart : pal.heartOff);
   // captions: the sounds that just played
   g.font = "14px ui-monospace, Menlo, monospace";
   let cx = 14;
@@ -350,21 +444,31 @@ function draw() {
   }
   g.textAlign = "center";
   if (state == "title" || state == "over") {
-    g.fillStyle = "rgba(22,19,15,.78)";
+    g.fillStyle = "rgba(22,19,15,.8)";
     g.fillRect(0, 0, W, H);
+    if (state == "title") {
+      // the cast: you, a coin, a slime
+      sprite(BODY, W / 2 - 66, 66, pal.player);
+      sprite(LEGS.a, W / 2 - 66, 78, pal.player);
+      sprite(COIN[Math.floor(t * 8) % 3], W / 2 - 4, 72, pal.coin);
+      sprite(SLIME[Math.floor(t * 4) % 2], W / 2 + 48, 72, pal.slime);
+    }
     g.fillStyle = C.ink;
-    g.font = "28px ui-monospace, Menlo, monospace";
+    g.font = "bold 28px ui-monospace, Menlo, monospace";
     g.fillText(state == "title" ? "plink run" : won ? `${coins} coins!` : "game over", W / 2, 110);
     g.font = "15px ui-monospace, Menlo, monospace";
     g.fillStyle = C.dim;
     g.fillText(state == "title" ? "30 seconds. jump the gaps, stomp the slimes, grab the coins." : `best: ${best} coins`, W / 2, 156);
-    g.fillStyle = C.plink;
-    g.fillText(state == "title" ? "press space or tap to start" : "space or tap to play again", W / 2, 200);
+    // blinking prompt; steady when motion is reduced
+    if (still || Math.floor(t * 2) % 2 == 0) {
+      g.fillStyle = C.plink;
+      g.fillText(state == "title" ? "press space or tap to start" : "space or tap to play again", W / 2, 200);
+    }
     g.fillStyle = C.dim;
     g.fillText("sound on", W / 2, 240);
   } else if (state == "count") {
     g.fillStyle = C.ink;
-    g.font = "48px ui-monospace, Menlo, monospace";
+    g.font = "bold 48px ui-monospace, Menlo, monospace";
     g.fillText(String(3 - Math.floor(countT)), W / 2, 120);
   }
   g.textAlign = "left";

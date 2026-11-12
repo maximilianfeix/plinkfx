@@ -21,81 +21,117 @@
   <body>
     <a class="skip" href="#grid">Skip to the sounds</a>
     <header class="top">
-      <a class="brand" href="./" aria-label="plinkfx: click to hear the plink">
-        <picture>
-          <source srcset="lockup-dark.svg" media="(prefers-color-scheme: dark)" />
-          <img src="lockup-light.svg" alt="plinkfx" width="231" height="66" />
-        </picture>
-      </a>
-      <p class="lede">Game sound effects as code. <b id="total">161</b> sounds in <b id="cats-n">13</b> categories, <b>CC0</b>, a 2&nbsp;KB player, no audio files. Hover or tap to play.</p>
-      <div class="top-actions">
-        <div class="install"><code>npm i plinkfx</code><button id="install-copy" type="button">copy</button></div>
+      <div class="bar">
+        <a class="brand" href="./" aria-label="plinkfx: click to hear the plink">
+          <picture>
+            <source srcset="lockup-dark.svg" media="(prefers-color-scheme: dark)" />
+            <img src="lockup-light.svg" alt="plinkfx" width="231" height="66" />
+          </picture>
+        </a>
         <nav aria-label="Project">
           <a href="game.html">play the demo game</a>
           <a href="https://github.com/maximilianfeix/plinkfx">GitHub</a>
           <a href="https://www.npmjs.com/package/plinkfx">npm</a>
         </nav>
       </div>
+      <div class="hero">
+        <div class="intro">
+          <h1>Game sound effects as code.</h1>
+          <p class="lede"><b id="total"><!--total--></b> sounds in <b id="cats-n"><!--cats--></b> categories, <b>CC0</b>, a 2&nbsp;KB player, no audio files.</p>
+          <div class="install"><code>npm i plinkfx</code><button id="install-copy" type="button">copy</button></div>
+        </div>
+        <div class="pads-wrap">
+          <div id="pads" class="pads" role="group" aria-label="Start here: eight favourites">
+            <button type="button" class="pad" data-pad="coin"><canvas aria-hidden="true"></canvas><span>coin</span></button>
+            <button type="button" class="pad" data-pad="jump"><canvas aria-hidden="true"></canvas><span>jump</span></button>
+            <button type="button" class="pad" data-pad="laser"><canvas aria-hidden="true"></canvas><span>laser</span></button>
+            <button type="button" class="pad" data-pad="explosion"><canvas aria-hidden="true"></canvas><span>explosion</span></button>
+            <button type="button" class="pad" data-pad="powerup"><canvas aria-hidden="true"></canvas><span>powerup</span></button>
+            <button type="button" class="pad" data-pad="hurt"><canvas aria-hidden="true"></canvas><span>hurt</span></button>
+            <button type="button" class="pad" data-pad="level-up"><canvas aria-hidden="true"></canvas><span>level-up</span></button>
+            <button type="button" class="pad" data-pad="door-heavy"><canvas aria-hidden="true"></canvas><span>door-heavy</span></button>
+          </div>
+          <p class="pads-hint"><svg viewBox="0 0 8 8" aria-hidden="true"><path d="M0 3h2l2-2h1v6H4L2 5H0z" /><path d="M6 2h1v1H6zM7 3h1v2H7zM6 5h1v1H6z" /></svg>Sound on, then press a pad. Every tile below plays on hover or tap.</p>
+        </div>
+      </div>
     </header>
 
     <section class="controls" aria-label="Filter">
-      <input id="search" type="search" placeholder="search  /" aria-label="Search sounds" autocomplete="off" spellcheck="false" />
-      <div id="chips" class="chips" role="group" aria-label="Category"></div>
-      <label class="toggle"><input id="hoverplay" type="checkbox" /> play on hover</label>
-      <span id="count" class="count" aria-live="polite"></span>
+      <div class="search-box">
+        <svg viewBox="0 0 8 8" aria-hidden="true"><path d="M2 0h3v1H2zM1 1h1v1H1zM5 1h1v1H5zM0 2h1v3H0zM6 2h1v3H6zM1 5h1v1H1zM5 5h1v1H5zM2 6h3v1H2zM6 6h1v1H6zM7 7h1v1H7z" /></svg>
+        <input id="search" type="search" placeholder="search sounds" aria-label="Search sounds" autocomplete="off" spellcheck="false" />
+        <kbd aria-hidden="true">/</kbd>
+      </div>
+      <div id="chips" class="chips" role="group" aria-label="Category"><!--chips--></div>
+      <div class="controls-end">
+        <label class="toggle"><input id="hoverplay" type="checkbox" /> play on hover</label>
+        <span id="count" class="count" aria-live="polite"><!--total--> sounds</span>
+      </div>
     </section>
 
     <main class="layout">
-      <div id="grid" class="grid" aria-label="Sounds"></div>
+      <div class="grid-wrap">
+        <div id="grid" class="grid" aria-label="Sounds"></div>
+        <div id="empty" class="empty" hidden>
+          <p class="empty-title">No sound matches <q id="empty-q"></q>.</p>
+          <p class="empty-try">Try <button type="button" data-try="laser">laser</button><button type="button" data-try="coin">coin</button><button type="button" data-try="door">door</button><button type="button" data-try="magic">magic</button>or <button type="button" id="empty-clear" class="link">clear the search</button></p>
+        </div>
+      </div>
 
+      <div class="scrim" hidden></div>
       <aside class="panel" aria-label="Selected sound">
         <div class="p-head">
+          <span class="grab" aria-hidden="true"></span>
           <button id="p-play" class="play" type="button" aria-label="Play (p)"><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M2 1v8l7-4z" /></svg></button>
-          <div>
+          <div class="p-title">
             <h2 id="p-name">coin</h2>
             <p id="p-cat" class="p-cat"></p>
           </div>
-          <button id="p-more" class="more" type="button" aria-label="Show details">edit</button>
+          <button id="p-more" class="more" type="button" aria-expanded="false" aria-controls="p-body">code<svg viewBox="0 0 8 8" aria-hidden="true"><path d="M1 5h1V4h1V3h2v1h1v1h1v1H6V5H5V4H3v1H2v1H1z" /></svg></button>
         </div>
-        <p id="p-desc" class="p-desc"></p>
-        <canvas id="wave" class="wave" aria-hidden="true"></canvas>
-        <p id="p-meter" class="meter"></p>
+        <div id="p-body" class="p-body">
+          <p id="p-desc" class="p-desc"></p>
+          <div class="wave-box"><canvas id="wave" class="wave" aria-hidden="true"></canvas></div>
+          <p id="p-meter" class="meter"></p>
 
-        <div class="takes" role="group" aria-label="Take">
-          <button data-take="0" type="button">1</button><button data-take="1" type="button">2</button><button data-take="2" type="button">3</button><button data-take="3" type="button">4</button>
-          <button id="p-roll" type="button" title="New random take (r)">roll</button>
-          <span id="p-seed" class="seed"></span>
-        </div>
-
-        <div class="knobs">
-          <label><span>pitch</span><input type="range" name="pitch" min="-12" max="12" step="1" /><output id="v-pitch"></output></label>
-          <label><span>length</span><input type="range" name="length" min="0.5" max="2" step="0.05" /><output id="v-length"></output></label>
-          <label><span>tone</span><input type="range" name="tone" min="-1" max="1" step="0.05" /><output id="v-tone"></output></label>
-          <label><span>space</span><input type="range" name="space" min="0" max="0.6" step="0.05" /><output id="v-space"></output></label>
-          <label><span>crush</span><input type="range" name="crush" min="3" max="16" step="1" /><output id="v-crush"></output></label>
-          <button id="p-reset" type="button">reset</button>
-        </div>
-
-        <div class="code">
-          <div class="tabs" role="tablist">
-            <button data-tab="name" role="tab" type="button">by name</button>
-            <button data-tab="shake" role="tab" type="button">tree-shaken</button>
-            <button data-tab="json" role="tab" type="button">params</button>
-            <span id="p-edited" class="edited" hidden>edited</span>
+          <div class="takes" role="group" aria-label="Take">
+            <button data-take="0" type="button">1</button><button data-take="1" type="button">2</button><button data-take="2" type="button">3</button><button data-take="3" type="button">4</button>
+            <button id="p-roll" type="button" title="New random take (r)">roll</button>
+            <span id="p-seed" class="seed"></span>
           </div>
-          <pre><code id="p-code"></code></pre>
-          <div class="code-actions">
-            <button id="p-copy" type="button">copy code</button>
-            <button id="p-wav" type="button">download .wav</button>
+
+          <div class="knobs">
+            <label><span>pitch</span><input type="range" name="pitch" min="-12" max="12" step="1" /><output id="v-pitch"></output></label>
+            <label><span>length</span><input type="range" name="length" min="0.5" max="2" step="0.05" /><output id="v-length"></output></label>
+            <label><span>tone</span><input type="range" name="tone" min="-1" max="1" step="0.05" /><output id="v-tone"></output></label>
+            <label><span>space</span><input type="range" name="space" min="0" max="0.6" step="0.05" /><output id="v-space"></output></label>
+            <label><span>crush</span><input type="range" name="crush" min="3" max="16" step="1" /><output id="v-crush"></output></label>
+            <button id="p-reset" type="button">reset knobs</button>
           </div>
+
+          <div class="code">
+            <div class="tabs" role="tablist" aria-label="Code style">
+              <button data-tab="name" role="tab" type="button">by name</button>
+              <button data-tab="shake" role="tab" type="button">tree-shaken</button>
+              <button data-tab="json" role="tab" type="button">params</button>
+              <span id="p-edited" class="edited" hidden>edited</span>
+            </div>
+            <pre><code id="p-code"></code></pre>
+            <div class="code-actions">
+              <button id="p-copy" type="button"><svg viewBox="0 0 8 8" aria-hidden="true"><path d="M2 0h6v6H7V1H2zM0 2h6v6H0zm1 1v4h4V3z" /></svg><span>copy code</span></button>
+              <button id="p-wav" type="button"><svg viewBox="0 0 8 8" aria-hidden="true"><path d="M3 0h2v3h2v1H6v1H5v1H3V5H2V4H1V3h2zM0 7h8v1H0z" /></svg><span>download .wav</span></button>
+              <button id="p-link" type="button" aria-label="Copy a link to this sound"><svg viewBox="0 0 8 8" aria-hidden="true"><path d="M1 2h3v1H1v3h3v1H1V6H0V3h1zM4 2h3v1h1v3H7v1H4V6h3V3H4zM2 4h4v1H2z" /></svg><span>link</span></button>
+            </div>
+          </div>
+          <p class="keys"><kbd>&larr;</kbd><kbd>&rarr;</kbd> move <kbd>1</kbd>–<kbd>4</kbd> takes <kbd>r</kbd> roll <kbd>p</kbd> play <kbd>c</kbd> copy <kbd>d</kbd> download <kbd>/</kbd> search</p>
         </div>
-        <p class="keys">keys: arrows move · 1–4 takes · r roll · p play · c copy · d download · / search</p>
       </aside>
     </main>
 
     <footer class="foot">
       <p>Sounds: <b>CC0 1.0</b>, use them anywhere, no credit needed. Code: MIT. Every sound is synthesized in your browser from a few numbers; nothing is downloaded but this page.</p>
     </footer>
+    <p id="sr-status" class="sr-only" aria-live="polite"></p>
     <script type="module" src="./main.ts"></script>
   </body>
 </html>
