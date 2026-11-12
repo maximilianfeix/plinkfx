@@ -33,6 +33,28 @@ const stateHash = () => {
   if (seed) q.push(`v=${seed}`);
   return "#" + current.name + (q.length ? "?" + q.join("&") : "");
 };
+// A shared link points at the sound's own page (s/<name>/, built by scripts/sound-pages.ts) so chats show its card;
+// that page forwards the query back into the hash: s/coin/?p=3&v=42 -> #coin?p=3&v=42.
+const shareUrl = () => {
+  const h = stateHash(),
+    i = h.indexOf("?");
+  return new URL(`s/${current.name}/${i >= 0 ? h.slice(i) : ""}`, location.href.split("#")[0]).href;
+};
+// "Suggest a sound": a prefilled GitHub issue form (its text fields fill from the query by id). It only opens a link.
+const ISSUE = "https://github.com/maximilianfeix/plinkfx/issues/new";
+function suggestUrl(from?: { query: string }) {
+  const p = new URLSearchParams({ template: "new-sound.yml" });
+  if (from) {
+    const slug = from.query.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+    p.set("title", `New sound: ${from.query}`);
+    if (slug) p.set("name", slug);
+  } else {
+    p.set("title", `New sound: based on ${current.name}`);
+    p.set("what", `Starting point: ${current.name} (${shareUrl()})\n\n`);
+    p.set("params", `const sound = ${pretty(edited())};`);
+  }
+  return `${ISSUE}?${p}`;
+}
 const initial = readHash();
 let current: Item = initial.it || byName.get("coin")!;
 let knobs: Knobs = initial.it ? initial.knobs : { ...NEUTRAL };
@@ -194,6 +216,7 @@ function applyFilter() {
   });
   $("#count").textContent = `${n} sound${n == 1 ? "" : "s"}`;
   $("#empty").hidden = n > 0;
+  if (!n) $<HTMLAnchorElement>("#empty-suggest").href = suggestUrl({ query: filter.q });
   $("#empty-q").textContent = filter.q || catalog.categories[filter.cat as Cat]?.title.toLowerCase() || "";
 }
 
@@ -233,6 +256,7 @@ function renderPanel() {
   for (const b of p.querySelectorAll<HTMLButtonElement>("[data-tab]")) b.setAttribute("aria-selected", String(b.dataset.tab == tab));
   $("#p-code").innerHTML = highlight(code());
   $("#p-edited").hidden = isNeutral(knobs);
+  $<HTMLAnchorElement>("#p-suggest").href = suggestUrl();
   drawWave($<HTMLCanvasElement>("#wave"), waveOf(edited(), seed, 180));
 }
 const label = (k: keyof Knobs, v: number) =>
@@ -487,7 +511,7 @@ function init() {
       playItem(current, seed);
     } else if (b.id == "p-copy") copy($("#p-code").textContent!, b);
     else if (b.id == "p-wav") download();
-    else if (b.id == "p-link") copy(location.href.split("#")[0] + stateHash(), b, isNeutral(knobs) && !seed ? "link copied" : "link copied, it plays your tweak");
+    else if (b.id == "p-link") copy(shareUrl(), b, isNeutral(knobs) && !seed ? "link copied" : "link copied, it plays your tweak");
     else if (b.id == "p-more") setSheet(!panel.classList.contains("open"));
   });
   let knobTimer = 0;
