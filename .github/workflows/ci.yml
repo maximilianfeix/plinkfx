@@ -28,7 +28,7 @@ jobs:
       - run: npm run size
       - name: Package lint (exports, types)
         if: matrix.os == 'ubuntu-latest'
-        run: npx --yes publint@0.3 && npx --yes @arethetypeswrong/cli@0.18 --pack --profile node16
+        run: npx --yes publint@0.3 && npx --yes @arethetypeswrong/cli@0.18 --pack --profile esm-only
       - name: CLI smoke test
         run: |
           node dist/cli.js list pickup
