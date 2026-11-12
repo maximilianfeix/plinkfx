@@ -120,3 +120,57 @@ test("the tour plays through several sounds", async ({ page }) => {
   await page.locator("#tour").click();
   await expect(page.locator("#tour")).toHaveAttribute("aria-pressed", "false");
 });
+
+test("share copies the sound's own page, with the tweak", async ({ page, context }) => {
+  await context.grantPermissions(["clipboard-read", "clipboard-write"]);
+  await page.goto("./#jump");
+  await page.locator('input[name="pitch"]').fill("5");
+  await page.locator("#p-link").click();
+  await expect(page.locator("#p-link")).toHaveClass(/done/);
+  expect(await page.evaluate(() => navigator.clipboard.readText())).toBe("http://localhost:4173/s/jump/?p=5");
+});
+
+test("a sound page has its own card and lands in the gallery on that sound", async ({ page, request }) => {
+  const html = await (await request.get("./s/coin/")).text();
+  expect(html).toContain("<title>coin · free CC0 game sound effect · plinkfx</title>");
+  expect(html).toContain('<meta property="og:url" content="https://maximilianfeix.github.io/plinkfx/s/coin/">');
+  expect(html).toContain('<meta property="og:image" content="https://maximilianfeix.github.io/plinkfx/s/coin/og.png">');
+  expect(html).toContain('<meta name="twitter:card" content="summary_large_image">');
+  expect(html).toContain('<link rel="canonical" href="https://maximilianfeix.github.io/plinkfx/s/coin/">');
+  const png = await request.get("./s/coin/og.png");
+  expect(png.headers()["content-type"]).toBe("image/png");
+  const body = await png.body();
+  expect([body.readUInt32BE(16), body.readUInt32BE(20)]).toEqual([1200, 630]);
+
+  await page.goto("./s/coin/");
+  await expect(page).toHaveURL(/\/#coin$/);
+  await expect(page.locator("#p-name")).toHaveText("coin");
+  await page.goto("./s/coin/?p=3&v=42");
+  await expect(page).toHaveURL(/\/#coin\?p=3&v=42$/);
+  await expect(page.locator("#v-pitch")).toHaveText("+3 st");
+  await expect(page.locator("#shared")).toBeVisible();
+});
+
+test("sitemap lists every sound page", async ({ page, request }) => {
+  await page.goto("./");
+  const total = Number(await page.locator("#total").textContent());
+  const xml = await (await request.get("./sitemap.xml")).text();
+  expect(xml.match(/\/s\/[a-z0-9-]+\/<\/loc>/g)).toHaveLength(total);
+  expect(await (await request.get("./robots.txt")).text()).toContain("Sitemap: https://maximilianfeix.github.io/plinkfx/sitemap.xml");
+});
+
+test("suggest a sound opens a prefilled issue form, from the panel and from an empty search", async ({ page }) => {
+  await page.goto("./#coin?p=3");
+  const href = new URL((await page.locator("#p-suggest").getAttribute("href"))!);
+  expect(href.origin + href.pathname).toBe("https://github.com/maximilianfeix/plinkfx/issues/new");
+  expect(href.searchParams.get("template")).toBe("new-sound.yml");
+  expect(href.searchParams.get("title")).toBe("New sound: based on coin");
+  expect(href.searchParams.get("what")).toContain("/s/coin/?p=3");
+  expect(href.searchParams.get("params")).toContain("layers: [");
+  await expect(page.locator("#p-suggest")).toHaveAttribute("target", "_blank");
+
+  await page.locator("#search").fill("rubber duck");
+  const empty = new URL((await page.locator("#empty-suggest").getAttribute("href"))!);
+  expect(empty.searchParams.get("title")).toBe("New sound: rubber duck");
+  expect(empty.searchParams.get("name")).toBe("rubber-duck");
+});

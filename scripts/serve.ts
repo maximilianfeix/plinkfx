@@ -4,7 +4,7 @@ import { readFile } from "node:fs/promises";
 import { extname, join, normalize } from "node:path";
 
 const [root = "site", port = "4173"] = process.argv.slice(2);
-const types: Record<string, string> = { ".html": "text/html", ".js": "text/javascript", ".css": "text/css", ".svg": "image/svg+xml", ".png": "image/png", ".json": "application/json" };
+const types: Record<string, string> = { ".html": "text/html", ".js": "text/javascript", ".css": "text/css", ".svg": "image/svg+xml", ".png": "image/png", ".json": "application/json", ".xml": "application/xml", ".txt": "text/plain" };
 createServer(async (req, res) => {
   const path = normalize(decodeURIComponent(new URL(req.url!, "http://x").pathname)).replace(/^([/\\])+/, "");
   if (path.includes("..")) return res.writeHead(400).end();
