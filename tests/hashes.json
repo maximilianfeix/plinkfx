@@ -605,6 +605,12 @@
   "52d6faefd4d8d15b",
   "1fd35d6f818fa1b5"
  ],
+ "bow-twang": [
+  "ea0e4aed8552f4a2",
+  "62f9f29c6debc542",
+  "8ee1935b6a2cbad1",
+  "6671497dabd8cf61"
+ ],
  "step-grass": [
   "f470e6e712a5eeaa",
   "49d9abb555519e2e",
@@ -736,6 +742,12 @@
   "44cd57ebe7940b92",
   "459d1c25e7b0dd09",
   "00295d89a64bf565"
+ ],
+ "harp": [
+  "e0ed6e1e40da5f81",
+  "b27873882edeecbc",
+  "38195777f94398ca",
+  "1b914c2e7653f23d"
  ],
  "alarm": [
   "63786a2a4e3d1f93",
@@ -976,5 +988,95 @@
   "bea6418619fbf09e",
   "7ef1183fbf6af094",
   "e47a9c40b637c8f2"
+ ],
+ "bat-flap": [
+  "e6de52d253d869b6",
+  "e90a2e0be090933f",
+  "3cc6c2927095da86",
+  "fcf25e6937fcecd5"
+ ],
+ "slime-blob": [
+  "c12fe42bd1630bf5",
+  "7696e942e61a3b6c",
+  "f786b8dbd9a2073f",
+  "d447b87f8a707b69"
+ ],
+ "chirp": [
+  "19ed0b43d6fc2361",
+  "a98f8c5b50cb7049",
+  "14673be6c8501ef7",
+  "622314c0ec11e232"
+ ],
+ "growl-small": [
+  "a94f72116bb88a3d",
+  "f763b482bf109860",
+  "10fd33dfe7e4f0de",
+  "167305da036e6e08"
+ ],
+ "ghost-moan": [
+  "bb39546933254f15",
+  "e95a9afbe9f019c5",
+  "b82faef5e50be3b2",
+  "5c8296a01225109f"
+ ],
+ "bee-buzz": [
+  "df978d8f4c34118f",
+  "dc9600736eabb058",
+  "cfc6c08174cfe395",
+  "493ecad056ada3af"
+ ],
+ "creature-hurt": [
+  "0b3621b71bc38c27",
+  "5578845cab4f3d77",
+  "b9af2dec17646841",
+  "569502890ea2520b"
+ ],
+ "creature-die": [
+  "3bb3daa4178a2be1",
+  "013397823f8771ad",
+  "7fbb877000e41a38",
+  "6f344912c3827ac1"
+ ],
+ "voice-babble": [
+  "b66557e546c228c6",
+  "f6c4a441064e15a3",
+  "feec5020b80a21c7",
+  "3552c809959b6c28"
+ ],
+ "thunder-far": [
+  "87c9aaab933aa8e8",
+  "091d5377eac50268",
+  "e472a69d95f12dd5",
+  "926775d616561c0c"
+ ],
+ "rain-drop": [
+  "47e62cf51cddd2cd",
+  "63db89ac37fd2c45",
+  "0dd0ebfb393fab76",
+  "7e74f5682ba42605"
+ ],
+ "bird-chirp": [
+  "305ee19d7d7a7fba",
+  "caf202121484b430",
+  "224b4db9da1928e7",
+  "57d064a33431d9d9"
+ ],
+ "frog-croak": [
+  "0483dffd196826af",
+  "971382874e197a90",
+  "b27d1f882b5eb4a4",
+  "89b835a976fc673c"
+ ],
+ "leaf-rustle": [
+  "2abb30542ec9d3c1",
+  "cef0679fbcf71d36",
+  "e84ba5ba3475bbec",
+  "31942104b803a9a5"
+ ],
+ "stone-drop": [
+  "c464adf9b3c95200",
+  "4713b5704e29f264",
+  "e5990c6fa8d6ebd9",
+  "db02c6f4e1733821"
  ]
 }

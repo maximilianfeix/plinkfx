@@ -114,4 +114,13 @@ export default def("shoot", {
       { wave: "sine", freq: 200, to: 140, at: 0.22, a: 0.001, d: 0.05, gain: 0.4 },
     ],
   }],
+  "bow-twang": ["Bowstring released", {
+    vary: 1,
+    varyF: 2,
+    layers: [
+      { wave: "pluck", freq: 98, a: 0.001, d: 0.45, shape: -3, damp: 0.994, blend: 0.46, lp: 2200 },
+      { wave: "noise", bp: 1500, a: 0.001, d: 0.012, shape: -5, gain: 0.5 },
+      { wave: "noise", bp: 900, bpTo: 2600, q: 2, at: 0.02, a: 0.03, d: 0.12, shape: -3, gain: 0.25 },
+    ],
+  }],
 });

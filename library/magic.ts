@@ -94,4 +94,9 @@ export default def("magic", {
       { wave: "noise", bp: 4000, q: 3, a: 0.002, d: 0.15, gain: 0.25 },
     ],
   }],
+  harp: ["Harp glissando up, for wishes and revelations", {
+    vary: 0.05,
+    verb: [0.6, 0.3],
+    layers: [0, 2, 4, 7, 9, 12, 14, 16].map((st, i) => ({ wave: "pluck" as const, freq: 392 * 2 ** (st / 12), at: i * 0.055, a: 0.001, d: 1.1, shape: -3, damp: 0.999, blend: 0.47, lp: 4000, gain: 0.8 })),
+  }],
 });

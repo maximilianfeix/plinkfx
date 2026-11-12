@@ -25,6 +25,8 @@ export const CATEGORIES = {
   jingle: { title: "Jingles", target: -17 },
   mechanic: { title: "Doors & mechanics", target: -17 },
   world: { title: "World", target: -17 },
+  creature: { title: "Creatures", target: -17 },
+  nature: { title: "Nature", target: -18 },
 } as const;
 export type Category = keyof typeof CATEGORIES;
 

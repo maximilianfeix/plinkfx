@@ -15,5 +15,7 @@ import alert from "./alert.ts";
 import jingle from "./jingle.ts";
 import mechanic from "./mechanic.ts";
 import world from "./world.ts";
+import creature from "./creature.ts";
+import nature from "./nature.ts";
 
-export const library: Entry[] = [...ui, ...pickup, ...jump, ...hit, ...explosion, ...powerup, ...shoot, ...footstep, ...magic, ...alert, ...jingle, ...mechanic, ...world];
+export const library: Entry[] = [...ui, ...pickup, ...jump, ...hit, ...explosion, ...powerup, ...shoot, ...footstep, ...magic, ...alert, ...jingle, ...mechanic, ...world, ...creature, ...nature];

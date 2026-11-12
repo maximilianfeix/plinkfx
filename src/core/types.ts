@@ -19,7 +19,9 @@ export type Wave =
   /** six square waves at inharmonic ratios, for bells, cymbals, metal */
   | "metal"
   /** decaying sine modes (see `modes`), for wood, metal bars, glass: a material instead of a tone */
-  | "modal";
+  | "modal"
+  /** plucked string (Karplus-Strong): harp, pizzicato, bow twang. See `damp`, `blend` */
+  | "pluck";
 
 export interface Layer {
   /** Oscillator shape. Default "sine". */
@@ -44,6 +46,12 @@ export interface Layer {
   fm?: [number, number, number?];
   /** Mode ratios for "modal". Default [1, 2.756, 5.404, 8.933] (a free bar). Higher modes decay faster. */
   modes?: number[];
+  /** "pluck": string damping per period, 0.99 (dead) to 0.999 (rings). Default 0.998. */
+  damp?: number;
+  /** "pluck": 0.5 = string, lower = muffled. Default 0.5. */
+  blend?: number;
+  /** Formant centres in Hz (vowel filter), e.g. [730, 1090, 2440] for "ah", [270, 2290, 3010] for "ee". */
+  formant?: number[];
   /** Key tracking: filter cutoffs follow pitch changes (1 = fully). Default 0. */
   kt?: number;
   /** Pulse width for "square", 0..1. Default 0.5. */

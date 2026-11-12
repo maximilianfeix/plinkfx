@@ -51,6 +51,14 @@
   "world": {
    "title": "World",
    "target": -17
+  },
+  "creature": {
+   "title": "Creatures",
+   "target": -17
+  },
+  "nature": {
+   "title": "Nature",
+   "target": -18
   }
  },
  "sounds": [
@@ -8034,6 +8042,85 @@
    ]
   },
   {
+   "name": "bow-twang",
+   "id": "bowTwang",
+   "cat": "shoot",
+   "desc": "Bowstring released",
+   "gain": 2.14,
+   "limited": true,
+   "m": {
+    "peak": -1.51,
+    "truePeak": -1.37,
+    "lufsMax": -18.1,
+    "duration": 0.41,
+    "centroid": 2369
+   },
+   "env": [
+    1,
+    1,
+    1,
+    0.94,
+    0.89,
+    0.79,
+    0.73,
+    0.67,
+    0.65,
+    0.59,
+    0.52,
+    0.47,
+    0.43,
+    0.4,
+    0.37,
+    0.33,
+    0.31,
+    0.28,
+    0.26,
+    0.24,
+    0.22,
+    0.2,
+    0.18,
+    0.16,
+    0.15,
+    0.14,
+    0.12,
+    0.11,
+    0.1,
+    0.09,
+    0.08,
+    0.08,
+    0.07,
+    0.06,
+    0.05,
+    0.05,
+    0.04,
+    0.04,
+    0.03,
+    0.03
+   ],
+   "takes": [
+    {
+     "lufsMax": -18.1,
+     "truePeak": -1.37,
+     "duration": 0.41
+    },
+    {
+     "lufsMax": -17.22,
+     "truePeak": -1.47,
+     "duration": 0.44
+    },
+    {
+     "lufsMax": -16.5,
+     "truePeak": -1.4,
+     "duration": 0.42
+    },
+    {
+     "lufsMax": -17.86,
+     "truePeak": -1.29,
+     "duration": 0.43
+    }
+   ]
+  },
+  {
    "name": "step-grass",
    "id": "stepGrass",
    "cat": "footstep",
@@ -9768,6 +9855,85 @@
      "lufsMax": -15.71,
      "truePeak": -4.81,
      "duration": 0.4
+    }
+   ]
+  },
+  {
+   "name": "harp",
+   "id": "harp",
+   "cat": "magic",
+   "desc": "Harp glissando up, for wishes and revelations",
+   "gain": 1.29,
+   "limited": false,
+   "m": {
+    "peak": -2.8,
+    "truePeak": -2.68,
+    "lufsMax": -15.71,
+    "duration": 1.6,
+    "centroid": 2736
+   },
+   "env": [
+    0.99,
+    1,
+    0.95,
+    0.76,
+    1,
+    0.86,
+    0.78,
+    0.78,
+    0.86,
+    0.78,
+    0.5,
+    0.46,
+    0.43,
+    0.39,
+    0.31,
+    0.3,
+    0.27,
+    0.22,
+    0.22,
+    0.17,
+    0.15,
+    0.16,
+    0.14,
+    0.13,
+    0.11,
+    0.08,
+    0.09,
+    0.08,
+    0.06,
+    0.06,
+    0.06,
+    0.04,
+    0.05,
+    0.04,
+    0.04,
+    0.04,
+    0.03,
+    0.02,
+    0.03,
+    0.02
+   ],
+   "takes": [
+    {
+     "lufsMax": -15.71,
+     "truePeak": -2.68,
+     "duration": 1.6
+    },
+    {
+     "lufsMax": -16.65,
+     "truePeak": -2.93,
+     "duration": 1.65
+    },
+    {
+     "lufsMax": -16.11,
+     "truePeak": -2.58,
+     "duration": 1.6
+    },
+    {
+     "lufsMax": -15.48,
+     "truePeak": -2.12,
+     "duration": 1.65
     }
    ]
   },
@@ -12928,6 +13094,1191 @@
      "lufsMax": -17.01,
      "truePeak": -1.21,
      "duration": 1
+    }
+   ]
+  },
+  {
+   "name": "bat-flap",
+   "id": "batFlap",
+   "cat": "creature",
+   "desc": "Wings flapping past",
+   "gain": 3.87,
+   "limited": true,
+   "m": {
+    "peak": -1.51,
+    "truePeak": -1.46,
+    "lufsMax": -18.82,
+    "duration": 0.25,
+    "centroid": 2509
+   },
+   "env": [
+    1,
+    1,
+    0.75,
+    0.54,
+    0.48,
+    0.28,
+    0.2,
+    0.09,
+    0.74,
+    1,
+    0.87,
+    0.65,
+    0.34,
+    0.27,
+    0.17,
+    0.11,
+    0.83,
+    1,
+    0.78,
+    0.59,
+    0.44,
+    0.23,
+    0.19,
+    0.09,
+    0.59,
+    0.76,
+    0.67,
+    0.49,
+    0.4,
+    0.29,
+    0.16,
+    0.08,
+    0.27,
+    0.72,
+    0.56,
+    0.44,
+    0.32,
+    0.28,
+    0.15,
+    0.09
+   ],
+   "takes": [
+    {
+     "lufsMax": -18.82,
+     "truePeak": -1.46,
+     "duration": 0.25
+    },
+    {
+     "lufsMax": -20.15,
+     "truePeak": -1.46,
+     "duration": 0.24
+    },
+    {
+     "lufsMax": -19.04,
+     "truePeak": -1.44,
+     "duration": 0.25
+    },
+    {
+     "lufsMax": -18.81,
+     "truePeak": -1.45,
+     "duration": 0.24
+    }
+   ]
+  },
+  {
+   "name": "slime-blob",
+   "id": "slimeBlob",
+   "cat": "creature",
+   "desc": "Slime squelches and wobbles",
+   "gain": 0.616,
+   "limited": false,
+   "m": {
+    "peak": -2.24,
+    "truePeak": -2.23,
+    "lufsMax": -17.66,
+    "duration": 0.28,
+    "centroid": 575
+   },
+   "env": [
+    1,
+    0.92,
+    0.95,
+    0.88,
+    0.83,
+    0.81,
+    0.83,
+    0.78,
+    0.7,
+    0.71,
+    0.64,
+    0.59,
+    0.6,
+    0.59,
+    0.53,
+    0.49,
+    0.48,
+    0.46,
+    0.43,
+    0.41,
+    0.38,
+    0.38,
+    0.35,
+    0.33,
+    0.31,
+    0.3,
+    0.28,
+    0.26,
+    0.24,
+    0.23,
+    0.22,
+    0.2,
+    0.18,
+    0.17,
+    0.15,
+    0.14,
+    0.12,
+    0.1,
+    0.08,
+    0.06
+   ],
+   "takes": [
+    {
+     "lufsMax": -17.66,
+     "truePeak": -2.23,
+     "duration": 0.28
+    },
+    {
+     "lufsMax": -17.39,
+     "truePeak": -1.56,
+     "duration": 0.3
+    },
+    {
+     "lufsMax": -17.48,
+     "truePeak": -1.2,
+     "duration": 0.29
+    },
+    {
+     "lufsMax": -17.31,
+     "truePeak": -1.45,
+     "duration": 0.3
+    }
+   ]
+  },
+  {
+   "name": "chirp",
+   "id": "chirp",
+   "cat": "creature",
+   "desc": "Small critter chirp",
+   "gain": 0.632,
+   "limited": false,
+   "m": {
+    "peak": -3.99,
+    "truePeak": -3.98,
+    "lufsMax": -17,
+    "duration": 0.14,
+    "centroid": 4262
+   },
+   "env": [
+    1,
+    0.95,
+    0.85,
+    0.76,
+    0.68,
+    0.6,
+    0.53,
+    0.46,
+    0.41,
+    0.35,
+    0.3,
+    0.25,
+    0.2,
+    0.15,
+    0.09,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0.72,
+    0.89,
+    0.83,
+    0.75,
+    0.68,
+    0.62,
+    0.56,
+    0.51,
+    0.46,
+    0.41,
+    0.37,
+    0.32,
+    0.29,
+    0.25,
+    0.21,
+    0.17,
+    0.14,
+    0.08
+   ],
+   "takes": [
+    {
+     "lufsMax": -17,
+     "truePeak": -3.98,
+     "duration": 0.14
+    },
+    {
+     "lufsMax": -17.05,
+     "truePeak": -4.03,
+     "duration": 0.14
+    },
+    {
+     "lufsMax": -17,
+     "truePeak": -4.02,
+     "duration": 0.14
+    },
+    {
+     "lufsMax": -16.94,
+     "truePeak": -4,
+     "duration": 0.14
+    }
+   ]
+  },
+  {
+   "name": "growl-small",
+   "id": "growlSmall",
+   "cat": "creature",
+   "desc": "Low growl of a small monster",
+   "gain": 0.64,
+   "limited": false,
+   "m": {
+    "peak": -3.93,
+    "truePeak": -3.93,
+    "lufsMax": -17.1,
+    "duration": 0.61,
+    "centroid": 1603
+   },
+   "env": [
+    0.45,
+    0.61,
+    0.8,
+    0.84,
+    0.94,
+    0.91,
+    0.91,
+    0.91,
+    0.89,
+    0.91,
+    0.9,
+    1,
+    0.97,
+    0.96,
+    0.91,
+    0.85,
+    0.93,
+    0.87,
+    0.94,
+    0.9,
+    0.91,
+    0.87,
+    0.84,
+    0.83,
+    0.73,
+    0.7,
+    0.65,
+    0.61,
+    0.53,
+    0.48,
+    0.43,
+    0.43,
+    0.36,
+    0.34,
+    0.3,
+    0.27,
+    0.21,
+    0.18,
+    0.14,
+    0.1
+   ],
+   "takes": [
+    {
+     "lufsMax": -17.1,
+     "truePeak": -3.93,
+     "duration": 0.61
+    },
+    {
+     "lufsMax": -16.82,
+     "truePeak": -4.44,
+     "duration": 0.63
+    },
+    {
+     "lufsMax": -17.4,
+     "truePeak": -4.59,
+     "duration": 0.61
+    },
+    {
+     "lufsMax": -16.67,
+     "truePeak": -4.75,
+     "duration": 0.62
+    }
+   ]
+  },
+  {
+   "name": "ghost-moan",
+   "id": "ghostMoan",
+   "cat": "creature",
+   "desc": "Ghostly 'oooh'",
+   "gain": 0.15,
+   "limited": false,
+   "m": {
+    "peak": -8.11,
+    "truePeak": -8.11,
+    "lufsMax": -17.09,
+    "duration": 2.76,
+    "centroid": 324
+   },
+   "env": [
+    0.32,
+    0.37,
+    0.55,
+    0.79,
+    0.71,
+    0.81,
+    0.97,
+    1,
+    0.6,
+    0.77,
+    0.68,
+    0.85,
+    0.95,
+    0.83,
+    0.79,
+    0.76,
+    0.66,
+    0.58,
+    0.51,
+    0.46,
+    0.43,
+    0.35,
+    0.31,
+    0.27,
+    0.24,
+    0.21,
+    0.18,
+    0.16,
+    0.13,
+    0.11,
+    0.09,
+    0.08,
+    0.07,
+    0.06,
+    0.05,
+    0.05,
+    0.04,
+    0.04,
+    0.03,
+    0.03
+   ],
+   "takes": [
+    {
+     "lufsMax": -17.09,
+     "truePeak": -8.11,
+     "duration": 2.76
+    },
+    {
+     "lufsMax": -17.81,
+     "truePeak": -9.64,
+     "duration": 2.73
+    },
+    {
+     "lufsMax": -16.54,
+     "truePeak": -7.54,
+     "duration": 2.91
+    },
+    {
+     "lufsMax": -16.63,
+     "truePeak": -8.4,
+     "duration": 2.64
+    }
+   ]
+  },
+  {
+   "name": "bee-buzz",
+   "id": "beeBuzz",
+   "cat": "creature",
+   "desc": "Buzzing insect flying by",
+   "gain": 0.761,
+   "limited": false,
+   "m": {
+    "peak": -3.6,
+    "truePeak": -3.57,
+    "lufsMax": -16.93,
+    "duration": 0.85,
+    "centroid": 1765
+   },
+   "env": [
+    0.32,
+    0.46,
+    0.55,
+    0.66,
+    0.74,
+    0.8,
+    0.87,
+    0.88,
+    0.88,
+    0.88,
+    0.88,
+    0.88,
+    0.88,
+    0.88,
+    0.88,
+    0.88,
+    1,
+    1,
+    0.88,
+    0.88,
+    0.88,
+    0.88,
+    0.99,
+    0.88,
+    0.88,
+    0.88,
+    0.87,
+    0.78,
+    0.73,
+    0.61,
+    0.54,
+    0.48,
+    0.43,
+    0.37,
+    0.32,
+    0.28,
+    0.23,
+    0.19,
+    0.14,
+    0.11
+   ],
+   "takes": [
+    {
+     "lufsMax": -16.93,
+     "truePeak": -3.57,
+     "duration": 0.85
+    },
+    {
+     "lufsMax": -17.11,
+     "truePeak": -3.53,
+     "duration": 0.87
+    },
+    {
+     "lufsMax": -17.03,
+     "truePeak": -4.19,
+     "duration": 0.85
+    },
+    {
+     "lufsMax": -16.93,
+     "truePeak": -3.57,
+     "duration": 0.86
+    }
+   ]
+  },
+  {
+   "name": "creature-hurt",
+   "id": "creatureHurt",
+   "cat": "creature",
+   "desc": "Creature yelps when hit",
+   "gain": 1.07,
+   "limited": false,
+   "m": {
+    "peak": -3.84,
+    "truePeak": -3.84,
+    "lufsMax": -17,
+    "duration": 0.24,
+    "centroid": 2085
+   },
+   "env": [
+    0.95,
+    1,
+    0.99,
+    0.99,
+    0.99,
+    0.99,
+    0.99,
+    0.99,
+    0.96,
+    0.93,
+    0.89,
+    0.85,
+    0.82,
+    0.78,
+    0.74,
+    0.7,
+    0.67,
+    0.63,
+    0.62,
+    0.58,
+    0.55,
+    0.51,
+    0.5,
+    0.47,
+    0.43,
+    0.42,
+    0.39,
+    0.36,
+    0.34,
+    0.31,
+    0.3,
+    0.27,
+    0.24,
+    0.23,
+    0.2,
+    0.18,
+    0.15,
+    0.14,
+    0.1,
+    0.08
+   ],
+   "takes": [
+    {
+     "lufsMax": -17,
+     "truePeak": -3.84,
+     "duration": 0.24
+    },
+    {
+     "lufsMax": -17.03,
+     "truePeak": -3.95,
+     "duration": 0.26
+    },
+    {
+     "lufsMax": -17.06,
+     "truePeak": -3.63,
+     "duration": 0.25
+    },
+    {
+     "lufsMax": -16.84,
+     "truePeak": -3.76,
+     "duration": 0.25
+    }
+   ]
+  },
+  {
+   "name": "creature-die",
+   "id": "creatureDie",
+   "cat": "creature",
+   "desc": "Creature's last cry, falling away",
+   "gain": 0.57,
+   "limited": false,
+   "m": {
+    "peak": -4.71,
+    "truePeak": -4.71,
+    "lufsMax": -16.75,
+    "duration": 1.27,
+    "centroid": 1411
+   },
+   "env": [
+    0.89,
+    0.91,
+    0.96,
+    1,
+    0.95,
+    0.96,
+    0.98,
+    0.82,
+    0.78,
+    0.73,
+    0.66,
+    0.6,
+    0.59,
+    0.49,
+    0.5,
+    0.45,
+    0.37,
+    0.37,
+    0.31,
+    0.28,
+    0.24,
+    0.2,
+    0.18,
+    0.13,
+    0.13,
+    0.11,
+    0.1,
+    0.1,
+    0.09,
+    0.07,
+    0.06,
+    0.06,
+    0.05,
+    0.04,
+    0.04,
+    0.04,
+    0.03,
+    0.03,
+    0.02,
+    0.02
+   ],
+   "takes": [
+    {
+     "lufsMax": -16.75,
+     "truePeak": -4.71,
+     "duration": 1.27
+    },
+    {
+     "lufsMax": -16.9,
+     "truePeak": -4.73,
+     "duration": 1.26
+    },
+    {
+     "lufsMax": -17.19,
+     "truePeak": -4.9,
+     "duration": 1.25
+    },
+    {
+     "lufsMax": -17.18,
+     "truePeak": -5.47,
+     "duration": 1.27
+    }
+   ]
+  },
+  {
+   "name": "voice-babble",
+   "id": "voiceBabble",
+   "cat": "creature",
+   "desc": "Gibberish dialogue blips, like a character talking",
+   "gain": 0.384,
+   "limited": false,
+   "m": {
+    "peak": -7.24,
+    "truePeak": -7.2,
+    "lufsMax": -16.97,
+    "duration": 0.42,
+    "centroid": 2016
+   },
+   "env": [
+    0.83,
+    0.94,
+    0.95,
+    0.95,
+    0.94,
+    0.94,
+    1,
+    0.82,
+    0.72,
+    0.7,
+    0.69,
+    0.68,
+    0.68,
+    0.88,
+    0.99,
+    0.99,
+    0.95,
+    0.94,
+    0.95,
+    0.97,
+    0.86,
+    0.74,
+    0.7,
+    0.66,
+    0.66,
+    0.66,
+    0.66,
+    0.72,
+    0.7,
+    0.69,
+    0.68,
+    0.68,
+    0.68,
+    0.76,
+    0.76,
+    0.6,
+    0.45,
+    0.32,
+    0.25,
+    0.16
+   ],
+   "takes": [
+    {
+     "lufsMax": -16.97,
+     "truePeak": -7.2,
+     "duration": 0.42
+    },
+    {
+     "lufsMax": -17.03,
+     "truePeak": -7.16,
+     "duration": 0.43
+    },
+    {
+     "lufsMax": -17.03,
+     "truePeak": -7.26,
+     "duration": 0.43
+    },
+    {
+     "lufsMax": -16.94,
+     "truePeak": -7.33,
+     "duration": 0.43
+    }
+   ]
+  },
+  {
+   "name": "thunder-far",
+   "id": "thunderFar",
+   "cat": "nature",
+   "desc": "Distant thunder rolling in",
+   "gain": 0.332,
+   "limited": false,
+   "m": {
+    "peak": -3.05,
+    "truePeak": -3.05,
+    "lufsMax": -17.1,
+    "duration": 2.83,
+    "centroid": 227
+   },
+   "env": [
+    0.29,
+    0.65,
+    0.74,
+    0.73,
+    0.78,
+    0.82,
+    0.74,
+    0.95,
+    1,
+    0.89,
+    0.71,
+    0.62,
+    0.64,
+    0.7,
+    0.49,
+    0.44,
+    0.48,
+    0.4,
+    0.36,
+    0.41,
+    0.29,
+    0.3,
+    0.19,
+    0.23,
+    0.18,
+    0.16,
+    0.17,
+    0.14,
+    0.11,
+    0.1,
+    0.09,
+    0.09,
+    0.08,
+    0.05,
+    0.04,
+    0.05,
+    0.03,
+    0.04,
+    0.03,
+    0.03
+   ],
+   "takes": [
+    {
+     "lufsMax": -17.1,
+     "truePeak": -3.05,
+     "duration": 2.83
+    },
+    {
+     "lufsMax": -19.49,
+     "truePeak": -7.64,
+     "duration": 2.92
+    },
+    {
+     "lufsMax": -18.09,
+     "truePeak": -5.51,
+     "duration": 2.95
+    },
+    {
+     "lufsMax": -17.32,
+     "truePeak": -4.46,
+     "duration": 2.88
+    }
+   ]
+  },
+  {
+   "name": "rain-drop",
+   "id": "rainDrop",
+   "cat": "nature",
+   "desc": "A raindrop on a leaf",
+   "gain": 0.778,
+   "limited": true,
+   "m": {
+    "peak": -1.67,
+    "truePeak": -1.55,
+    "lufsMax": -20.74,
+    "duration": 0.05,
+    "centroid": 2809
+   },
+   "env": [
+    0.82,
+    0.78,
+    1,
+    0.95,
+    0.89,
+    0.84,
+    0.79,
+    0.74,
+    0.71,
+    0.67,
+    0.64,
+    0.6,
+    0.57,
+    0.54,
+    0.51,
+    0.48,
+    0.45,
+    0.43,
+    0.4,
+    0.38,
+    0.36,
+    0.34,
+    0.32,
+    0.3,
+    0.28,
+    0.26,
+    0.25,
+    0.23,
+    0.21,
+    0.2,
+    0.18,
+    0.17,
+    0.16,
+    0.14,
+    0.13,
+    0.11,
+    0.1,
+    0.07,
+    0.05,
+    0.02
+   ],
+   "takes": [
+    {
+     "lufsMax": -20.74,
+     "truePeak": -1.55,
+     "duration": 0.05
+    },
+    {
+     "lufsMax": -21.28,
+     "truePeak": -1.2,
+     "duration": 0.05
+    },
+    {
+     "lufsMax": -20.88,
+     "truePeak": -1.36,
+     "duration": 0.05
+    },
+    {
+     "lufsMax": -20.81,
+     "truePeak": -1.42,
+     "duration": 0.05
+    }
+   ]
+  },
+  {
+   "name": "bird-chirp",
+   "id": "birdChirp",
+   "cat": "nature",
+   "desc": "Songbird, three quick chirps",
+   "gain": 0.43,
+   "limited": false,
+   "m": {
+    "peak": -7.35,
+    "truePeak": -7.35,
+    "lufsMax": -18.01,
+    "duration": 0.68,
+    "centroid": 4356
+   },
+   "env": [
+    1,
+    0.69,
+    0.49,
+    0.43,
+    0.45,
+    0.97,
+    0.79,
+    0.62,
+    0.4,
+    0.4,
+    0.93,
+    0.63,
+    0.42,
+    0.38,
+    0.38,
+    0.31,
+    0.28,
+    0.33,
+    0.27,
+    0.25,
+    0.24,
+    0.19,
+    0.16,
+    0.16,
+    0.13,
+    0.13,
+    0.1,
+    0.09,
+    0.09,
+    0.08,
+    0.08,
+    0.08,
+    0.06,
+    0.05,
+    0.05,
+    0.05,
+    0.04,
+    0.03,
+    0.03,
+    0.03
+   ],
+   "takes": [
+    {
+     "lufsMax": -18.01,
+     "truePeak": -7.35,
+     "duration": 0.68
+    },
+    {
+     "lufsMax": -18.01,
+     "truePeak": -7.34,
+     "duration": 0.7
+    },
+    {
+     "lufsMax": -18.01,
+     "truePeak": -7.32,
+     "duration": 0.69
+    },
+    {
+     "lufsMax": -17.95,
+     "truePeak": -7.2,
+     "duration": 0.68
+    }
+   ]
+  },
+  {
+   "name": "frog-croak",
+   "id": "frogCroak",
+   "cat": "nature",
+   "desc": "Frog croak",
+   "gain": 2.81,
+   "limited": true,
+   "m": {
+    "peak": -1.51,
+    "truePeak": -1.51,
+    "lufsMax": -20.03,
+    "duration": 0.18,
+    "centroid": 1153
+   },
+   "env": [
+    0.73,
+    1,
+    0.86,
+    0.83,
+    0.7,
+    0.62,
+    0.38,
+    0.39,
+    0.22,
+    0.15,
+    0.69,
+    1,
+    0.99,
+    0.82,
+    0.69,
+    0.59,
+    0.49,
+    0.37,
+    0.21,
+    0.14,
+    0.54,
+    0.64,
+    1,
+    0.81,
+    0.67,
+    0.55,
+    0.45,
+    0.34,
+    0.2,
+    0.13,
+    0.5,
+    0.59,
+    1,
+    0.73,
+    0.74,
+    0.51,
+    0.41,
+    0.32,
+    0.25,
+    0.08
+   ],
+   "takes": [
+    {
+     "lufsMax": -20.03,
+     "truePeak": -1.51,
+     "duration": 0.18
+    },
+    {
+     "lufsMax": -20.09,
+     "truePeak": -1.51,
+     "duration": 0.18
+    },
+    {
+     "lufsMax": -20.05,
+     "truePeak": -1.51,
+     "duration": 0.18
+    },
+    {
+     "lufsMax": -20,
+     "truePeak": -1.51,
+     "duration": 0.18
+    }
+   ]
+  },
+  {
+   "name": "leaf-rustle",
+   "id": "leafRustle",
+   "cat": "nature",
+   "desc": "Leaves rustling in a bush",
+   "gain": 1.43,
+   "limited": false,
+   "m": {
+    "peak": -4.02,
+    "truePeak": -3.84,
+    "lufsMax": -17.79,
+    "duration": 0.4,
+    "centroid": 5155
+   },
+   "env": [
+    0.3,
+    0.46,
+    0.68,
+    0.69,
+    0.78,
+    0.74,
+    0.79,
+    0.8,
+    0.9,
+    0.88,
+    0.83,
+    0.83,
+    0.76,
+    0.81,
+    0.77,
+    1,
+    0.72,
+    0.68,
+    0.64,
+    0.89,
+    0.56,
+    0.47,
+    0.46,
+    0.48,
+    0.44,
+    0.38,
+    0.67,
+    0.35,
+    0.34,
+    0.29,
+    0.27,
+    0.66,
+    0.23,
+    0.2,
+    0.18,
+    0.15,
+    0.14,
+    0.12,
+    0.09,
+    0.06
+   ],
+   "takes": [
+    {
+     "lufsMax": -17.79,
+     "truePeak": -3.84,
+     "duration": 0.4
+    },
+    {
+     "lufsMax": -19.11,
+     "truePeak": -6.41,
+     "duration": 0.41
+    },
+    {
+     "lufsMax": -18,
+     "truePeak": -2.71,
+     "duration": 0.4
+    },
+    {
+     "lufsMax": -17.19,
+     "truePeak": -5.22,
+     "duration": 0.41
+    }
+   ]
+  },
+  {
+   "name": "stone-drop",
+   "id": "stoneDrop",
+   "cat": "nature",
+   "desc": "Pebble drops and bounces once",
+   "gain": 0.727,
+   "limited": true,
+   "m": {
+    "peak": -1.51,
+    "truePeak": -1.45,
+    "lufsMax": -22.36,
+    "duration": 0.22,
+    "centroid": 2784
+   },
+   "env": [
+    1,
+    0.8,
+    0.69,
+    0.54,
+    0.43,
+    0.35,
+    0.27,
+    0.22,
+    0.18,
+    0.14,
+    0.12,
+    0.09,
+    0.08,
+    0.06,
+    0.05,
+    0.04,
+    0.03,
+    0.02,
+    0.02,
+    0.01,
+    0.01,
+    0.01,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0.84,
+    0.53,
+    0.4,
+    0.26,
+    0.2,
+    0.14,
+    0.11,
+    0.07,
+    0.06,
+    0.04,
+    0.03
+   ],
+   "takes": [
+    {
+     "lufsMax": -22.36,
+     "truePeak": -1.45,
+     "duration": 0.22
+    },
+    {
+     "lufsMax": -22.96,
+     "truePeak": -1.51,
+     "duration": 0.22
+    },
+    {
+     "lufsMax": -22.41,
+     "truePeak": -1.51,
+     "duration": 0.22
+    },
+    {
+     "lufsMax": -23.43,
+     "truePeak": -1.19,
+     "duration": 0.22
     }
    ]
   }
