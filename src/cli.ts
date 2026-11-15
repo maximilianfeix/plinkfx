@@ -4,7 +4,9 @@
  *
  *   plinkfx list [category]
  *   plinkfx show <name>
- *   plinkfx render <name|file.json|'{json}'> [-o out.wav] [--variant n] [--rate 48000]
+ *   plinkfx render <name|file.json|'{json}'> [-o out.wav] [--png out.png] [--variant n] [--rate 48000]
+ *   plinkfx check <names...|file.json|file.wav> | --all [--json] [--cat c | --target lufs]
+ *   plinkfx mcp                 MCP server on stdio (src/mcp.ts)
  *   plinkfx measure <name|file.json|file.wav> [--like <name>] [--json]
  *   plinkfx level <file.json> [--target -16 | --like <name>]
  *   plinkfx export [dir] [--format wav|ogg|both] [--rate 48000] [--variants] [--only cat1,cat2]
@@ -12,19 +14,21 @@
  */
 import { execFileSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, unlinkSync, writeFileSync } from "node:fs";
-import { basename, join } from "node:path";
-import { get, names } from "./index.ts";
+import { join } from "node:path";
 import { render } from "./core/synth.ts";
 import { wav } from "./core/wav.ts";
-import type { Sound } from "./core/types.ts";
 import { measure, type Measurement } from "./meter.ts";
-import * as all from "./sounds.gen.ts";
+import { audit, LIMITS } from "./audit.ts";
+import { picture } from "./png.ts";
+import { serve } from "./mcp.ts";
+import * as shared from "./shared.ts";
+import { catalog, soundOf } from "./shared.ts";
 
 // Set by esbuild in scripts/build.ts; read package.json when run from source.
 declare const __VERSION__: string;
 const VERSION = typeof __VERSION__ == "string" ? __VERSION__ : JSON.parse(readFileSync(new URL("../package.json", import.meta.url), "utf8")).version;
-const BOOL = ["json", "variants", "sprite", "help", "version"],
-  VALUE = ["out", "variant", "rate", "like", "target", "format", "gap", "only"];
+const BOOL = ["json", "variants", "sprite", "help", "version", "all"],
+  VALUE = ["out", "variant", "rate", "like", "target", "format", "gap", "only", "png", "cat"];
 const die = (msg: string): never => {
   console.error(`plinkfx: ${msg}`);
   process.exit(1);
@@ -51,7 +55,6 @@ const num = (k: string, d: number, min = -Infinity, max = Infinity) => {
   if (!Number.isFinite(v) || v < min || v > max) die(`--${k} must be a number${min > -Infinity ? ` from ${min}` : ""}${max < Infinity ? ` to ${max}` : ""}, got "${flags[k]}"`);
   return v;
 };
-const WAVES = ["sine", "triangle", "square", "saw", "noise", "pink", "brown", "crunch", "metal"];
 const parse = (text: string, where: string) => {
   try {
     return JSON.parse(text);
@@ -60,29 +63,17 @@ const parse = (text: string, where: string) => {
   }
 };
 const f1 = (x: number) => (Number.isFinite(x) ? x.toFixed(1) : "-inf");
-
-/** A sound from a catalogue name, a JSON file or inline JSON. */
-function load(arg: string | undefined): { sound: Sound; label: string } {
-  if (!arg) die("missing sound (a name like 'coin', a .json file or inline JSON)");
-  if (arg!.trim().startsWith("{")) return { sound: unwrap(parse(arg!, "the inline sound")), label: "inline" };
-  if (arg!.endsWith(".json")) {
-    if (!existsSync(arg!)) die(`no such file: ${arg}`);
-    return { sound: unwrap(parse(readFileSync(arg!, "utf8"), arg!)), label: basename(arg!, ".json") };
-  }
+/** Run a shared helper; its error becomes a one-line exit. */
+const attempt = <T>(f: () => T): T => {
   try {
-    return { sound: get(arg!), label: arg! };
+    return f();
   } catch (e: any) {
-    return die(`${String(e.message).replace(/^plinkfx: /, "")}${/Did you mean/.test(e.message) ? "" : ". Run 'plinkfx list'."}`);
+    return die(e.message);
   }
-}
-const unwrap = (j: any): Sound => {
-  const s = j?.sound ?? j;
-  if (!s || !Array.isArray(s.layers) || !s.layers.length) die("a sound needs a non-empty 'layers' array");
-  s.layers.forEach((l: any, i: number) => {
-    if (l.wave && !WAVES.includes(l.wave)) die(`layer ${i + 1}: unknown wave "${l.wave}" (one of: ${WAVES.join(", ")})`);
-  });
-  return s;
 };
+const load = (arg: string | undefined) => attempt(() => shared.load(arg));
+const unwrap = (j: unknown) => attempt(() => shared.unwrap(j));
+const readWav = (file: string) => attempt(() => shared.readWav(file));
 const writeOut = (file: string, bytes: Uint8Array) => {
   try {
     writeFileSync(file, bytes);
@@ -90,45 +81,6 @@ const writeOut = (file: string, bytes: Uint8Array) => {
     die(`can't write ${file}: ${e.code == "ENOENT" ? "the folder doesn't exist" : e.message}`);
   }
 };
-
-/** Minimal WAV reader: 16/24/32-bit PCM or 32-bit float, mixed to mono. */
-function readWav(file: string): { x: Float32Array; sr: number } {
-  const b = readFileSync(file),
-    v = new DataView(b.buffer, b.byteOffset, b.byteLength);
-  if (b.toString("ascii", 0, 4) != "RIFF") die(`${file} is not a WAV file`);
-  let o = 12,
-    fmt = 1,
-    ch = 1,
-    sr = 44100,
-    bits = 16;
-  while (o < b.length - 8) {
-    const id = b.toString("ascii", o, o + 4),
-      size = v.getUint32(o + 4, true);
-    if (id == "fmt ") {
-      fmt = v.getUint16(o + 8, true);
-      ch = v.getUint16(o + 10, true);
-      sr = v.getUint32(o + 12, true);
-      bits = v.getUint16(o + 22, true);
-      if (fmt == 0xfffe) fmt = v.getUint16(o + 32, true);
-    } else if (id == "data") {
-      const bps = bits / 8,
-        n = Math.floor(size / bps / ch),
-        x = new Float32Array(n);
-      for (let i = 0; i < n; i++) {
-        let s = 0;
-        for (let c = 0; c < ch; c++) {
-          const p = o + 8 + (i * ch + c) * bps;
-          s +=
-            fmt == 3 ? v.getFloat32(p, true) : bits == 16 ? v.getInt16(p, true) / 32768 : bits == 24 ? ((v.getUint8(p) | (v.getUint8(p + 1) << 8) | (v.getInt8(p + 2) << 16)) / 8388608) : v.getInt32(p, true) / 2147483648;
-        }
-        x[i] = s / ch;
-      }
-      return { x, sr };
-    }
-    o += 8 + size + (size & 1);
-  }
-  return die(`${file}: no audio data found`);
-}
 
 const report = (m: Measurement, ref?: Measurement) => {
   const row = (k: string, v: string, r?: string) => `  ${k.padEnd(10)} ${v.padStart(10)}${r ? `   (ref ${r})` : ""}`;
@@ -153,18 +105,6 @@ const vorbis = (): string[] | null => {
   return null;
 };
 
-const catalog = () => {
-  try {
-    return JSON.parse(readFileSync(new URL("../library/catalog.gen.json", import.meta.url), "utf8")).sounds as { name: string; cat: string; desc: string }[];
-  } catch {
-    try {
-      return JSON.parse(readFileSync(new URL("./catalog.json", import.meta.url), "utf8")).sounds as { name: string; cat: string; desc: string }[];
-    } catch {
-      return names.map((name) => ({ name, cat: "", desc: "" }));
-    }
-  }
-};
-
 const cmd = pos.shift();
 if (flags.version) console.log(VERSION);
 else if (!cmd || flags.help || cmd == "help")
@@ -175,6 +115,12 @@ else if (!cmd || flags.help || cmd == "help")
   plinkfx render <sound> [-o out.wav]         render to WAV
       --variant n   take 0-3 (default 0; files are named name-1..4 like export)
       --rate hz     sample rate (default 48000)
+      --png f.png   also draw its waveform and spectrogram
+  plinkfx check <sound...|file.wav> | --all [--json]
+                                              find clicks, cut tails, DC, clipping, padding, loudness off target
+      --cat c       judge loudness against this category (catalogue sounds default to their own)
+      --target lufs judge loudness against this max momentary LUFS
+  plinkfx mcp                                 MCP server on stdio, for agents (Claude Code, Cursor, Codex)
   plinkfx measure <sound|file.wav> [--like <name>] [--json]
                                               loudness, peaks, duration, brightness
   plinkfx level <file.json> [--target -16 | --like <name>]
@@ -190,7 +136,7 @@ else if (!cmd || flags.help || cmd == "help")
   Gallery: https://maximilianfeix.github.io/plinkfx/`);
 else if (cmd == "list") {
   const cat = pos[0],
-    rows = catalog().filter((s) => !cat || s.cat == cat);
+    rows = catalog().sounds.filter((s) => !cat || s.cat == cat);
   if (!rows.length) die(`no category "${cat}"`);
   const w = Math.max(...rows.map((r) => r.name.length));
   for (const r of rows) console.log(`${r.name.padEnd(w)}  ${r.cat.padEnd(9)}  ${r.desc}`);
@@ -203,14 +149,15 @@ else if (cmd == "list") {
     x = render(sound, { sampleRate: sr, seed }),
     // Same numbering as `export --variants`: take 0 is name-1.wav ... take 3 is name-4.wav.
     out = typeof flags.out == "string" ? flags.out : `${label}${seed ? "-" + (seed + 1) : ""}.wav`;
+  if (flags.png !== undefined && (typeof flags.png != "string" || !flags.png.toLowerCase().endsWith(".png"))) die("--png needs a file name ending in .png");
   writeOut(out, wav(x, sr));
   const m = measure(x, sr);
-  console.log(`${out}  ${m.duration.toFixed(2)} s, ${f1(m.lufsMax)} LUFS, peak ${f1(m.truePeak)} dBTP`);
+  if (typeof flags.png == "string") writeOut(flags.png, picture(x, sr, `${label}  ${m.duration.toFixed(2)} s  ${f1(m.lufsMax)} lufs  ${f1(m.truePeak)} dbtp`));
+  console.log(`${out}  ${m.duration.toFixed(2)} s, ${f1(m.lufsMax)} LUFS, peak ${f1(m.truePeak)} dBTP${typeof flags.png == "string" ? `\n${flags.png}  waveform + spectrogram` : ""}`);
 } else if (cmd == "measure") {
   const arg = pos[0];
   let m: Measurement;
   if (arg?.toLowerCase().endsWith(".wav")) {
-    if (!existsSync(arg)) die(`no such file: ${arg}`);
     const { x, sr } = readWav(arg);
     m = measure(x, sr);
   } else {
@@ -222,8 +169,8 @@ else if (cmd == "list") {
   else {
     console.log(report(m, ref));
     const warn: string[] = [];
-    if (m.truePeak > -1) warn.push("true peak above -1 dBTP: lower the gain");
-    if (Math.abs(m.dc) > 0.001) warn.push("DC offset: add a high-pass");
+    if (m.truePeak > LIMITS.truePeak) warn.push("true peak above -1 dBTP: lower the gain");
+    if (Math.abs(m.dc) > LIMITS.dc) warn.push("DC offset: add a high-pass");
     if (m.duration > 4) warn.push("longer than 4 s: is this a loop, not an effect?");
     if (warn.length) console.log("\n  ! " + warn.join("\n  ! "));
   }
@@ -253,7 +200,7 @@ else if (cmd == "list") {
   if (!flags.sprite && flags.gap !== undefined) die("--gap only works with --sprite");
   const ogg = fmt != "wav" ? vorbis() : null;
   if (fmt != "wav" && !ogg) die("OGG export needs ffmpeg with a Vorbis encoder on your PATH (WAV works without it)");
-  let list = catalog();
+  let list = catalog().sounds;
   if (flags.only !== undefined) {
     const want = String(flags.only).split(",").map((c) => c.trim()).filter(Boolean),
       cats = [...new Set(list.map((s) => s.cat))],
@@ -261,7 +208,6 @@ else if (cmd == "list") {
     if (!want.length || bad.length) die(`unknown category "${bad[0] ?? flags.only}" for --only (one of: ${cats.join(", ")})`);
     list = list.filter((s) => want.includes(s.cat));
   }
-  const soundOf = (name: string) => (all as Record<string, Sound>)[name.replace(/-(\w)/g, (_, c) => c.toUpperCase())];
   const toOgg = (base: string) => {
     try {
       execFileSync("ffmpeg", ["-loglevel", "error", "-y", "-i", base + ".wav", ...ogg!, base + ".ogg"], { stdio: ["ignore", "ignore", "pipe"] });
@@ -313,4 +259,45 @@ else if (cmd == "list") {
     }
     console.log(`wrote ${n} sounds to ${dir}/ (${fmt}, ${sr} Hz${oggNote})`);
   }
+} else if (cmd == "check") {
+  const { categories, sounds } = catalog(),
+    sr = num("rate", 48000, 8000, 192000),
+    cat = flags.cat === undefined ? undefined : String(flags.cat);
+  if (cat !== undefined && !categories[cat]) die(`unknown category "${cat}" for --cat (one of: ${Object.keys(categories).join(", ")})`);
+  if (flags.all && pos.length) die("--all checks the whole catalogue; drop the sound names");
+  if (!flags.all && !pos.length) die("name the sounds to check, or use --all");
+  const fixed = flags.target !== undefined ? num("target", -16, -60, 0) : cat ? categories[cat].target : undefined,
+    targets = flags.all ? sounds.map((s) => s.name) : pos,
+    results = targets.map((arg) => {
+      if (arg.toLowerCase().endsWith(".wav")) {
+        const { x, sr: r } = readWav(arg);
+        return { name: arg, ...audit([x], r, fixed) };
+      }
+      const { sound, label, name } = load(arg),
+        own = name ? sounds.find((s) => s.name == name)?.cat : undefined;
+      return { name: label, ...audit([0, 1, 2, 3].map((seed) => render(sound, { sampleRate: sr, seed })), sr, fixed ?? (own ? categories[own]?.target : undefined), !!sound.loop) };
+    }),
+    failed = results.filter((r) => !r.ok).length,
+    warned = results.filter((r) => r.ok && r.issues.length).length;
+  if (flags.json)
+    console.log(
+      JSON.stringify(
+        { ok: !failed, failed, warned, sounds: results.map((r) => ({ name: r.name, ok: r.ok, issues: r.issues, target: r.target ?? null, lufs: Number(r.lufsAvg.toFixed(2)), truePeak: Number(r.truePeak.toFixed(2)), duration: Number(r.m.duration.toFixed(3)) })) },
+        null,
+        2,
+      ),
+    );
+  else {
+    const w = Math.max(...results.map((r) => r.name.length));
+    for (const r of results) {
+      // --all lists only the sounds with something to say
+      if (flags.all && !r.issues.length) continue;
+      console.log(`${r.ok ? (r.issues.length ? "warn" : "ok  ") : "FAIL"}  ${r.name.padEnd(w)}  ${f1(r.lufsAvg)} LUFS${r.target !== undefined ? ` (target ${r.target})` : ""}, true peak ${f1(r.truePeak)} dBTP`);
+      for (const i of r.issues) console.log(`        ${i.level}: ${i.check}: ${i.message}`);
+    }
+    console.log(`${results.length} sound${results.length == 1 ? "" : "s"} checked: ${results.length - failed - warned} clean, ${warned} with warnings, ${failed} failed`);
+  }
+  if (failed) process.exitCode = 1;
+} else if (cmd == "mcp") {
+  serve(VERSION);
 } else die(`unknown command "${cmd}". Run 'plinkfx --help'.`);

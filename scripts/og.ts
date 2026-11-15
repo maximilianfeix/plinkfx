@@ -1,9 +1,10 @@
 /**
  * Per-sound Open Graph cards (1200x630 PNG) in the brand's pixel style, drawn in pure Node:
- * a palette raster, a 5x9 pixel font and a small PNG encoder on node:zlib. No browser, no image library.
+ * a palette raster with the pixel font and PNG chunks from src/png.ts. No browser, no image library.
  * Colours and the mark follow brand/make_brand.py.
  */
 import { deflateSync } from "node:zlib";
+import { chunk, FONT as F, SIGNATURE } from "../src/png.ts";
 
 const INK = "#16130F",
   PAPER = "#F2EDE3",
@@ -15,53 +16,6 @@ const INK = "#16130F",
 export const CAT_COLORS: Record<string, string> = {
   ui: "#5b7a99", pickup: "#d4a017", jump: "#4f9d69", hit: "#c8553d", explosion: "#b4533f", powerup: "#e07a1f", shoot: "#b23a7b",
   footstep: "#a8987a", magic: "#8a7ee0", alert: "#d63f3f", jingle: "#2f8f8a", mechanic: "#8f8f8f", world: "#3b7ea1",
-};
-
-// ---- 5x9 pixel font: rows 0-6 sit on the baseline, rows 7-8 are descenders ----
-const F: Record<string, string> = {
-  a: "..... ..... .XXX. ....X .XXXX X...X .XXXX",
-  b: "X.... X.... XXXX. X...X X...X X...X XXXX.",
-  c: "..... ..... .XXXX X.... X.... X.... .XXXX",
-  d: "....X ....X .XXXX X...X X...X X...X .XXXX",
-  e: "..... ..... .XXX. X...X XXXXX X.... .XXXX",
-  f: "..XX. .X... XXXX. .X... .X... .X... .X...",
-  g: "..... ..... .XXXX X...X X...X X...X .XXXX ....X XXXX.",
-  h: "X.... X.... XXXX. X...X X...X X...X X...X",
-  i: "..X.. ..... .XX.. ..X.. ..X.. ..X.. .XXX.",
-  j: "...X. ..... ..XX. ...X. ...X. ...X. ...X. ...X. XXX..",
-  k: "X.... X.... X..X. X.X.. XX... X.X.. X..X.",
-  l: ".XX.. ..X.. ..X.. ..X.. ..X.. ..X.. .XXX.",
-  m: "..... ..... XX.X. X.X.X X.X.X X.X.X X.X.X",
-  n: "..... ..... XXXX. X...X X...X X...X X...X",
-  o: "..... ..... .XXX. X...X X...X X...X .XXX.",
-  p: "..... ..... XXXX. X...X X...X X...X XXXX. X.... X....",
-  q: "..... ..... .XXXX X...X X...X X...X .XXXX ....X ....X",
-  r: "..... ..... X.XX. XX..X X.... X.... X....",
-  s: "..... ..... .XXXX X.... .XXX. ....X XXXX.",
-  t: ".X... .X... XXXX. .X... .X... .X... ..XX.",
-  u: "..... ..... X...X X...X X...X X...X .XXXX",
-  v: "..... ..... X...X X...X X...X .X.X. ..X..",
-  w: "..... ..... X...X X...X X.X.X X.X.X .X.X.",
-  x: "..... ..... X...X .X.X. ..X.. .X.X. X...X",
-  y: "..... ..... X...X X...X X...X X...X .XXXX ....X XXXX.",
-  z: "..... ..... XXXXX ...X. ..X.. .X... XXXXX",
-  C: ".XXX. X...X X.... X.... X.... X...X .XXX.",
-  "0": ".XXX. X...X X..XX X.X.X XX..X X...X .XXX.",
-  "1": "..X.. .XX.. ..X.. ..X.. ..X.. ..X.. .XXX.",
-  "2": ".XXX. X...X ....X ...X. ..X.. .X... XXXXX",
-  "3": "XXXX. ....X ....X .XXX. ....X ....X XXXX.",
-  "4": "...X. ..XX. .X.X. X..X. XXXXX ...X. ...X.",
-  "5": "XXXXX X.... XXXX. ....X ....X X...X .XXX.",
-  "6": ".XXX. X.... X.... XXXX. X...X X...X .XXX.",
-  "7": "XXXXX ....X ...X. ..X.. .X... .X... .X...",
-  "8": ".XXX. X...X X...X .XXX. X...X X...X .XXX.",
-  "9": ".XXX. X...X X...X .XXXX ....X ....X .XXX.",
-  "-": "..... ..... ..... ..... .XXX.",
-  "·": "..... ..... ..... ..... ..X..",
-  ".": "..... ..... ..... ..... ..... ..... ..X..",
-  "/": "....X ....X ...X. ..X.. .X... X.... X....",
-  "&": ".XX.. X..X. X.X.. .X... X.X.X X..X. .XX.X",
-  " ": "",
 };
 
 // The brand wordmark glyphs and mark, ported from brand/make_brand.py.
@@ -130,7 +84,7 @@ class Canvas {
     ihdr.set([8, 3, 0, 0, 0], 8); // 8-bit, indexed colour
     const plte = Buffer.from(this.colors.flatMap((h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16))));
     return Buffer.concat([
-      Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]),
+      SIGNATURE,
       chunk("IHDR", ihdr),
       chunk("PLTE", plte),
       chunk("IDAT", deflateSync(raw, { level: 9 })),
@@ -138,24 +92,6 @@ class Canvas {
     ]);
   }
 }
-const CRC = Array.from({ length: 256 }, (_, n) => {
-  for (let k = 0; k < 8; k++) n = n & 1 ? 0xedb88320 ^ (n >>> 1) : n >>> 1;
-  return n >>> 0;
-});
-function crc32(b: Buffer) {
-  let c = 0xffffffff;
-  for (const x of b) c = CRC[(c ^ x) & 0xff] ^ (c >>> 8);
-  return (c ^ 0xffffffff) >>> 0;
-}
-function chunk(type: string, data: Buffer) {
-  const out = Buffer.alloc(12 + data.length);
-  out.writeUInt32BE(data.length, 0);
-  out.write(type, 4, "ascii");
-  data.copy(out, 8);
-  out.writeUInt32BE(crc32(out.subarray(4, 8 + data.length)), 8 + data.length);
-  return out;
-}
-
 export interface CardSound {
   name: string;
   cat: string;

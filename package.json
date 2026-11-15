@@ -86,7 +86,7 @@
       "name": "player: render + play + wav",
       "path": "dist/core.js",
       "import": "{ play, render, wav }",
-      "limit": "3.1 kB",
+      "limit": "3.15 kB",
       "gzip": true
     },
     {
@@ -95,7 +95,7 @@
         "dist/core.js": "{ play }",
         "dist/sounds.js": "{ coin }"
       },
-      "limit": "3.1 kB",
+      "limit": "3.15 kB",
       "gzip": true
     },
     {
