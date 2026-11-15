@@ -17,5 +17,11 @@ import mechanic from "./mechanic.ts";
 import world from "./world.ts";
 import creature from "./creature.ts";
 import nature from "./nature.ts";
+import card from "./card.ts";
+import vehicle from "./vehicle.ts";
+import horror from "./horror.ts";
+import farm from "./farm.ts";
+import scifi from "./scifi.ts";
+import puzzle from "./puzzle.ts";
 
-export const library: Entry[] = [...ui, ...pickup, ...jump, ...hit, ...explosion, ...powerup, ...shoot, ...footstep, ...magic, ...alert, ...jingle, ...mechanic, ...world, ...creature, ...nature];
+export const library: Entry[] = [...ui, ...pickup, ...jump, ...hit, ...explosion, ...powerup, ...shoot, ...footstep, ...magic, ...alert, ...jingle, ...mechanic, ...world, ...creature, ...nature, ...card, ...vehicle, ...horror, ...farm, ...scifi, ...puzzle];

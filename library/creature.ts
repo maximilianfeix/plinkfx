@@ -66,4 +66,40 @@ export default def("creature", {
     vary: 2,
     layers: [{ wave: "square", duty: 0.3, freq: 280, arp: [0, 4, -2, 7, 2, 5], arpRate: 0.07, formant: EE, a: 0.005, h: 0.36, d: 0.06, shape: -3 }],
   }],
+  "zombie-groan": ["Zombie groan", {
+    vary: 1.2,
+    varyF: 2,
+    verb: [0.35, 0.15],
+    layers: [
+      { wave: "saw", freq: 110, to: 85, vib: [5, 1.2], formant: OH, kt: 1, a: 0.1, h: 0.4, d: 0.4, shape: -3, drive: 2 },
+      { wave: "saw", freq: 111, to: 84, vib: [4, 1], formant: AH, kt: 1, a: 0.15, h: 0.3, d: 0.4, shape: -3, gain: 0.5 },
+      { wave: "noise", formant: AH, a: 0.1, h: 0.4, d: 0.3, shape: -3, gain: 0.2 },
+    ],
+  }],
+  roar: ["Big monster roar", {
+    vary: 0.8,
+    varyF: 2,
+    verb: [0.6, 0.25],
+    layers: [
+      { wave: "saw", freq: 90, to: 70, vib: [9, 1.5], formant: AH, kt: 1, a: 0.08, h: 0.6, d: 0.5, shape: -3, drive: 3 },
+      { wave: "saw", freq: 45, to: 36, vib: [7, 1], lp: 400, a: 0.08, h: 0.6, d: 0.5, shape: -3, drive: 2 },
+      { wave: "noise", bp: 1200, q: 0.8, a: 0.05, h: 0.6, d: 0.4, shape: -3, drive: 1.5, gain: 0.35 },
+    ],
+  }],
+  "dog-bark": ["Dog barks twice", {
+    vary: 1.5,
+    varyF: 2,
+    verb: [0.25, 0.1],
+    layers: [0, 0.22].flatMap((at) => [
+      { wave: "saw" as const, freq: 520, to: 320, curve: 2, formant: AH, kt: 1, at, a: 0.004, d: 0.12, shape: -4, drive: 2 },
+      { wave: "noise" as const, bp: 1500, q: 1, at, a: 0.002, d: 0.06, shape: -4, gain: 0.3 },
+    ]),
+  }],
+  "cat-meow": ["Cat meows", {
+    vary: 1.5,
+    layers: [
+      { wave: "saw", freq: 600, to: 900, sweep: 0.2, curve: 0.8, vib: [5, 0.3], formant: EE, kt: 1, a: 0.04, h: 0.1, d: 0.3, shape: -3 },
+      { wave: "saw", freq: 900, to: 550, at: 0.25, sweep: 0.3, formant: OO, kt: 1, a: 0.04, d: 0.3, shape: -3, gain: 0.7 },
+    ],
+  }],
 });

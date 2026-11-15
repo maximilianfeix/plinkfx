@@ -123,4 +123,39 @@ export default def("shoot", {
       { wave: "noise", bp: 900, bpTo: 2600, q: 2, at: 0.02, a: 0.03, d: 0.12, shape: -3, gain: 0.25 },
     ],
   }],
+  "machine-gun": ["Automatic burst, five rounds", {
+    vary: 0.3,
+    varyF: 1.5,
+    verb: [0.3, 0.12],
+    layers: [0, 0.075, 0.15, 0.225, 0.3].flatMap((at, i) => [
+      { wave: "noise" as const, hp: 300, lp: 6000, lpTo: 1500, at, a: 0.001, d: 0.05, shape: -5, drive: 2, gain: 0.9 - (i % 2) * 0.1 },
+      { wave: "sine" as const, freq: 150, to: 60, at, a: 0.001, d: 0.06, shape: -5, drive: 1.5, gain: 0.7 },
+      { wave: "brown" as const, lp: 600, at, a: 0.001, d: 0.08, shape: -4, gain: 0.4 },
+    ]),
+  }],
+  "shell-casing": ["Brass shell casings tinkle on the floor", {
+    vary: 1,
+    varyF: 2,
+    varyG: 2,
+    layers: [0, 0.08, 0.13].map((at, i) => ({ wave: "modal" as const, freq: 3200 + i * 250, modes: [1, 2.756, 5.404], at, a: 0.001, d: 0.12, shape: -5, gain: 1 - i * 0.3 })),
+  }],
+  flamethrower: ["Flamethrower burst: roaring hiss", {
+    vary: 0.3,
+    varyF: 2,
+    layers: [
+      { wave: "noise", bp: 1200, q: 0.7, a: 0.05, h: 0.5, d: 0.3, shape: -3, drive: 1.5 },
+      { wave: "brown", lp: 500, a: 0.05, h: 0.5, d: 0.3, shape: -3, drive: 1, gain: 0.8 },
+      ...Array.from({ length: 8 }, (_, i) => ({ wave: "noise" as const, bp: 3000, q: 2, at: 0.06 + i * 0.09, a: 0.001, d: 0.01, shape: -5, gain: 0.3 })),
+    ],
+  }],
+  "grenade-launch": ["Grenade launcher: hollow thoomp", {
+    vary: 0.5,
+    varyF: 1.5,
+    verb: [0.3, 0.12],
+    layers: [
+      { wave: "sine", freq: 220, to: 70, curve: 2, a: 0.001, d: 0.2, shape: -4, drive: 1.5 },
+      { wave: "noise", bp: 700, q: 2, a: 0.001, d: 0.08, shape: -5, drive: 1 },
+      { wave: "noise", bp: 2500, bpTo: 1000, q: 1.5, at: 0.04, a: 0.01, d: 0.25, shape: -3, gain: 0.3 },
+    ],
+  }],
 });

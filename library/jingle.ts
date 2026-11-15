@@ -74,4 +74,21 @@ export default def("jingle", {
       { wave: "sine", freq: 110, arp: [0, 0, 12], arpRate: 0.12, a: 0.003, h: 0.3, d: 0.2, gain: 0.6 },
     ],
   }],
+  highscore: ["New high score: excited climbing fanfare", {
+    vary: 0.05,
+    verb: [0.35, 0.2],
+    layers: [
+      { wave: "square", duty: 0.25, freq: 523, arp: [0, 4, 7, 12, 7, 12, 16, 19, 24], arpRate: 0.08, a: 0.002, h: 0.75, d: 0.4, shape: 2, lp: 5000, gain: 0.6 },
+      { wave: "triangle", freq: 262, arp: [0, 0, 7, 7, 5, 5, 7, 7, 12], arpRate: 0.08, a: 0.002, h: 0.75, d: 0.4, shape: 2 },
+    ],
+  }],
+  "boss-intro": ["Boss appears: ominous low brass hits", {
+    vary: 0.05,
+    verb: [0.7, 0.3],
+    layers: [0, 0.35, 0.7].flatMap((at, i) => [
+      { wave: "saw" as const, freq: [73.4, 69.3, 65.4][i], lp: 1200, lpTo: 400, at, a: 0.01, h: i === 2 ? 0.4 : 0.15, d: 0.3, shape: -3, drive: 1.5 },
+      { wave: "saw" as const, freq: [110, 103.8, 98][i], lp: 1500, lpTo: 500, at, a: 0.01, h: i === 2 ? 0.4 : 0.15, d: 0.3, shape: -3, gain: 0.6 },
+      { wave: "brown" as const, lp: 200, at, a: 0.001, d: 0.4, shape: -4, gain: 0.6 },
+    ]),
+  }],
 });

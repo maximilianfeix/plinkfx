@@ -2,6 +2,22 @@
 
 ## Unreleased
 
+**270 sounds in 21 categories** (was 180 in 15).
+
+- New categories: **cards & casino** (card-flip, card-deal, card-place, card-shuffle, chip-stack, dice-roll, slot-spin,
+  slot-stop, jackpot), **vehicles** (engine-start, engine-rev, tire-screech, car-crash, car-horn, boost, race-light),
+  **horror** (jumpscare, dread-drone, whisper, horror-sting, chains-rattle, static-burst, music-box), **farm & crafting**
+  (axe-chop, tree-fall, pickaxe-mine, dig, plant-seed, watering-can, harvest, fishing-cast, fish-bite), **sci-fi & tech**
+  (computer-beep, scan, access-granted, access-denied, door-slide, robot-chatter, shutdown, glitch) and **puzzle** (swap,
+  match, combo-chain, line-clear, piece-lock, merge).
+- 44 more in existing categories: melee (kick, stab, sword-clash, sword-draw, body-fall), destructibles (crate-break,
+  pot-break, metal-clang, rock-crumble, ignite), guns (machine-gun, shell-casing, flamethrower, grenade-launch), app UI
+  (drag-start, drop, success, maximize, minimize, question, message-send, trash, page-turn), RPG items (potion-drink, eat,
+  loot-rare, equip), weather and water (thunder-crack, ocean-wave, rain-burst, dive-splash), animals (zombie-groan, roar,
+  dog-bark, cat-meow), quiz (buzzer-wrong, ding-correct, timer-done), highscore, boss-intro, slide, fall-whistle,
+  step-carpet, step-mud.
+- Everything bundle: 22.4 kB gzip (player alone still 2.9 kB).
+
 - CLI: `plinkfx mcp`, an MCP server on stdio with five tools: `list_sounds`, `show_sound`, `render_sound`,
   `measure_sound` and `check_sound`. No dependencies, no network.
 - CLI: `plinkfx check <sounds|file.wav> | --all [--json]` looks for clicks at the edges, cut tails, DC offset,

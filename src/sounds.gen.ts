@@ -48,6 +48,24 @@ export const selectSoft: Sound = {"layers":[{"wave":"sine","freq":1175,"fm":[2,0
 export const message: Sound = {"verb":[0.2,0.1],"layers":[{"wave":"sine","freq":880,"arp":[0,5,12],"arpRate":0.055,"a":0.003,"d":0.2,"shape":2,"vib":[7,0.1]}],"gain":0.43};
 /** The plinkfx signature: one drop of sound */
 export const plink: Sound = {"verb":[0.35,0.22],"vary":0.3,"layers":[{"wave":"sine","freq":1050,"to":2150,"curve":4,"sweep":0.05,"a":0.001,"d":0.32,"shape":3},{"wave":"sine","freq":3150,"fm":[1.41,1.2,0.04],"a":0.001,"d":0.12,"shape":4,"gain":0.25},{"wave":"triangle","freq":525,"to":1075,"curve":4,"sweep":0.05,"a":0.001,"d":0.15,"shape":3,"gain":0.25}],"gain":0.281};
+/** Pick up a draggable item: soft lift */
+export const dragStart: Sound = {"vary":0.6,"varyF":1,"layers":[{"wave":"sine","freq":500,"to":800,"a":0.002,"d":0.08,"shape":-4},{"wave":"noise","bp":3000,"q":3,"a":0.001,"d":0.004,"shape":-6,"gain":0.4}],"gain":0.882};
+/** Drop it into a slot: soft settle */
+export const drop: Sound = {"vary":0.6,"varyF":1,"layers":[{"wave":"sine","freq":700,"to":380,"a":0.002,"d":0.1,"shape":-4},{"wave":"noise","bp":2200,"q":3,"a":0.001,"d":0.005,"shape":-6,"gain":0.5},{"wave":"pink","lp":600,"a":0.001,"d":0.04,"shape":-5,"gain":0.3}],"gain":0.826};
+/** Task done: clean rising check-mark chime */
+export const success: Sound = {"vary":0.1,"verb":[0.25,0.15],"layers":[{"wave":"sine","freq":1047,"fm":[2,0.8,0.06],"arp":[0,7],"arpRate":0.08,"a":0.002,"h":0.06,"d":0.35,"shape":-4},{"wave":"triangle","freq":523,"arp":[0,7],"arpRate":0.08,"a":0.002,"h":0.06,"d":0.25,"shape":-4,"gain":0.3}],"gain":0.204};
+/** Window or card expands: rising whoosh-blip */
+export const maximize: Sound = {"vary":0.4,"varyF":1,"layers":[{"wave":"sine","freq":400,"to":900,"curve":0.8,"a":0.01,"d":0.1,"shape":-3,"gain":0.6},{"wave":"noise","bp":1500,"bpTo":4000,"q":1.5,"a":0.03,"d":0.07,"shape":-3,"gain":0.25}],"gain":1.15};
+/** Window or card collapses: falling whoosh-blip */
+export const minimize: Sound = {"vary":0.4,"varyF":1,"layers":[{"wave":"sine","freq":900,"to":400,"curve":2,"a":0.005,"d":0.1,"shape":-3,"gain":0.6},{"wave":"noise","bp":4000,"bpTo":1500,"q":1.5,"a":0.01,"d":0.08,"shape":-3,"gain":0.25}],"gain":1.17};
+/** Dialog asks something: curious upward lilt */
+export const question: Sound = {"vary":0.1,"verb":[0.2,0.12],"layers":[{"wave":"triangle","freq":660,"arp":[0,-3,5],"arpRate":0.08,"a":0.002,"h":0.12,"d":0.15,"shape":-3},{"wave":"sine","freq":1320,"arp":[0,-3,5],"arpRate":0.08,"a":0.002,"h":0.12,"d":0.12,"shape":-3,"gain":0.25}],"gain":0.277};
+/** Message sent: quick upward swoosh */
+export const messageSend: Sound = {"vary":0.3,"varyF":1,"layers":[{"wave":"noise","bp":1200,"bpTo":6000,"q":1.5,"a":0.05,"d":0.08,"shape":-3,"gain":0.5},{"wave":"sine","freq":600,"to":1500,"curve":1.5,"a":0.01,"d":0.1,"shape":-3,"gain":0.5}],"gain":1.26};
+/** Delete / move to trash: crumple and drop */
+export const trash: Sound = {"vary":0.5,"varyF":2,"layers":[{"wave":"noise","bp":2500,"q":1.5,"at":0,"a":0.001,"d":0.025,"shape":-5,"gain":0.6},{"wave":"noise","bp":2900,"q":1.5,"at":0.025,"a":0.001,"d":0.025,"shape":-5,"gain":0.6},{"wave":"noise","bp":3300,"q":1.5,"at":0.045,"a":0.001,"d":0.025,"shape":-5,"gain":0.6},{"wave":"noise","bp":3700,"q":1.5,"at":0.08,"a":0.001,"d":0.025,"shape":-5,"gain":0.6},{"wave":"noise","bp":4100,"q":1.5,"at":0.1,"a":0.001,"d":0.025,"shape":-5,"gain":0.6},{"wave":"sine","freq":500,"to":150,"curve":2,"at":0.12,"a":0.002,"d":0.1,"shape":-4,"gain":0.5},{"wave":"pink","lp":800,"at":0.2,"a":0.001,"d":0.05,"shape":-5,"gain":0.4}],"gain":1.49};
+/** Turn a book or tutorial page */
+export const pageTurn: Sound = {"vary":0.6,"varyF":3,"varyG":1.5,"layers":[{"wave":"noise","bp":2000,"bpTo":5000,"q":0.9,"a":0.08,"d":0.12,"shape":-3,"gain":0.6},{"wave":"pink","bp":1200,"q":1,"a":0.06,"d":0.1,"shape":-3,"gain":0.3},{"wave":"noise","bp":3500,"q":2,"at":0.2,"a":0.001,"d":0.02,"shape":-5,"gain":0.4}],"gain":1.46};
 /** The classic two-note coin, with a little shimmer */
 export const coin: Sound = {"verb":[0.2,0.12],"layers":[{"wave":"square","duty":0.25,"freq":988,"arp":[0,5],"arpRate":0.07,"a":0.001,"h":0.05,"d":0.3,"shape":2.5,"lp":7000},{"wave":"sine","freq":1976,"arp":[0,5],"arpRate":0.07,"a":0.001,"d":0.22,"shape":3,"gain":0.5}],"gain":0.272};
 /** Rounder coin for cosy games */
@@ -78,6 +96,14 @@ export const xpOrb: Sound = {"vary":2,"echo":[0.07,0.3,0.25],"layers":[{"wave":"
 export const star: Sound = {"echo":[0.09,0.35,0.3],"layers":[{"wave":"triangle","freq":1047,"arp":[0,4,7,12,16,19,24],"arpRate":0.03,"a":0.001,"h":0.18,"d":0.2,"shape":2},{"wave":"sine","freq":2093,"arp":[0,4,7,12,16,19,24],"arpRate":0.03,"a":0.001,"h":0.18,"d":0.15,"gain":0.3}],"gain":0.25};
 /** Fast ring pickup, two-note bright chime */
 export const ring: Sound = {"verb":[0.3,0.2],"layers":[{"wave":"square","duty":0.5,"freq":1568,"arp":[0,4],"arpRate":0.045,"a":0.001,"h":0.04,"d":0.4,"shape":3,"lp":6000,"gain":0.6},{"wave":"sine","freq":3136,"arp":[0,4],"arpRate":0.045,"fm":[1.5,0.7,0.1],"a":0.001,"d":0.45,"shape":3,"gain":0.7}],"gain":0.313};
+/** Drink a potion: three glugs and a sigh of sparkle */
+export const potionDrink: Sound = {"vary":0.6,"layers":[{"wave":"sine","freq":260,"to":520,"curve":3,"vib":[30,1],"at":0,"a":0.005,"d":0.09,"shape":-3,"lp":1200,"gain":0.8},{"wave":"sine","freq":240,"to":520,"curve":3,"vib":[30,1],"at":0.14,"a":0.005,"d":0.09,"shape":-3,"lp":1200,"gain":0.8},{"wave":"sine","freq":220,"to":520,"curve":3,"vib":[30,1],"at":0.28,"a":0.005,"d":0.09,"shape":-3,"lp":1200,"gain":0.8},{"wave":"noise","lp":1000,"a":0.01,"h":0.35,"d":0.1,"gain":0.08},{"wave":"sine","freq":2093,"fm":[3.5,1.5,0.1],"arp":[0,4,7],"arpRate":0.05,"at":0.42,"a":0.002,"d":0.3,"shape":-4,"gain":0.25}],"gain":0.904};
+/** Eat food: two crunchy bites */
+export const eat: Sound = {"vary":0.8,"varyF":2,"varyG":2,"layers":[{"wave":"crunch","freq":5000,"bp":2500,"q":0.8,"at":0,"a":0.002,"d":0.08,"shape":-3,"drive":1},{"wave":"pink","lp":900,"at":0,"a":0.002,"d":0.06,"shape":-4,"gain":0.5},{"wave":"noise","bp":3500,"q":2,"at":0.02,"a":0.001,"d":0.01,"shape":-5,"gain":0.4},{"wave":"noise","bp":3500,"q":2,"at":0.045,"a":0.001,"d":0.01,"shape":-5,"gain":0.4},{"wave":"crunch","freq":5000,"bp":2500,"q":0.8,"at":0.18,"a":0.002,"d":0.08,"shape":-3,"drive":1},{"wave":"pink","lp":900,"at":0.18,"a":0.002,"d":0.06,"shape":-4,"gain":0.5},{"wave":"noise","bp":3500,"q":2,"at":0.19999999999999998,"a":0.001,"d":0.01,"shape":-5,"gain":0.4},{"wave":"noise","bp":3500,"q":2,"at":0.22499999999999998,"a":0.001,"d":0.01,"shape":-5,"gain":0.4}],"limit":1,"gain":0.789};
+/** Rare loot drops: shimmering beam and a chord */
+export const lootRare: Sound = {"vary":0.05,"verb":[0.5,0.25],"echo":[0.1,0.3,0.2],"layers":[{"wave":"saw","freq":220,"to":880,"curve":0.8,"bp":1000,"bpTo":5000,"q":4,"a":0.2,"d":0.2,"shape":-3,"gain":0.3},{"wave":"sine","freq":1319,"fm":[3.5,1.6,0.15],"at":0.25,"a":0.002,"h":0.1,"d":0.8,"shape":-3},{"wave":"sine","freq":1661,"fm":[3.5,1.6,0.15],"at":0.25,"a":0.002,"h":0.1,"d":0.8,"shape":-3,"gain":0.7},{"wave":"sine","freq":1976,"fm":[3.5,1.6,0.15],"at":0.25,"a":0.002,"h":0.1,"d":0.8,"shape":-3,"gain":0.6},{"wave":"metal","freq":4000,"hp":7000,"at":0.25,"a":0.01,"d":0.6,"shape":-3,"gain":0.1}],"gain":0.164};
+/** Equip gear: leather and buckle */
+export const equip: Sound = {"vary":0.6,"varyF":2,"varyG":1.5,"layers":[{"wave":"pink","bp":1800,"q":1,"a":0.02,"d":0.08,"shape":-3,"gain":0.5},{"wave":"metal","freq":1100,"hp":2500,"at":0.08,"a":0.001,"d":0.06,"shape":-5,"gain":0.5},{"wave":"metal","freq":1350,"hp":2500,"at":0.13,"a":0.001,"d":0.08,"shape":-5,"gain":0.4},{"wave":"noise","bp":900,"q":1.5,"at":0.08,"a":0.001,"d":0.03,"shape":-5,"gain":0.4}],"limit":1,"gain":2.36};
 /** Platformer jump: square sweep up */
 export const jump: Sound = {"layers":[{"wave":"square","duty":0.5,"freq":250,"to":640,"curve":1.5,"a":0.002,"h":0.03,"d":0.15,"shape":2,"lp":3500},{"wave":"sine","freq":125,"to":320,"curve":1.5,"a":0.002,"d":0.14,"gain":0.5}],"gain":0.426};
 /** Gentle hop for cute characters */
@@ -98,6 +124,10 @@ export const landHeavy: Sound = {"layers":[{"wave":"sine","freq":90,"to":34,"cur
 export const spring: Sound = {"layers":[{"wave":"triangle","freq":160,"to":460,"vib":[22,2.5],"a":0.002,"h":0.05,"d":0.4,"shape":1.8},{"wave":"sine","freq":80,"to":230,"vib":[22,2.5],"a":0.002,"d":0.3,"gain":0.4}],"gain":0.502};
 /** Push off a wall: scuff then rise */
 export const wallJump: Sound = {"layers":[{"wave":"noise","bp":1200,"q":1.5,"a":0.001,"d":0.04,"shape":2,"gain":0.7},{"wave":"square","duty":0.3,"freq":330,"to":780,"curve":2,"at":0.02,"a":0.002,"d":0.12,"shape":2,"lp":3500}],"gain":0.688};
+/** Slide along the ground */
+export const slide: Sound = {"vary":0.5,"varyF":1.5,"varyG":1,"layers":[{"wave":"noise","bp":1800,"bpTo":1000,"q":1,"a":0.02,"h":0.2,"d":0.15,"shape":-3,"drive":0.5},{"wave":"brown","lp":400,"a":0.02,"h":0.2,"d":0.15,"gain":0.4}],"gain":0.606};
+/** Cartoon falling whistle */
+export const fallWhistle: Sound = {"vary":0.3,"layers":[{"wave":"sine","freq":2000,"to":500,"curve":0.7,"vib":[6,0.3],"a":0.02,"h":0.8,"d":0.1,"shape":1.5,"gain":0.7},{"wave":"noise","bp":2000,"bpTo":500,"q":8,"kt":0,"a":0.02,"h":0.8,"d":0.1,"gain":0.1}],"gain":0.271};
 /** Solid all-round hit: click, body, thump */
 export const hit: Sound = {"varyF":2,"varyG":1.5,"verb":[0.15,0.08],"layers":[{"wave":"noise","bp":1800,"a":0.001,"d":0.01,"shape":-5,"gain":0.8},{"wave":"pink","lp":1500,"lpTo":300,"at":0.002,"a":0.001,"d":0.09,"shape":-6,"drive":2},{"wave":"sine","freq":160,"to":70,"at":0.003,"a":0.001,"d":0.22,"shape":-5,"drive":1,"gain":0.8},{"wave":"brown","lp":250,"at":0.01,"a":0.002,"d":0.35,"shape":-5,"gain":0.25}],"limit":1,"gain":0.777};
 /** Light jab or tap */
@@ -128,6 +158,16 @@ export const bonk: Sound = {"layers":[{"wave":"sine","freq":920,"to":330,"curve"
 export const stomp: Sound = {"layers":[{"wave":"sine","freq":520,"to":140,"curve":2,"a":0.001,"d":0.08,"shape":2.5,"drive":1},{"wave":"pink","lp":1600,"lpTo":400,"a":0.001,"d":0.06,"shape":3,"drive":1.5,"gain":0.7},{"wave":"square","duty":0.25,"freq":440,"to":1100,"curve":2,"at":0.05,"a":0.002,"d":0.09,"shape":2,"lp":4000,"gain":0.35}],"limit":1,"gain":0.87};
 /** Arrow thunks into wood */
 export const arrowHit: Sound = {"varyF":2,"varyG":1,"layers":[{"wave":"noise","bp":1800,"q":2,"a":0.001,"d":0.008,"shape":-5,"drive":2},{"wave":"modal","freq":210,"modes":[1,2.32,4.25,6.63],"at":0.002,"a":0.001,"d":0.18,"shape":-5},{"wave":"triangle","freq":420,"vib":[45,0.8],"a":0.001,"d":0.15,"shape":-4,"gain":0.2},{"wave":"brown","lp":300,"a":0.002,"d":0.12,"shape":-5,"gain":0.3}],"limit":1,"gain":0.881};
+/** Kick: low thump with a cloth snap */
+export const kick: Sound = {"varyF":2,"varyG":1.5,"layers":[{"wave":"noise","bp":2500,"bpTo":1200,"q":1.2,"a":0.035,"d":0.02,"shape":1,"gain":0.4},{"wave":"noise","bp":3200,"q":2,"at":0.04,"a":0.001,"d":0.01,"shape":-6,"gain":0.3},{"wave":"pink","lp":1000,"lpTo":300,"at":0.04,"a":0.001,"d":0.09,"shape":-6,"drive":2},{"wave":"sine","freq":160,"to":70,"at":0.04,"a":0.001,"d":0.16,"shape":-5,"drive":1},{"wave":"brown","lp":250,"at":0.045,"a":0.002,"d":0.22,"shape":-5,"gain":0.3}],"limit":1,"gain":0.677};
+/** Blade stab into flesh: short wet thrust */
+export const stab: Sound = {"vary":0.8,"varyF":2,"varyG":1.5,"layers":[{"wave":"noise","bp":3500,"q":2,"a":0.001,"d":0.015,"shape":-5,"gain":0.6},{"wave":"noise","lp":1500,"lpTo":400,"q":3,"a":0.002,"d":0.14,"shape":-4,"drive":1.5},{"wave":"sine","freq":180,"to":90,"a":0.001,"d":0.1,"shape":-5,"gain":0.5}],"limit":1,"gain":0.911};
+/** Two blades clash and ring */
+export const swordClash: Sound = {"vary":0.6,"varyF":1.5,"verb":[0.35,0.2],"layers":[{"wave":"noise","hp":2500,"a":0.001,"d":0.03,"shape":-5,"drive":1},{"wave":"modal","freq":1450,"modes":[1,2.756,5.404,8.933],"a":0.001,"d":0.8,"shape":-3,"gain":0.6},{"wave":"metal","freq":1100,"hp":3000,"a":0.001,"d":0.5,"shape":-4,"gain":0.6},{"wave":"sine","freq":3300,"fm":[1.41,2,0.15],"vib":[7,0.1],"a":0.001,"d":0.7,"shape":-3,"gain":0.2}],"gain":0.375};
+/** Unsheathe a sword: metallic scrape that rings out */
+export const swordDraw: Sound = {"vary":0.4,"verb":[0.3,0.15],"layers":[{"wave":"noise","bp":4000,"bpTo":6500,"q":4,"a":0.05,"h":0.2,"d":0.1,"shape":-3,"gain":0.7},{"wave":"metal","freq":2200,"hp":4000,"a":0.05,"h":0.2,"d":0.1,"gain":0.25},{"wave":"modal","freq":1700,"modes":[1,2.756,5.404],"at":0.3,"a":0.001,"d":0.7,"shape":-3,"gain":0.4}],"gain":0.865};
+/** Body hits the floor */
+export const bodyFall: Sound = {"varyF":2,"varyG":1.5,"verb":[0.25,0.1],"layers":[{"wave":"pink","lp":900,"a":0.001,"d":0.1,"shape":-5,"drive":1.5},{"wave":"sine","freq":95,"to":40,"a":0.001,"d":0.25,"shape":-4,"drive":1},{"wave":"pink","lp":700,"at":0.13,"a":0.001,"d":0.07,"shape":-5,"gain":0.5},{"wave":"noise","bp":1600,"q":1,"at":0.13,"a":0.001,"d":0.02,"shape":-5,"gain":0.3}],"limit":1,"gain":0.739};
 /** Mid-size explosion: crack, rumble, tail */
 export const explosion: Sound = {"verb":[0.45,0.22],"layers":[{"wave":"noise","hp":1500,"a":0.001,"d":0.06,"shape":3,"gain":0.6},{"wave":"brown","lp":1100,"lpTo":140,"a":0.002,"d":1.1,"shape":2.5,"drive":1.2,"gain":1.4},{"wave":"sine","freq":110,"to":36,"curve":3,"a":0.001,"d":0.5,"shape":2,"drive":1},{"wave":"crunch","freq":3000,"to":300,"a":0.001,"d":0.35,"shape":3,"lp":5000,"gain":0.4}],"gain":0.326};
 /** Small pop of an explosion, grenades, barrels */
@@ -206,6 +246,14 @@ export const dryFire: Sound = {"verb":[0.15,0.1],"layers":[{"wave":"metal","freq
 export const reload: Sound = {"layers":[{"wave":"metal","freq":1100,"bp":3500,"q":2,"a":0.001,"d":0.06,"shape":3,"drive":2},{"wave":"noise","bp":1500,"q":2,"at":0.005,"a":0.001,"d":0.03,"gain":0.4},{"wave":"metal","freq":800,"bp":2400,"q":2,"at":0.22,"a":0.001,"d":0.09,"shape":3,"drive":2},{"wave":"noise","bp":1100,"q":2,"at":0.225,"a":0.001,"d":0.04,"gain":0.5},{"wave":"sine","freq":200,"to":140,"at":0.22,"a":0.001,"d":0.05,"gain":0.4}],"limit":1,"gain":0.816};
 /** Bowstring released */
 export const bowTwang: Sound = {"vary":1,"varyF":2,"layers":[{"wave":"pluck","freq":98,"a":0.001,"d":0.45,"shape":-3,"damp":0.994,"blend":0.46,"lp":2200},{"wave":"noise","bp":1500,"a":0.001,"d":0.012,"shape":-5,"gain":0.5},{"wave":"noise","bp":900,"bpTo":2600,"q":2,"at":0.02,"a":0.03,"d":0.12,"shape":-3,"gain":0.25}],"limit":1,"gain":2.14};
+/** Automatic burst, five rounds */
+export const machineGun: Sound = {"vary":0.3,"varyF":1.5,"verb":[0.3,0.12],"layers":[{"wave":"noise","hp":300,"lp":6000,"lpTo":1500,"at":0,"a":0.001,"d":0.05,"shape":-5,"drive":2,"gain":0.9},{"wave":"sine","freq":150,"to":60,"at":0,"a":0.001,"d":0.06,"shape":-5,"drive":1.5,"gain":0.7},{"wave":"brown","lp":600,"at":0,"a":0.001,"d":0.08,"shape":-4,"gain":0.4},{"wave":"noise","hp":300,"lp":6000,"lpTo":1500,"at":0.075,"a":0.001,"d":0.05,"shape":-5,"drive":2,"gain":0.8},{"wave":"sine","freq":150,"to":60,"at":0.075,"a":0.001,"d":0.06,"shape":-5,"drive":1.5,"gain":0.7},{"wave":"brown","lp":600,"at":0.075,"a":0.001,"d":0.08,"shape":-4,"gain":0.4},{"wave":"noise","hp":300,"lp":6000,"lpTo":1500,"at":0.15,"a":0.001,"d":0.05,"shape":-5,"drive":2,"gain":0.9},{"wave":"sine","freq":150,"to":60,"at":0.15,"a":0.001,"d":0.06,"shape":-5,"drive":1.5,"gain":0.7},{"wave":"brown","lp":600,"at":0.15,"a":0.001,"d":0.08,"shape":-4,"gain":0.4},{"wave":"noise","hp":300,"lp":6000,"lpTo":1500,"at":0.225,"a":0.001,"d":0.05,"shape":-5,"drive":2,"gain":0.8},{"wave":"sine","freq":150,"to":60,"at":0.225,"a":0.001,"d":0.06,"shape":-5,"drive":1.5,"gain":0.7},{"wave":"brown","lp":600,"at":0.225,"a":0.001,"d":0.08,"shape":-4,"gain":0.4},{"wave":"noise","hp":300,"lp":6000,"lpTo":1500,"at":0.3,"a":0.001,"d":0.05,"shape":-5,"drive":2,"gain":0.9},{"wave":"sine","freq":150,"to":60,"at":0.3,"a":0.001,"d":0.06,"shape":-5,"drive":1.5,"gain":0.7},{"wave":"brown","lp":600,"at":0.3,"a":0.001,"d":0.08,"shape":-4,"gain":0.4}],"gain":0.534};
+/** Brass shell casings tinkle on the floor */
+export const shellCasing: Sound = {"vary":1,"varyF":2,"varyG":2,"layers":[{"wave":"modal","freq":3200,"modes":[1,2.756,5.404],"at":0,"a":0.001,"d":0.12,"shape":-5,"gain":1},{"wave":"modal","freq":3450,"modes":[1,2.756,5.404],"at":0.08,"a":0.001,"d":0.12,"shape":-5,"gain":0.7},{"wave":"modal","freq":3700,"modes":[1,2.756,5.404],"at":0.13,"a":0.001,"d":0.12,"shape":-5,"gain":0.4}],"gain":0.527};
+/** Flamethrower burst: roaring hiss */
+export const flamethrower: Sound = {"vary":0.3,"varyF":2,"layers":[{"wave":"noise","bp":1200,"q":0.7,"a":0.05,"h":0.5,"d":0.3,"shape":-3,"drive":1.5},{"wave":"brown","lp":500,"a":0.05,"h":0.5,"d":0.3,"shape":-3,"drive":1,"gain":0.8},{"wave":"noise","bp":3000,"q":2,"at":0.06,"a":0.001,"d":0.01,"shape":-5,"gain":0.3},{"wave":"noise","bp":3000,"q":2,"at":0.15,"a":0.001,"d":0.01,"shape":-5,"gain":0.3},{"wave":"noise","bp":3000,"q":2,"at":0.24,"a":0.001,"d":0.01,"shape":-5,"gain":0.3},{"wave":"noise","bp":3000,"q":2,"at":0.33,"a":0.001,"d":0.01,"shape":-5,"gain":0.3},{"wave":"noise","bp":3000,"q":2,"at":0.42,"a":0.001,"d":0.01,"shape":-5,"gain":0.3},{"wave":"noise","bp":3000,"q":2,"at":0.51,"a":0.001,"d":0.01,"shape":-5,"gain":0.3},{"wave":"noise","bp":3000,"q":2,"at":0.6000000000000001,"a":0.001,"d":0.01,"shape":-5,"gain":0.3},{"wave":"noise","bp":3000,"q":2,"at":0.69,"a":0.001,"d":0.01,"shape":-5,"gain":0.3}],"gain":0.289};
+/** Grenade launcher: hollow thoomp */
+export const grenadeLaunch: Sound = {"vary":0.5,"varyF":1.5,"verb":[0.3,0.12],"layers":[{"wave":"sine","freq":220,"to":70,"curve":2,"a":0.001,"d":0.2,"shape":-4,"drive":1.5},{"wave":"noise","bp":700,"q":2,"a":0.001,"d":0.08,"shape":-5,"drive":1},{"wave":"noise","bp":2500,"bpTo":1000,"q":1.5,"at":0.04,"a":0.01,"d":0.25,"shape":-3,"gain":0.3}],"gain":0.601};
 /** Soft step on grass */
 export const stepGrass: Sound = {"vary":1.5,"varyF":4,"varyG":2,"layers":[{"wave":"pink","lp":450,"lpTo":225,"a":0.001,"d":0.08,"shape":-6,"drive":0.5,"gain":0.8},{"wave":"pink","bp":1100,"q":0.8,"a":0.008,"d":0.14,"shape":-4,"gain":0.55},{"wave":"pink","hp":2000,"lp":5000,"at":0.01,"a":0.01,"d":0.12,"shape":-4,"gain":0.25},{"wave":"crunch","freq":7000,"hp":3000,"at":0.012,"a":0.01,"d":0.08,"shape":-4,"gain":0.1},{"wave":"brown","lp":220,"a":0.002,"d":0.24,"shape":-4,"gain":0.3}],"limit":1,"gain":2.3};
 /** Hard sole on stone */
@@ -226,6 +274,10 @@ export const stepSand: Sound = {"vary":1.5,"varyF":4,"varyG":2,"layers":[{"wave"
 export const stepRetro: Sound = {"vary":2,"bits":4,"layers":[{"wave":"crunch","freq":4000,"a":0.001,"d":0.035,"shape":2}],"gain":0.793};
 /** Heavy creature stomp */
 export const stepHeavy: Sound = {"vary":1,"varyF":3,"varyG":1.5,"verb":[0.2,0.12],"layers":[{"wave":"sine","freq":90,"to":45,"a":0.002,"d":0.25,"shape":-5,"drive":1},{"wave":"pink","lp":400,"lpTo":200,"a":0.001,"d":0.15,"shape":-6,"drive":0.5,"gain":1},{"wave":"noise","bp":900,"a":0.001,"d":0.04,"shape":-5,"gain":0.3},{"wave":"brown","lp":220,"a":0.002,"d":0.24,"shape":-4,"gain":0.35}],"gain":0.465};
+/** Muffled step on carpet or rug */
+export const stepCarpet: Sound = {"vary":1.5,"varyF":4,"varyG":2,"layers":[{"wave":"pink","lp":400,"lpTo":200,"a":0.004,"d":0.08,"shape":-6},{"wave":"noise","bp":1200,"q":1,"a":0.004,"d":0.04,"shape":-5,"gain":0.25},{"wave":"brown","lp":200,"a":0.004,"d":0.15,"shape":-4,"gain":0.3}],"limit":1,"gain":2.12};
+/** Squelchy step in mud */
+export const stepMud: Sound = {"vary":1.5,"varyF":2,"varyG":1.5,"layers":[{"wave":"pink","lp":500,"a":0.003,"d":0.08,"shape":-6},{"wave":"noise","lp":1200,"lpTo":300,"q":4,"a":0.01,"d":0.15,"shape":-3,"drive":1,"gain":0.6},{"wave":"sine","freq":220,"to":120,"vib":[28,2],"at":0.04,"a":0.005,"d":0.1,"shape":-3,"gain":0.3}],"gain":1.05};
 /** Twinkling sparkle */
 export const sparkle: Sound = {"echo":[0.11,0.4,0.35],"layers":[{"wave":"sine","freq":2637,"arp":[0,7,12,19,24,19],"arpRate":0.035,"a":0.001,"h":0.18,"d":0.15,"shape":2,"fm":[3.5,0.8,0.1]},{"wave":"metal","freq":2500,"hp":7000,"a":0.01,"h":0.15,"d":0.15,"gain":0.12}],"gain":0.205};
 /** Generic spell: swell and release */
@@ -272,6 +324,12 @@ export const siren: Sound = {"vary":0.1,"layers":[{"wave":"saw","freq":700,"vib"
 export const radarPing: Sound = {"vary":0.1,"echo":[0.32,0.4,0.35],"verb":[0.4,0.2],"layers":[{"wave":"sine","freq":1500,"a":0.002,"d":0.35,"shape":3}],"gain":0.391};
 /** New quest or objective */
 export const questNew: Sound = {"verb":[0.45,0.25],"layers":[{"wave":"triangle","freq":587,"arp":[0,5,7],"arpRate":0.11,"a":0.003,"h":0.3,"d":0.3,"shape":2},{"wave":"sine","freq":1175,"fm":[2,0.7,0.2],"arp":[0,5,7],"arpRate":0.11,"a":0.003,"h":0.3,"d":0.3,"gain":0.35}],"gain":0.195};
+/** Quiz-show wrong-answer buzzer */
+export const buzzerWrong: Sound = {"vary":0.05,"layers":[{"wave":"saw","freq":110,"a":0.005,"h":0.45,"d":0.08,"shape":1,"lp":2000,"drive":1.5},{"wave":"square","freq":111.5,"a":0.005,"h":0.45,"d":0.08,"shape":1,"lp":1200,"gain":0.6}],"gain":0.133};
+/** Quiz-show correct-answer ding-ding */
+export const dingCorrect: Sound = {"vary":0.05,"verb":[0.3,0.18],"layers":[{"wave":"sine","freq":1760,"fm":[3.5,1.4,0.1],"at":0,"a":0.002,"d":0.5,"shape":-4},{"wave":"sine","freq":1760,"fm":[3.5,1.4,0.1],"at":0.16,"a":0.002,"d":0.5,"shape":-4}],"gain":0.216};
+/** Kitchen timer done: rapid bell trill */
+export const timerDone: Sound = {"vary":0.05,"layers":[{"wave":"metal","freq":2600,"bp":3500,"q":2,"at":0,"a":0.001,"d":0.045,"shape":-4,"gain":0.6},{"wave":"metal","freq":2600,"bp":3500,"q":2,"at":0.05,"a":0.001,"d":0.045,"shape":-4,"gain":0.6},{"wave":"metal","freq":2600,"bp":3500,"q":2,"at":0.1,"a":0.001,"d":0.045,"shape":-4,"gain":0.6},{"wave":"metal","freq":2600,"bp":3500,"q":2,"at":0.15000000000000002,"a":0.001,"d":0.045,"shape":-4,"gain":0.6},{"wave":"metal","freq":2600,"bp":3500,"q":2,"at":0.2,"a":0.001,"d":0.045,"shape":-4,"gain":0.6},{"wave":"metal","freq":2600,"bp":3500,"q":2,"at":0.25,"a":0.001,"d":0.045,"shape":-4,"gain":0.6},{"wave":"metal","freq":2600,"bp":3500,"q":2,"at":0.30000000000000004,"a":0.001,"d":0.045,"shape":-4,"gain":0.6},{"wave":"metal","freq":2600,"bp":3500,"q":2,"at":0.35000000000000003,"a":0.001,"d":0.045,"shape":-4,"gain":0.6},{"wave":"metal","freq":2600,"bp":3500,"q":2,"at":0.4,"a":0.001,"d":0.045,"shape":-4,"gain":0.6},{"wave":"metal","freq":2600,"bp":3500,"q":2,"at":0.45,"a":0.001,"d":0.045,"shape":-4,"gain":0.6},{"wave":"sine","freq":3500,"a":0.002,"h":0.45,"d":0.1,"gain":0.15}],"gain":0.761};
 /** Victory fanfare */
 export const victory: Sound = {"vary":0.05,"verb":[0.45,0.2],"layers":[{"wave":"square","duty":0.5,"freq":523,"arp":[0,0,0,4,7,7,12,12],"arpRate":0.1,"a":0.003,"h":0.75,"d":0.35,"shape":2,"lp":4000},{"wave":"triangle","freq":262,"arp":[0,0,0,4,7,7,12,12],"arpRate":0.1,"a":0.003,"h":0.75,"d":0.35,"gain":0.6}],"gain":0.104};
 /** Level complete: rising run and a held chord */
@@ -290,6 +348,10 @@ export const puzzleSolved: Sound = {"vary":0.05,"verb":[0.45,0.22],"layers":[{"w
 export const checkpoint: Sound = {"vary":0.05,"verb":[0.4,0.2],"layers":[{"wave":"sine","freq":784,"fm":[4,1.5,0.03],"at":0,"a":0.001,"d":0.25,"shape":3,"gain":0.8},{"wave":"sine","freq":1047,"fm":[4,1.5,0.03],"at":0.07,"a":0.001,"d":0.25,"shape":3,"gain":0.8},{"wave":"sine","freq":1319,"fm":[4,1.5,0.03],"at":0.14,"a":0.001,"d":0.25,"shape":3,"gain":0.8},{"wave":"sine","freq":1568,"fm":[3.5,1.2,0.15],"at":0.21,"a":0.002,"d":0.9,"shape":2.5},{"wave":"triangle","freq":523,"at":0.21,"a":0.003,"h":0.1,"d":0.5,"gain":0.35}],"gain":0.244};
 /** Round start stinger */
 export const roundStart: Sound = {"vary":0.05,"layers":[{"wave":"square","duty":0.5,"freq":440,"arp":[0,0,12],"arpRate":0.12,"a":0.003,"h":0.3,"d":0.2,"shape":2,"lp":3500},{"wave":"sine","freq":110,"arp":[0,0,12],"arpRate":0.12,"a":0.003,"h":0.3,"d":0.2,"gain":0.6}],"gain":0.151};
+/** New high score: excited climbing fanfare */
+export const highscore: Sound = {"vary":0.05,"verb":[0.35,0.2],"layers":[{"wave":"square","duty":0.25,"freq":523,"arp":[0,4,7,12,7,12,16,19,24],"arpRate":0.08,"a":0.002,"h":0.75,"d":0.4,"shape":2,"lp":5000,"gain":0.6},{"wave":"triangle","freq":262,"arp":[0,0,7,7,5,5,7,7,12],"arpRate":0.08,"a":0.002,"h":0.75,"d":0.4,"shape":2}],"gain":0.165};
+/** Boss appears: ominous low brass hits */
+export const bossIntro: Sound = {"vary":0.05,"verb":[0.7,0.3],"layers":[{"wave":"saw","freq":73.4,"lp":1200,"lpTo":400,"at":0,"a":0.01,"h":0.15,"d":0.3,"shape":-3,"drive":1.5},{"wave":"saw","freq":110,"lp":1500,"lpTo":500,"at":0,"a":0.01,"h":0.15,"d":0.3,"shape":-3,"gain":0.6},{"wave":"brown","lp":200,"at":0,"a":0.001,"d":0.4,"shape":-4,"gain":0.6},{"wave":"saw","freq":69.3,"lp":1200,"lpTo":400,"at":0.35,"a":0.01,"h":0.15,"d":0.3,"shape":-3,"drive":1.5},{"wave":"saw","freq":103.8,"lp":1500,"lpTo":500,"at":0.35,"a":0.01,"h":0.15,"d":0.3,"shape":-3,"gain":0.6},{"wave":"brown","lp":200,"at":0.35,"a":0.001,"d":0.4,"shape":-4,"gain":0.6},{"wave":"saw","freq":65.4,"lp":1200,"lpTo":400,"at":0.7,"a":0.01,"h":0.4,"d":0.3,"shape":-3,"drive":1.5},{"wave":"saw","freq":98,"lp":1500,"lpTo":500,"at":0.7,"a":0.01,"h":0.4,"d":0.3,"shape":-3,"gain":0.6},{"wave":"brown","lp":200,"at":0.7,"a":0.001,"d":0.4,"shape":-4,"gain":0.6}],"gain":0.146};
 /** Creaky wooden door opening */
 export const doorOpen: Sound = {"verb":[0.4,0.2],"layers":[{"wave":"metal","freq":1100,"bp":3000,"q":2,"a":0.001,"d":0.03,"shape":3,"gain":0.25},{"wave":"noise","bp":1500,"q":1.5,"a":0.001,"d":0.012,"drive":1,"gain":0.2},{"wave":"saw","freq":38,"to":62,"vib":[3.5,2.5],"bp":1100,"q":5,"a":0.08,"h":0.4,"d":0.3,"shape":1.5},{"wave":"saw","freq":52,"to":44,"vib":[5,2],"bp":1900,"q":6,"a":0.1,"h":0.35,"d":0.3,"shape":1.5,"gain":0.5}],"limit":1,"gain":2.33};
 /** Door shuts with a thud */
@@ -332,6 +394,16 @@ export const thud: Sound = {"layers":[{"wave":"sine","freq":110,"to":45,"a":0.00
 export const toss: Sound = {"vary":1,"varyF":3,"varyG":1.5,"layers":[{"wave":"noise","bp":500,"bpTo":1400,"q":1.5,"a":0.06,"d":0.03,"shape":1,"drive":1},{"wave":"noise","bp":1400,"bpTo":500,"q":1.5,"at":0.06,"a":0.01,"d":0.25,"shape":-4,"drive":1}],"limit":1,"gain":1.23};
 /** Campfire crackle */
 export const fireCrackle: Sound = {"layers":[{"wave":"brown","lp":800,"a":0.1,"h":0.6,"d":0.3,"gain":0.5},{"wave":"noise","bp":2500,"q":2,"at":0.05,"a":0.001,"d":0.012,"shape":2,"gain":0.8},{"wave":"noise","bp":2800,"q":2,"at":0.13,"a":0.001,"d":0.012,"shape":2,"gain":0.8},{"wave":"noise","bp":3100,"q":2,"at":0.17,"a":0.001,"d":0.012,"shape":2,"gain":0.8},{"wave":"noise","bp":3400,"q":2,"at":0.3,"a":0.001,"d":0.012,"shape":2,"gain":0.8},{"wave":"noise","bp":3700,"q":2,"at":0.42,"a":0.001,"d":0.012,"shape":2,"gain":0.8},{"wave":"noise","bp":4000,"q":2,"at":0.48,"a":0.001,"d":0.012,"shape":2,"gain":0.8},{"wave":"noise","bp":4300,"q":2,"at":0.61,"a":0.001,"d":0.012,"shape":2,"gain":0.8},{"wave":"noise","bp":4600,"q":2,"at":0.74,"a":0.001,"d":0.012,"shape":2,"gain":0.8},{"wave":"noise","bp":4900,"q":2,"at":0.8,"a":0.001,"d":0.012,"shape":2,"gain":0.8}],"limit":1,"gain":1.76};
+/** Wooden crate smashes into planks */
+export const crateBreak: Sound = {"varyF":2,"varyG":1.5,"verb":[0.25,0.12],"layers":[{"wave":"noise","bp":1800,"q":1,"a":0.001,"d":0.02,"shape":-5,"drive":2},{"wave":"modal","freq":240,"modes":[1,2.32,4.25,6.63],"at":0,"a":0.001,"d":0.12,"shape":-5,"gain":1},{"wave":"modal","freq":295,"modes":[1,2.32,4.25,6.63],"at":0.03,"a":0.001,"d":0.12,"shape":-5,"gain":0.85},{"wave":"modal","freq":350,"modes":[1,2.32,4.25,6.63],"at":0.07,"a":0.001,"d":0.12,"shape":-5,"gain":0.7},{"wave":"modal","freq":405,"modes":[1,2.32,4.25,6.63],"at":0.12,"a":0.001,"d":0.12,"shape":-5,"gain":0.55},{"wave":"modal","freq":460,"modes":[1,2.32,4.25,6.63],"at":0.18,"a":0.001,"d":0.12,"shape":-5,"gain":0.4},{"wave":"sine","freq":110,"to":50,"a":0.001,"d":0.15,"shape":-5,"gain":0.6},{"wave":"pink","lp":1500,"a":0.001,"d":0.25,"shape":-4,"gain":0.4}],"limit":1,"gain":0.555};
+/** Clay pot shatters (Zelda pots) */
+export const potBreak: Sound = {"varyF":2,"varyG":1.5,"verb":[0.25,0.12],"layers":[{"wave":"noise","bp":2500,"q":0.8,"a":0.001,"d":0.06,"shape":-4,"drive":1.5},{"wave":"modal","freq":650,"modes":[1,2.1,3.4,5.2],"a":0.001,"d":0.1,"shape":-5},{"wave":"modal","freq":1200,"modes":[1,2.1,3.4],"at":0.04,"a":0.001,"d":0.06,"shape":-5,"gain":0.5},{"wave":"modal","freq":1430,"modes":[1,2.1,3.4],"at":0.08,"a":0.001,"d":0.06,"shape":-5,"gain":0.5},{"wave":"modal","freq":1660,"modes":[1,2.1,3.4],"at":0.13,"a":0.001,"d":0.06,"shape":-5,"gain":0.5},{"wave":"modal","freq":1890,"modes":[1,2.1,3.4],"at":0.19,"a":0.001,"d":0.06,"shape":-5,"gain":0.5}],"limit":1,"gain":0.574};
+/** Metal object or pipe hits the floor */
+export const metalClang: Sound = {"vary":0.8,"varyF":1.5,"varyG":1,"verb":[0.35,0.18],"layers":[{"wave":"noise","bp":3000,"q":1,"a":0.001,"d":0.015,"shape":-5,"gain":0.6},{"wave":"modal","freq":620,"modes":[1,2.756,5.404,8.933],"a":0.001,"d":0.7,"shape":-3},{"wave":"metal","freq":500,"bp":2000,"q":1.5,"a":0.001,"d":0.3,"shape":-4,"gain":0.4},{"wave":"modal","freq":640,"modes":[1,2.756,5.404],"at":0.15,"a":0.001,"d":0.4,"shape":-4,"gain":0.35}],"limit":1,"gain":0.485};
+/** Rocks and rubble crumble down */
+export const rockCrumble: Sound = {"varyF":2,"varyG":1.5,"verb":[0.4,0.18],"layers":[{"wave":"brown","lp":700,"lpTo":200,"a":0.01,"h":0.2,"d":0.6,"shape":-3,"drive":1},{"wave":"modal","freq":300,"modes":[1,2.6,4.9],"at":0,"a":0.001,"d":0.06,"shape":-6,"gain":0.8},{"wave":"modal","freq":473,"modes":[1,2.6,4.9],"at":0.072,"a":0.001,"d":0.06,"shape":-6,"gain":0.75},{"wave":"modal","freq":646,"modes":[1,2.6,4.9],"at":0.144,"a":0.001,"d":0.06,"shape":-6,"gain":0.7000000000000001},{"wave":"modal","freq":319,"modes":[1,2.6,4.9],"at":0.18,"a":0.001,"d":0.06,"shape":-6,"gain":0.65},{"wave":"modal","freq":492,"modes":[1,2.6,4.9],"at":0.252,"a":0.001,"d":0.06,"shape":-6,"gain":0.6000000000000001},{"wave":"modal","freq":665,"modes":[1,2.6,4.9],"at":0.324,"a":0.001,"d":0.06,"shape":-6,"gain":0.55},{"wave":"modal","freq":338,"modes":[1,2.6,4.9],"at":0.36,"a":0.001,"d":0.06,"shape":-6,"gain":0.5},{"wave":"modal","freq":511,"modes":[1,2.6,4.9],"at":0.432,"a":0.001,"d":0.06,"shape":-6,"gain":0.45},{"wave":"modal","freq":684,"modes":[1,2.6,4.9],"at":0.504,"a":0.001,"d":0.06,"shape":-6,"gain":0.4},{"wave":"modal","freq":357,"modes":[1,2.6,4.9],"at":0.54,"a":0.001,"d":0.06,"shape":-6,"gain":0.35000000000000003}],"gain":0.586};
+/** Torch or fire ignites: whoomph */
+export const ignite: Sound = {"vary":0.5,"varyF":2,"layers":[{"wave":"pink","bp":400,"bpTo":1500,"q":1,"a":0.04,"d":0.4,"shape":-3,"drive":1},{"wave":"brown","lp":400,"a":0.03,"h":0.15,"d":0.5,"shape":-3,"gain":0.8},{"wave":"sine","freq":90,"to":50,"a":0.02,"d":0.2,"shape":-4,"gain":0.5},{"wave":"noise","bp":2500,"q":3,"at":0.08,"a":0.001,"d":0.008,"shape":-5,"gain":0.45},{"wave":"noise","bp":3400,"q":3,"at":0.15,"a":0.001,"d":0.008,"shape":-5,"gain":0.42000000000000004},{"wave":"noise","bp":4300,"q":3,"at":0.21,"a":0.001,"d":0.008,"shape":-5,"gain":0.39},{"wave":"noise","bp":2500,"q":3,"at":0.3,"a":0.001,"d":0.008,"shape":-5,"gain":0.36},{"wave":"noise","bp":3400,"q":3,"at":0.36,"a":0.001,"d":0.008,"shape":-5,"gain":0.33},{"wave":"noise","bp":4300,"q":3,"at":0.45,"a":0.001,"d":0.008,"shape":-5,"gain":0.30000000000000004},{"wave":"noise","bp":2500,"q":3,"at":0.52,"a":0.001,"d":0.008,"shape":-5,"gain":0.27},{"wave":"noise","bp":3400,"q":3,"at":0.6,"a":0.001,"d":0.008,"shape":-5,"gain":0.24000000000000002}],"limit":1,"gain":0.833};
 /** Wings flapping past */
 export const batFlap: Sound = {"vary":1,"varyF":3,"varyG":1.5,"layers":[{"wave":"pink","bp":900,"q":1.5,"at":0,"a":0.006,"d":0.04,"shape":-4,"gain":1},{"wave":"pink","bp":960,"q":1.5,"at":0.05,"a":0.006,"d":0.04,"shape":-4,"gain":0.85},{"wave":"pink","bp":1020,"q":1.5,"at":0.1,"a":0.006,"d":0.04,"shape":-4,"gain":0.7},{"wave":"pink","bp":1080,"q":1.5,"at":0.15,"a":0.006,"d":0.04,"shape":-4,"gain":0.55},{"wave":"pink","bp":1140,"q":1.5,"at":0.2,"a":0.006,"d":0.04,"shape":-4,"gain":0.4}],"limit":1,"gain":3.87};
 /** Slime squelches and wobbles */
@@ -350,6 +422,14 @@ export const creatureHurt: Sound = {"vary":1.5,"layers":[{"wave":"saw","freq":42
 export const creatureDie: Sound = {"vary":1,"verb":[0.4,0.2],"layers":[{"wave":"saw","freq":330,"to":80,"curve":0.8,"vib":[9,0.6],"formant":[730,1090,2440],"kt":1,"a":0.01,"h":0.1,"d":0.6,"shape":-2.5,"drive":0.8}],"gain":0.57};
 /** Gibberish dialogue blips, like a character talking */
 export const voiceBabble: Sound = {"vary":2,"layers":[{"wave":"square","duty":0.3,"freq":280,"arp":[0,4,-2,7,2,5],"arpRate":0.07,"formant":[270,2290,3010],"a":0.005,"h":0.36,"d":0.06,"shape":-3}],"gain":0.384};
+/** Zombie groan */
+export const zombieGroan: Sound = {"vary":1.2,"varyF":2,"verb":[0.35,0.15],"layers":[{"wave":"saw","freq":110,"to":85,"vib":[5,1.2],"formant":[570,840,2410],"kt":1,"a":0.1,"h":0.4,"d":0.4,"shape":-3,"drive":2},{"wave":"saw","freq":111,"to":84,"vib":[4,1],"formant":[730,1090,2440],"kt":1,"a":0.15,"h":0.3,"d":0.4,"shape":-3,"gain":0.5},{"wave":"noise","formant":[730,1090,2440],"a":0.1,"h":0.4,"d":0.3,"shape":-3,"gain":0.2}],"gain":0.444};
+/** Big monster roar */
+export const roar: Sound = {"vary":0.8,"varyF":2,"verb":[0.6,0.25],"layers":[{"wave":"saw","freq":90,"to":70,"vib":[9,1.5],"formant":[730,1090,2440],"kt":1,"a":0.08,"h":0.6,"d":0.5,"shape":-3,"drive":3},{"wave":"saw","freq":45,"to":36,"vib":[7,1],"lp":400,"a":0.08,"h":0.6,"d":0.5,"shape":-3,"drive":2},{"wave":"noise","bp":1200,"q":0.8,"a":0.05,"h":0.6,"d":0.4,"shape":-3,"drive":1.5,"gain":0.35}],"gain":0.185};
+/** Dog barks twice */
+export const dogBark: Sound = {"vary":1.5,"varyF":2,"verb":[0.25,0.1],"layers":[{"wave":"saw","freq":520,"to":320,"curve":2,"formant":[730,1090,2440],"kt":1,"at":0,"a":0.004,"d":0.12,"shape":-4,"drive":2},{"wave":"noise","bp":1500,"q":1,"at":0,"a":0.002,"d":0.06,"shape":-4,"gain":0.3},{"wave":"saw","freq":520,"to":320,"curve":2,"formant":[730,1090,2440],"kt":1,"at":0.22,"a":0.004,"d":0.12,"shape":-4,"drive":2},{"wave":"noise","bp":1500,"q":1,"at":0.22,"a":0.002,"d":0.06,"shape":-4,"gain":0.3}],"gain":0.822};
+/** Cat meows */
+export const catMeow: Sound = {"vary":1.5,"layers":[{"wave":"saw","freq":600,"to":900,"sweep":0.2,"curve":0.8,"vib":[5,0.3],"formant":[270,2290,3010],"kt":1,"a":0.04,"h":0.1,"d":0.3,"shape":-3},{"wave":"saw","freq":900,"to":550,"at":0.25,"sweep":0.3,"formant":[300,870,2240],"kt":1,"a":0.04,"d":0.3,"shape":-3,"gain":0.7}],"gain":0.867};
 /** Distant thunder rolling in */
 export const thunderFar: Sound = {"vary":0.5,"varyF":3,"varyG":1.5,"verb":[0.7,0.4],"layers":[{"wave":"brown","lp":320,"lpTo":90,"a":0.25,"h":0.25,"d":1.5,"shape":-3,"gain":1.6,"drive":0.8},{"wave":"brown","lp":900,"lpTo":300,"at":0.1,"a":0.01,"d":0.35,"shape":-4,"gain":0.7},{"wave":"brown","lp":900,"lpTo":300,"at":0.22,"a":0.01,"d":0.35,"shape":-4,"gain":0.5499999999999999},{"wave":"brown","lp":900,"lpTo":300,"at":0.4,"a":0.01,"d":0.35,"shape":-4,"gain":0.39999999999999997}],"gain":0.332};
 /** A raindrop on a leaf */
@@ -362,6 +442,106 @@ export const frogCroak: Sound = {"vary":1,"layers":[{"wave":"saw","freq":120,"fo
 export const leafRustle: Sound = {"varyF":3,"varyG":1.5,"layers":[{"wave":"pink","bp":3000,"q":0.8,"a":0.05,"h":0.1,"d":0.25,"shape":-3,"gain":0.6},{"wave":"noise","bp":3500,"q":2,"at":0.02,"a":0.001,"d":0.015,"shape":-5,"gain":0.5},{"wave":"noise","bp":4200,"q":2,"at":0.06,"a":0.001,"d":0.015,"shape":-5,"gain":0.5},{"wave":"noise","bp":4900,"q":2,"at":0.09,"a":0.001,"d":0.015,"shape":-5,"gain":0.5},{"wave":"noise","bp":3500,"q":2,"at":0.15,"a":0.001,"d":0.015,"shape":-5,"gain":0.5},{"wave":"noise","bp":4200,"q":2,"at":0.19,"a":0.001,"d":0.015,"shape":-5,"gain":0.5},{"wave":"noise","bp":4900,"q":2,"at":0.26,"a":0.001,"d":0.015,"shape":-5,"gain":0.5},{"wave":"noise","bp":3500,"q":2,"at":0.31,"a":0.001,"d":0.015,"shape":-5,"gain":0.5}],"gain":1.43};
 /** Pebble drops and bounces once */
 export const stoneDrop: Sound = {"vary":1.5,"varyF":2,"layers":[{"wave":"noise","bp":2500,"a":0.001,"d":0.006,"shape":-5,"gain":0.7},{"wave":"modal","freq":1100,"modes":[1,2.6,4.9,7.3],"a":0.001,"d":0.12,"shape":-5},{"wave":"noise","bp":2800,"at":0.16,"a":0.001,"d":0.005,"shape":-5,"gain":0.4},{"wave":"modal","freq":1150,"modes":[1,2.6,4.9,7.3],"at":0.16,"a":0.001,"d":0.08,"shape":-5,"gain":0.5}],"limit":1,"gain":0.727};
+/** Close lightning: sharp crack into a rolling boom */
+export const thunderCrack: Sound = {"vary":0.5,"varyF":2,"verb":[0.7,0.3],"layers":[{"wave":"noise","hp":1500,"a":0.001,"d":0.12,"shape":-4,"drive":2},{"wave":"brown","lp":1200,"lpTo":150,"a":0.005,"h":0.2,"d":1.6,"shape":-3,"drive":1.5,"gain":1.2},{"wave":"sine","freq":60,"to":30,"a":0.01,"d":1,"shape":-3,"drive":1},{"wave":"brown","lp":400,"at":0.3,"a":0.02,"d":0.4,"shape":-3,"gain":0.5},{"wave":"brown","lp":400,"at":0.55,"a":0.02,"d":0.4,"shape":-3,"gain":0.38},{"wave":"brown","lp":400,"at":0.8,"a":0.02,"d":0.4,"shape":-3,"gain":0.26}],"gain":0.207};
+/** A wave rolls in and washes back */
+export const oceanWave: Sound = {"vary":0.3,"varyF":2,"layers":[{"wave":"pink","lp":600,"lpTo":3000,"a":0.7,"d":0.2,"shape":1.5},{"wave":"noise","bp":3000,"q":0.7,"at":0.65,"a":0.05,"d":1.2,"shape":-3,"gain":0.5},{"wave":"brown","lp":300,"a":0.6,"h":0.3,"d":0.9,"gain":0.5}],"gain":0.56};
+/** Short rain shower patter (layer or loop it) */
+export const rainBurst: Sound = {"vary":0.2,"varyF":2,"layers":[{"wave":"pink","bp":2500,"q":0.6,"a":0.2,"h":0.8,"d":0.4,"gain":0.6},{"wave":"noise","bp":2000,"q":3,"at":0.05,"a":0.001,"d":0.012,"shape":-5,"gain":0.3},{"wave":"noise","bp":2397,"q":3,"at":0.113,"a":0.001,"d":0.012,"shape":-5,"gain":0.4},{"wave":"noise","bp":2794,"q":3,"at":0.17600000000000002,"a":0.001,"d":0.012,"shape":-5,"gain":0.5},{"wave":"noise","bp":3191,"q":3,"at":0.2,"a":0.001,"d":0.012,"shape":-5,"gain":0.6000000000000001},{"wave":"noise","bp":3588,"q":3,"at":0.263,"a":0.001,"d":0.012,"shape":-5,"gain":0.3},{"wave":"noise","bp":3985,"q":3,"at":0.326,"a":0.001,"d":0.012,"shape":-5,"gain":0.4},{"wave":"noise","bp":4382,"q":3,"at":0.35000000000000003,"a":0.001,"d":0.012,"shape":-5,"gain":0.5},{"wave":"noise","bp":4779,"q":3,"at":0.41300000000000003,"a":0.001,"d":0.012,"shape":-5,"gain":0.6000000000000001},{"wave":"noise","bp":2176,"q":3,"at":0.47600000000000003,"a":0.001,"d":0.012,"shape":-5,"gain":0.3},{"wave":"noise","bp":2573,"q":3,"at":0.5,"a":0.001,"d":0.012,"shape":-5,"gain":0.4},{"wave":"noise","bp":2970,"q":3,"at":0.5630000000000001,"a":0.001,"d":0.012,"shape":-5,"gain":0.5},{"wave":"noise","bp":3367,"q":3,"at":0.6260000000000001,"a":0.001,"d":0.012,"shape":-5,"gain":0.6000000000000001},{"wave":"noise","bp":3764,"q":3,"at":0.6500000000000001,"a":0.001,"d":0.012,"shape":-5,"gain":0.3},{"wave":"noise","bp":4161,"q":3,"at":0.7130000000000001,"a":0.001,"d":0.012,"shape":-5,"gain":0.4},{"wave":"noise","bp":4558,"q":3,"at":0.7760000000000001,"a":0.001,"d":0.012,"shape":-5,"gain":0.5},{"wave":"noise","bp":4955,"q":3,"at":0.8,"a":0.001,"d":0.012,"shape":-5,"gain":0.6000000000000001},{"wave":"noise","bp":2352,"q":3,"at":0.8630000000000001,"a":0.001,"d":0.012,"shape":-5,"gain":0.3},{"wave":"noise","bp":2749,"q":3,"at":0.9260000000000002,"a":0.001,"d":0.012,"shape":-5,"gain":0.4},{"wave":"noise","bp":3146,"q":3,"at":0.9500000000000001,"a":0.001,"d":0.012,"shape":-5,"gain":0.5},{"wave":"noise","bp":3543,"q":3,"at":1.013,"a":0.001,"d":0.012,"shape":-5,"gain":0.6000000000000001},{"wave":"noise","bp":3940,"q":3,"at":1.076,"a":0.001,"d":0.012,"shape":-5,"gain":0.3},{"wave":"noise","bp":4337,"q":3,"at":1.1,"a":0.001,"d":0.012,"shape":-5,"gain":0.4},{"wave":"noise","bp":4734,"q":3,"at":1.163,"a":0.001,"d":0.012,"shape":-5,"gain":0.5},{"wave":"noise","bp":2131,"q":3,"at":1.2260000000000002,"a":0.001,"d":0.012,"shape":-5,"gain":0.6000000000000001}],"gain":0.831};
+/** Dive into deep water: plunge and bubbles */
+export const diveSplash: Sound = {"varyF":2,"verb":[0.3,0.12],"layers":[{"wave":"noise","lp":5000,"lpTo":600,"a":0.002,"d":0.5,"shape":-3,"drive":1},{"wave":"sine","freq":150,"to":50,"a":0.002,"d":0.25,"shape":-4,"drive":1},{"wave":"sine","freq":350,"to":900,"curve":3,"at":0.25,"a":0.002,"d":0.05,"shape":3,"lp":1800,"gain":0.4},{"wave":"sine","freq":410,"to":1000,"curve":3,"at":0.32,"a":0.002,"d":0.05,"shape":3,"lp":1800,"gain":0.4},{"wave":"sine","freq":470,"to":1100,"curve":3,"at":0.4,"a":0.002,"d":0.05,"shape":3,"lp":1800,"gain":0.4},{"wave":"sine","freq":530,"to":1200,"curve":3,"at":0.46,"a":0.002,"d":0.05,"shape":3,"lp":1800,"gain":0.4},{"wave":"sine","freq":590,"to":1300,"curve":3,"at":0.55,"a":0.002,"d":0.05,"shape":3,"lp":1800,"gain":0.4}],"gain":0.345};
+/** Flip a card face up: quick papery snap */
+export const cardFlip: Sound = {"vary":1,"varyF":3,"varyG":1.5,"layers":[{"wave":"noise","bp":2600,"bpTo":4200,"q":1.2,"a":0.012,"d":0.035,"shape":-4,"gain":0.7},{"wave":"noise","bp":3800,"q":2.5,"at":0.045,"a":0.001,"d":0.012,"shape":-6},{"wave":"pink","bp":900,"q":1.5,"at":0.046,"a":0.001,"d":0.03,"shape":-5,"gain":0.4}],"limit":1,"gain":2.9};
+/** Deal a card across the table: swish and slap */
+export const cardDeal: Sound = {"vary":1,"varyF":3,"varyG":1.5,"layers":[{"wave":"noise","bp":1800,"bpTo":4500,"q":1.4,"a":0.05,"d":0.03,"shape":1},{"wave":"noise","bp":3000,"q":1.5,"at":0.08,"a":0.001,"d":0.02,"shape":-6,"drive":1},{"wave":"pink","lp":1200,"at":0.08,"a":0.001,"d":0.04,"shape":-5,"gain":0.5}],"limit":1,"gain":1.58};
+/** Lay a card down on felt */
+export const cardPlace: Sound = {"vary":0.8,"varyF":2,"varyG":1,"layers":[{"wave":"pink","bp":1400,"q":1,"a":0.002,"d":0.09,"shape":-5},{"wave":"noise","bp":3500,"q":2,"a":0.001,"d":0.008,"shape":-6,"gain":0.25},{"wave":"pink","lp":600,"a":0.002,"d":0.12,"shape":-4,"gain":0.5}],"limit":1,"gain":2.52};
+/** Riffle shuffle: a fast burst of card ticks */
+export const cardShuffle: Sound = {"vary":0.5,"varyF":2,"layers":[{"wave":"noise","bp":2800,"q":2,"at":0,"a":0.001,"d":0.012,"shape":-5,"gain":0.5},{"wave":"noise","bp":3300,"q":2,"at":0.026,"a":0.001,"d":0.012,"shape":-5,"gain":0.5794677323180245},{"wave":"noise","bp":3800,"q":2,"at":0.044,"a":0.001,"d":0.012,"shape":-5,"gain":0.6557673369234602},{"wave":"noise","bp":2800,"q":2,"at":0.07,"a":0.001,"d":0.012,"shape":-5,"gain":0.7258569893580141},{"wave":"noise","bp":3300,"q":2,"at":0.088,"a":0.001,"d":0.012,"shape":-5,"gain":0.7869424363598092},{"wave":"noise","bp":3800,"q":2,"at":0.11399999999999999,"a":0.001,"d":0.012,"shape":-5,"gain":0.8365883939231586},{"wave":"noise","bp":2800,"q":2,"at":0.132,"a":0.001,"d":0.012,"shape":-5,"gain":0.8728156343868905},{"wave":"noise","bp":3300,"q":2,"at":0.158,"a":0.001,"d":0.012,"shape":-5,"gain":0.8941798919953841},{"wave":"noise","bp":3800,"q":2,"at":0.176,"a":0.001,"d":0.012,"shape":-5,"gain":0.8998294412166021},{"wave":"noise","bp":2800,"q":2,"at":0.20199999999999999,"a":0.001,"d":0.012,"shape":-5,"gain":0.8895390523512781},{"wave":"noise","bp":3300,"q":2,"at":0.21999999999999997,"a":0.001,"d":0.012,"shape":-5,"gain":0.8637189707302727},{"wave":"noise","bp":3800,"q":2,"at":0.246,"a":0.001,"d":0.012,"shape":-5,"gain":0.8233985615278361},{"wave":"noise","bp":2800,"q":2,"at":0.264,"a":0.001,"d":0.012,"shape":-5,"gain":0.7701852722204604},{"wave":"noise","bp":3300,"q":2,"at":0.29,"a":0.001,"d":0.012,"shape":-5,"gain":0.7062005487285856},{"wave":"noise","bp":3800,"q":2,"at":0.308,"a":0.001,"d":0.012,"shape":-5,"gain":0.6339952600623621},{"wave":"noise","bp":2800,"q":2,"at":0.33399999999999996,"a":0.001,"d":0.012,"shape":-5,"gain":0.5564480032239469},{"wave":"pink","bp":2000,"q":0.8,"a":0.05,"h":0.2,"d":0.12,"gain":0.25}],"limit":1,"gain":1.91};
+/** Poker chips clack onto a stack */
+export const chipStack: Sound = {"vary":0.6,"varyF":2,"varyG":1.5,"layers":[{"wave":"modal","freq":1900,"modes":[1,1.59,2.14,2.65],"at":0,"a":0.001,"d":0.06,"shape":-6,"gain":1},{"wave":"noise","bp":4500,"q":2,"at":0,"a":0.001,"d":0.006,"shape":-6,"gain":0.5},{"wave":"modal","freq":2020,"modes":[1,1.59,2.14,2.65],"at":0.035,"a":0.001,"d":0.06,"shape":-6,"gain":0.8},{"wave":"noise","bp":4500,"q":2,"at":0.035,"a":0.001,"d":0.006,"shape":-6,"gain":0.5},{"wave":"modal","freq":2140,"modes":[1,1.59,2.14,2.65],"at":0.06,"a":0.001,"d":0.06,"shape":-6,"gain":0.6},{"wave":"noise","bp":4500,"q":2,"at":0.06,"a":0.001,"d":0.006,"shape":-6,"gain":0.5}],"limit":1,"gain":0.794};
+/** Dice tumble across a table and settle */
+export const diceRoll: Sound = {"vary":0.8,"varyF":2,"varyG":2,"layers":[{"wave":"modal","freq":900,"modes":[1,2.32,4.25,6.63],"at":0,"a":0.001,"d":0.05,"shape":-6,"gain":1},{"wave":"noise","bp":3000,"q":2,"at":0,"a":0.001,"d":0.006,"shape":-6,"gain":0.4},{"wave":"modal","freq":1080,"modes":[1,2.32,4.25,6.63],"at":0.07,"a":0.001,"d":0.05,"shape":-6,"gain":0.9},{"wave":"noise","bp":3000,"q":2,"at":0.07,"a":0.001,"d":0.006,"shape":-6,"gain":0.36000000000000004},{"wave":"modal","freq":1260,"modes":[1,2.32,4.25,6.63],"at":0.13,"a":0.001,"d":0.05,"shape":-6,"gain":0.8},{"wave":"noise","bp":3000,"q":2,"at":0.13,"a":0.001,"d":0.006,"shape":-6,"gain":0.32},{"wave":"modal","freq":900,"modes":[1,2.32,4.25,6.63],"at":0.2,"a":0.001,"d":0.05,"shape":-6,"gain":0.7},{"wave":"noise","bp":3000,"q":2,"at":0.2,"a":0.001,"d":0.006,"shape":-6,"gain":0.28},{"wave":"modal","freq":1080,"modes":[1,2.32,4.25,6.63],"at":0.25,"a":0.001,"d":0.05,"shape":-6,"gain":0.6},{"wave":"noise","bp":3000,"q":2,"at":0.25,"a":0.001,"d":0.006,"shape":-6,"gain":0.24000000000000002},{"wave":"modal","freq":1260,"modes":[1,2.32,4.25,6.63],"at":0.31,"a":0.001,"d":0.05,"shape":-6,"gain":0.5},{"wave":"noise","bp":3000,"q":2,"at":0.31,"a":0.001,"d":0.006,"shape":-6,"gain":0.2},{"wave":"modal","freq":900,"modes":[1,2.32,4.25,6.63],"at":0.36,"a":0.001,"d":0.05,"shape":-6,"gain":0.3999999999999999},{"wave":"noise","bp":3000,"q":2,"at":0.36,"a":0.001,"d":0.006,"shape":-6,"gain":0.16000000000000003},{"wave":"modal","freq":1080,"modes":[1,2.32,4.25,6.63],"at":0.4,"a":0.001,"d":0.05,"shape":-6,"gain":0.29999999999999993},{"wave":"noise","bp":3000,"q":2,"at":0.4,"a":0.001,"d":0.006,"shape":-6,"gain":0.12}],"limit":1,"gain":1.01};
+/** Slot reels spinning: fast ratchet ticks */
+export const slotSpin: Sound = {"vary":0.4,"varyF":1.5,"layers":[{"wave":"square","duty":0.25,"freq":1400,"at":0,"a":0.001,"d":0.02,"shape":3,"lp":4000,"gain":0.5},{"wave":"square","duty":0.25,"freq":1400,"at":0.04,"a":0.001,"d":0.02,"shape":3,"lp":4000,"gain":0.5},{"wave":"square","duty":0.25,"freq":1400,"at":0.08,"a":0.001,"d":0.02,"shape":3,"lp":4000,"gain":0.5},{"wave":"square","duty":0.25,"freq":1400,"at":0.12,"a":0.001,"d":0.02,"shape":3,"lp":4000,"gain":0.5},{"wave":"square","duty":0.25,"freq":1400,"at":0.16,"a":0.001,"d":0.02,"shape":3,"lp":4000,"gain":0.5},{"wave":"square","duty":0.25,"freq":1400,"at":0.2,"a":0.001,"d":0.02,"shape":3,"lp":4000,"gain":0.5},{"wave":"square","duty":0.25,"freq":1400,"at":0.24,"a":0.001,"d":0.02,"shape":3,"lp":4000,"gain":0.5},{"wave":"square","duty":0.25,"freq":1400,"at":0.28,"a":0.001,"d":0.02,"shape":3,"lp":4000,"gain":0.5},{"wave":"square","duty":0.25,"freq":1400,"at":0.32,"a":0.001,"d":0.02,"shape":3,"lp":4000,"gain":0.5},{"wave":"square","duty":0.25,"freq":1400,"at":0.36,"a":0.001,"d":0.02,"shape":3,"lp":4000,"gain":0.5},{"wave":"square","duty":0.25,"freq":1400,"at":0.4,"a":0.001,"d":0.02,"shape":3,"lp":4000,"gain":0.5},{"wave":"square","duty":0.25,"freq":1400,"at":0.44,"a":0.001,"d":0.02,"shape":3,"lp":4000,"gain":0.5},{"wave":"square","duty":0.25,"freq":1400,"at":0.48,"a":0.001,"d":0.02,"shape":3,"lp":4000,"gain":0.5},{"wave":"square","duty":0.25,"freq":1400,"at":0.52,"a":0.001,"d":0.02,"shape":3,"lp":4000,"gain":0.5},{"wave":"square","duty":0.25,"freq":1400,"at":0.56,"a":0.001,"d":0.02,"shape":3,"lp":4000,"gain":0.5},{"wave":"square","duty":0.25,"freq":1400,"at":0.6,"a":0.001,"d":0.02,"shape":3,"lp":4000,"gain":0.5},{"wave":"square","duty":0.25,"freq":1400,"at":0.64,"a":0.001,"d":0.02,"shape":3,"lp":4000,"gain":0.5},{"wave":"square","duty":0.25,"freq":1400,"at":0.68,"a":0.001,"d":0.02,"shape":3,"lp":4000,"gain":0.5},{"wave":"noise","bp":2500,"q":1,"a":0.05,"h":0.6,"d":0.1,"gain":0.08}],"gain":0.904};
+/** A reel locks into place: clunk and ding */
+export const slotStop: Sound = {"vary":0.2,"verb":[0.25,0.12],"layers":[{"wave":"noise","bp":1200,"q":1.5,"a":0.001,"d":0.02,"shape":-5,"drive":1},{"wave":"sine","freq":150,"to":90,"a":0.001,"d":0.08,"shape":-5,"gain":0.7},{"wave":"sine","freq":1568,"fm":[3.5,1.4,0.1],"at":0.04,"a":0.002,"d":0.4,"shape":-4,"gain":0.4}],"limit":1,"gain":0.852};
+/** Jackpot: bell flurry over a rising arpeggio */
+export const jackpot: Sound = {"vary":0.05,"verb":[0.4,0.2],"echo":[0.08,0.3,0.2],"layers":[{"wave":"square","duty":0.25,"freq":784,"arp":[0,4,7,12,16,19,24,19,24],"arpRate":0.07,"a":0.002,"h":0.55,"d":0.4,"shape":2,"lp":5000,"gain":0.5},{"wave":"sine","freq":2093,"fm":[3.5,1.6,0.1],"at":0.1,"a":0.002,"d":0.35,"shape":-4,"gain":0.3},{"wave":"sine","freq":2637,"fm":[3.5,1.6,0.1],"at":0.25,"a":0.002,"d":0.35,"shape":-4,"gain":0.3},{"wave":"sine","freq":2093,"fm":[3.5,1.6,0.1],"at":0.4,"a":0.002,"d":0.35,"shape":-4,"gain":0.3},{"wave":"sine","freq":2637,"fm":[3.5,1.6,0.1],"at":0.55,"a":0.002,"d":0.35,"shape":-4,"gain":0.3},{"wave":"sine","freq":2093,"fm":[3.5,1.6,0.1],"at":0.7,"a":0.002,"d":0.35,"shape":-4,"gain":0.3},{"wave":"sine","freq":2637,"fm":[3.5,1.6,0.1],"at":0.85,"a":0.002,"d":0.35,"shape":-4,"gain":0.3},{"wave":"metal","freq":5000,"hp":7000,"a":0.01,"h":0.8,"d":0.4,"gain":0.06}],"gain":0.229};
+/** Engine cranks, catches and idles */
+export const engineStart: Sound = {"vary":0.3,"layers":[{"wave":"saw","freq":40,"to":30,"lp":500,"at":0,"a":0.01,"d":0.09,"shape":-3,"drive":1.5,"gain":0.6},{"wave":"saw","freq":40,"to":30,"lp":500,"at":0.12,"a":0.01,"d":0.09,"shape":-3,"drive":1.5,"gain":0.6},{"wave":"saw","freq":40,"to":30,"lp":500,"at":0.24,"a":0.01,"d":0.09,"shape":-3,"drive":1.5,"gain":0.6},{"wave":"saw","freq":30,"to":70,"curve":3,"vib":[14,1],"lp":900,"at":0.36,"a":0.01,"h":0.5,"d":0.4,"shape":-3,"drive":2},{"wave":"square","freq":35,"to":72,"curve":3,"lp":400,"at":0.36,"a":0.01,"h":0.5,"d":0.4,"shape":-3,"gain":0.5},{"wave":"brown","lp":400,"at":0.36,"a":0.02,"h":0.5,"d":0.4,"gain":0.3}],"gain":0.256};
+/** Throttle blip: engine revs up and falls back */
+export const engineRev: Sound = {"vary":0.5,"layers":[{"wave":"saw","freq":60,"to":210,"curve":0.7,"sweep":0.35,"lp":1500,"kt":0.5,"a":0.02,"h":0.3,"d":0.5,"shape":-3,"drive":2},{"wave":"saw","freq":121,"to":425,"curve":0.7,"sweep":0.35,"bp":1800,"q":2,"kt":1,"a":0.02,"h":0.3,"d":0.4,"shape":-3,"gain":0.3},{"wave":"brown","lp":500,"a":0.02,"h":0.3,"d":0.5,"gain":0.3}],"gain":0.241};
+/** Tyres squeal on a hard turn or brake */
+export const tireScreech: Sound = {"vary":0.6,"varyF":2,"layers":[{"wave":"noise","bp":2400,"bpTo":2100,"q":12,"a":0.04,"h":0.45,"d":0.25,"shape":-3,"gain":1.2},{"wave":"saw","freq":1150,"to":1000,"vib":[18,0.4],"bp":2300,"q":6,"a":0.04,"h":0.45,"d":0.25,"shape":-3,"gain":0.25},{"wave":"pink","lp":800,"a":0.04,"h":0.4,"d":0.2,"gain":0.2}],"gain":1.21};
+/** Car crash: metal crunch, glass and debris */
+export const carCrash: Sound = {"varyF":2,"varyG":1.5,"verb":[0.35,0.15],"layers":[{"wave":"noise","hp":1500,"a":0.001,"d":0.05,"shape":-4,"drive":2},{"wave":"metal","freq":380,"bp":1500,"q":1.2,"a":0.001,"d":0.5,"shape":-4,"drive":2},{"wave":"sine","freq":95,"to":35,"curve":2,"a":0.001,"d":0.35,"shape":-4,"drive":2},{"wave":"brown","lp":900,"lpTo":200,"a":0.001,"d":0.6,"shape":-4,"drive":1,"gain":0.8},{"wave":"metal","freq":1400,"hp":3500,"at":0.12,"a":0.001,"d":0.08,"shape":-5,"gain":0.3},{"wave":"metal","freq":1700,"hp":3500,"at":0.2,"a":0.001,"d":0.08,"shape":-5,"gain":0.3},{"wave":"metal","freq":2000,"hp":3500,"at":0.31,"a":0.001,"d":0.08,"shape":-5,"gain":0.3},{"wave":"metal","freq":2300,"hp":3500,"at":0.42,"a":0.001,"d":0.08,"shape":-5,"gain":0.3}],"gain":0.223};
+/** Two-tone car horn honk */
+export const carHorn: Sound = {"vary":0.15,"layers":[{"wave":"square","freq":415,"a":0.01,"h":0.3,"d":0.08,"shape":-3,"bp":1200,"q":1.2,"drive":1.5},{"wave":"square","freq":523,"a":0.01,"h":0.3,"d":0.08,"shape":-3,"bp":1500,"q":1.2,"drive":1.5,"gain":0.8}],"gain":0.225};
+/** Nitro / turbo boost: whoosh with a rising jet whine */
+export const boost: Sound = {"vary":0.4,"varyF":2,"layers":[{"wave":"noise","bp":800,"bpTo":3500,"q":1,"a":0.03,"h":0.3,"d":0.4,"shape":-3},{"wave":"saw","freq":300,"to":1200,"curve":0.8,"bp":2000,"q":3,"kt":1,"a":0.05,"h":0.3,"d":0.3,"shape":-3,"gain":0.25},{"wave":"brown","lp":300,"a":0.01,"d":0.4,"shape":-3,"drive":1,"gain":0.6},{"wave":"sine","freq":90,"to":45,"a":0.001,"d":0.2,"shape":-5,"gain":0.6}],"gain":0.763};
+/** Start-light beep (ready, set): play three times then countdown-go */
+export const raceLight: Sound = {"vary":0.02,"layers":[{"wave":"square","duty":0.5,"freq":880,"a":0.002,"h":0.18,"d":0.05,"shape":1,"lp":3500},{"wave":"sine","freq":1760,"a":0.002,"h":0.18,"d":0.05,"shape":1,"gain":0.3}],"gain":0.226};
+/** Jump scare: screeching sting with a sub hit */
+export const jumpscare: Sound = {"vary":0.3,"verb":[0.6,0.3],"layers":[{"wave":"saw","freq":1200,"to":900,"vib":[11,1.5],"formant":[270,2290,3010],"a":0.002,"h":0.25,"d":0.5,"shape":-3,"drive":2},{"wave":"saw","freq":1265,"to":950,"vib":[13,1.5],"bp":3000,"q":3,"a":0.002,"h":0.25,"d":0.5,"shape":-3,"gain":0.5},{"wave":"noise","hp":2000,"a":0.001,"d":0.15,"shape":-4,"gain":0.6},{"wave":"sine","freq":70,"to":30,"curve":2,"a":0.001,"d":0.6,"shape":-3,"drive":2}],"gain":0.17};
+/** Rising dread: detuned low drone that swells */
+export const dreadDrone: Sound = {"vary":0.2,"verb":[0.65,0.3],"layers":[{"wave":"saw","freq":55,"to":58,"lp":400,"lpTo":1200,"a":0.9,"h":0.25,"d":0.5,"shape":-3},{"wave":"saw","freq":55.8,"to":61,"lp":400,"lpTo":1200,"a":0.9,"h":0.25,"d":0.5,"shape":-3},{"wave":"sine","freq":880,"to":932,"vib":[5,0.3],"a":1,"h":0.2,"d":0.45,"shape":-3,"gain":0.08},{"wave":"brown","lp":200,"a":0.8,"h":0.3,"d":0.5,"shape":-3,"gain":0.4}],"gain":0.247};
+/** Breathy unintelligible whisper */
+export const whisper: Sound = {"vary":1,"varyF":2,"verb":[0.5,0.25],"layers":[{"wave":"noise","formant":[730,1090,2440],"a":0.06,"h":0.12,"d":0.15,"shape":-3,"gain":0.8},{"wave":"noise","formant":[270,2290,3010],"at":0.28,"a":0.04,"h":0.1,"d":0.12,"shape":-3,"gain":0.7},{"wave":"noise","formant":[300,870,2240],"at":0.5,"a":0.05,"h":0.08,"d":0.2,"shape":-3,"gain":0.6},{"wave":"noise","bp":6000,"q":2,"at":0.2,"a":0.01,"d":0.05,"shape":-4,"gain":0.3}],"gain":1.35};
+/** Dissonant orchestral-style stab for a reveal */
+export const horrorSting: Sound = {"vary":0.1,"verb":[0.75,0.35],"layers":[{"wave":"saw","freq":220,"lp":2500,"lpTo":600,"a":0.005,"h":0.05,"d":1.2,"shape":-3,"drive":1},{"wave":"saw","freq":233,"lp":2500,"lpTo":600,"a":0.005,"h":0.05,"d":1.2,"shape":-3,"drive":1},{"wave":"saw","freq":311,"lp":2500,"lpTo":600,"a":0.005,"h":0.05,"d":1.2,"shape":-3,"gain":0.7},{"wave":"brown","lp":300,"a":0.001,"d":0.8,"shape":-4,"gain":0.7},{"wave":"metal","freq":600,"hp":3000,"a":0.001,"d":1,"shape":-3,"gain":0.15}],"gain":0.154};
+/** Chains clink and drag */
+export const chainsRattle: Sound = {"vary":0.6,"varyF":2,"varyG":2,"verb":[0.5,0.2],"layers":[{"wave":"metal","freq":900,"hp":2200,"at":0,"a":0.001,"d":0.06,"shape":-5,"gain":0.7},{"wave":"noise","bp":4000,"q":2,"at":0,"a":0.001,"d":0.01,"shape":-6,"gain":0.3},{"wave":"metal","freq":1130,"hp":2200,"at":0.05,"a":0.001,"d":0.06,"shape":-5,"gain":0.7},{"wave":"noise","bp":4000,"q":2,"at":0.05,"a":0.001,"d":0.01,"shape":-6,"gain":0.3},{"wave":"metal","freq":1360,"hp":2200,"at":0.09,"a":0.001,"d":0.06,"shape":-5,"gain":0.7},{"wave":"noise","bp":4000,"q":2,"at":0.09,"a":0.001,"d":0.01,"shape":-6,"gain":0.3},{"wave":"metal","freq":900,"hp":2200,"at":0.16,"a":0.001,"d":0.06,"shape":-5,"gain":0.7},{"wave":"noise","bp":4000,"q":2,"at":0.16,"a":0.001,"d":0.01,"shape":-6,"gain":0.3},{"wave":"metal","freq":1130,"hp":2200,"at":0.21,"a":0.001,"d":0.06,"shape":-5,"gain":0.7},{"wave":"noise","bp":4000,"q":2,"at":0.21,"a":0.001,"d":0.01,"shape":-6,"gain":0.3},{"wave":"metal","freq":1360,"hp":2200,"at":0.27,"a":0.001,"d":0.06,"shape":-5,"gain":0.7},{"wave":"noise","bp":4000,"q":2,"at":0.27,"a":0.001,"d":0.01,"shape":-6,"gain":0.3},{"wave":"metal","freq":900,"hp":2200,"at":0.34,"a":0.001,"d":0.06,"shape":-5,"gain":0.7},{"wave":"noise","bp":4000,"q":2,"at":0.34,"a":0.001,"d":0.01,"shape":-6,"gain":0.3},{"wave":"metal","freq":1130,"hp":2200,"at":0.38,"a":0.001,"d":0.06,"shape":-5,"gain":0.7},{"wave":"noise","bp":4000,"q":2,"at":0.38,"a":0.001,"d":0.01,"shape":-6,"gain":0.3}],"gain":0.993};
+/** TV / radio static burst, for haunted screens */
+export const staticBurst: Sound = {"vary":0.5,"varyF":3,"bits":6,"layers":[{"wave":"noise","hp":400,"lp":8000,"a":0.005,"h":0.25,"d":0.08,"shape":1},{"wave":"crunch","freq":6000,"bp":2500,"q":1,"a":0.005,"h":0.25,"d":0.08,"shape":1,"gain":0.6},{"wave":"square","freq":60,"lp":300,"a":0.005,"h":0.25,"d":0.08,"shape":1,"gain":0.3}],"gain":0.291};
+/** Creepy music-box phrase, slightly detuned */
+export const musicBox: Sound = {"vary":0.05,"verb":[0.6,0.3],"layers":[{"wave":"modal","freq":1568,"modes":[1,3.9,8.1],"at":0,"a":0.001,"d":0.5,"shape":-3,"gain":1},{"wave":"sine","freq":3136,"at":0,"a":0.001,"d":0.15,"shape":-5,"gain":0.12},{"wave":"modal","freq":1385.7537565236994,"modes":[1,3.9,8.1],"at":0.28,"a":0.001,"d":0.5,"shape":-3,"gain":0.94},{"wave":"sine","freq":2793.858380088104,"at":0.28,"a":0.001,"d":0.15,"shape":-5,"gain":0.12},{"wave":"modal","freq":1174.6727482713184,"modes":[1,3.9,8.1],"at":0.56,"a":0.001,"d":0.5,"shape":-3,"gain":0.88},{"wave":"sine","freq":2349.3454965426367,"at":0.56,"a":0.001,"d":0.15,"shape":-5,"gain":0.12},{"wave":"modal","freq":924.8796711368362,"modes":[1,3.9,8.1],"at":0.8400000000000001,"a":0.001,"d":0.5,"shape":-3,"gain":0.8200000000000001},{"wave":"sine","freq":1864.6767563242665,"at":0.8400000000000001,"a":0.001,"d":0.15,"shape":-5,"gain":0.12},{"wave":"modal","freq":1046.514445669307,"modes":[1,3.9,8.1],"at":1.12,"a":0.001,"d":0.5,"shape":-3,"gain":0.76},{"wave":"sine","freq":2093.028891338614,"at":1.12,"a":0.001,"d":0.15,"shape":-5,"gain":0.12},{"wave":"modal","freq":777.728,"modes":[1,3.9,8.1],"at":1.4000000000000001,"a":0.001,"d":0.7,"shape":-3,"gain":0.7},{"wave":"sine","freq":1568,"at":1.4000000000000001,"a":0.001,"d":0.15,"shape":-5,"gain":0.12}],"gain":0.375};
+/** Axe bites into a log */
+export const axeChop: Sound = {"vary":0.8,"varyF":2,"varyG":1.5,"verb":[0.2,0.1],"layers":[{"wave":"noise","bp":2200,"q":1.5,"a":0.001,"d":0.012,"shape":-5,"drive":2},{"wave":"modal","freq":190,"modes":[1,2.32,4.25,6.63],"a":0.001,"d":0.2,"shape":-5,"drive":1},{"wave":"pink","lp":1200,"a":0.001,"d":0.08,"shape":-6,"drive":1.5,"gain":0.7},{"wave":"sine","freq":120,"to":60,"a":0.001,"d":0.12,"shape":-5,"gain":0.5}],"limit":1,"gain":0.68};
+/** Tree creaks, topples and crashes down */
+export const treeFall: Sound = {"vary":0.4,"verb":[0.5,0.25],"layers":[{"wave":"saw","freq":40,"to":70,"vib":[3,3],"bp":900,"q":5,"a":0.1,"h":0.6,"d":0.2,"shape":1.5,"gain":0.6},{"wave":"pink","bp":2000,"q":0.8,"at":0.9,"a":0.01,"d":0.6,"shape":-3,"gain":0.6},{"wave":"brown","lp":400,"at":0.95,"a":0.001,"d":0.8,"shape":-4,"drive":1.5,"gain":1.4},{"wave":"sine","freq":70,"to":30,"at":0.95,"a":0.001,"d":0.5,"shape":-4,"drive":1.5}],"gain":0.339};
+/** Pickaxe strikes rock */
+export const pickaxeMine: Sound = {"vary":0.8,"varyF":2,"varyG":1.5,"verb":[0.25,0.12],"layers":[{"wave":"metal","freq":1200,"hp":2500,"a":0.001,"d":0.3,"shape":-5,"gain":0.5},{"wave":"noise","bp":2600,"q":1,"a":0.001,"d":0.03,"shape":-5,"drive":1,"gain":0.7},{"wave":"modal","freq":700,"modes":[1,2.6,4.9,7.3],"a":0.001,"d":0.25,"shape":-5},{"wave":"pink","lp":900,"a":0.001,"d":0.1,"shape":-5,"gain":0.5},{"wave":"noise","bp":3500,"q":3,"at":0.05,"a":0.001,"d":0.008,"shape":-6,"gain":0.3},{"wave":"noise","bp":3500,"q":3,"at":0.09,"a":0.001,"d":0.008,"shape":-6,"gain":0.3},{"wave":"noise","bp":3500,"q":3,"at":0.14,"a":0.001,"d":0.008,"shape":-6,"gain":0.3}],"limit":1,"gain":0.631};
+/** Shovel into soil */
+export const dig: Sound = {"vary":0.8,"varyF":3,"varyG":2,"layers":[{"wave":"noise","bp":1500,"bpTo":600,"q":0.8,"a":0.01,"d":0.18,"shape":-4,"drive":1},{"wave":"brown","lp":400,"a":0.005,"d":0.2,"shape":-4,"gain":0.7},{"wave":"pink","bp":2000,"q":2,"at":0.12,"a":0.001,"d":0.02,"shape":-5,"gain":0.3},{"wave":"pink","bp":2000,"q":2,"at":0.17,"a":0.001,"d":0.02,"shape":-5,"gain":0.3},{"wave":"pink","bp":2000,"q":2,"at":0.22,"a":0.001,"d":0.02,"shape":-5,"gain":0.3}],"limit":1,"gain":1.33};
+/** Pop a seed into the ground: soft pat and sprout chime */
+export const plantSeed: Sound = {"vary":0.8,"layers":[{"wave":"pink","lp":900,"a":0.001,"d":0.06,"shape":-5},{"wave":"sine","freq":600,"to":1200,"curve":2,"at":0.06,"a":0.002,"d":0.08,"shape":-4,"gain":0.4},{"wave":"sine","freq":1760,"fm":[3.5,1,0.08],"at":0.1,"a":0.002,"d":0.25,"shape":-4,"gain":0.2}],"limit":1,"gain":1.92};
+/** Watering can pours over the soil */
+export const wateringCan: Sound = {"vary":0.4,"varyF":2,"layers":[{"wave":"noise","bp":2500,"q":0.9,"a":0.1,"h":0.5,"d":0.25,"shape":-3,"gain":0.6},{"wave":"sine","freq":700,"to":1600,"curve":3,"at":0.08,"a":0.001,"d":0.03,"shape":3,"gain":0.25},{"wave":"sine","freq":837,"to":1811,"curve":3,"at":0.15000000000000002,"a":0.001,"d":0.03,"shape":3,"gain":0.25},{"wave":"sine","freq":974,"to":2022,"curve":3,"at":0.22000000000000003,"a":0.001,"d":0.03,"shape":3,"gain":0.25},{"wave":"sine","freq":1111,"to":2233,"curve":3,"at":0.29000000000000004,"a":0.001,"d":0.03,"shape":3,"gain":0.25},{"wave":"sine","freq":1248,"to":1644,"curve":3,"at":0.36000000000000004,"a":0.001,"d":0.03,"shape":3,"gain":0.25},{"wave":"sine","freq":785,"to":1855,"curve":3,"at":0.43000000000000005,"a":0.001,"d":0.03,"shape":3,"gain":0.25},{"wave":"sine","freq":922,"to":2066,"curve":3,"at":0.5,"a":0.001,"d":0.03,"shape":3,"gain":0.25},{"wave":"sine","freq":1059,"to":2277,"curve":3,"at":0.5700000000000001,"a":0.001,"d":0.03,"shape":3,"gain":0.25},{"wave":"sine","freq":1196,"to":1688,"curve":3,"at":0.64,"a":0.001,"d":0.03,"shape":3,"gain":0.25},{"wave":"sine","freq":733,"to":1899,"curve":3,"at":0.7100000000000001,"a":0.001,"d":0.03,"shape":3,"gain":0.25}],"gain":0.709};
+/** Pull up a crop: rustle, pluck and a happy pop */
+export const harvest: Sound = {"vary":0.6,"varyF":2,"layers":[{"wave":"noise","bp":3000,"q":1,"a":0.02,"d":0.1,"shape":-4,"gain":0.4},{"wave":"sine","freq":220,"to":660,"curve":2,"at":0.08,"a":0.002,"d":0.08,"shape":-4,"gain":0.7},{"wave":"triangle","freq":1047,"arp":[0,7],"arpRate":0.05,"at":0.14,"a":0.002,"d":0.15,"shape":-3,"gain":0.4}],"limit":1,"gain":1.47};
+/** Cast a line: rod whip, reel whirr and a plop */
+export const fishingCast: Sound = {"vary":0.5,"layers":[{"wave":"noise","bp":1500,"bpTo":5000,"q":2,"a":0.08,"d":0.05,"shape":1,"gain":0.7},{"wave":"noise","bp":4200,"q":4,"at":0.1,"a":0.001,"d":0.01,"shape":-5,"gain":0.25},{"wave":"noise","bp":4200,"q":4,"at":0.13,"a":0.001,"d":0.01,"shape":-5,"gain":0.25},{"wave":"noise","bp":4200,"q":4,"at":0.16,"a":0.001,"d":0.01,"shape":-5,"gain":0.25},{"wave":"noise","bp":4200,"q":4,"at":0.19,"a":0.001,"d":0.01,"shape":-5,"gain":0.25},{"wave":"noise","bp":4200,"q":4,"at":0.22,"a":0.001,"d":0.01,"shape":-5,"gain":0.25},{"wave":"noise","bp":4200,"q":4,"at":0.25,"a":0.001,"d":0.01,"shape":-5,"gain":0.25},{"wave":"noise","bp":4200,"q":4,"at":0.28,"a":0.001,"d":0.01,"shape":-5,"gain":0.25},{"wave":"noise","bp":4200,"q":4,"at":0.31,"a":0.001,"d":0.01,"shape":-5,"gain":0.25},{"wave":"noise","bp":4200,"q":4,"at":0.33999999999999997,"a":0.001,"d":0.01,"shape":-5,"gain":0.25},{"wave":"noise","bp":4200,"q":4,"at":0.37,"a":0.001,"d":0.01,"shape":-5,"gain":0.25},{"wave":"sine","freq":500,"to":1300,"curve":3,"at":0.5,"a":0.002,"d":0.06,"shape":3,"gain":0.6},{"wave":"noise","lp":2000,"at":0.5,"a":0.002,"d":0.12,"shape":-4,"gain":0.3}],"limit":1,"gain":1.93};
+/** Bobber dips: something is biting! */
+export const fishBite: Sound = {"vary":0.3,"layers":[{"wave":"sine","freq":700,"to":300,"curve":2,"a":0.002,"d":0.08,"shape":-4},{"wave":"noise","lp":1500,"a":0.002,"d":0.08,"shape":-4,"gain":0.4},{"wave":"square","duty":0.25,"freq":1319,"arp":[0,5],"arpRate":0.09,"at":0.08,"a":0.002,"h":0.12,"d":0.06,"shape":2,"lp":4000,"gain":0.35}],"gain":0.648};
+/** Terminal data chirps: a burst of random blips */
+export const computerBeep: Sound = {"vary":2,"layers":[{"wave":"square","duty":0.25,"freq":1400,"arp":[0,7,3,12,5,10,0,15],"arpRate":0.035,"a":0.002,"h":0.26,"d":0.03,"shape":2,"lp":5000,"gain":0.6}],"gain":0.266};
+/** Scanner sweep: rising filtered tone with a ping */
+export const scan: Sound = {"vary":0.3,"echo":[0.12,0.3,0.25],"layers":[{"wave":"saw","freq":300,"to":1200,"curve":0.8,"bp":800,"bpTo":4000,"q":6,"a":0.05,"h":0.4,"d":0.1,"shape":1.5,"gain":0.4},{"wave":"sine","freq":2400,"at":0.55,"a":0.002,"d":0.3,"shape":-4,"gain":0.5}],"gain":0.817};
+/** Keycard accepted: two bright beeps */
+export const accessGranted: Sound = {"vary":0.05,"layers":[{"wave":"sine","freq":1320,"arp":[0,5],"arpRate":0.09,"a":0.002,"h":0.14,"d":0.06,"shape":1.5},{"wave":"square","duty":0.25,"freq":2640,"arp":[0,5],"arpRate":0.09,"a":0.002,"h":0.14,"d":0.06,"shape":1.5,"lp":5000,"gain":0.15}],"gain":0.24};
+/** Keycard rejected: low double buzz with a crackle */
+export const accessDenied: Sound = {"vary":0.1,"layers":[{"wave":"square","freq":220,"a":0.003,"h":0.08,"d":0.03,"shape":1,"lp":1500,"drive":1},{"wave":"square","freq":220,"at":0.14,"a":0.003,"h":0.12,"d":0.08,"shape":-3,"lp":1500,"drive":1},{"wave":"crunch","freq":4000,"at":0.14,"a":0.003,"d":0.1,"shape":-4,"gain":0.15}],"gain":0.18};
+/** Sci-fi door slides open with a hiss */
+export const doorSlide: Sound = {"vary":0.3,"varyF":2,"verb":[0.3,0.12],"layers":[{"wave":"noise","bp":4000,"bpTo":2000,"q":1.2,"a":0.01,"d":0.35,"shape":-3,"gain":0.6},{"wave":"saw","freq":80,"to":140,"lp":600,"a":0.02,"h":0.2,"d":0.15,"shape":-3,"gain":0.5},{"wave":"noise","bp":900,"q":2,"at":0.33,"a":0.001,"d":0.04,"shape":-5,"gain":0.6},{"wave":"sine","freq":110,"to":60,"at":0.33,"a":0.001,"d":0.1,"shape":-5,"gain":0.5}],"gain":0.649};
+/** Cute robot beeps and boops */
+export const robotChatter: Sound = {"vary":2,"layers":[{"wave":"sine","freq":900,"arp":[0,9,4,14,-3,7],"arpRate":0.06,"vib":[24,1.5],"a":0.003,"h":0.33,"d":0.05,"shape":2},{"wave":"square","duty":0.3,"freq":450,"arp":[0,9,4,14,-3,7],"arpRate":0.06,"lp":2500,"a":0.003,"h":0.33,"d":0.05,"shape":2,"gain":0.25}],"gain":0.169};
+/** System shutdown: whine falls and cuts */
+export const shutdown: Sound = {"vary":0.2,"layers":[{"wave":"saw","freq":900,"to":40,"curve":0.7,"lp":3000,"kt":1,"a":0.005,"h":0.1,"d":0.7,"shape":1.5,"gain":0.7},{"wave":"sine","freq":450,"to":20,"curve":0.7,"a":0.005,"h":0.1,"d":0.7,"shape":1.5,"gain":0.5},{"wave":"noise","bp":1200,"at":0.8,"a":0.001,"d":0.02,"shape":-5,"gain":0.4}],"gain":0.325};
+/** Digital glitch: stuttering crushed burst */
+export const glitch: Sound = {"vary":2,"varyF":3,"rate":8000,"bits":5,"layers":[{"wave":"square","freq":300,"arp":[0,17,-5,24,3,12],"arpRate":0.025,"a":0.001,"h":0.13,"d":0.03,"shape":1,"gain":0.5},{"wave":"crunch","freq":2000,"to":9000,"a":0.001,"h":0.1,"d":0.04,"shape":1,"gain":0.5}],"gain":0.367};
+/** Swap two tiles: quick two-way swish */
+export const swap: Sound = {"vary":0.5,"varyF":2,"layers":[{"wave":"sine","freq":600,"to":900,"a":0.002,"d":0.06,"shape":-4,"gain":0.5},{"wave":"sine","freq":900,"to":600,"at":0.05,"a":0.002,"d":0.06,"shape":-4,"gain":0.5},{"wave":"noise","bp":2500,"bpTo":4000,"q":1.5,"a":0.03,"d":0.06,"shape":-3,"gain":0.25}],"limit":1,"gain":2.31};
+/** Three in a row: bright glassy pop */
+export const match: Sound = {"vary":0.3,"verb":[0.25,0.15],"layers":[{"wave":"sine","freq":1047,"fm":[2,1.2,0.05],"arp":[0,7,12],"arpRate":0.035,"a":0.001,"d":0.25,"shape":-4},{"wave":"noise","bp":5000,"q":2,"a":0.001,"d":0.03,"shape":-5,"gain":0.3},{"wave":"metal","freq":3000,"hp":6000,"at":0.05,"a":0.002,"d":0.2,"shape":-4,"gain":0.1}],"gain":0.505};
+/** Cascade combo: each step a little higher (pitch it per chain) */
+export const comboChain: Sound = {"vary":0.05,"echo":[0.07,0.3,0.25],"layers":[{"wave":"triangle","freq":784,"arp":[0,4,7,12],"arpRate":0.04,"a":0.002,"h":0.1,"d":0.25,"shape":-3},{"wave":"sine","freq":1568,"fm":[3.5,1.2,0.1],"arp":[0,4,7,12],"arpRate":0.04,"a":0.002,"h":0.1,"d":0.25,"shape":-3,"gain":0.35}],"gain":0.333};
+/** Clear a row: zipper sweep and a chime */
+export const lineClear: Sound = {"vary":0.1,"verb":[0.3,0.15],"layers":[{"wave":"square","duty":0.25,"freq":400,"to":1600,"curve":0.8,"lp":5000,"a":0.002,"h":0.12,"d":0.08,"shape":2,"gain":0.45},{"wave":"noise","bp":2000,"bpTo":7000,"q":1.5,"a":0.01,"d":0.2,"shape":-3,"gain":0.3},{"wave":"sine","freq":2093,"fm":[3.5,1.5,0.1],"at":0.18,"a":0.002,"d":0.45,"shape":-4,"gain":0.45}],"gain":0.488};
+/** Falling piece locks in place: tight thunk */
+export const pieceLock: Sound = {"vary":0.4,"varyF":1.5,"varyG":1,"layers":[{"wave":"noise","bp":2500,"q":2,"a":0.001,"d":0.006,"shape":-6,"gain":0.6},{"wave":"square","freq":180,"to":110,"lp":900,"a":0.001,"d":0.06,"shape":-5,"drive":1},{"wave":"sine","freq":120,"to":70,"a":0.001,"d":0.08,"shape":-5,"gain":0.6},{"wave":"brown","lp":300,"a":0.002,"d":0.12,"shape":-5,"gain":0.3}],"limit":1,"gain":0.897};
+/** Two items merge into a bigger one: whoomp and sparkle */
+export const merge: Sound = {"vary":0.4,"verb":[0.3,0.15],"layers":[{"wave":"sine","freq":180,"to":520,"curve":2,"a":0.003,"d":0.12,"shape":-4,"drive":0.5},{"wave":"pink","bp":600,"bpTo":2400,"q":1.5,"a":0.02,"d":0.1,"shape":-3,"gain":0.3},{"wave":"sine","freq":1568,"fm":[3.5,1.3,0.1],"arp":[0,7],"arpRate":0.05,"at":0.1,"a":0.002,"d":0.3,"shape":-4,"gain":0.4}],"gain":0.665};
 
 /** Every sound name. */
 export type Name =
@@ -388,6 +568,15 @@ export type Name =
   | "select-soft"
   | "message"
   | "plink"
+  | "drag-start"
+  | "drop"
+  | "success"
+  | "maximize"
+  | "minimize"
+  | "question"
+  | "message-send"
+  | "trash"
+  | "page-turn"
   | "coin"
   | "coin-soft"
   | "coin-double"
@@ -403,6 +592,10 @@ export type Name =
   | "xp-orb"
   | "star"
   | "ring"
+  | "potion-drink"
+  | "eat"
+  | "loot-rare"
+  | "equip"
   | "jump"
   | "jump-soft"
   | "jump-high"
@@ -413,6 +606,8 @@ export type Name =
   | "land-heavy"
   | "spring"
   | "wall-jump"
+  | "slide"
+  | "fall-whistle"
   | "hit"
   | "hit-light"
   | "hit-heavy"
@@ -428,6 +623,11 @@ export type Name =
   | "bonk"
   | "stomp"
   | "arrow-hit"
+  | "kick"
+  | "stab"
+  | "sword-clash"
+  | "sword-draw"
+  | "body-fall"
   | "explosion"
   | "explosion-small"
   | "explosion-big"
@@ -467,6 +667,10 @@ export type Name =
   | "dry-fire"
   | "reload"
   | "bow-twang"
+  | "machine-gun"
+  | "shell-casing"
+  | "flamethrower"
+  | "grenade-launch"
   | "step-grass"
   | "step-stone"
   | "step-wood"
@@ -477,6 +681,8 @@ export type Name =
   | "step-sand"
   | "step-retro"
   | "step-heavy"
+  | "step-carpet"
+  | "step-mud"
   | "sparkle"
   | "spell-cast"
   | "fireball"
@@ -500,6 +706,9 @@ export type Name =
   | "siren"
   | "radar-ping"
   | "quest-new"
+  | "buzzer-wrong"
+  | "ding-correct"
+  | "timer-done"
   | "victory"
   | "level-complete"
   | "game-over"
@@ -509,6 +718,8 @@ export type Name =
   | "puzzle-solved"
   | "checkpoint"
   | "round-start"
+  | "highscore"
+  | "boss-intro"
   | "door-open"
   | "door-close"
   | "door-heavy"
@@ -530,6 +741,11 @@ export type Name =
   | "thud"
   | "toss"
   | "fire-crackle"
+  | "crate-break"
+  | "pot-break"
+  | "metal-clang"
+  | "rock-crumble"
+  | "ignite"
   | "bat-flap"
   | "slime-blob"
   | "chirp"
@@ -539,9 +755,63 @@ export type Name =
   | "creature-hurt"
   | "creature-die"
   | "voice-babble"
+  | "zombie-groan"
+  | "roar"
+  | "dog-bark"
+  | "cat-meow"
   | "thunder-far"
   | "rain-drop"
   | "bird-chirp"
   | "frog-croak"
   | "leaf-rustle"
-  | "stone-drop";
+  | "stone-drop"
+  | "thunder-crack"
+  | "ocean-wave"
+  | "rain-burst"
+  | "dive-splash"
+  | "card-flip"
+  | "card-deal"
+  | "card-place"
+  | "card-shuffle"
+  | "chip-stack"
+  | "dice-roll"
+  | "slot-spin"
+  | "slot-stop"
+  | "jackpot"
+  | "engine-start"
+  | "engine-rev"
+  | "tire-screech"
+  | "car-crash"
+  | "car-horn"
+  | "boost"
+  | "race-light"
+  | "jumpscare"
+  | "dread-drone"
+  | "whisper"
+  | "horror-sting"
+  | "chains-rattle"
+  | "static-burst"
+  | "music-box"
+  | "axe-chop"
+  | "tree-fall"
+  | "pickaxe-mine"
+  | "dig"
+  | "plant-seed"
+  | "watering-can"
+  | "harvest"
+  | "fishing-cast"
+  | "fish-bite"
+  | "computer-beep"
+  | "scan"
+  | "access-granted"
+  | "access-denied"
+  | "door-slide"
+  | "robot-chatter"
+  | "shutdown"
+  | "glitch"
+  | "swap"
+  | "match"
+  | "combo-chain"
+  | "line-clear"
+  | "piece-lock"
+  | "merge";

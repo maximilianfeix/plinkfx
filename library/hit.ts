@@ -120,4 +120,56 @@ export default def("hit", {
       { wave: "brown", lp: 300, a: 0.002, d: 0.12, shape: -5, gain: 0.3 },
     ],
   }],
+  kick: ["Kick: low thump with a cloth snap", {
+    varyF: 2,
+    varyG: 1.5,
+    layers: [
+      { wave: "noise", bp: 2500, bpTo: 1200, q: 1.2, a: 0.035, d: 0.02, shape: 1, gain: 0.4 },
+      { wave: "noise", bp: 3200, q: 2, at: 0.04, a: 0.001, d: 0.01, shape: -6, gain: 0.3 },
+      { wave: "pink", lp: 1000, lpTo: 300, at: 0.04, a: 0.001, d: 0.09, shape: -6, drive: 2 },
+      { wave: "sine", freq: 160, to: 70, at: 0.04, a: 0.001, d: 0.16, shape: -5, drive: 1 },
+      { wave: "brown", lp: 250, at: 0.045, a: 0.002, d: 0.22, shape: -5, gain: 0.3 },
+    ],
+  }],
+  stab: ["Blade stab into flesh: short wet thrust", {
+    vary: 0.8,
+    varyF: 2,
+    varyG: 1.5,
+    layers: [
+      { wave: "noise", bp: 3500, q: 2, a: 0.001, d: 0.015, shape: -5, gain: 0.6 },
+      { wave: "noise", lp: 1500, lpTo: 400, q: 3, a: 0.002, d: 0.14, shape: -4, drive: 1.5 },
+      { wave: "sine", freq: 180, to: 90, a: 0.001, d: 0.1, shape: -5, gain: 0.5 },
+    ],
+  }],
+  "sword-clash": ["Two blades clash and ring", {
+    vary: 0.6,
+    varyF: 1.5,
+    verb: [0.35, 0.2],
+    layers: [
+      { wave: "noise", hp: 2500, a: 0.001, d: 0.03, shape: -5, drive: 1 },
+      { wave: "modal", freq: 1450, modes: [1, 2.756, 5.404, 8.933], a: 0.001, d: 0.8, shape: -3, gain: 0.6 },
+      { wave: "metal", freq: 1100, hp: 3000, a: 0.001, d: 0.5, shape: -4, gain: 0.6 },
+      { wave: "sine", freq: 3300, fm: [1.41, 2, 0.15], vib: [7, 0.1], a: 0.001, d: 0.7, shape: -3, gain: 0.2 },
+    ],
+  }],
+  "sword-draw": ["Unsheathe a sword: metallic scrape that rings out", {
+    vary: 0.4,
+    verb: [0.3, 0.15],
+    layers: [
+      { wave: "noise", bp: 4000, bpTo: 6500, q: 4, a: 0.05, h: 0.2, d: 0.1, shape: -3, gain: 0.7 },
+      { wave: "metal", freq: 2200, hp: 4000, a: 0.05, h: 0.2, d: 0.1, gain: 0.25 },
+      { wave: "modal", freq: 1700, modes: [1, 2.756, 5.404], at: 0.3, a: 0.001, d: 0.7, shape: -3, gain: 0.4 },
+    ],
+  }],
+  "body-fall": ["Body hits the floor", {
+    varyF: 2,
+    varyG: 1.5,
+    verb: [0.25, 0.1],
+    layers: [
+      { wave: "pink", lp: 900, a: 0.001, d: 0.1, shape: -5, drive: 1.5 },
+      { wave: "sine", freq: 95, to: 40, a: 0.001, d: 0.25, shape: -4, drive: 1 },
+      { wave: "pink", lp: 700, at: 0.13, a: 0.001, d: 0.07, shape: -5, gain: 0.5 },
+      { wave: "noise", bp: 1600, q: 1, at: 0.13, a: 0.001, d: 0.02, shape: -5, gain: 0.3 },
+    ],
+  }],
 });

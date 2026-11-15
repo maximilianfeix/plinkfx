@@ -47,4 +47,41 @@ export default def("nature", {
       { wave: "modal", freq: 1150, modes: [1, 2.6, 4.9, 7.3], at: 0.16, a: 0.001, d: 0.08, shape: -5, gain: 0.5 },
     ],
   }],
+  "thunder-crack": ["Close lightning: sharp crack into a rolling boom", {
+    vary: 0.5,
+    varyF: 2,
+    verb: [0.7, 0.3],
+    layers: [
+      { wave: "noise", hp: 1500, a: 0.001, d: 0.12, shape: -4, drive: 2 },
+      { wave: "brown", lp: 1200, lpTo: 150, a: 0.005, h: 0.2, d: 1.6, shape: -3, drive: 1.5, gain: 1.2 },
+      { wave: "sine", freq: 60, to: 30, a: 0.01, d: 1, shape: -3, drive: 1 },
+      ...[0.3, 0.55, 0.8].map((at, i) => ({ wave: "brown" as const, lp: 400, at, a: 0.02, d: 0.4, shape: -3, gain: 0.5 - i * 0.12 })),
+    ],
+  }],
+  "ocean-wave": ["A wave rolls in and washes back", {
+    vary: 0.3,
+    varyF: 2,
+    layers: [
+      { wave: "pink", lp: 600, lpTo: 3000, a: 0.7, d: 0.2, shape: 1.5 },
+      { wave: "noise", bp: 3000, q: 0.7, at: 0.65, a: 0.05, d: 1.2, shape: -3, gain: 0.5 },
+      { wave: "brown", lp: 300, a: 0.6, h: 0.3, d: 0.9, gain: 0.5 },
+    ],
+  }],
+  "rain-burst": ["Short rain shower patter (layer or loop it)", {
+    vary: 0.2,
+    varyF: 2,
+    layers: [
+      { wave: "pink", bp: 2500, q: 0.6, a: 0.2, h: 0.8, d: 0.4, gain: 0.6 },
+      ...Array.from({ length: 24 }, (_, i) => ({ wave: "noise" as const, bp: 2000 + (i * 397) % 3000, q: 3, at: 0.05 + i * 0.05 + (i % 3) * 0.013, a: 0.001, d: 0.012, shape: -5, gain: 0.3 + (i % 4) * 0.1 })),
+    ],
+  }],
+  "dive-splash": ["Dive into deep water: plunge and bubbles", {
+    varyF: 2,
+    verb: [0.3, 0.12],
+    layers: [
+      { wave: "noise", lp: 5000, lpTo: 600, a: 0.002, d: 0.5, shape: -3, drive: 1 },
+      { wave: "sine", freq: 150, to: 50, a: 0.002, d: 0.25, shape: -4, drive: 1 },
+      ...[0.25, 0.32, 0.4, 0.46, 0.55].map((at, i) => ({ wave: "sine" as const, freq: 350 + i * 60, to: 900 + i * 100, curve: 3, at, a: 0.002, d: 0.05, shape: 3, lp: 1800, gain: 0.4 })),
+    ],
+  }],
 });

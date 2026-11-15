@@ -1,5 +1,8 @@
 import { def } from "./def.ts";
 
+// Wood plank modes (also in card.ts and farm.ts).
+const WOOD = [1, 2.32, 4.25, 6.63];
+
 export default def("world", {
   whoosh: ["Medium whoosh for dashes and swings", {
     varyF: 3,
@@ -81,6 +84,58 @@ export default def("world", {
     layers: [
       { wave: "brown", lp: 800, a: 0.1, h: 0.6, d: 0.3, gain: 0.5 },
       ...[0.05, 0.13, 0.17, 0.3, 0.42, 0.48, 0.61, 0.74, 0.8].map((at, i) => ({ wave: "noise" as const, bp: 2500 + i * 300, q: 2, at, a: 0.001, d: 0.012, shape: 2, gain: 0.8 })),
+    ],
+  }],
+  "crate-break": ["Wooden crate smashes into planks", {
+    varyF: 2,
+    varyG: 1.5,
+    verb: [0.25, 0.12],
+    layers: [
+      { wave: "noise", bp: 1800, q: 1, a: 0.001, d: 0.02, shape: -5, drive: 2 },
+      ...[0, 0.03, 0.07, 0.12, 0.18].map((at, i) => ({ wave: "modal" as const, freq: 240 + i * 55, modes: WOOD, at, a: 0.001, d: 0.12, shape: -5, gain: 1 - i * 0.15 })),
+      { wave: "sine", freq: 110, to: 50, a: 0.001, d: 0.15, shape: -5, gain: 0.6 },
+      { wave: "pink", lp: 1500, a: 0.001, d: 0.25, shape: -4, gain: 0.4 },
+    ],
+  }],
+  "pot-break": ["Clay pot shatters (Zelda pots)", {
+    varyF: 2,
+    varyG: 1.5,
+    verb: [0.25, 0.12],
+    layers: [
+      { wave: "noise", bp: 2500, q: 0.8, a: 0.001, d: 0.06, shape: -4, drive: 1.5 },
+      { wave: "modal", freq: 650, modes: [1, 2.1, 3.4, 5.2], a: 0.001, d: 0.1, shape: -5 },
+      ...[0.04, 0.08, 0.13, 0.19].map((at, i) => ({ wave: "modal" as const, freq: 1200 + i * 230, modes: [1, 2.1, 3.4], at, a: 0.001, d: 0.06, shape: -5, gain: 0.5 })),
+    ],
+  }],
+  "metal-clang": ["Metal object or pipe hits the floor", {
+    vary: 0.8,
+    varyF: 1.5,
+    varyG: 1,
+    verb: [0.35, 0.18],
+    layers: [
+      { wave: "noise", bp: 3000, q: 1, a: 0.001, d: 0.015, shape: -5, gain: 0.6 },
+      { wave: "modal", freq: 620, modes: [1, 2.756, 5.404, 8.933], a: 0.001, d: 0.7, shape: -3 },
+      { wave: "metal", freq: 500, bp: 2000, q: 1.5, a: 0.001, d: 0.3, shape: -4, gain: 0.4 },
+      { wave: "modal", freq: 640, modes: [1, 2.756, 5.404], at: 0.15, a: 0.001, d: 0.4, shape: -4, gain: 0.35 },
+    ],
+  }],
+  "rock-crumble": ["Rocks and rubble crumble down", {
+    varyF: 2,
+    varyG: 1.5,
+    verb: [0.4, 0.18],
+    layers: [
+      { wave: "brown", lp: 700, lpTo: 200, a: 0.01, h: 0.2, d: 0.6, shape: -3, drive: 1 },
+      ...Array.from({ length: 10 }, (_, i) => ({ wave: "modal" as const, freq: 300 + (i * 173) % 500, modes: [1, 2.6, 4.9], at: i * 0.06 + (i % 3) * 0.012, a: 0.001, d: 0.06, shape: -6, gain: 0.8 - i * 0.05 })),
+    ],
+  }],
+  ignite: ["Torch or fire ignites: whoomph", {
+    vary: 0.5,
+    varyF: 2,
+    layers: [
+      { wave: "pink", bp: 400, bpTo: 1500, q: 1, a: 0.04, d: 0.4, shape: -3, drive: 1 },
+      { wave: "brown", lp: 400, a: 0.03, h: 0.15, d: 0.5, shape: -3, gain: 0.8 },
+      { wave: "sine", freq: 90, to: 50, a: 0.02, d: 0.2, shape: -4, gain: 0.5 },
+      ...[0.08, 0.15, 0.21, 0.3, 0.36, 0.45, 0.52, 0.6].map((at, i) => ({ wave: "noise" as const, bp: 2500 + (i % 3) * 900, q: 3, at, a: 0.001, d: 0.008, shape: -5, gain: 0.45 - i * 0.03 })),
     ],
   }],
 });

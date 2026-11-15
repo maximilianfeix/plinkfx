@@ -3,13 +3,13 @@
   <img alt="plinkfx: game sound effects as code" src="https://cdn.jsdelivr.net/gh/maximilianfeix/plinkfx@main/brand/banners/readme-light.svg" width="100%">
 </picture>
 
-**<!-- count -->180<!-- /count --> game sound effects, written as code.** Coins, jumps, hits, lasers, explosions,
+**<!-- count -->270<!-- /count --> game sound effects, written as code.** Coins, jumps, hits, lasers, explosions,
 UI clicks and the rest of what a game needs, each one a few readable numbers that a 2.9 kB player turns into sound.
 CC0, no audio files, no account.
 
 <a href="https://maximilianfeix.github.io/plinkfx/"><img src="https://cdn.jsdelivr.net/gh/maximilianfeix/plinkfx@main/docs/media/gallery.gif" alt="The plinkfx gallery: clicking tiles plays coin, jump, laser, explosion and more; each tile shows its waveform" width="100%"></a>
 
-**[▶ Hear all <!-- count -->180<!-- /count --> in your browser](https://maximilianfeix.github.io/plinkfx/)** (one click per sound, tweak any of them and share the link) · [play the 30-second demo game](https://maximilianfeix.github.io/plinkfx/game.html) · [watch the 30 s video with sound](https://github.com/maximilianfeix/plinkfx/blob/main/docs/media/hero-16x9.mp4)
+**[▶ Hear all <!-- count -->270<!-- /count --> in your browser](https://maximilianfeix.github.io/plinkfx/)** (one click per sound, tweak any of them and share the link) · [play the 30-second demo game](https://maximilianfeix.github.io/plinkfx/game.html) · [watch the 30 s video with sound](https://github.com/maximilianfeix/plinkfx/blob/main/docs/media/hero-16x9.mp4)
 
 ```bash
 npm i plinkfx
@@ -27,7 +27,7 @@ sound like a loop.
 <details>
 <summary>More ways to play: options, game setup, tree-shaking, your own sound</summary>
 
-**By name** (every sound included, 14.9 kB gzipped):
+**By name** (every sound included, 22.4 kB gzipped):
 
 ```js
 import { play, volume } from "plinkfx";
@@ -37,6 +37,7 @@ play("coin", { volume: 0.5, rate: 1.2 });   // quieter, a bit higher
 play("step-wood", { variant: 2 });          // a specific take (0-3)
 play("step-wood", { pan: -0.6 });           // to the left
 play("coin", { delay: 0.1 });               // 100 ms later
+play("combo-chain", { rate: 2 ** (n / 12) }); // n-th combo step, a semitone higher each
 volume(0.8);                                // master volume, 0 mutes
 ```
 
@@ -113,21 +114,27 @@ const useSfx = (name) => useCallback((opts) => play(name, opts), [name]);
 <!-- catalog -->
 | Category | Sounds | Examples |
 |---|---:|---|
-| UI | 23 | `click` `click-soft` `toggle-on` `confirm` `error` `notify` `swipe` `plink` |
-| Pickups | 15 | `coin` `coin-double` `coin-bag` `gem` `key` `heart` `ka-ching` |
-| Jump & land | 10 | `jump` `jump-double` `jump-cartoon` `land` `land-heavy` `spring` |
-| Hits | 15 | `hit` `hit-heavy` `punch` `hurt` `enemy-die` `sword-hit` `block` `crit` |
+| UI | 32 | `click` `click-soft` `toggle-on` `confirm` `error` `notify` `swipe` `plink` |
+| Pickups | 19 | `coin` `coin-double` `coin-bag` `gem` `key` `heart` `ka-ching` |
+| Jump & land | 12 | `jump` `jump-double` `jump-cartoon` `land` `land-heavy` `spring` |
+| Hits | 20 | `hit` `hit-heavy` `punch` `hurt` `enemy-die` `sword-hit` `block` `crit` |
 | Explosions | 10 | `explosion` `explosion-big` `explosion-retro` `firework` `implosion` |
 | Power-ups | 12 | `powerup` `level-up` `extra-life` `shield-on` `heal` `charge-up` |
-| Shots & lasers | 17 | `laser` `blaster` `zap` `pew` `gunshot` `ricochet` `bow-twang` `reload` |
-| Footsteps | 10 | `step-grass` `step-stone` `step-wood` `step-metal` `step-snow` `step-water` |
+| Shots & lasers | 21 | `laser` `blaster` `zap` `pew` `gunshot` `ricochet` `bow-twang` `reload` |
+| Footsteps | 12 | `step-grass` `step-stone` `step-wood` `step-metal` `step-snow` `step-water` |
 | Magic | 13 | `sparkle` `spell-cast` `fireball` `ice` `teleport` `harp` `lightning` |
-| Alerts | 10 | `alarm` `warning` `low-health` `heartbeat` `countdown` `radar-ping` |
-| Jingles | 9 | `victory` `checkpoint` `level-complete` `game-over` `secret-found` `achievement` |
+| Alerts | 13 | `alarm` `warning` `low-health` `heartbeat` `countdown` `radar-ping` |
+| Jingles | 11 | `victory` `checkpoint` `level-complete` `game-over` `secret-found` `achievement` |
 | Doors & mechanics | 10 | `door-open` `door-heavy` `lock-open` `chest-open` `lever` `ratchet` |
-| World | 11 | `whoosh` `swing` `splash` `water-drop` `bubble` `wind` `glass-break` |
-| Creatures | 9 | `bat-flap` `slime-blob` `growl-small` `ghost-moan` `bee-buzz` `voice-babble` |
-| Nature | 6 | `thunder-far` `rain-drop` `bird-chirp` `frog-croak` `leaf-rustle` `stone-drop` |
+| World | 16 | `whoosh` `swing` `splash` `water-drop` `bubble` `wind` `glass-break` |
+| Creatures | 13 | `bat-flap` `slime-blob` `growl-small` `ghost-moan` `bee-buzz` `voice-babble` |
+| Nature | 10 | `thunder-far` `rain-drop` `bird-chirp` `frog-croak` `leaf-rustle` `stone-drop` |
+| Cards & casino | 9 | `card-flip` `card-deal` `card-shuffle` `chip-stack` `dice-roll` `jackpot` |
+| Vehicles | 7 | `engine-start` `engine-rev` `tire-screech` `car-crash` `car-horn` `boost` |
+| Horror | 7 | `jumpscare` `dread-drone` `whisper` `horror-sting` `chains-rattle` `music-box` |
+| Farm & crafting | 9 | `axe-chop` `tree-fall` `pickaxe-mine` `dig` `watering-can` `fishing-cast` |
+| Sci-fi & tech | 8 | `computer-beep` `scan` `access-granted` `door-slide` `robot-chatter` `glitch` |
+| Puzzle | 6 | `swap` `match` `combo-chain` `line-clear` `piece-lock` `merge` |
 <!-- /catalog -->
 
 Every sound with a one-line description: `npx plinkfx list`, or the [gallery](https://maximilianfeix.github.io/plinkfx/).
@@ -282,9 +289,9 @@ sfxr (DrPetter, 2007) started this genre, and these are the tools most people re
 | | **plinkfx** | [ZzFX](https://github.com/KilledByAPixel/ZzFX) | [jsfxr](https://github.com/chr15m/jsfxr) | [Kenney audio packs](https://kenney.nl/assets/category:Audio) |
 |---|---|---|---|---|
 | What it is | named sound library as code | tiny synth + designer | sfxr port: generator + library | WAV/OGG asset packs |
-| Size (gzip) | 2.9 kB player, 14.9 kB with all sounds | ~1.3 kB | ~6.3 kB | no code, files |
+| Size (gzip) | 2.9 kB player, 22.4 kB with all sounds | ~1.3 kB | ~6.3 kB | no code, files |
 | Licence | CC0 sounds, MIT code | MIT | Unlicense | CC0 |
-| Named sounds | <!-- count -->180<!-- /count --> | 4 examples, random generators | random generators per category | many, generic file names |
+| Named sounds | <!-- count -->270<!-- /count --> | 4 examples, random generators | random generators per category | many, generic file names |
 | Matched loudness | yes, measured in tests | no | no | not stated |
 | Same input, same samples | yes, seeded and hash-tested | only with randomness set to 0 | per saved parameter set | fixed files |
 | Variations | 4 seeded takes per sound | edit or randomise | mutate | separate files |

@@ -95,4 +95,22 @@ export default def("footstep", {
       tail(0.35),
     ],
   }],
+  "step-carpet": ["Muffled step on carpet or rug", {
+    ...walk,
+    layers: [
+      { wave: "pink", lp: 400, lpTo: 200, a: 0.004, d: 0.08, shape: -6 },
+      { wave: "noise", bp: 1200, q: 1, a: 0.004, d: 0.04, shape: -5, gain: 0.25 },
+      { wave: "brown", lp: 200, a: 0.004, d: 0.15, shape: -4, gain: 0.3 },
+    ],
+  }],
+  "step-mud": ["Squelchy step in mud", {
+    ...walk,
+    varyF: 2,
+    varyG: 1.5,
+    layers: [
+      { wave: "pink", lp: 500, a: 0.003, d: 0.08, shape: -6 },
+      { wave: "noise", lp: 1200, lpTo: 300, q: 4, a: 0.01, d: 0.15, shape: -3, drive: 1, gain: 0.6 },
+      { wave: "sine", freq: 220, to: 120, vib: [28, 2], at: 0.04, a: 0.005, d: 0.1, shape: -3, gain: 0.3 },
+    ],
+  }],
 });

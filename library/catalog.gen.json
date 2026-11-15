@@ -59,6 +59,30 @@
   "nature": {
    "title": "Nature",
    "target": -18
+  },
+  "card": {
+   "title": "Cards & casino",
+   "target": -18
+  },
+  "vehicle": {
+   "title": "Vehicles",
+   "target": -16
+  },
+  "horror": {
+   "title": "Horror",
+   "target": -17
+  },
+  "farm": {
+   "title": "Farm & crafting",
+   "target": -17
+  },
+  "scifi": {
+   "title": "Sci-fi & tech",
+   "target": -18
+  },
+  "puzzle": {
+   "title": "Puzzle",
+   "target": -17
   }
  },
  "sounds": [
@@ -1880,6 +1904,717 @@
    ]
   },
   {
+   "name": "drag-start",
+   "id": "dragStart",
+   "cat": "ui",
+   "desc": "Pick up a draggable item: soft lift",
+   "gain": 0.882,
+   "limited": false,
+   "m": {
+    "peak": -1.31,
+    "truePeak": -1.31,
+    "lufsMax": -20.6,
+    "duration": 0.08,
+    "centroid": 580
+   },
+   "env": [
+    0.87,
+    1,
+    0.95,
+    0.91,
+    0.86,
+    0.82,
+    0.78,
+    0.73,
+    0.7,
+    0.66,
+    0.63,
+    0.59,
+    0.56,
+    0.54,
+    0.5,
+    0.48,
+    0.46,
+    0.43,
+    0.41,
+    0.38,
+    0.37,
+    0.34,
+    0.32,
+    0.3,
+    0.28,
+    0.27,
+    0.25,
+    0.23,
+    0.22,
+    0.21,
+    0.19,
+    0.18,
+    0.16,
+    0.15,
+    0.13,
+    0.12,
+    0.11,
+    0.09,
+    0.07,
+    0.04
+   ],
+   "takes": [
+    {
+     "lufsMax": -20.6,
+     "truePeak": -1.31,
+     "duration": 0.08
+    },
+    {
+     "lufsMax": -20.38,
+     "truePeak": -1.36,
+     "duration": 0.09
+    },
+    {
+     "lufsMax": -20.53,
+     "truePeak": -1.26,
+     "duration": 0.08
+    },
+    {
+     "lufsMax": -20.39,
+     "truePeak": -1.2,
+     "duration": 0.09
+    }
+   ]
+  },
+  {
+   "name": "drop",
+   "id": "drop",
+   "cat": "ui",
+   "desc": "Drop it into a slot: soft settle",
+   "gain": 0.826,
+   "limited": false,
+   "m": {
+    "peak": -2.02,
+    "truePeak": -2.02,
+    "lufsMax": -20.2,
+    "duration": 0.1,
+    "centroid": 610
+   },
+   "env": [
+    1,
+    1,
+    0.96,
+    0.89,
+    0.87,
+    0.83,
+    0.78,
+    0.74,
+    0.7,
+    0.66,
+    0.63,
+    0.59,
+    0.56,
+    0.53,
+    0.51,
+    0.48,
+    0.46,
+    0.43,
+    0.41,
+    0.39,
+    0.36,
+    0.35,
+    0.32,
+    0.31,
+    0.28,
+    0.27,
+    0.25,
+    0.24,
+    0.22,
+    0.2,
+    0.19,
+    0.18,
+    0.16,
+    0.14,
+    0.13,
+    0.12,
+    0.1,
+    0.09,
+    0.07,
+    0.04
+   ],
+   "takes": [
+    {
+     "lufsMax": -20.2,
+     "truePeak": -2.02,
+     "duration": 0.1
+    },
+    {
+     "lufsMax": -19.95,
+     "truePeak": -1.55,
+     "duration": 0.11
+    },
+    {
+     "lufsMax": -20.08,
+     "truePeak": -1.2,
+     "duration": 0.1
+    },
+    {
+     "lufsMax": -19.93,
+     "truePeak": -1.74,
+     "duration": 0.11
+    }
+   ]
+  },
+  {
+   "name": "success",
+   "id": "success",
+   "cat": "ui",
+   "desc": "Task done: clean rising check-mark chime",
+   "gain": 0.204,
+   "limited": false,
+   "m": {
+    "peak": -9.9,
+    "truePeak": -9.9,
+    "lufsMax": -20.41,
+    "duration": 0.7,
+    "centroid": 1423
+   },
+   "env": [
+    0.89,
+    0.89,
+    0.97,
+    1,
+    0.94,
+    0.87,
+    0.8,
+    0.62,
+    0.55,
+    0.5,
+    0.5,
+    0.45,
+    0.41,
+    0.36,
+    0.28,
+    0.27,
+    0.27,
+    0.26,
+    0.17,
+    0.19,
+    0.17,
+    0.16,
+    0.1,
+    0.1,
+    0.09,
+    0.09,
+    0.08,
+    0.09,
+    0.09,
+    0.07,
+    0.08,
+    0.07,
+    0.06,
+    0.06,
+    0.04,
+    0.04,
+    0.04,
+    0.04,
+    0.04,
+    0.03
+   ],
+   "takes": [
+    {
+     "lufsMax": -20.41,
+     "truePeak": -9.9,
+     "duration": 0.7
+    },
+    {
+     "lufsMax": -19.32,
+     "truePeak": -9.72,
+     "duration": 0.81
+    },
+    {
+     "lufsMax": -19.64,
+     "truePeak": -9.57,
+     "duration": 0.76
+    },
+    {
+     "lufsMax": -20.67,
+     "truePeak": -11.07,
+     "duration": 0.64
+    }
+   ]
+  },
+  {
+   "name": "maximize",
+   "id": "maximize",
+   "cat": "ui",
+   "desc": "Window or card expands: rising whoosh-blip",
+   "gain": 1.15,
+   "limited": false,
+   "m": {
+    "peak": -3.15,
+    "truePeak": -3.14,
+    "lufsMax": -20.15,
+    "duration": 0.11,
+    "centroid": 2631
+   },
+   "env": [
+    0.44,
+    0.71,
+    0.88,
+    1,
+    0.99,
+    0.97,
+    0.89,
+    0.88,
+    0.85,
+    0.83,
+    0.76,
+    0.79,
+    0.74,
+    0.72,
+    0.68,
+    0.65,
+    0.63,
+    0.6,
+    0.56,
+    0.52,
+    0.48,
+    0.49,
+    0.46,
+    0.44,
+    0.39,
+    0.39,
+    0.37,
+    0.32,
+    0.32,
+    0.29,
+    0.27,
+    0.26,
+    0.24,
+    0.21,
+    0.19,
+    0.17,
+    0.15,
+    0.13,
+    0.1,
+    0.06
+   ],
+   "takes": [
+    {
+     "lufsMax": -20.15,
+     "truePeak": -3.14,
+     "duration": 0.11
+    },
+    {
+     "lufsMax": -19.95,
+     "truePeak": -3.3,
+     "duration": 0.12
+    },
+    {
+     "lufsMax": -20.08,
+     "truePeak": -3.28,
+     "duration": 0.11
+    },
+    {
+     "lufsMax": -19.95,
+     "truePeak": -3.14,
+     "duration": 0.11
+    }
+   ]
+  },
+  {
+   "name": "minimize",
+   "id": "minimize",
+   "cat": "ui",
+   "desc": "Window or card collapses: falling whoosh-blip",
+   "gain": 1.17,
+   "limited": false,
+   "m": {
+    "peak": -2.22,
+    "truePeak": -2.22,
+    "lufsMax": -20.14,
+    "duration": 0.1,
+    "centroid": 3010
+   },
+   "env": [
+    0.67,
+    0.94,
+    0.97,
+    1,
+    0.91,
+    0.86,
+    0.83,
+    0.82,
+    0.77,
+    0.72,
+    0.7,
+    0.69,
+    0.67,
+    0.61,
+    0.57,
+    0.56,
+    0.55,
+    0.51,
+    0.48,
+    0.47,
+    0.44,
+    0.42,
+    0.4,
+    0.38,
+    0.36,
+    0.34,
+    0.33,
+    0.3,
+    0.28,
+    0.26,
+    0.25,
+    0.22,
+    0.21,
+    0.19,
+    0.17,
+    0.16,
+    0.14,
+    0.12,
+    0.1,
+    0.06
+   ],
+   "takes": [
+    {
+     "lufsMax": -20.14,
+     "truePeak": -2.22,
+     "duration": 0.1
+    },
+    {
+     "lufsMax": -19.96,
+     "truePeak": -2.86,
+     "duration": 0.11
+    },
+    {
+     "lufsMax": -20.07,
+     "truePeak": -2.76,
+     "duration": 0.11
+    },
+    {
+     "lufsMax": -19.93,
+     "truePeak": -3,
+     "duration": 0.11
+    }
+   ]
+  },
+  {
+   "name": "question",
+   "id": "question",
+   "cat": "ui",
+   "desc": "Dialog asks something: curious upward lilt",
+   "gain": 0.277,
+   "limited": false,
+   "m": {
+    "peak": -9.09,
+    "truePeak": -9.09,
+    "lufsMax": -20.1,
+    "duration": 0.76,
+    "centroid": 1250
+   },
+   "env": [
+    0.89,
+    0.9,
+    0.91,
+    0.9,
+    0.95,
+    0.98,
+    1,
+    0.79,
+    0.68,
+    0.69,
+    0.65,
+    0.59,
+    0.53,
+    0.4,
+    0.35,
+    0.35,
+    0.29,
+    0.26,
+    0.26,
+    0.23,
+    0.23,
+    0.22,
+    0.21,
+    0.19,
+    0.16,
+    0.13,
+    0.11,
+    0.09,
+    0.08,
+    0.08,
+    0.08,
+    0.07,
+    0.06,
+    0.07,
+    0.06,
+    0.05,
+    0.05,
+    0.04,
+    0.04,
+    0.03
+   ],
+   "takes": [
+    {
+     "lufsMax": -20.1,
+     "truePeak": -9.09,
+     "duration": 0.76
+    },
+    {
+     "lufsMax": -19.86,
+     "truePeak": -9.14,
+     "duration": 0.77
+    },
+    {
+     "lufsMax": -19.93,
+     "truePeak": -8.88,
+     "duration": 0.76
+    },
+    {
+     "lufsMax": -20.06,
+     "truePeak": -9.36,
+     "duration": 0.73
+    }
+   ]
+  },
+  {
+   "name": "message-send",
+   "id": "messageSend",
+   "cat": "ui",
+   "desc": "Message sent: quick upward swoosh",
+   "gain": 1.26,
+   "limited": false,
+   "m": {
+    "peak": -3.72,
+    "truePeak": -3.72,
+    "lufsMax": -19.94,
+    "duration": 0.13,
+    "centroid": 4139
+   },
+   "env": [
+    0.54,
+    0.76,
+    0.93,
+    1,
+    0.93,
+    0.92,
+    0.89,
+    0.83,
+    0.83,
+    0.8,
+    0.81,
+    0.84,
+    0.74,
+    0.76,
+    0.77,
+    0.79,
+    0.73,
+    0.72,
+    0.63,
+    0.63,
+    0.59,
+    0.52,
+    0.54,
+    0.44,
+    0.42,
+    0.47,
+    0.42,
+    0.36,
+    0.36,
+    0.3,
+    0.31,
+    0.27,
+    0.26,
+    0.21,
+    0.18,
+    0.17,
+    0.15,
+    0.12,
+    0.1,
+    0.05
+   ],
+   "takes": [
+    {
+     "lufsMax": -19.94,
+     "truePeak": -3.72,
+     "duration": 0.13
+    },
+    {
+     "lufsMax": -20.2,
+     "truePeak": -4.05,
+     "duration": 0.13
+    },
+    {
+     "lufsMax": -19.81,
+     "truePeak": -3.88,
+     "duration": 0.13
+    },
+    {
+     "lufsMax": -20.1,
+     "truePeak": -4.08,
+     "duration": 0.13
+    }
+   ]
+  },
+  {
+   "name": "trash",
+   "id": "trash",
+   "cat": "ui",
+   "desc": "Delete / move to trash: crumple and drop",
+   "gain": 1.49,
+   "limited": false,
+   "m": {
+    "peak": -2.78,
+    "truePeak": -2.78,
+    "lufsMax": -20,
+    "duration": 0.25,
+    "centroid": 4507
+   },
+   "env": [
+    0.77,
+    0.39,
+    0.21,
+    0.12,
+    0.73,
+    0.39,
+    0.22,
+    0.68,
+    0.47,
+    0.27,
+    0.12,
+    0.04,
+    0.86,
+    0.69,
+    0.38,
+    0.19,
+    0.71,
+    0.49,
+    0.22,
+    1,
+    0.94,
+    0.83,
+    0.72,
+    0.63,
+    0.56,
+    0.49,
+    0.43,
+    0.37,
+    0.31,
+    0.27,
+    0.23,
+    0.2,
+    0.49,
+    0.48,
+    0.35,
+    0.24,
+    0.19,
+    0.14,
+    0.1,
+    0.09
+   ],
+   "takes": [
+    {
+     "lufsMax": -20,
+     "truePeak": -2.78,
+     "duration": 0.25
+    },
+    {
+     "lufsMax": -19.9,
+     "truePeak": -2.76,
+     "duration": 0.25
+    },
+    {
+     "lufsMax": -19.99,
+     "truePeak": -2.71,
+     "duration": 0.25
+    },
+    {
+     "lufsMax": -20.17,
+     "truePeak": -2.72,
+     "duration": 0.25
+    }
+   ]
+  },
+  {
+   "name": "page-turn",
+   "id": "pageTurn",
+   "cat": "ui",
+   "desc": "Turn a book or tutorial page",
+   "gain": 1.46,
+   "limited": false,
+   "m": {
+    "peak": -4.61,
+    "truePeak": -4.21,
+    "lufsMax": -19.68,
+    "duration": 0.22,
+    "centroid": 6217
+   },
+   "env": [
+    0.24,
+    0.39,
+    0.46,
+    0.45,
+    0.49,
+    0.57,
+    0.7,
+    0.7,
+    0.82,
+    0.8,
+    0.84,
+    0.86,
+    0.98,
+    0.94,
+    0.99,
+    1,
+    0.86,
+    0.78,
+    0.75,
+    0.78,
+    0.68,
+    0.63,
+    0.54,
+    0.54,
+    0.5,
+    0.44,
+    0.44,
+    0.41,
+    0.36,
+    0.32,
+    0.27,
+    0.23,
+    0.22,
+    0.19,
+    0.14,
+    0.11,
+    0.6,
+    0.42,
+    0.24,
+    0.11
+   ],
+   "takes": [
+    {
+     "lufsMax": -19.68,
+     "truePeak": -4.21,
+     "duration": 0.22
+    },
+    {
+     "lufsMax": -21.49,
+     "truePeak": -7.4,
+     "duration": 0.22
+    },
+    {
+     "lufsMax": -19.52,
+     "truePeak": -3.51,
+     "duration": 0.22
+    },
+    {
+     "lufsMax": -19.35,
+     "truePeak": -3.92,
+     "duration": 0.22
+    }
+   ]
+  },
+  {
    "name": "coin",
    "id": "coin",
    "cat": "pickup",
@@ -3065,6 +3800,322 @@
    ]
   },
   {
+   "name": "potion-drink",
+   "id": "potionDrink",
+   "cat": "pickup",
+   "desc": "Drink a potion: three glugs and a sigh of sparkle",
+   "gain": 0.904,
+   "limited": false,
+   "m": {
+    "peak": -2.72,
+    "truePeak": -2.71,
+    "lufsMax": -15.98,
+    "duration": 0.72,
+    "centroid": 2571
+   },
+   "env": [
+    0.98,
+    0.78,
+    0.56,
+    0.43,
+    0.28,
+    0.19,
+    0.2,
+    0.79,
+    1,
+    0.75,
+    0.52,
+    0.37,
+    0.23,
+    0.19,
+    0.2,
+    0.99,
+    0.97,
+    0.71,
+    0.49,
+    0.34,
+    0.22,
+    0.13,
+    0.14,
+    0.56,
+    0.52,
+    0.47,
+    0.41,
+    0.36,
+    0.32,
+    0.28,
+    0.25,
+    0.22,
+    0.19,
+    0.16,
+    0.14,
+    0.12,
+    0.1,
+    0.08,
+    0.06,
+    0.05
+   ],
+   "takes": [
+    {
+     "lufsMax": -15.98,
+     "truePeak": -2.71,
+     "duration": 0.72
+    },
+    {
+     "lufsMax": -16.03,
+     "truePeak": -2.9,
+     "duration": 0.7
+    },
+    {
+     "lufsMax": -15.95,
+     "truePeak": -2.87,
+     "duration": 0.74
+    },
+    {
+     "lufsMax": -16.05,
+     "truePeak": -3,
+     "duration": 0.71
+    }
+   ]
+  },
+  {
+   "name": "eat",
+   "id": "eat",
+   "cat": "pickup",
+   "desc": "Eat food: two crunchy bites",
+   "gain": 0.789,
+   "limited": false,
+   "m": {
+    "peak": -1.63,
+    "truePeak": -1.63,
+    "lufsMax": -16.35,
+    "duration": 0.26,
+    "centroid": 3513
+   },
+   "env": [
+    0.96,
+    0.93,
+    0.93,
+    0.85,
+    0.75,
+    0.66,
+    0.66,
+    0.56,
+    0.44,
+    0.33,
+    0.26,
+    0.2,
+    0.08,
+    0.01,
+    0.01,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0.97,
+    0.96,
+    0.89,
+    0.83,
+    0.69,
+    0.63,
+    0.59,
+    0.44,
+    0.38,
+    0.3,
+    0.22,
+    0.14
+   ],
+   "takes": [
+    {
+     "lufsMax": -16.35,
+     "truePeak": -1.63,
+     "duration": 0.26
+    },
+    {
+     "lufsMax": -16.06,
+     "truePeak": -1.5,
+     "duration": 0.26
+    },
+    {
+     "lufsMax": -16.53,
+     "truePeak": -1.51,
+     "duration": 0.27
+    },
+    {
+     "lufsMax": -15.6,
+     "truePeak": -1.45,
+     "duration": 0.26
+    }
+   ]
+  },
+  {
+   "name": "loot-rare",
+   "id": "lootRare",
+   "cat": "pickup",
+   "desc": "Rare loot drops: shimmering beam and a chord",
+   "gain": 0.164,
+   "limited": false,
+   "m": {
+    "peak": -7.32,
+    "truePeak": -7.12,
+    "lufsMax": -16.63,
+    "duration": 1.4,
+    "centroid": 4518
+   },
+   "env": [
+    0.09,
+    0.12,
+    0.15,
+    0.18,
+    0.2,
+    0.22,
+    0.2,
+    0.93,
+    1,
+    0.99,
+    1,
+    0.86,
+    0.75,
+    0.67,
+    0.61,
+    0.59,
+    0.54,
+    0.48,
+    0.45,
+    0.41,
+    0.38,
+    0.36,
+    0.33,
+    0.31,
+    0.28,
+    0.26,
+    0.23,
+    0.21,
+    0.19,
+    0.16,
+    0.14,
+    0.12,
+    0.1,
+    0.09,
+    0.07,
+    0.07,
+    0.06,
+    0.05,
+    0.04,
+    0.03
+   ],
+   "takes": [
+    {
+     "lufsMax": -16.63,
+     "truePeak": -7.12,
+     "duration": 1.4
+    },
+    {
+     "lufsMax": -15.08,
+     "truePeak": -5.92,
+     "duration": 1.58
+    },
+    {
+     "lufsMax": -15.37,
+     "truePeak": -7.23,
+     "duration": 1.62
+    },
+    {
+     "lufsMax": -16.83,
+     "truePeak": -7.65,
+     "duration": 1.34
+    }
+   ]
+  },
+  {
+   "name": "equip",
+   "id": "equip",
+   "cat": "pickup",
+   "desc": "Equip gear: leather and buckle",
+   "gain": 2.36,
+   "limited": true,
+   "m": {
+    "peak": -1.51,
+    "truePeak": -1.26,
+    "lufsMax": -20.2,
+    "duration": 0.21,
+    "centroid": 6928
+   },
+   "env": [
+    0.33,
+    0.47,
+    0.71,
+    0.73,
+    0.64,
+    0.6,
+    0.55,
+    0.52,
+    0.46,
+    0.42,
+    0.35,
+    0.3,
+    0.27,
+    0.26,
+    0.22,
+    1,
+    0.81,
+    0.76,
+    0.64,
+    0.52,
+    0.39,
+    0.33,
+    0.25,
+    0.19,
+    0.93,
+    0.91,
+    0.81,
+    0.59,
+    0.64,
+    0.5,
+    0.41,
+    0.4,
+    0.27,
+    0.28,
+    0.19,
+    0.17,
+    0.14,
+    0.1,
+    0.08,
+    0.05
+   ],
+   "takes": [
+    {
+     "lufsMax": -20.2,
+     "truePeak": -1.26,
+     "duration": 0.21
+    },
+    {
+     "lufsMax": -20.44,
+     "truePeak": -1.05,
+     "duration": 0.21
+    },
+    {
+     "lufsMax": -19.22,
+     "truePeak": -1.02,
+     "duration": 0.21
+    },
+    {
+     "lufsMax": -19.8,
+     "truePeak": -1.38,
+     "duration": 0.21
+    }
+   ]
+  },
+  {
    "name": "jump",
    "id": "jump",
    "cat": "jump",
@@ -3851,6 +4902,164 @@
      "lufsMax": -16.81,
      "truePeak": -1.2,
      "duration": 0.14
+    }
+   ]
+  },
+  {
+   "name": "slide",
+   "id": "slide",
+   "cat": "jump",
+   "desc": "Slide along the ground",
+   "gain": 0.606,
+   "limited": false,
+   "m": {
+    "peak": -5.95,
+    "truePeak": -5.88,
+    "lufsMax": -15.79,
+    "duration": 0.37,
+    "centroid": 4872
+   },
+   "env": [
+    0.6,
+    0.91,
+    0.91,
+    0.9,
+    1,
+    0.99,
+    0.97,
+    0.95,
+    0.91,
+    0.96,
+    0.93,
+    0.94,
+    0.99,
+    0.92,
+    0.95,
+    0.95,
+    0.98,
+    0.9,
+    0.95,
+    0.93,
+    0.9,
+    0.87,
+    0.86,
+    0.92,
+    0.84,
+    0.88,
+    0.75,
+    0.63,
+    0.63,
+    0.62,
+    0.51,
+    0.43,
+    0.38,
+    0.37,
+    0.28,
+    0.26,
+    0.22,
+    0.15,
+    0.13,
+    0.08
+   ],
+   "takes": [
+    {
+     "lufsMax": -15.79,
+     "truePeak": -5.88,
+     "duration": 0.37
+    },
+    {
+     "lufsMax": -17,
+     "truePeak": -6.2,
+     "duration": 0.38
+    },
+    {
+     "lufsMax": -15.72,
+     "truePeak": -6.07,
+     "duration": 0.37
+    },
+    {
+     "lufsMax": -15.5,
+     "truePeak": -4.64,
+     "duration": 0.38
+    }
+   ]
+  },
+  {
+   "name": "fall-whistle",
+   "id": "fallWhistle",
+   "cat": "jump",
+   "desc": "Cartoon falling whistle",
+   "gain": 0.271,
+   "limited": false,
+   "m": {
+    "peak": -14.18,
+    "truePeak": -14.18,
+    "lufsMax": -15.98,
+    "duration": 0.92,
+    "centroid": 1336
+   },
+   "env": [
+    0.99,
+    0.99,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0.99,
+    1,
+    0.99,
+    1,
+    1,
+    0.99,
+    0.99,
+    0.99,
+    0.99,
+    0.99,
+    0.99,
+    0.99,
+    1,
+    1,
+    0.99,
+    0.99,
+    0.99,
+    0.99,
+    0.99,
+    1,
+    0.99,
+    1,
+    0.99,
+    0.99,
+    0.99,
+    0.99,
+    0.99,
+    0.99,
+    0.99,
+    0.93,
+    0.76,
+    0.56,
+    0.35
+   ],
+   "takes": [
+    {
+     "lufsMax": -15.98,
+     "truePeak": -14.18,
+     "duration": 0.92
+    },
+    {
+     "lufsMax": -16.03,
+     "truePeak": -14.18,
+     "duration": 0.92
+    },
+    {
+     "lufsMax": -16.02,
+     "truePeak": -14.19,
+     "duration": 0.92
+    },
+    {
+     "lufsMax": -15.94,
+     "truePeak": -14.18,
+     "duration": 0.92
     }
    ]
   },
@@ -5036,6 +6245,401 @@
      "lufsMax": -21,
      "truePeak": -1.5,
      "duration": 0.15
+    }
+   ]
+  },
+  {
+   "name": "kick",
+   "id": "kick",
+   "cat": "hit",
+   "desc": "Kick: low thump with a cloth snap",
+   "gain": 0.677,
+   "limited": true,
+   "m": {
+    "peak": -1.51,
+    "truePeak": -1.46,
+    "lufsMax": -18.29,
+    "duration": 0.23,
+    "centroid": 1297
+   },
+   "env": [
+    0.16,
+    0.24,
+    0.31,
+    0.27,
+    0.35,
+    0.34,
+    0.94,
+    1,
+    1,
+    0.84,
+    0.74,
+    0.78,
+    0.79,
+    0.69,
+    0.68,
+    0.61,
+    0.53,
+    0.5,
+    0.46,
+    0.41,
+    0.38,
+    0.33,
+    0.29,
+    0.27,
+    0.24,
+    0.23,
+    0.22,
+    0.19,
+    0.16,
+    0.14,
+    0.12,
+    0.1,
+    0.07,
+    0.05,
+    0.03,
+    0.03,
+    0.03,
+    0.03,
+    0.02,
+    0.02
+   ],
+   "takes": [
+    {
+     "lufsMax": -18.29,
+     "truePeak": -1.46,
+     "duration": 0.23
+    },
+    {
+     "lufsMax": -18.04,
+     "truePeak": -1.47,
+     "duration": 0.23
+    },
+    {
+     "lufsMax": -18.14,
+     "truePeak": -1.5,
+     "duration": 0.25
+    },
+    {
+     "lufsMax": -17.2,
+     "truePeak": -1.51,
+     "duration": 0.23
+    }
+   ]
+  },
+  {
+   "name": "stab",
+   "id": "stab",
+   "cat": "hit",
+   "desc": "Blade stab into flesh: short wet thrust",
+   "gain": 0.911,
+   "limited": true,
+   "m": {
+    "peak": -1.51,
+    "truePeak": -1.51,
+    "lufsMax": -18.41,
+    "duration": 0.14,
+    "centroid": 1500
+   },
+   "env": [
+    1,
+    1,
+    1,
+    0.91,
+    0.9,
+    0.98,
+    0.8,
+    0.79,
+    0.74,
+    0.87,
+    0.8,
+    0.71,
+    0.71,
+    0.72,
+    0.7,
+    0.5,
+    0.55,
+    0.48,
+    0.41,
+    0.47,
+    0.39,
+    0.48,
+    0.36,
+    0.4,
+    0.32,
+    0.22,
+    0.31,
+    0.29,
+    0.17,
+    0.2,
+    0.16,
+    0.17,
+    0.18,
+    0.14,
+    0.13,
+    0.11,
+    0.11,
+    0.07,
+    0.05,
+    0.03
+   ],
+   "takes": [
+    {
+     "lufsMax": -18.41,
+     "truePeak": -1.51,
+     "duration": 0.14
+    },
+    {
+     "lufsMax": -19.27,
+     "truePeak": -1.47,
+     "duration": 0.13
+    },
+    {
+     "lufsMax": -19.64,
+     "truePeak": -1.38,
+     "duration": 0.14
+    },
+    {
+     "lufsMax": -17.3,
+     "truePeak": -1.48,
+     "duration": 0.13
+    }
+   ]
+  },
+  {
+   "name": "sword-clash",
+   "id": "swordClash",
+   "cat": "hit",
+   "desc": "Two blades clash and ring",
+   "gain": 0.375,
+   "limited": true,
+   "m": {
+    "peak": -1.19,
+    "truePeak": -1.19,
+    "lufsMax": -18.58,
+    "duration": 0.93,
+    "centroid": 6906
+   },
+   "env": [
+    1,
+    0.67,
+    0.59,
+    0.61,
+    0.62,
+    0.53,
+    0.48,
+    0.45,
+    0.42,
+    0.36,
+    0.35,
+    0.32,
+    0.3,
+    0.28,
+    0.27,
+    0.23,
+    0.23,
+    0.21,
+    0.19,
+    0.18,
+    0.17,
+    0.15,
+    0.14,
+    0.13,
+    0.12,
+    0.1,
+    0.09,
+    0.08,
+    0.07,
+    0.06,
+    0.06,
+    0.05,
+    0.04,
+    0.04,
+    0.04,
+    0.03,
+    0.03,
+    0.03,
+    0.02,
+    0.02
+   ],
+   "takes": [
+    {
+     "lufsMax": -18.58,
+     "truePeak": -1.19,
+     "duration": 0.93
+    },
+    {
+     "lufsMax": -20.07,
+     "truePeak": -1.91,
+     "duration": 0.82
+    },
+    {
+     "lufsMax": -19.14,
+     "truePeak": -2.9,
+     "duration": 0.92
+    },
+    {
+     "lufsMax": -18.89,
+     "truePeak": -2.21,
+     "duration": 0.82
+    }
+   ]
+  },
+  {
+   "name": "sword-draw",
+   "id": "swordDraw",
+   "cat": "hit",
+   "desc": "Unsheathe a sword: metallic scrape that rings out",
+   "gain": 0.865,
+   "limited": false,
+   "m": {
+    "peak": -3.7,
+    "truePeak": -3.6,
+    "lufsMax": -15.23,
+    "duration": 0.94,
+    "centroid": 7328
+   },
+   "env": [
+    0.47,
+    0.61,
+    0.73,
+    0.84,
+    0.8,
+    0.75,
+    0.84,
+    0.78,
+    0.77,
+    0.75,
+    0.81,
+    0.65,
+    1,
+    0.93,
+    0.8,
+    0.67,
+    0.53,
+    0.49,
+    0.47,
+    0.38,
+    0.29,
+    0.27,
+    0.25,
+    0.22,
+    0.19,
+    0.18,
+    0.18,
+    0.16,
+    0.14,
+    0.11,
+    0.11,
+    0.1,
+    0.09,
+    0.08,
+    0.06,
+    0.05,
+    0.05,
+    0.04,
+    0.03,
+    0.03
+   ],
+   "takes": [
+    {
+     "lufsMax": -15.23,
+     "truePeak": -3.6,
+     "duration": 0.94
+    },
+    {
+     "lufsMax": -15.02,
+     "truePeak": -4.48,
+     "duration": 0.89
+    },
+    {
+     "lufsMax": -14.8,
+     "truePeak": -4.46,
+     "duration": 0.95
+    },
+    {
+     "lufsMax": -14.94,
+     "truePeak": -3.84,
+     "duration": 1.14
+    }
+   ]
+  },
+  {
+   "name": "body-fall",
+   "id": "bodyFall",
+   "cat": "hit",
+   "desc": "Body hits the floor",
+   "gain": 0.739,
+   "limited": true,
+   "m": {
+    "peak": -1.51,
+    "truePeak": -1.51,
+    "lufsMax": -15.7,
+    "duration": 0.76,
+    "centroid": 529
+   },
+   "env": [
+    1,
+    0.97,
+    0.95,
+    0.79,
+    0.7,
+    0.54,
+    0.57,
+    0.65,
+    0.38,
+    0.36,
+    0.22,
+    0.27,
+    0.2,
+    0.15,
+    0.18,
+    0.21,
+    0.21,
+    0.21,
+    0.15,
+    0.11,
+    0.13,
+    0.09,
+    0.1,
+    0.08,
+    0.08,
+    0.06,
+    0.07,
+    0.07,
+    0.07,
+    0.06,
+    0.04,
+    0.05,
+    0.04,
+    0.04,
+    0.03,
+    0.04,
+    0.03,
+    0.03,
+    0.02,
+    0.02
+   ],
+   "takes": [
+    {
+     "lufsMax": -15.7,
+     "truePeak": -1.51,
+     "duration": 0.76
+    },
+    {
+     "lufsMax": -16.9,
+     "truePeak": -1.51,
+     "duration": 0.76
+    },
+    {
+     "lufsMax": -15.89,
+     "truePeak": -1.51,
+     "duration": 0.76
+    },
+    {
+     "lufsMax": -15.71,
+     "truePeak": -1.51,
+     "duration": 0.76
     }
    ]
   },
@@ -8121,6 +9725,322 @@
    ]
   },
   {
+   "name": "machine-gun",
+   "id": "machineGun",
+   "cat": "shoot",
+   "desc": "Automatic burst, five rounds",
+   "gain": 0.534,
+   "limited": false,
+   "m": {
+    "peak": -1.34,
+    "truePeak": -1.34,
+    "lufsMax": -16.4,
+    "duration": 0.97,
+    "centroid": 3688
+   },
+   "env": [
+    0.97,
+    0.46,
+    0.29,
+    0.94,
+    0.51,
+    0.33,
+    0.94,
+    0.61,
+    0.33,
+    0.95,
+    0.53,
+    0.3,
+    1,
+    0.6,
+    0.34,
+    0.29,
+    0.28,
+    0.24,
+    0.2,
+    0.21,
+    0.17,
+    0.14,
+    0.15,
+    0.12,
+    0.13,
+    0.1,
+    0.08,
+    0.08,
+    0.08,
+    0.06,
+    0.06,
+    0.06,
+    0.05,
+    0.04,
+    0.03,
+    0.03,
+    0.03,
+    0.03,
+    0.03,
+    0.02
+   ],
+   "takes": [
+    {
+     "lufsMax": -16.4,
+     "truePeak": -1.34,
+     "duration": 0.97
+    },
+    {
+     "lufsMax": -16.4,
+     "truePeak": -1.63,
+     "duration": 1.01
+    },
+    {
+     "lufsMax": -16.18,
+     "truePeak": -1.23,
+     "duration": 1.01
+    },
+    {
+     "lufsMax": -16.2,
+     "truePeak": -1.19,
+     "duration": 1.01
+    }
+   ]
+  },
+  {
+   "name": "shell-casing",
+   "id": "shellCasing",
+   "cat": "shoot",
+   "desc": "Brass shell casings tinkle on the floor",
+   "gain": 0.527,
+   "limited": true,
+   "m": {
+    "peak": -2.72,
+    "truePeak": -1.86,
+    "lufsMax": -20.39,
+    "duration": 0.21,
+    "centroid": 6396
+   },
+   "env": [
+    1,
+    0.84,
+    0.65,
+    0.51,
+    0.4,
+    0.32,
+    0.26,
+    0.21,
+    0.17,
+    0.14,
+    0.11,
+    0.09,
+    0.07,
+    0.06,
+    0.31,
+    0.87,
+    0.69,
+    0.53,
+    0.42,
+    0.33,
+    0.27,
+    0.22,
+    0.18,
+    0.14,
+    0.68,
+    0.57,
+    0.45,
+    0.35,
+    0.27,
+    0.22,
+    0.17,
+    0.14,
+    0.12,
+    0.09,
+    0.07,
+    0.06,
+    0.05,
+    0.04,
+    0.03,
+    0.03
+   ],
+   "takes": [
+    {
+     "lufsMax": -20.39,
+     "truePeak": -1.86,
+     "duration": 0.21
+    },
+    {
+     "lufsMax": -21.83,
+     "truePeak": -3.46,
+     "duration": 0.21
+    },
+    {
+     "lufsMax": -20.43,
+     "truePeak": -2.65,
+     "duration": 0.22
+    },
+    {
+     "lufsMax": -19.61,
+     "truePeak": -1.2,
+     "duration": 0.21
+    }
+   ]
+  },
+  {
+   "name": "flamethrower",
+   "id": "flamethrower",
+   "cat": "shoot",
+   "desc": "Flamethrower burst: roaring hiss",
+   "gain": 0.289,
+   "limited": false,
+   "m": {
+    "peak": -7.55,
+    "truePeak": -7.55,
+    "lufsMax": -15.9,
+    "duration": 0.85,
+    "centroid": 4719
+   },
+   "env": [
+    0.63,
+    0.85,
+    0.93,
+    0.95,
+    0.9,
+    0.9,
+    0.92,
+    0.89,
+    0.95,
+    0.97,
+    0.91,
+    0.95,
+    1,
+    0.87,
+    0.93,
+    0.91,
+    0.91,
+    1,
+    0.98,
+    0.93,
+    0.96,
+    0.9,
+    0.97,
+    0.91,
+    0.96,
+    0.91,
+    0.84,
+    0.85,
+    0.8,
+    0.68,
+    0.65,
+    0.51,
+    0.49,
+    0.45,
+    0.39,
+    0.35,
+    0.26,
+    0.2,
+    0.19,
+    0.11
+   ],
+   "takes": [
+    {
+     "lufsMax": -15.9,
+     "truePeak": -7.55,
+     "duration": 0.85
+    },
+    {
+     "lufsMax": -16.38,
+     "truePeak": -6.95,
+     "duration": 0.87
+    },
+    {
+     "lufsMax": -15.51,
+     "truePeak": -7.31,
+     "duration": 0.85
+    },
+    {
+     "lufsMax": -16.16,
+     "truePeak": -7.1,
+     "duration": 0.86
+    }
+   ]
+  },
+  {
+   "name": "grenade-launch",
+   "id": "grenadeLaunch",
+   "cat": "shoot",
+   "desc": "Grenade launcher: hollow thoomp",
+   "gain": 0.601,
+   "limited": false,
+   "m": {
+    "peak": -2.05,
+    "truePeak": -2.04,
+    "lufsMax": -16.16,
+    "duration": 0.84,
+    "centroid": 1733
+   },
+   "env": [
+    1,
+    0.88,
+    0.81,
+    0.76,
+    0.61,
+    0.53,
+    0.47,
+    0.44,
+    0.31,
+    0.29,
+    0.29,
+    0.25,
+    0.24,
+    0.21,
+    0.18,
+    0.16,
+    0.19,
+    0.15,
+    0.13,
+    0.11,
+    0.13,
+    0.09,
+    0.1,
+    0.08,
+    0.07,
+    0.07,
+    0.08,
+    0.05,
+    0.05,
+    0.04,
+    0.05,
+    0.05,
+    0.04,
+    0.03,
+    0.03,
+    0.02,
+    0.03,
+    0.02,
+    0.03,
+    0.02
+   ],
+   "takes": [
+    {
+     "lufsMax": -16.16,
+     "truePeak": -2.04,
+     "duration": 0.84
+    },
+    {
+     "lufsMax": -15.88,
+     "truePeak": -2.85,
+     "duration": 0.84
+    },
+    {
+     "lufsMax": -16.05,
+     "truePeak": -2.32,
+     "duration": 0.83
+    },
+    {
+     "lufsMax": -15.88,
+     "truePeak": -3.02,
+     "duration": 0.84
+    }
+   ]
+  },
+  {
    "name": "step-grass",
    "id": "stepGrass",
    "cat": "footstep",
@@ -8907,6 +10827,164 @@
      "lufsMax": -19.27,
      "truePeak": -1.74,
      "duration": 0.72
+    }
+   ]
+  },
+  {
+   "name": "step-carpet",
+   "id": "stepCarpet",
+   "cat": "footstep",
+   "desc": "Muffled step on carpet or rug",
+   "gain": 2.12,
+   "limited": true,
+   "m": {
+    "peak": -1.51,
+    "truePeak": -1.48,
+    "lufsMax": -25.75,
+    "duration": 0.15,
+    "centroid": 1395
+   },
+   "env": [
+    1,
+    1,
+    0.63,
+    0.6,
+    0.55,
+    0.52,
+    0.56,
+    0.66,
+    0.5,
+    0.39,
+    0.39,
+    0.26,
+    0.2,
+    0.16,
+    0.16,
+    0.19,
+    0.12,
+    0.25,
+    0.26,
+    0.13,
+    0.12,
+    0.14,
+    0.13,
+    0.13,
+    0.1,
+    0.1,
+    0.07,
+    0.08,
+    0.11,
+    0.07,
+    0.07,
+    0.07,
+    0.05,
+    0.06,
+    0.05,
+    0.06,
+    0.02,
+    0.03,
+    0.02,
+    0.02
+   ],
+   "takes": [
+    {
+     "lufsMax": -25.75,
+     "truePeak": -1.48,
+     "duration": 0.15
+    },
+    {
+     "lufsMax": -28.45,
+     "truePeak": -4.41,
+     "duration": 0.14
+    },
+    {
+     "lufsMax": -26.14,
+     "truePeak": -1.43,
+     "duration": 0.15
+    },
+    {
+     "lufsMax": -23.93,
+     "truePeak": -2.19,
+     "duration": 0.15
+    }
+   ]
+  },
+  {
+   "name": "step-mud",
+   "id": "stepMud",
+   "cat": "footstep",
+   "desc": "Squelchy step in mud",
+   "gain": 1.05,
+   "limited": false,
+   "m": {
+    "peak": -2.89,
+    "truePeak": -2.89,
+    "lufsMax": -20.29,
+    "duration": 0.16,
+    "centroid": 1096
+   },
+   "env": [
+    1,
+    0.98,
+    0.94,
+    0.94,
+    0.95,
+    0.77,
+    0.76,
+    0.76,
+    0.82,
+    0.76,
+    0.74,
+    0.75,
+    0.87,
+    0.84,
+    0.65,
+    0.72,
+    0.69,
+    0.57,
+    0.66,
+    0.54,
+    0.57,
+    0.47,
+    0.39,
+    0.44,
+    0.43,
+    0.27,
+    0.32,
+    0.31,
+    0.31,
+    0.27,
+    0.26,
+    0.22,
+    0.18,
+    0.16,
+    0.13,
+    0.13,
+    0.1,
+    0.11,
+    0.08,
+    0.05
+   ],
+   "takes": [
+    {
+     "lufsMax": -20.29,
+     "truePeak": -2.89,
+     "duration": 0.16
+    },
+    {
+     "lufsMax": -21.16,
+     "truePeak": -1.22,
+     "duration": 0.15
+    },
+    {
+     "lufsMax": -20.1,
+     "truePeak": -2.55,
+     "duration": 0.16
+    },
+    {
+     "lufsMax": -18.94,
+     "truePeak": -2.48,
+     "duration": 0.15
     }
    ]
   },
@@ -10728,6 +12806,243 @@
    ]
   },
   {
+   "name": "buzzer-wrong",
+   "id": "buzzerWrong",
+   "cat": "alert",
+   "desc": "Quiz-show wrong-answer buzzer",
+   "gain": 0.133,
+   "limited": false,
+   "m": {
+    "peak": -11.47,
+    "truePeak": -11.47,
+    "lufsMax": -18.02,
+    "duration": 0.53,
+    "centroid": 1182
+   },
+   "env": [
+    0.64,
+    0.78,
+    0.87,
+    0.88,
+    0.88,
+    0.89,
+    0.89,
+    0.89,
+    0.9,
+    0.9,
+    0.9,
+    0.9,
+    0.9,
+    0.9,
+    0.9,
+    0.9,
+    0.91,
+    0.93,
+    0.93,
+    0.95,
+    0.95,
+    0.96,
+    0.97,
+    0.98,
+    0.98,
+    1,
+    1,
+    1,
+    0.98,
+    0.98,
+    0.97,
+    0.97,
+    0.97,
+    0.96,
+    0.96,
+    0.91,
+    0.87,
+    0.78,
+    0.7,
+    0.41
+   ],
+   "takes": [
+    {
+     "lufsMax": -18.02,
+     "truePeak": -11.47,
+     "duration": 0.53
+    },
+    {
+     "lufsMax": -18.02,
+     "truePeak": -11.46,
+     "duration": 0.54
+    },
+    {
+     "lufsMax": -18.02,
+     "truePeak": -11.46,
+     "duration": 0.54
+    },
+    {
+     "lufsMax": -18.01,
+     "truePeak": -11.47,
+     "duration": 0.54
+    }
+   ]
+  },
+  {
+   "name": "ding-correct",
+   "id": "dingCorrect",
+   "cat": "alert",
+   "desc": "Quiz-show correct-answer ding-ding",
+   "gain": 0.216,
+   "limited": false,
+   "m": {
+    "peak": -11.53,
+    "truePeak": -11.46,
+    "lufsMax": -18.85,
+    "duration": 0.95,
+    "centroid": 4540
+   },
+   "env": [
+    0.9,
+    0.83,
+    0.86,
+    0.84,
+    0.75,
+    0.68,
+    1,
+    0.98,
+    0.82,
+    0.85,
+    0.79,
+    0.69,
+    0.64,
+    0.57,
+    0.49,
+    0.46,
+    0.41,
+    0.39,
+    0.37,
+    0.35,
+    0.32,
+    0.29,
+    0.26,
+    0.22,
+    0.2,
+    0.18,
+    0.17,
+    0.15,
+    0.13,
+    0.12,
+    0.11,
+    0.09,
+    0.08,
+    0.08,
+    0.07,
+    0.06,
+    0.05,
+    0.05,
+    0.04,
+    0.04
+   ],
+   "takes": [
+    {
+     "lufsMax": -18.85,
+     "truePeak": -11.46,
+     "duration": 0.95
+    },
+    {
+     "lufsMax": -17.79,
+     "truePeak": -11.06,
+     "duration": 1
+    },
+    {
+     "lufsMax": -17.64,
+     "truePeak": -10.97,
+     "duration": 0.98
+    },
+    {
+     "lufsMax": -17.71,
+     "truePeak": -10.75,
+     "duration": 0.67
+    }
+   ]
+  },
+  {
+   "name": "timer-done",
+   "id": "timerDone",
+   "cat": "alert",
+   "desc": "Kitchen timer done: rapid bell trill",
+   "gain": 0.761,
+   "limited": false,
+   "m": {
+    "peak": -10.02,
+    "truePeak": -10.02,
+    "lufsMax": -18.01,
+    "duration": 0.55,
+    "centroid": 4534
+   },
+   "env": [
+    0.94,
+    0.77,
+    0.64,
+    0.93,
+    0.82,
+    0.65,
+    0.61,
+    0.93,
+    0.78,
+    0.64,
+    0.61,
+    0.92,
+    0.71,
+    0.63,
+    0.97,
+    0.9,
+    0.7,
+    0.62,
+    1,
+    0.75,
+    0.64,
+    0.61,
+    0.97,
+    0.73,
+    0.63,
+    0.95,
+    0.84,
+    0.65,
+    0.62,
+    0.93,
+    0.76,
+    0.66,
+    0.61,
+    0.92,
+    0.65,
+    0.48,
+    0.36,
+    0.28,
+    0.2,
+    0.12
+   ],
+   "takes": [
+    {
+     "lufsMax": -18.01,
+     "truePeak": -10.02,
+     "duration": 0.55
+    },
+    {
+     "lufsMax": -17.98,
+     "truePeak": -10.08,
+     "duration": 0.54
+    },
+    {
+     "lufsMax": -17.99,
+     "truePeak": -9.03,
+     "duration": 0.55
+    },
+    {
+     "lufsMax": -18.03,
+     "truePeak": -9.56,
+     "duration": 0.55
+    }
+   ]
+  },
+  {
    "name": "victory",
    "id": "victory",
    "cat": "jingle",
@@ -11435,6 +13750,164 @@
      "lufsMax": -17.02,
      "truePeak": -11.76,
      "duration": 0.5
+    }
+   ]
+  },
+  {
+   "name": "highscore",
+   "id": "highscore",
+   "cat": "jingle",
+   "desc": "New high score: excited climbing fanfare",
+   "gain": 0.165,
+   "limited": false,
+   "m": {
+    "peak": -7.18,
+    "truePeak": -7.18,
+    "lufsMax": -17.09,
+    "duration": 1.52,
+    "centroid": 1809
+   },
+   "env": [
+    0.77,
+    0.88,
+    1,
+    0.99,
+    0.94,
+    0.97,
+    0.85,
+    0.87,
+    0.87,
+    0.89,
+    0.87,
+    0.86,
+    0.9,
+    0.9,
+    0.91,
+    0.89,
+    0.91,
+    0.89,
+    0.91,
+    0.92,
+    0.86,
+    0.8,
+    0.71,
+    0.65,
+    0.56,
+    0.48,
+    0.41,
+    0.34,
+    0.27,
+    0.2,
+    0.14,
+    0.12,
+    0.1,
+    0.09,
+    0.07,
+    0.06,
+    0.05,
+    0.04,
+    0.04,
+    0.03
+   ],
+   "takes": [
+    {
+     "lufsMax": -17.09,
+     "truePeak": -7.18,
+     "duration": 1.52
+    },
+    {
+     "lufsMax": -16.7,
+     "truePeak": -7.06,
+     "duration": 1.52
+    },
+    {
+     "lufsMax": -16.78,
+     "truePeak": -6.94,
+     "duration": 1.48
+    },
+    {
+     "lufsMax": -17.34,
+     "truePeak": -7.29,
+     "duration": 1.46
+    }
+   ]
+  },
+  {
+   "name": "boss-intro",
+   "id": "bossIntro",
+   "cat": "jingle",
+   "desc": "Boss appears: ominous low brass hits",
+   "gain": 0.146,
+   "limited": false,
+   "m": {
+    "peak": -5.71,
+    "truePeak": -5.71,
+    "lufsMax": -17.16,
+    "duration": 2.87,
+    "centroid": 477
+   },
+   "env": [
+    0.78,
+    0.76,
+    0.75,
+    0.65,
+    0.62,
+    0.76,
+    0.91,
+    0.91,
+    0.79,
+    0.86,
+    0.91,
+    1,
+    0.84,
+    0.82,
+    0.84,
+    0.83,
+    0.83,
+    0.75,
+    0.64,
+    0.57,
+    0.51,
+    0.43,
+    0.38,
+    0.37,
+    0.31,
+    0.26,
+    0.23,
+    0.21,
+    0.18,
+    0.16,
+    0.15,
+    0.12,
+    0.11,
+    0.09,
+    0.08,
+    0.07,
+    0.06,
+    0.06,
+    0.05,
+    0.04
+   ],
+   "takes": [
+    {
+     "lufsMax": -17.16,
+     "truePeak": -5.71,
+     "duration": 2.87
+    },
+    {
+     "lufsMax": -16.54,
+     "truePeak": -5.65,
+     "duration": 2.87
+    },
+    {
+     "lufsMax": -16.67,
+     "truePeak": -5.61,
+     "duration": 2.85
+    },
+    {
+     "lufsMax": -17.58,
+     "truePeak": -5.72,
+     "duration": 2.89
     }
    ]
   },
@@ -13098,6 +15571,401 @@
    ]
   },
   {
+   "name": "crate-break",
+   "id": "crateBreak",
+   "cat": "world",
+   "desc": "Wooden crate smashes into planks",
+   "gain": 0.555,
+   "limited": true,
+   "m": {
+    "peak": -1.51,
+    "truePeak": -1.39,
+    "lufsMax": -20.93,
+    "duration": 0.77,
+    "centroid": 1284
+   },
+   "env": [
+    1,
+    1,
+    0.59,
+    0.79,
+    0.65,
+    0.34,
+    0.71,
+    0.42,
+    0.29,
+    0.62,
+    0.34,
+    0.23,
+    0.24,
+    0.22,
+    0.18,
+    0.17,
+    0.15,
+    0.15,
+    0.14,
+    0.13,
+    0.12,
+    0.11,
+    0.09,
+    0.07,
+    0.09,
+    0.09,
+    0.07,
+    0.06,
+    0.05,
+    0.06,
+    0.05,
+    0.05,
+    0.04,
+    0.04,
+    0.03,
+    0.03,
+    0.03,
+    0.03,
+    0.02,
+    0.02
+   ],
+   "takes": [
+    {
+     "lufsMax": -20.93,
+     "truePeak": -1.39,
+     "duration": 0.77
+    },
+    {
+     "lufsMax": -21.12,
+     "truePeak": -1.5,
+     "duration": 0.81
+    },
+    {
+     "lufsMax": -19.83,
+     "truePeak": -1.51,
+     "duration": 0.8
+    },
+    {
+     "lufsMax": -20.49,
+     "truePeak": -1.51,
+     "duration": 0.76
+    }
+   ]
+  },
+  {
+   "name": "pot-break",
+   "id": "potBreak",
+   "cat": "world",
+   "desc": "Clay pot shatters (Zelda pots)",
+   "gain": 0.574,
+   "limited": true,
+   "m": {
+    "peak": -1.51,
+    "truePeak": -1.46,
+    "lufsMax": -21.73,
+    "duration": 0.71,
+    "centroid": 4162
+   },
+   "env": [
+    1,
+    0.56,
+    0.67,
+    0.35,
+    0.69,
+    0.31,
+    0.28,
+    0.7,
+    0.29,
+    0.23,
+    0.7,
+    0.43,
+    0.22,
+    0.22,
+    0.2,
+    0.18,
+    0.15,
+    0.15,
+    0.14,
+    0.12,
+    0.09,
+    0.1,
+    0.09,
+    0.08,
+    0.07,
+    0.06,
+    0.06,
+    0.06,
+    0.05,
+    0.05,
+    0.05,
+    0.04,
+    0.04,
+    0.03,
+    0.03,
+    0.03,
+    0.02,
+    0.02,
+    0.02,
+    0.02
+   ],
+   "takes": [
+    {
+     "lufsMax": -21.73,
+     "truePeak": -1.46,
+     "duration": 0.71
+    },
+    {
+     "lufsMax": -21.78,
+     "truePeak": -1.45,
+     "duration": 0.69
+    },
+    {
+     "lufsMax": -20.86,
+     "truePeak": -1.2,
+     "duration": 0.71
+    },
+    {
+     "lufsMax": -21.63,
+     "truePeak": -1.48,
+     "duration": 0.71
+    }
+   ]
+  },
+  {
+   "name": "metal-clang",
+   "id": "metalClang",
+   "cat": "world",
+   "desc": "Metal object or pipe hits the floor",
+   "gain": 0.485,
+   "limited": true,
+   "m": {
+    "peak": -1.51,
+    "truePeak": -1.47,
+    "lufsMax": -16.41,
+    "duration": 0.98,
+    "centroid": 1514
+   },
+   "env": [
+    1,
+    0.86,
+    0.76,
+    0.7,
+    0.62,
+    0.6,
+    0.61,
+    0.57,
+    0.38,
+    0.42,
+    0.26,
+    0.28,
+    0.25,
+    0.23,
+    0.24,
+    0.21,
+    0.2,
+    0.18,
+    0.15,
+    0.13,
+    0.1,
+    0.09,
+    0.07,
+    0.07,
+    0.07,
+    0.07,
+    0.07,
+    0.07,
+    0.06,
+    0.05,
+    0.04,
+    0.04,
+    0.03,
+    0.02,
+    0.02,
+    0.03,
+    0.03,
+    0.02,
+    0.02,
+    0.02
+   ],
+   "takes": [
+    {
+     "lufsMax": -16.41,
+     "truePeak": -1.47,
+     "duration": 0.98
+    },
+    {
+     "lufsMax": -19.19,
+     "truePeak": -1.72,
+     "duration": 0.88
+    },
+    {
+     "lufsMax": -16.12,
+     "truePeak": -1.43,
+     "duration": 0.88
+    },
+    {
+     "lufsMax": -16.57,
+     "truePeak": -1.45,
+     "duration": 0.89
+    }
+   ]
+  },
+  {
+   "name": "rock-crumble",
+   "id": "rockCrumble",
+   "cat": "world",
+   "desc": "Rocks and rubble crumble down",
+   "gain": 0.586,
+   "limited": false,
+   "m": {
+    "peak": -4.55,
+    "truePeak": -4.54,
+    "lufsMax": -17.07,
+    "duration": 1.37,
+    "centroid": 587
+   },
+   "env": [
+    0.93,
+    0.82,
+    1,
+    0.82,
+    0.93,
+    0.9,
+    0.81,
+    0.91,
+    0.79,
+    0.97,
+    0.87,
+    0.62,
+    0.79,
+    0.45,
+    0.73,
+    0.59,
+    0.47,
+    0.44,
+    0.44,
+    0.25,
+    0.25,
+    0.21,
+    0.18,
+    0.16,
+    0.14,
+    0.12,
+    0.11,
+    0.11,
+    0.09,
+    0.07,
+    0.08,
+    0.05,
+    0.05,
+    0.05,
+    0.04,
+    0.03,
+    0.03,
+    0.03,
+    0.02,
+    0.02
+   ],
+   "takes": [
+    {
+     "lufsMax": -17.07,
+     "truePeak": -4.54,
+     "duration": 1.37
+    },
+    {
+     "lufsMax": -17.78,
+     "truePeak": -3.46,
+     "duration": 1.34
+    },
+    {
+     "lufsMax": -17.14,
+     "truePeak": -2.12,
+     "duration": 1.33
+    },
+    {
+     "lufsMax": -16.01,
+     "truePeak": -1.61,
+     "duration": 1.36
+    }
+   ]
+  },
+  {
+   "name": "ignite",
+   "id": "ignite",
+   "cat": "world",
+   "desc": "Torch or fire ignites: whoomph",
+   "gain": 0.833,
+   "limited": false,
+   "m": {
+    "peak": -1.51,
+    "truePeak": -1.5,
+    "lufsMax": -17.48,
+    "duration": 0.67,
+    "centroid": 1857
+   },
+   "env": [
+    0.73,
+    0.92,
+    1,
+    0.85,
+    0.88,
+    0.81,
+    0.71,
+    0.63,
+    0.7,
+    0.65,
+    0.61,
+    0.66,
+    0.68,
+    0.53,
+    0.58,
+    0.57,
+    0.39,
+    0.42,
+    0.42,
+    0.36,
+    0.32,
+    0.39,
+    0.29,
+    0.3,
+    0.24,
+    0.24,
+    0.31,
+    0.2,
+    0.15,
+    0.16,
+    0.29,
+    0.23,
+    0.13,
+    0.1,
+    0.09,
+    0.22,
+    0.08,
+    0.07,
+    0.07,
+    0.04
+   ],
+   "takes": [
+    {
+     "lufsMax": -17.48,
+     "truePeak": -1.5,
+     "duration": 0.67
+    },
+    {
+     "lufsMax": -17.07,
+     "truePeak": -1.7,
+     "duration": 0.64
+    },
+    {
+     "lufsMax": -17.24,
+     "truePeak": -1.49,
+     "duration": 0.68
+    },
+    {
+     "lufsMax": -16.5,
+     "truePeak": -1.75,
+     "duration": 0.65
+    }
+   ]
+  },
+  {
    "name": "bat-flap",
    "id": "batFlap",
    "cat": "creature",
@@ -13809,6 +16677,322 @@
    ]
   },
   {
+   "name": "zombie-groan",
+   "id": "zombieGroan",
+   "cat": "creature",
+   "desc": "Zombie groan",
+   "gain": 0.444,
+   "limited": false,
+   "m": {
+    "peak": -6,
+    "truePeak": -6,
+    "lufsMax": -16.89,
+    "duration": 1.4,
+    "centroid": 1636
+   },
+   "env": [
+    0.6,
+    0.83,
+    0.98,
+    0.95,
+    0.96,
+    0.96,
+    0.94,
+    0.95,
+    1,
+    0.96,
+    0.97,
+    0.95,
+    1,
+    0.95,
+    0.96,
+    0.89,
+    0.84,
+    0.73,
+    0.64,
+    0.54,
+    0.49,
+    0.44,
+    0.36,
+    0.33,
+    0.19,
+    0.19,
+    0.17,
+    0.12,
+    0.11,
+    0.11,
+    0.08,
+    0.07,
+    0.07,
+    0.05,
+    0.06,
+    0.04,
+    0.03,
+    0.03,
+    0.03,
+    0.03
+   ],
+   "takes": [
+    {
+     "lufsMax": -16.89,
+     "truePeak": -6,
+     "duration": 1.4
+    },
+    {
+     "lufsMax": -16.91,
+     "truePeak": -5.67,
+     "duration": 1.4
+    },
+    {
+     "lufsMax": -17.49,
+     "truePeak": -4.38,
+     "duration": 1.33
+    },
+    {
+     "lufsMax": -16.71,
+     "truePeak": -5.86,
+     "duration": 1.39
+    }
+   ]
+  },
+  {
+   "name": "roar",
+   "id": "roar",
+   "cat": "creature",
+   "desc": "Big monster roar",
+   "gain": 0.185,
+   "limited": false,
+   "m": {
+    "peak": -4.15,
+    "truePeak": -4.13,
+    "lufsMax": -17.06,
+    "duration": 2.2,
+    "centroid": 2045
+   },
+   "env": [
+    0.68,
+    0.81,
+    0.86,
+    0.86,
+    0.88,
+    0.82,
+    0.72,
+    0.82,
+    0.87,
+    0.88,
+    0.89,
+    0.9,
+    1,
+    0.93,
+    0.85,
+    0.8,
+    0.67,
+    0.61,
+    0.49,
+    0.39,
+    0.35,
+    0.36,
+    0.31,
+    0.27,
+    0.24,
+    0.21,
+    0.15,
+    0.11,
+    0.11,
+    0.1,
+    0.1,
+    0.09,
+    0.07,
+    0.06,
+    0.05,
+    0.04,
+    0.03,
+    0.03,
+    0.03,
+    0.03
+   ],
+   "takes": [
+    {
+     "lufsMax": -17.06,
+     "truePeak": -4.13,
+     "duration": 2.2
+    },
+    {
+     "lufsMax": -16.47,
+     "truePeak": -3.43,
+     "duration": 2.18
+    },
+    {
+     "lufsMax": -16.6,
+     "truePeak": -4.46,
+     "duration": 2.23
+    },
+    {
+     "lufsMax": -17.84,
+     "truePeak": -6.45,
+     "duration": 2.2
+    }
+   ]
+  },
+  {
+   "name": "dog-bark",
+   "id": "dogBark",
+   "cat": "creature",
+   "desc": "Dog barks twice",
+   "gain": 0.822,
+   "limited": false,
+   "m": {
+    "peak": -1.72,
+    "truePeak": -1.72,
+    "lufsMax": -17.47,
+    "duration": 0.9,
+    "centroid": 1950
+   },
+   "env": [
+    1,
+    0.86,
+    0.61,
+    0.44,
+    0.34,
+    0.28,
+    0.27,
+    0.24,
+    0.21,
+    0.98,
+    0.97,
+    0.82,
+    0.56,
+    0.44,
+    0.28,
+    0.23,
+    0.27,
+    0.21,
+    0.21,
+    0.17,
+    0.16,
+    0.13,
+    0.13,
+    0.13,
+    0.09,
+    0.09,
+    0.08,
+    0.08,
+    0.07,
+    0.06,
+    0.06,
+    0.05,
+    0.05,
+    0.04,
+    0.03,
+    0.03,
+    0.03,
+    0.03,
+    0.02,
+    0.02
+   ],
+   "takes": [
+    {
+     "lufsMax": -17.47,
+     "truePeak": -1.72,
+     "duration": 0.9
+    },
+    {
+     "lufsMax": -16.17,
+     "truePeak": -1.68,
+     "duration": 0.94
+    },
+    {
+     "lufsMax": -17.92,
+     "truePeak": -1.78,
+     "duration": 0.89
+    },
+    {
+     "lufsMax": -16.61,
+     "truePeak": -1.2,
+     "duration": 0.91
+    }
+   ]
+  },
+  {
+   "name": "cat-meow",
+   "id": "catMeow",
+   "cat": "creature",
+   "desc": "Cat meows",
+   "gain": 0.867,
+   "limited": false,
+   "m": {
+    "peak": -8.92,
+    "truePeak": -8.9,
+    "lufsMax": -16.99,
+    "duration": 0.59,
+    "centroid": 3257
+   },
+   "env": [
+    0.55,
+    0.84,
+    0.97,
+    0.98,
+    0.97,
+    0.97,
+    0.97,
+    0.97,
+    0.97,
+    0.97,
+    0.93,
+    0.86,
+    0.78,
+    0.73,
+    0.67,
+    0.62,
+    0.57,
+    0.68,
+    0.86,
+    1,
+    0.98,
+    0.91,
+    0.84,
+    0.76,
+    0.73,
+    0.67,
+    0.59,
+    0.54,
+    0.5,
+    0.45,
+    0.41,
+    0.38,
+    0.34,
+    0.3,
+    0.27,
+    0.24,
+    0.2,
+    0.17,
+    0.14,
+    0.1
+   ],
+   "takes": [
+    {
+     "lufsMax": -16.99,
+     "truePeak": -8.9,
+     "duration": 0.59
+    },
+    {
+     "lufsMax": -17.05,
+     "truePeak": -8.19,
+     "duration": 0.57
+    },
+    {
+     "lufsMax": -17,
+     "truePeak": -8.51,
+     "duration": 0.59
+    },
+    {
+     "lufsMax": -16.98,
+     "truePeak": -8.88,
+     "duration": 0.57
+    }
+   ]
+  },
+  {
    "name": "thunder-far",
    "id": "thunderFar",
    "cat": "nature",
@@ -14279,6 +17463,3956 @@
      "lufsMax": -23.43,
      "truePeak": -1.19,
      "duration": 0.22
+    }
+   ]
+  },
+  {
+   "name": "thunder-crack",
+   "id": "thunderCrack",
+   "cat": "nature",
+   "desc": "Close lightning: sharp crack into a rolling boom",
+   "gain": 0.207,
+   "limited": false,
+   "m": {
+    "peak": -4.42,
+    "truePeak": -3.26,
+    "lufsMax": -17.8,
+    "duration": 2.56,
+    "centroid": 3852
+   },
+   "env": [
+    1,
+    0.98,
+    0.74,
+    0.82,
+    0.71,
+    0.72,
+    0.72,
+    0.65,
+    0.61,
+    0.71,
+    0.7,
+    0.59,
+    0.5,
+    0.41,
+    0.4,
+    0.39,
+    0.42,
+    0.37,
+    0.37,
+    0.27,
+    0.26,
+    0.21,
+    0.21,
+    0.18,
+    0.16,
+    0.13,
+    0.13,
+    0.12,
+    0.09,
+    0.09,
+    0.08,
+    0.07,
+    0.06,
+    0.06,
+    0.05,
+    0.04,
+    0.04,
+    0.04,
+    0.03,
+    0.02
+   ],
+   "takes": [
+    {
+     "lufsMax": -17.8,
+     "truePeak": -3.26,
+     "duration": 2.56
+    },
+    {
+     "lufsMax": -18.26,
+     "truePeak": -4.31,
+     "duration": 2.45
+    },
+    {
+     "lufsMax": -18.14,
+     "truePeak": -4.36,
+     "duration": 2.59
+    },
+    {
+     "lufsMax": -17.78,
+     "truePeak": -3.24,
+     "duration": 2.5
+    }
+   ]
+  },
+  {
+   "name": "ocean-wave",
+   "id": "oceanWave",
+   "cat": "nature",
+   "desc": "A wave rolls in and washes back",
+   "gain": 0.56,
+   "limited": false,
+   "m": {
+    "peak": -4.4,
+    "truePeak": -4.4,
+    "lufsMax": -17.75,
+    "duration": 1.89,
+    "centroid": 3942
+   },
+   "env": [
+    0.19,
+    0.31,
+    0.33,
+    0.4,
+    0.44,
+    0.56,
+    0.64,
+    0.61,
+    0.68,
+    0.64,
+    0.72,
+    0.79,
+    0.92,
+    1,
+    1,
+    0.99,
+    0.89,
+    0.72,
+    0.66,
+    0.56,
+    0.54,
+    0.48,
+    0.43,
+    0.43,
+    0.39,
+    0.39,
+    0.35,
+    0.34,
+    0.31,
+    0.3,
+    0.25,
+    0.22,
+    0.2,
+    0.17,
+    0.15,
+    0.14,
+    0.11,
+    0.1,
+    0.08,
+    0.05
+   ],
+   "takes": [
+    {
+     "lufsMax": -17.75,
+     "truePeak": -4.4,
+     "duration": 1.89
+    },
+    {
+     "lufsMax": -18.42,
+     "truePeak": -6.14,
+     "duration": 1.82
+    },
+    {
+     "lufsMax": -17.71,
+     "truePeak": -4.71,
+     "duration": 1.9
+    },
+    {
+     "lufsMax": -18.09,
+     "truePeak": -4.09,
+     "duration": 1.82
+    }
+   ]
+  },
+  {
+   "name": "rain-burst",
+   "id": "rainBurst",
+   "cat": "nature",
+   "desc": "Short rain shower patter (layer or loop it)",
+   "gain": 0.831,
+   "limited": false,
+   "m": {
+    "peak": -7.8,
+    "truePeak": -7.78,
+    "lufsMax": -17.93,
+    "duration": 1.38,
+    "centroid": 4799
+   },
+   "env": [
+    0.29,
+    0.44,
+    0.58,
+    0.65,
+    0.8,
+    0.84,
+    0.82,
+    0.85,
+    0.8,
+    0.84,
+    0.83,
+    0.86,
+    0.81,
+    0.81,
+    0.84,
+    0.91,
+    0.81,
+    0.77,
+    0.89,
+    0.82,
+    0.88,
+    0.84,
+    0.86,
+    1,
+    0.88,
+    0.84,
+    0.88,
+    0.82,
+    0.87,
+    0.8,
+    0.77,
+    0.73,
+    0.6,
+    0.68,
+    0.47,
+    0.62,
+    0.3,
+    0.25,
+    0.17,
+    0.09
+   ],
+   "takes": [
+    {
+     "lufsMax": -17.93,
+     "truePeak": -7.78,
+     "duration": 1.38
+    },
+    {
+     "lufsMax": -18.17,
+     "truePeak": -9.35,
+     "duration": 1.41
+    },
+    {
+     "lufsMax": -17.83,
+     "truePeak": -9.73,
+     "duration": 1.39
+    },
+    {
+     "lufsMax": -18.09,
+     "truePeak": -9.78,
+     "duration": 1.41
+    }
+   ]
+  },
+  {
+   "name": "dive-splash",
+   "id": "diveSplash",
+   "cat": "nature",
+   "desc": "Dive into deep water: plunge and bubbles",
+   "gain": 0.345,
+   "limited": false,
+   "m": {
+    "peak": -3.73,
+    "truePeak": -3.71,
+    "lufsMax": -17.97,
+    "duration": 1.09,
+    "centroid": 2896
+   },
+   "env": [
+    1,
+    0.92,
+    0.84,
+    0.79,
+    0.69,
+    0.61,
+    0.55,
+    0.45,
+    0.44,
+    0.48,
+    0.34,
+    0.49,
+    0.4,
+    0.22,
+    0.43,
+    0.37,
+    0.47,
+    0.45,
+    0.18,
+    0.18,
+    0.46,
+    0.21,
+    0.16,
+    0.16,
+    0.15,
+    0.12,
+    0.1,
+    0.11,
+    0.09,
+    0.08,
+    0.06,
+    0.05,
+    0.05,
+    0.05,
+    0.04,
+    0.04,
+    0.03,
+    0.03,
+    0.03,
+    0.02
+   ],
+   "takes": [
+    {
+     "lufsMax": -17.97,
+     "truePeak": -3.71,
+     "duration": 1.09
+    },
+    {
+     "lufsMax": -18.25,
+     "truePeak": -3.93,
+     "duration": 1.05
+    },
+    {
+     "lufsMax": -17.64,
+     "truePeak": -3.75,
+     "duration": 1.08
+    },
+    {
+     "lufsMax": -18.14,
+     "truePeak": -4.09,
+     "duration": 1.09
+    }
+   ]
+  },
+  {
+   "name": "card-flip",
+   "id": "cardFlip",
+   "cat": "card",
+   "desc": "Flip a card face up: quick papery snap",
+   "gain": 2.9,
+   "limited": true,
+   "m": {
+    "peak": -1.51,
+    "truePeak": -1.12,
+    "lufsMax": -20.61,
+    "duration": 0.08,
+    "centroid": 5719
+   },
+   "env": [
+    0.39,
+    0.55,
+    0.72,
+    0.85,
+    0.89,
+    1,
+    1,
+    1,
+    0.87,
+    0.81,
+    0.66,
+    0.62,
+    0.63,
+    0.53,
+    0.5,
+    0.43,
+    0.36,
+    0.3,
+    0.26,
+    0.25,
+    0.18,
+    0.19,
+    0.14,
+    0.21,
+    0.96,
+    0.83,
+    0.58,
+    0.61,
+    0.42,
+    0.33,
+    0.29,
+    0.22,
+    0.24,
+    0.18,
+    0.14,
+    0.11,
+    0.1,
+    0.07,
+    0.04,
+    0.03
+   ],
+   "takes": [
+    {
+     "lufsMax": -20.61,
+     "truePeak": -1.12,
+     "duration": 0.08
+    },
+    {
+     "lufsMax": -22.33,
+     "truePeak": -2.13,
+     "duration": 0.08
+    },
+    {
+     "lufsMax": -19.63,
+     "truePeak": -1.32,
+     "duration": 0.08
+    },
+    {
+     "lufsMax": -20.87,
+     "truePeak": -1.05,
+     "duration": 0.08
+    }
+   ]
+  },
+  {
+   "name": "card-deal",
+   "id": "cardDeal",
+   "cat": "card",
+   "desc": "Deal a card across the table: swish and slap",
+   "gain": 1.58,
+   "limited": false,
+   "m": {
+    "peak": -1.51,
+    "truePeak": -1.18,
+    "lufsMax": -18.1,
+    "duration": 0.12,
+    "centroid": 5891
+   },
+   "env": [
+    0.19,
+    0.3,
+    0.33,
+    0.47,
+    0.61,
+    0.55,
+    0.59,
+    0.64,
+    0.6,
+    0.65,
+    0.73,
+    0.79,
+    0.79,
+    0.88,
+    0.84,
+    0.98,
+    1,
+    0.89,
+    0.83,
+    0.89,
+    0.79,
+    0.71,
+    0.73,
+    0.54,
+    0.51,
+    0.38,
+    1,
+    0.93,
+    0.67,
+    0.58,
+    0.48,
+    0.32,
+    0.27,
+    0.24,
+    0.16,
+    0.13,
+    0.07,
+    0.08,
+    0.06,
+    0.05
+   ],
+   "takes": [
+    {
+     "lufsMax": -18.1,
+     "truePeak": -1.18,
+     "duration": 0.12
+    },
+    {
+     "lufsMax": -19.49,
+     "truePeak": -1.41,
+     "duration": 0.12
+    },
+    {
+     "lufsMax": -18.13,
+     "truePeak": -1.31,
+     "duration": 0.12
+    },
+    {
+     "lufsMax": -18.05,
+     "truePeak": -1.27,
+     "duration": 0.12
+    }
+   ]
+  },
+  {
+   "name": "card-place",
+   "id": "cardPlace",
+   "cat": "card",
+   "desc": "Lay a card down on felt",
+   "gain": 2.52,
+   "limited": true,
+   "m": {
+    "peak": -1.51,
+    "truePeak": -1.39,
+    "lufsMax": -22.6,
+    "duration": 0.12,
+    "centroid": 2361
+   },
+   "env": [
+    1,
+    0.88,
+    0.75,
+    0.98,
+    0.77,
+    0.82,
+    0.77,
+    0.67,
+    0.66,
+    0.64,
+    0.54,
+    0.47,
+    0.44,
+    0.45,
+    0.49,
+    0.4,
+    0.41,
+    0.36,
+    0.33,
+    0.36,
+    0.24,
+    0.31,
+    0.39,
+    0.29,
+    0.24,
+    0.21,
+    0.22,
+    0.24,
+    0.18,
+    0.14,
+    0.15,
+    0.13,
+    0.08,
+    0.08,
+    0.12,
+    0.11,
+    0.08,
+    0.06,
+    0.04,
+    0.02
+   ],
+   "takes": [
+    {
+     "lufsMax": -22.6,
+     "truePeak": -1.39,
+     "duration": 0.12
+    },
+    {
+     "lufsMax": -21.92,
+     "truePeak": -1.48,
+     "duration": 0.12
+    },
+    {
+     "lufsMax": -22.85,
+     "truePeak": -1.41,
+     "duration": 0.12
+    },
+    {
+     "lufsMax": -21.78,
+     "truePeak": -1.33,
+     "duration": 0.12
+    }
+   ]
+  },
+  {
+   "name": "card-shuffle",
+   "id": "cardShuffle",
+   "cat": "card",
+   "desc": "Riffle shuffle: a fast burst of card ticks",
+   "gain": 1.91,
+   "limited": false,
+   "m": {
+    "peak": -1.55,
+    "truePeak": -1.55,
+    "lufsMax": -18.08,
+    "duration": 0.36,
+    "centroid": 4974
+   },
+   "env": [
+    0.74,
+    0.25,
+    0.74,
+    0.57,
+    0.75,
+    0.63,
+    0.47,
+    0.79,
+    0.63,
+    0.7,
+    0.67,
+    0.53,
+    0.96,
+    0.57,
+    0.78,
+    0.61,
+    0.54,
+    0.84,
+    0.51,
+    1,
+    0.55,
+    0.54,
+    0.7,
+    0.57,
+    0.85,
+    0.53,
+    0.53,
+    0.99,
+    0.51,
+    0.71,
+    0.4,
+    0.85,
+    0.85,
+    0.82,
+    0.84,
+    0.21,
+    0.73,
+    0.48,
+    0.09,
+    0.05
+   ],
+   "takes": [
+    {
+     "lufsMax": -18.08,
+     "truePeak": -1.55,
+     "duration": 0.36
+    },
+    {
+     "lufsMax": -18.11,
+     "truePeak": -1.34,
+     "duration": 0.37
+    },
+    {
+     "lufsMax": -17.89,
+     "truePeak": -3.25,
+     "duration": 0.37
+    },
+    {
+     "lufsMax": -17.9,
+     "truePeak": -1.22,
+     "duration": 0.37
+    }
+   ]
+  },
+  {
+   "name": "chip-stack",
+   "id": "chipStack",
+   "cat": "card",
+   "desc": "Poker chips clack onto a stack",
+   "gain": 0.794,
+   "limited": true,
+   "m": {
+    "peak": -1.51,
+    "truePeak": -1.35,
+    "lufsMax": -20.85,
+    "duration": 0.1,
+    "centroid": 3579
+   },
+   "env": [
+    1,
+    0.92,
+    0.69,
+    0.59,
+    0.51,
+    0.38,
+    0.29,
+    0.24,
+    0.19,
+    0.15,
+    0.13,
+    0.1,
+    0.08,
+    0.84,
+    1,
+    0.76,
+    0.56,
+    0.48,
+    0.38,
+    0.3,
+    0.24,
+    0.19,
+    0.16,
+    0.97,
+    0.84,
+    0.66,
+    0.5,
+    0.38,
+    0.31,
+    0.26,
+    0.21,
+    0.15,
+    0.12,
+    0.1,
+    0.08,
+    0.06,
+    0.05,
+    0.04,
+    0.03,
+    0.02
+   ],
+   "takes": [
+    {
+     "lufsMax": -20.85,
+     "truePeak": -1.35,
+     "duration": 0.1
+    },
+    {
+     "lufsMax": -20.82,
+     "truePeak": -1.27,
+     "duration": 0.1
+    },
+    {
+     "lufsMax": -19.77,
+     "truePeak": -1.51,
+     "duration": 0.11
+    },
+    {
+     "lufsMax": -21.41,
+     "truePeak": -1.44,
+     "duration": 0.1
+    }
+   ]
+  },
+  {
+   "name": "dice-roll",
+   "id": "diceRoll",
+   "cat": "card",
+   "desc": "Dice tumble across a table and settle",
+   "gain": 1.01,
+   "limited": true,
+   "m": {
+    "peak": -1.51,
+    "truePeak": -1.43,
+    "lufsMax": -19.04,
+    "duration": 0.43,
+    "centroid": 2558
+   },
+   "env": [
+    1,
+    0.4,
+    0.13,
+    0.04,
+    0.01,
+    0,
+    1,
+    0.65,
+    0.21,
+    0.07,
+    0.02,
+    0.23,
+    1,
+    0.33,
+    0.12,
+    0.04,
+    0.01,
+    0,
+    0.98,
+    0.55,
+    0.17,
+    0.06,
+    0.02,
+    0.96,
+    0.33,
+    0.11,
+    0.04,
+    0.01,
+    0.93,
+    0.6,
+    0.19,
+    0.06,
+    0.02,
+    0.81,
+    0.3,
+    0.11,
+    0.56,
+    0.67,
+    0.19,
+    0.06
+   ],
+   "takes": [
+    {
+     "lufsMax": -19.04,
+     "truePeak": -1.43,
+     "duration": 0.43
+    },
+    {
+     "lufsMax": -19.6,
+     "truePeak": -1.46,
+     "duration": 0.43
+    },
+    {
+     "lufsMax": -18.89,
+     "truePeak": -1.28,
+     "duration": 0.44
+    },
+    {
+     "lufsMax": -19.06,
+     "truePeak": -1.37,
+     "duration": 0.44
+    }
+   ]
+  },
+  {
+   "name": "slot-spin",
+   "id": "slotSpin",
+   "cat": "card",
+   "desc": "Slot reels spinning: fast ratchet ticks",
+   "gain": 0.904,
+   "limited": false,
+   "m": {
+    "peak": -5.84,
+    "truePeak": -5.75,
+    "lufsMax": -18.02,
+    "duration": 0.74,
+    "centroid": 3377
+   },
+   "env": [
+    0.97,
+    0.29,
+    0.96,
+    0.37,
+    0.98,
+    0.43,
+    0.97,
+    0.55,
+    0.96,
+    0.71,
+    1,
+    0.82,
+    0.98,
+    0.98,
+    0.32,
+    0.97,
+    0.36,
+    0.99,
+    0.38,
+    0.98,
+    0.53,
+    0.95,
+    0.66,
+    0.99,
+    0.8,
+    0.97,
+    0.93,
+    0.34,
+    0.97,
+    0.36,
+    0.98,
+    0.39,
+    0.99,
+    0.44,
+    0.96,
+    0.58,
+    0.96,
+    0.71,
+    0.19,
+    0.08
+   ],
+   "takes": [
+    {
+     "lufsMax": -18.02,
+     "truePeak": -5.75,
+     "duration": 0.74
+    },
+    {
+     "lufsMax": -18.08,
+     "truePeak": -5.89,
+     "duration": 0.74
+    },
+    {
+     "lufsMax": -17.95,
+     "truePeak": -5.87,
+     "duration": 0.74
+    },
+    {
+     "lufsMax": -17.96,
+     "truePeak": -5.62,
+     "duration": 0.74
+    }
+   ]
+  },
+  {
+   "name": "slot-stop",
+   "id": "slotStop",
+   "cat": "card",
+   "desc": "A reel locks into place: clunk and ding",
+   "gain": 0.852,
+   "limited": false,
+   "m": {
+    "peak": -1.51,
+    "truePeak": -1.45,
+    "lufsMax": -18.61,
+    "duration": 0.65,
+    "centroid": 3754
+   },
+   "env": [
+    1,
+    0.48,
+    0.68,
+    0.65,
+    0.6,
+    0.54,
+    0.48,
+    0.48,
+    0.41,
+    0.35,
+    0.34,
+    0.34,
+    0.32,
+    0.25,
+    0.23,
+    0.24,
+    0.19,
+    0.19,
+    0.17,
+    0.14,
+    0.14,
+    0.13,
+    0.11,
+    0.09,
+    0.09,
+    0.07,
+    0.06,
+    0.05,
+    0.06,
+    0.05,
+    0.05,
+    0.04,
+    0.04,
+    0.04,
+    0.04,
+    0.03,
+    0.02,
+    0.03,
+    0.03,
+    0.03
+   ],
+   "takes": [
+    {
+     "lufsMax": -18.61,
+     "truePeak": -1.45,
+     "duration": 0.65
+    },
+    {
+     "lufsMax": -18.04,
+     "truePeak": -1.51,
+     "duration": 0.77
+    },
+    {
+     "lufsMax": -17.59,
+     "truePeak": -1.4,
+     "duration": 0.74
+    },
+    {
+     "lufsMax": -17.93,
+     "truePeak": -1.51,
+     "duration": 0.74
+    }
+   ]
+  },
+  {
+   "name": "jackpot",
+   "id": "jackpot",
+   "cat": "card",
+   "desc": "Jackpot: bell flurry over a rising arpeggio",
+   "gain": 0.229,
+   "limited": false,
+   "m": {
+    "peak": -10.11,
+    "truePeak": -10.07,
+    "lufsMax": -18.32,
+    "duration": 1.34,
+    "centroid": 4895
+   },
+   "env": [
+    0.78,
+    0.79,
+    0.89,
+    1,
+    0.93,
+    0.94,
+    0.96,
+    0.89,
+    0.98,
+    0.94,
+    0.91,
+    0.9,
+    0.96,
+    0.89,
+    0.87,
+    0.82,
+    0.87,
+    0.86,
+    0.71,
+    0.7,
+    0.59,
+    0.63,
+    0.56,
+    0.46,
+    0.44,
+    0.54,
+    0.51,
+    0.44,
+    0.42,
+    0.4,
+    0.34,
+    0.28,
+    0.24,
+    0.19,
+    0.15,
+    0.12,
+    0.09,
+    0.07,
+    0.06,
+    0.04
+   ],
+   "takes": [
+    {
+     "lufsMax": -18.32,
+     "truePeak": -10.07,
+     "duration": 1.34
+    },
+    {
+     "lufsMax": -17.54,
+     "truePeak": -9.52,
+     "duration": 1.38
+    },
+    {
+     "lufsMax": -17.74,
+     "truePeak": -9.85,
+     "duration": 1.43
+    },
+    {
+     "lufsMax": -18.46,
+     "truePeak": -10.02,
+     "duration": 1.37
+    }
+   ]
+  },
+  {
+   "name": "engine-start",
+   "id": "engineStart",
+   "cat": "vehicle",
+   "desc": "Engine cranks, catches and idles",
+   "gain": 0.256,
+   "limited": false,
+   "m": {
+    "peak": -4.76,
+    "truePeak": -4.76,
+    "lufsMax": -16.09,
+    "duration": 1.27,
+    "centroid": 570
+   },
+   "env": [
+    0.59,
+    0.41,
+    0.18,
+    0.35,
+    0.59,
+    0.41,
+    0.18,
+    0.35,
+    0.59,
+    0.41,
+    0.18,
+    0.45,
+    0.73,
+    0.86,
+    0.99,
+    0.96,
+    0.9,
+    0.9,
+    0.7,
+    0.77,
+    0.84,
+    0.85,
+    1,
+    0.96,
+    0.91,
+    0.9,
+    0.89,
+    0.84,
+    0.81,
+    0.69,
+    0.67,
+    0.63,
+    0.56,
+    0.53,
+    0.47,
+    0.43,
+    0.4,
+    0.3,
+    0.22,
+    0.15
+   ],
+   "takes": [
+    {
+     "lufsMax": -16.09,
+     "truePeak": -4.76,
+     "duration": 1.27
+    },
+    {
+     "lufsMax": -16.33,
+     "truePeak": -4.33,
+     "duration": 1.27
+    },
+    {
+     "lufsMax": -15.38,
+     "truePeak": -5.1,
+     "duration": 1.29
+    },
+    {
+     "lufsMax": -16.18,
+     "truePeak": -4.89,
+     "duration": 1.28
+    }
+   ]
+  },
+  {
+   "name": "engine-rev",
+   "id": "engineRev",
+   "cat": "vehicle",
+   "desc": "Throttle blip: engine revs up and falls back",
+   "gain": 0.241,
+   "limited": false,
+   "m": {
+    "peak": -9.06,
+    "truePeak": -9.06,
+    "lufsMax": -15.94,
+    "duration": 0.82,
+    "centroid": 1528
+   },
+   "env": [
+    0.96,
+    0.99,
+    1,
+    0.98,
+    0.95,
+    0.97,
+    0.97,
+    0.97,
+    0.93,
+    0.92,
+    0.94,
+    0.93,
+    0.92,
+    0.91,
+    0.9,
+    0.91,
+    0.92,
+    0.91,
+    0.9,
+    0.86,
+    0.85,
+    0.84,
+    0.82,
+    0.79,
+    0.75,
+    0.73,
+    0.7,
+    0.64,
+    0.61,
+    0.57,
+    0.52,
+    0.49,
+    0.45,
+    0.4,
+    0.36,
+    0.32,
+    0.28,
+    0.23,
+    0.19,
+    0.13
+   ],
+   "takes": [
+    {
+     "lufsMax": -15.94,
+     "truePeak": -9.06,
+     "duration": 0.82
+    },
+    {
+     "lufsMax": -16.01,
+     "truePeak": -8.97,
+     "duration": 0.85
+    },
+    {
+     "lufsMax": -16.02,
+     "truePeak": -8.96,
+     "duration": 0.83
+    },
+    {
+     "lufsMax": -15.96,
+     "truePeak": -9.27,
+     "duration": 0.84
+    }
+   ]
+  },
+  {
+   "name": "tire-screech",
+   "id": "tireScreech",
+   "cat": "vehicle",
+   "desc": "Tyres squeal on a hard turn or brake",
+   "gain": 1.21,
+   "limited": false,
+   "m": {
+    "peak": -6.66,
+    "truePeak": -6.61,
+    "lufsMax": -15.88,
+    "duration": 0.74,
+    "centroid": 3249
+   },
+   "env": [
+    0.55,
+    0.81,
+    0.97,
+    0.84,
+    0.94,
+    0.87,
+    0.78,
+    0.85,
+    0.93,
+    0.87,
+    0.85,
+    0.86,
+    0.87,
+    0.86,
+    0.88,
+    0.96,
+    0.81,
+    0.94,
+    0.86,
+    1,
+    0.93,
+    0.9,
+    0.84,
+    0.8,
+    0.82,
+    0.92,
+    0.92,
+    0.7,
+    0.67,
+    0.61,
+    0.49,
+    0.47,
+    0.35,
+    0.37,
+    0.32,
+    0.26,
+    0.19,
+    0.17,
+    0.12,
+    0.08
+   ],
+   "takes": [
+    {
+     "lufsMax": -15.88,
+     "truePeak": -6.61,
+     "duration": 0.74
+    },
+    {
+     "lufsMax": -16.33,
+     "truePeak": -6.89,
+     "duration": 0.75
+    },
+    {
+     "lufsMax": -15.49,
+     "truePeak": -6.23,
+     "duration": 0.74
+    },
+    {
+     "lufsMax": -16.17,
+     "truePeak": -5.84,
+     "duration": 0.75
+    }
+   ]
+  },
+  {
+   "name": "car-crash",
+   "id": "carCrash",
+   "cat": "vehicle",
+   "desc": "Car crash: metal crunch, glass and debris",
+   "gain": 0.223,
+   "limited": true,
+   "m": {
+    "peak": -3.22,
+    "truePeak": -2.4,
+    "lufsMax": -19.3,
+    "duration": 0.9,
+    "centroid": 4536
+   },
+   "env": [
+    1,
+    0.87,
+    0.83,
+    0.74,
+    0.81,
+    0.72,
+    0.56,
+    0.53,
+    0.51,
+    0.48,
+    0.43,
+    0.4,
+    0.37,
+    0.36,
+    0.33,
+    0.25,
+    0.23,
+    0.2,
+    0.32,
+    0.23,
+    0.17,
+    0.15,
+    0.13,
+    0.11,
+    0.1,
+    0.1,
+    0.07,
+    0.09,
+    0.08,
+    0.06,
+    0.06,
+    0.06,
+    0.05,
+    0.04,
+    0.03,
+    0.04,
+    0.04,
+    0.03,
+    0.03,
+    0.03
+   ],
+   "takes": [
+    {
+     "lufsMax": -19.3,
+     "truePeak": -2.4,
+     "duration": 0.9
+    },
+    {
+     "lufsMax": -20.23,
+     "truePeak": -3.44,
+     "duration": 0.9
+    },
+    {
+     "lufsMax": -19.1,
+     "truePeak": -2.27,
+     "duration": 0.88
+    },
+    {
+     "lufsMax": -19.46,
+     "truePeak": -1.19,
+     "duration": 0.9
+    }
+   ]
+  },
+  {
+   "name": "car-horn",
+   "id": "carHorn",
+   "cat": "vehicle",
+   "desc": "Two-tone car horn honk",
+   "gain": 0.225,
+   "limited": false,
+   "m": {
+    "peak": -7.87,
+    "truePeak": -7.87,
+    "lufsMax": -16.01,
+    "duration": 0.39,
+    "centroid": 2404
+   },
+   "env": [
+    0.98,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0.99,
+    1,
+    1,
+    0.99,
+    1,
+    1,
+    0.99,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0.99,
+    1,
+    1,
+    0.99,
+    0.99,
+    0.94,
+    0.83,
+    0.75,
+    0.62,
+    0.47,
+    0.37,
+    0.25
+   ],
+   "takes": [
+    {
+     "lufsMax": -16.01,
+     "truePeak": -7.87,
+     "duration": 0.39
+    },
+    {
+     "lufsMax": -16.03,
+     "truePeak": -7.87,
+     "duration": 0.39
+    },
+    {
+     "lufsMax": -16.02,
+     "truePeak": -7.87,
+     "duration": 0.39
+    },
+    {
+     "lufsMax": -16,
+     "truePeak": -7.86,
+     "duration": 0.39
+    }
+   ]
+  },
+  {
+   "name": "boost",
+   "id": "boost",
+   "cat": "vehicle",
+   "desc": "Nitro / turbo boost: whoosh with a rising jet whine",
+   "gain": 0.763,
+   "limited": false,
+   "m": {
+    "peak": -5.55,
+    "truePeak": -5.55,
+    "lufsMax": -15.96,
+    "duration": 0.73,
+    "centroid": 4669
+   },
+   "env": [
+    0.94,
+    0.99,
+    0.95,
+    1,
+    0.79,
+    0.87,
+    0.85,
+    0.81,
+    0.91,
+    0.86,
+    0.8,
+    0.84,
+    0.83,
+    0.85,
+    0.83,
+    0.88,
+    0.77,
+    0.81,
+    0.91,
+    0.78,
+    0.82,
+    0.7,
+    0.65,
+    0.63,
+    0.61,
+    0.6,
+    0.48,
+    0.45,
+    0.45,
+    0.42,
+    0.39,
+    0.34,
+    0.3,
+    0.26,
+    0.25,
+    0.23,
+    0.2,
+    0.16,
+    0.13,
+    0.08
+   ],
+   "takes": [
+    {
+     "lufsMax": -15.96,
+     "truePeak": -5.55,
+     "duration": 0.73
+    },
+    {
+     "lufsMax": -16.38,
+     "truePeak": -4.5,
+     "duration": 0.75
+    },
+    {
+     "lufsMax": -15.47,
+     "truePeak": -4.6,
+     "duration": 0.74
+    },
+    {
+     "lufsMax": -16.18,
+     "truePeak": -4.5,
+     "duration": 0.75
+    }
+   ]
+  },
+  {
+   "name": "race-light",
+   "id": "raceLight",
+   "cat": "vehicle",
+   "desc": "Start-light beep (ready, set): play three times then countdown-go",
+   "gain": 0.226,
+   "limited": false,
+   "m": {
+    "peak": -10.12,
+    "truePeak": -10.12,
+    "lufsMax": -16.03,
+    "duration": 0.23,
+    "centroid": 1773
+   },
+   "env": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0.96,
+    0.9,
+    0.84,
+    0.77,
+    0.68,
+    0.58,
+    0.48,
+    0.34
+   ],
+   "takes": [
+    {
+     "lufsMax": -16.03,
+     "truePeak": -10.12,
+     "duration": 0.23
+    },
+    {
+     "lufsMax": -16.01,
+     "truePeak": -10.12,
+     "duration": 0.23
+    },
+    {
+     "lufsMax": -16.02,
+     "truePeak": -10.12,
+     "duration": 0.23
+    },
+    {
+     "lufsMax": -16.01,
+     "truePeak": -10.12,
+     "duration": 0.23
+    }
+   ]
+  },
+  {
+   "name": "jumpscare",
+   "id": "jumpscare",
+   "cat": "horror",
+   "desc": "Jump scare: screeching sting with a sub hit",
+   "gain": 0.17,
+   "limited": false,
+   "m": {
+    "peak": -6.83,
+    "truePeak": -6.83,
+    "lufsMax": -16.87,
+    "duration": 1.57,
+    "centroid": 3595
+   },
+   "env": [
+    0.94,
+    0.99,
+    0.99,
+    0.9,
+    0.87,
+    0.93,
+    1,
+    0.97,
+    0.94,
+    0.83,
+    0.78,
+    0.6,
+    0.59,
+    0.51,
+    0.48,
+    0.42,
+    0.35,
+    0.31,
+    0.3,
+    0.3,
+    0.26,
+    0.21,
+    0.18,
+    0.17,
+    0.15,
+    0.13,
+    0.14,
+    0.13,
+    0.11,
+    0.08,
+    0.08,
+    0.08,
+    0.07,
+    0.06,
+    0.06,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.04
+   ],
+   "takes": [
+    {
+     "lufsMax": -16.87,
+     "truePeak": -6.83,
+     "duration": 1.57
+    },
+    {
+     "lufsMax": -17.05,
+     "truePeak": -6.84,
+     "duration": 1.54
+    },
+    {
+     "lufsMax": -16.99,
+     "truePeak": -6.77,
+     "duration": 1.53
+    },
+    {
+     "lufsMax": -17.02,
+     "truePeak": -6.25,
+     "duration": 1.58
+    }
+   ]
+  },
+  {
+   "name": "dread-drone",
+   "id": "dreadDrone",
+   "cat": "horror",
+   "desc": "Rising dread: detuned low drone that swells",
+   "gain": 0.247,
+   "limited": false,
+   "m": {
+    "peak": -3.86,
+    "truePeak": -3.86,
+    "lufsMax": -17.46,
+    "duration": 2.8,
+    "centroid": 401
+   },
+   "env": [
+    0.24,
+    0.33,
+    0.37,
+    0.4,
+    0.43,
+    0.43,
+    0.58,
+    0.6,
+    0.63,
+    0.82,
+    0.94,
+    1,
+    0.83,
+    0.76,
+    0.74,
+    0.8,
+    0.9,
+    0.9,
+    0.72,
+    0.6,
+    0.48,
+    0.42,
+    0.34,
+    0.29,
+    0.23,
+    0.21,
+    0.16,
+    0.15,
+    0.13,
+    0.11,
+    0.1,
+    0.08,
+    0.07,
+    0.06,
+    0.05,
+    0.05,
+    0.04,
+    0.03,
+    0.03,
+    0.02
+   ],
+   "takes": [
+    {
+     "lufsMax": -17.46,
+     "truePeak": -3.86,
+     "duration": 2.8
+    },
+    {
+     "lufsMax": -16.87,
+     "truePeak": -4.57,
+     "duration": 2.74
+    },
+    {
+     "lufsMax": -16.76,
+     "truePeak": -3.91,
+     "duration": 2.76
+    },
+    {
+     "lufsMax": -16.96,
+     "truePeak": -4.67,
+     "duration": 2.76
+    }
+   ]
+  },
+  {
+   "name": "whisper",
+   "id": "whisper",
+   "cat": "horror",
+   "desc": "Breathy unintelligible whisper",
+   "gain": 1.35,
+   "limited": false,
+   "m": {
+    "peak": -5.69,
+    "truePeak": -5.42,
+    "lufsMax": -16.74,
+    "duration": 1.5,
+    "centroid": 4366
+   },
+   "env": [
+    0.61,
+    0.85,
+    0.85,
+    0.83,
+    0.86,
+    0.85,
+    0.65,
+    0.6,
+    0.85,
+    0.95,
+    0.94,
+    1,
+    0.67,
+    0.59,
+    0.65,
+    0.71,
+    0.69,
+    0.61,
+    0.51,
+    0.41,
+    0.38,
+    0.28,
+    0.27,
+    0.24,
+    0.22,
+    0.18,
+    0.16,
+    0.15,
+    0.12,
+    0.11,
+    0.09,
+    0.08,
+    0.08,
+    0.06,
+    0.06,
+    0.05,
+    0.05,
+    0.03,
+    0.04,
+    0.03
+   ],
+   "takes": [
+    {
+     "lufsMax": -16.74,
+     "truePeak": -5.42,
+     "duration": 1.5
+    },
+    {
+     "lufsMax": -17.92,
+     "truePeak": -7.39,
+     "duration": 1.52
+    },
+    {
+     "lufsMax": -16.81,
+     "truePeak": -5.62,
+     "duration": 1.55
+    },
+    {
+     "lufsMax": -16.5,
+     "truePeak": -4.31,
+     "duration": 1.53
+    }
+   ]
+  },
+  {
+   "name": "horror-sting",
+   "id": "horrorSting",
+   "cat": "horror",
+   "desc": "Dissonant orchestral-style stab for a reveal",
+   "gain": 0.154,
+   "limited": false,
+   "m": {
+    "peak": -4.69,
+    "truePeak": -4.69,
+    "lufsMax": -16.76,
+    "duration": 2.48,
+    "centroid": 1353
+   },
+   "env": [
+    0.8,
+    0.91,
+    0.95,
+    1,
+    0.87,
+    0.75,
+    0.77,
+    0.74,
+    0.66,
+    0.59,
+    0.55,
+    0.53,
+    0.47,
+    0.42,
+    0.37,
+    0.36,
+    0.32,
+    0.28,
+    0.24,
+    0.23,
+    0.2,
+    0.18,
+    0.15,
+    0.14,
+    0.13,
+    0.12,
+    0.1,
+    0.09,
+    0.08,
+    0.07,
+    0.07,
+    0.06,
+    0.05,
+    0.05,
+    0.04,
+    0.04,
+    0.04,
+    0.03,
+    0.03,
+    0.03
+   ],
+   "takes": [
+    {
+     "lufsMax": -16.76,
+     "truePeak": -4.69,
+     "duration": 2.48
+    },
+    {
+     "lufsMax": -17.55,
+     "truePeak": -4.75,
+     "duration": 2.29
+    },
+    {
+     "lufsMax": -17.49,
+     "truePeak": -5.02,
+     "duration": 2.17
+    },
+    {
+     "lufsMax": -16.31,
+     "truePeak": -5.85,
+     "duration": 2.11
+    }
+   ]
+  },
+  {
+   "name": "chains-rattle",
+   "id": "chainsRattle",
+   "cat": "horror",
+   "desc": "Chains clink and drag",
+   "gain": 0.993,
+   "limited": true,
+   "m": {
+    "peak": -3.61,
+    "truePeak": -2.82,
+    "lufsMax": -18.72,
+    "duration": 1.1,
+    "centroid": 7970
+   },
+   "env": [
+    0.99,
+    0.93,
+    0.72,
+    0.86,
+    0.52,
+    0.94,
+    0.77,
+    0.98,
+    0.58,
+    1,
+    0.74,
+    0.38,
+    0.84,
+    0.93,
+    0.67,
+    0.38,
+    0.35,
+    0.3,
+    0.26,
+    0.2,
+    0.19,
+    0.18,
+    0.17,
+    0.16,
+    0.12,
+    0.1,
+    0.09,
+    0.09,
+    0.07,
+    0.06,
+    0.06,
+    0.05,
+    0.05,
+    0.04,
+    0.04,
+    0.03,
+    0.03,
+    0.03,
+    0.02,
+    0.02
+   ],
+   "takes": [
+    {
+     "lufsMax": -18.72,
+     "truePeak": -2.82,
+     "duration": 1.1
+    },
+    {
+     "lufsMax": -18.64,
+     "truePeak": -3.85,
+     "duration": 1.12
+    },
+    {
+     "lufsMax": -18.6,
+     "truePeak": -1.2,
+     "duration": 1.09
+    },
+    {
+     "lufsMax": -18.61,
+     "truePeak": -3.45,
+     "duration": 1.14
+    }
+   ]
+  },
+  {
+   "name": "static-burst",
+   "id": "staticBurst",
+   "cat": "horror",
+   "desc": "TV / radio static burst, for haunted screens",
+   "gain": 0.291,
+   "limited": false,
+   "m": {
+    "peak": -6.92,
+    "truePeak": -6.49,
+    "lufsMax": -17,
+    "duration": 0.34,
+    "centroid": 5249
+   },
+   "env": [
+    0.92,
+    0.97,
+    0.99,
+    0.99,
+    0.95,
+    0.91,
+    0.89,
+    0.95,
+    0.98,
+    0.91,
+    0.94,
+    0.93,
+    0.93,
+    0.92,
+    0.88,
+    0.95,
+    0.91,
+    0.87,
+    0.96,
+    0.89,
+    0.94,
+    0.97,
+    0.84,
+    0.98,
+    0.96,
+    1,
+    0.95,
+    0.96,
+    0.92,
+    0.92,
+    0.91,
+    0.88,
+    0.83,
+    0.77,
+    0.69,
+    0.65,
+    0.58,
+    0.49,
+    0.44,
+    0.3
+   ],
+   "takes": [
+    {
+     "lufsMax": -17,
+     "truePeak": -6.49,
+     "duration": 0.34
+    },
+    {
+     "lufsMax": -17.39,
+     "truePeak": -6.34,
+     "duration": 0.34
+    },
+    {
+     "lufsMax": -16.39,
+     "truePeak": -6.24,
+     "duration": 0.34
+    },
+    {
+     "lufsMax": -17.16,
+     "truePeak": -5.97,
+     "duration": 0.34
+    }
+   ]
+  },
+  {
+   "name": "music-box",
+   "id": "musicBox",
+   "cat": "horror",
+   "desc": "Creepy music-box phrase, slightly detuned",
+   "gain": 0.375,
+   "limited": false,
+   "m": {
+    "peak": -4.2,
+    "truePeak": -3.84,
+    "lufsMax": -17.73,
+    "duration": 2.69,
+    "centroid": 2254
+   },
+   "env": [
+    1,
+    0.5,
+    0.45,
+    0.26,
+    1,
+    0.58,
+    0.52,
+    0.37,
+    0.96,
+    0.72,
+    0.47,
+    0.34,
+    0.91,
+    0.67,
+    0.46,
+    0.42,
+    0.86,
+    0.72,
+    0.52,
+    0.32,
+    0.85,
+    0.77,
+    0.66,
+    0.6,
+    0.52,
+    0.4,
+    0.28,
+    0.19,
+    0.13,
+    0.13,
+    0.11,
+    0.11,
+    0.1,
+    0.09,
+    0.08,
+    0.06,
+    0.06,
+    0.05,
+    0.04,
+    0.03
+   ],
+   "takes": [
+    {
+     "lufsMax": -17.73,
+     "truePeak": -3.84,
+     "duration": 2.69
+    },
+    {
+     "lufsMax": -16.32,
+     "truePeak": -3.93,
+     "duration": 2.66
+    },
+    {
+     "lufsMax": -16.45,
+     "truePeak": -3.82,
+     "duration": 2.66
+    },
+    {
+     "lufsMax": -17.46,
+     "truePeak": -3.95,
+     "duration": 2.79
+    }
+   ]
+  },
+  {
+   "name": "axe-chop",
+   "id": "axeChop",
+   "cat": "farm",
+   "desc": "Axe bites into a log",
+   "gain": 0.68,
+   "limited": true,
+   "m": {
+    "peak": -1.51,
+    "truePeak": -1.45,
+    "lufsMax": -19.54,
+    "duration": 0.65,
+    "centroid": 1078
+   },
+   "env": [
+    1,
+    0.94,
+    0.64,
+    0.53,
+    0.4,
+    0.31,
+    0.29,
+    0.29,
+    0.26,
+    0.25,
+    0.24,
+    0.2,
+    0.16,
+    0.19,
+    0.18,
+    0.14,
+    0.14,
+    0.13,
+    0.09,
+    0.11,
+    0.09,
+    0.09,
+    0.1,
+    0.09,
+    0.08,
+    0.06,
+    0.06,
+    0.06,
+    0.06,
+    0.05,
+    0.05,
+    0.04,
+    0.04,
+    0.04,
+    0.04,
+    0.03,
+    0.02,
+    0.03,
+    0.02,
+    0.02
+   ],
+   "takes": [
+    {
+     "lufsMax": -19.54,
+     "truePeak": -1.45,
+     "duration": 0.65
+    },
+    {
+     "lufsMax": -20.55,
+     "truePeak": -1.42,
+     "duration": 0.65
+    },
+    {
+     "lufsMax": -18.7,
+     "truePeak": -1.43,
+     "duration": 0.66
+    },
+    {
+     "lufsMax": -18.91,
+     "truePeak": -1.4,
+     "duration": 0.67
+    }
+   ]
+  },
+  {
+   "name": "tree-fall",
+   "id": "treeFall",
+   "cat": "farm",
+   "desc": "Tree creaks, topples and crashes down",
+   "gain": 0.339,
+   "limited": false,
+   "m": {
+    "peak": -2.94,
+    "truePeak": -2.92,
+    "lufsMax": -16.55,
+    "duration": 2.32,
+    "centroid": 1366
+   },
+   "env": [
+    0.21,
+    0.31,
+    0.31,
+    0.31,
+    0.33,
+    0.33,
+    0.32,
+    0.31,
+    0.33,
+    0.31,
+    0.32,
+    0.33,
+    0.31,
+    0.24,
+    0.19,
+    0.35,
+    0.99,
+    1,
+    0.94,
+    0.68,
+    0.56,
+    0.53,
+    0.52,
+    0.39,
+    0.32,
+    0.25,
+    0.25,
+    0.19,
+    0.17,
+    0.18,
+    0.13,
+    0.1,
+    0.08,
+    0.07,
+    0.06,
+    0.05,
+    0.05,
+    0.04,
+    0.03,
+    0.03
+   ],
+   "takes": [
+    {
+     "lufsMax": -16.55,
+     "truePeak": -2.92,
+     "duration": 2.32
+    },
+    {
+     "lufsMax": -18.45,
+     "truePeak": -3.48,
+     "duration": 2.31
+    },
+    {
+     "lufsMax": -16.91,
+     "truePeak": -2.37,
+     "duration": 2.33
+    },
+    {
+     "lufsMax": -16.11,
+     "truePeak": -2.39,
+     "duration": 2.32
+    }
+   ]
+  },
+  {
+   "name": "pickaxe-mine",
+   "id": "pickaxeMine",
+   "cat": "farm",
+   "desc": "Pickaxe strikes rock",
+   "gain": 0.631,
+   "limited": true,
+   "m": {
+    "peak": -1.51,
+    "truePeak": -1.31,
+    "lufsMax": -20.31,
+    "duration": 0.64,
+    "centroid": 5665
+   },
+   "env": [
+    1,
+    0.85,
+    0.64,
+    0.56,
+    0.42,
+    0.44,
+    0.38,
+    0.31,
+    0.31,
+    0.25,
+    0.2,
+    0.21,
+    0.2,
+    0.15,
+    0.14,
+    0.15,
+    0.15,
+    0.12,
+    0.09,
+    0.1,
+    0.1,
+    0.09,
+    0.09,
+    0.06,
+    0.07,
+    0.07,
+    0.06,
+    0.05,
+    0.05,
+    0.04,
+    0.04,
+    0.04,
+    0.03,
+    0.04,
+    0.04,
+    0.03,
+    0.03,
+    0.03,
+    0.02,
+    0.02
+   ],
+   "takes": [
+    {
+     "lufsMax": -20.31,
+     "truePeak": -1.31,
+     "duration": 0.64
+    },
+    {
+     "lufsMax": -20.81,
+     "truePeak": -1.22,
+     "duration": 0.66
+    },
+    {
+     "lufsMax": -20.63,
+     "truePeak": -1.42,
+     "duration": 0.69
+    },
+    {
+     "lufsMax": -21.18,
+     "truePeak": -1.35,
+     "duration": 0.67
+    }
+   ]
+  },
+  {
+   "name": "dig",
+   "id": "dig",
+   "cat": "farm",
+   "desc": "Shovel into soil",
+   "gain": 1.33,
+   "limited": true,
+   "m": {
+    "peak": -1.51,
+    "truePeak": -1.46,
+    "lufsMax": -16.86,
+    "duration": 0.24,
+    "centroid": 4626
+   },
+   "env": [
+    0.88,
+    1,
+    0.95,
+    0.96,
+    0.97,
+    0.98,
+    0.93,
+    0.88,
+    0.81,
+    0.68,
+    0.73,
+    0.72,
+    0.61,
+    0.5,
+    0.48,
+    0.49,
+    0.41,
+    0.38,
+    0.36,
+    0.35,
+    0.37,
+    0.28,
+    0.25,
+    0.24,
+    0.2,
+    0.19,
+    0.16,
+    0.13,
+    0.33,
+    0.28,
+    0.14,
+    0.07,
+    0.06,
+    0.04,
+    0.02,
+    0.01,
+    0.01,
+    0.37,
+    0.14,
+    0.09
+   ],
+   "takes": [
+    {
+     "lufsMax": -16.86,
+     "truePeak": -1.46,
+     "duration": 0.24
+    },
+    {
+     "lufsMax": -18.71,
+     "truePeak": -1.44,
+     "duration": 0.24
+    },
+    {
+     "lufsMax": -16.37,
+     "truePeak": -1.37,
+     "duration": 0.24
+    },
+    {
+     "lufsMax": -16.77,
+     "truePeak": -1.34,
+     "duration": 0.24
+    }
+   ]
+  },
+  {
+   "name": "plant-seed",
+   "id": "plantSeed",
+   "cat": "farm",
+   "desc": "Pop a seed into the ground: soft pat and sprout chime",
+   "gain": 1.92,
+   "limited": false,
+   "m": {
+    "peak": -1.51,
+    "truePeak": -1.51,
+    "lufsMax": -17.14,
+    "duration": 0.35,
+    "centroid": 2544
+   },
+   "env": [
+    1,
+    0.69,
+    0.54,
+    0.53,
+    0.33,
+    0.15,
+    0.65,
+    0.96,
+    0.77,
+    0.62,
+    0.5,
+    0.74,
+    0.71,
+    0.64,
+    0.58,
+    0.54,
+    0.5,
+    0.46,
+    0.43,
+    0.4,
+    0.37,
+    0.34,
+    0.32,
+    0.29,
+    0.27,
+    0.25,
+    0.23,
+    0.22,
+    0.2,
+    0.18,
+    0.17,
+    0.15,
+    0.14,
+    0.12,
+    0.11,
+    0.1,
+    0.08,
+    0.07,
+    0.06,
+    0.04
+   ],
+   "takes": [
+    {
+     "lufsMax": -17.14,
+     "truePeak": -1.51,
+     "duration": 0.35
+    },
+    {
+     "lufsMax": -17.22,
+     "truePeak": -1.51,
+     "duration": 0.34
+    },
+    {
+     "lufsMax": -17.03,
+     "truePeak": -1.51,
+     "duration": 0.35
+    },
+    {
+     "lufsMax": -17.09,
+     "truePeak": -1.51,
+     "duration": 0.34
+    }
+   ]
+  },
+  {
+   "name": "watering-can",
+   "id": "wateringCan",
+   "cat": "farm",
+   "desc": "Watering can pours over the soil",
+   "gain": 0.709,
+   "limited": false,
+   "m": {
+    "peak": -8.14,
+    "truePeak": -7.95,
+    "lufsMax": -16.94,
+    "duration": 0.85,
+    "centroid": 5908
+   },
+   "env": [
+    0.37,
+    0.54,
+    0.63,
+    0.93,
+    0.93,
+    0.89,
+    0.8,
+    0.97,
+    0.81,
+    0.84,
+    0.98,
+    0.85,
+    0.89,
+    0.97,
+    0.86,
+    0.86,
+    0.82,
+    1,
+    0.9,
+    0.87,
+    1,
+    0.94,
+    0.79,
+    0.93,
+    0.88,
+    0.92,
+    0.85,
+    0.95,
+    0.85,
+    0.73,
+    0.78,
+    0.59,
+    0.48,
+    0.72,
+    0.52,
+    0.32,
+    0.27,
+    0.19,
+    0.15,
+    0.1
+   ],
+   "takes": [
+    {
+     "lufsMax": -16.94,
+     "truePeak": -7.95,
+     "duration": 0.85
+    },
+    {
+     "lufsMax": -17.38,
+     "truePeak": -7.2,
+     "duration": 0.86
+    },
+    {
+     "lufsMax": -16.43,
+     "truePeak": -6.51,
+     "duration": 0.85
+    },
+    {
+     "lufsMax": -17.26,
+     "truePeak": -7.98,
+     "duration": 0.86
+    }
+   ]
+  },
+  {
+   "name": "harvest",
+   "id": "harvest",
+   "cat": "farm",
+   "desc": "Pull up a crop: rustle, pluck and a happy pop",
+   "gain": 1.47,
+   "limited": false,
+   "m": {
+    "peak": -1.51,
+    "truePeak": -1.51,
+    "lufsMax": -17.12,
+    "duration": 0.29,
+    "centroid": 3712
+   },
+   "env": [
+    0.37,
+    0.54,
+    0.68,
+    0.62,
+    0.5,
+    0.43,
+    0.39,
+    0.31,
+    0.28,
+    0.25,
+    0.19,
+    1,
+    0.92,
+    0.78,
+    0.65,
+    0.55,
+    0.44,
+    0.36,
+    0.29,
+    0.84,
+    0.79,
+    0.74,
+    0.69,
+    0.64,
+    0.58,
+    0.54,
+    0.49,
+    0.45,
+    0.41,
+    0.38,
+    0.34,
+    0.31,
+    0.28,
+    0.26,
+    0.22,
+    0.19,
+    0.17,
+    0.14,
+    0.11,
+    0.08
+   ],
+   "takes": [
+    {
+     "lufsMax": -17.12,
+     "truePeak": -1.51,
+     "duration": 0.29
+    },
+    {
+     "lufsMax": -17.31,
+     "truePeak": -1.5,
+     "duration": 0.29
+    },
+    {
+     "lufsMax": -16.98,
+     "truePeak": -1.5,
+     "duration": 0.29
+    },
+    {
+     "lufsMax": -17.26,
+     "truePeak": -1.51,
+     "duration": 0.29
+    }
+   ]
+  },
+  {
+   "name": "fishing-cast",
+   "id": "fishingCast",
+   "cat": "farm",
+   "desc": "Cast a line: rod whip, reel whirr and a plop",
+   "gain": 1.93,
+   "limited": true,
+   "m": {
+    "peak": -1.51,
+    "truePeak": -1.5,
+    "lufsMax": -19.16,
+    "duration": 0.62,
+    "centroid": 4935
+   },
+   "env": [
+    0.37,
+    0.43,
+    0.58,
+    0.68,
+    0.78,
+    0.93,
+    0.79,
+    0.54,
+    0.42,
+    0.03,
+    0.48,
+    0.02,
+    0.36,
+    0,
+    0.46,
+    0,
+    0.36,
+    0,
+    0.39,
+    0,
+    0.41,
+    0.12,
+    0.41,
+    0.32,
+    0.39,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0.88,
+    0.6,
+    0.32,
+    0.18,
+    0.16,
+    0.11,
+    0.06
+   ],
+   "takes": [
+    {
+     "lufsMax": -19.16,
+     "truePeak": -1.5,
+     "duration": 0.62
+    },
+    {
+     "lufsMax": -18.96,
+     "truePeak": -1.49,
+     "duration": 0.62
+    },
+    {
+     "lufsMax": -18.77,
+     "truePeak": -1.5,
+     "duration": 0.62
+    },
+    {
+     "lufsMax": -18.88,
+     "truePeak": -1.5,
+     "duration": 0.62
+    }
+   ]
+  },
+  {
+   "name": "fish-bite",
+   "id": "fishBite",
+   "cat": "farm",
+   "desc": "Bobber dips: something is biting!",
+   "gain": 0.648,
+   "limited": false,
+   "m": {
+    "peak": -3.84,
+    "truePeak": -3.84,
+    "lufsMax": -17.03,
+    "duration": 0.26,
+    "centroid": 2262
+   },
+   "env": [
+    1,
+    0.89,
+    0.77,
+    0.64,
+    0.52,
+    0.45,
+    0.38,
+    0.3,
+    0.25,
+    0.21,
+    0.16,
+    0.11,
+    0.67,
+    0.71,
+    0.73,
+    0.74,
+    0.75,
+    0.75,
+    0.75,
+    0.75,
+    0.75,
+    0.75,
+    0.75,
+    0.75,
+    0.75,
+    0.75,
+    0.73,
+    0.73,
+    0.73,
+    0.73,
+    0.73,
+    0.72,
+    0.65,
+    0.59,
+    0.51,
+    0.44,
+    0.36,
+    0.28,
+    0.21,
+    0.14
+   ],
+   "takes": [
+    {
+     "lufsMax": -17.03,
+     "truePeak": -3.84,
+     "duration": 0.26
+    },
+    {
+     "lufsMax": -16.99,
+     "truePeak": -3.61,
+     "duration": 0.26
+    },
+    {
+     "lufsMax": -17.03,
+     "truePeak": -3.89,
+     "duration": 0.26
+    },
+    {
+     "lufsMax": -16.97,
+     "truePeak": -3.62,
+     "duration": 0.26
+    }
+   ]
+  },
+  {
+   "name": "computer-beep",
+   "id": "computerBeep",
+   "cat": "scifi",
+   "desc": "Terminal data chirps: a burst of random blips",
+   "gain": 0.266,
+   "limited": false,
+   "m": {
+    "peak": -11.83,
+    "truePeak": -11.83,
+    "lufsMax": -17.94,
+    "duration": 0.29,
+    "centroid": 3324
+   },
+   "env": [
+    0.92,
+    0.97,
+    0.99,
+    0.99,
+    1,
+    0.97,
+    0.97,
+    0.97,
+    0.97,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0.9,
+    0.9,
+    0.9,
+    0.9,
+    0.99,
+    0.99,
+    0.99,
+    0.99,
+    0.99,
+    0.95,
+    0.93,
+    0.93,
+    0.93,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0.84,
+    0.84,
+    0.84,
+    0.69,
+    0.53,
+    0.35
+   ],
+   "takes": [
+    {
+     "lufsMax": -17.94,
+     "truePeak": -11.83,
+     "duration": 0.29
+    },
+    {
+     "lufsMax": -18.12,
+     "truePeak": -11.84,
+     "duration": 0.29
+    },
+    {
+     "lufsMax": -18.08,
+     "truePeak": -11.85,
+     "duration": 0.29
+    },
+    {
+     "lufsMax": -17.82,
+     "truePeak": -11.84,
+     "duration": 0.29
+    }
+   ]
+  },
+  {
+   "name": "scan",
+   "id": "scan",
+   "cat": "scifi",
+   "desc": "Scanner sweep: rising filtered tone with a ping",
+   "gain": 0.817,
+   "limited": false,
+   "m": {
+    "peak": -7.63,
+    "truePeak": -7.57,
+    "lufsMax": -17.68,
+    "duration": 1.22,
+    "centroid": 2356
+   },
+   "env": [
+    0.34,
+    0.47,
+    0.5,
+    0.52,
+    0.54,
+    0.56,
+    0.55,
+    0.54,
+    0.52,
+    0.53,
+    0.5,
+    0.48,
+    0.5,
+    0.46,
+    0.46,
+    0.41,
+    0.32,
+    0.23,
+    1,
+    0.84,
+    0.67,
+    0.58,
+    0.64,
+    0.51,
+    0.41,
+    0.35,
+    0.34,
+    0.27,
+    0.2,
+    0.18,
+    0.17,
+    0.13,
+    0.1,
+    0.09,
+    0.09,
+    0.07,
+    0.05,
+    0.05,
+    0.04,
+    0.04
+   ],
+   "takes": [
+    {
+     "lufsMax": -17.68,
+     "truePeak": -7.57,
+     "duration": 1.22
+    },
+    {
+     "lufsMax": -18.31,
+     "truePeak": -7.65,
+     "duration": 1.16
+    },
+    {
+     "lufsMax": -18.11,
+     "truePeak": -7.71,
+     "duration": 1.16
+    },
+    {
+     "lufsMax": -17.88,
+     "truePeak": -7.45,
+     "duration": 1.22
+    }
+   ]
+  },
+  {
+   "name": "access-granted",
+   "id": "accessGranted",
+   "cat": "scifi",
+   "desc": "Keycard accepted: two bright beeps",
+   "gain": 0.24,
+   "limited": false,
+   "m": {
+    "peak": -11.34,
+    "truePeak": -11.29,
+    "lufsMax": -18.01,
+    "duration": 0.2,
+    "centroid": 1956
+   },
+   "env": [
+    1,
+    0.99,
+    0.98,
+    0.98,
+    0.98,
+    0.97,
+    0.97,
+    0.97,
+    0.97,
+    0.97,
+    0.97,
+    0.97,
+    0.97,
+    0.97,
+    0.97,
+    0.97,
+    0.97,
+    0.97,
+    0.97,
+    0.96,
+    0.96,
+    0.97,
+    0.97,
+    0.96,
+    0.96,
+    0.97,
+    0.97,
+    0.96,
+    0.96,
+    0.91,
+    0.85,
+    0.8,
+    0.73,
+    0.66,
+    0.59,
+    0.52,
+    0.44,
+    0.36,
+    0.27,
+    0.18
+   ],
+   "takes": [
+    {
+     "lufsMax": -18.01,
+     "truePeak": -11.29,
+     "duration": 0.2
+    },
+    {
+     "lufsMax": -17.99,
+     "truePeak": -11.29,
+     "duration": 0.21
+    },
+    {
+     "lufsMax": -18.01,
+     "truePeak": -11.3,
+     "duration": 0.2
+    },
+    {
+     "lufsMax": -17.98,
+     "truePeak": -11.29,
+     "duration": 0.21
+    }
+   ]
+  },
+  {
+   "name": "access-denied",
+   "id": "accessDenied",
+   "cat": "scifi",
+   "desc": "Keycard rejected: low double buzz with a crackle",
+   "gain": 0.18,
+   "limited": false,
+   "m": {
+    "peak": -13.12,
+    "truePeak": -13.06,
+    "lufsMax": -18,
+    "duration": 0.34,
+    "centroid": 1151
+   },
+   "env": [
+    0.96,
+    0.96,
+    0.96,
+    0.95,
+    0.95,
+    0.95,
+    0.95,
+    0.95,
+    0.95,
+    0.95,
+    0.94,
+    0.89,
+    0.77,
+    0.31,
+    0.04,
+    0.02,
+    1,
+    1,
+    0.98,
+    0.97,
+    0.97,
+    0.97,
+    0.96,
+    0.96,
+    0.96,
+    0.96,
+    0.96,
+    0.95,
+    0.95,
+    0.95,
+    0.95,
+    0.95,
+    0.9,
+    0.83,
+    0.73,
+    0.64,
+    0.52,
+    0.41,
+    0.3,
+    0.21
+   ],
+   "takes": [
+    {
+     "lufsMax": -18,
+     "truePeak": -13.06,
+     "duration": 0.34
+    },
+    {
+     "lufsMax": -18.01,
+     "truePeak": -12.88,
+     "duration": 0.34
+    },
+    {
+     "lufsMax": -17.99,
+     "truePeak": -13.04,
+     "duration": 0.34
+    },
+    {
+     "lufsMax": -18.01,
+     "truePeak": -13.15,
+     "duration": 0.34
+    }
+   ]
+  },
+  {
+   "name": "door-slide",
+   "id": "doorSlide",
+   "cat": "scifi",
+   "desc": "Sci-fi door slides open with a hiss",
+   "gain": 0.649,
+   "limited": false,
+   "m": {
+    "peak": -5.79,
+    "truePeak": -5.73,
+    "lufsMax": -17.99,
+    "duration": 0.94,
+    "centroid": 3090
+   },
+   "env": [
+    0.95,
+    1,
+    1,
+    0.94,
+    0.9,
+    0.93,
+    0.95,
+    0.84,
+    0.83,
+    0.82,
+    0.72,
+    0.51,
+    0.44,
+    0.34,
+    0.8,
+    0.49,
+    0.27,
+    0.25,
+    0.21,
+    0.22,
+    0.17,
+    0.19,
+    0.16,
+    0.14,
+    0.12,
+    0.12,
+    0.12,
+    0.09,
+    0.08,
+    0.06,
+    0.08,
+    0.07,
+    0.07,
+    0.05,
+    0.04,
+    0.04,
+    0.04,
+    0.04,
+    0.03,
+    0.03
+   ],
+   "takes": [
+    {
+     "lufsMax": -17.99,
+     "truePeak": -5.73,
+     "duration": 0.94
+    },
+    {
+     "lufsMax": -18.12,
+     "truePeak": -5.98,
+     "duration": 0.93
+    },
+    {
+     "lufsMax": -17.92,
+     "truePeak": -5.19,
+     "duration": 0.93
+    },
+    {
+     "lufsMax": -17.99,
+     "truePeak": -5.82,
+     "duration": 1.02
+    }
+   ]
+  },
+  {
+   "name": "robot-chatter",
+   "id": "robotChatter",
+   "cat": "scifi",
+   "desc": "Cute robot beeps and boops",
+   "gain": 0.169,
+   "limited": false,
+   "m": {
+    "peak": -12.62,
+    "truePeak": -12.62,
+    "lufsMax": -17.96,
+    "duration": 0.38,
+    "centroid": 1391
+   },
+   "env": [
+    0.94,
+    0.99,
+    1,
+    0.98,
+    0.99,
+    0.99,
+    1,
+    1,
+    1,
+    1,
+    0.99,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0.99,
+    1,
+    0.92,
+    0.99,
+    1,
+    0.99,
+    0.99,
+    0.99,
+    1,
+    1,
+    0.99,
+    0.99,
+    0.98,
+    1,
+    1,
+    0.95,
+    0.99,
+    1,
+    0.93,
+    0.76,
+    0.53,
+    0.38,
+    0.21
+   ],
+   "takes": [
+    {
+     "lufsMax": -17.96,
+     "truePeak": -12.62,
+     "duration": 0.38
+    },
+    {
+     "lufsMax": -18.18,
+     "truePeak": -12.62,
+     "duration": 0.39
+    },
+    {
+     "lufsMax": -18.14,
+     "truePeak": -12.63,
+     "duration": 0.38
+    },
+    {
+     "lufsMax": -17.78,
+     "truePeak": -12.63,
+     "duration": 0.39
+    }
+   ]
+  },
+  {
+   "name": "shutdown",
+   "id": "shutdown",
+   "cat": "scifi",
+   "desc": "System shutdown: whine falls and cuts",
+   "gain": 0.325,
+   "limited": false,
+   "m": {
+    "peak": -10.68,
+    "truePeak": -10.68,
+    "lufsMax": -18.02,
+    "duration": 0.82,
+    "centroid": 1023
+   },
+   "env": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0.98,
+    0.96,
+    0.94,
+    0.91,
+    0.89,
+    0.87,
+    0.85,
+    0.83,
+    0.81,
+    0.78,
+    0.76,
+    0.74,
+    0.71,
+    0.68,
+    0.67,
+    0.64,
+    0.61,
+    0.58,
+    0.56,
+    0.53,
+    0.5,
+    0.49,
+    0.45,
+    0.42,
+    0.38,
+    0.36,
+    0.33,
+    0.29,
+    0.25,
+    0.2,
+    0.15,
+    0.14,
+    0.05,
+    0.43
+   ],
+   "takes": [
+    {
+     "lufsMax": -18.02,
+     "truePeak": -10.68,
+     "duration": 0.82
+    },
+    {
+     "lufsMax": -18.02,
+     "truePeak": -8.97,
+     "duration": 0.83
+    },
+    {
+     "lufsMax": -17.99,
+     "truePeak": -10.73,
+     "duration": 0.82
+    },
+    {
+     "lufsMax": -18.01,
+     "truePeak": -8.97,
+     "duration": 0.83
+    }
+   ]
+  },
+  {
+   "name": "glitch",
+   "id": "glitch",
+   "cat": "scifi",
+   "desc": "Digital glitch: stuttering crushed burst",
+   "gain": 0.367,
+   "limited": false,
+   "m": {
+    "peak": -8.09,
+    "truePeak": -6.7,
+    "lufsMax": -18.07,
+    "duration": 0.16,
+    "centroid": 5375
+   },
+   "env": [
+    0.97,
+    0.81,
+    0.99,
+    0.97,
+    0.91,
+    0.96,
+    0.87,
+    0.91,
+    0.97,
+    0.96,
+    0.92,
+    0.96,
+    0.91,
+    0.95,
+    0.96,
+    0.92,
+    0.94,
+    0.96,
+    1,
+    0.99,
+    0.99,
+    0.95,
+    0.98,
+    0.93,
+    0.97,
+    0.91,
+    0.94,
+    0.92,
+    0.89,
+    0.87,
+    0.82,
+    0.82,
+    0.75,
+    0.74,
+    0.66,
+    0.6,
+    0.5,
+    0.43,
+    0.35,
+    0.23
+   ],
+   "takes": [
+    {
+     "lufsMax": -18.07,
+     "truePeak": -6.7,
+     "duration": 0.16
+    },
+    {
+     "lufsMax": -18.22,
+     "truePeak": -6.43,
+     "duration": 0.16
+    },
+    {
+     "lufsMax": -18.04,
+     "truePeak": -6.97,
+     "duration": 0.16
+    },
+    {
+     "lufsMax": -17.69,
+     "truePeak": -6.69,
+     "duration": 0.16
+    }
+   ]
+  },
+  {
+   "name": "swap",
+   "id": "swap",
+   "cat": "puzzle",
+   "desc": "Swap two tiles: quick two-way swish",
+   "gain": 2.31,
+   "limited": false,
+   "m": {
+    "peak": -1.51,
+    "truePeak": -1.49,
+    "lufsMax": -17.26,
+    "duration": 0.11,
+    "centroid": 3588
+   },
+   "env": [
+    1,
+    0.99,
+    0.92,
+    0.87,
+    0.86,
+    0.87,
+    0.75,
+    0.74,
+    0.69,
+    0.69,
+    0.63,
+    0.57,
+    0.57,
+    0.53,
+    0.46,
+    0.43,
+    0.48,
+    0.37,
+    1,
+    0.97,
+    0.91,
+    0.88,
+    0.81,
+    0.78,
+    0.69,
+    0.64,
+    0.58,
+    0.52,
+    0.47,
+    0.42,
+    0.38,
+    0.34,
+    0.3,
+    0.26,
+    0.23,
+    0.2,
+    0.17,
+    0.14,
+    0.11,
+    0.05
+   ],
+   "takes": [
+    {
+     "lufsMax": -17.26,
+     "truePeak": -1.49,
+     "duration": 0.11
+    },
+    {
+     "lufsMax": -17.24,
+     "truePeak": -1.47,
+     "duration": 0.11
+    },
+    {
+     "lufsMax": -17.19,
+     "truePeak": -1.51,
+     "duration": 0.11
+    },
+    {
+     "lufsMax": -17.27,
+     "truePeak": -1.47,
+     "duration": 0.11
+    }
+   ]
+  },
+  {
+   "name": "match",
+   "id": "match",
+   "cat": "puzzle",
+   "desc": "Three in a row: bright glassy pop",
+   "gain": 0.505,
+   "limited": false,
+   "m": {
+    "peak": -5.67,
+    "truePeak": -5.67,
+    "lufsMax": -17.2,
+    "duration": 0.73,
+    "centroid": 2752
+   },
+   "env": [
+    1,
+    0.86,
+    0.86,
+    0.82,
+    0.68,
+    0.65,
+    0.57,
+    0.49,
+    0.38,
+    0.41,
+    0.28,
+    0.33,
+    0.33,
+    0.24,
+    0.23,
+    0.22,
+    0.21,
+    0.19,
+    0.15,
+    0.14,
+    0.11,
+    0.1,
+    0.1,
+    0.11,
+    0.09,
+    0.09,
+    0.1,
+    0.07,
+    0.06,
+    0.05,
+    0.04,
+    0.04,
+    0.04,
+    0.04,
+    0.04,
+    0.04,
+    0.04,
+    0.03,
+    0.03,
+    0.02
+   ],
+   "takes": [
+    {
+     "lufsMax": -17.2,
+     "truePeak": -5.67,
+     "duration": 0.73
+    },
+    {
+     "lufsMax": -16.92,
+     "truePeak": -5.16,
+     "duration": 0.72
+    },
+    {
+     "lufsMax": -17.08,
+     "truePeak": -5.39,
+     "duration": 0.75
+    },
+    {
+     "lufsMax": -16.82,
+     "truePeak": -4.76,
+     "duration": 0.76
+    }
+   ]
+  },
+  {
+   "name": "combo-chain",
+   "id": "comboChain",
+   "cat": "puzzle",
+   "desc": "Cascade combo: each step a little higher (pitch it per chain)",
+   "gain": 0.333,
+   "limited": false,
+   "m": {
+    "peak": -6.32,
+    "truePeak": -6.25,
+    "lufsMax": -17.03,
+    "duration": 0.54,
+    "centroid": 2957
+   },
+   "env": [
+    0.95,
+    0.95,
+    0.94,
+    0.93,
+    0.92,
+    1,
+    1,
+    0.99,
+    0.94,
+    0.86,
+    0.82,
+    0.8,
+    0.74,
+    0.68,
+    0.56,
+    0.51,
+    0.48,
+    0.44,
+    0.42,
+    0.37,
+    0.28,
+    0.26,
+    0.24,
+    0.22,
+    0.19,
+    0.14,
+    0.14,
+    0.12,
+    0.12,
+    0.11,
+    0.07,
+    0.07,
+    0.07,
+    0.06,
+    0.06,
+    0.04,
+    0.04,
+    0.04,
+    0.03,
+    0.03
+   ],
+   "takes": [
+    {
+     "lufsMax": -17.03,
+     "truePeak": -6.25,
+     "duration": 0.54
+    },
+    {
+     "lufsMax": -17.09,
+     "truePeak": -6.66,
+     "duration": 0.54
+    },
+    {
+     "lufsMax": -17.09,
+     "truePeak": -6.25,
+     "duration": 0.53
+    },
+    {
+     "lufsMax": -16.81,
+     "truePeak": -6.17,
+     "duration": 0.58
+    }
+   ]
+  },
+  {
+   "name": "line-clear",
+   "id": "lineClear",
+   "cat": "puzzle",
+   "desc": "Clear a row: zipper sweep and a chime",
+   "gain": 0.488,
+   "limited": false,
+   "m": {
+    "peak": -6.94,
+    "truePeak": -6.93,
+    "lufsMax": -17.02,
+    "duration": 0.9,
+    "centroid": 3151
+   },
+   "env": [
+    0.9,
+    0.93,
+    0.95,
+    0.99,
+    1,
+    0.97,
+    0.81,
+    0.65,
+    0.85,
+    0.75,
+    0.71,
+    0.63,
+    0.57,
+    0.49,
+    0.48,
+    0.46,
+    0.4,
+    0.38,
+    0.32,
+    0.3,
+    0.26,
+    0.24,
+    0.24,
+    0.2,
+    0.17,
+    0.15,
+    0.14,
+    0.12,
+    0.11,
+    0.1,
+    0.09,
+    0.08,
+    0.07,
+    0.06,
+    0.06,
+    0.05,
+    0.04,
+    0.04,
+    0.04,
+    0.03
+   ],
+   "takes": [
+    {
+     "lufsMax": -17.02,
+     "truePeak": -6.93,
+     "duration": 0.9
+    },
+    {
+     "lufsMax": -16.84,
+     "truePeak": -6.7,
+     "duration": 0.89
+    },
+    {
+     "lufsMax": -17.18,
+     "truePeak": -6.82,
+     "duration": 0.87
+    },
+    {
+     "lufsMax": -16.98,
+     "truePeak": -7.07,
+     "duration": 0.84
+    }
+   ]
+  },
+  {
+   "name": "piece-lock",
+   "id": "pieceLock",
+   "cat": "puzzle",
+   "desc": "Falling piece locks in place: tight thunk",
+   "gain": 0.897,
+   "limited": true,
+   "m": {
+    "peak": -1.51,
+    "truePeak": -1.49,
+    "lufsMax": -19.37,
+    "duration": 0.11,
+    "centroid": 520
+   },
+   "env": [
+    1,
+    1,
+    1,
+    0.79,
+    0.83,
+    0.94,
+    0.84,
+    0.82,
+    0.65,
+    0.62,
+    0.45,
+    0.43,
+    0.41,
+    0.44,
+    0.4,
+    0.37,
+    0.3,
+    0.25,
+    0.21,
+    0.13,
+    0.15,
+    0.12,
+    0.12,
+    0.13,
+    0.04,
+    0.07,
+    0.06,
+    0.07,
+    0.07,
+    0.05,
+    0.05,
+    0.06,
+    0.03,
+    0.03,
+    0.05,
+    0.03,
+    0.02,
+    0.02,
+    0.02,
+    0.01
+   ],
+   "takes": [
+    {
+     "lufsMax": -19.37,
+     "truePeak": -1.49,
+     "duration": 0.11
+    },
+    {
+     "lufsMax": -19.85,
+     "truePeak": -1.51,
+     "duration": 0.11
+    },
+    {
+     "lufsMax": -19.05,
+     "truePeak": -1.5,
+     "duration": 0.1
+    },
+    {
+     "lufsMax": -19.28,
+     "truePeak": -1.46,
+     "duration": 0.12
+    }
+   ]
+  },
+  {
+   "name": "merge",
+   "id": "merge",
+   "cat": "puzzle",
+   "desc": "Two items merge into a bigger one: whoomp and sparkle",
+   "gain": 0.665,
+   "limited": false,
+   "m": {
+    "peak": -3.51,
+    "truePeak": -3.51,
+    "lufsMax": -17.11,
+    "duration": 0.85,
+    "centroid": 2715
+   },
+   "env": [
+    1,
+    0.88,
+    0.65,
+    0.55,
+    0.74,
+    0.71,
+    0.63,
+    0.64,
+    0.52,
+    0.46,
+    0.44,
+    0.36,
+    0.36,
+    0.3,
+    0.26,
+    0.23,
+    0.21,
+    0.17,
+    0.16,
+    0.17,
+    0.13,
+    0.13,
+    0.14,
+    0.09,
+    0.09,
+    0.09,
+    0.08,
+    0.07,
+    0.06,
+    0.05,
+    0.06,
+    0.05,
+    0.04,
+    0.05,
+    0.03,
+    0.03,
+    0.03,
+    0.03,
+    0.02,
+    0.02
+   ],
+   "takes": [
+    {
+     "lufsMax": -17.11,
+     "truePeak": -3.51,
+     "duration": 0.85
+    },
+    {
+     "lufsMax": -16.95,
+     "truePeak": -3.55,
+     "duration": 0.83
+    },
+    {
+     "lufsMax": -17.05,
+     "truePeak": -3.48,
+     "duration": 0.86
+    },
+    {
+     "lufsMax": -16.91,
+     "truePeak": -3.54,
+     "duration": 0.85
     }
    ]
   }

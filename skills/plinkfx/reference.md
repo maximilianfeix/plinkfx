@@ -62,8 +62,8 @@ Start from these, then shape by ear (the user's) and by numbers (yours).
 
 ## Loudness targets used by the catalogue (max momentary LUFS)
 
-ui -20, footstep -20, alert -18, jingle / mechanic / world -17, pickup / jump / powerup / shoot / magic -16,
-hit -15, explosion -14. True peak never above -1 dBTP. Very short sounds stop at the peak limit
+ui -20, footstep -20, alert / nature / card / scifi -18, jingle / mechanic / world / creature / horror / farm / puzzle -17,
+pickup / jump / powerup / shoot / magic / vehicle -16, hit -15, explosion -14. True peak never above -1 dBTP. Very short sounds stop at the peak limit
 before they reach the target; that is expected.
 
 ## What `plinkfx check` looks for
