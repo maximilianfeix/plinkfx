@@ -1,7 +1,7 @@
 {
   "name": "plinkfx",
   "version": "0.2.0",
-  "description": "Game sound effects as code: 180 CC0 SFX (coin, jump, laser, UI clicks) and a 2.9 kB Web Audio player. CLI for WAV/OGG, no audio files.",
+  "description": "Game sound effects as code: 184 CC0 SFX (coin, jump, laser, UI clicks, loops) and a 3.1 kB Web Audio player. CLI for WAV/OGG, no audio files.",
   "keywords": [
     "sound-effects",
     "sfx",
@@ -86,7 +86,7 @@
       "name": "player: render + play + wav",
       "path": "dist/core.js",
       "import": "{ play, render, wav }",
-      "limit": "3 kB",
+      "limit": "3.15 kB",
       "gzip": true
     },
     {
@@ -95,14 +95,14 @@
         "dist/core.js": "{ play }",
         "dist/sounds.js": "{ coin }"
       },
-      "limit": "3 kB",
+      "limit": "3.15 kB",
       "gzip": true
     },
     {
       "name": "everything: all sounds, play by name",
       "path": "dist/index.js",
       "import": "*",
-      "limit": "15.5 kB",
+      "limit": "16 kB",
       "gzip": true
     }
   ],

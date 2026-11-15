@@ -275,7 +275,7 @@ else if (cmd == "list") {
       }
       const { sound, label, name } = load(arg),
         own = name ? sounds.find((s) => s.name == name)?.cat : undefined;
-      return { name: label, ...audit([0, 1, 2, 3].map((seed) => render(sound, { sampleRate: sr, seed })), sr, fixed ?? (own ? categories[own]?.target : undefined)) };
+      return { name: label, ...audit([0, 1, 2, 3].map((seed) => render(sound, { sampleRate: sr, seed })), sr, fixed ?? (own ? categories[own]?.target : undefined), !!sound.loop) };
     }),
     failed = results.filter((r) => !r.ok).length,
     warned = results.filter((r) => r.ok && r.issues.length).length;

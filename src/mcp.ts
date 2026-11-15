@@ -199,8 +199,8 @@ const TOOLS: Tool[] = [
       additionalProperties: false,
     },
     run(a) {
-      const [takes, sr, name] = takesOf(a),
-        r = audit(takes, sr, targetOf(a, name)),
+      const [takes, sr, name, loop] = takesOf(a),
+        r = audit(takes, sr, targetOf(a, name), loop),
         head = r.ok ? "ok" : "FAIL";
       return {
         text: `${head}: ${line(r.m)}${r.target !== undefined ? `, target ${r.target} LUFS` : ""}${r.issues.map((i) => `\n${i.level}: ${i.check}: ${i.message}`).join("")}`,
@@ -222,16 +222,16 @@ function samples(a: Args): [Float32Array, number] {
   return [renderChecked(load(soundArg(a)).sound, sr, int(a, "variant", 0, 0, 3)), sr];
 }
 /** Every take of a sound (or the one take of a WAV file), plus the catalogue name if any. */
-function takesOf(a: Args): [Float32Array[], number, string | undefined] {
+function takesOf(a: Args): [Float32Array[], number, string | undefined, boolean] {
   const file = str(a, "wav");
   if (file && a.sound !== undefined) throw new ArgError('pass either "sound" or "wav", not both');
   if (file) {
     const { x, sr } = readWav(resolve(file));
-    return [[x], sr, undefined];
+    return [[x], sr, undefined, false];
   }
   const sr = int(a, "rate", 48000, 8000, 192000),
     { sound, name } = load(soundArg(a));
-  return [[0, 1, 2, 3].map((seed) => renderChecked(sound, sr, seed)), sr, name];
+  return [[0, 1, 2, 3].map((seed) => renderChecked(sound, sr, seed)), sr, name, !!sound.loop];
 }
 
 /** Handle one parsed message; returns the response, or undefined for notifications. */

@@ -93,6 +93,7 @@ for (const e of library) {
     desc: e.desc,
     gain,
     limited: capped,
+    ...(e.sound.loop && { loop: true }),
     m: { peak: r2(m.peak), truePeak: r2(m.truePeak), lufsMax: r2(m.lufsMax), duration: r2(m.duration), centroid: Math.round(m.centroid) },
     // 40-bar peak envelope of take 0 for the gallery tiles (so the page renders no audio at load).
     env: envelope(render(sound, { sampleRate: SR }), 40),

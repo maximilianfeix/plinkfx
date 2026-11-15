@@ -20,10 +20,22 @@ test("gallery lists every sound and plays one on click", async ({ page }) => {
   await expect(page).toHaveURL(/#coin$/);
 });
 
+test("loop sounds start on click and stop on the next", async ({ page }) => {
+  await page.goto("./");
+  const tile = page.locator('.tile[data-name="rain-loop"]');
+  await tile.click();
+  await expect(tile).toHaveClass(/playing/);
+  await expect(page.locator("#p-name")).toHaveText("rain-loop");
+  await page.waitForTimeout(400);
+  await expect(tile).toHaveClass(/playing/);
+  await tile.click();
+  await expect(tile).not.toHaveClass(/playing/);
+});
+
 test("the lede reads cleanly (no leftover template text)", async ({ page }) => {
   await page.goto("./");
   const lede = await page.locator(".lede").innerText();
-  expect(lede).toMatch(/^\d+ sounds in \d+ categories, CC0, a 2\.9\skB player, no audio files\.$/);
+  expect(lede).toMatch(/^\d+ sounds in \d+ categories, CC0, a 3\.1\skB player, no audio files\.$/);
 });
 
 test("search and category filter", async ({ page }) => {

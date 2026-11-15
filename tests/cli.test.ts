@@ -166,4 +166,13 @@ describe("audit", () => {
     expect(checks(quiet, -16)).toEqual(["fail:loudness"]);
     expect(checks(new Float32Array(100))).toEqual(["fail:empty"]);
   });
+  test("loops: full-level edges are fine, a jump at the wrap is not", () => {
+    const loopChecks = (x: Float32Array) => audit([x], sr, undefined, true).issues.map((i) => `${i.level}:${i.check}`);
+    // 440 Hz for exactly 1 s: whole cycles, the last sample runs into the first.
+    expect(loopChecks(tone(1))).toEqual([]);
+    // cut mid-cycle: the wrap jumps
+    expect(loopChecks(tone(1.0011))).toEqual(["fail:loop-click"]);
+    const r = run("check", "rain-loop", "engine-idle");
+    expect(r.code, r.out).toBe(0);
+  });
 });
