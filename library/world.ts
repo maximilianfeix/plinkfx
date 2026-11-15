@@ -125,7 +125,7 @@ export default def("world", {
     verb: [0.4, 0.18],
     layers: [
       { wave: "brown", lp: 700, lpTo: 200, a: 0.01, h: 0.2, d: 0.6, shape: -3, drive: 1 },
-      ...Array.from({ length: 10 }, (_, i) => ({ wave: "modal" as const, freq: 300 + (i * 173) % 500, modes: [1, 2.6, 4.9], at: i * 0.06 + (i % 3) * 0.012, a: 0.001, d: 0.06, shape: -6, gain: 0.8 - i * 0.05 })),
+      ...Array.from({ length: 10 }, (_, i) => ({ wave: "modal" as const, freq: 300 + (i * 173) % 500, modes: [1, 2.6, 4.9], at: i * 0.06 + (i % 3) * 0.012, a: 0.002, d: 0.06, shape: -6, gain: 0.8 - i * 0.05 })),
     ],
   }],
   ignite: ["Torch or fire ignites: whoomph", {

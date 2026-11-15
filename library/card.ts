@@ -10,7 +10,7 @@ export default def("card", {
     varyG: 1.5,
     layers: [
       { wave: "noise", bp: 2600, bpTo: 4200, q: 1.2, a: 0.012, d: 0.035, shape: -4, gain: 0.7 },
-      { wave: "noise", bp: 3800, q: 2.5, at: 0.045, a: 0.001, d: 0.012, shape: -6 },
+      { wave: "noise", bp: 3800, q: 2.5, at: 0.045, a: 0.002, d: 0.012, shape: -6, gain: 0.6 },
       { wave: "pink", bp: 900, q: 1.5, at: 0.046, a: 0.001, d: 0.03, shape: -5, gain: 0.4 },
     ],
   }],
@@ -20,7 +20,7 @@ export default def("card", {
     varyG: 1.5,
     layers: [
       { wave: "noise", bp: 1800, bpTo: 4500, q: 1.4, a: 0.05, d: 0.03, shape: 1 },
-      { wave: "noise", bp: 3000, q: 1.5, at: 0.08, a: 0.001, d: 0.02, shape: -6, drive: 1 },
+      { wave: "noise", bp: 3000, q: 1.5, at: 0.08, a: 0.002, d: 0.02, shape: -6, gain: 0.7 },
       { wave: "pink", lp: 1200, at: 0.08, a: 0.001, d: 0.04, shape: -5, gain: 0.5 },
     ],
   }],

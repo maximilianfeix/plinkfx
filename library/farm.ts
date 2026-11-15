@@ -20,7 +20,7 @@ export default def("farm", {
     vary: 0.4,
     verb: [0.5, 0.25],
     layers: [
-      { wave: "saw", freq: 40, to: 70, vib: [3, 3], bp: 900, q: 5, a: 0.1, h: 0.6, d: 0.2, shape: 1.5, gain: 0.6 },
+      { wave: "saw", freq: 40, to: 70, vib: [3, 3], bp: 900, q: 5, a: 0.03, h: 0.65, d: 0.2, shape: 1.5, gain: 0.6 },
       { wave: "pink", bp: 2000, q: 0.8, at: 0.9, a: 0.01, d: 0.6, shape: -3, gain: 0.6 },
       { wave: "brown", lp: 400, at: 0.95, a: 0.001, d: 0.8, shape: -4, drive: 1.5, gain: 1.4 },
       { wave: "sine", freq: 70, to: 30, at: 0.95, a: 0.001, d: 0.5, shape: -4, drive: 1.5 },

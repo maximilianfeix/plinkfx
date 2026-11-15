@@ -150,9 +150,9 @@ export default def("pickup", {
     varyF: 2,
     varyG: 1.5,
     layers: [
-      { wave: "pink", bp: 1800, q: 1, a: 0.02, d: 0.08, shape: -3, gain: 0.5 },
-      { wave: "metal", freq: 1100, hp: 2500, at: 0.08, a: 0.001, d: 0.06, shape: -5, gain: 0.5 },
-      { wave: "metal", freq: 1350, hp: 2500, at: 0.13, a: 0.001, d: 0.08, shape: -5, gain: 0.4 },
+      { wave: "pink", bp: 1800, q: 1, a: 0.02, d: 0.12, shape: -3, gain: 0.9 },
+      { wave: "metal", freq: 1100, hp: 2500, lp: 7000, at: 0.08, a: 0.001, d: 0.06, shape: -5, gain: 0.5 },
+      { wave: "metal", freq: 1350, hp: 2500, lp: 7000, at: 0.13, a: 0.001, d: 0.08, shape: -5, gain: 0.4 },
       { wave: "noise", bp: 900, q: 1.5, at: 0.08, a: 0.001, d: 0.03, shape: -5, gain: 0.4 },
     ],
   }],

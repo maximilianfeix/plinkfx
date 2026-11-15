@@ -163,7 +163,7 @@ Each sound in the gallery also has a "download .wav" button. Ready-made players 
 
 ### One audio sprite (Phaser, Howler)
 
-For the web, one file with every sound means one request instead of 180:
+For the web, one file with every sound means one request instead of 270:
 
 ```bash
 npx plinkfx export public/sfx --sprite --format both           # all sounds, 0.1 s of silence between them

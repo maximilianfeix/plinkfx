@@ -146,9 +146,9 @@ export default def("hit", {
     varyF: 1.5,
     verb: [0.35, 0.2],
     layers: [
-      { wave: "noise", hp: 2500, a: 0.001, d: 0.03, shape: -5, drive: 1 },
-      { wave: "modal", freq: 1450, modes: [1, 2.756, 5.404, 8.933], a: 0.001, d: 0.8, shape: -3, gain: 0.6 },
-      { wave: "metal", freq: 1100, hp: 3000, a: 0.001, d: 0.5, shape: -4, gain: 0.6 },
+      { wave: "noise", hp: 2500, lp: 9000, a: 0.001, d: 0.03, shape: -5, drive: 0.5 },
+      { wave: "modal", freq: 1450, modes: [1, 2.756, 5.404], a: 0.001, d: 0.8, shape: -3, gain: 0.6 },
+      { wave: "metal", freq: 1100, hp: 3000, lp: 8000, a: 0.001, d: 0.5, shape: -4, gain: 0.6 },
       { wave: "sine", freq: 3300, fm: [1.41, 2, 0.15], vib: [7, 0.1], a: 0.001, d: 0.7, shape: -3, gain: 0.2 },
     ],
   }],
