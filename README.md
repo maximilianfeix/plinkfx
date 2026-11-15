@@ -1,15 +1,15 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="brand/banners/readme-dark.svg">
-  <img alt="plinkfx: game sound effects as code" src="brand/banners/readme-light.svg" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/maximilianfeix/plinkfx@main/brand/banners/readme-dark.svg">
+  <img alt="plinkfx: game sound effects as code" src="https://cdn.jsdelivr.net/gh/maximilianfeix/plinkfx@main/brand/banners/readme-light.svg" width="100%">
 </picture>
 
 **<!-- count -->180<!-- /count --> game sound effects, written as code.** Coins, jumps, hits, lasers, explosions,
 UI clicks and the rest of what a game needs, each one a few readable numbers that a 2.9 kB player turns into sound.
 CC0, no audio files, no account.
 
-<a href="https://maximilianfeix.github.io/plinkfx/"><img src="docs/media/gallery.gif" alt="The plinkfx gallery: clicking tiles plays coin, jump, laser, explosion and more; each tile shows its waveform" width="100%"></a>
+<a href="https://maximilianfeix.github.io/plinkfx/"><img src="https://cdn.jsdelivr.net/gh/maximilianfeix/plinkfx@main/docs/media/gallery.gif" alt="The plinkfx gallery: clicking tiles plays coin, jump, laser, explosion and more; each tile shows its waveform" width="100%"></a>
 
-**[▶ Hear all <!-- count -->180<!-- /count --> in your browser](https://maximilianfeix.github.io/plinkfx/)** (one click per sound, tweak any of them and share the link) · [play the 30-second demo game](https://maximilianfeix.github.io/plinkfx/game.html) · [watch the 30 s video with sound](docs/media/hero-16x9.mp4)
+**[▶ Hear all <!-- count -->180<!-- /count --> in your browser](https://maximilianfeix.github.io/plinkfx/)** (one click per sound, tweak any of them and share the link) · [play the 30-second demo game](https://maximilianfeix.github.io/plinkfx/game.html) · [watch the 30 s video with sound](https://github.com/maximilianfeix/plinkfx/blob/main/docs/media/hero-16x9.mp4)
 
 ```bash
 npm i plinkfx
@@ -82,7 +82,7 @@ const blip = {
 play(blip);
 ```
 
-All fields are documented in [skills/plinkfx/reference.md](skills/plinkfx/reference.md).
+All fields are documented in [skills/plinkfx/reference.md](https://github.com/maximilianfeix/plinkfx/blob/main/skills/plinkfx/reference.md).
 
 **React**, a two-line hook is enough:
 
@@ -91,14 +91,20 @@ import { play } from "plinkfx";
 const useSfx = (name) => useCallback((opts) => play(name, opts), [name]);
 ```
 
-**Without a bundler** (after the npm release):
+**Vue / Svelte**: call `play("coin")` from any click handler; `unlockAudio()` once in `onMounted` / `onMount`.
+
+**Without a bundler**, straight from a CDN:
 
 ```html
 <script type="module">
-  import { play } from "https://esm.sh/plinkfx";
+  import { play, unlockAudio } from "https://esm.sh/plinkfx@0";
+  // or https://cdn.jsdelivr.net/npm/plinkfx@0/+esm
+  unlockAudio();
   document.body.onclick = () => play("coin");
 </script>
 ```
+
+**Deno / Bun**: `deno run -A npm:plinkfx render coin -o coin.wav`, `bunx plinkfx render coin`.
 
 </details>
 
@@ -146,7 +152,7 @@ npx plinkfx render explosion-big -o boom.wav  # one sound
   and call `play("coin")` from plinkfx.
 
 Each sound in the gallery also has a "download .wav" button. Ready-made players for the exported files:
-[Godot](examples/godot), [Unity](examples/unity), and a [Phaser](examples/phaser) example that needs no files at all.
+[Godot](https://github.com/maximilianfeix/plinkfx/tree/main/examples/godot), [Unity](https://github.com/maximilianfeix/plinkfx/tree/main/examples/unity), and a [Phaser](https://github.com/maximilianfeix/plinkfx/tree/main/examples/phaser) example that needs no files at all.
 
 ### One audio sprite (Phaser, Howler)
 
@@ -186,7 +192,7 @@ level"* and the agent starts from the nearest catalogue sound, writes a paramete
 it against that reference (loudness, true peak, duration, brightness) and adjusts. It runs on the CLI, offline.
 Agents can't hear, so the skill tells yours to say so and hand you the WAV to judge.
 
-<img src="docs/media/skill.gif" alt="Terminal: plinkfx list, level, measure and render for a dungeon door sound" width="100%">
+<img src="https://cdn.jsdelivr.net/gh/maximilianfeix/plinkfx@main/docs/media/skill.gif" alt="Terminal: plinkfx list, level, measure and render for a dungeon door sound" width="100%">
 
 ```bash
 npx skills add maximilianfeix/plinkfx                 # Claude Code, Codex, Cursor and others
@@ -199,7 +205,7 @@ In Claude Code you can also add the repo as a plugin marketplace:
 /plugin install plinkfx@plinkfx
 ```
 
-A full run, with the real terminal output, is in [docs/skill-example.md](docs/skill-example.md).
+A full run, with the real terminal output, is in [docs/skill-example.md](https://github.com/maximilianfeix/plinkfx/blob/main/docs/skill-example.md).
 
 ## How the sounds are measured
 
@@ -252,14 +258,14 @@ can read, tweak and ship. Also have a look at [8bit-sfx](https://github.com/cpor
 ### Sounds: CC0 1.0, public domain
 
 Use them in any game, app, video or stream, commercial or not. **No credit needed.**
-[LICENSE-SOUNDS](LICENSE-SOUNDS)
+[LICENSE-SOUNDS](https://github.com/maximilianfeix/plinkfx/blob/main/LICENSE-SOUNDS)
 
 </td><td>
 
 ### Code: MIT
 
 The engine, CLI, gallery and skill.
-[LICENSE](LICENSE)
+[LICENSE](https://github.com/maximilianfeix/plinkfx/blob/main/LICENSE)
 
 </td></tr></table>
 
@@ -269,6 +275,6 @@ New sounds are the best contribution: open the gallery, tweak something until it
 your game, and open an issue or PR with the params. Look for issues labelled
 [`good first issue`](https://github.com/maximilianfeix/plinkfx/labels/good%20first%20issue) and
 [`new sound`](https://github.com/maximilianfeix/plinkfx/labels/new%20sound).
-See [CONTRIBUTING.md](CONTRIBUTING.md).
+See [CONTRIBUTING.md](https://github.com/maximilianfeix/plinkfx/blob/main/CONTRIBUTING.md).
 
-[中文说明](README.zh-CN.md)
+[中文说明](https://github.com/maximilianfeix/plinkfx/blob/main/README.zh-CN.md)

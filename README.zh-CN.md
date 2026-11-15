@@ -1,15 +1,15 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="brand/banners/readme-dark.svg">
-  <img alt="plinkfx：用代码写成的游戏音效" src="brand/banners/readme-light.svg" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/maximilianfeix/plinkfx@main/brand/banners/readme-dark.svg">
+  <img alt="plinkfx：用代码写成的游戏音效" src="https://cdn.jsdelivr.net/gh/maximilianfeix/plinkfx@main/brand/banners/readme-light.svg" width="100%">
 </picture>
 
 # plinkfx
 
 **<!-- count -->180<!-- /count --> 个游戏音效，全部用代码写成。** 金币、跳跃、打击、激光、爆炸、UI 点击……每个音效只是几个看得懂的参数，由 2.9 kB 的播放器在浏览器里实时合成。音效 CC0，可商用，无需署名；没有音频文件，无需注册。
 
-<a href="https://maximilianfeix.github.io/plinkfx/"><img src="docs/media/gallery.gif" alt="plinkfx 在线音效库：点击方块即可试听 coin、jump、laser、explosion 等音效，每个方块显示波形" width="100%"></a>
+<a href="https://maximilianfeix.github.io/plinkfx/"><img src="https://cdn.jsdelivr.net/gh/maximilianfeix/plinkfx@main/docs/media/gallery.gif" alt="plinkfx 在线音效库：点击方块即可试听 coin、jump、laser、explosion 等音效，每个方块显示波形" width="100%"></a>
 
-**[▶ 在线试听全部音效](https://maximilianfeix.github.io/plinkfx/)** · [30 秒小游戏演示](https://maximilianfeix.github.io/plinkfx/game.html) · [30 秒有声视频](docs/media/hero-16x9.mp4)
+**[▶ 在线试听全部音效](https://maximilianfeix.github.io/plinkfx/)** · [30 秒小游戏演示](https://maximilianfeix.github.io/plinkfx/game.html) · [30 秒有声视频](https://github.com/maximilianfeix/plinkfx/blob/main/docs/media/hero-16x9.mp4)
 
 ```bash
 npm i plinkfx
@@ -65,7 +65,7 @@ npx plinkfx export sfx/ --format both   # WAV + OGG（OGG 需要 ffmpeg）
 npx plinkfx export sfx/ --variants      # 每个音效的全部 4 个变体
 ```
 
-Godot 导入时请关闭 *Normalize*，响度已经统一过了。[Godot](examples/godot)、[Unity](examples/unity)、[Phaser](examples/phaser) 都有现成的示例。
+Godot 导入时请关闭 *Normalize*，响度已经统一过了。[Godot](https://github.com/maximilianfeix/plinkfx/tree/main/examples/godot)、[Unity](https://github.com/maximilianfeix/plinkfx/tree/main/examples/unity)、[Phaser](https://github.com/maximilianfeix/plinkfx/tree/main/examples/phaser) 都有现成的示例。
 
 ## Agent 技能
 
@@ -75,7 +75,7 @@ Godot 导入时请关闭 *Normalize*，响度已经统一过了。[Godot](exampl
 npx skills add maximilianfeix/plinkfx
 ```
 
-完整示例见 [docs/skill-example.md](docs/skill-example.md)。
+完整示例见 [docs/skill-example.md](https://github.com/maximilianfeix/plinkfx/blob/main/docs/skill-example.md)。
 
 ## 怎么测量
 
@@ -86,24 +86,24 @@ npx skills add maximilianfeix/plinkfx
 
 ## 对比
 
-ZzFX 更小，适合 js13k；jsfxr 适合随机探索音色；Kenney 音效包是真实录音。plinkfx 适合想要一整套风格统一、能读懂、能修改、能直接上线的音效的人。详细对比表见 [English README](README.md#how-it-compares)。
+ZzFX 更小，适合 js13k；jsfxr 适合随机探索音色；Kenney 音效包是真实录音。plinkfx 适合想要一整套风格统一、能读懂、能修改、能直接上线的音效的人。详细对比表见 [English README](https://github.com/maximilianfeix/plinkfx/blob/main/README.md#how-it-compares)。
 
 ## 授权
 
 ### 音效：CC0 1.0（公共领域）
 
-可用于任何游戏、应用、视频、直播，商用也可以，**无需署名**。[LICENSE-SOUNDS](LICENSE-SOUNDS)
+可用于任何游戏、应用、视频、直播，商用也可以，**无需署名**。[LICENSE-SOUNDS](https://github.com/maximilianfeix/plinkfx/blob/main/LICENSE-SOUNDS)
 
 ### 代码：MIT
 
-引擎、CLI、在线音效库和技能。[LICENSE](LICENSE)
+引擎、CLI、在线音效库和技能。[LICENSE](https://github.com/maximilianfeix/plinkfx/blob/main/LICENSE)
 
 ## 参与贡献
 
-最有用的贡献是新音效：在[在线音效库](https://maximilianfeix.github.io/plinkfx/)里调到适合你游戏的样子，把参数发 issue 或 PR。见 [CONTRIBUTING.md](CONTRIBUTING.md)。
+最有用的贡献是新音效：在[在线音效库](https://maximilianfeix.github.io/plinkfx/)里调到适合你游戏的样子，把参数发 issue 或 PR。见 [CONTRIBUTING.md](https://github.com/maximilianfeix/plinkfx/blob/main/CONTRIBUTING.md)。
 
 ## Star 历史
 
 <a href="https://star-history.com/#maximilianfeix/plinkfx&Date"><img src="https://api.star-history.com/svg?repos=maximilianfeix/plinkfx&type=Date" alt="Star 历史" width="600"></a>
 
-[English README](README.md)
+[English README](https://github.com/maximilianfeix/plinkfx/blob/main/README.md)

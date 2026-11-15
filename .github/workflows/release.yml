@@ -48,9 +48,11 @@ jobs:
           else
             gh release create "$TAG" plinkfx-wav-ogg.zip --generate-notes --title "$TAG"
           fi
-      - name: npm publish (only with NPM_TOKEN)
+      - name: npm publish (skipped when this version is already on npm)
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
-          if [ -z "$NODE_AUTH_TOKEN" ]; then echo "NPM_TOKEN not set: skipping npm publish"; exit 0; fi
+          npm install -g npm@^11.5.1
+          if npm view "plinkfx@$(node -p 'require("./package.json").version')" version >/dev/null 2>&1; then
+            echo "already on npm: skipping"; exit 0; fi
           npm publish --provenance --access public
