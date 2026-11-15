@@ -1,5 +1,17 @@
 # Changelog
 
+## Unreleased
+
+- CLI: `plinkfx mcp`, an MCP server on stdio with five tools: `list_sounds`, `show_sound`, `render_sound`,
+  `measure_sound` and `check_sound`. No dependencies, no network.
+- CLI: `plinkfx check <sounds|file.wav> | --all [--json]` looks for clicks at the edges, cut tails, DC offset,
+  clipping and true peak, silent padding, and loudness off the category target. Exits 1 when a check fails.
+- CLI: `render --png out.png` draws a waveform and spectrogram, so an agent can look at a sound.
+- CLI: inline and `.json` sounds accept the `modal` and `pluck` waves (they were rejected as unknown).
+- CLI: `measure` warns about DC above 0.01 instead of 0.001. Short, lopsided transients went over the old
+  limit without a real offset.
+- Skill: uses `check` and `--png`, and lists the checks and how to read the picture.
+
 ## 0.2.0 (2026-11-12)
 
 **180 sounds in 15 categories** (was 163 in 13).
