@@ -6,7 +6,7 @@
 import { measure, type Measurement } from "./meter.ts";
 
 export interface Issue {
-  /** start-click, end-click, tail-cut, clipping, true-peak, dc, lead-silence, tail-silence, loudness, quiet, long, empty */
+  /** start-click, end-click, tail-cut, loop-click, clipping, true-peak, dc, lead-silence, tail-silence, loudness, quiet, long, empty */
   check: string;
   /** "fail" makes `plinkfx check` exit 1. "warn" is worth a look. */
   level: "fail" | "warn";
@@ -61,8 +61,10 @@ const f1 = (x: number) => (Number.isFinite(x) ? x.toFixed(1) : "-inf");
 /**
  * Check a sound. `takes` are its rendered takes (a WAV file is one take).
  * `target` is the category loudness in max momentary LUFS; without it loudness is not judged.
+ * `loop`: the takes are seamless loops (Sound.loop). Their edges are not silent on purpose, so the edge,
+ * tail and silence checks give way to one: the step from the last sample back to the first.
  */
-export function audit(takes: Float32Array[], sr: number, target?: number): Audit {
+export function audit(takes: Float32Array[], sr: number, target?: number, loop = false): Audit {
   const issues: Issue[] = [],
     add = (check: string, level: Issue["level"], message: string) => {
       const i = issues.findIndex((i) => i.check == check);
@@ -90,11 +92,19 @@ export function audit(takes: Float32Array[], sr: number, target?: number): Audit
       if (a >= 0.999) full++;
     }
     if (!n || peak < 1e-6) return add("empty", "fail", `silent or empty${take}`);
+    if (loop) {
+      // The wrap must look like any other step in the sound: under its 99.9th-percentile step.
+      const steps = Float32Array.from({ length: n - 1 }, (_, i) => Math.abs(x[i + 1] - x[i])).sort(),
+        jump = Math.abs(x[0] - x[n - 1]),
+        p999 = steps[Math.floor((n - 1) * 0.999)];
+      if (jump > p999) add("loop-click", "fail", `the wrap jumps ${jump.toFixed(3)}, more than ${p999.toFixed(3)} (its 99.9th-percentile step)${take}: hold every layer to the end (d: 0)`);
+    }
     const first = db(Math.abs(x[0])),
       last = db(Math.abs(x[n - 1]));
-    if (first > LIMITS.edge) add("start-click", "fail", `starts at ${f1(first)} dBFS instead of silence${take}: give it an attack (a: 0.002)`);
-    if (last > LIMITS.edge) add("end-click", "fail", `ends at ${f1(last)} dBFS instead of silence${take}: fade it out`);
-    if (n >= 3 * w) {
+    // A loop starts and ends at full level on purpose: no edge, tail or silence checks.
+    if (!loop && first > LIMITS.edge) add("start-click", "fail", `starts at ${f1(first)} dBFS instead of silence${take}: give it an attack (a: 0.002)`);
+    if (!loop && last > LIMITS.edge) add("end-click", "fail", `ends at ${f1(last)} dBFS instead of silence${take}: fade it out`);
+    if (!loop && n >= 3 * w) {
       let loud = 0;
       for (let a = 0; a + w <= n; a += Math.max(1, w >> 3)) loud = Math.max(loud, rms(x, a));
       const end = rms(x, n - w),
@@ -115,9 +125,9 @@ export function audit(takes: Float32Array[], sr: number, target?: number): Audit
     while (b > a && Math.abs(x[b]) < floor) b--;
     const lead = a / sr,
       trail = (n - 1 - b) / sr;
-    if (lead > LIMITS.lead[0])
+    if (!loop && lead > LIMITS.lead[0])
       add("lead-silence", lead > LIMITS.lead[1] ? "fail" : "warn", `${Math.round(lead * 1000)} ms of silence before the sound starts${take}`);
-    if (trail > LIMITS.trail) add("tail-silence", "warn", `${Math.round(trail * 1000)} ms under ${LIMITS.silence} dB at the end${take}`);
+    if (!loop && trail > LIMITS.trail) add("tail-silence", "warn", `${Math.round(trail * 1000)} ms under ${LIMITS.silence} dB at the end${take}`);
   });
 
   if (target !== undefined && Number.isFinite(lufsAvg)) {

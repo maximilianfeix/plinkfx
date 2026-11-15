@@ -5,7 +5,7 @@
 
 # plinkfx
 
-**<!-- count -->270<!-- /count --> 个游戏音效，全部用代码写成。** 金币、跳跃、打击、激光、爆炸、UI 点击……每个音效只是几个看得懂的参数，由 2.9 kB 的播放器在浏览器里实时合成。音效 CC0，可商用，无需署名；没有音频文件，无需注册。
+**<!-- count -->274<!-- /count --> 个游戏音效，全部用代码写成。** 金币、跳跃、打击、激光、爆炸、UI 点击……每个音效只是几个看得懂的参数，由 3.1 kB 的播放器在浏览器里实时合成。音效 CC0，可商用，无需署名；没有音频文件，无需注册。
 
 <a href="https://maximilianfeix.github.io/plinkfx/"><img src="https://cdn.jsdelivr.net/gh/maximilianfeix/plinkfx@main/docs/media/gallery.gif" alt="plinkfx 在线音效库：点击方块即可试听 coin、jump、laser、explosion 等音效，每个方块显示波形" width="100%"></a>
 
@@ -23,7 +23,7 @@ play("coin");
 
 每个音效有 4 个变体，每次播放都会换一个和上次不同的，第一百个金币也不会听起来像在循环。
 
-只打包用到的音效（播放器 + 一个音效约 2.8 kB gzip）：
+只打包用到的音效（播放器 + 一个音效约 3 kB gzip）：
 
 ```js
 import { play } from "plinkfx/core";
@@ -31,6 +31,16 @@ import { coin, jump } from "plinkfx/sounds";
 
 play(coin);
 play(jump, { volume: 0.5 });
+```
+
+播放器会保护你的混音：同一个音效 30 ms 内重复触发会被跳过（`cooldown`），同一个音效最多同时播放 4 个（`voices`），再多就淡出最早的那个。
+`rain-loop`、`wind-loop`、`engine-idle`、`force-field` 是无缝循环音效，会一直播放到你停止它：
+
+```js
+const engine = play("engine-idle");
+engine?.rate(1.6);   // 平滑升速
+engine?.stop(0.5);   // 0.5 秒淡出
+muted(true);         // 全部静音；不会自动保存，需要时自己存进 localStorage
 ```
 
 ## 包含哪些音效
@@ -50,9 +60,9 @@ play(jump, { volume: 0.5 });
 | 提示 | 13 | `alarm` `warning` `low-health` `countdown` |
 | 短旋律 | 11 | `victory` `level-complete` `game-over` `achievement` |
 | 门与机关 | 10 | `door-open` `door-heavy` `chest-open` `lever` |
-| 环境 | 16 | `whoosh` `splash` `water-drop` `wind` `glass-break` |
+| 环境 | 18 | `whoosh` `splash` `water-drop` `wind` `glass-break` `engine-idle`（循环） |
 | 生物 | 13 | `bat-flap` `slime-blob` `growl-small` `ghost-moan` `voice-babble` |
-| 自然 | 10 | `thunder-far` `rain-drop` `bird-chirp` `frog-croak` `stone-drop` |
+| 自然 | 12 | `thunder-far` `rain-drop` `bird-chirp` `stone-drop` `rain-loop`（循环） |
 | 卡牌与赌场 | 9 | `card-flip` `card-shuffle` `chip-stack` `dice-roll` `jackpot` |
 | 载具 | 7 | `engine-start` `engine-rev` `tire-screech` `car-crash` `boost` |
 | 恐怖 | 7 | `jumpscare` `dread-drone` `whisper` `horror-sting` `music-box` |

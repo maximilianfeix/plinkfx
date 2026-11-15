@@ -3,13 +3,13 @@
   <img alt="plinkfx: game sound effects as code" src="https://cdn.jsdelivr.net/gh/maximilianfeix/plinkfx@main/brand/banners/readme-light.svg" width="100%">
 </picture>
 
-**<!-- count -->270<!-- /count --> game sound effects, written as code.** Coins, jumps, hits, lasers, explosions,
-UI clicks and the rest of what a game needs, each one a few readable numbers that a 2.9 kB player turns into sound.
+**<!-- count -->274<!-- /count --> game sound effects, written as code.** Coins, jumps, hits, lasers, explosions,
+UI clicks and the rest of what a game needs, each one a few readable numbers that a 3.1 kB player turns into sound.
 CC0, no audio files, no account.
 
 <a href="https://maximilianfeix.github.io/plinkfx/"><img src="https://cdn.jsdelivr.net/gh/maximilianfeix/plinkfx@main/docs/media/gallery.gif" alt="The plinkfx gallery: clicking tiles plays coin, jump, laser, explosion and more; each tile shows its waveform" width="100%"></a>
 
-**[▶ Hear all <!-- count -->270<!-- /count --> in your browser](https://maximilianfeix.github.io/plinkfx/)** (one click per sound, tweak any of them and share the link) · [play the 30-second demo game](https://maximilianfeix.github.io/plinkfx/game.html) · [watch the 30 s video with sound](https://github.com/maximilianfeix/plinkfx/blob/main/docs/media/hero-16x9.mp4)
+**[▶ Hear all <!-- count -->274<!-- /count --> in your browser](https://maximilianfeix.github.io/plinkfx/)** (one click per sound, tweak any of them and share the link) · [play the 30-second demo game](https://maximilianfeix.github.io/plinkfx/game.html) · [watch the 30 s video with sound](https://github.com/maximilianfeix/plinkfx/blob/main/docs/media/hero-16x9.mp4)
 
 ```bash
 npm i plinkfx
@@ -27,10 +27,10 @@ sound like a loop.
 <details>
 <summary>More ways to play: options, game setup, tree-shaking, your own sound</summary>
 
-**By name** (every sound included, 22.4 kB gzipped):
+**By name** (every sound included, 23.0 kB gzipped):
 
 ```js
-import { play, volume } from "plinkfx";
+import { play, volume, muted } from "plinkfx";
 
 play("laser");
 play("coin", { volume: 0.5, rate: 1.2 });   // quieter, a bit higher
@@ -38,7 +38,38 @@ play("step-wood", { variant: 2 });          // a specific take (0-3)
 play("step-wood", { pan: -0.6 });           // to the left
 play("coin", { delay: 0.1 });               // 100 ms later
 play("combo-chain", { rate: 2 ** (n / 12) }); // n-th combo step, a semitone higher each
-volume(0.8);                                // master volume, 0 mutes
+volume(0.8);                                // master volume, 0..1
+muted(true);                                // mute everything, muted() reads it
+```
+
+**The player protects your mix.** The same sound started again within 30 ms is skipped (`cooldown`),
+so 30 coin pickups in one frame make one coin, not one deafening stack. At most 4 copies of a sound
+play at once (`voices`); one more stops the oldest with a short fade. Both are per call:
+
+```js
+play("step-grass", { cooldown: 0.08 });     // footsteps: at most one every 80 ms
+play("explosion", { voices: 2 });           // keep the mix clear
+play("click", { cooldown: 0, voices: 16 }); // off
+```
+
+**Loops**: `rain-loop`, `wind-loop`, `engine-idle` and `force-field` are seamless and loop until you stop
+them. `play()` returns a voice you can stop (with a fade) or bend:
+
+```js
+const engine = play("engine-idle");
+engine?.rate(1.6);                          // revs up, gliding
+engine?.stop(0.5);                          // fade out over 0.5 s
+play("coin", { loop: true });               // any sound can loop; loop: false plays a loop sound once
+```
+
+`play()` returns `undefined` when it skips a sound (on the server, inside the cooldown, before the first
+click), hence the `?.`. The voice's `node` is the `AudioBufferSourceNode` if you need more.
+
+`muted()` is not saved. To remember it, one line at startup and one where you toggle it:
+
+```js
+muted(localStorage.muted == "1");
+localStorage.muted = muted(!muted()) ? "1" : "0";
 ```
 
 **In a game:** browsers keep audio locked until the first click or key press. `unlockAudio()` resumes
@@ -58,7 +89,7 @@ stopAll();
 Everything is safe to import on the server (Next.js, Nuxt, SvelteKit): `play()` and `volume()` do
 nothing there.
 
-**Only what you use** (player plus one sound: 2.8 kB gzipped). Importing anything from `"plinkfx"`
+**Only what you use** (player plus one sound: 3 kB gzipped). Importing anything from `"plinkfx"`
 includes every sound, so use the subpaths when size matters:
 
 ```js
@@ -126,15 +157,10 @@ const useSfx = (name) => useCallback((opts) => play(name, opts), [name]);
 | Alerts | 13 | `alarm` `warning` `low-health` `heartbeat` `countdown` `radar-ping` |
 | Jingles | 11 | `victory` `checkpoint` `level-complete` `game-over` `secret-found` `achievement` |
 | Doors & mechanics | 10 | `door-open` `door-heavy` `lock-open` `chest-open` `lever` `ratchet` |
-| World | 16 | `whoosh` `swing` `splash` `water-drop` `bubble` `wind` `glass-break` |
-| Creatures | 13 | `bat-flap` `slime-blob` `growl-small` `ghost-moan` `bee-buzz` `voice-babble` |
-| Nature | 10 | `thunder-far` `rain-drop` `bird-chirp` `frog-croak` `leaf-rustle` `stone-drop` |
-| Cards & casino | 9 | `card-flip` `card-deal` `card-shuffle` `chip-stack` `dice-roll` `jackpot` |
-| Vehicles | 7 | `engine-start` `engine-rev` `tire-screech` `car-crash` `car-horn` `boost` |
-| Horror | 7 | `jumpscare` `dread-drone` `whisper` `horror-sting` `chains-rattle` `music-box` |
-| Farm & crafting | 9 | `axe-chop` `tree-fall` `pickaxe-mine` `dig` `watering-can` `fishing-cast` |
-| Sci-fi & tech | 8 | `computer-beep` `scan` `access-granted` `door-slide` `robot-chatter` `glitch` |
-| Puzzle | 6 | `swap` `match` `combo-chain` `line-clear` `piece-lock` `merge` |
+play("combo-chain", { rate: 2 ** (n / 12) }); // n-th combo step, a semitone higher each
+| World | 13 | `whoosh` `swing` `splash` `water-drop` `wind` `glass-break` `engine-idle` (loop) `force-field` (loop) |
+| Creatures | 9 | `bat-flap` `slime-blob` `growl-small` `ghost-moan` `bee-buzz` `voice-babble` |
+| Nature | 8 | `thunder-far` `rain-drop` `bird-chirp` `frog-croak` `stone-drop` `rain-loop` (loop) `wind-loop` (loop) |
 <!-- /catalog -->
 
 Every sound with a one-line description: `npx plinkfx list`, or the [gallery](https://maximilianfeix.github.io/plinkfx/).
@@ -163,7 +189,7 @@ Each sound in the gallery also has a "download .wav" button. Ready-made players 
 
 ### One audio sprite (Phaser, Howler)
 
-For the web, one file with every sound means one request instead of 270:
+For the web, one file with every sound means one request instead of 274:
 
 ```bash
 npx plinkfx export public/sfx --sprite --format both           # all sounds, 0.1 s of silence between them
@@ -289,9 +315,9 @@ sfxr (DrPetter, 2007) started this genre, and these are the tools most people re
 | | **plinkfx** | [ZzFX](https://github.com/KilledByAPixel/ZzFX) | [jsfxr](https://github.com/chr15m/jsfxr) | [Kenney audio packs](https://kenney.nl/assets/category:Audio) |
 |---|---|---|---|---|
 | What it is | named sound library as code | tiny synth + designer | sfxr port: generator + library | WAV/OGG asset packs |
-| Size (gzip) | 2.9 kB player, 22.4 kB with all sounds | ~1.3 kB | ~6.3 kB | no code, files |
+| Size (gzip) | 3.1 kB player, 23.0 kB with all sounds | ~1.3 kB | ~6.3 kB | no code, files |
 | Licence | CC0 sounds, MIT code | MIT | Unlicense | CC0 |
-| Named sounds | <!-- count -->270<!-- /count --> | 4 examples, random generators | random generators per category | many, generic file names |
+| Named sounds | <!-- count -->274<!-- /count --> | 4 examples, random generators | random generators per category | many, generic file names |
 | Matched loudness | yes, measured in tests | no | no | not stated |
 | Same input, same samples | yes, seeded and hash-tested | only with randomness set to 0 | per saved parameter set | fixed files |
 | Variations | 4 seeded takes per sound | edit or randomise | mutate | separate files |

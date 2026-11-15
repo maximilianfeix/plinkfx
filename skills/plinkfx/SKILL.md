@@ -6,7 +6,7 @@ description: Design, render and measure game sound effects as code with plinkfx.
 # plinkfx: sound effects as code
 
 plinkfx sounds are small JSON objects (layers of oscillators or noise with envelopes, pitch sweeps,
-filters and a few effects) that a 2.9 kB player renders in the browser, and the `plinkfx` CLI renders
+filters and a few effects) that a 3.1 kB player renders in the browser, and the `plinkfx` CLI renders
 to WAV. You design a sound by writing that object, rendering it, measuring it, and adjusting.
 
 **You cannot hear.** Say so once. Your checks are numbers and spectrograms; the user's ears decide.
@@ -26,7 +26,7 @@ picture back), `measure_sound` and `check_sound`. They take a catalogue name or 
 
 ## 1. Start from the catalogue
 
-270 sounds in 21 categories already exist and are tuned. Reuse before you invent.
+274 sounds in 21 categories already exist and are tuned (four of them seamless loops). Reuse before you invent.
 
 ```bash
 npx plinkfx list               # all sounds: name, category, description
@@ -104,6 +104,9 @@ import door from "./sounds/door.json" with { type: "json" };
 play(door);
 ```
 
+`play()` skips a repeat of the same sound within 30 ms (`cooldown`) and keeps at most 4 copies playing
+(`voices`); both are options. It returns a voice (`stop(fade)`, `rate(r)`) or `undefined` when skipped.
+
 5. one sentence: "I can't hear it: please listen and tell me what to change (darker, shorter, more punch...)."
 
 For files for an engine: `npx plinkfx export assets/sfx --format both` writes every catalogue sound as
@@ -114,5 +117,6 @@ for short sounds and leave Force To Mono off (the files are mono already; it can
 
 - Don't copy presets or samples from other tools or packs unless their licence allows it.
 - Don't claim a sound "sounds great". Report the numbers and let the user listen.
-- Don't exceed -1 dBTP or ship sounds longer than about 4 s; those are loops or music, not effects.
+- Don't exceed -1 dBTP or ship one-shots longer than about 4 s. Ambience and engines are loops: see
+  "Loops" in reference.md.
 - Don't deliver a sound that `plinkfx check` fails.

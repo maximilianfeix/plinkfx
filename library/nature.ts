@@ -1,7 +1,33 @@
 import { def } from "./def.ts";
 
-// One-shots from outdoors. No loops: these are events (a drop, a croak, a far rumble).
+// Sounds from outdoors: events (a drop, a croak, a far rumble) and two seamless ambience loops.
+// Loops: every layer spans the whole render (d: 0 keeps every take the same length); see Sound.loop.
 export default def("nature", {
+  "rain-loop": ["Steady rain, seamless loop", {
+    loop: true,
+    vary: 0.6,
+    varyF: 2,
+    layers: [
+      { wave: "pink", hp: 500, lp: 7000, a: 0.02, h: 3.48, d: 0, gain: 0.7 },
+      { wave: "noise", bp: 4200, q: 0.7, a: 0.02, h: 3.48, d: 0, gain: 0.22 },
+      { wave: "brown", lp: 350, a: 0.02, h: 3.48, d: 0, gain: 0.35 },
+      // Close drops: short ticks scattered over the loop.
+      ...[0.07, 0.31, 0.46, 0.62, 0.9, 1.13, 1.27, 1.55, 1.71, 1.98, 2.2, 2.36, 2.61, 2.83, 3.05].map((at, i) => ({ wave: "noise" as const, bp: 2600 + (i % 4) * 600, q: 1.5, at, a: 0.001, d: 0.012, shape: -5, gain: 0.55 + (i % 3) * 0.15 })),
+    ],
+  }],
+  "wind-loop": ["Wind blowing with slow gusts, seamless loop", {
+    loop: true,
+    vary: 0.5,
+    varyF: 2,
+    layers: [
+      { wave: "pink", bp: 520, q: 1.2, a: 0.02, h: 3.48, d: 0, gain: 0.8 },
+      { wave: "brown", lp: 220, a: 0.02, h: 3.48, d: 0, gain: 0.45 },
+      // Gusts: band sweeps that swell and fall inside the loop.
+      { wave: "pink", bp: 600, bpTo: 1400, q: 2.5, at: 0.15, a: 0.9, d: 1, shape: 1.5, gain: 0.7 },
+      { wave: "pink", bp: 1300, bpTo: 650, q: 2.5, at: 1.6, a: 0.7, d: 1.1, shape: 1.5, gain: 0.6 },
+      { wave: "noise", bp: 2300, bpTo: 2900, q: 7, at: 0.5, a: 1, d: 1.2, shape: 2, gain: 0.1 },
+    ],
+  }],
   "thunder-far": ["Distant thunder rolling in", {
     vary: 0.5,
     varyF: 3,

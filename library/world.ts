@@ -4,6 +4,32 @@ import { def } from "./def.ts";
 const WOOD = [1, 2.32, 4.25, 6.63];
 
 export default def("world", {
+  // Loops: every layer spans the whole render (d: 0 keeps every take the same length); see Sound.loop.
+  "engine-idle": ["Engine idling, seamless loop (play with rate for revs)", {
+    loop: true,
+    // No pitch spread: whole cycles in the 3 s loop keep the crossfade in phase.
+    vary: 0,
+    varyF: 1.5,
+    varyG: 0.8,
+    layers: [
+      { wave: "square", freq: 31, duty: 0.3, lp: 240, drive: 1.5, vib: [2, 0.25], a: 0.02, h: 3.48, d: 0 },
+      { wave: "saw", freq: 62, lp: 420, vib: [2, 0.25], a: 0.02, h: 3.48, d: 0, gain: 0.45 },
+      { wave: "crunch", freq: 124, lp: 1400, hp: 300, a: 0.02, h: 3.48, d: 0, gain: 0.12 },
+      { wave: "brown", lp: 160, a: 0.02, h: 3.48, d: 0, gain: 0.5 },
+    ],
+  }],
+  "force-field": ["Force field or reactor hum, seamless loop", {
+    loop: true,
+    vary: 0,
+    varyF: 1.5,
+    varyG: 0.8,
+    layers: [
+      { wave: "sine", freq: 60, drive: 0.6, a: 0.02, h: 3.48, d: 0 },
+      { wave: "saw", freq: 120, lp: 900, vib: [1, 0.04], a: 0.02, h: 3.48, d: 0, gain: 0.3 },
+      { wave: "triangle", freq: 180, vib: [3, 0.03], a: 0.02, h: 3.48, d: 0, gain: 0.25 },
+      { wave: "noise", bp: 3200, q: 3, a: 0.02, h: 3.48, d: 0, gain: 0.05 },
+    ],
+  }],
   whoosh: ["Medium whoosh for dashes and swings", {
     varyF: 3,
     varyG: 1.5,

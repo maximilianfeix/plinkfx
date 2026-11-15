@@ -372,6 +372,10 @@ export const button: Sound = {"varyF":1.5,"varyG":1,"layers":[{"wave":"noise","b
 export const ratchet: Sound = {"layers":[{"wave":"noise","bp":3200,"q":3,"at":0,"a":0.001,"d":0.02,"shape":3,"drive":1},{"wave":"metal","freq":1500,"hp":4000,"at":0,"a":0.001,"d":0.012,"gain":0.3},{"wave":"noise","bp":2400,"q":3,"at":0.045,"a":0.001,"d":0.02,"shape":3,"drive":1},{"wave":"metal","freq":1500,"hp":4000,"at":0.045,"a":0.001,"d":0.012,"gain":0.3},{"wave":"noise","bp":3200,"q":3,"at":0.09,"a":0.001,"d":0.02,"shape":3,"drive":1},{"wave":"metal","freq":1500,"hp":4000,"at":0.09,"a":0.001,"d":0.012,"gain":0.3},{"wave":"noise","bp":2400,"q":3,"at":0.135,"a":0.001,"d":0.02,"shape":3,"drive":1},{"wave":"metal","freq":1500,"hp":4000,"at":0.135,"a":0.001,"d":0.012,"gain":0.3},{"wave":"noise","bp":3200,"q":3,"at":0.18,"a":0.001,"d":0.02,"shape":3,"drive":1},{"wave":"metal","freq":1500,"hp":4000,"at":0.18,"a":0.001,"d":0.012,"gain":0.3},{"wave":"noise","bp":2400,"q":3,"at":0.225,"a":0.001,"d":0.02,"shape":3,"drive":1},{"wave":"metal","freq":1500,"hp":4000,"at":0.225,"a":0.001,"d":0.012,"gain":0.3},{"wave":"noise","bp":3200,"q":3,"at":0.27,"a":0.001,"d":0.02,"shape":3,"drive":1},{"wave":"metal","freq":1500,"hp":4000,"at":0.27,"a":0.001,"d":0.012,"gain":0.3}],"gain":1.04};
 /** Machine starts up and hums */
 export const machine: Sound = {"vary":0.2,"layers":[{"wave":"saw","freq":30,"to":110,"curve":0.6,"lp":600,"a":0.2,"h":0.6,"d":0.3,"shape":2},{"wave":"pink","bp":900,"bpTo":1600,"q":1.5,"a":0.3,"h":0.5,"d":0.3,"gain":0.2},{"wave":"noise","bp":2000,"a":0.3,"h":0.5,"d":0.3,"gain":0.08}],"gain":0.376};
+/** Engine idling, seamless loop (play with rate for revs) */
+export const engineIdle: Sound = {"loop":true,"vary":0,"varyF":1.5,"varyG":0.8,"layers":[{"wave":"square","freq":31,"duty":0.3,"lp":240,"drive":1.5,"vib":[2,0.25],"a":0.02,"h":3.48,"d":0},{"wave":"saw","freq":62,"lp":420,"vib":[2,0.25],"a":0.02,"h":3.48,"d":0,"gain":0.45},{"wave":"crunch","freq":124,"lp":1400,"hp":300,"a":0.02,"h":3.48,"d":0,"gain":0.12},{"wave":"brown","lp":160,"a":0.02,"h":3.48,"d":0,"gain":0.5}],"gain":0.347};
+/** Force field or reactor hum, seamless loop */
+export const forceField: Sound = {"loop":true,"vary":0,"varyF":1.5,"varyG":0.8,"layers":[{"wave":"sine","freq":60,"drive":0.6,"a":0.02,"h":3.48,"d":0},{"wave":"saw","freq":120,"lp":900,"vib":[1,0.04],"a":0.02,"h":3.48,"d":0,"gain":0.3},{"wave":"triangle","freq":180,"vib":[3,0.03],"a":0.02,"h":3.48,"d":0,"gain":0.25},{"wave":"noise","bp":3200,"q":3,"a":0.02,"h":3.48,"d":0,"gain":0.05}],"gain":0.234};
 /** Medium whoosh for dashes and swings */
 export const whoosh: Sound = {"varyF":3,"varyG":1.5,"layers":[{"wave":"pink","bp":450,"bpTo":1800,"q":1.6,"a":0.13,"d":0.02,"shape":1},{"wave":"pink","bp":1800,"bpTo":500,"q":1.6,"at":0.13,"a":0.01,"d":0.3,"shape":-4},{"wave":"noise","bp":3000,"bpTo":6000,"a":0.12,"d":0.12,"gain":0.2},{"wave":"brown","lp":300,"a":0.12,"d":0.15,"gain":0.3}],"limit":1,"gain":1.84};
 /** Sword or stick swing */
@@ -430,6 +434,10 @@ export const roar: Sound = {"vary":0.8,"varyF":2,"verb":[0.6,0.25],"layers":[{"w
 export const dogBark: Sound = {"vary":1.5,"varyF":2,"verb":[0.25,0.1],"layers":[{"wave":"saw","freq":520,"to":320,"curve":2,"formant":[730,1090,2440],"kt":1,"at":0,"a":0.004,"d":0.12,"shape":-4,"drive":2},{"wave":"noise","bp":1500,"q":1,"at":0,"a":0.002,"d":0.06,"shape":-4,"gain":0.3},{"wave":"saw","freq":520,"to":320,"curve":2,"formant":[730,1090,2440],"kt":1,"at":0.22,"a":0.004,"d":0.12,"shape":-4,"drive":2},{"wave":"noise","bp":1500,"q":1,"at":0.22,"a":0.002,"d":0.06,"shape":-4,"gain":0.3}],"gain":0.822};
 /** Cat meows */
 export const catMeow: Sound = {"vary":1.5,"layers":[{"wave":"saw","freq":600,"to":900,"sweep":0.2,"curve":0.8,"vib":[5,0.3],"formant":[270,2290,3010],"kt":1,"a":0.04,"h":0.1,"d":0.3,"shape":-3},{"wave":"saw","freq":900,"to":550,"at":0.25,"sweep":0.3,"formant":[300,870,2240],"kt":1,"a":0.04,"d":0.3,"shape":-3,"gain":0.7}],"gain":0.867};
+/** Steady rain, seamless loop */
+export const rainLoop: Sound = {"loop":true,"vary":0.6,"varyF":2,"layers":[{"wave":"pink","hp":500,"lp":7000,"a":0.02,"h":3.48,"d":0,"gain":0.7},{"wave":"noise","bp":4200,"q":0.7,"a":0.02,"h":3.48,"d":0,"gain":0.22},{"wave":"brown","lp":350,"a":0.02,"h":3.48,"d":0,"gain":0.35},{"wave":"noise","bp":2600,"q":1.5,"at":0.07,"a":0.001,"d":0.012,"shape":-5,"gain":0.55},{"wave":"noise","bp":3200,"q":1.5,"at":0.31,"a":0.001,"d":0.012,"shape":-5,"gain":0.7000000000000001},{"wave":"noise","bp":3800,"q":1.5,"at":0.46,"a":0.001,"d":0.012,"shape":-5,"gain":0.8500000000000001},{"wave":"noise","bp":4400,"q":1.5,"at":0.62,"a":0.001,"d":0.012,"shape":-5,"gain":0.55},{"wave":"noise","bp":2600,"q":1.5,"at":0.9,"a":0.001,"d":0.012,"shape":-5,"gain":0.7000000000000001},{"wave":"noise","bp":3200,"q":1.5,"at":1.13,"a":0.001,"d":0.012,"shape":-5,"gain":0.8500000000000001},{"wave":"noise","bp":3800,"q":1.5,"at":1.27,"a":0.001,"d":0.012,"shape":-5,"gain":0.55},{"wave":"noise","bp":4400,"q":1.5,"at":1.55,"a":0.001,"d":0.012,"shape":-5,"gain":0.7000000000000001},{"wave":"noise","bp":2600,"q":1.5,"at":1.71,"a":0.001,"d":0.012,"shape":-5,"gain":0.8500000000000001},{"wave":"noise","bp":3200,"q":1.5,"at":1.98,"a":0.001,"d":0.012,"shape":-5,"gain":0.55},{"wave":"noise","bp":3800,"q":1.5,"at":2.2,"a":0.001,"d":0.012,"shape":-5,"gain":0.7000000000000001},{"wave":"noise","bp":4400,"q":1.5,"at":2.36,"a":0.001,"d":0.012,"shape":-5,"gain":0.8500000000000001},{"wave":"noise","bp":2600,"q":1.5,"at":2.61,"a":0.001,"d":0.012,"shape":-5,"gain":0.55},{"wave":"noise","bp":3200,"q":1.5,"at":2.83,"a":0.001,"d":0.012,"shape":-5,"gain":0.7000000000000001},{"wave":"noise","bp":3800,"q":1.5,"at":3.05,"a":0.001,"d":0.012,"shape":-5,"gain":0.8500000000000001}],"gain":0.53};
+/** Wind blowing with slow gusts, seamless loop */
+export const windLoop: Sound = {"loop":true,"vary":0.5,"varyF":2,"layers":[{"wave":"pink","bp":520,"q":1.2,"a":0.02,"h":3.48,"d":0,"gain":0.8},{"wave":"brown","lp":220,"a":0.02,"h":3.48,"d":0,"gain":0.45},{"wave":"pink","bp":600,"bpTo":1400,"q":2.5,"at":0.15,"a":0.9,"d":1,"shape":1.5,"gain":0.7},{"wave":"pink","bp":1300,"bpTo":650,"q":2.5,"at":1.6,"a":0.7,"d":1.1,"shape":1.5,"gain":0.6},{"wave":"noise","bp":2300,"bpTo":2900,"q":7,"at":0.5,"a":1,"d":1.2,"shape":2,"gain":0.1}],"gain":0.913};
 /** Distant thunder rolling in */
 export const thunderFar: Sound = {"vary":0.5,"varyF":3,"varyG":1.5,"verb":[0.7,0.4],"layers":[{"wave":"brown","lp":320,"lpTo":90,"a":0.25,"h":0.25,"d":1.5,"shape":-3,"gain":1.6,"drive":0.8},{"wave":"brown","lp":900,"lpTo":300,"at":0.1,"a":0.01,"d":0.35,"shape":-4,"gain":0.7},{"wave":"brown","lp":900,"lpTo":300,"at":0.22,"a":0.01,"d":0.35,"shape":-4,"gain":0.5499999999999999},{"wave":"brown","lp":900,"lpTo":300,"at":0.4,"a":0.01,"d":0.35,"shape":-4,"gain":0.39999999999999997}],"gain":0.332};
 /** A raindrop on a leaf */
@@ -730,6 +738,8 @@ export type Name =
   | "button"
   | "ratchet"
   | "machine"
+  | "engine-idle"
+  | "force-field"
   | "whoosh"
   | "swing"
   | "dash"
@@ -759,6 +769,8 @@ export type Name =
   | "roar"
   | "dog-bark"
   | "cat-meow"
+  | "rain-loop"
+  | "wind-loop"
   | "thunder-far"
   | "rain-drop"
   | "bird-chirp"

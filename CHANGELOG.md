@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-**270 sounds in 21 categories** (was 180 in 15).
+**274 sounds in 21 categories** (was 180 in 15), **a protective player, and loops.**
 
 - New categories: **cards & casino** (card-flip, card-deal, card-place, card-shuffle, chip-stack, dice-roll, slot-spin,
   slot-stop, jackpot), **vehicles** (engine-start, engine-rev, tire-screech, car-crash, car-horn, boost, race-light),
@@ -16,7 +16,19 @@
   loot-rare, equip), weather and water (thunder-crack, ocean-wave, rain-burst, dive-splash), animals (zombie-groan, roar,
   dog-bark, cat-meow), quiz (buzzer-wrong, ding-correct, timer-done), highscore, boss-intro, slide, fall-whistle,
   step-carpet, step-mud.
-- Everything bundle: 22.4 kB gzip (player alone still 2.9 kB).
+- `play()` returns a voice: `stop(fade?)` fades out (10 ms by default, so no click), `rate(r)` glides the
+  playback rate, `node` is the `AudioBufferSourceNode`. Code that called `.stop()` on the old return value
+  keeps working. Still `undefined` when a sound is skipped.
+- `cooldown` (default 0.03 s): the same sound started again within it is skipped, so 30 coin pickups in
+  one frame are one coin. `0` turns it off; plays spread out with `delay` are compared by start time.
+- `voices` (default 4): at most this many copies of a sound at once; one more stops the oldest with a fade.
+- `loop` option, and `loop: true` on a Sound renders it as a seamless loop (the tail crossfaded into the
+  head, every take tested for a click-free wrap and an even level). Four loop sounds: `rain-loop`,
+  `wind-loop`, `engine-idle`, `force-field`. Loop sounds loop by default and are exempt from the cooldown.
+- `muted(on?)`: mute everything and keep the volume. Not stored; the README has the `localStorage` one-liner.
+- `stopAll()` fades in 10 ms instead of cutting.
+- Gallery: loop sounds start on click and stop on the next click; hover and arrow keys don't start them.
+- Player: 3.1 kB gzip (was 2.9), everything 23.0 kB with all 274 sounds.
 
 - CLI: `plinkfx mcp`, an MCP server on stdio with five tools: `list_sounds`, `show_sound`, `render_sound`,
   `measure_sound` and `check_sound`. No dependencies, no network.

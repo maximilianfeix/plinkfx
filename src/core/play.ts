@@ -12,6 +12,25 @@ export interface PlayOptions {
   pan?: number;
   /** Start after this many seconds. Default 0. */
   delay?: number;
+  /**
+   * Skip this play when the same sound already starts within this many seconds of it, so 30 coin
+   * pickups in one frame make one coin, not one loud stack. Default 0.03. 0 turns it off. Loops are exempt.
+   */
+  cooldown?: number;
+  /** Most copies of this sound playing at once; one more stops the oldest (with a short fade). Default 4. */
+  voices?: number;
+  /** Repeat until `stop()`. Default: true for loop sounds (`rain-loop`, `engine-idle`, ...), false otherwise. */
+  loop?: boolean;
+}
+
+/** A sound that is playing, returned by play(). */
+export interface Voice {
+  /** Stop it, fading out over `fade` seconds. Default 0.01 (just enough to avoid a click). */
+  stop(fade?: number): void;
+  /** Glide to a new playback rate (an engine revving, a charge-up rising). */
+  rate(r: number): void;
+  /** The underlying AudioBufferSourceNode. */
+  node: AudioBufferSourceNode;
 }
 
 /** Every sound ships with this many takes (seeds 0..3). */
@@ -19,10 +38,12 @@ export const VARIANTS = 4;
 
 let ctx: AudioContext | undefined,
   master: GainNode | undefined,
-  level = 1;
-const cache = new WeakMap<Sound, AudioBuffer[]>(),
-  last = new WeakMap<Sound, number>(),
-  live = new Set<AudioBufferSourceNode>(),
+  level = 1,
+  off = false;
+// Per sound: rendered takes, last take, last start time, voices playing.
+const seen = new WeakMap<Sound, { b: AudioBuffer[]; v: number; t: number; on: Voice[] }>(),
+  state = (s: Sound) => seen.get(s) || seen.set(s, { b: [], v: (Math.random() * VARIANTS) | 0, t: -9, on: [] }).get(s)!,
+  live = new Set<Voice>(),
   ok = () => typeof AudioContext != "undefined";
 
 /** The shared AudioContext, created on first use. Connect your own nodes to it if you like. */
@@ -30,7 +51,7 @@ export function context(): AudioContext {
   if (!ctx) {
     ctx = new AudioContext();
     master = ctx.createGain();
-    master.gain.value = level;
+    volume(level);
     // Soft safety limiter, so ten coins at once don't clip.
     const k = ctx.createDynamicsCompressor();
     k.threshold.value = -3;
@@ -45,7 +66,16 @@ export function context(): AudioContext {
 /** Master volume, 0..1 (0 mutes). Safe to call before any sound played, and on the server. */
 export function volume(v: number) {
   level = Math.max(0, Number.isFinite(v) ? v : 1);
-  if (master) master.gain.value = level;
+  if (master) master.gain.value = off ? 0 : level;
+}
+
+/**
+ * Mute or unmute everything (the volume is kept for unmute). Returns the current state; muted() just reads it.
+ * Not stored: to remember it, `muted(localStorage.muted == "1")` at startup and save it when it changes.
+ */
+export function muted(on?: boolean): boolean {
+  if (on != null) (off = on), volume(level);
+  return off;
 }
 
 /**
@@ -69,13 +99,10 @@ const EVENTS = ["pointerdown", "keydown", "touchend"];
 /** Render (once) and return the AudioBuffer for one take of a sound. */
 export function buffer(sound: Sound, variant = 0): AudioBuffer {
   const c = context(),
-    list = cache.get(sound) || [];
-  cache.set(sound, list);
+    list = state(sound).b;
   if (!list[variant]) {
-    const data = render(sound, { sampleRate: c.sampleRate, seed: variant }),
-      b = c.createBuffer(1, data.length, c.sampleRate);
-    b.getChannelData(0).set(data);
-    list[variant] = b;
+    const data = render(sound, { sampleRate: c.sampleRate, seed: variant });
+    (list[variant] = c.createBuffer(1, data.length, c.sampleRate)).getChannelData(0).set(data);
   }
   return list[variant];
 }
@@ -99,45 +126,54 @@ export function preload(sounds: Sound[], takes = VARIANTS): Promise<void> {
 }
 
 /**
- * Play a sound. Returns the source node (to stop it early), or undefined when nothing can play:
- * on the server, or while audio is still locked and no user gesture is happening (so sounds
- * triggered before the first click don't all fire at once when audio unlocks).
+ * Play a sound. Returns a Voice (to stop it or change its rate), or undefined when it was skipped:
+ * on the server, inside the cooldown, or while audio is still locked and no user gesture is happening
+ * (so sounds triggered before the first click don't all fire at once when audio unlocks).
  */
-export function play(sound: Sound, o: PlayOptions = {}): AudioBufferSourceNode | undefined {
+export function play(sound: Sound, o: PlayOptions = {}): Voice | undefined {
   if (!ok()) return;
   const c = context();
-  if (c.state != "running") {
-    c.resume();
-    const ua = (navigator as any).userActivation;
-    if (ua && !ua.isActive) return;
-  }
-  let v = o.variant;
-  if (v == null) {
-    const l = last.get(sound) ?? -1;
-    v = Math.floor(Math.random() * (l < 0 ? VARIANTS : VARIANTS - 1));
-    if (l >= 0 && v >= l) v++;
-  }
-  last.set(sound, v);
+  if (c.state != "running" && (c.resume(), (navigator as any).userActivation?.isActive == false)) return;
+  const at = c.currentTime + Math.max(0, o.delay || 0),
+    loop = o.loop ?? !!sound.loop,
+    s = state(sound);
+  if (!loop && Math.abs(at - s.t) < (o.cooldown ?? 0.03)) return;
+  s.t = at;
+  // A random take, never the same one twice in a row.
+  const v = (s.v = o.variant ?? (s.v + 1 + ((Math.random() * (VARIANTS - 1)) | 0)) % VARIANTS);
+  while (s.on.length >= (o.voices || 4)) s.on[0].stop();
   const src = c.createBufferSource(),
-    g = c.createGain();
+    g = c.createGain(),
+    drop = () => (live.delete(h), s.on.splice(s.on.indexOf(h) >>> 0, 1)),
+    h: Voice = {
+      node: src,
+      stop(f = 0.01) {
+        const t = c.currentTime;
+        g.gain.setTargetAtTime(0, t, f / 5 + 1e-3);
+        src.stop(t + f + 0.01);
+        drop();
+      },
+      rate: (r) => src.playbackRate.setTargetAtTime(r, c.currentTime, 0.02),
+    };
   let node: AudioNode = src.connect(g);
   src.buffer = buffer(sound, v);
+  src.loop = loop;
   src.playbackRate.value = o.rate ?? 1;
   g.gain.value = o.volume ?? 1;
   if (o.pan) {
     const p = c.createStereoPanner();
-    p.pan.value = Math.max(-1, Math.min(1, o.pan));
+    p.pan.value = o.pan; // the param clamps to -1..1 itself
     node = node.connect(p);
   }
   node.connect(master!);
-  live.add(src);
-  src.onended = () => live.delete(src);
-  src.start(c.currentTime + Math.max(0, o.delay || 0));
-  return src;
+  live.add(h);
+  s.on.push(h);
+  src.onended = drop;
+  src.start(at);
+  return h;
 }
 
 /** Stop every sound that is playing. */
 export function stopAll() {
-  for (const s of live) s.stop();
-  live.clear();
+  for (const h of live) h.stop(0);
 }

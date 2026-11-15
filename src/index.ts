@@ -14,8 +14,8 @@ import type { PlayOptions, RenderOptions, Sound } from "./core/index.ts";
 import type { Name } from "./sounds.gen.ts";
 
 export * from "./sounds.gen.ts";
-export { context, volume, wav, rng, stopAll, unlockAudio, VARIANTS } from "./core/index.ts";
-export type { Sound, Layer, Wave, RenderOptions, PlayOptions } from "./core/index.ts";
+export { context, volume, muted, wav, rng, stopAll, unlockAudio, VARIANTS } from "./core/index.ts";
+export type { Sound, Layer, Wave, RenderOptions, PlayOptions, Voice } from "./core/index.ts";
 
 const library = sounds as unknown as Record<string, Sound>;
 
