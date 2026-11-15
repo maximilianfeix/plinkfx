@@ -27,6 +27,12 @@ export const CATEGORIES = {
   world: { title: "World", target: -17 },
   creature: { title: "Creatures", target: -17 },
   nature: { title: "Nature", target: -18 },
+  card: { title: "Cards & casino", target: -18 },
+  vehicle: { title: "Vehicles", target: -16 },
+  horror: { title: "Horror", target: -17 },
+  farm: { title: "Farm & crafting", target: -17 },
+  scifi: { title: "Sci-fi & tech", target: -18 },
+  puzzle: { title: "Puzzle", target: -17 },
 } as const;
 export type Category = keyof typeof CATEGORIES;
 

@@ -26,11 +26,11 @@ picture back), `measure_sound` and `check_sound`. They take a catalogue name or 
 
 ## 1. Start from the catalogue
 
-184 sounds in 15 categories already exist and are tuned (four of them seamless loops). Reuse before you invent.
+274 sounds in 21 categories already exist and are tuned (four of them seamless loops). Reuse before you invent.
 
 ```bash
 npx plinkfx list               # all sounds: name, category, description
-npx plinkfx list mechanic      # one category: ui pickup jump hit explosion powerup shoot footstep magic alert jingle mechanic world creature nature
+npx plinkfx list mechanic      # one category: ui pickup jump hit explosion powerup shoot footstep magic alert jingle mechanic world creature nature card vehicle horror farm scifi puzzle
 npx plinkfx show door-heavy    # the parameter object
 ```
 

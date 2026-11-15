@@ -31,6 +31,14 @@
   --c-jingle: #2f8f8a;
   --c-mechanic: #6f6f6f;
   --c-world: #3b7ea1;
+  --c-creature: #8a6d3b;
+  --c-nature: #5f8a3a;
+  --c-card: #a83a4f;
+  --c-vehicle: #56677a;
+  --c-horror: #5c2d3d;
+  --c-farm: #9c8a2e;
+  --c-scifi: #2b93a8;
+  --c-puzzle: #b95fa6;
   color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
@@ -50,6 +58,8 @@
     --c-footstep: #a8987a;
     --c-magic: #8a7ee0;
     --c-mechanic: #8f8f8f;
+    --c-vehicle: #7a8b9e;
+    --c-horror: #8e4a5e;
     color-scheme: dark;
   }
 }
@@ -444,6 +454,14 @@ i {
 [data-cat="jingle"] { --sw: var(--c-jingle); }
 [data-cat="mechanic"] { --sw: var(--c-mechanic); }
 [data-cat="world"] { --sw: var(--c-world); }
+[data-cat="creature"] { --sw: var(--c-creature); }
+[data-cat="nature"] { --sw: var(--c-nature); }
+[data-cat="card"] { --sw: var(--c-card); }
+[data-cat="vehicle"] { --sw: var(--c-vehicle); }
+[data-cat="horror"] { --sw: var(--c-horror); }
+[data-cat="farm"] { --sw: var(--c-farm); }
+[data-cat="scifi"] { --sw: var(--c-scifi); }
+[data-cat="puzzle"] { --sw: var(--c-puzzle); }
 
 /* ---------- grid ---------- */
 .layout {

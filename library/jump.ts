@@ -59,4 +59,20 @@ export default def("jump", {
       { wave: "square", duty: 0.3, freq: 330, to: 780, curve: 2, at: 0.02, a: 0.002, d: 0.12, shape: 2, lp: 3500 },
     ],
   }],
+  slide: ["Slide along the ground", {
+    vary: 0.5,
+    varyF: 1.5,
+    varyG: 1,
+    layers: [
+      { wave: "noise", bp: 1800, bpTo: 1000, q: 1, a: 0.02, h: 0.2, d: 0.15, shape: -3, drive: 0.5 },
+      { wave: "brown", lp: 400, a: 0.02, h: 0.2, d: 0.15, gain: 0.4 },
+    ],
+  }],
+  "fall-whistle": ["Cartoon falling whistle", {
+    vary: 0.3,
+    layers: [
+      { wave: "sine", freq: 2000, to: 500, curve: 0.7, vib: [6, 0.3], a: 0.02, h: 0.8, d: 0.1, shape: 1.5, gain: 0.7 },
+      { wave: "noise", bp: 2000, bpTo: 500, q: 8, kt: 0, a: 0.02, h: 0.8, d: 0.1, gain: 0.1 },
+    ],
+  }],
 });

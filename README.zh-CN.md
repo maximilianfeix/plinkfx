@@ -5,7 +5,7 @@
 
 # plinkfx
 
-**<!-- count -->184<!-- /count --> 个游戏音效，全部用代码写成。** 金币、跳跃、打击、激光、爆炸、UI 点击……每个音效只是几个看得懂的参数，由 3.1 kB 的播放器在浏览器里实时合成。音效 CC0，可商用，无需署名；没有音频文件，无需注册。
+**<!-- count -->274<!-- /count --> 个游戏音效，全部用代码写成。** 金币、跳跃、打击、激光、爆炸、UI 点击……每个音效只是几个看得懂的参数，由 3.1 kB 的播放器在浏览器里实时合成。音效 CC0，可商用，无需署名；没有音频文件，无需注册。
 
 <a href="https://maximilianfeix.github.io/plinkfx/"><img src="https://cdn.jsdelivr.net/gh/maximilianfeix/plinkfx@main/docs/media/gallery.gif" alt="plinkfx 在线音效库：点击方块即可试听 coin、jump、laser、explosion 等音效，每个方块显示波形" width="100%"></a>
 
@@ -48,21 +48,27 @@ muted(true);         // 全部静音；不会自动保存，需要时自己存�
 <!-- catalog -->
 | 分类 | 数量 | 示例 |
 |---|---:|---|
-| UI | 23 | `click` `toggle-on` `confirm` `error` `notify` `plink` |
-| 拾取 | 15 | `coin` `coin-double` `gem` `key` `heart` `ka-ching` |
-| 跳跃与落地 | 10 | `jump` `jump-double` `land` `land-heavy` `spring` |
-| 打击 | 15 | `hit` `hit-heavy` `punch` `hurt` `enemy-die` `sword-hit` |
+| UI | 32 | `click` `toggle-on` `confirm` `error` `notify` `plink` |
+| 拾取 | 19 | `coin` `coin-double` `gem` `key` `heart` `ka-ching` |
+| 跳跃与落地 | 12 | `jump` `jump-double` `land` `land-heavy` `spring` |
+| 打击 | 20 | `hit` `hit-heavy` `punch` `hurt` `enemy-die` `sword-hit` |
 | 爆炸 | 10 | `explosion` `explosion-big` `explosion-retro` `firework` |
 | 强化 | 12 | `powerup` `level-up` `extra-life` `shield-on` `heal` |
-| 射击与激光 | 17 | `laser` `blaster` `zap` `pew` `gunshot` `reload` |
-| 脚步 | 10 | `step-grass` `step-stone` `step-wood` `step-snow` |
+| 射击与激光 | 21 | `laser` `blaster` `zap` `pew` `gunshot` `reload` |
+| 脚步 | 12 | `step-grass` `step-stone` `step-wood` `step-snow` |
 | 魔法 | 13 | `sparkle` `fireball` `ice` `teleport` `lightning` |
-| 提示 | 10 | `alarm` `warning` `low-health` `countdown` |
-| 短旋律 | 9 | `victory` `level-complete` `game-over` `achievement` |
+| 提示 | 13 | `alarm` `warning` `low-health` `countdown` |
+| 短旋律 | 11 | `victory` `level-complete` `game-over` `achievement` |
 | 门与机关 | 10 | `door-open` `door-heavy` `chest-open` `lever` |
-| 环境 | 13 | `whoosh` `splash` `water-drop` `wind` `glass-break` `engine-idle`（循环） |
-| 生物 | 9 | `bat-flap` `slime-blob` `growl-small` `ghost-moan` `voice-babble` |
-| 自然 | 8 | `thunder-far` `rain-drop` `bird-chirp` `stone-drop` `rain-loop`（循环） |
+| 环境 | 18 | `whoosh` `splash` `water-drop` `wind` `glass-break` `engine-idle`（循环） |
+| 生物 | 13 | `bat-flap` `slime-blob` `growl-small` `ghost-moan` `voice-babble` |
+| 自然 | 12 | `thunder-far` `rain-drop` `bird-chirp` `stone-drop` `rain-loop`（循环） |
+| 卡牌与赌场 | 9 | `card-flip` `card-shuffle` `chip-stack` `dice-roll` `jackpot` |
+| 载具 | 7 | `engine-start` `engine-rev` `tire-screech` `car-crash` `boost` |
+| 恐怖 | 7 | `jumpscare` `dread-drone` `whisper` `horror-sting` `music-box` |
+| 农场与制作 | 9 | `axe-chop` `tree-fall` `pickaxe-mine` `dig` `watering-can` |
+| 科幻与科技 | 8 | `computer-beep` `scan` `access-granted` `door-slide` `glitch` |
+| 益智 | 6 | `swap` `match` `combo-chain` `line-clear` `merge` |
 <!-- /catalog -->
 
 ## 导出给游戏引擎

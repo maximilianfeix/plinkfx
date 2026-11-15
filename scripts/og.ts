@@ -16,6 +16,7 @@ const INK = "#16130F",
 export const CAT_COLORS: Record<string, string> = {
   ui: "#5b7a99", pickup: "#d4a017", jump: "#4f9d69", hit: "#c8553d", explosion: "#b4533f", powerup: "#e07a1f", shoot: "#b23a7b",
   footstep: "#a8987a", magic: "#8a7ee0", alert: "#d63f3f", jingle: "#2f8f8a", mechanic: "#8f8f8f", world: "#3b7ea1",
+  creature: "#8a6d3b", nature: "#5f8a3a", card: "#a83a4f", vehicle: "#7a8b9e", horror: "#8e4a5e", farm: "#9c8a2e", scifi: "#2b93a8", puzzle: "#b95fa6",
 };
 
 // The brand wordmark glyphs and mark, ported from brand/make_brand.py.

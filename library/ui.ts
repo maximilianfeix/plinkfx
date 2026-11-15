@@ -135,4 +135,80 @@ export default def("ui", {
       { wave: "triangle", freq: 525, to: 1075, curve: 4, sweep: 0.05, a: 0.001, d: 0.15, shape: 3, gain: 0.25 },
     ],
   }],
+  "drag-start": ["Pick up a draggable item: soft lift", {
+    vary: 0.6,
+    varyF: 1,
+    layers: [
+      { wave: "sine", freq: 500, to: 800, a: 0.002, d: 0.08, shape: -4 },
+      { wave: "noise", bp: 3000, q: 3, a: 0.001, d: 0.004, shape: -6, gain: 0.4 },
+    ],
+  }],
+  drop: ["Drop it into a slot: soft settle", {
+    vary: 0.6,
+    varyF: 1,
+    layers: [
+      { wave: "sine", freq: 700, to: 380, a: 0.002, d: 0.1, shape: -4 },
+      { wave: "noise", bp: 2200, q: 3, a: 0.001, d: 0.005, shape: -6, gain: 0.5 },
+      { wave: "pink", lp: 600, a: 0.001, d: 0.04, shape: -5, gain: 0.3 },
+    ],
+  }],
+  success: ["Task done: clean rising check-mark chime", {
+    vary: 0.1,
+    verb: [0.25, 0.15],
+    layers: [
+      { wave: "sine", freq: 1047, fm: [2, 0.8, 0.06], arp: [0, 7], arpRate: 0.08, a: 0.002, h: 0.06, d: 0.35, shape: -4 },
+      { wave: "triangle", freq: 523, arp: [0, 7], arpRate: 0.08, a: 0.002, h: 0.06, d: 0.25, shape: -4, gain: 0.3 },
+    ],
+  }],
+  maximize: ["Window or card expands: rising whoosh-blip", {
+    vary: 0.4,
+    varyF: 1,
+    layers: [
+      { wave: "sine", freq: 400, to: 900, curve: 0.8, a: 0.01, d: 0.1, shape: -3, gain: 0.6 },
+      { wave: "noise", bp: 1500, bpTo: 4000, q: 1.5, a: 0.03, d: 0.07, shape: -3, gain: 0.25 },
+    ],
+  }],
+  minimize: ["Window or card collapses: falling whoosh-blip", {
+    vary: 0.4,
+    varyF: 1,
+    layers: [
+      { wave: "sine", freq: 900, to: 400, curve: 2, a: 0.005, d: 0.1, shape: -3, gain: 0.6 },
+      { wave: "noise", bp: 4000, bpTo: 1500, q: 1.5, a: 0.01, d: 0.08, shape: -3, gain: 0.25 },
+    ],
+  }],
+  question: ["Dialog asks something: curious upward lilt", {
+    vary: 0.1,
+    verb: [0.2, 0.12],
+    layers: [
+      { wave: "triangle", freq: 660, arp: [0, -3, 5], arpRate: 0.08, a: 0.002, h: 0.12, d: 0.15, shape: -3 },
+      { wave: "sine", freq: 1320, arp: [0, -3, 5], arpRate: 0.08, a: 0.002, h: 0.12, d: 0.12, shape: -3, gain: 0.25 },
+    ],
+  }],
+  "message-send": ["Message sent: quick upward swoosh", {
+    vary: 0.3,
+    varyF: 1,
+    layers: [
+      { wave: "noise", bp: 1200, bpTo: 6000, q: 1.5, a: 0.05, d: 0.08, shape: -3, gain: 0.5 },
+      { wave: "sine", freq: 600, to: 1500, curve: 1.5, a: 0.01, d: 0.1, shape: -3, gain: 0.5 },
+    ],
+  }],
+  trash: ["Delete / move to trash: crumple and drop", {
+    vary: 0.5,
+    varyF: 2,
+    layers: [
+      ...[0, 0.025, 0.045, 0.08, 0.1].map((at, i) => ({ wave: "noise" as const, bp: 2500 + i * 400, q: 1.5, at, a: 0.001, d: 0.025, shape: -5, gain: 0.6 })),
+      { wave: "sine", freq: 500, to: 150, curve: 2, at: 0.12, a: 0.002, d: 0.1, shape: -4, gain: 0.5 },
+      { wave: "pink", lp: 800, at: 0.2, a: 0.001, d: 0.05, shape: -5, gain: 0.4 },
+    ],
+  }],
+  "page-turn": ["Turn a book or tutorial page", {
+    vary: 0.6,
+    varyF: 3,
+    varyG: 1.5,
+    layers: [
+      { wave: "noise", bp: 2000, bpTo: 5000, q: 0.9, a: 0.08, d: 0.12, shape: -3, gain: 0.6 },
+      { wave: "pink", bp: 1200, q: 1, a: 0.06, d: 0.1, shape: -3, gain: 0.3 },
+      { wave: "noise", bp: 3500, q: 2, at: 0.2, a: 0.001, d: 0.02, shape: -5, gain: 0.4 },
+    ],
+  }],
 });
