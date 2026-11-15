@@ -1,11 +1,13 @@
 import { def } from "./def.ts";
 
+const OO = [300, 870, 2240];
+
 export default def("magic", {
   sparkle: ["Twinkling sparkle", {
     echo: [0.11, 0.4, 0.35],
     layers: [
-      { wave: "sine", freq: 2637, arp: [0, 7, 12, 19, 24, 19], arpRate: 0.035, a: 0.001, h: 0.18, d: 0.15, shape: 2, fm: [3.5, 0.8, 0.1] },
-      { wave: "metal", freq: 2500, hp: 7000, a: 0.01, h: 0.15, d: 0.15, gain: 0.12 },
+      { wave: "sine", freq: 2637, arp: [0, 7, 12, 19, 24, 19], arpRate: 0.035, a: 0.001, h: 0.18, d: 0.15, shape: 2, fm: [1.5, 0.6, 0.1] },
+      { wave: "noise", hp: 7000, lp: 12000, a: 0.01, h: 0.15, d: 0.15, gain: 0.12 },
     ],
   }],
   "spell-cast": ["Generic spell: swell and release", {
@@ -57,11 +59,12 @@ export default def("magic", {
     ],
   }],
   curse: ["Dark curse: low detuned drone", {
+    varyF: 1,
     verb: [0.6, 0.3],
     layers: [
-      { wave: "saw", freq: 82, to: 70, lp: 900, q: 2, vib: [4, 0.4], a: 0.1, h: 0.3, d: 0.6, shape: 2 },
-      { wave: "saw", freq: 87, to: 74, lp: 900, q: 2, vib: [4.4, 0.4], a: 0.1, h: 0.3, d: 0.6, shape: 2 },
-      { wave: "noise", bp: 400, q: 3, a: 0.2, d: 0.6, gain: 0.3 },
+      { wave: "saw", freq: 82, to: 70, vib: [4, 0.4], formant: OO, a: 0.1, h: 0.3, d: 0.6, shape: -3 },
+      { wave: "saw", freq: 87, to: 74, vib: [4.4, 0.4], formant: [570, 840, 2410], a: 0.1, h: 0.3, d: 0.6, shape: -3, gain: 0.8 },
+      { wave: "brown", lp: 200, a: 0.2, h: 0.3, d: 0.6, gain: 0.4 },
     ],
   }],
   enchant: ["Enchant an item: bells in a row", {

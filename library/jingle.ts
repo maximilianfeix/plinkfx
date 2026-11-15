@@ -45,9 +45,10 @@ export default def("jingle", {
     vary: 0.05,
     verb: [0.5, 0.25],
     layers: [
-      { wave: "sine", freq: 1047, fm: [2, 1.2, 0.2], arp: [0, 7, 12], arpRate: 0.09, a: 0.002, h: 0.2, d: 0.7, shape: 2.5 },
-      { wave: "triangle", freq: 523, arp: [0, 7, 12], arpRate: 0.09, a: 0.002, h: 0.2, d: 0.5, gain: 0.5 },
-      { wave: "metal", freq: 3000, hp: 7000, at: 0.18, a: 0.002, d: 0.4, gain: 0.1 },
+      { wave: "noise", bp: 2500, q: 1.5, a: 0.001, d: 0.006, shape: -6, gain: 0.3 },
+      ...[0, 0.08, 0.16].map((at, i) => ({ wave: "pluck" as const, freq: [523, 784, 1047][i], at, a: 0.001, d: 0.6, shape: -3, damp: 0.998, blend: 0.48, lp: 5000, gain: 0.6 })),
+      { wave: "modal", freq: 523, modes: [1, 2, 2.4, 3, 4], at: 0.24, a: 0.001, d: 1, shape: -3, gain: 0.8 },
+      { wave: "noise", hp: 7000, lp: 12000, at: 0.24, a: 0.002, d: 0.4, shape: -4, gain: 0.06 },
     ],
   }],
   "puzzle-solved": ["Puzzle solved: clear 'ta-da'", {

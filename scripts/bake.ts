@@ -76,6 +76,12 @@ for (const e of library) {
       sound = { ...e.sound, limit: 1, gain };
     }
   }
+  // Web Audio often runs at 48 kHz, where inter-sample peaks land differently: keep that under the ceiling too.
+  const tp48 = Math.max(...Array.from({ length: VARIANTS }, (_, seed) => measure(render(sound, { sampleRate: 48000, seed }), 48000).truePeak));
+  if (tp48 > CEILING + 0.1) {
+    gain = Number((gain * 10 ** ((CEILING - tp48) / 20)).toPrecision(3));
+    sound = { ...sound, gain };
+  }
   const takes = Array.from({ length: VARIANTS }, (_, seed) => measure(render(sound, { sampleRate: SR, seed }), SR)),
     m = takes[0],
     tAvg = takes.reduce((a, t) => a + t.lufsMax, 0) / VARIANTS,

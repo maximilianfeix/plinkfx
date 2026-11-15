@@ -13,18 +13,23 @@ export default def("hit", {
     ],
   }],
   "hit-light": ["Light jab or tap", {
+    varyF: 2, varyG: 1.5,
     layers: [
-      { wave: "noise", bp: 2200, q: 1, a: 0.001, h: 0.02, d: 0.07, shape: 2.5, drive: 3 },
-      { wave: "triangle", freq: 340, to: 150, curve: 2, at: 0.003, a: 0.001, d: 0.08, shape: 2.5, drive: 1, gain: 0.5 },
+      { wave: "noise", bp: 2200, q: 1, a: 0.001, d: 0.008, shape: -6, drive: 2, gain: 0.6 },
+      { wave: "pink", bp: 1500, bpTo: 600, q: 0.9, at: 0.001, a: 0.001, d: 0.11, shape: -3, drive: 3 },
+      { wave: "triangle", freq: 300, to: 150, at: 0.002, a: 0.001, d: 0.08, shape: -4, drive: 1, gain: 0.5 },
+      { wave: "brown", lp: 300, at: 0.005, a: 0.002, d: 0.12, shape: -5, gain: 0.15 },
     ],
   }],
   "hit-heavy": ["Heavy blow with crunch and low end", {
-    verb: [0.15, 0.1],
+    varyF: 2, varyG: 1.5,
+    verb: [0.35, 0.15],
     layers: [
-      { wave: "noise", hp: 2000, a: 0.001, d: 0.025, gain: 0.6 },
-      { wave: "crunch", freq: 2600, to: 400, a: 0.001, d: 0.16, shape: 2.5, lp: 4000, gain: 0.6 },
-      { wave: "sine", freq: 110, to: 38, curve: 2, a: 0.001, d: 0.3, shape: 2, drive: 2 },
-      { wave: "brown", lp: 500, a: 0.001, d: 0.2, gain: 0.6 },
+      { wave: "noise", bp: 1600, q: 0.8, a: 0.001, d: 0.012, shape: -5, gain: 0.7 },
+      { wave: "crunch", freq: 2600, to: 300, a: 0.001, d: 0.18, shape: -4, lp: 4000, drive: 1, gain: 0.8 },
+      { wave: "pink", bp: 500, bpTo: 180, q: 0.9, at: 0.002, a: 0.001, d: 0.25, shape: -5, drive: 2.5 },
+      { wave: "sine", freq: 120, to: 55, at: 0.003, a: 0.001, d: 0.3, shape: -5, drive: 1.5, gain: 0.7 },
+      { wave: "brown", lp: 300, at: 0.01, a: 0.002, d: 0.45, shape: -4, gain: 0.3 },
     ],
   }],
   punch: ["Cartoon punch, meaty", {
@@ -67,11 +72,14 @@ export default def("hit", {
     ],
   }],
   "sword-hit": ["Blade hits armour", {
+    vary: 0.8, varyF: 2, varyG: 1.5,
     verb: [0.3, 0.18],
     layers: [
-      { wave: "metal", freq: 820, hp: 2500, a: 0.001, d: 0.45, shape: 3.5 },
-      { wave: "noise", hp: 3000, a: 0.001, d: 0.04, shape: 3, gain: 0.7 },
-      { wave: "sine", freq: 2780, fm: [1.41, 2, 0.15], a: 0.001, d: 0.35, shape: 3, gain: 0.3 },
+      { wave: "noise", hp: 2000, a: 0.001, d: 0.006, shape: -6, gain: 0.8 },
+      { wave: "modal", freq: 1550, modes: [1, 2.76, 5.4, 8.93], a: 0.001, d: 0.7, shape: -4 },
+      { wave: "modal", freq: 2300, modes: [1, 1.47, 2.09, 2.56], a: 0.001, d: 0.45, shape: -4, gain: 0.7 },
+      { wave: "noise", bp: 700, q: 3, a: 0.001, d: 0.05, shape: -6, drive: 1, gain: 0.6 },
+      { wave: "noise", bp: 5000, bpTo: 2800, q: 3, at: 0.01, a: 0.005, d: 0.25, shape: -4, gain: 0.25 },
     ],
   }],
   block: ["Shield block: dull metal clank", {
@@ -83,11 +91,13 @@ export default def("hit", {
     ],
   }],
   crit: ["Critical hit: impact plus a bright ring", {
+    varyF: 2, varyG: 1.5,
     verb: [0.25, 0.15],
     layers: [
-      { wave: "noise", hp: 2000, a: 0.001, d: 0.03, gain: 0.7 },
-      { wave: "sine", freq: 130, to: 45, curve: 2, a: 0.001, d: 0.22, shape: 2, drive: 1.5 },
-      { wave: "square", duty: 0.25, freq: 1760, arp: [0, 12], arpRate: 0.05, at: 0.02, a: 0.001, d: 0.25, shape: 3, lp: 6000, gain: 0.35 },
+      { wave: "noise", bp: 2200, q: 0.8, a: 0.001, d: 0.01, shape: -5, gain: 0.7 },
+      { wave: "pink", bp: 900, bpTo: 300, q: 0.9, at: 0.002, a: 0.001, d: 0.12, shape: -6, drive: 2 },
+      { wave: "sine", freq: 150, to: 65, at: 0.003, a: 0.001, d: 0.2, shape: -5, drive: 1, gain: 0.6 },
+      { wave: "square", duty: 0.25, freq: 1760, arp: [0, 12], arpRate: 0.05, at: 0.02, a: 0.001, d: 0.3, shape: -4, lp: 6000, kt: 1, gain: 0.35 },
     ],
   }],
   squish: ["Wet squish for slimes", {
@@ -111,12 +121,12 @@ export default def("hit", {
     ],
   }],
   "arrow-hit": ["Arrow thunks into wood", {
-    varyF: 2,
-    varyG: 1,
+    varyF: 2, varyG: 1,
     layers: [
-      { wave: "noise", bp: 1800, q: 2, a: 0.001, d: 0.008, shape: -5, drive: 2 },
-      { wave: "modal", freq: 210, modes: [1, 2.32, 4.25, 6.63], at: 0.002, a: 0.001, d: 0.18, shape: -5 },
-      { wave: "triangle", freq: 420, vib: [45, 0.8], a: 0.001, d: 0.15, shape: -4, gain: 0.2 },
+      { wave: "noise", bp: 1800, q: 2, a: 0.001, d: 0.008, shape: -5, drive: 2, gain: 0.6 },
+      { wave: "modal", freq: 210, modes: [1, 2.32, 4.25, 6.63], at: 0.002, a: 0.001, d: 0.25, shape: -4, drive: 1.5 },
+      { wave: "noise", bp: 320, q: 3, a: 0.001, d: 0.1, shape: -4, drive: 1, gain: 0.8 },
+      { wave: "pluck", freq: 160, at: 0.005, a: 0.001, d: 0.35, shape: -3, damp: 0.993, blend: 0.45, lp: 1500, gain: 0.5 },
       { wave: "brown", lp: 300, a: 0.002, d: 0.12, shape: -5, gain: 0.3 },
     ],
   }],

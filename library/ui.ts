@@ -2,13 +2,12 @@ import { def } from "./def.ts";
 
 export default def("ui", {
   click: ["Neutral button click", {
-    vary: 0.6,
-    varyF: 1,
-    varyG: 1,
+    vary: 0.6, varyF: 1, varyG: 1,
     layers: [
-      { wave: "noise", bp: 3500, q: 3, a: 0.001, d: 0.004, shape: -6 },
-      { wave: "sine", freq: 1900, to: 900, a: 0.001, d: 0.03, shape: -5, gain: 0.6 },
-      { wave: "noise", bp: 2500, q: 5, at: 0.012, a: 0.001, d: 0.005, shape: -6, gain: 0.5 },
+      { wave: "noise", bp: 3500, q: 3, a: 0.001, d: 0.006, shape: -6, gain: 0.7 },
+      { wave: "sine", freq: 1900, to: 900, a: 0.001, d: 0.07, shape: -4, drive: 1 },
+      { wave: "modal", freq: 1400, modes: [1, 2.3], a: 0.001, d: 0.06, shape: -4, gain: 0.6 },
+      { wave: "noise", bp: 2500, q: 5, at: 0.03, a: 0.001, d: 0.006, shape: -6, gain: 0.5 },
     ],
   }],
   "click-soft": ["Rounded, quiet click for lists and tabs", {
@@ -101,8 +100,11 @@ export default def("ui", {
     ],
   }],
   tick: ["Tiny tick for sliders and scroll steps", {
-    vary: 1,
-    layers: [{ wave: "sine", freq: 3200, a: 0.001, d: 0.009, shape: 2 }],
+    vary: 1, varyF: 1,
+    layers: [
+      { wave: "noise", bp: 4500, q: 2, a: 0.001, d: 0.004, shape: -6, gain: 0.6 },
+      { wave: "sine", freq: 3200, a: 0.001, d: 0.035, shape: -6, drive: 1 },
+    ],
   }],
   "menu-open": ["Menu or panel slides open", {
     layers: [

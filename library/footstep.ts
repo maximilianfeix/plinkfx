@@ -27,12 +27,13 @@ export default def("footstep", {
     ],
   }],
   "step-wood": ["Step on a wooden floor", {
-    ...walk,
+    vary: 1.5, varyF: 3, varyG: 1.2,
     layers: [
-      heel(500, 0.08, 0.8),
-      { wave: "modal", freq: 180, modes: [1, 2.3, 4.1], a: 0.001, d: 0.12, shape: -5, gain: 0.5 },
+      { wave: "pink", lp: 500, lpTo: 250, a: 0.001, d: 0.08, shape: -6, drive: 0.5, gain: 0.8 },
+      { wave: "modal", freq: 180, modes: [1, 2.3, 4.1], a: 0.001, d: 0.16, shape: -4, drive: 1, gain: 0.8 },
+      { wave: "noise", bp: 350, q: 2, a: 0.001, d: 0.08, shape: -4, drive: 1, gain: 0.7 },
       { wave: "noise", bp: 1800, q: 1.2, at: 0.006, a: 0.001, d: 0.025, shape: -5, gain: 0.25 },
-      tail(0.2),
+      { wave: "brown", lp: 220, a: 0.002, d: 0.24, shape: -4, gain: 0.2 },
     ],
   }],
   "step-metal": ["Step on a metal grate", {
@@ -84,15 +85,15 @@ export default def("footstep", {
     layers: [{ wave: "crunch", freq: 4000, a: 0.001, d: 0.035, shape: 2 }],
   }],
   "step-heavy": ["Heavy creature stomp", {
-    vary: 1,
-    varyF: 3,
-    varyG: 1.5,
+    vary: 1, varyF: 3, varyG: 1.5,
     verb: [0.2, 0.12],
     layers: [
-      { wave: "sine", freq: 90, to: 45, a: 0.002, d: 0.25, shape: -5, drive: 1 },
-      heel(400, 0.15),
+      { wave: "pink", lp: 700, lpTo: 300, a: 0.001, d: 0.15, shape: -5, drive: 1.5 },
+      { wave: "noise", bp: 240, q: 2.5, a: 0.001, d: 0.14, shape: -4, drive: 1, gain: 1.2 },
+      { wave: "noise", bp: 520, q: 2, a: 0.001, d: 0.07, shape: -5, gain: 0.6 },
+      { wave: "sine", freq: 90, to: 45, a: 0.002, d: 0.25, shape: -5, drive: 1, gain: 0.3 },
       { wave: "noise", bp: 900, a: 0.001, d: 0.04, shape: -5, gain: 0.3 },
-      tail(0.35),
+      { wave: "brown", lp: 220, a: 0.002, d: 0.24, shape: -4, gain: 0.35 },
     ],
   }],
   "step-carpet": ["Muffled step on carpet or rug", {

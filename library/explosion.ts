@@ -72,9 +72,11 @@ export default def("explosion", {
     ],
   }],
   "bomb-fuse": ["Lit fuse fizzing", {
+    varyF: 2, varyG: 1,
     layers: [
-      { wave: "noise", bp: 5200, q: 1.5, a: 0.03, h: 0.9, d: 0.1, shape: 1, gain: 0.7 },
-      { wave: "crunch", freq: 70, hp: 3000, a: 0.03, h: 0.9, d: 0.1, gain: 0.35 },
+      { wave: "noise", freq: 1000, arp: [0, 19, 7, 24, 3, 14, 0, 22], arpRate: 0.037, loop: true, kt: 1, lp: 2600, hp: 2000, a: 0.03, h: 0.85, d: 0.12, shape: -3, gain: 0.8 },
+      { wave: "noise", freq: 1000, arp: [12, 0, 17, 5, 24, 9], arpRate: 0.023, loop: true, kt: 1, lp: 3000, hp: 2500, a: 0.03, h: 0.85, d: 0.12, shape: -3, gain: 0.5 },
+      { wave: "crunch", freq: 70, hp: 3000, a: 0.03, h: 0.9, d: 0.1, shape: -3, gain: 0.35 },
     ],
   }],
 });

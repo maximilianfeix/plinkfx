@@ -2,6 +2,7 @@ import { def } from "./def.ts";
 
 export default def("shoot", {
   laser: ["Classic laser: fast square sweep down", {
+    vary: 0.8, varyF: 2, varyG: 1.5,
     layers: [
       { wave: "square", duty: 0.5, freq: 1500, to: 220, curve: 3, a: 0.001, d: 0.2, shape: 1.8, lp: 7500, kt: 1 },
       { wave: "saw", freq: 750, to: 110, curve: 3, a: 0.001, d: 0.17, lp: 3500, kt: 1, gain: 0.4 },
@@ -28,23 +29,26 @@ export default def("shoot", {
     ],
   }],
   zap: ["Electric zap", {
+    vary: 1, varyF: 2, varyG: 1.5,
     layers: [
-      { wave: "saw", freq: 2600, to: 400, vib: [60, 3], a: 0.001, d: 0.1, shape: 2, hp: 300 },
-      { wave: "noise", hp: 4000, a: 0.001, d: 0.06, gain: 0.4 },
+      { wave: "crunch", freq: 6000, to: 1500, hp: 1200, lp: 9000, a: 0.001, d: 0.15, shape: -3, drive: 3, gain: 0.8 },
+      { wave: "saw", freq: 2600, to: 500, vib: [60, 3], hp: 400, lp: 6000, kt: 1, a: 0.001, d: 0.1, shape: -4, gain: 0.5 },
+      { wave: "square", duty: 0.1, freq: 120, bp: 1500, q: 2, a: 0.001, d: 0.12, shape: -4, gain: 0.5 },
     ],
   }],
   pew: ["Tiny pew for bullet-hell spam", {
-    vary: 1,
-    layers: [{ wave: "square", duty: 0.25, freq: 2100, to: 600, curve: 4, a: 0.001, d: 0.08, shape: 2, lp: 7000 }],
+    vary: 1, varyF: 2, varyG: 1.5,
+    layers: [{ wave: "square", duty: 0.25, freq: 2100, to: 600, curve: 4, a: 0.001, d: 0.08, shape: 2, hp: 150, lp: 7000, kt: 1 }],
   }],
   gunshot: ["Pistol shot with room tail", {
-    verb: [0.35, 0.2],
+    varyF: 2, varyG: 1.5,
+    verb: [0.25, 0.2],
     layers: [
-      { wave: "noise", bp: 2500, q: 0.7, a: 0.001, d: 0.02, shape: 4, drive: 3, gain: 0.8 },
-      { wave: "noise", hp: 150, lp: 7000, lpTo: 1200, a: 0.001, d: 0.18, shape: 4, drive: 2 },
-      { wave: "sine", freq: 150, to: 50, curve: 3, a: 0.001, d: 0.14, drive: 2 },
-      { wave: "brown", lp: 900, a: 0.001, d: 0.25, shape: 2.5, gain: 0.7 },
-      { wave: "pink", bp: 1000, q: 1, a: 0.001, d: 0.35, shape: 3, gain: 0.35 },
+      { wave: "noise", bp: 2500, q: 0.7, a: 0.001, d: 0.02, shape: -6, drive: 3, gain: 0.6 },
+      { wave: "noise", bp: 1100, q: 1, a: 0.001, d: 0.1, shape: -4, drive: 3 },
+      { wave: "noise", hp: 150, lp: 7000, lpTo: 1200, a: 0.001, d: 0.18, shape: -5, drive: 2 },
+      { wave: "sine", freq: 180, to: 80, curve: 3, a: 0.001, d: 0.1, shape: -5, drive: 2, gain: 0.5 },
+      { wave: "pink", bp: 1400, q: 1, a: 0.001, d: 0.22, shape: -4, gain: 0.3 },
     ],
   }],
   shotgun: ["Shotgun blast, wide and heavy", {
