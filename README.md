@@ -207,6 +207,50 @@ In Claude Code you can also add the repo as a plugin marketplace:
 
 A full run, with the real terminal output, is in [docs/skill-example.md](https://github.com/maximilianfeix/plinkfx/blob/main/docs/skill-example.md).
 
+## Use from an agent (MCP)
+
+`plinkfx mcp` is an MCP server. It runs locally over stdio and needs no network or API key.
+
+```bash
+claude mcp add plinkfx -- npx -y plinkfx mcp          # Claude Code
+```
+
+Cursor (`.cursor/mcp.json`) and other clients that take JSON:
+
+```json
+{
+  "mcpServers": {
+    "plinkfx": { "command": "npx", "args": ["-y", "plinkfx", "mcp"] }
+  }
+}
+```
+
+Codex (`~/.codex/config.toml`):
+
+```toml
+[mcp_servers.plinkfx]
+command = "npx"
+args = ["-y", "plinkfx", "mcp"]
+```
+
+The tools:
+
+| Tool | What it does |
+|---|---|
+| `list_sounds` | Search the catalogue by category or words |
+| `show_sound` | The JSON recipe of a sound |
+| `render_sound` | Write a WAV from a name or a recipe. Returns the path and the measurements. With `png: true` it also returns a waveform and spectrogram image |
+| `measure_sound` | Loudness, true peak, duration and brightness of a sound or a WAV file |
+| `check_sound` | Look for clicks, cut tails, DC, clipping, silent padding and loudness off target |
+
+The same checks work from the shell. `plinkfx check` exits with 1 when a check fails:
+
+```bash
+npx plinkfx check sounds/door.json --cat mechanic   # your sound, against a category's loudness
+npx plinkfx check --all                             # the whole catalogue
+npx plinkfx render door-heavy --png door.png        # see a sound: waveform + spectrogram
+```
+
 ## How the sounds are measured
 
 `npm run bake` renders and levels every sound, and the test suite checks all four takes of each one on
@@ -216,7 +260,8 @@ Linux, macOS and Windows:
   (UI and footsteps −20 LUFS, hits −15, explosions −14, the rest in between). The four takes of a sound
   stay within ±1.5 LU of the target and average within 0.5 LU. Short transients such as clicks, hits and
   steps often reach the peak ceiling first; those sit below the target and are marked `limited` in the catalogue.
-- **Peaks:** true peak (4× oversampled) ≤ −1 dBTP for every take.
+- **Peaks:** true peak (4× oversampled) ≤ −1 dBTP for every take at 44.1 kHz. At 48 kHz the noise
+  comes out differently, and a few takes land between −1 and −0.4 dBTP. `plinkfx check --all` lists them.
 - **The meter itself:** tested against the BS.1770 reference sine, and it agrees with ffmpeg's `ebur128`
   filter (`explosion-big`: −19.9 LUFS integrated in both).
 - **Clean edges:** at least 1 ms attack, a 5 ms fade at the end, a DC blocker, the silent tail trimmed.

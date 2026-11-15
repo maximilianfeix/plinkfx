@@ -65,3 +65,46 @@ Start from these, then shape by ear (the user's) and by numbers (yours).
 ui -20, footstep -20, alert -18, jingle / mechanic / world -17, pickup / jump / powerup / shoot / magic -16,
 hit -15, explosion -14. True peak never above -1 dBTP. Very short sounds stop at the peak limit
 before they reach the target; that is expected.
+
+## What `plinkfx check` looks for
+
+All four takes are rendered at 48 kHz. `fail` makes the command exit 1; `warn` is worth a look.
+
+| Check | Level | Trigger | Usual fix |
+|---|---|---|---|
+| `start-click` | fail | first sample above -40 dBFS | `a` of at least 0.002 on every layer |
+| `end-click` | fail | last sample above -40 dBFS | a decay (`d`) on every layer |
+| `tail-cut` | fail | last 10 ms above -40 dB of the loudest 10 ms, and falling less than 3 dB | longer `d`, smaller `verb` size, less `echo` feedback |
+| `clipping` | fail | two or more samples at full scale | `plinkfx level` |
+| `true-peak` | warn above -1 dBTP, fail above 0 | 4x oversampled peak | `plinkfx level` |
+| `dc` | fail | mean above 0.01 | `hp` 30-40 on the low layers |
+| `lead-silence` | warn above 10 ms, fail above 100 ms | time below -60 dB of the peak at the start | `at: 0` on the first layer; avoid very low saws starting the sound |
+| `tail-silence` | warn | more than 250 ms below -60 dB at the end | shorter `verb`/`echo` |
+| `loudness` | fail | average take more than 2 LU off the target | `plinkfx level --target <lufs>` |
+| `quiet` | warn | at the peak ceiling but 8+ LU under the target | denser body: `drive`, a sustained layer |
+| `long` | warn | over 4 s | it is a loop or music |
+
+The target comes from the sound's category (catalogue sounds) or `--cat` / `--target`. Short transients
+that hit the peak ceiling before the target are not failed for loudness.
+
+## Reading the picture
+
+`plinkfx render <sound> --png out.png` (or `render_sound` with `png: true` over MCP) draws 800x360 pixels:
+
+- **Top line:** name, duration, max momentary loudness and true peak.
+- **Waveform:** min and max per pixel column at true scale. Full height is 0 dBFS, so a quiet sound looks small.
+- **Spectrogram:** time left to right, log frequency from 40 Hz (bottom) to half the sample rate (top),
+  dotted lines at 100 Hz, 1 kHz and 10 kHz, 80 dB of range under the loudest point. Bright = loud.
+- **Ticks** under it mark time (10, 50, 100, 250 or 500 ms apart; longer ticks every fifth).
+
+What to look for:
+
+| You see | It means |
+|---|---|
+| a bright vertical line at the very start or end | a click |
+| a hard vertical edge where the sound stops | a cut tail |
+| horizontal lines | pitched partials; their spacing shows the wave (odd only = square/triangle, all = saw) |
+| lines that slope down | a pitch drop (`to` below `freq`) |
+| lines that fold back at the top | aliasing (lower `freq`, use `lp`, or `rate`/`bits` on purpose) |
+| energy only in the bottom quarter | dark, muffled; raise `lp` or add a noise layer with `hp` |
+| a smooth fade into the background | a natural decay |

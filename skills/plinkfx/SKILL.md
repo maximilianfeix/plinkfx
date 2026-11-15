@@ -20,6 +20,10 @@ npx plinkfx --version          # or: npm i -D plinkfx
 
 Everything below uses `npx plinkfx`. Inside the plinkfx repo itself use `node dist/cli.js`.
 
+If the plinkfx MCP server is connected (`claude mcp add plinkfx -- npx -y plinkfx mcp`), its tools do the
+same work without a shell: `list_sounds`, `show_sound`, `render_sound` (with `png: true` you get the
+picture back), `measure_sound` and `check_sound`. They take a catalogue name or the recipe object itself.
+
 ## 1. Start from the catalogue
 
 180 sounds in 15 categories already exist and are tuned. Reuse before you invent.
@@ -57,7 +61,8 @@ sounds are usually one layer with a linear decay.
 ```bash
 npx plinkfx level sounds/door.json --like door-heavy   # sets "gain": reference loudness, true peak <= -1 dBTP
 npx plinkfx measure sounds/door.json --like door-heavy
-npx plinkfx render sounds/door.json -o door.wav
+npx plinkfx check sounds/door.json --cat mechanic        # clicks, cut tail, DC, clipping, padding, loudness
+npx plinkfx render sounds/door.json -o door.wav --png door.png
 ```
 
 `measure` prints duration, loudness (max momentary LUFS), integrated LUFS, peak, true peak, spectral
@@ -74,8 +79,13 @@ reference"*. Then compare:
 | true peak above -1 dBTP, or loudness off | run `npx plinkfx level` again after every change |
 | sounds static when repeated | raise `vary` (semitones between takes, default 0.4) |
 
-Optional, to see it: `ffmpeg -i door.wav -lavfi showspectrumpic=s=800x300:legend=0 door.png` and read
-the image (a click shows as a vertical line at the start; aliasing as mirrored diagonal lines).
+`check` must print no `fail` lines (it exits 1 if it does). Fix every failure before you deliver. The
+hint after each one says what to change. Warnings are for judgement: a 30 ms lead-in on a slow door is fine.
+
+Look at `door.png`: waveform on top (full height = 0 dBFS), log spectrogram below with lines at 100 Hz,
+1 kHz and 10 kHz. A click shows as a bright vertical line at the very start. Aliasing shows as mirrored
+diagonal lines. A tail that stops dead ends in a straight vertical edge instead of fading. See
+[reference.md](reference.md#reading-the-picture) for more.
 
 Iterate at most 5 rounds. Keep a short log of what you changed and why.
 
@@ -85,7 +95,7 @@ Give the user:
 
 1. the file `sounds/<name>.json`,
 2. `<name>.wav` (plus `--variant 1..3` takes if they want variety),
-3. the last `measure` output,
+3. the last `measure` and `check` output,
 4. how to play it:
 
 ```js
@@ -105,3 +115,4 @@ for short sounds and leave Force To Mono off (the files are mono already; it can
 - Don't copy presets or samples from other tools or packs unless their licence allows it.
 - Don't claim a sound "sounds great". Report the numbers and let the user listen.
 - Don't exceed -1 dBTP or ship sounds longer than about 4 s; those are loops or music, not effects.
+- Don't deliver a sound that `plinkfx check` fails.

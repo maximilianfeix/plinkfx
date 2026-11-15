@@ -3,6 +3,8 @@ import { existsSync, mkdtempSync, readFileSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { describe, expect, test } from "vitest";
+import { audit } from "../src/audit.ts";
+import { catalog, seconds, soundOf, unwrap } from "../src/shared.ts";
 
 const dir = mkdtempSync(join(tmpdir(), "plinkfx-cli-"));
 const run = (...args: string[]) => {
@@ -95,5 +97,73 @@ describe("cli", () => {
     const names = JSON.parse(readFileSync("library/catalog.gen.json", "utf8")).sounds.map((s: { name: string }) => s.name);
     expect(Object.keys(JSON.parse(readFileSync(join(out, "plinkfx-sprite.json"), "utf8")))).toEqual(names);
     expect(Object.keys(JSON.parse(readFileSync(join(out, "plinkfx-sprite.phaser.json"), "utf8")).spritemap)).toEqual(names);
+  });
+  test("render --png draws a waveform + spectrogram PNG", () => {
+    const png = join(dir, "coin.png");
+    const r = run("render", "coin", "-o", join(dir, "coin.wav"), "--png", png);
+    expect(r.code, r.out).toBe(0);
+    const b = readFileSync(png);
+    expect(b.subarray(1, 4).toString("ascii")).toBe("PNG");
+    expect([b.readUInt32BE(16), b.readUInt32BE(20)]).toEqual([800, 360]);
+    expect(run("render", "coin", "--png", join(dir, "x.jpg")).out).toMatch(/--png needs a file name ending in .png/);
+  });
+  test("inline recipes accept every wave (modal, pluck)", () => {
+    const r = run("render", JSON.stringify({ layers: [{ wave: "modal", freq: 300, d: 0.2, gain: 0.2 }, { wave: "pluck", freq: 220, d: 0.3, gain: 0.2 }] }), "-o", join(dir, "m.wav"));
+    expect(r.code, r.out).toBe(0);
+  });
+  test("check --all passes on the catalogue", () => {
+    const r = run("check", "--all", "--json");
+    expect(r.code, r.out).toBe(0);
+    const j = JSON.parse(r.out);
+    expect(j.ok).toBe(true);
+    expect(j.sounds.length).toBe(JSON.parse(readFileSync("library/catalog.gen.json", "utf8")).sounds.length);
+  }, 180_000);
+  test("check fails a clipping sound with exit 1 and names the problems", () => {
+    const f = file("loud.json", JSON.stringify({ layers: [{ wave: "square", freq: 200, d: 0.3, gain: 3 }] }));
+    const r = run("check", f, "--cat", "ui");
+    expect(r.code).toBe(1);
+    expect(r.out).toMatch(/FAIL\s+loud/);
+    expect(r.out).toMatch(/fail: clipping/);
+    expect(r.out).toMatch(/fail: loudness: .* off the -20 target/);
+    expect(run("check").out).toMatch(/name the sounds to check, or use --all/);
+    expect(run("check", "coin", "--cat", "nope").out).toMatch(/unknown category "nope"/);
+  });
+});
+
+test("every catalogue recipe passes the recipe checks, and seconds() matches the render", async () => {
+  const { render } = await import("../src/core/synth.ts");
+  for (const { name } of catalog().sounds) {
+    const s = JSON.parse(JSON.stringify(soundOf(name)));
+    expect(() => unwrap(s), name).not.toThrow();
+    for (const seed of [0, 3]) expect(render(s, { sampleRate: 8000, seed }).length / 8000, name).toBeLessThanOrEqual(seconds(s) + 1 / 8000);
+  }
+});
+
+describe("audit", () => {
+  const sr = 48000,
+    tone = (sec: number, f = 440, amp = 0.5) => Float32Array.from({ length: Math.round(sec * sr) }, (_, i) => amp * Math.sin((2 * Math.PI * f * i) / sr)),
+    fade = (x: Float32Array, a = 0.005, d = 0.1) => x.map((v, i) => v * Math.min(1, i / (a * sr)) * Math.min(1, (x.length - 1 - i) / (d * sr))),
+    checks = (x: Float32Array, target?: number) => audit([x], sr, target).issues.map((i) => `${i.level}:${i.check}`);
+  test("a clean tone passes", () => {
+    expect(checks(fade(tone(0.3)))).toEqual([]);
+  });
+  test("clicks at the edges and a cut tail", () => {
+    const x = tone(0.3);
+    x[0] = 0.4;
+    expect(checks(x)).toEqual(expect.arrayContaining(["fail:start-click", "fail:end-click", "fail:tail-cut"]));
+    // a cut followed by a 5 ms fade still counts as cut, and has no end click
+    const y = fade(tone(0.3), 0.005, 0.005);
+    expect(checks(y)).toEqual(["fail:tail-cut"]);
+  });
+  test("DC, clipping, true peak, padding, loudness", () => {
+    expect(checks(fade(tone(0.3)).map((v, i, a) => v + (i > 240 && i < a.length - 4800 ? 0.05 : 0)))).toContain("fail:dc");
+    expect(checks(fade(tone(0.3, 440, 1.5)).map((v) => Math.max(-1, Math.min(1, v))))).toEqual(expect.arrayContaining(["fail:clipping", "fail:true-peak"]));
+    expect(checks(fade(tone(0.3, 440, 0.95)))).toEqual(["warn:true-peak"]);
+    const late = new Float32Array(sr * 0.5);
+    late.set(fade(tone(0.3)), sr * 0.15);
+    expect(checks(late)).toContain("fail:lead-silence");
+    const quiet = fade(tone(0.3, 440, 0.01));
+    expect(checks(quiet, -16)).toEqual(["fail:loudness"]);
+    expect(checks(new Float32Array(100))).toEqual(["fail:empty"]);
   });
 });
