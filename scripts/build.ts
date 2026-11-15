@@ -1,7 +1,7 @@
 /** Build dist/: ESM bundles with shared chunks (one AudioContext, one cache), .d.ts files, the catalogue. */
 import { build } from "esbuild";
 import { execFileSync } from "node:child_process";
-import { chmodSync, copyFileSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { chmodSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 
 rmSync("dist", { recursive: true, force: true });
 // Each entry is its own file. index.js imports ./core.js and ./sounds.js instead of
@@ -24,12 +24,18 @@ await build({
   format: "esm",
   target: "node18",
   banner: { js: "#!/usr/bin/env node" },
+  define: { __VERSION__: JSON.stringify(JSON.parse(readFileSync("package.json", "utf8")).version) },
 });
 // The CLI source starts with its own shebang; keep exactly one.
 const cli = readFileSync("dist/cli.js", "utf8").replace(/^(#!.*\n)+/, "#!/usr/bin/env node\n");
 writeFileSync("dist/cli.js", cli);
 chmodSync("dist/cli.js", 0o755);
-copyFileSync("library/catalog.gen.json", "dist/catalog.json");
+// The shipped catalogue keeps what the CLI and tools read: names, categories, descriptions, duration, loudness.
+const cat = JSON.parse(readFileSync("library/catalog.gen.json", "utf8"));
+writeFileSync(
+  "dist/catalog.json",
+  JSON.stringify({ categories: cat.categories, sounds: cat.sounds.map((s: any) => ({ name: s.name, cat: s.cat, desc: s.desc, duration: s.m.duration, lufs: s.m.lufsMax })) }),
+);
 execFileSync(process.platform == "win32" ? "npx.cmd" : "npx", ["tsc", "-p", "tsconfig.build.json"], { stdio: "inherit", shell: process.platform == "win32" });
 console.log("built dist/");
 // Entry-point declaration shims matching package.json "exports".

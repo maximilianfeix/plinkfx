@@ -20,9 +20,9 @@ import type { Sound } from "./core/types.ts";
 import { measure, type Measurement } from "./meter.ts";
 import * as all from "./sounds.gen.ts";
 
-import pkg from "../package.json" with { type: "json" };
-
-const VERSION = pkg.version;
+// Set by esbuild in scripts/build.ts; read package.json when run from source.
+declare const __VERSION__: string;
+const VERSION = typeof __VERSION__ == "string" ? __VERSION__ : JSON.parse(readFileSync(new URL("../package.json", import.meta.url), "utf8")).version;
 const BOOL = ["json", "variants", "sprite", "help", "version"],
   VALUE = ["out", "variant", "rate", "like", "target", "format", "gap", "only"];
 const die = (msg: string): never => {

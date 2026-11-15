@@ -1,26 +1,40 @@
 {
   "name": "plinkfx",
   "version": "0.2.0",
-  "description": "180 game sound effects as code. CC0 sounds, a 2.9 kB player, a CLI for WAV/OGG and an agent skill. No audio files.",
+  "description": "Game sound effects as code: 180 CC0 SFX (coin, jump, laser, UI clicks) and a 2.9 kB Web Audio player. CLI for WAV/OGG, no audio files.",
   "keywords": [
     "sound-effects",
     "sfx",
+    "sound",
+    "audio",
     "game-audio",
-    "webaudio",
     "gamedev",
+    "game",
+    "webaudio",
+    "web-audio",
+    "ui-sounds",
     "procedural-audio",
+    "synth",
     "sfxr",
+    "jsfxr",
     "zzfx",
-    "cc0"
+    "audio-sprite",
+    "cc0",
+    "typescript"
   ],
   "homepage": "https://maximilianfeix.github.io/plinkfx/",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/maximilianfeix/plinkfx.git"
   },
-  "bugs": "https://github.com/maximilianfeix/plinkfx/issues",
+  "bugs": {
+    "url": "https://github.com/maximilianfeix/plinkfx/issues"
+  },
   "license": "(MIT AND CC0-1.0)",
-  "author": "Maximilian Feix",
+  "author": {
+    "name": "Maxi",
+    "url": "https://github.com/maximilianfeix"
+  },
   "type": "module",
   "sideEffects": false,
   "main": "./dist/index.js",
@@ -42,10 +56,11 @@
       "types": "./dist/meter.d.ts",
       "default": "./dist/meter.js"
     },
-    "./package.json": "./package.json"
+    "./package.json": "./package.json",
+    "./catalog.json": "./dist/catalog.json"
   },
   "bin": {
-    "plinkfx": "./dist/cli.js"
+    "plinkfx": "dist/cli.js"
   },
   "files": [
     "dist",
