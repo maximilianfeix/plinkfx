@@ -34,17 +34,25 @@ export default def("jump", {
     layers: [{ wave: "triangle", freq: 520, to: 900, a: 0.002, h: 0.02, d: 0.08, shape: 2 }],
   }],
   land: ["Landing on solid ground", {
+    vary: 1, varyF: 3, varyG: 1,
     layers: [
-      { wave: "sine", freq: 130, to: 50, curve: 2, a: 0.001, d: 0.14, shape: 2.5, drive: 1 },
-      { wave: "pink", lp: 1000, lpTo: 300, a: 0.001, d: 0.1, shape: 3, drive: 1, gain: 0.8 },
-      { wave: "noise", bp: 1200, q: 0.8, a: 0.001, d: 0.015, shape: 3, gain: 0.3 },
+      { wave: "pink", lp: 1200, lpTo: 350, a: 0.001, d: 0.16, shape: -3, drive: 3 },
+      { wave: "noise", bp: 1800, q: 1.2, at: 0.006, a: 0.001, d: 0.05, shape: -4, drive: 1, gain: 0.3 },
+      { wave: "noise", bp: 260, q: 2, a: 0.001, d: 0.1, shape: -4, drive: 1, gain: 0.8 },
+      { wave: "sine", freq: 150, to: 75, a: 0.001, d: 0.14, shape: -4, drive: 1, gain: 0.6 },
+      { wave: "brown", lp: 250, a: 0.002, d: 0.2, shape: -4, gain: 0.3 },
     ],
   }],
   "land-heavy": ["Heavy landing with a thud", {
+    vary: 0.8, varyF: 3, varyG: 1,
+    verb: [0.2, 0.1],
     layers: [
-      { wave: "sine", freq: 90, to: 34, curve: 2, a: 0.001, d: 0.3, shape: 2, drive: 1.5 },
-      { wave: "brown", lp: 700, lpTo: 200, a: 0.001, d: 0.25, shape: 2.5, gain: 0.8 },
-      { wave: "noise", bp: 1600, q: 0.8, a: 0.001, d: 0.04, shape: 3, gain: 0.35 },
+      { wave: "noise", bp: 1500, q: 0.8, a: 0.001, d: 0.012, shape: -6, gain: 0.4 },
+      { wave: "pink", lp: 900, lpTo: 250, a: 0.001, d: 0.2, shape: -4, drive: 2 },
+      { wave: "noise", bp: 320, q: 2, a: 0.001, d: 0.16, shape: -4, drive: 1, gain: 1 },
+      { wave: "sine", freq: 110, to: 55, a: 0.001, d: 0.3, shape: -5, drive: 1, gain: 0.3 },
+      ...[0.035, 0.07, 0.11].map((at, i) => ({ wave: "noise" as const, bp: [1300, 900, 1700][i], q: 3, at, a: 0.001, d: 0.02, shape: -5, gain: 0.3 - i * 0.06 })),
+      { wave: "brown", lp: 300, a: 0.002, d: 0.35, shape: -4, gain: 0.35 },
     ],
   }],
   spring: ["Spring or trampoline boing", {

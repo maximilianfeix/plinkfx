@@ -27,7 +27,7 @@ sound like a loop.
 <details>
 <summary>More ways to play: options, game setup, tree-shaking, your own sound</summary>
 
-**By name** (every sound included, 23.0 kB gzipped):
+**By name** (every sound included, 23.8 kB gzipped):
 
 ```js
 import { play, volume, muted } from "plinkfx";
@@ -315,7 +315,7 @@ sfxr (DrPetter, 2007) started this genre, and these are the tools most people re
 | | **plinkfx** | [ZzFX](https://github.com/KilledByAPixel/ZzFX) | [jsfxr](https://github.com/chr15m/jsfxr) | [Kenney audio packs](https://kenney.nl/assets/category:Audio) |
 |---|---|---|---|---|
 | What it is | named sound library as code | tiny synth + designer | sfxr port: generator + library | WAV/OGG asset packs |
-| Size (gzip) | 3.1 kB player, 23.0 kB with all sounds | ~1.3 kB | ~6.3 kB | no code, files |
+| Size (gzip) | 3.1 kB player, 23.8 kB with all sounds | ~1.3 kB | ~6.3 kB | no code, files |
 | Licence | CC0 sounds, MIT code | MIT | Unlicense | CC0 |
 | Named sounds | <!-- count -->274<!-- /count --> | 4 examples, random generators | random generators per category | many, generic file names |
 | Matched loudness | yes, measured in tests | no | no | not stated |

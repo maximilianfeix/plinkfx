@@ -64,12 +64,13 @@ export default def("nature", {
     ],
   }],
   "stone-drop": ["Pebble drops and bounces once", {
-    vary: 1.5,
-    varyF: 2,
+    vary: 1.5, varyF: 2, varyG: 1.5,
     layers: [
-      { wave: "noise", bp: 2500, a: 0.001, d: 0.006, shape: -5, gain: 0.7 },
-      { wave: "modal", freq: 1100, modes: [1, 2.6, 4.9, 7.3], a: 0.001, d: 0.12, shape: -5 },
+      { wave: "noise", bp: 2500, a: 0.001, d: 0.006, shape: -5, gain: 0.4 },
+      { wave: "pink", bp: 700, q: 1.5, a: 0.001, d: 0.03, shape: -6, gain: 0.5 },
+      { wave: "modal", freq: 1100, modes: [1, 2.6, 4.9, 7.3], a: 0.001, d: 0.15, shape: -4, drive: 1 },
       { wave: "noise", bp: 2800, at: 0.16, a: 0.001, d: 0.005, shape: -5, gain: 0.4 },
+      { wave: "pink", bp: 750, q: 1.5, at: 0.16, a: 0.001, d: 0.02, shape: -6, gain: 0.3 },
       { wave: "modal", freq: 1150, modes: [1, 2.6, 4.9, 7.3], at: 0.16, a: 0.001, d: 0.08, shape: -5, gain: 0.5 },
     ],
   }],

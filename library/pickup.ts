@@ -24,15 +24,12 @@ export default def("pickup", {
     ],
   }],
   "coin-bag": ["A handful of coins, a small payout", {
+    vary: 0.6, varyG: 3,
     verb: [0.25, 0.15],
     layers: [
-      { wave: "sine", freq: 2637, fm: [2.76, 2.5, 0.03], a: 0.001, d: 0.14, shape: 3, gain: 0.7 },
-      { wave: "sine", freq: 3136, fm: [2.76, 2.5, 0.03], at: 0.055, a: 0.001, d: 0.16, shape: 3, gain: 0.65 },
-      { wave: "sine", freq: 2794, fm: [2.76, 2.5, 0.03], at: 0.1, a: 0.001, d: 0.18, shape: 3, gain: 0.6 },
-      { wave: "sine", freq: 3520, fm: [2.76, 2.5, 0.03], at: 0.16, a: 0.001, d: 0.2, shape: 3, gain: 0.55 },
-      { wave: "sine", freq: 2960, fm: [2.76, 2.5, 0.03], at: 0.2, a: 0.001, d: 0.22, shape: 3, gain: 0.5 },
-      { wave: "sine", freq: 3322, fm: [2.76, 2.5, 0.03], at: 0.27, a: 0.001, d: 0.24, shape: 3, gain: 0.45 },
-      { wave: "noise", hp: 5000, a: 0.001, d: 0.3, shape: 3, gain: 0.08 },
+      ...[0, 0.05, 0.09, 0.15, 0.19, 0.26].map((at, i) => ({ wave: "modal" as const, freq: [2600, 3100, 2800, 3500, 2950, 3300][i], modes: [1, 1.73, 2.33, 3.91], at, a: 0.001, d: [0.16, 0.18, 0.2, 0.22, 0.24, 0.26][i], shape: -5, gain: 0.8 - i * 0.06 })),
+      { wave: "pink", bp: 1500, q: 1, a: 0.01, d: 0.3, shape: -4, gain: 0.3 },
+      { wave: "pink", lp: 600, a: 0.002, d: 0.06, shape: -5, drive: 1, gain: 0.5 },
     ],
   }],
   gem: ["Glassy bell for gems and crystals", {
@@ -65,8 +62,9 @@ export default def("pickup", {
   key: ["Key pickup: metal jingle and a chime", {
     verb: [0.3, 0.15],
     layers: [
-      { wave: "metal", freq: 1400, hp: 4000, a: 0.001, d: 0.09, shape: 3, gain: 0.45 },
-      { wave: "metal", freq: 1650, hp: 4000, at: 0.06, a: 0.001, d: 0.12, shape: 3, gain: 0.35 },
+      { wave: "modal", freq: 2400, modes: [1, 2.76, 5.4], a: 0.001, d: 0.09, shape: -5, gain: 0.45 },
+      { wave: "modal", freq: 2850, modes: [1, 2.76, 5.4], at: 0.06, a: 0.001, d: 0.12, shape: -5, gain: 0.35 },
+      { wave: "noise", hp: 4000, lp: 10000, a: 0.001, d: 0.01, shape: -6, gain: 0.2 },
       { wave: "triangle", freq: 1319, arp: [0, 7, 12], arpRate: 0.06, at: 0.04, a: 0.002, d: 0.3, shape: 2.5, gain: 0.7 },
     ],
   }],

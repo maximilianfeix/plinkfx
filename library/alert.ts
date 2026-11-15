@@ -21,14 +21,14 @@ export default def("alert", {
     ],
   }],
   heartbeat: ["Heartbeat: lub-dub", {
-    vary: 0.3,
+    vary: 0.3, varyG: 1,
     layers: [
       { wave: "sine", freq: 70, to: 45, a: 0.004, d: 0.12, shape: 2, drive: 0.5 },
+      { wave: "pink", bp: 380, q: 1.2, a: 0.003, d: 0.05, shape: -5, drive: 2, gain: 0.8 },
       { wave: "triangle", freq: 140, to: 90, a: 0.004, d: 0.07, shape: 2.5, gain: 0.35 },
-      { wave: "pink", lp: 450, a: 0.003, d: 0.05, shape: 3, drive: 1, gain: 0.5 },
       { wave: "sine", freq: 60, to: 40, at: 0.2, a: 0.004, d: 0.14, shape: 2, gain: 0.7 },
+      { wave: "pink", bp: 320, q: 1.2, at: 0.2, a: 0.003, d: 0.06, shape: -5, drive: 2, gain: 0.55 },
       { wave: "triangle", freq: 120, to: 80, at: 0.2, a: 0.004, d: 0.08, shape: 2.5, gain: 0.25 },
-      { wave: "pink", lp: 400, at: 0.2, a: 0.003, d: 0.05, shape: 3, drive: 1, gain: 0.35 },
     ],
   }],
   countdown: ["Countdown tick: 3, 2, 1", {

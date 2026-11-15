@@ -82,19 +82,27 @@ export default def("world", {
     ],
   }],
   "glass-break": ["Glass shatters", {
+    vary: 0.8, varyF: 2, varyG: 3,
     verb: [0.35, 0.2],
     layers: [
-      { wave: "noise", hp: 3000, a: 0.001, d: 0.15, shape: 3 },
-      { wave: "noise", bp: 1500, q: 0.8, a: 0.001, d: 0.05, shape: 3, drive: 1, gain: 0.6 },
-      { wave: "metal", freq: 2200, hp: 5000, a: 0.001, d: 0.35, shape: 3, gain: 0.5 },
-      ...[0.05, 0.09, 0.14, 0.2, 0.27, 0.33].map((at, i) => ({ wave: "sine" as const, freq: [3800, 4600, 5200, 4100, 6000, 4800][i], at, a: 0.001, d: 0.06, shape: 3, gain: 0.35 })),
+      { wave: "noise", hp: 2500, lp: 11000, a: 0.001, d: 0.03, shape: -6 },
+      { wave: "noise", bp: 1800, q: 0.8, a: 0.001, d: 0.03, shape: -6, drive: 1, gain: 0.6 },
+      { wave: "noise", bp: 600, q: 1.5, a: 0.001, d: 0.04, shape: -5, gain: 0.3 },
+      ...[0.01, 0.04, 0.07, 0.11, 0.16, 0.22, 0.3].map((at, i) => ({ wave: "modal" as const, freq: [2900, 3700, 4400, 3300, 5200, 4100, 6100][i], modes: [1, 1.59, 2.14, 2.65], at, a: 0.001, d: [0.15, 0.12, 0.1, 0.13, 0.09, 0.11, 0.08][i], shape: -5, gain: 0.5 - i * 0.04 })),
+      { wave: "noise", hp: 4000, lp: 11000, a: 0.002, d: 0.35, shape: -4, gain: 0.25 },
     ],
   }],
   thud: ["Generic body or crate falling", {
+    vary: 0.8, varyF: 2, varyG: 1,
     layers: [
-      { wave: "sine", freq: 110, to: 45, a: 0.001, d: 0.18, shape: 2, drive: 1 },
-      { wave: "brown", lp: 600, a: 0.001, d: 0.15, gain: 0.8 },
-      { wave: "noise", bp: 1000, a: 0.001, d: 0.03, gain: 0.3 },
+      { wave: "noise", bp: 1200, q: 1, a: 0.001, d: 0.008, shape: -6, gain: 0.3 },
+      { wave: "pink", lp: 900, lpTo: 250, a: 0.001, d: 0.18, shape: -3, drive: 3 },
+      { wave: "modal", freq: 140, modes: [1, 2.32, 4.25, 6.63], a: 0.001, d: 0.25, shape: -4, drive: 1, gain: 0.9 },
+      { wave: "noise", bp: 380, q: 3, a: 0.001, d: 0.1, shape: -4, drive: 1, gain: 0.9 },
+      { wave: "sine", freq: 90, to: 50, a: 0.001, d: 0.18, shape: -4, drive: 1, gain: 0.5 },
+      // the crate bounces once
+      { wave: "pink", lp: 1100, lpTo: 300, at: 0.09, a: 0.001, d: 0.06, shape: -5, drive: 2, gain: 0.45 },
+      { wave: "modal", freq: 150, modes: [1, 2.32, 4.25, 6.63], at: 0.09, a: 0.001, d: 0.12, shape: -5, gain: 0.4 },
     ],
   }],
   toss: ["Throw something", {

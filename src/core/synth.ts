@@ -137,7 +137,8 @@ const layer = (L: Layer, out: Float32Array, sr: number, pitch: number, stretch: 
         s = 0;
         for (let j = 0; j < 6; j++) {
           ph[j] = (ph[j] + dt * METAL[j]) % 1;
-          s += ph[j] < 0.5 ? 1 : -1;
+          // Band-limited (PolyBLEP) squares: naive ones fold back into fizzy, inharmonic hash.
+          s += (ph[j] < 0.5 ? 1 : -1) + blep(ph[j], dt * METAL[j]) - blep((ph[j] + 0.5) % 1, dt * METAL[j]);
         }
         s /= 6;
         break;

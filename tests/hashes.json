@@ -1,9 +1,9 @@
 {
  "click": [
-  "a54161d781482c98",
-  "5259e4500e6aa64b",
-  "178ff7d08c79563d",
-  "804b307591600a10"
+  "3cc47485e986028d",
+  "8f75fe1e836e26f6",
+  "f13b130047118e83",
+  "336a6dc8d8227e03"
  ],
  "click-soft": [
   "40d0ad5f6cb568bc",
@@ -90,16 +90,16 @@
   "676c7595bbeb2b2e"
  ],
  "type": [
-  "3fd50e278652b1dd",
-  "30b796892e2f50d5",
-  "d6eb1e88fb91b759",
-  "bcce1d664863a2e5"
+  "85eeb4278b3c18b3",
+  "9a5ef4c83248ffe9",
+  "e190d5fd575cc449",
+  "d8175c7bfff76a93"
  ],
  "tick": [
-  "257b1c325b93b0e6",
-  "15873ebaaa5791a5",
-  "493ea79cb1e544f1",
-  "0fe6659d1fea9587"
+  "50ed8ba4acdf1eb5",
+  "d914746f7be43719",
+  "851c7fcdc450f727",
+  "3fdbea71c779b858"
  ],
  "menu-open": [
   "f6a76966cbc537a0",
@@ -210,10 +210,10 @@
   "0a56c9a6c43b7803"
  ],
  "coin-bag": [
-  "28acd0b97810fdef",
-  "6c67e4f744260e61",
-  "eb682c04fc4c086b",
-  "31449e377581c27d"
+  "0a205ebb8955ae82",
+  "64a6c9fb09354a4c",
+  "adec5175ce8e101a",
+  "6d95cfb4d6c2f55f"
  ],
  "gem": [
   "2652a5bd1f44621a",
@@ -240,10 +240,10 @@
   "e909bbf326659d09"
  ],
  "key": [
-  "6d7fce16836e12fb",
-  "d2e077ac381aedc2",
-  "135ff85af3689c8b",
-  "dc85a9d6744a386e"
+  "e19d6b1ec8de9eac",
+  "5edc1b66a9905778",
+  "ca08229973460211",
+  "7d045920733ab23d"
  ],
  "heart": [
   "bef5c3835924e18f",
@@ -252,16 +252,16 @@
   "a964cab933d263e9"
  ],
  "ammo": [
-  "8238823348ff3948",
-  "1ba6a395630d035f",
-  "ae5d3ead3a0a09ad",
-  "d0d95e9e21d28578"
+  "11d2d7dede2558b2",
+  "df54535332a3f6f8",
+  "5c2323947b15fc05",
+  "ea55edc1b2c69efe"
  ],
  "ka-ching": [
-  "f84752a97dcd5748",
-  "d22948aa434a52be",
-  "15465f790a099757",
-  "22b051729beffd14"
+  "4fd4a67d1b0367e9",
+  "fcfda7137afffb12",
+  "6e339578a65bddc8",
+  "ae4e0f9b3958b829"
  ],
  "xp-orb": [
   "a8c1b149f650d851",
@@ -294,16 +294,16 @@
   "6e2ee4eaa4225bca"
  ],
  "loot-rare": [
-  "a3458da134e6d63f",
-  "1a56c5234917776c",
-  "134a27d7115525b5",
-  "d27df544bc105f2e"
+  "9cbe251f10611bf9",
+  "50ae37e378d40844",
+  "252c2fdde141280b",
+  "d6954eeb17534d6e"
  ],
  "equip": [
-  "77b75be0d8cce028",
-  "c9756dd69c93761a",
-  "8581b016937160f6",
-  "08b28e4462ebad57"
+  "f4cadfd9dfd789fc",
+  "01c2a50aae44fef4",
+  "d5250854ebb4bafe",
+  "53c302b28f7e26e4"
  ],
  "jump": [
   "e018f3d9b39c9356",
@@ -342,16 +342,16 @@
   "92ca4707d4d0ed30"
  ],
  "land": [
-  "19758da39fba17b9",
-  "37430b4c2449b8cc",
-  "2a08fbe66bd61239",
-  "c244944762a1f513"
+  "a245bd8639bec651",
+  "d9c375b5823988e5",
+  "1b935327b1bf81dd",
+  "d43cf0144b0bc14f"
  ],
  "land-heavy": [
-  "3b8908e0b53cc3da",
-  "11f90925095b7034",
-  "ee5879a3b1acc9eb",
-  "7e22884f8726e752"
+  "d762400312553802",
+  "f5113ee31cc0134a",
+  "24a4394d91ace247",
+  "77ea3fa3fd261c4d"
  ],
  "spring": [
   "563fdbe857b45c1e",
@@ -384,16 +384,16 @@
   "fbaa2a3fc4426349"
  ],
  "hit-light": [
-  "4ac54f385376baa2",
-  "f7fb7c32d8dc8d92",
-  "7d02bcd1d00b48cb",
-  "01c506375cd0337d"
+  "87e0e87f3889052c",
+  "653a878e9898d24f",
+  "32e16d82205b6920",
+  "16fe0f5fc077753b"
  ],
  "hit-heavy": [
-  "c6fc07d25e0fcbd0",
-  "a7e39a9ec7a9edfa",
-  "666d38b3652af1ef",
-  "06861b1c01a3a2a7"
+  "c43d196e8b095b89",
+  "fb8ec0991c04900f",
+  "1aace6a7ac66a717",
+  "ebcea37e42d54daa"
  ],
  "punch": [
   "39abaa0550222bcb",
@@ -414,10 +414,10 @@
   "0351f86470997681"
  ],
  "enemy-hit": [
-  "c9e6104b0b2b9f6a",
-  "15e3654165060952",
-  "317b4f04ae32e98e",
-  "444e562a176faf7e"
+  "9035e55e33138af1",
+  "d16d9cb337043ee9",
+  "a12f858163ec6972",
+  "6f7ca5985ba726df"
  ],
  "enemy-die": [
   "a2c5f07d68aad75b",
@@ -426,22 +426,22 @@
   "195512c99b8db626"
  ],
  "sword-hit": [
-  "781719a5d7162422",
-  "289e4a651c70f29b",
-  "b416cb5b041426df",
-  "4aab996749d9cd01"
+  "c704a320320e4f7e",
+  "4d7c24c857bac9bc",
+  "6e56cb860953a5cf",
+  "09a5d4aad08b9d00"
  ],
  "block": [
-  "7d8fc4f8a6f17b5b",
-  "9c53b0dde80c4008",
-  "ad5f4629c74849e2",
-  "28940080cfe8e72d"
+  "2df7e4546ae9140e",
+  "f84448d4a8ad60fe",
+  "85459b291b569832",
+  "bf1a322def789f9c"
  ],
  "crit": [
-  "9fcc5b42bf706ee1",
-  "405ef14cb6942e14",
-  "93cc3f7bab0d6778",
-  "9c2414f3222d8633"
+  "e79251c1ad0ae3df",
+  "6d4942993c5b38f7",
+  "21f60274805c01eb",
+  "7bcab27b003c7dfa"
  ],
  "squish": [
   "77d527f47a8d785d",
@@ -462,10 +462,10 @@
   "ff4eb411676f437e"
  ],
  "arrow-hit": [
-  "d69cd3018060cee2",
-  "81726f18fe3a1afd",
-  "c89db1248baebd05",
-  "1950bd6d38691fc4"
+  "5a2eb23c7a6af8c3",
+  "bc89096bcb47d553",
+  "292acf537e67b9d1",
+  "43024c47a3f45ed8"
  ],
  "kick": [
   "0c4a9afb2ff99f06",
@@ -480,16 +480,16 @@
   "654559393f7ba89d"
  ],
  "sword-clash": [
-  "2c8a4c736a52f53a",
-  "e11c25798b7f2656",
-  "a5471388511041cb",
-  "bf734d528c71bee5"
+  "b4e2903b7b9a2534",
+  "065dd046b7b9a772",
+  "fe873815ac9f2f19",
+  "20ac1a3edd85d503"
  ],
  "sword-draw": [
-  "0c912ddf0e68fff2",
-  "35dcda57092a6a5d",
-  "a6e81f660e0983cb",
-  "b3d922a54ad5ae85"
+  "ce76abee78e8cc74",
+  "0b6ea5989a980d1e",
+  "3c4854157d82f35a",
+  "fd5dd85e799b62a4"
  ],
  "body-fall": [
   "3d654cf7ea218c45",
@@ -498,10 +498,10 @@
   "c960d5ae98457308"
  ],
  "explosion": [
-  "d4119836dd1c7556",
-  "800c2df320fe9089",
-  "7e5616dcd5fa6aae",
-  "39b6b6c6831a93f8"
+  "e7463db002e84fe1",
+  "e76ceaab3cb9b304",
+  "640d8cd88525480c",
+  "79a8ce8e1a31f830"
  ],
  "explosion-small": [
   "649be0e370258a2f",
@@ -552,10 +552,10 @@
   "d276a3ac40f911dd"
  ],
  "bomb-fuse": [
-  "15dc07dd9c2b0729",
-  "5eb15f16da95d2ff",
-  "2cc32b08010ad2ae",
-  "3adc5ac2faece06f"
+  "6c8c325e958fb24d",
+  "9cb0e65513d1ee36",
+  "cc1c3419c3c4fdae",
+  "66ca8d9b8f1752ce"
  ],
  "powerup": [
   "24aa44b9fa9a0847",
@@ -618,10 +618,10 @@
   "47cd2386691bc513"
  ],
  "unlock": [
-  "62298453feb98489",
-  "4583146096ccd94d",
-  "e612b58e30ea78e4",
-  "a1182582ade383bb"
+  "fb9aa8e72f86c865",
+  "0e5053b84cde6b74",
+  "1a3d7f134010f72b",
+  "f7b9e22ced2239e8"
  ],
  "invincible": [
   "da8285729c7cc656",
@@ -630,10 +630,10 @@
   "c941104296025219"
  ],
  "laser": [
-  "7336920143f7eb0c",
-  "d0ff5f8e4414a7c0",
-  "9c7a0e0049f1d29e",
-  "634b751c6ebe7c25"
+  "cc62ab864a257d25",
+  "722c74c866746081",
+  "5da07de71893c4ff",
+  "2a65287b0681d85c"
  ],
  "laser-soft": [
   "0d92a089ad109d5d",
@@ -654,22 +654,22 @@
   "e4235ecaed195383"
  ],
  "zap": [
-  "b99161544e0def95",
-  "f21b860324635946",
-  "2d6d4f4cd2e590dc",
-  "f5c2fd2d21011cfd"
+  "97f53e21e320bbb3",
+  "ee2383076bed5bdc",
+  "d20057b065c0feeb",
+  "6ce2dc8bacecbc14"
  ],
  "pew": [
-  "e2c515dd9d2c9884",
-  "cdc347b6cc29b092",
-  "bfa2d4ebd35563ce",
-  "8426159187b486ef"
+  "8b2d26f52ed328de",
+  "e76508f95fb6741d",
+  "e7461adf36303270",
+  "5b7718fe4f7546ff"
  ],
  "gunshot": [
-  "f92276a0207bd7d8",
-  "96b848a962c26b9a",
-  "a43c416917f47cf6",
-  "8b3ab494bd8bf851"
+  "33bde00348f185db",
+  "498b8aeb7e07bc16",
+  "732d148657a0db2d",
+  "afe1f294ec26d911"
  ],
  "shotgun": [
   "d5dddea0ceac084a",
@@ -708,22 +708,22 @@
   "c1ea6b9ec8a47c0b"
  ],
  "ricochet": [
-  "27c34d1aa6833cdf",
-  "0a9016119338a4d1",
-  "ce63350ff4e46701",
-  "f2e344e3517d168d"
+  "1cc6a2f49b7aae95",
+  "c6accd64ed857c46",
+  "ad5b8bc5ae6d0ca0",
+  "66908f621d8931da"
  ],
  "dry-fire": [
-  "42724cde7f1eda9c",
-  "da448bc89373243f",
-  "4c94cab863dc29dd",
-  "18dc38bcd88e269e"
+  "f7eff8d4d8a2c533",
+  "5124932a4e48caff",
+  "53d6c19611942384",
+  "852b0f35d1bc2c67"
  ],
  "reload": [
-  "2e699ecef7ba0c6d",
-  "22d55a37f44bdb28",
-  "52d6faefd4d8d15b",
-  "1fd35d6f818fa1b5"
+  "17a107acf9ca9d63",
+  "2ff2f652ecd2a1bf",
+  "f826da6ec13542a1",
+  "52564d992b4da19f"
  ],
  "bow-twang": [
   "ea0e4aed8552f4a2",
@@ -768,16 +768,16 @@
   "936bd19059d1a649"
  ],
  "step-wood": [
-  "3854b5917dcd07d3",
-  "afdc6a417e5347af",
-  "3dfc8b46c8d9a595",
-  "4e485a1ce7ca845c"
+  "173153b96dce3b1a",
+  "179b51b34364705c",
+  "09077cfa8bd393a1",
+  "44f98384aa218fe3"
  ],
  "step-metal": [
-  "15418cc2da2c2a62",
-  "43905243d06155a9",
-  "39295abad6693d85",
-  "19112c6bb27587f8"
+  "37512be6ffe457c3",
+  "b38f567ccc115d18",
+  "33de47e16bef7fe7",
+  "962cf3adb902a9d8"
  ],
  "step-snow": [
   "ff4e5ffb4a46dca3",
@@ -804,16 +804,16 @@
   "18b0a7e2c18d1485"
  ],
  "step-retro": [
-  "16839d81f8ed959b",
-  "0305c5094fd0361e",
-  "08e209e4b517be59",
-  "6a6a61cfe9d95f70"
+  "87903d6d5474b900",
+  "ba85a22e93cb11b1",
+  "28bcdc2392738ff5",
+  "7546a44e6130d2fc"
  ],
  "step-heavy": [
-  "500b4947113bf61b",
-  "6463d0190bd64a71",
-  "5a6fc912dad625ca",
-  "104e14a63e2621c6"
+  "20c7fffb8319a760",
+  "fe5f3ca3b737fd95",
+  "0191814993862493",
+  "8c84031b520c2bd6"
  ],
  "step-carpet": [
   "dc749434348eca5a",
@@ -828,10 +828,10 @@
   "a872e19931f91c96"
  ],
  "sparkle": [
-  "71ecc4a5d9b958b1",
-  "b92d0c33c669746e",
-  "7fe0057be0071da2",
-  "15b10eeffc30ebf4"
+  "8a8f2d10a9563b5a",
+  "798f09096d51441a",
+  "36d151685dda0ff4",
+  "05cd0651d99980af"
  ],
  "spell-cast": [
   "1edc0df7087e5bfa",
@@ -846,10 +846,10 @@
   "3da9dfd5d9f8682b"
  ],
  "ice": [
-  "de7bbe8fece78c9c",
-  "8de62a5957f1952a",
-  "fb3e00673a38fad6",
-  "241c3dfcbde365f9"
+  "3d15591202e244ab",
+  "b163f5a0dce0c32a",
+  "f12f23300f5e9f54",
+  "0ade2ade104f5419"
  ],
  "teleport": [
   "3d08c8c09e6182cd",
@@ -870,10 +870,10 @@
   "7ef0f05b2626a09e"
  ],
  "curse": [
-  "b79d0a4f80608bbf",
-  "cf11c01525791233",
-  "94ce263f0e7b353b",
-  "4943ad4f8ab1f9d0"
+  "6bbab14c6c50cabf",
+  "d9995a2c22112e13",
+  "a0c7c03e0ebef7d9",
+  "f7ea273dbc89351b"
  ],
  "enchant": [
   "feff4f614b2fea1c",
@@ -930,10 +930,10 @@
   "f17e6bd3be779e1b"
  ],
  "heartbeat": [
-  "2bfcaacb873d5941",
-  "6a015645b74a511c",
-  "788ff85bedd7c9f8",
-  "10e408aba3e080aa"
+  "71260351c0f6b600",
+  "e64c05adc180509f",
+  "248998309c8646ca",
+  "54d1c4219b6fd87d"
  ],
  "countdown": [
   "3d3e0cce6d46b4da",
@@ -978,10 +978,10 @@
   "08be0916e5ba5623"
  ],
  "timer-done": [
-  "e9b76d2f00fe8f49",
-  "ec3f401b7671a882",
-  "bce2c01e64ae94cc",
-  "2d90890195cc7fc0"
+  "0d615947afbf224f",
+  "e9c70ae1841bd27c",
+  "27aa560b80c821c4",
+  "826fdaa5d41a3050"
  ],
  "victory": [
   "3158f40dc2a86112",
@@ -1014,10 +1014,10 @@
   "f4bc2694905b7de9"
  ],
  "achievement": [
-  "60214a650dc1b78f",
-  "c1dd590f2452fd3b",
-  "f6b8fc65f9a9c31a",
-  "3c0a5258fe035791"
+  "b1ad5a01f6a866e0",
+  "6519cfaa9c2af3fd",
+  "24e331e63e87c69f",
+  "43410ce0b0b1e89b"
  ],
  "puzzle-solved": [
   "f9b28954e176cfde",
@@ -1050,64 +1050,64 @@
   "2700a42a4ea2c5d5"
  ],
  "door-open": [
-  "b045a27e0137b6a4",
-  "b48f2f0ffdf62fda",
-  "e0cb9785392a67c8",
-  "2029e8e438e61e2e"
+  "1d80b2712418102a",
+  "3f7712a52dfbe005",
+  "8dbd45fe12af5794",
+  "bbd36bada4aa8081"
  ],
  "door-close": [
-  "dec14696a7bf2f20",
-  "9dcde066992c56bd",
-  "44c0de7c683352e8",
-  "11c39e9a4f85eff4"
+  "e6f2c9d0f20f0eff",
+  "7e37697952b81464",
+  "0abe057bea7eaa3b",
+  "535fc42a8a3acdd7"
  ],
  "door-heavy": [
-  "d6ac0c2787353bd1",
-  "99786d1dfc4b8f06",
-  "cee7c8a0d3a334a5",
-  "eddad5b09edeec56"
+  "504d4522b97c25a8",
+  "5f7add46bffdf1a6",
+  "d4a99cfb04b9fcd1",
+  "e57c09637665da25"
  ],
  "lock-open": [
-  "f2d3d5591b6decd1",
-  "eacf2deda4da0156",
-  "85fa80e850ce2aca",
-  "b33f6a2bce02bdfb"
+  "b030f8bf675eb30e",
+  "4fc4ff4865b8d5df",
+  "34885f6c0c68a39a",
+  "9ad4d4391d357b65"
  ],
  "locked": [
-  "328c9c42f3536a68",
-  "e0a7ab28b23888e0",
-  "9387374bae7f621f",
-  "cbbc3096c6fbb5fd"
+  "f2ea8882ebc57f8e",
+  "40d3518d1c0017b1",
+  "6cde20d7e0b29354",
+  "070e5724c149e98b"
  ],
  "chest-open": [
-  "7ed44a373642cbf2",
-  "de1e9b06640e3403",
-  "6ad00f7342b42cd8",
-  "4a7cd7c030de997f"
+  "12c0fadebb4e0042",
+  "9020a00d4c4e3382",
+  "b8b84c0ea962a998",
+  "f9bf349859892eb6"
  ],
  "lever": [
-  "ddb4a93d371f005a",
-  "fb7ec9ef1d853d09",
-  "17dfc75b86aa1bed",
-  "b75f6a3fe1b8c705"
+  "7f296a8a062d6521",
+  "d855dc53dc532534",
+  "a56ab6c4b92f4f8a",
+  "d0f9a96831c79d45"
  ],
  "button": [
-  "d9f89ca399fb2669",
-  "94fca1f3ae9755b8",
-  "78b828c1f3741e68",
-  "87e32b1ec37a99cb"
+  "53432b8537ca2de0",
+  "b2cc7e8aadd0ac4f",
+  "d149c58158a30caf",
+  "def75037a93a982f"
  ],
  "ratchet": [
-  "a2c62b2d9772737e",
-  "70f9edb32dc0915c",
-  "717f62a227aa0cf5",
-  "fd0ee977a34d9a4f"
+  "2020cbb3257d3a7b",
+  "a415b63d12ed0273",
+  "6339fe5e22baf5e8",
+  "f93481faffbcc54e"
  ],
  "machine": [
-  "938751434e921557",
-  "a0ac05318a90e7ee",
-  "d5065f905dd5b790",
-  "72c66852c8dcf8b9"
+  "3fc5e76b797695a6",
+  "f3b43d0b850d2c53",
+  "beecd06748aee26a",
+  "28a5eaaee6b821b0"
  ],
  "engine-idle": [
   "e0e7f2e0a525fbba",
@@ -1164,16 +1164,16 @@
   "138806084559d0ca"
  ],
  "glass-break": [
-  "1604779463db54b0",
-  "961a8e1953dbc80b",
-  "523e1650368469c4",
-  "d078340e61aa46d5"
+  "088d797e2674b933",
+  "ea164c32179eccad",
+  "df7046dc8a4ecb53",
+  "7341e85c88c4aa6a"
  ],
  "thud": [
-  "27e33c88180e7ca6",
-  "060841b773d3db1b",
-  "3f0fe45c2baf84e1",
-  "292aa4efdeac57e5"
+  "58475839bb37f325",
+  "8955ced2c8ba1e0a",
+  "4413b031342130e7",
+  "db1c7b3a9d7cf188"
  ],
  "toss": [
   "e26145c70968f2a2",
@@ -1200,10 +1200,10 @@
   "449f0804b7d94ca9"
  ],
  "metal-clang": [
-  "30efae74cb643713",
-  "f9e216cc808f320e",
-  "abfdd22a807e45fc",
-  "4512f553e077777e"
+  "ce78375f9593376b",
+  "fc1471cb10a35620",
+  "4b3ee16cf907578d",
+  "2d023f9523188d71"
  ],
  "rock-crumble": [
   "8efbfc11ab5bb92f",
@@ -1338,10 +1338,10 @@
   "31942104b803a9a5"
  ],
  "stone-drop": [
-  "c464adf9b3c95200",
-  "4713b5704e29f264",
-  "e5990c6fa8d6ebd9",
-  "db02c6f4e1733821"
+  "9b26a40c164d7639",
+  "4b150f7c35268acc",
+  "fc303531b0be149f",
+  "209cf14197ef128d"
  ],
  "thunder-crack": [
   "d9b3bd33e840b647",
@@ -1368,16 +1368,16 @@
   "0d68b7b99a1d9464"
  ],
  "card-flip": [
-  "cf997a337fbe8f47",
-  "eeafe64db6c95f25",
-  "44dc8f1fceec5368",
-  "b28158af47a60e2b"
+  "3e26a4415da8a7e8",
+  "7f9634f54334c24e",
+  "c40d88a3de959ef2",
+  "045844fa3bd76fe0"
  ],
  "card-deal": [
-  "3d46d83b0283b4fa",
-  "7e4d19ce4644ffc5",
-  "82b85d6658169965",
-  "846a946a5ffa6a02"
+  "4a1df8512e6404e2",
+  "cc7bb07c0f410aa1",
+  "ec2a321d4c689aea",
+  "bb0bd8a384a2255b"
  ],
  "card-place": [
   "a061f06fd47361da",
@@ -1416,10 +1416,10 @@
   "410461d9bc30e812"
  ],
  "jackpot": [
-  "a6861c5e63f4a76e",
-  "c440e3e3167ced54",
-  "ee428c88fc89a518",
-  "bd6b2e42adeb9612"
+  "127f0edaa9f5f1e0",
+  "38af7829527456f8",
+  "3d031019eec7e408",
+  "d2d4282b3427a80a"
  ],
  "engine-start": [
   "ec95418efe9e8456",
@@ -1440,10 +1440,10 @@
   "b08b197e8e77f8d7"
  ],
  "car-crash": [
-  "fd1aedd4f8701e7b",
-  "6f11d1dc05952b62",
-  "167d9b81f45cf84a",
-  "bd4d68f2e006f1c4"
+  "18f35f643534f8cc",
+  "5508a5cc23bd8e2f",
+  "1dd988873d28e5b2",
+  "a23d810f3befa9ba"
  ],
  "car-horn": [
   "9f162fc00c2d2249",
@@ -1482,16 +1482,16 @@
   "928766941eb2e03b"
  ],
  "horror-sting": [
-  "a9ed9d86112961bf",
-  "adfa5befa73d098f",
-  "bc6f48f8fcc87011",
-  "4b3054a22cb9b841"
+  "86940862dd797fd2",
+  "ab9f7180caa9c6b9",
+  "99acd357e6986847",
+  "2497aa85b1561ac6"
  ],
  "chains-rattle": [
-  "afa867a9d8a1a296",
-  "58fcdb060b39563d",
-  "b530b20e09c43df0",
-  "ce393563b3e6aa8c"
+  "b36acc8c0b598199",
+  "f5874a214c5a6973",
+  "c5fde3e8dcb4ffd3",
+  "7620fa0d05a70ea5"
  ],
  "static-burst": [
   "fc43a2eae50a89c5",
@@ -1518,10 +1518,10 @@
   "ed8e53206fcda6a4"
  ],
  "pickaxe-mine": [
-  "ad7312366c9be926",
-  "a0b842fe3a98d50e",
-  "44aebb91a3ee0f6c",
-  "2d1f41718971e7c4"
+  "6201d1374216f53d",
+  "44b74da6ca0933ab",
+  "cf6154e58557d502",
+  "ccb7f376770c5ba8"
  ],
  "dig": [
   "b9bec820d88511a0",
@@ -1614,10 +1614,10 @@
   "59abdfbdc19c3c79"
  ],
  "match": [
-  "e166210273fe2573",
-  "59ad5976fea3dcda",
-  "c7db14f2cd1d73f0",
-  "ad072a26c81c057e"
+  "c223b1c1f35c55df",
+  "00085860dd7f6701",
+  "0ce8eed7d9fdc520",
+  "ecd9b730253d5ddc"
  ],
  "combo-chain": [
   "2783917708751004",

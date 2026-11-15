@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.3.0 (2026-11-15)
 
 **274 sounds in 21 categories** (was 180 in 15), **a protective player, and loops.**
 
@@ -28,7 +28,7 @@
 - `muted(on?)`: mute everything and keep the volume. Not stored; the README has the `localStorage` one-liner.
 - `stopAll()` fades in 10 ms instead of cutting.
 - Gallery: loop sounds start on click and stop on the next click; hover and arrow keys don't start them.
-- Player: 3.1 kB gzip (was 2.9), everything 23.0 kB with all 274 sounds.
+- Player: 3.1 kB gzip (was 2.9), everything 23.8 kB with all 274 sounds.
 
 - CLI: `plinkfx mcp`, an MCP server on stdio with five tools: `list_sounds`, `show_sound`, `render_sound`,
   `measure_sound` and `check_sound`. No dependencies, no network.
@@ -39,6 +39,13 @@
 - CLI: `measure` warns about DC above 0.01 instead of 0.001. Short, lopsided transients went over the old
   limit without a real offset.
 - Skill: uses `check` and `--png`, and lists the checks and how to read the picture.
+- Sound quality: 32 sounds rebuilt after measuring all of them (render, phone-speaker simulation, aliasing,
+  near-duplicates). Landings, thuds and heavy steps get body resonances instead of sub sines, so they survive
+  phone speakers. Door creaks, sword hits, glass, keys and UI clicks sound less synthetic; coin-bag, level-up
+  and curse no longer sound like sparkle, achievement and portal.
+- Engine: the `metal` wave is band-limited (PolyBLEP), which removes the fizzy aliasing from 20 sounds.
+- Bake: the true-peak ceiling is checked at 48 kHz as well as 44.1 kHz.
+- Packaging: first npm release, absolute README links, a 60 kB tarball, `plinkfx/catalog.json`.
 
 ## 0.2.0 (2026-11-12)
 
