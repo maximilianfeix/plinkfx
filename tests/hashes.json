@@ -923,6 +923,18 @@
   "d5065f905dd5b790",
   "72c66852c8dcf8b9"
  ],
+ "engine-idle": [
+  "e0e7f2e0a525fbba",
+  "3a676f570b33e550",
+  "67b9707a444071dd",
+  "2428758a25e7aa00"
+ ],
+ "force-field": [
+  "b2344f951e055b8d",
+  "37354685f00fbfdd",
+  "94f33d7db05af231",
+  "80732eea76dd80e9"
+ ],
  "whoosh": [
   "13a52f8884c7fc69",
   "984127141e51d712",
@@ -1042,6 +1054,18 @@
   "f6c4a441064e15a3",
   "feec5020b80a21c7",
   "3552c809959b6c28"
+ ],
+ "rain-loop": [
+  "5b39d2f03daf8d6c",
+  "9a0bfa5e7967dee7",
+  "63da9ddb52185e31",
+  "9efe111d05889a0c"
+ ],
+ "wind-loop": [
+  "323cb039f0f23df5",
+  "0c9813483ed99d2d",
+  "afd99dcad47379cd",
+  "5ca2fd320296f43a"
  ],
  "thunder-far": [
   "87c9aaab933aa8e8",

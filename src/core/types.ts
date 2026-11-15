@@ -109,6 +109,12 @@ export interface Sound {
   limit?: number;
   /** Sample-rate reduction in Hz (sample and hold), e.g. 8000. */
   rate?: number;
+  /**
+   * Render a seamless loop instead of a one-shot: the last 0.5 s are cut (0.25 s of them crossfaded into the
+   * start), so the buffer wraps without a click. Give every layer a long hold (`h`), a short attack and a
+   * release (`d`) under 0.25 s. play() loops these by default.
+   */
+  loop?: boolean;
 }
 
 export interface RenderOptions {

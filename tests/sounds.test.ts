@@ -71,12 +71,34 @@ describe.each(library.map((e) => [e.name, e] as const))("%s", (name, e) => {
     }
   });
 
-  test("click-free edges", () => {
+  test.runIf(!sound.loop)("click-free edges", () => {
     for (const x of takes) {
       expect(Math.abs(x[0])).toBeLessThan(0.05);
       expect(Math.abs(x[x.length - 1])).toBeLessThan(0.001);
       expect(Number.isFinite(x.reduce((a, b) => a + b, 0))).toBe(true);
     }
+  });
+
+  // A loop wraps from its last sample to its first: that step must look like any other step in the
+  // sound (below its 99.9th percentile), and the level must not dip or swell across the crossfade.
+  test.runIf(!!sound.loop)("seamless loop: no click or level jump at the wrap", () => {
+    for (const sr of [SR, 48000])
+      for (let seed = 0; seed < TAKES; seed++) {
+        const x = sr == SR ? takes[seed] : render(sound, { sampleRate: sr, seed }),
+          n = x.length,
+          steps = Float32Array.from({ length: n - 1 }, (_, i) => Math.abs(x[i + 1] - x[i])).sort();
+        expect(n / sr).toBeCloseTo(3, 2);
+        expect(Math.abs(x[0] - x[n - 1]), `take ${seed} at ${sr} Hz`).toBeLessThan(steps[Math.floor(n * 0.999)]);
+        // RMS in 50 ms windows over two loops back to back: around the wrap within 3 dB of the median.
+        const W = Math.round(sr * 0.05),
+          two = new Float32Array(2 * n),
+          db: number[] = [];
+        two.set(x), two.set(x, n);
+        for (let i = 0; i + W <= two.length; i += W) db.push(10 * Math.log10(two.subarray(i, i + W).reduce((a, v) => a + v * v, 0) / W));
+        const med = [...db].sort((a, b) => a - b)[db.length >> 1],
+          w = Math.floor(n / W);
+        for (const v of db.slice(w - 2, w + 8)) expect(Math.abs(v - med), `take ${seed} at ${sr} Hz`).toBeLessThan(3);
+      }
   });
 
   test("takes are variations, not copies", () => {

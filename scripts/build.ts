@@ -34,7 +34,7 @@ chmodSync("dist/cli.js", 0o755);
 const cat = JSON.parse(readFileSync("library/catalog.gen.json", "utf8"));
 writeFileSync(
   "dist/catalog.json",
-  JSON.stringify({ categories: cat.categories, sounds: cat.sounds.map((s: any) => ({ name: s.name, cat: s.cat, desc: s.desc, duration: s.m.duration, lufs: s.m.lufsMax })) }),
+  JSON.stringify({ categories: cat.categories, sounds: cat.sounds.map((s: any) => ({ name: s.name, cat: s.cat, desc: s.desc, duration: s.m.duration, lufs: s.m.lufsMax, ...(s.loop && { loop: true }) })) }),
 );
 execFileSync(process.platform == "win32" ? "npx.cmd" : "npx", ["tsc", "-p", "tsconfig.build.json"], { stdio: "inherit", shell: process.platform == "win32" });
 console.log("built dist/");

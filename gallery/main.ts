@@ -74,7 +74,21 @@ const editCache = () => {
 };
 
 // ---------- audio + playheads ----------
-const playing = new Map<string, { start: number; dur: number }>();
+const playing = new Map<string, { start: number; dur: number; loop?: boolean }>();
+// Loop sounds (rain-loop, engine-idle, ...) run until clicked again.
+const loops = new Map<string, AudioBufferSourceNode>();
+function stopLoop(name: string) {
+  const src = loops.get(name);
+  if (!src) return false;
+  src.stop();
+  loops.delete(name);
+  playing.delete(name);
+  for (const el of viewsOf(name)) el.classList.remove("playing"), drawView(el, -1);
+  if (name == current.name) $(".panel").classList.remove("playing");
+  return true;
+}
+/** A click: plays a one-shot, starts a loop sound, or stops it when it is already running. */
+const toggleItem = (it: Item, take?: number) => stopLoop(it.name) || playItem(it, take);
 let raf = 0;
 // Everything on the page that shows this sound: its grid tile and, for the favourites, its pad.
 const viewsOf = (name: string) => document.querySelectorAll<HTMLElement>(`.tile[data-name="${name}"], .pad[data-pad="${name}"]`);
@@ -88,11 +102,15 @@ function playItem(it: Item, take = it == current ? seed : undefined, sound = it 
   }
   const v = take ?? Math.floor(Math.random() * 4),
     b = buffer(sound, v),
-    src = ctx.createBufferSource();
+    src = ctx.createBufferSource(),
+    loop = !!it.loop;
+  // A tweak or another take restarts a running loop.
+  if (loop) stopLoop(it.name), loops.set(it.name, src);
   src.buffer = b;
+  src.loop = loop;
   src.connect(ctx.destination);
   src.start();
-  playing.set(it.name, { start: ctx.currentTime, dur: b.duration });
+  playing.set(it.name, { start: ctx.currentTime, dur: b.duration, loop });
   for (const el of viewsOf(it.name)) {
     // restart the press flash even when the same sound is retriggered
     el.classList.remove("playing");
@@ -117,7 +135,7 @@ function caption(name: string) {
 function tick() {
   const now = context().currentTime;
   for (const [name, p] of playing) {
-    const k = Math.min((now - p.start) / p.dur, 1),
+    const k = p.loop ? ((now - p.start) / p.dur) % 1 : Math.min((now - p.start) / p.dur, 1),
       views = viewsOf(name);
     for (const el of views) drawView(el, k < 1 ? k : -1);
     if (name == current.name) drawWave($<HTMLCanvasElement>("#wave"), waveOf(edited(), seed, 180), k < 1 ? k : -1);
@@ -455,7 +473,7 @@ function init() {
     greeted = true;
     const it = byName.get(p.dataset.pad!)!;
     select(it);
-    playItem(it);
+    toggleItem(it);
   });
 
   let hoverTimer = 0;
@@ -466,7 +484,7 @@ function init() {
     hoverTimer = window.setTimeout(() => {
       const it = byName.get(t.dataset.name!)!;
       select(it);
-      playItem(it, 0);
+      if (!it.loop) playItem(it, 0);
     }, 110);
   });
   grid.addEventListener("pointerout", () => clearTimeout(hoverTimer));
@@ -476,7 +494,7 @@ function init() {
     greeted = true;
     const it = byName.get(t.dataset.name!)!;
     select(it);
-    playItem(it);
+    toggleItem(it);
   });
   grid.addEventListener("keydown", (e) => {
     const t = (e.target as HTMLElement).closest<HTMLElement>(".tile");
@@ -490,7 +508,7 @@ function init() {
     next.focus();
     const it = byName.get(next.dataset.name!)!;
     select(it);
-    playItem(it, 0);
+    if (!it.loop) playItem(it, 0);
   });
 
   panel.addEventListener("click", (e) => {
@@ -503,7 +521,7 @@ function init() {
     } else if (b.dataset.tab) {
       tab = b.dataset.tab as typeof tab;
       renderPanel();
-    } else if (b.id == "p-play") playItem(current, seed);
+    } else if (b.id == "p-play") toggleItem(current, seed);
     else if (b.id == "p-roll") roll();
     else if (b.id == "p-reset") {
       knobs = { ...NEUTRAL };
@@ -562,7 +580,7 @@ function init() {
         playItem(current, seed);
       } else if (e.key == "c") copy($("#p-code").textContent!, $("#p-copy"));
       else if (e.key == "d") download();
-      else if (e.key == "p") playItem(current, seed);
+      else if (e.key == "p") toggleItem(current, seed);
     }
   });
   addEventListener("hashchange", () => {

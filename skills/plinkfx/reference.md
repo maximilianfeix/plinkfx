@@ -42,6 +42,35 @@ Times in seconds, frequencies in Hz. Everything is optional except `layers`.
 | `varyG` | `0` | Level spread per layer between takes, dB. Footsteps 2, hits 1.5. |
 | `limit` | set by bake | Look-ahead peak limiter. The catalogue bake turns it on for short, spiky sounds when it gains loudness without clipping. |
 | `gain` | set by bake | Output level. In your own sounds, use it to keep the true peak under -1 dBTP. |
+| `loop` | `true` | Render a seamless loop instead of a one-shot (see below). `play()` loops it until `stop()`. |
+
+## Loops
+
+With `loop: true` the renderer cuts the last 0.5 s of the sound and crossfades the first 0.25 s of that
+cut into the start, so the last sample runs straight into the first: no click, no gap. Rules:
+
+- Every layer holds for the whole sound: short `a` (0.02), long `h`, and `d: 0` (no release; it also
+  keeps every take the same length). A 3.5 s render gives a 3.0 s loop.
+- Events inside the loop (rain drops, gusts) are normal layers with `at`.
+- Tonal loops: `vary: 0` and whole-number frequencies and vibrato rates (cycles that fit the 3 s loop
+  exactly) keep the crossfade in phase. Vary the takes with `varyF` and a small `varyG` instead.
+- Noise loops can keep `vary`; the crossfade is close to equal power for them.
+
+Catalogue loops: `rain-loop`, `wind-loop` (nature), `engine-idle`, `force-field` (world). The tests check
+every take at 44.1 and 48 kHz: the wrap step is smaller than the sound's 99.9th-percentile step and the
+level across the wrap stays within 3 dB.
+
+## Playing
+
+`play(sound, options)` returns a voice `{ stop(fade?), rate(r), node }`, or `undefined` when it skipped the
+sound. Options: `variant`, `volume`, `rate`, `pan`, `delay`, `loop`, plus two guards:
+
+| Option | Default | What it does |
+|---|---|---|
+| `cooldown` | 0.03 | Skip the play when the same sound starts within this many seconds. 0 = off. Loops are exempt. |
+| `voices` | 4 | Most copies of one sound at once; one more stops the oldest, with a short fade. |
+
+`muted(true | false)` mutes everything and keeps the volume; `muted()` reads it. It is not stored.
 
 ## Recipes
 

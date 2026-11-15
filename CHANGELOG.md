@@ -1,5 +1,23 @@
 # Changelog
 
+## Unreleased
+
+**A protective player, and loops.**
+
+- `play()` returns a voice: `stop(fade?)` fades out (10 ms by default, so no click), `rate(r)` glides the
+  playback rate, `node` is the `AudioBufferSourceNode`. Code that called `.stop()` on the old return value
+  keeps working. Still `undefined` when a sound is skipped.
+- `cooldown` (default 0.03 s): the same sound started again within it is skipped, so 30 coin pickups in
+  one frame are one coin. `0` turns it off; plays spread out with `delay` are compared by start time.
+- `voices` (default 4): at most this many copies of a sound at once; one more stops the oldest with a fade.
+- `loop` option, and `loop: true` on a Sound renders it as a seamless loop (the tail crossfaded into the
+  head, every take tested for a click-free wrap and an even level). Four loop sounds: `rain-loop`,
+  `wind-loop`, `engine-idle`, `force-field`. Loop sounds loop by default and are exempt from the cooldown.
+- `muted(on?)`: mute everything and keep the volume. Not stored; the README has the `localStorage` one-liner.
+- `stopAll()` fades in 10 ms instead of cutting.
+- Gallery: loop sounds start on click and stop on the next click; hover and arrow keys don't start them.
+- Player: 3.1 kB gzip (was 2.9), everything 15.6 kB. 184 sounds.
+
 ## 0.2.0 (2026-11-12)
 
 **180 sounds in 15 categories** (was 163 in 13).

@@ -53,9 +53,8 @@ const layer = (L: Layer, out: Float32Array, sr: number, pitch: number, stretch: 
     n = Math.min(Math.round(len * sr), out.length - start),
     q = L.q || 0.707,
     filters: [(x: number, f: number) => number, number, number][] = [];
-  if (L.lp) filters.push([svf(sr, q, 0), L.lp * fv, (L.lpTo || L.lp) * fv]);
-  if (L.bp) filters.push([svf(sr, q, 1), L.bp * fv, (L.bpTo || L.bp) * fv]);
-  if (L.hp) filters.push([svf(sr, q, 2), L.hp * fv, (L.hpTo || L.hp) * fv]);
+  // lp, bp, hp in that order; the index is the svf mode.
+  (["lp", "bp", "hp"] as const).forEach((k, m) => L[k] && filters.push([svf(sr, q, m), L[k]! * fv, (L[`${k}To`] || L[k]!) * fv]));
   let phase = 0,
     mod = 0,
     held = 0,
@@ -256,6 +255,14 @@ export function render(sound: Sound, opts: RenderOptions = {}): Float32Array {
       Rl = sr * 0.05;
     for (let i = x.length; i--; ) gl[i] = Math.min(0.84 / Math.max(Math.abs(x[i]), 1e-9), 1, i + 1 < x.length ? gl[i + 1] + 1 / A : 1);
     for (let i = 0; i < x.length; i++) x[i] *= gl[i] = Math.min(gl[i], i ? gl[i - 1] + 1 / Rl : 1);
+  }
+  if (sound.loop) {
+    // Seamless loop of length L: crossfade the 0.25 s after it into its start, so sample L-1
+    // runs on into sample 0; the attack is faded out under that and the release past it is cut.
+    const X = Math.round(sr / 4),
+      L = Math.round(end * sr) - 2 * X;
+    for (let i = 0; i < X; i++) x[i] = x[i] * (i / X) ** 0.75 + x[i + L] * (1 - i / X) ** 0.75;
+    return x.slice(0, L);
   }
   x = x.slice(0, last + 1);
   const fade = Math.min(Math.round(sr * 0.005), x.length);

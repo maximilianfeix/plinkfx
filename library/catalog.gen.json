@@ -12229,6 +12229,166 @@
    ]
   },
   {
+   "name": "engine-idle",
+   "id": "engineIdle",
+   "cat": "world",
+   "desc": "Engine idling, seamless loop (play with rate for revs)",
+   "gain": 0.347,
+   "limited": false,
+   "loop": true,
+   "m": {
+    "peak": -5.62,
+    "truePeak": -5.62,
+    "lufsMax": -16.87,
+    "duration": 3,
+    "centroid": 273
+   },
+   "env": [
+    1,
+    0.99,
+    0.96,
+    0.98,
+    0.91,
+    0.89,
+    0.92,
+    0.94,
+    0.93,
+    0.95,
+    0.89,
+    0.94,
+    0.91,
+    0.92,
+    0.91,
+    0.93,
+    0.91,
+    0.94,
+    0.94,
+    0.91,
+    0.89,
+    0.93,
+    0.93,
+    0.94,
+    0.94,
+    0.93,
+    0.94,
+    0.92,
+    0.96,
+    0.95,
+    0.93,
+    0.91,
+    0.9,
+    0.94,
+    0.92,
+    0.92,
+    0.91,
+    0.9,
+    0.91,
+    0.89
+   ],
+   "takes": [
+    {
+     "lufsMax": -16.87,
+     "truePeak": -5.62,
+     "duration": 3
+    },
+    {
+     "lufsMax": -17.57,
+     "truePeak": -6.15,
+     "duration": 3
+    },
+    {
+     "lufsMax": -16.12,
+     "truePeak": -4.46,
+     "duration": 3
+    },
+    {
+     "lufsMax": -17.47,
+     "truePeak": -6.33,
+     "duration": 3
+    }
+   ]
+  },
+  {
+   "name": "force-field",
+   "id": "forceField",
+   "cat": "world",
+   "desc": "Force field or reactor hum, seamless loop",
+   "gain": 0.234,
+   "limited": false,
+   "loop": true,
+   "m": {
+    "peak": -8.15,
+    "truePeak": -8.15,
+    "lufsMax": -16.85,
+    "duration": 3,
+    "centroid": 458
+   },
+   "env": [
+    0.99,
+    1,
+    0.99,
+    0.95,
+    0.91,
+    0.9,
+    0.9,
+    0.9,
+    0.91,
+    0.92,
+    0.91,
+    0.92,
+    0.93,
+    0.93,
+    0.93,
+    0.92,
+    0.91,
+    0.91,
+    0.91,
+    0.9,
+    0.9,
+    0.91,
+    0.91,
+    0.91,
+    0.91,
+    0.92,
+    0.93,
+    0.92,
+    0.92,
+    0.91,
+    0.91,
+    0.91,
+    0.9,
+    0.9,
+    0.9,
+    0.91,
+    0.91,
+    0.91,
+    0.92,
+    0.93
+   ],
+   "takes": [
+    {
+     "lufsMax": -16.85,
+     "truePeak": -8.15,
+     "duration": 3
+    },
+    {
+     "lufsMax": -17.5,
+     "truePeak": -8.76,
+     "duration": 3
+    },
+    {
+     "lufsMax": -16.18,
+     "truePeak": -7.59,
+     "duration": 3
+    },
+    {
+     "lufsMax": -17.44,
+     "truePeak": -8.64,
+     "duration": 3
+    }
+   ]
+  },
+  {
    "name": "whoosh",
    "id": "whoosh",
    "cat": "world",
@@ -13805,6 +13965,166 @@
      "lufsMax": -16.94,
      "truePeak": -7.33,
      "duration": 0.43
+    }
+   ]
+  },
+  {
+   "name": "rain-loop",
+   "id": "rainLoop",
+   "cat": "nature",
+   "desc": "Steady rain, seamless loop",
+   "gain": 0.53,
+   "limited": false,
+   "loop": true,
+   "m": {
+    "peak": -8.04,
+    "truePeak": -8,
+    "lufsMax": -18.02,
+    "duration": 3,
+    "centroid": 4989
+   },
+   "env": [
+    0.87,
+    0.88,
+    0.95,
+    0.87,
+    0.91,
+    0.88,
+    0.91,
+    1,
+    0.89,
+    0.94,
+    0.98,
+    0.99,
+    0.93,
+    0.9,
+    0.94,
+    0.93,
+    0.94,
+    0.97,
+    0.95,
+    0.92,
+    0.91,
+    0.94,
+    0.96,
+    0.93,
+    0.91,
+    0.93,
+    0.89,
+    0.89,
+    0.91,
+    0.95,
+    0.96,
+    0.94,
+    0.94,
+    0.94,
+    0.89,
+    0.88,
+    0.96,
+    0.9,
+    0.93,
+    0.89
+   ],
+   "takes": [
+    {
+     "lufsMax": -18.02,
+     "truePeak": -8,
+     "duration": 3
+    },
+    {
+     "lufsMax": -18.11,
+     "truePeak": -8.02,
+     "duration": 3
+    },
+    {
+     "lufsMax": -18.01,
+     "truePeak": -7.98,
+     "duration": 3
+    },
+    {
+     "lufsMax": -17.87,
+     "truePeak": -7.26,
+     "duration": 3
+    }
+   ]
+  },
+  {
+   "name": "wind-loop",
+   "id": "windLoop",
+   "cat": "nature",
+   "desc": "Wind blowing with slow gusts, seamless loop",
+   "gain": 0.913,
+   "limited": false,
+   "loop": true,
+   "m": {
+    "peak": -5.11,
+    "truePeak": -5.08,
+    "lufsMax": -17.99,
+    "duration": 3,
+    "centroid": 1773
+   },
+   "env": [
+    0.79,
+    0.76,
+    0.82,
+    0.89,
+    0.8,
+    0.81,
+    0.85,
+    0.85,
+    0.88,
+    0.83,
+    0.94,
+    0.88,
+    0.86,
+    0.8,
+    0.88,
+    0.86,
+    0.86,
+    0.83,
+    0.91,
+    1,
+    0.79,
+    0.8,
+    0.92,
+    0.86,
+    0.85,
+    0.9,
+    0.78,
+    0.83,
+    0.86,
+    0.89,
+    0.85,
+    0.83,
+    0.9,
+    0.9,
+    0.84,
+    0.86,
+    0.96,
+    0.86,
+    0.86,
+    0.91
+   ],
+   "takes": [
+    {
+     "lufsMax": -17.99,
+     "truePeak": -5.08,
+     "duration": 3
+    },
+    {
+     "lufsMax": -18.17,
+     "truePeak": -6.05,
+     "duration": 3
+    },
+    {
+     "lufsMax": -18.03,
+     "truePeak": -5.75,
+     "duration": 3
+    },
+    {
+     "lufsMax": -17.81,
+     "truePeak": -5.55,
+     "duration": 3
     }
    ]
   },
