@@ -6,12 +6,11 @@ import { mkdirSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { dirname, join, resolve } from "node:path";
 import { createInterface } from "node:readline";
-import { render } from "./core/synth.ts";
 import { wav } from "./core/wav.ts";
 import { measure, type Measurement } from "./meter.ts";
 import { audit } from "./audit.ts";
 import { picture } from "./png.ts";
-import { catalog, load, readWav } from "./shared.ts";
+import { catalog, load, readWav, renderChecked } from "./shared.ts";
 
 const PROTOCOLS = ["2025-06-18", "2025-03-26", "2024-11-05"];
 
@@ -158,7 +157,7 @@ const TOOLS: Tool[] = [
       if (a.png !== undefined && typeof a.png != "boolean") throw new ArgError('"png" must be true or false');
       const { sound, label } = load(input),
         out = outPath(path, `${label}${seed ? "-" + (seed + 1) : ""}`, ".wav"),
-        x = render(sound, { sampleRate: sr, seed }),
+        x = renderChecked(sound, sr, seed),
         m = measure(x, sr);
       writeFileSync(out, wav(x, sr));
       let png: Buffer | undefined, pngPath: string | undefined;
@@ -220,7 +219,7 @@ function samples(a: Args): [Float32Array, number] {
     return [x, sr];
   }
   const sr = int(a, "rate", 48000, 8000, 192000);
-  return [render(load(soundArg(a)).sound, { sampleRate: sr, seed: int(a, "variant", 0, 0, 3) }), sr];
+  return [renderChecked(load(soundArg(a)).sound, sr, int(a, "variant", 0, 0, 3)), sr];
 }
 /** Every take of a sound (or the one take of a WAV file), plus the catalogue name if any. */
 function takesOf(a: Args): [Float32Array[], number, string | undefined] {
@@ -232,7 +231,7 @@ function takesOf(a: Args): [Float32Array[], number, string | undefined] {
   }
   const sr = int(a, "rate", 48000, 8000, 192000),
     { sound, name } = load(soundArg(a));
-  return [[0, 1, 2, 3].map((seed) => render(sound, { sampleRate: sr, seed })), sr, name];
+  return [[0, 1, 2, 3].map((seed) => renderChecked(sound, sr, seed)), sr, name];
 }
 
 /** Handle one parsed message; returns the response, or undefined for notifications. */

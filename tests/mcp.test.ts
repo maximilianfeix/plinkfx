@@ -132,6 +132,24 @@ describe("mcp server", () => {
     expect(wave.isError).toBe(true);
     expect(wave.content[0].text).toMatch(/unknown wave "sqare"/);
     expect((await call("check_sound", { wav: join(dir, "missing.wav") })).result.content[0].text).toMatch(/no such file/);
+    // hostile recipes are rejected before anything is allocated
+    for (const [sound, msg] of [
+      [{ layers: [{ at: [1e9], d: 0.1 }] }, /"at" must be a number/],
+      [{ layers: [{ d: [1, 2] }] }, /"d" must be a number/],
+      [{ layers: [{ d: 0.1 }], echo: [2, 0.99999, 1] }, /"echo"\[1\] must be from 0 to 0.95/],
+      [{ layers: [{ d: 0.1 }], echo: [1e6, 0.5, 1] }, /"echo"\[0\]/],
+      [{ layers: [{ d: 0.1 }], verb: [1e9, 1] }, /"verb"\[0\]/],
+      [{ layers: [{ d: 0.1 }], rate: 1e12 }, /"rate" must be/],
+      [{ layers: [{ d: 25 }], verb: [1, 1], echo: [2, 0.95, 1] }, /would last .* s with its tails/],
+      [{ layers: [{ wave: "pluck", freq: 1e-9 }] }, /"freq" must be/],
+      [{ layers: [{ arp: [0, 12], arpRate: 0, loop: true }] }, /"arpRate"/],
+    ] as const) {
+      const r = (await call("render_sound", { sound, path: join(dir, "hostile.wav") })).result;
+      expect(r.isError, JSON.stringify(sound)).toBe(true);
+      expect(r.content[0].text).toMatch(msg);
+    }
+    expect((await call("render_sound", { sound: "coin", rate: 1e9 })).error.code).toBe(-32602);
+    expect(existsSync(join(dir, "hostile.wav"))).toBe(false);
     // garbage and batches
     expect((await raw("{ not json")).error.code).toBe(-32700);
     expect((await raw("[]")).error.code).toBe(-32600);

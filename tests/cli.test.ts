@@ -4,6 +4,7 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { describe, expect, test } from "vitest";
 import { audit } from "../src/audit.ts";
+import { catalog, seconds, soundOf, unwrap } from "../src/shared.ts";
 
 const dir = mkdtempSync(join(tmpdir(), "plinkfx-cli-"));
 const run = (...args: string[]) => {
@@ -127,6 +128,15 @@ describe("cli", () => {
     expect(run("check").out).toMatch(/name the sounds to check, or use --all/);
     expect(run("check", "coin", "--cat", "nope").out).toMatch(/unknown category "nope"/);
   });
+});
+
+test("every catalogue recipe passes the recipe checks, and seconds() matches the render", async () => {
+  const { render } = await import("../src/core/synth.ts");
+  for (const { name } of catalog().sounds) {
+    const s = JSON.parse(JSON.stringify(soundOf(name)));
+    expect(() => unwrap(s), name).not.toThrow();
+    for (const seed of [0, 3]) expect(render(s, { sampleRate: 8000, seed }).length / 8000, name).toBeLessThanOrEqual(seconds(s) + 1 / 8000);
+  }
 });
 
 describe("audit", () => {

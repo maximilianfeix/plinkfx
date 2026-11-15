@@ -2,6 +2,7 @@
 import { existsSync, readFileSync } from "node:fs";
 import { basename } from "node:path";
 import { get, names } from "./index.ts";
+import { render } from "./core/synth.ts";
 import type { Sound } from "./core/types.ts";
 import * as all from "./sounds.gen.ts";
 
@@ -47,28 +48,77 @@ const parse = (text: string, where: string) => {
   }
 };
 
-const isNum = (v: unknown) => typeof v == "number" && Number.isFinite(v);
+const isNum = (v: unknown): v is number => typeof v == "number" && Number.isFinite(v);
+/** Layer fields that hold a list of numbers; every other field except wave and loop is one number. */
+const LISTS = ["arp", "vib", "fm", "modes", "formant"];
+export const RATES = [8000, 192000] as const;
+/** Most samples one take may have: MAX_SECONDS at the highest rate. */
+export const MAX_SAMPLES = MAX_SECONDS * RATES[1];
+
+const range = (where: string, k: string, v: unknown, min: number, max: number) => {
+  if (v === undefined) return;
+  if (!isNum(v) || v < min || v > max) throw new Error(`${where}"${k}" must be a number from ${min} to ${max}, got ${JSON.stringify(v)}`);
+};
+const list = (where: string, k: string, v: unknown, len: number, bounds?: [number, number][]) => {
+  if (v === undefined) return;
+  if (!Array.isArray(v) || v.length > len || !v.every(isNum)) throw new Error(`${where}"${k}" must be a list of at most ${len} numbers`);
+  bounds?.forEach(([lo, hi], i) => {
+    if (v[i] !== undefined && (v[i] < lo || v[i] > hi)) throw new Error(`${where}"${k}"[${i}] must be from ${lo} to ${hi}, got ${v[i]}`);
+  });
+};
+
+/**
+ * Length in seconds that render() allocates for a sound, with the same formula as core/synth.ts
+ * (layer envelopes, up to 7 % longer decay on other takes, echo and reverb tails).
+ */
+export function seconds(s: Sound): number {
+  let end = 0;
+  for (const L of s.layers) end = Math.max(end, (L.at || 0) + Math.max(L.a ?? 0.002, 0.001) + (L.h || 0) + (L.d ?? 0.2) * 1.07);
+  const echo = s.echo,
+    verb = s.verb;
+  return end + (echo ? Math.min(echo[0] * Math.ceil(Math.log(0.001) / Math.log(echo[1] || 0.01)), 1.5) : 0) + (verb ? 0.2 + verb[0] * 1.8 : 0);
+}
 
 /** Check a parsed recipe ({ layers: [...] } or { sound: {...} }) and return the sound. */
 export function unwrap(j: any): Sound {
   const s = j?.sound ?? j;
-  if (!s || typeof s != "object" || !Array.isArray(s.layers) || !s.layers.length) throw new Error("a sound needs a non-empty 'layers' array");
+  if (!s || typeof s != "object" || Array.isArray(s) || !Array.isArray(s.layers) || !s.layers.length) throw new Error("a sound needs a non-empty 'layers' array");
   if (s.layers.length > 32) throw new Error(`a sound can have at most 32 layers, got ${s.layers.length}`);
-  let end = 0;
   s.layers.forEach((l: any, i: number) => {
-    const at = `layer ${i + 1}`;
-    if (!l || typeof l != "object" || Array.isArray(l)) throw new Error(`${at}: must be an object`);
-    if (l.wave !== undefined && !WAVES.includes(l.wave)) throw new Error(`${at}: unknown wave "${l.wave}" (one of: ${WAVES.join(", ")})`);
+    const at = `layer ${i + 1}: `;
+    if (!l || typeof l != "object" || Array.isArray(l)) throw new Error(`${at}must be an object`);
+    if (l.wave !== undefined && !WAVES.includes(l.wave)) throw new Error(`${at}unknown wave "${l.wave}" (one of: ${WAVES.join(", ")})`);
+    if (l.loop !== undefined && typeof l.loop != "boolean") throw new Error(`${at}"loop" must be true or false`);
     for (const [k, v] of Object.entries(l))
-      if (k != "wave" && k != "loop" && !isNum(v) && !(Array.isArray(v) && v.every(isNum))) throw new Error(`${at}: "${k}" must be a number${Array.isArray(v) ? "s" : ""}, got ${JSON.stringify(v)}`);
-    for (const k of ["at", "a", "h", "d"]) if (l[k] < 0) throw new Error(`${at}: "${k}" can't be negative`);
-    if (l.freq !== undefined && l.freq <= 0) throw new Error(`${at}: "freq" must be above 0`);
-    end = Math.max(end, (l.at || 0) + (l.a ?? 0.002) + (l.h || 0) + (l.d ?? 0.2));
+      if (k != "wave" && k != "loop" && !LISTS.includes(k) && !isNum(v)) throw new Error(`${at}"${k}" must be a number, got ${JSON.stringify(v)}`);
+    for (const k of ["at", "a", "h", "d"]) range(at, k, l[k], 0, MAX_SECONDS);
+    for (const k of ["freq", "to"]) range(at, k, l[k], 1, 100000);
+    range(at, "arpRate", l.arpRate, 0.001, 10);
+    list(at, "arp", l.arp, 64, Array(64).fill([-96, 96]));
+    list(at, "vib", l.vib, 2, [[0, 1000], [-48, 48]]);
+    list(at, "fm", l.fm, 3, [[0, 100], [-100, 100], [0, MAX_SECONDS]]);
+    list(at, "modes", l.modes, 8, Array(8).fill([0.01, 100]));
+    list(at, "formant", l.formant, 8, Array(8).fill([20, 24000]));
   });
-  for (const k of ["verb", "echo"]) if (s[k] !== undefined && !(Array.isArray(s[k]) && s[k].every(isNum))) throw new Error(`"${k}" must be an array of numbers`);
-  for (const k of ["gain", "vary", "varyF", "varyG", "bits", "rate", "limit"]) if (s[k] !== undefined && !isNum(s[k])) throw new Error(`"${k}" must be a number`);
-  if (end > MAX_SECONDS) throw new Error(`the layers last ${end.toFixed(1)} s; plinkfx renders effects up to ${MAX_SECONDS} s`);
+  list("", "verb", s.verb, 2, [[0, 1], [0, 4]]);
+  list("", "echo", s.echo, 3, [[0.001, 2], [0, 0.95], [0, 4]]);
+  for (const k of ["gain", "limit"]) range("", k, s[k], 0, 100);
+  range("", "vary", s.vary, 0, 24);
+  range("", "varyF", s.varyF, 0, 48);
+  range("", "varyG", s.varyG, 0, 24);
+  range("", "bits", s.bits, 1, 32);
+  range("", "rate", s.rate, 100, RATES[1]);
+  const len = seconds(s);
+  if (!(len <= MAX_SECONDS)) throw new Error(`the sound would last ${len.toFixed(1)} s with its tails; plinkfx renders effects up to ${MAX_SECONDS} s`);
   return s;
+}
+
+/** render() with the sample rate and length checked first, so no request can allocate without bound. */
+export function renderChecked(sound: Sound, sampleRate: number, seed = 0): Float32Array {
+  if (!Number.isInteger(sampleRate) || sampleRate < RATES[0] || sampleRate > RATES[1]) throw new Error(`the sample rate must be a whole number from ${RATES[0]} to ${RATES[1]} Hz`);
+  const n = Math.ceil(seconds(sound) * sampleRate) + 1;
+  if (!(n <= MAX_SAMPLES)) throw new Error(`the sound would take ${n} samples; the limit is ${MAX_SAMPLES}`);
+  return render(sound, { sampleRate, seed });
 }
 
 /** A sound from a catalogue name, a .json file, inline JSON text or an already parsed object. */
